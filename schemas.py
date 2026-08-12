@@ -1,0 +1,60 @@
+"""Pydantic response schemas used by the REST API."""
+
+from __future__ import annotations
+
+from pydantic import BaseModel, ConfigDict
+
+
+class LessonResponse(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
+    id: int
+    title: str
+    description: str
+
+
+class LessonDetailResponse(LessonResponse):
+    sentence_count: int
+    passage_count: int
+
+
+class ChunkResponse(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
+    id: int
+    order_index: int
+    japanese: str
+    vietnamese: str
+    is_grammar_key: bool
+
+
+class SentenceResponse(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
+    id: int
+    lesson_id: int | None
+    passage_id: int | None
+    full_japanese: str
+    full_romaji: str
+    full_vietnamese: str
+    audio_url: str | None
+    chunks: list[ChunkResponse]
+
+
+class PassageChunkResponse(BaseModel):
+    text: str
+    furigana: str | None = None
+    meaning: str
+    note: str | None = None
+
+
+class PassageResponse(BaseModel):
+    id: int
+    lesson_id: int
+    title: str
+    content: list[PassageChunkResponse]
+
+
+class HealthResponse(BaseModel):
+    status: str
+
