@@ -4,14 +4,22 @@
 
 import {
   Fragment,
+  type ChangeEvent as ReactChangeEvent,
   type KeyboardEvent as ReactKeyboardEvent,
+  type PointerEvent as ReactPointerEvent,
   useCallback,
   useEffect,
   useMemo,
   useRef,
   useState,
 } from "react";
+import HanziWriter from "hanzi-writer";
 import { grammarPoints16to25, kanjiVocabulary16to25 } from "./lessonContent16to25";
+import {
+  KANJI_STUDY_GUIDES,
+  type KanjiStudyGuide,
+  type KanjiWordExample,
+} from "./kanjiStudyData";
 import {
   jlptPracticeGroups,
   jlptPracticeStats,
@@ -73,6 +81,7 @@ type ModeId =
   | "reading"
   | "kanji"
   | "kanji-words"
+  | "kanji-writing"
   | "vocabulary"
   | "grammar"
   | "review";
@@ -176,6 +185,88 @@ type AiChatResponse = {
   reply: string;
   source: string;
 };
+
+type ThemeMode = "light" | "dark";
+
+const AUTO_ADVANCE_DELAY_MS = 800;
+const MANABU_STORAGE_PREFIX = "manabu";
+
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return typeof value === "object" && value !== null && !Array.isArray(value);
+}
+
+function exportUserData() {
+  if (typeof window === "undefined") return;
+
+  const backup: Record<string, string> = {};
+
+  for (let index = 0; index < window.localStorage.length; index += 1) {
+    const key = window.localStorage.key(index);
+    if (!key?.startsWith(MANABU_STORAGE_PREFIX)) continue;
+
+    const value = window.localStorage.getItem(key);
+    if (value !== null) backup[key] = value;
+  }
+
+  const blob = new Blob([JSON.stringify(backup, null, 2)], {
+    type: "application/json",
+  });
+  const objectUrl = window.URL.createObjectURL(blob);
+  const link = document.createElement("a");
+
+  link.href = objectUrl;
+  link.download = "manabu_backup.json";
+  link.style.display = "none";
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+  window.URL.revokeObjectURL(objectUrl);
+}
+
+function importUserData(event: ReactChangeEvent<HTMLInputElement>) {
+  const file = event.target.files?.[0];
+  event.target.value = "";
+  if (!file) return;
+
+  const reader = new FileReader();
+
+  reader.onload = () => {
+    try {
+      const content = typeof reader.result === "string" ? reader.result : "";
+      const parsed: unknown = JSON.parse(content);
+
+      if (!isRecord(parsed)) {
+        throw new Error("Backup payload must be an object.");
+      }
+
+      const manabuEntries = Object.entries(parsed).filter(([key]) =>
+        key.startsWith(MANABU_STORAGE_PREFIX),
+      );
+
+      if (manabuEntries.length === 0) {
+        throw new Error("No Manabu keys found in backup.");
+      }
+
+      for (const [key, value] of manabuEntries) {
+        if (typeof value !== "string") {
+          throw new Error(`Invalid value for key: ${key}`);
+        }
+        window.localStorage.setItem(key, value);
+      }
+
+      window.alert("Khôi phục dữ liệu thành công!");
+      window.location.reload();
+    } catch {
+      window.alert("File sao lưu không hợp lệ. Vui lòng chọn đúng file manabu_backup.json.");
+    }
+  };
+
+  reader.onerror = () => {
+    window.alert("Không đọc được file sao lưu. Vui lòng thử lại.");
+  };
+
+  reader.readAsText(file);
+}
 
 type SpeechRecognitionAlternativeLike = {
   transcript: string;
@@ -363,6 +454,15 @@ const modes: Array<{
     japanese: "漢字の言葉",
     description: "Nhìn từng từ Kanji, chọn cách đọc Hiragana và ghi nhớ nghĩa.",
     accent: "plum",
+  },
+  {
+    id: "kanji-writing",
+    number: "08",
+    glyph: "筆",
+    title: "Luyện viết Kanji",
+    japanese: "書き取り",
+    description: "Tập viết Kanji theo nét hoặc tự viết mù rồi xem đáp án đúng.",
+    accent: "mint",
   },
 ];
 
@@ -1383,17 +1483,87 @@ function Brand() {
   );
 }
 
-function AppHeader({ onHome }: { onHome: () => void }) {
+function AppHeader({
+  onHome,
+  theme,
+  onToggleTheme,
+  showFurigana,
+  onToggleFurigana,
+}: {
+  onHome: () => void;
+  theme: ThemeMode;
+  onToggleTheme: () => void;
+  showFurigana: boolean;
+  onToggleFurigana: () => void;
+}) {
+  const isDark = theme === "dark";
+  const importInputRef = useRef<HTMLInputElement>(null);
+
   return (
     <header className="siteHeader">
       <button className="brandButton" onClick={onHome} aria-label="Về trang chủ">
         <Brand />
       </button>
-      <nav aria-label="Điều hướng chính">
-        <a href="#lessons">50 bài học</a>
-        <span className="navDot" />
-        <span>Chunking method</span>
-      </nav>
+      <div className="headerActions">
+        <nav aria-label="Điều hướng chính">
+          <a href="#lessons">50 bài học</a>
+          <span className="navDot" />
+          <span>Chunking method</span>
+        </nav>
+        <button
+          className="themeToggle"
+          type="button"
+          onClick={onToggleTheme}
+          aria-pressed={isDark}
+          aria-label={isDark ? "Chuyen sang giao dien sang" : "Chuyen sang giao dien toi"}
+        >
+          <span className="themeToggleTrack" aria-hidden="true">
+            <span className="themeToggleThumb">{isDark ? "\u263e" : "\u2600"}</span>
+          </span>
+          <span className="themeToggleText">{isDark ? "Dark" : "Light"}</span>
+        </button>
+        <button
+          className="themeToggle furiganaToggle"
+          type="button"
+          onClick={onToggleFurigana}
+          aria-pressed={showFurigana}
+          aria-label={showFurigana ? "An Furigana" : "Hien Furigana"}
+        >
+          <span className="themeToggleTrack" aria-hidden="true">
+            <span className="themeToggleThumb">{showFurigana ? "あ" : "A"}</span>
+          </span>
+          <span className="themeToggleText">Furigana</span>
+        </button>
+        <button
+          className="themeToggle"
+          type="button"
+          onClick={exportUserData}
+          aria-label="Tải bản sao lưu dữ liệu học"
+          title="Tải bản sao lưu (Export)"
+        >
+          <span aria-hidden="true">⇩</span>
+          <span className="themeToggleText">Tải bản sao lưu</span>
+        </button>
+        <button
+          className="themeToggle"
+          type="button"
+          onClick={() => importInputRef.current?.click()}
+          aria-label="Nhập dữ liệu học từ file sao lưu"
+          title="Nhập dữ liệu (Import)"
+        >
+          <span aria-hidden="true">⇧</span>
+          <span className="themeToggleText">Nhập dữ liệu</span>
+        </button>
+        <input
+          ref={importInputRef}
+          type="file"
+          accept=".json,application/json"
+          onChange={importUserData}
+          style={{ display: "none" }}
+          aria-hidden="true"
+          tabIndex={-1}
+        />
+      </div>
     </header>
   );
 }
@@ -1617,6 +1787,7 @@ function LessonMenu({
   );
 
   const [sentences, setSentences] = useState<Sentence[]>([]);
+  const [passageCount, setPassageCount] = useState(0);
 
   useEffect(() => {
     requestJson<Lesson>(`/lessons/${lesson.id}`)
@@ -1625,12 +1796,54 @@ function LessonMenu({
     requestJson<Sentence[]>(`/lessons/${lesson.id}/sentences`)
       .then(setSentences)
       .catch(() => {});
+    requestJson<Passage[]>(`/lessons/${lesson.id}/passages`)
+      .then((data) => setPassageCount(data.length))
+      .catch(() => setPassageCount(lesson.passage_count ?? 0));
   }, [lesson]);
 
   const vocabularyItems = useMemo(() => buildVocabularyItems(sentences), [sentences]);
   const dueSentences = sentences.filter(s => isDueForReview("sentence_" + s.id));
   const dueVocab = vocabularyItems.filter(v => isDueForReview("vocab_" + v.id));
   const dueCount = dueSentences.length + dueVocab.length;
+  const kanjiSentenceCount = sentences.filter((sentence) =>
+    containsKanji(sentence.full_japanese),
+  ).length;
+  const audioMatchCount = buildAudioMatchChunks(sentences).length;
+  const grammarCount = (grammarPoints[lesson.id] ?? []).length;
+  const kanjiWordCount = (kanjiVocabulary[lesson.id] ?? []).length;
+  const sentenceCount = detail.sentence_count ?? authoredSentenceCounts[lesson.id] ?? sentences.length;
+  const modeCounts: Partial<Record<ModeId, number>> = {
+    vocabulary: vocabularyItems.length,
+    grammar: grammarCount,
+    cloze: sentenceCount,
+    scramble: sentenceCount,
+    dictation: sentenceCount,
+    "audio-match": audioMatchCount,
+    reading: passageCount,
+    kanji: kanjiSentenceCount,
+    "kanji-words": kanjiWordCount,
+    "kanji-writing": kanjiWordCount,
+    review: dueCount,
+  };
+  const renderModeTitle = (mode: (typeof modes)[number]) => (
+    <>
+      {mode.title}
+      <span
+        aria-label={`${modeCounts[mode.id] ?? 0} mục`}
+        style={{
+          marginLeft: 8,
+          color: "var(--muted)",
+          fontFamily: '"Aptos", "Segoe UI", Arial, sans-serif',
+          fontSize: 13,
+          fontWeight: 800,
+          letterSpacing: "0.02em",
+          verticalAlign: "middle",
+        }}
+      >
+        ({modeCounts[mode.id] ?? 0})
+      </span>
+    </>
+  );
 
   return (
     <main className="lessonMenuPage">
@@ -1673,7 +1886,7 @@ function LessonMenu({
               <span className="studyPathGlyph">{mode.glyph}</span>
               <div>
                 <span>{mode.japanese}</span>
-                <h3>{mode.title}</h3>
+                <h3>{renderModeTitle(mode)}</h3>
                 <p>{mode.description}</p>
               </div>
               <span className="studyPathArrow"><ArrowIcon /></span>
@@ -1697,7 +1910,7 @@ function LessonMenu({
               </div>
               <div>
                 <span className="modeJapanese">{mode.japanese}</span>
-                <h3>{mode.title}</h3>
+                <h3>{renderModeTitle(mode)}</h3>
                 <p>{mode.description}</p>
               </div>
               <div className="modeAction">BẮT ĐẦU <ArrowIcon /></div>
@@ -1726,7 +1939,10 @@ function EmptyPractice({
   onBack: () => void;
   modeId: ModeId;
 }) {
-  const isKanji = modeId === "kanji" || modeId === "kanji-words";
+  const isKanji =
+    modeId === "kanji" ||
+    modeId === "kanji-words" ||
+    modeId === "kanji-writing";
   return (
     <div className="emptyPractice">
       <span className="emptyGlyph">{isKanji ? "漢" : "準"}</span>
@@ -1741,22 +1957,37 @@ function EmptyPractice({
   );
 }
 
+function ProgressBar({ current, total }: { current: number; total: number }) {
+  const percent =
+    total > 0
+      ? Math.min(100, Math.max(0, ((current + 1) / total) * 100))
+      : 0;
+
+  return (
+    <div
+      className="progressBar"
+      role="progressbar"
+      aria-valuemin={0}
+      aria-valuemax={100}
+      aria-valuenow={Math.round(percent)}
+    >
+      <span style={{ width: `${percent}%` }} />
+    </div>
+  );
+}
+
 function PracticeHeader({
   lesson,
   mode,
   current,
   total,
   onBack,
-  showFurigana,
-  onToggleFurigana,
 }: {
   lesson: Lesson;
   mode: (typeof modes)[number];
   current: number;
   total: number;
   onBack: () => void;
-  showFurigana: boolean;
-  onToggleFurigana: () => void;
 }) {
   return (
     <div className="practiceHeader">
@@ -1768,28 +1999,7 @@ function PracticeHeader({
       <div className="practiceProgress">
         <span>{lesson.title}</span>
         <strong>{total ? `${current + 1} / ${total}` : "—"}</strong>
-        <button
-          type="button"
-          onClick={onToggleFurigana}
-          aria-pressed={showFurigana}
-          aria-label={showFurigana ? "Ẩn Furigana" : "Hiện Furigana"}
-          style={{
-            marginTop: 8,
-            border: "1px solid rgba(23, 33, 31, 0.14)",
-            borderRadius: 999,
-            background: showFurigana
-              ? "rgba(116, 189, 162, 0.18)"
-              : "rgba(255, 255, 255, 0.72)",
-            color: "var(--ink)",
-            cursor: "pointer",
-            fontSize: 11,
-            fontWeight: 800,
-            letterSpacing: "0.04em",
-            padding: "7px 11px",
-          }}
-        >
-          Hiện Furigana {showFurigana ? "✓" : "—"}
-        </button>
+        <ProgressBar current={current} total={total} />
       </div>
     </div>
   );
@@ -1949,6 +2159,42 @@ function useEnterShortcut(onEnter: () => void) {
   }, [onEnter]);
 }
 
+function useAutoAdvanceOnCorrect(isCorrect: boolean, onAdvance: () => void) {
+  useEffect(() => {
+    if (!isCorrect) return;
+
+    const timer = window.setTimeout(onAdvance, AUTO_ADVANCE_DELAY_MS);
+    return () => window.clearTimeout(timer);
+  }, [isCorrect, onAdvance]);
+}
+
+function useResetShortcut(onReset: () => void) {
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (
+        event.shiftKey ||
+        event.altKey ||
+        event.ctrlKey ||
+        event.metaKey ||
+        event.isComposing ||
+        event.keyCode === 229
+      ) {
+        return;
+      }
+
+      const resetByEscape = event.key === "Escape";
+      const resetByR = event.key.toLocaleLowerCase() === "r" && !isTextEntryTarget(event.target);
+      if (!resetByEscape && !resetByR) return;
+
+      event.preventDefault();
+      onReset();
+    };
+
+    window.addEventListener("keydown", handleKeyDown, true);
+    return () => window.removeEventListener("keydown", handleKeyDown, true);
+  }, [onReset]);
+}
+
 function ClozeMode({
   sentence,
   onAdvance,
@@ -1960,11 +2206,20 @@ function ClozeMode({
   const [answers, setAnswers] = useState<Record<number, string>>({});
   const [feedback, setFeedback] = useState<Feedback>(null);
   const [showAnswer, setShowAnswer] = useState(false);
+  const [autoAdvanceReady, setAutoAdvanceReady] = useState(false);
   const keyChunks = sentence.chunks.filter((chunk) => chunk.is_grammar_key);
 
   useEffect(() => {
     return () => window.speechSynthesis?.cancel();
   }, [sentence.id]);
+
+  const reset = useCallback(() => {
+    setAnswers({});
+    setFeedback(null);
+    setShowAnswer(false);
+    setAutoAdvanceReady(false);
+    window.requestAnimationFrame(() => shortcutAreaRef.current?.focus());
+  }, []);
 
   const check = () => {
     const correct = keyChunks.every((chunk) =>
@@ -1975,6 +2230,7 @@ function ClozeMode({
         ? { kind: "success", message: "Bạn đã đặt đúng mảnh ngữ pháp vào câu." }
         : { kind: "error", message: "Hãy nhìn nghĩa tiếng Việt và thử lại từng ký tự." },
     );
+    setAutoAdvanceReady(correct);
     if (correct) {
       window.requestAnimationFrame(() => shortcutAreaRef.current?.focus());
     }
@@ -1989,12 +2245,15 @@ function ClozeMode({
   }, [feedback?.kind, onAdvance, check]);
 
   useEnterShortcut(handleEnter);
+  useResetShortcut(reset);
+  useAutoAdvanceOnCorrect(autoAdvanceReady, onAdvance);
 
   const toggleAnswer = () => {
     const nextShowAnswer = !showAnswer;
     setShowAnswer(nextShowAnswer);
 
     if (nextShowAnswer) {
+      setAutoAdvanceReady(false);
       const revealedAnswers = keyChunks.reduce<Record<number, string>>((result, chunk) => {
         result[chunk.id] = chunk.japanese;
         return result;
@@ -2010,6 +2269,7 @@ function ClozeMode({
 
     setAnswers({});
     setFeedback(null);
+    setAutoAdvanceReady(false);
   };
 
   return (
@@ -2027,6 +2287,7 @@ function ClozeMode({
               onChange={(event) => {
                 setAnswers((current) => ({ ...current, [chunk.id]: event.target.value }));
                 setFeedback(null);
+                setAutoAdvanceReady(false);
               }}
               style={{ width: `${Math.max(4, chunk.japanese.length + 1)}em` }}
               aria-label={`Điền cụm còn thiếu: ${chunk.vietnamese}`}
@@ -2070,6 +2331,10 @@ function ClozeMode({
           {showAnswer ? "Ẩn đáp án" : "Xem đáp án"}
           <span aria-hidden="true">{showAnswer ? "×" : "目"}</span>
         </button>
+        <button className="answerButton" type="button" onClick={reset}>
+          Làm lại
+          <span aria-hidden="true">Esc</span>
+        </button>
         <button className="checkButton" type="button" onClick={check}>
           Kiểm tra đáp án <span>↵</span>
         </button>
@@ -2101,6 +2366,7 @@ function ScrambleMode({
   const [answer, setAnswer] = useState<Chunk[]>([]);
   const [dragged, setDragged] = useState<number | null>(null);
   const [feedback, setFeedback] = useState<Feedback>(null);
+  const [autoAdvanceReady, setAutoAdvanceReady] = useState(false);
   // Only reveal Vietnamese translations after a correct answer
   const [showVietnamese, setShowVietnamese] = useState(false);
 
@@ -2108,8 +2374,18 @@ function ScrambleMode({
     setBank(shuffleChunks(sentence.chunks));
     setAnswer([]);
     setFeedback(null);
+    setAutoAdvanceReady(false);
     setShowVietnamese(false);
   }, [sentence]);
+
+  const resetAnswer = useCallback(() => {
+    setBank((currentBank) => [...currentBank, ...answer]);
+    setAnswer([]);
+    setFeedback(null);
+    setAutoAdvanceReady(false);
+    setShowVietnamese(false);
+    window.requestAnimationFrame(() => shortcutAreaRef.current?.focus());
+  }, [answer]);
 
   const move = (chunkId: number, destination: "bank" | "answer", at?: number) => {
     const chunk = [...bank, ...answer].find((item) => item.id === chunkId);
@@ -2121,6 +2397,7 @@ function ScrambleMode({
     setBank(destination === "bank" ? target : nextBank);
     setAnswer(destination === "answer" ? target : nextAnswer);
     setFeedback(null);
+    setAutoAdvanceReady(false);
     window.requestAnimationFrame(() => shortcutAreaRef.current?.focus());
   };
 
@@ -2146,6 +2423,7 @@ function ScrambleMode({
         ? { kind: "success", message: "Nhịp câu đã đúng. Hãy đọc thành tiếng một lần nữa." }
         : { kind: "error", message: "Thứ tự chưa khớp. Chú ý trợ từ và phần kết câu." },
     );
+    setAutoAdvanceReady(correct);
   };
 
   const handleEnter = useCallback(() => {
@@ -2157,6 +2435,8 @@ function ScrambleMode({
   }, [feedback?.kind, onAdvance, check]);
 
   useEnterShortcut(handleEnter);
+  useResetShortcut(resetAnswer);
+  useAutoAdvanceOnCorrect(autoAdvanceReady, onAdvance);
 
   const ChunkButton = ({ chunk, source, index }: { chunk: Chunk; source: "bank" | "answer"; index: number }) => (
     <button
@@ -2185,7 +2465,11 @@ function ScrambleMode({
         <p>{sentence.full_vietnamese}</p>
       </div>
       <div className="dropGroup">
-        <div className="zoneLabel"><span>CÂU CỦA BẠN</span><small>Kéo hoặc chạm để sắp xếp</small></div>
+        <div className="zoneLabel">
+          <span>CÂU CỦA BẠN</span>
+          <small>Kéo hoặc chạm để sắp xếp</small>
+          <button type="button" onClick={resetAnswer}>Làm lại Esc</button>
+        </div>
         <div
           className={`dropZone ${answer.length ? "hasItems" : ""}`}
           onDragOver={(event) => event.preventDefault()}
@@ -2328,6 +2612,7 @@ function DictationMode({
   const [answer, setAnswer] = useState("");
   const [feedback, setFeedback] = useState<Feedback>(null);
   const [showCorrectAnswer, setShowCorrectAnswer] = useState(false);
+  const [autoAdvanceReady, setAutoAdvanceReady] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
   const reviewMarks = useMemo(
     () => buildDictationReviewMarks(answer, sentence),
@@ -2364,6 +2649,7 @@ function DictationMode({
         ? { kind: "success", message: "Bạn đã nghe đúng toàn bộ câu." }
         : { kind: "error", message: "Nghe lại ở tốc độ chậm và kiểm tra các trợ từ." },
     );
+    setAutoAdvanceReady(correct);
     if (correct) {
       window.requestAnimationFrame(() => shortcutAreaRef.current?.focus());
     }
@@ -2378,6 +2664,7 @@ function DictationMode({
   }, [feedback?.kind, onAdvance, check]);
 
   useEnterShortcut(handleEnter);
+  useAutoAdvanceOnCorrect(autoAdvanceReady, onAdvance);
 
   return (
     <div className="exerciseContent dictationContent" ref={shortcutAreaRef} tabIndex={-1}>
@@ -2400,6 +2687,7 @@ function DictationMode({
             setAnswer(event.target.value);
             setFeedback(null);
             setShowCorrectAnswer(false);
+            setAutoAdvanceReady(false);
           }}
           placeholder="Nhập bằng Hiragana/Katakana..."
           lang="ja"
@@ -2547,6 +2835,8 @@ function AudioMatchMode({
     window.addEventListener("keydown", handleKeyDown, true);
     return () => window.removeEventListener("keydown", handleKeyDown, true);
   }, [choose, done, onAdvance, options]);
+
+  useAutoAdvanceOnCorrect(selectedCorrect, onAdvance);
 
   const feedback: Feedback =
     selectedOption === null
@@ -2797,12 +3087,167 @@ function romajiToMixedKana(value: string) {
   });
 }
 
+type HanziCharacterData = {
+  strokes: string[];
+  medians: number[][][];
+  radStrokes?: number[];
+};
+
+const HANZI_WRITER_DATA_BASE_PATH = "/hanzi-writer-data";
+const hanziCharacterDataCache = new Map<string, Promise<HanziCharacterData>>();
+
+const JAPANESE_KANJI_DATA_ALIASES: Record<string, string[]> = {
+  会: ["會"],
+  体: ["體"],
+  写: ["寫"],
+  国: ["國"],
+  図: ["圖"],
+  学: ["學"],
+  広: ["廣"],
+  気: ["氣"],
+  点: ["點"],
+  発: ["發"],
+  売: ["賣"],
+  楽: ["樂"],
+  駅: ["驛"],
+  読: ["讀"],
+  雑: ["雜", "杂"],
+};
+
+function extractKanjiCharacters(value: string) {
+  return Array.from(new Set(value.match(/[\u3400-\u9fff]/gu) ?? []));
+}
+
+function buildKanjiWritingCandidates(value: string) {
+  const kanjiCharacters = extractKanjiCharacters(value);
+  const candidates: string[] = [];
+
+  for (const kanji of kanjiCharacters) {
+    candidates.push(kanji);
+    candidates.push(...(JAPANESE_KANJI_DATA_ALIASES[kanji] ?? []));
+  }
+
+  return Array.from(new Set(candidates));
+}
+
+function loadHanziCharacterData(char: string) {
+  const cached = hanziCharacterDataCache.get(char);
+  if (cached) return cached;
+
+  const request = fetch(
+    `${HANZI_WRITER_DATA_BASE_PATH}/${encodeURIComponent(char)}.json`,
+  )
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`No Hanzi Writer data for ${char}`);
+      }
+      return response.json() as Promise<HanziCharacterData>;
+    })
+    .catch((error) => {
+      hanziCharacterDataCache.delete(char);
+      throw error;
+    });
+
+  hanziCharacterDataCache.set(char, request);
+  return request;
+}
+
+function hanziWriterCharDataLoader(char: string) {
+  return loadHanziCharacterData(char);
+}
+
+function getKanjiAliasSet(kanji: string) {
+  const aliases = new Set([kanji, ...(JAPANESE_KANJI_DATA_ALIASES[kanji] ?? [])]);
+
+  for (const [original, variants] of Object.entries(JAPANESE_KANJI_DATA_ALIASES)) {
+    if (variants.includes(kanji)) {
+      aliases.add(original);
+      variants.forEach((variant) => aliases.add(variant));
+    }
+  }
+
+  return aliases;
+}
+
+function getKanjiStudyGuide(kanji: string, item: KanjiVocabularyItem): KanjiStudyGuide {
+  const guide = KANJI_STUDY_GUIDES[kanji];
+  if (guide) return guide;
+
+  return {
+    components: [
+      {
+        part: kanji || item.kanji,
+        meaning: "quan sát theo khối lớn, bộ bên trái/phải hoặc trên/dưới",
+      },
+    ],
+    mnemonic: `Hãy tự tách chữ ${kanji || item.kanji} thành 2–3 mảnh dễ nhớ, rồi bịa một câu chuyện thật ngốc nghếch gắn với nghĩa “${item.vietnamese}”. Câu càng buồn cười càng dễ nhớ.`,
+    on: [],
+    kun: item.kanji === kanji ? [item.reading] : [],
+  };
+}
+
+function getKanjiWordExamples(
+  kanji: string,
+  currentItem: KanjiVocabularyItem,
+  extraExamples: KanjiWordExample[] = [],
+) {
+  if (!kanji) return [];
+
+  const aliases = getKanjiAliasSet(kanji);
+  const seen = new Set<string>();
+  const allItems: KanjiWordExample[] = [
+    currentItem,
+    ...extraExamples,
+    ...Object.values(kanjiVocabulary).flat(),
+  ];
+
+  return allItems
+    .filter((word) => {
+      const characters = extractKanjiCharacters(word.kanji);
+      return characters.some((character) => aliases.has(character));
+    })
+    .sort((first, second) => {
+      const score = (word: KanjiWordExample) => {
+        if (word.kanji === currentItem.kanji) return 4;
+        if (word.kanji === kanji) return 3;
+        if (word.kanji.startsWith(kanji)) return 2;
+        return 1;
+      };
+      return score(second) - score(first);
+    })
+    .filter((word) => {
+      const key = `${word.kanji}-${word.reading}`;
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    })
+    .slice(0, 12);
+}
+
+type HanziWriterInstance = ReturnType<typeof HanziWriter.create>;
+
+function cleanupHanziWriter(
+  writer: HanziWriterInstance | null,
+  container?: HTMLElement | null,
+) {
+  try {
+    writer?.cancelQuiz();
+    void writer?.pauseAnimation();
+  } catch {
+    // Hanzi Writer cleanup is best-effort; the container reset below removes SVG nodes.
+  }
+
+  if (container) container.innerHTML = "";
+}
+
 function KanjiMode({
   sentence,
   sentences,
+  onAdvance,
 }: {
   sentence: Sentence;
   sentences: Sentence[];
+  onAdvance: () => void;
 }) {
   const [selectedId, setSelectedId] = useState<number | null>(null);
   const options = useMemo(() => {
@@ -2825,6 +3270,8 @@ function KanjiMode({
             kind: "error",
             message: "Chưa khớp với cách đọc Kana. Hãy đọc chậm từng từ và chọn lại.",
           };
+
+  useAutoAdvanceOnCorrect(correct, onAdvance);
 
   return (
     <div className="exerciseContent kanjiContent">
@@ -2864,9 +3311,11 @@ function KanjiMode({
 function KanjiWordMode({
   item,
   items,
+  onAdvance,
 }: {
   item: KanjiVocabularyItem;
   items: KanjiVocabularyItem[];
+  onAdvance: () => void;
 }) {
   const [selectedReading, setSelectedReading] = useState<string | null>(null);
   const options = useMemo(() => {
@@ -2889,6 +3338,8 @@ function KanjiWordMode({
             kind: "error",
             message: "Cách đọc này chưa đúng. Hãy chú ý âm ghép và âm ngắt nhỏ っ.",
           };
+
+  useAutoAdvanceOnCorrect(correct, onAdvance);
 
   return (
     <div className="exerciseContent kanjiWordContent">
@@ -2923,6 +3374,488 @@ function KanjiWordMode({
   );
 }
 
+function KanjiStudyPanel({
+  kanji,
+  guide,
+  wordExamples,
+}: {
+  kanji: string;
+  guide: KanjiStudyGuide;
+  wordExamples: KanjiWordExample[];
+}) {
+  return (
+    <section className="kanjiStudyPanel" aria-label={`Hồ sơ ghi nhớ Kanji ${kanji}`}>
+      <div className="kanjiStudyIntro">
+        <span className="promptLabel">HỒ SƠ GHI NHỚ</span>
+        <h3 lang="ja">{kanji}</h3>
+        <p>Tách nhỏ chữ, gắn hình ảnh, rồi đọc lại âm On/Kun cùng các từ thường gặp.</p>
+      </div>
+
+      <div className="kanjiStudyGrid">
+        <article className="kanjiStudyCard">
+          <span className="kanjiStudyLabel">Tách bộ thủ</span>
+          <h4>Chia thành mảnh nhỏ</h4>
+          <div className="kanjiComponentList">
+            {guide.components.map((component, index) => (
+              <span className="kanjiComponentPill" key={`${component.part}-${index}`}>
+                <strong lang="ja">{component.part}</strong>
+                <small>{component.meaning}</small>
+              </span>
+            ))}
+          </div>
+        </article>
+
+        <article className="kanjiStudyCard">
+          <span className="kanjiStudyLabel">Liên tưởng hình ảnh</span>
+          <h4>Câu chuyện nhớ nhanh</h4>
+          <p className="kanjiMnemonic">{guide.mnemonic}</p>
+        </article>
+
+        <article className="kanjiStudyCard">
+          <span className="kanjiStudyLabel">Âm đọc</span>
+          <h4>On/Kun</h4>
+          <div className="kanjiReadingGrid">
+            <div>
+              <strong>音読み · On</strong>
+              <p lang="ja">{guide.on.length ? guide.on.join("、") : "Đang bổ sung"}</p>
+            </div>
+            <div>
+              <strong>訓読み · Kun</strong>
+              <p lang="ja">{guide.kun.length ? guide.kun.join("、") : "Đang bổ sung"}</p>
+            </div>
+          </div>
+        </article>
+
+        <article className="kanjiStudyCard kanjiStudyWordsCard">
+          <span className="kanjiStudyLabel">Từ có Kanji này</span>
+          <h4>Nhiều ví dụ để gặp lại chữ</h4>
+          <div className="kanjiWordExampleList">
+            {wordExamples.map((word) => (
+              <span className="kanjiWordExample" key={`${word.kanji}-${word.reading}`}>
+                <strong lang="ja">{word.kanji}</strong>
+                <small lang="ja">{word.reading}</small>
+                <em>{word.vietnamese}</em>
+              </span>
+            ))}
+          </div>
+        </article>
+      </div>
+    </section>
+  );
+}
+
+function KanjiWritingMode({
+  item,
+  onAdvance,
+}: {
+  item: KanjiVocabularyItem;
+  items: KanjiVocabularyItem[];
+  onAdvance: () => void;
+}) {
+  const originalKanjiCharacters = useMemo(
+    () => extractKanjiCharacters(item.kanji),
+    [item.kanji],
+  );
+  const writingCandidates = useMemo(
+    () => buildKanjiWritingCandidates(item.kanji),
+    [item.kanji],
+  );
+  const primaryKanji = originalKanjiCharacters[0] ?? "";
+  const [writingMode, setWritingMode] = useState<"guided" | "free">("guided");
+  const [targetKanji, setTargetKanji] = useState("");
+  const [isWriterDataLoading, setIsWriterDataLoading] = useState(false);
+  const [guidedSuccess, setGuidedSuccess] = useState(false);
+  const [writerError, setWriterError] = useState<string | null>(null);
+  const [comparisonVisible, setComparisonVisible] = useState(false);
+  const guidedContainerRef = useRef<HTMLDivElement>(null);
+  const comparisonContainerRef = useRef<HTMLDivElement>(null);
+  const guidedWriterRef = useRef<HanziWriterInstance | null>(null);
+  const comparisonWriterRef = useRef<HanziWriterInstance | null>(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const drawingRef = useRef(false);
+  const lastPointRef = useRef<{ x: number; y: number } | null>(null);
+
+  const prepareCanvas = useCallback(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    const size = 300;
+    const ratio = window.devicePixelRatio || 1;
+    canvas.width = size * ratio;
+    canvas.height = size * ratio;
+    canvas.style.width = `${size}px`;
+    canvas.style.height = `${size}px`;
+
+    const context = canvas.getContext("2d");
+    if (!context) return;
+
+    context.setTransform(ratio, 0, 0, ratio, 0, 0);
+    context.clearRect(0, 0, size, size);
+    context.lineCap = "round";
+    context.lineJoin = "round";
+    context.lineWidth = 9;
+    context.strokeStyle =
+      getComputedStyle(document.documentElement).getPropertyValue("--ink").trim() ||
+      "#17211f";
+  }, []);
+
+  const clearCanvas = useCallback(() => {
+    prepareCanvas();
+    setComparisonVisible(false);
+    cleanupHanziWriter(comparisonWriterRef.current, comparisonContainerRef.current);
+    comparisonWriterRef.current = null;
+  }, [prepareCanvas]);
+
+  useEffect(() => {
+    let canceled = false;
+
+    setTargetKanji("");
+    setIsWriterDataLoading(writingCandidates.length > 0);
+    setGuidedSuccess(false);
+    setWriterError(null);
+    setComparisonVisible(false);
+    drawingRef.current = false;
+    lastPointRef.current = null;
+    cleanupHanziWriter(guidedWriterRef.current, guidedContainerRef.current);
+    cleanupHanziWriter(comparisonWriterRef.current, comparisonContainerRef.current);
+    guidedWriterRef.current = null;
+    comparisonWriterRef.current = null;
+    prepareCanvas();
+
+    if (writingCandidates.length === 0) {
+      setIsWriterDataLoading(false);
+      return () => {
+        canceled = true;
+      };
+    }
+
+    void (async () => {
+      for (const candidate of writingCandidates) {
+        try {
+          await loadHanziCharacterData(candidate);
+          if (canceled) return;
+          setTargetKanji(candidate);
+          setWriterError(null);
+          setIsWriterDataLoading(false);
+          return;
+        } catch {
+          // Try the next Kanji in the word, then known Japanese variant fallbacks.
+        }
+      }
+
+      if (!canceled) {
+        setIsWriterDataLoading(false);
+        setWriterError(
+          "Chưa có dữ liệu nét cho các chữ Kanji trong từ này. Bạn có thể bấm Câu tiếp để bỏ qua.",
+        );
+      }
+    })();
+
+    return () => {
+      canceled = true;
+    };
+  }, [prepareCanvas, writingCandidates]);
+
+  useEffect(() => {
+    if (writingMode !== "guided" || !targetKanji || !guidedContainerRef.current) {
+      return undefined;
+    }
+
+    let canceled = false;
+    setGuidedSuccess(false);
+    setWriterError(null);
+    cleanupHanziWriter(guidedWriterRef.current, guidedContainerRef.current);
+    const styles = getComputedStyle(document.documentElement);
+    const strokeColor = styles.getPropertyValue("--ink").trim() || "#17211f";
+    const outlineColor = styles.getPropertyValue("--muted").trim() || "#d4c8b6";
+    const highlightColor = styles.getPropertyValue("--coral").trim() || "#ef715e";
+
+    const writer = HanziWriter.create(guidedContainerRef.current, targetKanji, {
+      width: 300,
+      height: 300,
+      padding: 12,
+      showOutline: true,
+      showCharacter: false,
+      strokeColor,
+      outlineColor,
+      highlightColor,
+      drawingColor: strokeColor,
+      charDataLoader: hanziWriterCharDataLoader,
+      onLoadCharDataError: () => {
+        if (!canceled) {
+          setWriterError("Chưa có dữ liệu nét local cho Kanji này. Hãy thử Câu tiếp.");
+        }
+      },
+    });
+
+    guidedWriterRef.current = writer;
+    void writer.quiz({
+      showHintAfterMisses: 2,
+      highlightOnComplete: true,
+      onComplete: () => {
+        if (!canceled) setGuidedSuccess(true);
+      },
+    });
+
+    return () => {
+      canceled = true;
+      cleanupHanziWriter(writer, guidedContainerRef.current);
+      if (guidedWriterRef.current === writer) guidedWriterRef.current = null;
+    };
+  }, [targetKanji, writingMode]);
+
+  useEffect(() => {
+    if (writingMode === "free") {
+      window.requestAnimationFrame(prepareCanvas);
+      cleanupHanziWriter(guidedWriterRef.current, guidedContainerRef.current);
+      guidedWriterRef.current = null;
+    } else {
+      cleanupHanziWriter(comparisonWriterRef.current, comparisonContainerRef.current);
+      comparisonWriterRef.current = null;
+      setComparisonVisible(false);
+    }
+  }, [prepareCanvas, writingMode]);
+
+  useAutoAdvanceOnCorrect(guidedSuccess && writingMode === "guided", onAdvance);
+
+  const getCanvasPoint = (event: ReactPointerEvent<HTMLCanvasElement>) => {
+    const canvas = canvasRef.current;
+    if (!canvas) return null;
+
+    const rect = canvas.getBoundingClientRect();
+    return {
+      x: event.clientX - rect.left,
+      y: event.clientY - rect.top,
+    };
+  };
+
+  const drawToPoint = (point: { x: number; y: number }) => {
+    const canvas = canvasRef.current;
+    const previous = lastPointRef.current;
+    const context = canvas?.getContext("2d");
+    if (!context || !previous) return;
+
+    context.beginPath();
+    context.moveTo(previous.x, previous.y);
+    context.lineTo(point.x, point.y);
+    context.stroke();
+    lastPointRef.current = point;
+  };
+
+  const startDrawing = (event: ReactPointerEvent<HTMLCanvasElement>) => {
+    const point = getCanvasPoint(event);
+    if (!point) return;
+
+    event.currentTarget.setPointerCapture(event.pointerId);
+    drawingRef.current = true;
+    lastPointRef.current = point;
+    setComparisonVisible(false);
+  };
+
+  const continueDrawing = (event: ReactPointerEvent<HTMLCanvasElement>) => {
+    if (!drawingRef.current) return;
+    const point = getCanvasPoint(event);
+    if (point) drawToPoint(point);
+  };
+
+  const stopDrawing = (event: ReactPointerEvent<HTMLCanvasElement>) => {
+    if (event.currentTarget.hasPointerCapture(event.pointerId)) {
+      event.currentTarget.releasePointerCapture(event.pointerId);
+    }
+    drawingRef.current = false;
+    lastPointRef.current = null;
+  };
+
+  const checkFreeWriting = () => {
+    if (!targetKanji || !comparisonContainerRef.current) return;
+
+    setComparisonVisible(true);
+    setWriterError(null);
+    cleanupHanziWriter(comparisonWriterRef.current, comparisonContainerRef.current);
+    const styles = getComputedStyle(document.documentElement);
+    const strokeColor = styles.getPropertyValue("--ink").trim() || "#17211f";
+    const outlineColor = styles.getPropertyValue("--muted").trim() || "#d4c8b6";
+    const highlightColor = styles.getPropertyValue("--coral").trim() || "#ef715e";
+
+    const writer = HanziWriter.create(comparisonContainerRef.current, targetKanji, {
+      width: 300,
+      height: 300,
+      padding: 12,
+      showOutline: true,
+      showCharacter: false,
+      strokeColor,
+      outlineColor,
+      highlightColor,
+      strokeAnimationSpeed: 1.15,
+      delayBetweenStrokes: 240,
+      charDataLoader: hanziWriterCharDataLoader,
+      onLoadCharDataError: () =>
+        setWriterError("Chưa có dữ liệu nét local cho Kanji này. Hãy thử Câu tiếp."),
+    });
+
+    comparisonWriterRef.current = writer;
+    void writer.animateCharacter();
+  };
+
+  const targetIsOriginalKanji = originalKanjiCharacters.includes(targetKanji);
+  const fallbackNotice =
+    targetKanji && primaryKanji && targetKanji !== primaryKanji
+      ? targetIsOriginalKanji
+        ? `Chữ ${primaryKanji} chưa có dữ liệu nét, app đang chuyển sang luyện chữ ${targetKanji} trong cùng từ ${item.kanji}.`
+        : `Chữ ${primaryKanji} chưa có dữ liệu nét, app đang dùng biến thể ${targetKanji} để tham khảo thứ tự nét.`
+      : null;
+  const studyKanji =
+    targetKanji && targetIsOriginalKanji ? targetKanji : primaryKanji || targetKanji;
+  const studyGuide = useMemo(
+    () => getKanjiStudyGuide(studyKanji, item),
+    [item.kanji, item.reading, item.vietnamese, studyKanji],
+  );
+  const relatedKanjiWords = useMemo(
+    () => getKanjiWordExamples(studyKanji, item, studyGuide.examples),
+    [item.kanji, item.reading, item.vietnamese, studyGuide.examples, studyKanji],
+  );
+
+  if (!primaryKanji) {
+    return (
+      <div className="exerciseContent kanjiWritingContent">
+        <div className="emptyPractice">
+          <span className="emptyGlyph">筆</span>
+          <h2>Không có Kanji để luyện viết</h2>
+          <p>Từ này không chứa ký tự Kanji. Hãy chọn mục khác trong bài.</p>
+          <button className="secondaryButton" type="button" onClick={onAdvance}>
+            Câu tiếp <ArrowIcon />
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  if (!targetKanji) {
+    return (
+      <div className="exerciseContent kanjiWritingContent">
+        <div className="emptyPractice">
+          <span className="emptyGlyph">筆</span>
+          <h2>{isWriterDataLoading ? "Đang chuẩn bị nét chữ" : "Chưa có dữ liệu nét"}</h2>
+          <p>
+            {isWriterDataLoading
+              ? `Đang tải dữ liệu nét cho ${item.kanji}.`
+              : writerError ?? "Thư viện chưa có dữ liệu nét cho từ này."}
+          </p>
+          <button className="secondaryButton" type="button" onClick={onAdvance}>
+            Câu tiếp <ArrowIcon />
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="exerciseContent kanjiWritingContent">
+      <div className="kanjiWritingHeader">
+        <div>
+          <span className="promptLabel">LUYỆN VIẾT KANJI</span>
+          <h2>{writingMode === "guided" ? "Luyện viết theo nét" : "Tự do chắp bút"}</h2>
+          <p>
+            {writingMode === "guided"
+              ? `Tô theo outline của chữ ${targetKanji} đúng thứ tự nét.`
+              : "Nhìn cách đọc và nghĩa, tự nhớ Kanji rồi viết vào ô bên dưới."}
+          </p>
+        </div>
+        <div className="kanjiWritingTabs" role="group" aria-label="Chọn kiểu luyện viết Kanji">
+          <button
+            type="button"
+            className={writingMode === "guided" ? "active" : ""}
+            onClick={() => setWritingMode("guided")}
+          >
+            Theo nét
+          </button>
+          <button
+            type="button"
+            className={writingMode === "free" ? "active" : ""}
+            onClick={() => setWritingMode("free")}
+          >
+            Tự viết mù
+          </button>
+        </div>
+      </div>
+
+      <div className="kanjiWritingMeta">
+        {writingMode === "guided" && <strong lang="ja">{targetKanji}</strong>}
+        {writingMode === "guided" && item.kanji !== targetKanji && <span lang="ja">{item.kanji}</span>}
+        <span lang="ja">{item.reading}</span>
+        <small>{item.vietnamese}</small>
+      </div>
+      {writingMode === "guided" && fallbackNotice && (
+        <p className="kanjiWritingNotice">{fallbackNotice}</p>
+      )}
+
+      {writingMode === "guided" ? (
+        <div className="kanjiWritingStage">
+          <div className="kanjiNotebookCell">
+            <div ref={guidedContainerRef} className="hanziWriterMount" />
+          </div>
+          <div className="kanjiWritingHelp">
+            <span>MODE A</span>
+            <h3>Luyện theo nét</h3>
+            <p>Viết theo thứ tự nét. Nếu sai, app sẽ gợi ý nét đúng sau vài lần thử.</p>
+            {guidedSuccess && (
+              <div className="feedback success">
+                <strong>Hoàn thành!</strong>
+                <span>Tự chuyển sang Kanji tiếp theo sau 800ms.</span>
+              </div>
+            )}
+            {writerError && (
+              <div className="feedback error">
+                <strong>Lỗi dữ liệu nét.</strong>
+                <span>{writerError}</span>
+              </div>
+            )}
+          </div>
+        </div>
+      ) : (
+        <div className="kanjiWritingStage freeWritingStage">
+          <div className="kanjiNotebookCell">
+            <canvas
+              ref={canvasRef}
+              className="kanjiFreeCanvas"
+              width={300}
+              height={300}
+              onPointerDown={startDrawing}
+              onPointerMove={continueDrawing}
+              onPointerUp={stopDrawing}
+              onPointerCancel={stopDrawing}
+              aria-label="Bảng viết Kanji tự do"
+            />
+          </div>
+          <div className={`kanjiNotebookCell answerCell ${comparisonVisible ? "visible" : ""}`}>
+            <div ref={comparisonContainerRef} className="hanziWriterMount" />
+            {!comparisonVisible && <span className="comparisonPlaceholder">Đáp án đúng sẽ hiện ở đây</span>}
+          </div>
+          <div className="kanjiWritingActions">
+            <button className="checkButton" type="button" onClick={checkFreeWriting}>
+              Kiểm tra đáp án <span>↵</span>
+            </button>
+            <button className="answerButton" type="button" onClick={clearCanvas}>
+              Xóa bảng <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          {writerError && (
+            <div className="feedback error">
+              <strong>Lỗi dữ liệu nét.</strong>
+              <span>{writerError}</span>
+            </div>
+          )}
+        </div>
+      )}
+      <KanjiStudyPanel
+        kanji={studyKanji}
+        guide={studyGuide}
+        wordExamples={relatedKanjiWords}
+      />
+    </div>
+  );
+}
+
 function buildVocabularyItems(sentences: Sentence[]) {
   const seen = new Set<string>();
   const items: VocabularyQuizItem[] = [];
@@ -2947,9 +3880,11 @@ function buildVocabularyItems(sentences: Sentence[]) {
 function VocabularyMode({
   item,
   items,
+  onAdvance,
 }: {
   item: VocabularyQuizItem;
   items: VocabularyQuizItem[];
+  onAdvance: () => void;
 }) {
   const [selectedMeaning, setSelectedMeaning] = useState<string | null>(null);
   const options = useMemo(() => {
@@ -2975,6 +3910,8 @@ function VocabularyMode({
             kind: "error",
             message: "Nghĩa này chưa đúng. Hãy nhớ lại ngữ cảnh của cụm từ trong bài.",
           };
+
+  useAutoAdvanceOnCorrect(selectedMeaning === item.vietnamese, onAdvance);
 
   return (
     <div className="exerciseContent vocabularyContent">
@@ -3009,7 +3946,13 @@ function VocabularyMode({
   );
 }
 
-function GrammarMode({ point }: { point: GrammarPoint }) {
+function GrammarMode({
+  point,
+  onAdvance,
+}: {
+  point: GrammarPoint;
+  onAdvance: () => void;
+}) {
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const feedback: Feedback =
     selectedAnswer === null
@@ -3023,6 +3966,8 @@ function GrammarMode({ point }: { point: GrammarPoint }) {
             kind: "error",
             message: `Hãy xem lại công thức ${point.pattern} rồi chọn lại.`,
           };
+
+  useAutoAdvanceOnCorrect(selectedAnswer === point.answer, onAdvance);
 
   return (
     <div className="exerciseContent grammarContent">
@@ -3277,6 +4222,8 @@ function N5ConjugationScreen({ onBack }: { onBack: () => void }) {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [choices, chooseAnswer, feedback, index, rulesOpen, total]);
 
+  useAutoAdvanceOnCorrect(feedback?.kind === "success" && index < total - 1, next);
+
   return (
     <main className="practicePage jlptRunnerPage">
       <div className="practiceHeader">
@@ -3297,6 +4244,7 @@ function N5ConjugationScreen({ onBack }: { onBack: () => void }) {
           <div className="practiceProgress">
             <span>Luyện tập</span>
             <strong>{index + 1} / {total}</strong>
+            <ProgressBar current={index} total={total} />
           </div>
         </div>
       </div>
@@ -3582,6 +4530,7 @@ function JlptTestRunner({
         <div className="practiceProgress">
           <span>{test.durationMinutes} PHÚT</span>
           <strong>{index + 1} / {test.questions.length}</strong>
+          <ProgressBar current={index} total={test.questions.length} />
         </div>
       </div>
       <section className="practiceCard jlptQuestionCard">
@@ -3744,6 +4693,7 @@ function QuestionWordsScreen({ onBack }: { onBack: () => void }) {
         <div className="practiceProgress">
           <span>BÀI ĐẶC BIỆT</span>
           <strong>{index + 1} / {questionWordItems.length}</strong>
+          <ProgressBar current={index} total={questionWordItems.length} />
         </div>
       </div>
       <section className="practiceCard question">
@@ -3794,13 +4744,11 @@ function PracticeScreen({
   modeId,
   onBack,
   showFurigana,
-  onToggleFurigana,
 }: {
   lesson: Lesson;
   modeId: ModeId;
   onBack: () => void;
   showFurigana: boolean;
-  onToggleFurigana: () => void;
 }) {
   const mode = modes.find((item) => item.id === modeId) ?? modes[0];
   const [sentences, setSentences] = useState<Sentence[]>([]);
@@ -3848,6 +4796,8 @@ function PracticeScreen({
         ? audioMatchChunks.length
       : modeId === "kanji-words"
         ? kanjiWords.length
+      : modeId === "kanji-writing"
+        ? kanjiWords.length
         : modeId === "vocabulary"
           ? vocabularyItems.length
           : modeId === "grammar"
@@ -3882,8 +4832,6 @@ function PracticeScreen({
         current={index}
         total={total}
         onBack={onBack}
-        showFurigana={showFurigana}
-        onToggleFurigana={onToggleFurigana}
       />
       <section className={`practiceCard ${mode.accent}`}>
         {loading ? (
@@ -3940,6 +4888,7 @@ function PracticeScreen({
                 key={activeSentences[displayedIndex].id}
                 sentence={activeSentences[displayedIndex]}
                 sentences={activeSentences}
+                onAdvance={next}
               />
             )}
             {modeId === "kanji-words" && (
@@ -3947,6 +4896,15 @@ function PracticeScreen({
                 key={`${lesson.id}-${kanjiWords[displayedIndex].kanji}`}
                 item={kanjiWords[displayedIndex]}
                 items={kanjiWords}
+                onAdvance={next}
+              />
+            )}
+            {modeId === "kanji-writing" && (
+              <KanjiWritingMode
+                key={`${lesson.id}-${kanjiWords[displayedIndex].kanji}-writing`}
+                item={kanjiWords[displayedIndex]}
+                items={kanjiWords}
+                onAdvance={next}
               />
             )}
             {modeId === "vocabulary" && (
@@ -3954,12 +4912,14 @@ function PracticeScreen({
                 key={`${lesson.id}-${vocabularyItems[displayedIndex].id}`}
                 item={vocabularyItems[displayedIndex]}
                 items={vocabularyItems}
+                onAdvance={next}
               />
             )}
             {modeId === "grammar" && (
               <GrammarMode
                 key={`${lesson.id}-${displayedIndex}`}
                 point={lessonGrammarPoints[displayedIndex]}
+                onAdvance={next}
               />
             )}
             <ExerciseNav index={index} total={total} onPrevious={previous} onNext={next} onShuffle={shufflePractice} />
@@ -4226,6 +5186,55 @@ function ReviewScreen({ lesson, onBack }: { lesson: Lesson; onBack: () => void }
     });
   }, [lesson.id]);
 
+  const currentItem = items[currentIndex] ?? null;
+
+  const handleRate = useCallback((quality: number) => {
+    if (!currentItem) return;
+
+    updateSRSItem(currentItem.id, quality);
+    setShowAnswer(false);
+    setCurrentIndex((current) => current + 1);
+  }, [currentItem]);
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (
+        !currentItem ||
+        isTextEntryTarget(event.target) ||
+        event.shiftKey ||
+        event.altKey ||
+        event.ctrlKey ||
+        event.metaKey ||
+        event.isComposing ||
+        event.keyCode === 229
+      ) {
+        return;
+      }
+
+      if (!showAnswer && (event.key === " " || event.key === "Enter")) {
+        event.preventDefault();
+        setShowAnswer(true);
+        return;
+      }
+
+      if (!showAnswer) return;
+
+      if (event.key === "1") {
+        event.preventDefault();
+        handleRate(1);
+      } else if (event.key === "2") {
+        event.preventDefault();
+        handleRate(3);
+      } else if (event.key === "3") {
+        event.preventDefault();
+        handleRate(5);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown, true);
+    return () => window.removeEventListener("keydown", handleKeyDown, true);
+  }, [currentItem, handleRate, showAnswer]);
+
   if (loading) return <main className="practicePage"><div className="loadingState"><span /><p>Đang chuẩn bị bài luyện…</p></div></main>;
 
   if (items.length === 0 || currentIndex >= items.length) {
@@ -4240,13 +5249,7 @@ function ReviewScreen({ lesson, onBack }: { lesson: Lesson; onBack: () => void }
     );
   }
 
-  const currentItem = items[currentIndex];
-
-  const handleRate = (quality: number) => {
-    updateSRSItem(currentItem.id, quality);
-    setShowAnswer(false);
-    setCurrentIndex(currentIndex + 1);
-  };
+  if (!currentItem) return null;
 
   return (
     <main className="practicePage">
@@ -4257,24 +5260,38 @@ function ReviewScreen({ lesson, onBack }: { lesson: Lesson; onBack: () => void }
         <div className="practiceProgress">
           <span>Ôn tập</span>
           <strong>{currentIndex + 1} / {items.length}</strong>
+          <ProgressBar current={currentIndex} total={items.length} />
         </div>
       </div>
-      <section className="practiceCard mint">
-        <div className="exerciseContent vocabularyContent">
-          <div className="vocabularyPrompt">
-            <span className="promptLabel">ÔN TẬP {currentItem.type === "vocab" ? "TỪ VỰNG" : "CÂU"}</span>
-            <strong lang="ja">{currentItem.front}</strong>
-          </div>
-          {showAnswer ? (
-            <div className="vocabularyOptions" style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-              <div style={{ fontSize: '1.2rem', textAlign: 'center', color: '#10b981', fontWeight: 'bold' }}>
-                {currentItem.back}
+      <section className="practiceCard mint reviewPracticeCard">
+        <div className={`reviewFlipCard ${showAnswer ? "isFlipped" : ""}`}>
+          <div className="reviewFlipInner">
+            <div className="reviewFlipFace reviewFlipFront">
+              <div className="vocabularyPrompt">
+                <span className="promptLabel">ÔN TẬP {currentItem.type === "vocab" ? "TỪ VỰNG" : "CÂU"}</span>
+                <strong lang="ja">{currentItem.front}</strong>
+              </div>
+              <button
+                className="primaryButton reviewRevealButton"
+                type="button"
+                onClick={() => setShowAnswer(true)}
+                tabIndex={showAnswer ? -1 : 0}
+              >
+                Hiện đáp án
+              </button>
+            </div>
+            <div className="reviewFlipFace reviewFlipBack">
+              <div className="vocabularyPrompt reviewBackPrompt">
+                <span className="promptLabel">ĐÁP ÁN</span>
+                <strong lang="ja">{currentItem.front}</strong>
+                <p className="reviewAnswerText">{currentItem.back}</p>
               </div>
               <div className="reviewRatingActions">
                 <button
                   className="reviewRatingButton forgot"
                   type="button"
                   onClick={() => handleRate(1)}
+                  tabIndex={showAnswer ? 0 : -1}
                 >
                   Quên <small>Lặp lại ngay</small>
                 </button>
@@ -4282,6 +5299,7 @@ function ReviewScreen({ lesson, onBack }: { lesson: Lesson; onBack: () => void }
                   className="reviewRatingButton hard"
                   type="button"
                   onClick={() => handleRate(3)}
+                  tabIndex={showAnswer ? 0 : -1}
                 >
                   Khó
                 </button>
@@ -4289,16 +5307,13 @@ function ReviewScreen({ lesson, onBack }: { lesson: Lesson; onBack: () => void }
                   className="reviewRatingButton easy"
                   type="button"
                   onClick={() => handleRate(5)}
+                  tabIndex={showAnswer ? 0 : -1}
                 >
                   Dễ <small>Nhớ lâu</small>
                 </button>
               </div>
             </div>
-          ) : (
-            <div style={{ display: 'flex', justifyContent: 'center', marginTop: '40px' }}>
-              <button className="primaryButton" onClick={() => setShowAnswer(true)}>Hiện đáp án</button>
-            </div>
-          )}
+          </div>
         </div>
       </section>
     </main>
@@ -4311,8 +5326,37 @@ export function LearningApp() {
   const [questionWordsOpen, setQuestionWordsOpen] = useState(false);
   const [jlptPracticeOpen, setJlptPracticeOpen] = useState(false);
   const [n5ConjugationOpen, setN5ConjugationOpen] = useState(false);
+  const [theme, setTheme] = useState<ThemeMode>("light");
+  const [themePreferenceReady, setThemePreferenceReady] = useState(false);
   const [showFurigana, setShowFurigana] = useState(true);
   const [furiganaPreferenceReady, setFuriganaPreferenceReady] = useState(false);
+
+  useEffect(() => {
+    try {
+      const storedTheme = window.localStorage.getItem("manabu-theme");
+      if (storedTheme === "light" || storedTheme === "dark") {
+        setTheme(storedTheme);
+      } else if (window.matchMedia?.("(prefers-color-scheme: dark)").matches) {
+        setTheme("dark");
+      }
+    } catch {
+      setTheme("light");
+    }
+
+    setThemePreferenceReady(true);
+  }, []);
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+
+    if (!themePreferenceReady) return;
+
+    try {
+      window.localStorage.setItem("manabu-theme", theme);
+    } catch {
+      // Theme is a visual preference; the app works normally without storage.
+    }
+  }, [theme, themePreferenceReady]);
 
   useEffect(() => {
     try {
@@ -4349,10 +5393,18 @@ export function LearningApp() {
   };
 
   return (
-    <div className="appShell">
+    <div className="appShell" data-theme={theme}>
       <div className="ambient ambientOne" />
       <div className="ambient ambientTwo" />
-      <AppHeader onHome={goHome} />
+      <AppHeader
+        onHome={goHome}
+        theme={theme}
+        onToggleTheme={() =>
+          setTheme((current) => (current === "dark" ? "light" : "dark"))
+        }
+        showFurigana={showFurigana}
+        onToggleFurigana={() => setShowFurigana((current) => !current)}
+      />
       <AiChatBox lesson={lesson} />
       {!lesson && !questionWordsOpen && !jlptPracticeOpen && !n5ConjugationOpen && (
         <Dashboard
@@ -4381,7 +5433,6 @@ export function LearningApp() {
           modeId={mode}
           onBack={() => setMode(null)}
           showFurigana={showFurigana}
-          onToggleFurigana={() => setShowFurigana((current) => !current)}
         />
       )}
       <footer>
