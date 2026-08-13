@@ -109,6 +109,60 @@ type GrammarPoint = {
   choices: string[];
 };
 
+type N5ConjugationItem = {
+  verb: string;
+  meaning: string;
+  group: string;
+  targetForm: string;
+  instruction: string;
+  answer: string;
+  choices: string[];
+  note: string;
+};
+
+type N5VerbGroup = "Nhóm 1" | "Nhóm 2" | "Nhóm 3";
+
+type N5VerbEntry = {
+  dictionary: string;
+  masu: string;
+  meaning: string;
+  group: N5VerbGroup;
+  note?: string;
+};
+
+type N5VerbFormKey =
+  | "て形"
+  | "た形"
+  | "ない形"
+  | "辞書形"
+  | "ます形"
+  | "ません形"
+  | "ました形"
+  | "ませんでした形"
+  | "てください"
+  | "てもいいです"
+  | "てはいけません"
+  | "ています"
+  | "ないでください";
+
+type N5VerbForms = Record<N5VerbFormKey, string>;
+
+type N5AdjectiveEntry = {
+  word: string;
+  meaning: string;
+  kind: "Tính từ い" | "Tính từ な";
+  note?: string;
+};
+
+type N5AdjectiveFormKey =
+  | "丁寧形"
+  | "否定形"
+  | "過去形"
+  | "て形"
+  | "名詞修飾";
+
+type N5AdjectiveForms = Partial<Record<N5AdjectiveFormKey, string>>;
+
 type AiChatRole = "user" | "assistant";
 
 type AiChatMessage = {
@@ -648,6 +702,489 @@ const questionWordItems: QuestionWordItem[] = [
   { answer: "どのくらい", meaning: "bao lâu", sentence: "にほんに ＿＿＿いますか。", vietnamese: "Bạn sẽ ở Nhật bao lâu?", note: "どのくらい hỏi độ dài của khoảng thời gian." },
 ];
 
+const n5VerbTargets: Array<{ key: N5VerbFormKey; instruction: string }> = [
+  { key: "て形", instruction: "Chia sang thể て" },
+  { key: "た形", instruction: "Chia sang thể た" },
+  { key: "ない形", instruction: "Chia sang thể ない" },
+  { key: "辞書形", instruction: "Chia sang thể từ điển" },
+  { key: "ます形", instruction: "Chia sang thể ます" },
+  { key: "ません形", instruction: "Chia sang thể phủ định lịch sự" },
+  { key: "ました形", instruction: "Chia sang thể quá khứ lịch sự" },
+  { key: "ませんでした形", instruction: "Chia sang thể phủ định quá khứ lịch sự" },
+  { key: "てください", instruction: "Nói yêu cầu lịch sự ～てください" },
+  { key: "てもいいです", instruction: "Nói xin phép/cho phép ～てもいいです" },
+  { key: "てはいけません", instruction: "Nói cấm đoán ～てはいけません" },
+  { key: "ています", instruction: "Nói hành động đang diễn ra ～ています" },
+  { key: "ないでください", instruction: "Nói yêu cầu không làm ～ないでください" },
+];
+
+const n5AdjectiveTargets: Array<{ key: N5AdjectiveFormKey; instruction: string }> = [
+  { key: "丁寧形", instruction: "Chia sang dạng lịch sự" },
+  { key: "否定形", instruction: "Chia sang dạng phủ định" },
+  { key: "過去形", instruction: "Chia sang dạng quá khứ" },
+  { key: "て形", instruction: "Chia sang dạng nối て/で" },
+  { key: "名詞修飾", instruction: "Chia sang dạng bổ nghĩa danh từ" },
+];
+
+const n5CoreVerbEntries: N5VerbEntry[] = [
+  { dictionary: "あう", masu: "あいます", meaning: "gặp", group: "Nhóm 1" },
+  { dictionary: "あく", masu: "あきます", meaning: "mở", group: "Nhóm 1" },
+  { dictionary: "あける", masu: "あけます", meaning: "mở cái gì đó", group: "Nhóm 2" },
+  { dictionary: "あそぶ", masu: "あそびます", meaning: "chơi", group: "Nhóm 1" },
+  { dictionary: "あびる", masu: "あびます", meaning: "tắm", group: "Nhóm 2" },
+  { dictionary: "ある", masu: "あります", meaning: "có, tồn tại", group: "Nhóm 1", note: "ある có phủ định đặc biệt: ない / ありません." },
+  { dictionary: "あるく", masu: "あるきます", meaning: "đi bộ", group: "Nhóm 1" },
+  { dictionary: "いう", masu: "いいます", meaning: "nói", group: "Nhóm 1" },
+  { dictionary: "いく", masu: "いきます", meaning: "đi", group: "Nhóm 1", note: "行く là ngoại lệ ở て形/た形: いって / いった." },
+  { dictionary: "いる", masu: "いります", meaning: "cần", group: "Nhóm 1" },
+  { dictionary: "いる", masu: "います", meaning: "có, ở", group: "Nhóm 2" },
+  { dictionary: "いれる", masu: "いれます", meaning: "cho vào", group: "Nhóm 2" },
+  { dictionary: "うたう", masu: "うたいます", meaning: "hát", group: "Nhóm 1" },
+  { dictionary: "うまれる", masu: "うまれます", meaning: "được sinh ra", group: "Nhóm 2" },
+  { dictionary: "うる", masu: "うります", meaning: "bán", group: "Nhóm 1" },
+  { dictionary: "おきる", masu: "おきます", meaning: "thức dậy", group: "Nhóm 2" },
+  { dictionary: "おく", masu: "おきます", meaning: "đặt, để", group: "Nhóm 1" },
+  { dictionary: "おくる", masu: "おくります", meaning: "gửi", group: "Nhóm 1" },
+  { dictionary: "おす", masu: "おします", meaning: "ấn, đẩy", group: "Nhóm 1" },
+  { dictionary: "おぼえる", masu: "おぼえます", meaning: "nhớ, học thuộc", group: "Nhóm 2" },
+  { dictionary: "およぐ", masu: "およぎます", meaning: "bơi", group: "Nhóm 1" },
+  { dictionary: "おりる", masu: "おります", meaning: "xuống xe", group: "Nhóm 2" },
+  { dictionary: "おわる", masu: "おわります", meaning: "kết thúc", group: "Nhóm 1" },
+  { dictionary: "かう", masu: "かいます", meaning: "mua", group: "Nhóm 1" },
+  { dictionary: "かえす", masu: "かえします", meaning: "trả lại", group: "Nhóm 1" },
+  { dictionary: "かえる", masu: "かえります", meaning: "về", group: "Nhóm 1" },
+  { dictionary: "かかる", masu: "かかります", meaning: "mất, tốn", group: "Nhóm 1" },
+  { dictionary: "かく", masu: "かきます", meaning: "viết", group: "Nhóm 1" },
+  { dictionary: "かす", masu: "かします", meaning: "cho mượn", group: "Nhóm 1" },
+  { dictionary: "かぶる", masu: "かぶります", meaning: "đội mũ", group: "Nhóm 1" },
+  { dictionary: "かりる", masu: "かります", meaning: "mượn", group: "Nhóm 2" },
+  { dictionary: "きえる", masu: "きえます", meaning: "tắt, biến mất", group: "Nhóm 2" },
+  { dictionary: "きく", masu: "ききます", meaning: "nghe, hỏi", group: "Nhóm 1" },
+  { dictionary: "きる", masu: "きります", meaning: "cắt", group: "Nhóm 1" },
+  { dictionary: "きる", masu: "きます", meaning: "mặc", group: "Nhóm 2", note: "着ます đọc giống 来ます nhưng chia khác: きない, きて." },
+  { dictionary: "くる", masu: "きます", meaning: "đến", group: "Nhóm 3", note: "来る là bất quy tắc: きます, きて, こない." },
+  { dictionary: "けす", masu: "けします", meaning: "tắt, xóa", group: "Nhóm 1" },
+  { dictionary: "こたえる", masu: "こたえます", meaning: "trả lời", group: "Nhóm 2" },
+  { dictionary: "しぬ", masu: "しにます", meaning: "chết", group: "Nhóm 1" },
+  { dictionary: "しめる", masu: "しめます", meaning: "đóng", group: "Nhóm 2" },
+  { dictionary: "しる", masu: "しります", meaning: "biết", group: "Nhóm 1" },
+  { dictionary: "する", masu: "します", meaning: "làm", group: "Nhóm 3", note: "する là bất quy tắc: します, して, しない." },
+  { dictionary: "すう", masu: "すいます", meaning: "hút", group: "Nhóm 1" },
+  { dictionary: "すむ", masu: "すみます", meaning: "sống, cư trú", group: "Nhóm 1" },
+  { dictionary: "すわる", masu: "すわります", meaning: "ngồi", group: "Nhóm 1" },
+  { dictionary: "だす", masu: "だします", meaning: "lấy ra, nộp", group: "Nhóm 1" },
+  { dictionary: "たつ", masu: "たちます", meaning: "đứng", group: "Nhóm 1" },
+  { dictionary: "たべる", masu: "たべます", meaning: "ăn", group: "Nhóm 2" },
+  { dictionary: "ちがう", masu: "ちがいます", meaning: "khác, sai", group: "Nhóm 1" },
+  { dictionary: "つかう", masu: "つかいます", meaning: "dùng", group: "Nhóm 1" },
+  { dictionary: "つかれる", masu: "つかれます", meaning: "mệt", group: "Nhóm 2" },
+  { dictionary: "つく", masu: "つきます", meaning: "đến nơi, bật sáng", group: "Nhóm 1" },
+  { dictionary: "つくる", masu: "つくります", meaning: "làm, chế tạo", group: "Nhóm 1" },
+  { dictionary: "つける", masu: "つけます", meaning: "bật, gắn", group: "Nhóm 2" },
+  { dictionary: "つとめる", masu: "つとめます", meaning: "làm việc cho", group: "Nhóm 2" },
+  { dictionary: "でかける", masu: "でかけます", meaning: "ra ngoài", group: "Nhóm 2" },
+  { dictionary: "できる", masu: "できます", meaning: "có thể", group: "Nhóm 2" },
+  { dictionary: "でる", masu: "でます", meaning: "ra, xuất hiện", group: "Nhóm 2" },
+  { dictionary: "とる", masu: "とります", meaning: "chụp, lấy", group: "Nhóm 1" },
+  { dictionary: "とまる", masu: "とまります", meaning: "dừng, ở trọ", group: "Nhóm 1" },
+  { dictionary: "なく", masu: "なきます", meaning: "khóc", group: "Nhóm 1" },
+  { dictionary: "なくす", masu: "なくします", meaning: "làm mất", group: "Nhóm 1" },
+  { dictionary: "ならう", masu: "ならいます", meaning: "học", group: "Nhóm 1" },
+  { dictionary: "なる", masu: "なります", meaning: "trở thành", group: "Nhóm 1" },
+  { dictionary: "ぬぐ", masu: "ぬぎます", meaning: "cởi", group: "Nhóm 1" },
+  { dictionary: "ねる", masu: "ねます", meaning: "ngủ", group: "Nhóm 2" },
+  { dictionary: "のぼる", masu: "のぼります", meaning: "leo", group: "Nhóm 1" },
+  { dictionary: "のむ", masu: "のみます", meaning: "uống", group: "Nhóm 1" },
+  { dictionary: "はいる", masu: "はいります", meaning: "vào", group: "Nhóm 1" },
+  { dictionary: "はく", masu: "はきます", meaning: "đi giày, mặc đồ dưới", group: "Nhóm 1" },
+  { dictionary: "はじまる", masu: "はじまります", meaning: "bắt đầu", group: "Nhóm 1" },
+  { dictionary: "はしる", masu: "はしります", meaning: "chạy", group: "Nhóm 1" },
+  { dictionary: "はたらく", masu: "はたらきます", meaning: "làm việc", group: "Nhóm 1" },
+  { dictionary: "はなす", masu: "はなします", meaning: "nói chuyện", group: "Nhóm 1" },
+  { dictionary: "はる", masu: "はります", meaning: "dán", group: "Nhóm 1" },
+  { dictionary: "ひく", masu: "ひきます", meaning: "kéo, chơi đàn", group: "Nhóm 1" },
+  { dictionary: "ふる", masu: "ふります", meaning: "rơi, đổ mưa/tuyết", group: "Nhóm 1" },
+  { dictionary: "まがる", masu: "まがります", meaning: "rẽ, cong", group: "Nhóm 1" },
+  { dictionary: "まつ", masu: "まちます", meaning: "đợi", group: "Nhóm 1" },
+  { dictionary: "みがく", masu: "みがきます", meaning: "đánh, chải", group: "Nhóm 1" },
+  { dictionary: "みせる", masu: "みせます", meaning: "cho xem", group: "Nhóm 2" },
+  { dictionary: "みる", masu: "みます", meaning: "xem, nhìn", group: "Nhóm 2" },
+  { dictionary: "もつ", masu: "もちます", meaning: "cầm, có", group: "Nhóm 1" },
+  { dictionary: "もらう", masu: "もらいます", meaning: "nhận", group: "Nhóm 1" },
+  { dictionary: "やすむ", masu: "やすみます", meaning: "nghỉ", group: "Nhóm 1" },
+  { dictionary: "やる", masu: "やります", meaning: "làm, cho", group: "Nhóm 1" },
+  { dictionary: "よぶ", masu: "よびます", meaning: "gọi", group: "Nhóm 1" },
+  { dictionary: "よむ", masu: "よみます", meaning: "đọc", group: "Nhóm 1" },
+  { dictionary: "わかる", masu: "わかります", meaning: "hiểu", group: "Nhóm 1" },
+  { dictionary: "わすれる", masu: "わすれます", meaning: "quên", group: "Nhóm 2" },
+  { dictionary: "わたす", masu: "わたします", meaning: "trao, đưa", group: "Nhóm 1" },
+  { dictionary: "わたる", masu: "わたります", meaning: "băng qua", group: "Nhóm 1" },
+  { dictionary: "べんきょうする", masu: "べんきょうします", meaning: "học", group: "Nhóm 3" },
+  { dictionary: "けっこんする", masu: "けっこんします", meaning: "kết hôn", group: "Nhóm 3" },
+  { dictionary: "コピーする", masu: "コピーします", meaning: "photo, sao chép", group: "Nhóm 3" },
+  { dictionary: "さんぽする", masu: "さんぽします", meaning: "đi dạo", group: "Nhóm 3" },
+  { dictionary: "そうじする", masu: "そうじします", meaning: "dọn dẹp", group: "Nhóm 3" },
+  { dictionary: "せんたくする", masu: "せんたくします", meaning: "giặt giũ", group: "Nhóm 3" },
+  { dictionary: "りょうりする", masu: "りょうりします", meaning: "nấu ăn", group: "Nhóm 3" },
+];
+
+const n5CoreAdjectiveEntries: N5AdjectiveEntry[] = [
+  { word: "いい", meaning: "tốt", kind: "Tính từ い", note: "いい là ngoại lệ: よくない, よかった, よくて." },
+  { word: "おおきい", meaning: "to, lớn", kind: "Tính từ い" },
+  { word: "ちいさい", meaning: "nhỏ", kind: "Tính từ い" },
+  { word: "あたらしい", meaning: "mới", kind: "Tính từ い" },
+  { word: "ふるい", meaning: "cũ", kind: "Tính từ い" },
+  { word: "あつい", meaning: "nóng, dày", kind: "Tính từ い" },
+  { word: "さむい", meaning: "lạnh thời tiết", kind: "Tính từ い" },
+  { word: "つめたい", meaning: "lạnh khi chạm", kind: "Tính từ い" },
+  { word: "あたたかい", meaning: "ấm", kind: "Tính từ い" },
+  { word: "すずしい", meaning: "mát mẻ", kind: "Tính từ い" },
+  { word: "あかるい", meaning: "sáng", kind: "Tính từ い" },
+  { word: "くらい", meaning: "tối", kind: "Tính từ い" },
+  { word: "いそがしい", meaning: "bận", kind: "Tính từ い" },
+  { word: "おいしい", meaning: "ngon", kind: "Tính từ い" },
+  { word: "まずい", meaning: "dở, không ngon", kind: "Tính từ い" },
+  { word: "あまい", meaning: "ngọt", kind: "Tính từ い" },
+  { word: "からい", meaning: "cay", kind: "Tính từ い" },
+  { word: "たかい", meaning: "cao, đắt", kind: "Tính từ い" },
+  { word: "やすい", meaning: "rẻ", kind: "Tính từ い" },
+  { word: "ひくい", meaning: "thấp", kind: "Tính từ い" },
+  { word: "ながい", meaning: "dài", kind: "Tính từ い" },
+  { word: "みじかい", meaning: "ngắn", kind: "Tính từ い" },
+  { word: "おもい", meaning: "nặng", kind: "Tính từ い" },
+  { word: "かるい", meaning: "nhẹ", kind: "Tính từ い" },
+  { word: "ひろい", meaning: "rộng", kind: "Tính từ い" },
+  { word: "せまい", meaning: "hẹp", kind: "Tính từ い" },
+  { word: "とおい", meaning: "xa", kind: "Tính từ い" },
+  { word: "ちかい", meaning: "gần", kind: "Tính từ い" },
+  { word: "はやい", meaning: "nhanh, sớm", kind: "Tính từ い" },
+  { word: "おそい", meaning: "chậm, muộn", kind: "Tính từ い" },
+  { word: "おもしろい", meaning: "thú vị", kind: "Tính từ い" },
+  { word: "かわいい", meaning: "dễ thương", kind: "Tính từ い" },
+  { word: "むずかしい", meaning: "khó", kind: "Tính từ い" },
+  { word: "やさしい", meaning: "dễ, hiền", kind: "Tính từ い" },
+  { word: "わかい", meaning: "trẻ", kind: "Tính từ い" },
+  { word: "つよい", meaning: "mạnh", kind: "Tính từ い" },
+  { word: "よわい", meaning: "yếu", kind: "Tính từ い" },
+  { word: "いたい", meaning: "đau", kind: "Tính từ い" },
+  { word: "ねむい", meaning: "buồn ngủ", kind: "Tính từ い" },
+  { word: "きたない", meaning: "bẩn", kind: "Tính từ い" },
+  { word: "あぶない", meaning: "nguy hiểm", kind: "Tính từ い" },
+  { word: "おおい", meaning: "nhiều", kind: "Tính từ い" },
+  { word: "すくない", meaning: "ít", kind: "Tính từ い" },
+  { word: "しずか", meaning: "yên tĩnh", kind: "Tính từ な" },
+  { word: "にぎやか", meaning: "náo nhiệt", kind: "Tính từ な" },
+  { word: "ひま", meaning: "rảnh", kind: "Tính từ な" },
+  { word: "べんり", meaning: "tiện lợi", kind: "Tính từ な" },
+  { word: "げんき", meaning: "khỏe, năng động", kind: "Tính từ な" },
+  { word: "すき", meaning: "thích", kind: "Tính từ な" },
+  { word: "きらい", meaning: "ghét", kind: "Tính từ な" },
+  { word: "じょうず", meaning: "giỏi", kind: "Tính từ な" },
+  { word: "へた", meaning: "kém", kind: "Tính từ な" },
+  { word: "しんせつ", meaning: "tử tế", kind: "Tính từ な" },
+  { word: "たいせつ", meaning: "quan trọng", kind: "Tính từ な" },
+  { word: "だいじょうぶ", meaning: "ổn, không sao", kind: "Tính từ な" },
+  { word: "ゆうめい", meaning: "nổi tiếng", kind: "Tính từ な" },
+  { word: "かんたん", meaning: "đơn giản", kind: "Tính từ な" },
+  { word: "あんぜん", meaning: "an toàn", kind: "Tính từ な" },
+  { word: "きれい", meaning: "đẹp, sạch", kind: "Tính từ な" },
+];
+
+function uniqueStrings(values: string[]) {
+  return Array.from(new Set(values.filter(Boolean)));
+}
+
+function makeConjugationChoices(answer: string, preferredDistractors: string[], fallbackPool: string[]) {
+  const distractors = uniqueStrings([...preferredDistractors, ...fallbackPool])
+    .filter((value) => value !== answer)
+    .slice(0, 3);
+  return [answer, ...distractors];
+}
+
+function buildGodanForms(entry: N5VerbEntry): N5VerbForms {
+  const dictionary = entry.dictionary;
+  const stem = entry.masu.replace(/ます$/, "");
+  const base = dictionary.slice(0, -1);
+  const last = dictionary[dictionary.length - 1];
+  const teEnding: Record<string, string> = { う: "って", つ: "って", る: "って", む: "んで", ぶ: "んで", ぬ: "んで", く: "いて", ぐ: "いで", す: "して" };
+  const taEnding: Record<string, string> = { う: "った", つ: "った", る: "った", む: "んだ", ぶ: "んだ", ぬ: "んだ", く: "いた", ぐ: "いだ", す: "した" };
+  const naiEnding: Record<string, string> = { う: "わない", つ: "たない", る: "らない", む: "まない", ぶ: "ばない", ぬ: "なない", く: "かない", ぐ: "がない", す: "さない" };
+  const isIkuException = dictionary === "いく";
+  const isAruException = dictionary === "ある";
+  const teForm = isIkuException ? "いって" : `${base}${teEnding[last] ?? "って"}`;
+  const taForm = isIkuException ? "いった" : `${base}${taEnding[last] ?? "った"}`;
+  const naiForm = isAruException ? "ない" : `${base}${naiEnding[last] ?? "らない"}`;
+  const masenForm = isAruException ? "ありません" : `${stem}ません`;
+
+  return {
+    "て形": teForm,
+    "た形": taForm,
+    "ない形": naiForm,
+    "辞書形": dictionary,
+    "ます形": entry.masu,
+    "ません形": masenForm,
+    "ました形": `${stem}ました`,
+    "ませんでした形": isAruException ? "ありませんでした" : `${stem}ませんでした`,
+    "てください": `${teForm}ください`,
+    "てもいいです": `${teForm}もいいです`,
+    "てはいけません": `${teForm}はいけません`,
+    "ています": `${teForm}います`,
+    "ないでください": `${naiForm}でください`,
+  };
+}
+
+function buildIchidanForms(entry: N5VerbEntry): N5VerbForms {
+  const stem = entry.masu.replace(/ます$/, "");
+  const teForm = `${stem}て`;
+  const taForm = `${stem}た`;
+  const naiForm = `${stem}ない`;
+  return {
+    "て形": teForm,
+    "た形": taForm,
+    "ない形": naiForm,
+    "辞書形": entry.dictionary,
+    "ます形": entry.masu,
+    "ません形": `${stem}ません`,
+    "ました形": `${stem}ました`,
+    "ませんでした形": `${stem}ませんでした`,
+    "てください": `${teForm}ください`,
+    "てもいいです": `${teForm}もいいです`,
+    "てはいけません": `${teForm}はいけません`,
+    "ています": `${teForm}います`,
+    "ないでください": `${naiForm}でください`,
+  };
+}
+
+function buildIrregularForms(entry: N5VerbEntry): N5VerbForms {
+  if (entry.dictionary === "くる") {
+    return {
+      "て形": "きて",
+      "た形": "きた",
+      "ない形": "こない",
+      "辞書形": "くる",
+      "ます形": "きます",
+      "ません形": "きません",
+      "ました形": "きました",
+      "ませんでした形": "きませんでした",
+      "てください": "きてください",
+      "てもいいです": "きてもいいです",
+      "てはいけません": "きてはいけません",
+      "ています": "きています",
+      "ないでください": "こないでください",
+    };
+  }
+
+  const root = entry.dictionary.endsWith("する") ? entry.dictionary.slice(0, -2) : "";
+  const teForm = `${root}して`;
+  const naiForm = `${root}しない`;
+  return {
+    "て形": teForm,
+    "た形": `${root}した`,
+    "ない形": naiForm,
+    "辞書形": entry.dictionary,
+    "ます形": entry.masu,
+    "ません形": `${root}しません`,
+    "ました形": `${root}しました`,
+    "ませんでした形": `${root}しませんでした`,
+    "てください": `${teForm}ください`,
+    "てもいいです": `${teForm}もいいです`,
+    "てはいけません": `${teForm}はいけません`,
+    "ています": `${teForm}います`,
+    "ないでください": `${naiForm}でください`,
+  };
+}
+
+function buildVerbForms(entry: N5VerbEntry): N5VerbForms {
+  if (entry.group === "Nhóm 2") return buildIchidanForms(entry);
+  if (entry.group === "Nhóm 3") return buildIrregularForms(entry);
+  return buildGodanForms(entry);
+}
+
+function buildVerbMistakes(entry: N5VerbEntry, forms: N5VerbForms, key: N5VerbFormKey) {
+  const stem = entry.masu.replace(/ます$/, "");
+  const dictionary = entry.dictionary;
+  const base = dictionary.slice(0, -1);
+  const wrongPlain = [`${stem}る`, `${base}る`, entry.masu, forms["ない形"], forms["て形"], forms["た形"]];
+  const wrongTe = [`${stem}て`, `${stem}って`, `${stem}んで`, `${dictionary}て`, forms["た形"] !== forms[key] ? forms["た形"] : ""];
+  const wrongTa = [`${stem}た`, `${stem}った`, `${stem}んだ`, `${dictionary}た`, forms["て形"] !== forms[key] ? forms["て形"] : ""];
+  const wrongNai = [`${stem}ない`, `${dictionary}ない`, `${base}ない`, `${stem}ません`, forms["辞書形"]];
+  const wrongMasu = [`${dictionary}ます`, `${stem}ります`, `${stem}します`, forms["辞書形"], forms["ません形"]];
+  const wrongPoliteNeg = [`${stem}ないです`, `${stem}ませんでした`, `${dictionary}ません`, forms["ない形"], forms["ます形"]];
+  const wrongPolitePast = [`${stem}たです`, `${stem}ましたでした`, `${dictionary}ました`, forms["た形"], forms["ます形"]];
+  const wrongPolitePastNeg = [`${stem}ません`, `${stem}ました`, `${dictionary}ませんでした`, forms["ない形"], forms["ません形"]];
+  const wrongTeKudasai = [`${dictionary}ください`, `${forms["て形"]}います`, `${forms["て形"]}もいいです`, `${forms["ない形"]}でください`, forms["てはいけません"]];
+  const wrongPermission = [`${forms["て形"]}ください`, `${forms["て形"]}はいけません`, `${dictionary}もいいです`, `${forms["ない形"]}でいいです`, forms["ています"]];
+  const wrongProhibition = [`${forms["て形"]}もいいです`, `${forms["て形"]}ください`, `${dictionary}はいけません`, `${forms["ない形"]}でください`, forms["ています"]];
+  const wrongProgressive = [`${forms["て形"]}ください`, `${forms["て形"]}もいいです`, `${forms["て形"]}はいけません`, `${dictionary}います`, forms["ます形"]];
+  const wrongNaiRequest = [`${forms["て形"]}ください`, `${forms["ない形"]}ください`, `${forms["ない形"]}でいます`, `${dictionary}でください`, forms["てはいけません"]];
+
+  if (key === "て形") return wrongTe;
+  if (key === "た形") return wrongTa;
+  if (key === "ない形") return wrongNai;
+  if (key === "辞書形") return wrongPlain;
+  if (key === "ます形") return wrongMasu;
+  if (key === "ません形") return wrongPoliteNeg;
+  if (key === "ませんでした形") return wrongPolitePastNeg;
+  if (key === "てください") return wrongTeKudasai;
+  if (key === "てもいいです") return wrongPermission;
+  if (key === "てはいけません") return wrongProhibition;
+  if (key === "ています") return wrongProgressive;
+  if (key === "ないでください") return wrongNaiRequest;
+  return wrongPolitePast;
+}
+
+function buildN5CoreVerbConjugationItems(): N5ConjugationItem[] {
+  const entriesWithForms = n5CoreVerbEntries.map((entry) => ({
+    entry,
+    forms: buildVerbForms(entry),
+  }));
+
+  return entriesWithForms.flatMap(({ entry, forms }) =>
+    n5VerbTargets.map(({ key, instruction }) => {
+      const fallbackPool = entriesWithForms
+        .filter((candidate) => candidate.entry.dictionary !== entry.dictionary || candidate.entry.masu !== entry.masu)
+        .map((candidate) => candidate.forms[key]);
+      const answer = forms[key];
+
+      return {
+        verb: entry.masu,
+        meaning: entry.meaning,
+        group: entry.group,
+        targetForm: key,
+        instruction,
+        answer,
+        choices: makeConjugationChoices(answer, buildVerbMistakes(entry, forms, key), fallbackPool),
+        note: entry.note ?? `${entry.group}: ${entry.masu} → ${answer}.`,
+      };
+    }),
+  );
+}
+
+function buildAdjectiveForms(entry: N5AdjectiveEntry): N5AdjectiveForms {
+  if (entry.kind === "Tính từ な") {
+    return {
+      "丁寧形": `${entry.word}です`,
+      "否定形": `${entry.word}じゃありません`,
+      "過去形": `${entry.word}でした`,
+      "て形": `${entry.word}で`,
+      "名詞修飾": `${entry.word}な`,
+    };
+  }
+
+  const base = entry.word === "いい" ? "よ" : entry.word.slice(0, -1);
+  return {
+    "丁寧形": `${entry.word}です`,
+    "否定形": `${base}くない`,
+    "過去形": `${base}かった`,
+    "て形": `${base}くて`,
+  };
+}
+
+function buildAdjectiveMistakes(entry: N5AdjectiveEntry, forms: N5AdjectiveForms, key: N5AdjectiveFormKey) {
+  const base = entry.kind === "Tính từ い" ? (entry.word === "いい" ? "い" : entry.word.slice(0, -1)) : entry.word;
+  if (entry.kind === "Tính từ な") {
+    return [`${entry.word}くない`, `${entry.word}かった`, `${entry.word}くて`, `${entry.word}い`, `${entry.word}の`, forms["丁寧形"] ?? ""];
+  }
+  if (key === "丁寧形") return [`${base}です`, `${entry.word}なです`, `${entry.word}だ`, forms["否定形"] ?? ""];
+  if (key === "否定形") return [`${entry.word}ない`, `${base}じゃありません`, `${base}かった`, `${base}くて`];
+  if (key === "過去形") return [`${entry.word}でした`, `${base}いかった`, `${base}くた`, forms["否定形"] ?? ""];
+  return [`${entry.word}で`, `${base}いで`, `${base}かった`, `${entry.word}な`];
+}
+
+function buildN5AdjectiveConjugationItems(): N5ConjugationItem[] {
+  const entriesWithForms = n5CoreAdjectiveEntries.map((entry) => ({
+    entry,
+    forms: buildAdjectiveForms(entry),
+  }));
+
+  return entriesWithForms.flatMap(({ entry, forms }) =>
+    n5AdjectiveTargets.flatMap(({ key, instruction }) => {
+      const answer = forms[key];
+      if (!answer) return [];
+      const fallbackPool = entriesWithForms
+        .filter((candidate) => candidate.entry.word !== entry.word)
+        .map((candidate) => candidate.forms[key])
+        .filter((value): value is string => Boolean(value));
+
+      return [{
+        verb: entry.word,
+        meaning: entry.meaning,
+        group: entry.kind,
+        targetForm: key,
+        instruction,
+        answer,
+        choices: makeConjugationChoices(answer, buildAdjectiveMistakes(entry, forms, key), fallbackPool),
+        note: entry.note ?? `${entry.kind}: ${entry.word} → ${answer}.`,
+      }];
+    }),
+  );
+}
+
+function dedupeN5ConjugationItems(items: N5ConjugationItem[]) {
+  const seen = new Set<string>();
+  return items.filter((item) => {
+    const key = `${item.verb}|${item.group}|${item.targetForm}|${item.answer}`;
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
+
+const n5ConjugationSeedItems: N5ConjugationItem[] = [
+  { verb: "いきます", meaning: "đi", group: "Nhóm 1", targetForm: "て形", instruction: "Chia sang thể て", answer: "いって", choices: ["いって", "いいて", "いきて", "いんで"], note: "行きます là ngoại lệ quan trọng: いきます → いって." },
+  { verb: "かきます", meaning: "viết", group: "Nhóm 1", targetForm: "て形", instruction: "Chia sang thể て", answer: "かいて", choices: ["かいて", "かって", "かきて", "かいで"], note: "Đuôi き chuyển thành いて: かきます → かいて." },
+  { verb: "およぎます", meaning: "bơi", group: "Nhóm 1", targetForm: "て形", instruction: "Chia sang thể て", answer: "およいで", choices: ["およいで", "およいて", "およぎて", "およんで"], note: "Đuôi ぎ chuyển thành いで: およぎます → およいで." },
+  { verb: "よみます", meaning: "đọc", group: "Nhóm 1", targetForm: "て形", instruction: "Chia sang thể て", answer: "よんで", choices: ["よんで", "よみて", "よって", "よいて"], note: "Đuôi み chuyển thành んで: よみます → よんで." },
+  { verb: "のみます", meaning: "uống", group: "Nhóm 1", targetForm: "て形", instruction: "Chia sang thể て", answer: "のんで", choices: ["のんで", "のみて", "のって", "のいて"], note: "Đuôi み chuyển thành んで: のみます → のんで." },
+  { verb: "かいます", meaning: "mua", group: "Nhóm 1", targetForm: "て形", instruction: "Chia sang thể て", answer: "かって", choices: ["かって", "かいて", "かうて", "かんで"], note: "Đuôi い chuyển thành って: かいます → かって." },
+  { verb: "まちます", meaning: "đợi", group: "Nhóm 1", targetForm: "て形", instruction: "Chia sang thể て", answer: "まって", choices: ["まって", "まちて", "まいて", "まんで"], note: "Đuôi ち chuyển thành って: まちます → まって." },
+  { verb: "かえります", meaning: "về", group: "Nhóm 1", targetForm: "て形", instruction: "Chia sang thể て", answer: "かえって", choices: ["かえって", "かえりて", "かえて", "かえんで"], note: "Đuôi り chuyển thành って: かえります → かえって." },
+  { verb: "たべます", meaning: "ăn", group: "Nhóm 2", targetForm: "て形", instruction: "Chia sang thể て", answer: "たべて", choices: ["たべて", "たべって", "たんで", "たべいて"], note: "Nhóm 2 bỏ ます rồi thêm て: たべます → たべて." },
+  { verb: "みます", meaning: "xem/nhìn", group: "Nhóm 2", targetForm: "て形", instruction: "Chia sang thể て", answer: "みて", choices: ["みて", "みって", "みんで", "みいて"], note: "Nhóm 2 bỏ ます rồi thêm て: みます → みて." },
+  { verb: "します", meaning: "làm", group: "Nhóm 3", targetForm: "て形", instruction: "Chia sang thể て", answer: "して", choices: ["して", "すて", "しって", "しんで"], note: "します là bất quy tắc: します → して." },
+  { verb: "きます", meaning: "đến", group: "Nhóm 3", targetForm: "て形", instruction: "Chia sang thể て", answer: "きて", choices: ["きて", "くて", "こて", "きって"], note: "来ます là bất quy tắc: きます → きて." },
+  { verb: "はなします", meaning: "nói", group: "Nhóm 1", targetForm: "ない形", instruction: "Chia sang thể ない", answer: "はなさない", choices: ["はなさない", "はなしない", "はなない", "はなせない"], note: "Đuôi します của nhóm 1 đổi thành さない: はなします → はなさない." },
+  { verb: "いきます", meaning: "đi", group: "Nhóm 1", targetForm: "ない形", instruction: "Chia sang thể ない", answer: "いかない", choices: ["いかない", "いきない", "いない", "いけない"], note: "Đuôi き đổi về hàng あ: いきます → いかない." },
+  { verb: "かきます", meaning: "viết", group: "Nhóm 1", targetForm: "ない形", instruction: "Chia sang thể ない", answer: "かかない", choices: ["かかない", "かきない", "かけない", "かない"], note: "Đuôi き đổi về hàng あ: かきます → かかない." },
+  { verb: "よみます", meaning: "đọc", group: "Nhóm 1", targetForm: "ない形", instruction: "Chia sang thể ない", answer: "よまない", choices: ["よまない", "よみない", "よめない", "よない"], note: "Đuôi み đổi về hàng あ: よみます → よまない." },
+  { verb: "かいます", meaning: "mua", group: "Nhóm 1", targetForm: "ない形", instruction: "Chia sang thể ない", answer: "かわない", choices: ["かわない", "かいない", "かあない", "かえない"], note: "Đuôi います đổi thành わない: かいます → かわない." },
+  { verb: "まちます", meaning: "đợi", group: "Nhóm 1", targetForm: "ない形", instruction: "Chia sang thể ない", answer: "またない", choices: ["またない", "まちない", "まてない", "まない"], note: "Đuôi ち đổi về hàng あ: まちます → またない." },
+  { verb: "たべます", meaning: "ăn", group: "Nhóm 2", targetForm: "ない形", instruction: "Chia sang thể ない", answer: "たべない", choices: ["たべない", "たばない", "たびない", "たべらない"], note: "Nhóm 2 bỏ ます rồi thêm ない: たべます → たべない." },
+  { verb: "みます", meaning: "xem/nhìn", group: "Nhóm 2", targetForm: "ない形", instruction: "Chia sang thể ない", answer: "みない", choices: ["みない", "まない", "みらない", "みにない"], note: "Nhóm 2 bỏ ます rồi thêm ない: みます → みない." },
+  { verb: "します", meaning: "làm", group: "Nhóm 3", targetForm: "ない形", instruction: "Chia sang thể ない", answer: "しない", choices: ["しない", "すない", "せない", "しらない"], note: "します là bất quy tắc: します → しない." },
+  { verb: "きます", meaning: "đến", group: "Nhóm 3", targetForm: "ない形", instruction: "Chia sang thể ない", answer: "こない", choices: ["こない", "きない", "くない", "けない"], note: "来ます là bất quy tắc: きます → こない." },
+  { verb: "いきます", meaning: "đi", group: "Nhóm 1", targetForm: "た形", instruction: "Chia sang thể た", answer: "いった", choices: ["いった", "いいた", "いきた", "いんだ"], note: "行きます là ngoại lệ giống て形: いきます → いった." },
+  { verb: "かきます", meaning: "viết", group: "Nhóm 1", targetForm: "た形", instruction: "Chia sang thể た", answer: "かいた", choices: ["かいた", "かった", "かきた", "かいだ"], note: "Đuôi き chuyển thành いた: かきます → かいた." },
+  { verb: "およぎます", meaning: "bơi", group: "Nhóm 1", targetForm: "た形", instruction: "Chia sang thể た", answer: "およいだ", choices: ["およいだ", "およいた", "およぎた", "およんだ"], note: "Đuôi ぎ chuyển thành いだ: およぎます → およいだ." },
+  { verb: "よみます", meaning: "đọc", group: "Nhóm 1", targetForm: "た形", instruction: "Chia sang thể た", answer: "よんだ", choices: ["よんだ", "よみた", "よった", "よいた"], note: "Đuôi み chuyển thành んだ: よみます → よんだ." },
+  { verb: "かいます", meaning: "mua", group: "Nhóm 1", targetForm: "た形", instruction: "Chia sang thể た", answer: "かった", choices: ["かった", "かいた", "かうた", "かんだ"], note: "Đuôi い chuyển thành った: かいます → かった." },
+  { verb: "まちます", meaning: "đợi", group: "Nhóm 1", targetForm: "た形", instruction: "Chia sang thể た", answer: "まった", choices: ["まった", "まちた", "まいた", "まんだ"], note: "Đuôi ち chuyển thành った: まちます → まった." },
+  { verb: "たべます", meaning: "ăn", group: "Nhóm 2", targetForm: "た形", instruction: "Chia sang thể た", answer: "たべた", choices: ["たべた", "たべった", "たんだ", "たべいた"], note: "Nhóm 2 bỏ ます rồi thêm た: たべます → たべた." },
+  { verb: "みます", meaning: "xem/nhìn", group: "Nhóm 2", targetForm: "た形", instruction: "Chia sang thể た", answer: "みた", choices: ["みた", "みった", "みんだ", "みいた"], note: "Nhóm 2 bỏ ます rồi thêm た: みます → みた." },
+  { verb: "します", meaning: "làm", group: "Nhóm 3", targetForm: "た形", instruction: "Chia sang thể た", answer: "した", choices: ["した", "すた", "しった", "しんだ"], note: "します là bất quy tắc: します → した." },
+  { verb: "きます", meaning: "đến", group: "Nhóm 3", targetForm: "た形", instruction: "Chia sang thể た", answer: "きた", choices: ["きた", "くた", "こた", "きった"], note: "来ます là bất quy tắc: きます → きた." },
+  { verb: "たべます", meaning: "ăn", group: "Nhóm 2", targetForm: "辞書形", instruction: "Chia sang thể từ điển", answer: "たべる", choices: ["たべる", "たべす", "たべく", "たべむ"], note: "Nhóm 2: bỏ ます rồi thêm る." },
+  { verb: "みます", meaning: "xem/nhìn", group: "Nhóm 2", targetForm: "辞書形", instruction: "Chia sang thể từ điển", answer: "みる", choices: ["みる", "みす", "みく", "みむ"], note: "みます là nhóm 2: みます → みる." },
+  { verb: "いきます", meaning: "đi", group: "Nhóm 1", targetForm: "辞書形", instruction: "Chia sang thể từ điển", answer: "いく", choices: ["いく", "いきる", "いける", "いす"], note: "Nhóm 1 đổi âm trước ます về hàng う: き → く." },
+  { verb: "かきます", meaning: "viết", group: "Nhóm 1", targetForm: "辞書形", instruction: "Chia sang thể từ điển", answer: "かく", choices: ["かく", "かきる", "かける", "かす"], note: "Nhóm 1 đổi き thành く: かきます → かく." },
+  { verb: "よみます", meaning: "đọc", group: "Nhóm 1", targetForm: "辞書形", instruction: "Chia sang thể từ điển", answer: "よむ", choices: ["よむ", "よみる", "よめる", "よす"], note: "Nhóm 1 đổi み thành む: よみます → よむ." },
+  { verb: "かいます", meaning: "mua", group: "Nhóm 1", targetForm: "辞書形", instruction: "Chia sang thể từ điển", answer: "かう", choices: ["かう", "かいる", "かえる", "かす"], note: "Nhóm 1 đổi い thành う: かいます → かう." },
+  { verb: "します", meaning: "làm", group: "Nhóm 3", targetForm: "辞書形", instruction: "Chia sang thể từ điển", answer: "する", choices: ["する", "しる", "す", "します"], note: "します là bất quy tắc: します → する." },
+  { verb: "きます", meaning: "đến", group: "Nhóm 3", targetForm: "辞書形", instruction: "Chia sang thể từ điển", answer: "くる", choices: ["くる", "きる", "こる", "きます"], note: "来ます là bất quy tắc: きます → くる." },
+  { verb: "はなす", meaning: "nói", group: "Nhóm 1", targetForm: "ます形", instruction: "Chia sang thể ます", answer: "はなします", choices: ["はなします", "はなすます", "はなります", "はなせます"], note: "辞書形 はなす đổi す thành し + ます." },
+  { verb: "たべる", meaning: "ăn", group: "Nhóm 2", targetForm: "ます形", instruction: "Chia sang thể ます", answer: "たべます", choices: ["たべます", "たべります", "たべします", "たべす"], note: "Nhóm 2 bỏ る rồi thêm ます." },
+  { verb: "みる", meaning: "xem/nhìn", group: "Nhóm 2", targetForm: "ます形", instruction: "Chia sang thể ます", answer: "みます", choices: ["みます", "みります", "みします", "みるます"], note: "Nhóm 2 bỏ る rồi thêm ます." },
+  { verb: "いく", meaning: "đi", group: "Nhóm 1", targetForm: "ます形", instruction: "Chia sang thể ます", answer: "いきます", choices: ["いきます", "います", "いけます", "いくます"], note: "辞書形 いく đổi く thành き + ます." },
+  { verb: "する", meaning: "làm", group: "Nhóm 3", targetForm: "ます形", instruction: "Chia sang thể ます", answer: "します", choices: ["します", "すます", "せます", "しります"], note: "する là bất quy tắc: する → します." },
+  { verb: "くる", meaning: "đến", group: "Nhóm 3", targetForm: "ます形", instruction: "Chia sang thể ます", answer: "きます", choices: ["きます", "くます", "こます", "けます"], note: "くる là bất quy tắc: くる → きます." },
+];
+
+const n5ConjugationItems = dedupeN5ConjugationItems([
+  ...n5ConjugationSeedItems,
+  ...buildN5CoreVerbConjugationItems(),
+  ...buildN5AdjectiveConjugationItems(),
+]);
+
 const grammarPoints: Record<number, GrammarPoint[]> = {
   1: [
     { title: "Khẳng định với です", pattern: "N1 は N2 です", explanation: "Dùng は để nêu chủ đề và です để kết thúc câu danh từ theo lối lịch sự.", example: "わたしは マイです。", translation: "Tôi là Mai.", question: "わたし ＿＿＿ マイです。", answer: "は", choices: ["は", "も", "の", "か"] },
@@ -865,10 +1402,12 @@ function Dashboard({
   onSelect,
   onQuestionWords,
   onJlptPractice,
+  onN5Conjugation,
 }: {
   onSelect: (lesson: Lesson) => void;
   onQuestionWords: () => void;
   onJlptPractice: () => void;
+  onN5Conjugation: () => void;
 }) {
   const [lessons, setLessons] = useState<Lesson[]>(lessonFallback);
   const [query, setQuery] = useState("");
@@ -1038,6 +1577,21 @@ function Dashboard({
           <div className="specialQuestionMark jlptMark" aria-hidden="true">試</div>
           <button className="specialLessonButton" onClick={onJlptPractice}>
             MỞ {jlptPracticeStats.totalTests} ĐỀ <ArrowIcon />
+          </button>
+        </section>
+        <section className="specialLesson conjugationSpecialLesson" aria-labelledby="n5-conjugation-home-title">
+          <div className="specialLessonCopy">
+            <span className="sectionKicker">CHIA THỂ N5 · NGOÀI 50 BÀI</span>
+            <h3 id="n5-conjugation-home-title">Chia thể từ vựng N5</h3>
+            <p>
+              Luyện {n5ConjugationItems.length} câu chia thể cho động từ, tính từ い và tính từ な:
+              ます/ません/ました/ませんでした, 辞書形, てください, てもいいです,
+              てはいけません, ています và ないでください.
+            </p>
+          </div>
+          <div className="specialQuestionMark conjugationMark" aria-hidden="true">活</div>
+          <button className="specialLessonButton" onClick={onN5Conjugation}>
+            LUYỆN {n5ConjugationItems.length} CÂU <ArrowIcon />
           </button>
         </section>
       </section>
@@ -2622,26 +3176,188 @@ function JlptPracticeScreen({ onBack }: { onBack: () => void }) {
           </div>
         </section>
       ) : (
-        <section className="jlptGroupGrid" aria-label="Các nhóm luyện đề N5">
-          {visibleGroups.map((group) => (
-            <article className={`jlptGroupCard ${group.section}`} key={group.id}>
-              <span className="jlptGroupBadge">{group.badge}</span>
-              <h2>{group.title}</h2>
-              <p>{group.subtitle}</p>
-              <div className="jlptGroupMeta">
-                <span>{group.totalTests} bài test</span>
-                <span>{group.totalMinutes} phút</span>
-              </div>
-              <div className="jlptGroupActions">
-                <button onClick={() => { setSelectedGroupId(group.id); window.scrollTo(0, 0); }}>
-                  Xem tất cả đề <ArrowIcon />
-                </button>
-                <button onClick={() => openRandomTest(group)}>Ngẫu nhiên</button>
-              </div>
-            </article>
-          ))}
-        </section>
+        <>
+          <section className="jlptGroupGrid" aria-label="Các nhóm luyện đề N5">
+            {visibleGroups.map((group) => (
+              <article className={`jlptGroupCard ${group.section}`} key={group.id}>
+                <span className="jlptGroupBadge">{group.badge}</span>
+                <h2>{group.title}</h2>
+                <p>{group.subtitle}</p>
+                <div className="jlptGroupMeta">
+                  <span>{group.totalTests} bài test</span>
+                  <span>{group.totalMinutes} phút</span>
+                </div>
+                <div className="jlptGroupActions">
+                  <button onClick={() => { setSelectedGroupId(group.id); window.scrollTo(0, 0); }}>
+                    Xem tất cả đề <ArrowIcon />
+                  </button>
+                  <button onClick={() => openRandomTest(group)}>Ngẫu nhiên</button>
+                </div>
+              </article>
+            ))}
+          </section>
+
+        </>
       )}
+    </main>
+  );
+}
+
+function N5ConjugationScreen({ onBack }: { onBack: () => void }) {
+  const total = n5ConjugationItems.length;
+  const [index, setIndex] = useState(0);
+  const [questionOrder, setQuestionOrder] = useState(() =>
+    Array.from({ length: total }, (_, itemIndex) => itemIndex),
+  );
+  const [selected, setSelected] = useState<string | null>(null);
+  const [feedback, setFeedback] = useState<Feedback>(null);
+  const [showAnswer, setShowAnswer] = useState(false);
+
+  const displayedIndex = questionOrder[index] ?? index;
+  const item = n5ConjugationItems[displayedIndex];
+  const choices = useMemo(() => shuffleArray(item.choices), [item]);
+
+  const resetAnswerState = () => {
+    setSelected(null);
+    setFeedback(null);
+    setShowAnswer(false);
+  };
+
+  const goTo = useCallback((nextIndex: number) => {
+    setIndex(nextIndex);
+    resetAnswerState();
+  }, []);
+
+  const chooseAnswer = useCallback((choice: string) => {
+    const correct = normalizeJapanese(choice) === normalizeJapanese(item.answer);
+    setSelected(choice);
+    setFeedback({
+      kind: correct ? "success" : "error",
+      message: correct
+        ? "Đúng rồi. Nhớ đọc lại thành tiếng để quen phản xạ chia thể."
+        : "Chưa đúng. Bấm “Hiện đáp án” để xem quy tắc chia thể.",
+    });
+    if (correct) setShowAnswer(true);
+  }, [item.answer]);
+
+  const shuffleQuestions = () => {
+    setQuestionOrder((current) => shuffledOrder(total, current));
+    setIndex(0);
+    resetAnswerState();
+  };
+
+  const previous = () => goTo(Math.max(0, index - 1));
+  const next = () => goTo(Math.min(total - 1, index + 1));
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (isTextEntryTarget(event.target)) return;
+      if (["1", "2", "3", "4"].includes(event.key)) {
+        const choice = choices[Number(event.key) - 1];
+        if (!choice) return;
+        event.preventDefault();
+        chooseAnswer(choice);
+        return;
+      }
+      if (event.key === "Enter" && feedback && index < total - 1) {
+        event.preventDefault();
+        next();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [choices, chooseAnswer, feedback, index, total]);
+
+  return (
+    <main className="practicePage jlptRunnerPage">
+      <div className="practiceHeader">
+        <button className="roundBack" onClick={onBack} aria-label="Quay lại luyện đề thi thử">←</button>
+        <div className="practiceIdentity">
+          <span>CHIA THỂ N5</span>
+          <strong>Từ vựng N5</strong>
+        </div>
+        <div className="practiceProgress">
+          <span>Luyện tập</span>
+          <strong>{index + 1} / {total}</strong>
+        </div>
+      </div>
+
+      <section className="practiceCard conjugationQuestionCard">
+        <div className="exerciseContent conjugationContent">
+          <div className="conjugationPrompt">
+            <span className="promptLabel">{item.instruction}</span>
+            <strong className="conjugationVerb" lang="ja">{item.verb}</strong>
+            <div className="conjugationTags">
+              <span>{item.group}</span>
+              <span>{item.targetForm}</span>
+              <span>Nghĩa: {item.meaning}</span>
+            </div>
+          </div>
+
+          <div className="conjugationChoices" role="group" aria-label="Đáp án chia thể N5">
+            {choices.map((choice, choiceIndex) => {
+              const isSelected = selected === choice;
+              const isCorrect = normalizeJapanese(choice) === normalizeJapanese(item.answer);
+              const stateClass = feedback
+                ? isCorrect
+                  ? "correct"
+                  : isSelected
+                    ? "wrong"
+                    : ""
+                : isSelected
+                  ? "selected"
+                  : "";
+
+              return (
+                <button
+                  key={`${item.verb}-${item.targetForm}-${choice}`}
+                  type="button"
+                  className={stateClass}
+                  onClick={() => chooseAnswer(choice)}
+                >
+                  <span>{choiceIndex + 1}</span>
+                  <strong lang="ja">{choice}</strong>
+                </button>
+              );
+            })}
+          </div>
+
+          {feedback && (
+            <div className={`feedback ${feedback.kind}`}>
+              <strong>{feedback.kind === "success" ? "Chính xác." : "Chưa đúng."}</strong>
+              <span>{feedback.message}</span>
+            </div>
+          )}
+
+          {showAnswer && (
+            <div className="conjugationAnswerPanel">
+              <span>Đáp án đúng</span>
+              <strong lang="ja">{item.verb} → {item.answer}</strong>
+              <p>{item.note}</p>
+            </div>
+          )}
+
+          <div className="conjugationActions">
+            <button type="button" className="answerRevealButton" onClick={() => setShowAnswer((current) => !current)}>
+              {showAnswer ? "Ẩn đáp án" : "Hiện đáp án"}
+              <span aria-hidden="true">{showAnswer ? "×" : "目"}</span>
+            </button>
+            <button type="button" className="secondaryButton" onClick={() => speakJapaneseText(`${item.verb}、${item.answer}`)}>
+              Đọc từ vựng <ArrowIcon />
+            </button>
+          </div>
+        </div>
+
+        <ExerciseNav
+          index={index}
+          total={total}
+          onPrevious={previous}
+          onNext={next}
+          onShuffle={shuffleQuestions}
+        />
+      </section>
+      <p className="practiceTip">Mẹo: bấm phím 1–4 để chọn nhanh, Enter để sang câu tiếp sau khi đã trả lời.</p>
     </main>
   );
 }
@@ -3481,6 +4197,7 @@ export function LearningApp() {
   const [mode, setMode] = useState<ModeId | null>(null);
   const [questionWordsOpen, setQuestionWordsOpen] = useState(false);
   const [jlptPracticeOpen, setJlptPracticeOpen] = useState(false);
+  const [n5ConjugationOpen, setN5ConjugationOpen] = useState(false);
   const [showFurigana, setShowFurigana] = useState(true);
   const [furiganaPreferenceReady, setFuriganaPreferenceReady] = useState(false);
 
@@ -3514,6 +4231,7 @@ export function LearningApp() {
     setLesson(null);
     setQuestionWordsOpen(false);
     setJlptPracticeOpen(false);
+    setN5ConjugationOpen(false);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -3523,15 +4241,17 @@ export function LearningApp() {
       <div className="ambient ambientTwo" />
       <AppHeader onHome={goHome} />
       <AiChatBox lesson={lesson} />
-      {!lesson && !questionWordsOpen && !jlptPracticeOpen && (
+      {!lesson && !questionWordsOpen && !jlptPracticeOpen && !n5ConjugationOpen && (
         <Dashboard
           onSelect={(selected) => { setLesson(selected); window.scrollTo(0, 0); }}
           onQuestionWords={() => { setQuestionWordsOpen(true); window.scrollTo(0, 0); }}
           onJlptPractice={() => { setJlptPracticeOpen(true); window.scrollTo(0, 0); }}
+          onN5Conjugation={() => { setN5ConjugationOpen(true); window.scrollTo(0, 0); }}
         />
       )}
       {questionWordsOpen && <QuestionWordsScreen onBack={goHome} />}
       {jlptPracticeOpen && <JlptPracticeScreen onBack={goHome} />}
+      {n5ConjugationOpen && <N5ConjugationScreen onBack={goHome} />}
       {lesson && !mode && (
         <LessonMenu
           lesson={lesson}

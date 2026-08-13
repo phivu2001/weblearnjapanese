@@ -657,6 +657,20 @@ footer {
   color: var(--sky);
 }
 
+.conjugationSpecialLesson {
+  border-color: rgba(116, 189, 162, 0.34);
+  background: linear-gradient(115deg, rgba(218, 239, 231, 0.86), rgba(255, 252, 246, 0.78));
+}
+
+.conjugationSpecialLesson::before {
+  content: "活用";
+  color: rgba(116, 189, 162, 0.09);
+}
+
+.conjugationMark {
+  color: #4e9b7d;
+}
+
 .emptySearch,
 .loadingState,
 .emptyPractice {
@@ -1177,6 +1191,216 @@ footer {
 .jlptTestCard small {
   color: var(--muted);
   font-size: 11px;
+}
+
+.n5ConjugationPromo {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: 24px;
+  margin-top: 18px;
+  border: 1px solid rgba(244, 191, 73, 0.42);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 92% 10%, rgba(244, 191, 73, 0.18), transparent 35%),
+    rgba(255, 252, 246, 0.76);
+  padding: 24px;
+  box-shadow: 0 14px 36px rgba(23, 33, 31, 0.06);
+}
+
+.n5ConjugationPromo h2 {
+  margin: 7px 0;
+  font-family: Cambria, serif;
+  font-size: clamp(1.9rem, 3vw, 3rem);
+  font-weight: 500;
+}
+
+.n5ConjugationPromo p {
+  max-width: 660px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.n5ConjugationPreview {
+  min-width: 190px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.62);
+  padding: 16px 18px;
+}
+
+.n5ConjugationPreview span,
+.n5ConjugationPreview strong,
+.n5ConjugationPreview small {
+  display: block;
+}
+
+.n5ConjugationPreview span,
+.n5ConjugationPreview strong {
+  font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+}
+
+.n5ConjugationPreview span {
+  color: var(--muted);
+  font-size: 20px;
+}
+
+.n5ConjugationPreview strong {
+  color: var(--ink);
+  font-size: 26px;
+  font-weight: 500;
+}
+
+.n5ConjugationPreview small {
+  margin-top: 5px;
+  color: var(--coral);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.conjugationQuestionCard {
+  border-top: 5px solid var(--yellow);
+}
+
+.conjugationContent {
+  padding: clamp(28px, 5vw, 64px);
+}
+
+.conjugationPrompt {
+  text-align: center;
+}
+
+.conjugationVerb {
+  display: block;
+  margin: 12px 0 14px;
+  font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+  font-size: clamp(4.4rem, 11vw, 8rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.06em;
+}
+
+.conjugationTags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.conjugationTags span {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.55);
+  color: var(--muted);
+  padding: 7px 12px;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.conjugationChoices {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 36px;
+}
+
+.conjugationChoices button {
+  min-height: 96px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.62);
+  color: var(--ink);
+  padding: 18px 20px;
+  cursor: pointer;
+  text-align: left;
+  transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+}
+
+.conjugationChoices button:hover {
+  border-color: var(--yellow);
+  background: white;
+  transform: translateY(-2px);
+}
+
+.conjugationChoices button > span {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(244, 191, 73, 0.16);
+  color: #b77e0d;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.conjugationChoices button strong {
+  font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 500;
+}
+
+.conjugationChoices button.selected {
+  border-color: var(--yellow);
+  background: rgba(244, 191, 73, 0.13);
+}
+
+.conjugationChoices button.correct {
+  border-color: var(--mint);
+  background: rgba(116, 189, 162, 0.18);
+}
+
+.conjugationChoices button.wrong {
+  border-color: var(--coral);
+  background: rgba(239, 113, 94, 0.12);
+}
+
+.conjugationAnswerPanel {
+  margin-top: 22px;
+  border: 1px dashed rgba(116, 189, 162, 0.48);
+  border-radius: 18px;
+  background: rgba(116, 189, 162, 0.1);
+  padding: 18px 20px;
+  text-align: center;
+}
+
+.conjugationAnswerPanel span {
+  display: block;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.conjugationAnswerPanel strong {
+  display: block;
+  margin-top: 6px;
+  color: #2f755a;
+  font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  font-weight: 500;
+}
+
+.conjugationAnswerPanel p {
+  margin: 10px auto 0;
+  max-width: 680px;
+  color: var(--muted);
+}
+
+.conjugationActions {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 26px;
 }
 
 .practicePage {
@@ -2784,6 +3008,8 @@ footer > span {
   .modeGrid { grid-template-columns: repeat(2, 1fr); }
   .jlptGroupGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .jlptTestGrid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .n5ConjugationPromo { grid-template-columns: 1fr auto; }
+  .n5ConjugationPromo .secondaryButton { grid-column: 1 / -1; width: max-content; }
   .lessonIntro { grid-template-columns: 130px 1fr; }
   .lessonIntroNumber { width: 120px; height: 120px; font-size: 50px; }
   .lessonStats { grid-column: 2; justify-self: start; }
@@ -2824,10 +3050,16 @@ footer > span {
   .jlptTabs button { flex: 1 0 auto; }
   .jlptGroupGrid { grid-template-columns: 1fr; }
   .jlptGroupCard.mock { grid-column: auto; }
+  .n5ConjugationPromo { grid-template-columns: 1fr; }
+  .n5ConjugationPromo .secondaryButton { width: 100%; }
+  .n5ConjugationPreview { width: 100%; }
   .jlptPanelHeading { flex-direction: column; }
   .jlptPanelHeading .secondaryButton { width: 100%; }
   .jlptTestGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .jlptChoices, .jlptOrderChoices { grid-template-columns: 1fr; }
+  .conjugationChoices { grid-template-columns: 1fr; }
+  .conjugationActions { flex-direction: column; }
+  .conjugationActions > button { width: 100%; }
   .jlptQuestionCard > .feedback { margin-inline: 24px; }
   .jlptAnswerActions { padding-inline: 24px; }
   .studyPathGrid { grid-template-columns: 1fr; }
@@ -2864,6 +3096,8 @@ footer > span {
   .jlptTestGrid { grid-template-columns: 1fr; }
   .jlptStats { flex-direction: column; }
   .jlptGroupActions { flex-direction: column; }
+  .conjugationVerb { font-size: 3.6rem; }
+  .conjugationChoices button { min-height: 82px; padding: 14px; }
   .lessonCard { min-height: 190px; }
   .methodFooter { align-items: flex-start; flex-direction: column; gap: 10px; }
   .methodFooter strong { text-align: left; }
