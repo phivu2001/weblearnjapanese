@@ -2924,6 +2924,18 @@ ruby rt {
   gap: 10px;
 }
 
+.kanjiCompositionSentence {
+  margin: -2px 0 14px;
+  border-left: 3px solid var(--coral);
+  border-radius: 12px;
+  background: rgba(239, 113, 94, 0.08);
+  color: var(--ink);
+  padding: 11px 13px;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.65;
+}
+
 .kanjiComponentPill {
   display: inline-grid;
   grid-template-columns: auto minmax(0, 1fr);
@@ -3824,6 +3836,7 @@ footer > span {
   .kanjiWritingNotice,
   .kanjiStudyPanel,
   .kanjiStudyCard,
+  .kanjiCompositionSentence,
   .kanjiComponentPill,
   .kanjiReadingGrid > div,
   .kanjiWordExample,

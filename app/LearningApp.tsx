@@ -3169,21 +3169,325 @@ function getKanjiAliasSet(kanji: string) {
   return aliases;
 }
 
+const COMPONENT_MEANINGS: Record<string, string> = {
+  一: "một, nét ngang",
+  二: "hai",
+  人: "người",
+  亻: "người",
+  儿: "đôi chân, người",
+  入: "đi vào",
+  八: "tách ra, chia đôi",
+  冂: "khung mở",
+  冖: "mái che",
+  宀: "mái nhà",
+  口: "miệng, ô vuông",
+  囗: "vòng bao quanh",
+  土: "đất",
+  士: "người sĩ",
+  女: "phụ nữ",
+  子: "đứa trẻ",
+  小: "nhỏ",
+  大: "to, người dang tay",
+  工: "công cụ, thợ",
+  巾: "khăn, vải",
+  幺: "sợi nhỏ",
+  广: "mái nhà rộng",
+  廴: "bước dài",
+  彳: "bước chân, đi",
+  心: "trái tim",
+  忄: "tâm trạng",
+  戈: "giáo, vũ khí",
+  戸: "cửa",
+  扌: "bàn tay",
+  攵: "đánh, tác động",
+  日: "mặt trời, ngày",
+  月: "mặt trăng, tháng",
+  木: "cây",
+  林: "rừng nhỏ",
+  氵: "nước",
+  火: "lửa",
+  灬: "lửa",
+  牛: "con bò",
+  犭: "con vật",
+  玉: "ngọc",
+  王: "vua, ngọc",
+  田: "ruộng",
+  疒: "bệnh",
+  目: "mắt",
+  石: "đá",
+  礻: "thờ cúng",
+  禾: "lúa",
+  立: "đứng",
+  竹: "tre",
+  糸: "sợi chỉ",
+  艹: "cỏ, cây",
+  虫: "côn trùng",
+  衤: "áo",
+  言: "lời nói",
+  貝: "vỏ sò, tiền",
+  辶: "di chuyển",
+  阝: "đồi, vùng đất",
+  門: "cánh cửa",
+  隹: "chim đuôi ngắn",
+  雨: "mưa",
+  頁: "đầu, trang",
+  食: "ăn",
+  馬: "ngựa",
+  魚: "cá",
+  黒: "đen",
+};
+
+const KANJI_COMPONENT_HINTS: Record<string, string[]> = {
+  休: ["亻", "木"],
+  何: ["亻", "可"],
+  作: ["亻", "乍"],
+  住: ["亻", "主"],
+  体: ["亻", "本"],
+  便: ["亻", "更"],
+  借: ["亻", "昔"],
+  働: ["亻", "動"],
+  先: ["儿", "土"],
+  円: ["冂", "一"],
+  冷: ["冫", "令"],
+  初: ["衤", "刀"],
+  前: ["䒑", "月", "刂"],
+  勉: ["免", "力"],
+  務: ["矛", "攵", "力"],
+  医: ["匚", "矢"],
+  午: ["ノ", "十"],
+  去: ["土", "ム"],
+  取: ["耳", "又"],
+  受: ["爫", "冖", "又"],
+  口: ["口"],
+  号: ["口", "丂"],
+  名: ["夕", "口"],
+  吸: ["口", "及"],
+  味: ["口", "未"],
+  呼: ["口", "乎"],
+  員: ["口", "貝"],
+  喫: ["口", "契"],
+  図: ["囗", "メ"],
+  地: ["土", "也"],
+  場: ["土", "昜"],
+  売: ["士", "冖", "儿"],
+  変: ["亦", "夂"],
+  外: ["夕", "卜"],
+  多: ["夕", "夕"],
+  好: ["女", "子"],
+  嫌: ["女", "兼"],
+  字: ["宀", "子"],
+  安: ["宀", "女"],
+  室: ["宀", "至"],
+  家: ["宀", "豕"],
+  宿: ["宀", "亻", "百"],
+  寒: ["宀", "井", "八", "冫"],
+  寝: ["宀", "爿", "冖", "又"],
+  寺: ["土", "寸"],
+  小: ["小"],
+  少: ["小", "ノ"],
+  屋: ["尸", "至"],
+  市: ["亠", "巾"],
+  師: ["𠂤", "帀"],
+  帰: ["リ", "帚"],
+  帳: ["巾", "長"],
+  年: ["ノ", "干"],
+  店: ["广", "占"],
+  度: ["广", "廿", "又"],
+  強: ["弓", "ム", "虫"],
+  待: ["彳", "寺"],
+  後: ["彳", "幺", "夂"],
+  忘: ["亡", "心"],
+  思: ["田", "心"],
+  急: ["刍", "心"],
+  意: ["音", "心"],
+  所: ["戸", "斤"],
+  払: ["扌", "ム"],
+  押: ["扌", "甲"],
+  持: ["扌", "寺"],
+  指: ["扌", "旨"],
+  捨: ["扌", "舎"],
+  掃: ["扌", "帚"],
+  撮: ["扌", "最"],
+  教: ["孝", "攵"],
+  文: ["文"],
+  料: ["米", "斗"],
+  新: ["亲", "斤"],
+  明: ["日", "月"],
+  易: ["日", "勿"],
+  昼: ["尺", "旦"],
+  晩: ["日", "免"],
+  暑: ["日", "者"],
+  暖: ["日", "爰"],
+  暗: ["日", "音"],
+  曜: ["日", "羽", "隹"],
+  曲: ["曲"],
+  有: ["𠂇", "月"],
+  服: ["月", "卩", "又"],
+  朝: ["十", "日", "十", "月"],
+  机: ["木", "几"],
+  校: ["木", "交"],
+  案: ["安", "木"],
+  棚: ["木", "朋"],
+  椅: ["木", "奇"],
+  楽: ["白", "冫", "木"],
+  機: ["木", "幾"],
+  欲: ["谷", "欠"],
+  歌: ["哥", "欠"],
+  止: ["止"],
+  歩: ["止", "少"],
+  毎: ["𠂉", "母"],
+  気: ["气", "メ"],
+  泊: ["氵", "白"],
+  注: ["氵", "主"],
+  泳: ["氵", "永"],
+  洗: ["氵", "先"],
+  浴: ["氵", "谷"],
+  消: ["氵", "肖"],
+  涼: ["氵", "京"],
+  準: ["氵", "隹", "十"],
+  漢: ["氵", "艹", "口", "夫"],
+  火: ["火"],
+  犬: ["大", "丶"],
+  猫: ["犭", "苗"],
+  理: ["王", "里"],
+  甘: ["甘"],
+  産: ["立", "生"],
+  用: ["用"],
+  留: ["卯", "田"],
+  番: ["釆", "田"],
+  疲: ["疒", "皮"],
+  病: ["疒", "丙"],
+  登: ["癶", "豆"],
+  目: ["目"],
+  直: ["十", "目", "一"],
+  眠: ["目", "民"],
+  着: ["羊", "目"],
+  知: ["矢", "口"],
+  短: ["矢", "豆"],
+  研: ["石", "开"],
+  究: ["穴", "九"],
+  空: ["穴", "工"],
+  窓: ["穴", "ム", "心"],
+  立: ["立"],
+  符: ["竹", "付"],
+  筆: ["竹", "聿"],
+  筒: ["竹", "同"],
+  箱: ["竹", "相"],
+  簡: ["竹", "間"],
+  紙: ["糸", "氏"],
+  終: ["糸", "冬"],
+  経: ["糸", "圣"],
+  結: ["糸", "吉"],
+  線: ["糸", "泉"],
+  練: ["糸", "東"],
+  置: ["罒", "直"],
+  美: ["羊", "大"],
+  習: ["羽", "白"],
+  考: ["耂", "丂"],
+  者: ["耂", "日"],
+  聞: ["門", "耳"],
+  花: ["艹", "化"],
+  英: ["艹", "央"],
+  茶: ["艹", "人", "木"],
+  荷: ["艹", "何"],
+  菓: ["艹", "果"],
+  薬: ["艹", "楽"],
+  行: ["彳", "亍"],
+  術: ["行", "朮"],
+  表: ["龶", "衣"],
+  被: ["衤", "皮"],
+  製: ["制", "衣"],
+  覚: ["⺍", "冖", "見"],
+  親: ["立", "木", "見"],
+  計: ["言", "十"],
+  記: ["言", "己"],
+  話: ["言", "舌"],
+  誕: ["言", "延"],
+  説: ["言", "兑"],
+  調: ["言", "周"],
+  議: ["言", "義"],
+  負: ["⺈", "貝"],
+  貸: ["代", "貝"],
+  資: ["次", "貝"],
+  起: ["走", "己"],
+  足: ["口", "止"],
+  身: ["身"],
+  転: ["車", "云"],
+  軽: ["車", "圣"],
+  辛: ["辛"],
+  辞: ["舌", "辛"],
+  近: ["辶", "斤"],
+  送: ["辶", "关"],
+  通: ["辶", "甬"],
+  速: ["辶", "束"],
+  週: ["辶", "周"],
+  遅: ["辶", "羊"],
+  遊: ["辶", "方", "子"],
+  運: ["辶", "軍"],
+  達: ["辶", "幸"],
+  遠: ["辶", "袁"],
+  部: ["咅", "阝"],
+  郵: ["垂", "阝"],
+  重: ["重"],
+  野: ["里", "予"],
+  鉄: ["金", "失"],
+  鉛: ["金", "㕣"],
+  銀: ["金", "艮"],
+  鍵: ["金", "建"],
+  鏡: ["金", "竟"],
+  長: ["長"],
+  閉: ["門", "才"],
+  開: ["門", "开"],
+  間: ["門", "日"],
+  降: ["阝", "夅"],
+  院: ["阝", "完"],
+  階: ["阝", "皆"],
+  集: ["隹", "木"],
+  難: ["艹", "夫", "隹"],
+  静: ["青", "争"],
+  音: ["立", "日"],
+  題: ["是", "頁"],
+  顔: ["彦", "頁"],
+  食: ["食"],
+  飲: ["食", "欠"],
+  駅: ["馬", "尺"],
+  験: ["馬", "佥"],
+  魚: ["魚"],
+  鳥: ["鳥"],
+  黒: ["黒"],
+};
+
+function makeComponentMeaning(part: string) {
+  return COMPONENT_MEANINGS[part] ?? "mảnh gợi hình trong chữ";
+}
+
+function inferKanjiStudyGuide(kanji: string, item: KanjiVocabularyItem): KanjiStudyGuide {
+  const parts = KANJI_COMPONENT_HINTS[kanji] ?? [kanji || item.kanji];
+  const components = parts.map((part) => ({
+    part,
+    meaning: makeComponentMeaning(part),
+  }));
+  const componentText = components
+    .map((component) => `${component.part} (${component.meaning})`)
+    .join(" + ");
+  const readableComponentText = components
+    .map((component) => `${component.meaning} (${component.part})`)
+    .join(" kết hợp với ");
+
+  return {
+    components,
+    composition: `${kanji || item.kanji} gồm ${readableComponentText}.`,
+    mnemonic: `${kanji || item.kanji} gồm ${componentText}. Cảnh nhớ: các mảnh này ghép lại như một biểu tượng nhỏ cho nghĩa “${item.vietnamese}” trong từ ${item.kanji}.`,
+    on: [],
+    kun: [item.reading],
+  };
+}
+
 function getKanjiStudyGuide(kanji: string, item: KanjiVocabularyItem): KanjiStudyGuide {
   const guide = KANJI_STUDY_GUIDES[kanji];
   if (guide) return guide;
 
-  return {
-    components: [
-      {
-        part: kanji || item.kanji,
-        meaning: "quan sát theo khối lớn, bộ bên trái/phải hoặc trên/dưới",
-      },
-    ],
-    mnemonic: `Hãy tự tách chữ ${kanji || item.kanji} thành 2–3 mảnh dễ nhớ, rồi bịa một câu chuyện thật ngốc nghếch gắn với nghĩa “${item.vietnamese}”. Câu càng buồn cười càng dễ nhớ.`,
-    on: [],
-    kun: item.kanji === kanji ? [item.reading] : [],
-  };
+  return inferKanjiStudyGuide(kanji, item);
 }
 
 function getKanjiWordExamples(
@@ -3383,18 +3687,25 @@ function KanjiStudyPanel({
   guide: KanjiStudyGuide;
   wordExamples: KanjiWordExample[];
 }) {
+  const composition =
+    guide.composition ??
+    `${kanji} gồm ${guide.components
+      .map((component) => `${component.meaning} (${component.part})`)
+      .join(" kết hợp với ")}.`;
+
   return (
     <section className="kanjiStudyPanel" aria-label={`Hồ sơ ghi nhớ Kanji ${kanji}`}>
       <div className="kanjiStudyIntro">
         <span className="promptLabel">HỒ SƠ GHI NHỚ</span>
         <h3 lang="ja">{kanji}</h3>
-        <p>Tách nhỏ chữ, gắn hình ảnh, rồi đọc lại âm On/Kun cùng các từ thường gặp.</p>
+        <p>Bản phân tích đã làm sẵn: mảnh cấu tạo, câu chuyện nhớ, âm On/Kun và từ ví dụ.</p>
       </div>
 
       <div className="kanjiStudyGrid">
         <article className="kanjiStudyCard">
           <span className="kanjiStudyLabel">Tách bộ thủ</span>
-          <h4>Chia thành mảnh nhỏ</h4>
+          <h4>Các mảnh của chữ</h4>
+          <p className="kanjiCompositionSentence">{composition}</p>
           <div className="kanjiComponentList">
             {guide.components.map((component, index) => (
               <span className="kanjiComponentPill" key={`${component.part}-${index}`}>
@@ -3407,7 +3718,7 @@ function KanjiStudyPanel({
 
         <article className="kanjiStudyCard">
           <span className="kanjiStudyLabel">Liên tưởng hình ảnh</span>
-          <h4>Câu chuyện nhớ nhanh</h4>
+          <h4>Mẹo nhớ bằng hình ảnh</h4>
           <p className="kanjiMnemonic">{guide.mnemonic}</p>
         </article>
 

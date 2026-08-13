@@ -9,6 +9,7 @@ export type KanjiStudyGuide = {
     part: string;
     meaning: string;
   }>;
+  composition?: string;
   mnemonic: string;
   on: string[];
   kun: string[];
@@ -72,6 +73,22 @@ export const KANJI_STUDY_GUIDES: Record<string, KanjiStudyGuide> = {
       { kanji: "先週", reading: "せんしゅう", vietnamese: "tuần trước" },
       { kanji: "先月", reading: "せんげつ", vietnamese: "tháng trước" },
       { kanji: "先に", reading: "さきに", vietnamese: "trước, trước tiên" },
+    ],
+  },
+  休: {
+    components: [
+      { part: "亻", meaning: "người" },
+      { part: "木", meaning: "cây" },
+    ],
+    composition: "Chữ Hưu (nghỉ ngơi - 休) gồm người (亻) dựa vào cây (木).",
+    mnemonic: "Một người đi đường mệt quá bèn tựa lưng vào gốc cây: đó là nghỉ ngơi.",
+    on: ["キュウ"],
+    kun: ["やす(む)", "やす(み)", "やす(まる)"],
+    examples: [
+      { kanji: "休みます", reading: "やすみます", vietnamese: "nghỉ" },
+      { kanji: "休み", reading: "やすみ", vietnamese: "ngày nghỉ, giờ nghỉ" },
+      { kanji: "休日", reading: "きゅうじつ", vietnamese: "ngày nghỉ" },
+      { kanji: "休憩", reading: "きゅうけい", vietnamese: "nghỉ giải lao" },
     ],
   },
   会: {
