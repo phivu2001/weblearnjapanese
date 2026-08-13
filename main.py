@@ -10,6 +10,7 @@ from pathlib import Path
 import httpx
 from fastapi import Depends, FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import StreamingResponse
 from sqlalchemy import func, select
 from sqlalchemy.orm import Session, selectinload
 
@@ -86,11 +87,32 @@ def build_fallback_chat_reply(payload: ChatRequest) -> str:
 
     return (
         "Mình đã sẵn sàng làm trợ lý học tiếng Nhật"
-        f"{lesson_context}. Hiện backend chưa có OPENAI_API_KEY nên đây là phản hồi mẫu.\n\n"
+        f"{lesson_context}. Hiện backend chưa có GEMINI_API_KEY nên đây là phản hồi mẫu.\n\n"
         f"Bạn vừa hỏi: “{last_message[:240]}”.\n\n"
         "Gợi ý học nhanh: hãy gửi một câu tiếng Nhật, ví dụ “わたしは 学生です”, "
         "mình sẽ tách cụm, giải thích trợ từ, nghĩa tiếng Việt và cách đọc. "
-        "Để bật AI thật, thêm OPENAI_API_KEY vào file môi trường rồi khởi động lại web."
+        "Để bật AI thật, thêm GEMINI_API_KEY vào file môi trường rồi khởi động lại web."
+    )
+
+
+def build_gemini_fallback_chat_reply(payload: ChatRequest) -> str:
+    last_message = payload.messages[-1].content.strip() if payload.messages else ""
+    lesson_context = ""
+    if payload.lesson_title or payload.lesson_description:
+        lesson_context = f" trong {payload.lesson_title or 'bài hiện tại'}"
+        if payload.lesson_description:
+            lesson_context += f" ({payload.lesson_description})"
+
+    if not last_message:
+        return "Bạn hãy nhập câu hỏi tiếng Nhật hoặc tiếng Việt, mình sẽ giúp giải thích theo từng cụm."
+
+    return (
+        "Mình đã sẵn sàng làm trợ lý học tiếng Nhật"
+        f"{lesson_context}. Hiện backend chưa có GEMINI_API_KEY nên đây là phản hồi mẫu.\n\n"
+        f"Bạn vừa hỏi: “{last_message[:240]}”.\n\n"
+        "Gợi ý học nhanh: hãy gửi một câu tiếng Nhật, ví dụ “わたしは 学生です”, "
+        "mình sẽ tách cụm, giải thích trợ từ, nghĩa tiếng Việt và cách đọc. "
+        "Để bật Gemini AI thật, thêm GEMINI_API_KEY vào file môi trường rồi khởi động lại web."
     )
 
 
@@ -126,6 +148,79 @@ def sanitize_chat_messages(payload: ChatRequest) -> list[dict[str, str]]:
     return messages
 
 
+def build_chat_system_instruction(payload: ChatRequest) -> str:
+    instruction = (
+        "Bạn là Manabu AI, trợ lý luyện tiếng Nhật cho người Việt. "
+        "Giải thích ngắn gọn, thân thiện, ưu tiên N5/N4, phương pháp chunking. "
+        "Khi người học gửi tiếng Nhật, hãy tách cụm, nêu nghĩa tiếng Việt, cách đọc, "
+        "điểm ngữ pháp và một ví dụ gần giống. Không bịa dữ liệu bài học."
+    )
+    if payload.lesson_title or payload.lesson_description:
+        instruction += (
+            "\nNgữ cảnh bài học hiện tại: "
+            f"{payload.lesson_title or ''} - {payload.lesson_description or ''}"
+        ).strip()
+
+    return instruction
+
+
+def build_gemini_contents(payload: ChatRequest) -> list[dict[str, object]]:
+    contents: list[dict[str, object]] = []
+    for message in payload.messages[-12:]:
+        content = message.content.strip()
+        if not content:
+            continue
+        contents.append(
+            {
+                "role": "model" if message.role == "assistant" else "user",
+                "parts": [{"text": content[:1200]}],
+            }
+        )
+
+    while contents and contents[0].get("role") == "model":
+        contents.pop(0)
+
+    return contents or [{"role": "user", "parts": [{"text": "Xin chào"}]}]
+
+
+def build_gemini_request_body(payload: ChatRequest) -> dict[str, object]:
+    return {
+        "systemInstruction": {
+            "parts": [{"text": build_chat_system_instruction(payload)}]
+        },
+        "contents": build_gemini_contents(payload),
+        "generationConfig": {
+            "temperature": 0.4,
+            "maxOutputTokens": 700,
+        },
+    }
+
+
+def extract_gemini_reply(data: dict[str, object]) -> str:
+    candidates = data.get("candidates")
+    if not isinstance(candidates, list) or not candidates:
+        return ""
+
+    first = candidates[0]
+    if not isinstance(first, dict):
+        return ""
+
+    content = first.get("content")
+    if not isinstance(content, dict):
+        return ""
+
+    parts = content.get("parts")
+    if not isinstance(parts, list):
+        return ""
+
+    reply_parts = [
+        part.get("text", "")
+        for part in parts
+        if isinstance(part, dict) and isinstance(part.get("text"), str)
+    ]
+    return "".join(reply_parts).strip()
+
+
 def get_lesson_or_404(lesson_id: int, db: Session) -> Lesson:
     lesson = db.get(Lesson, lesson_id)
     if lesson is None:
@@ -140,44 +235,112 @@ def health_check() -> HealthResponse:
 
 @app.post("/api/ai-chat", response_model=ChatResponse, tags=["AI Tutor"])
 async def ai_chat(payload: ChatRequest) -> ChatResponse:
-    api_key = os.getenv("OPENAI_API_KEY")
+    api_key = os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
     if not api_key:
-        return ChatResponse(reply=build_fallback_chat_reply(payload), source="fallback")
+        return ChatResponse(reply=build_gemini_fallback_chat_reply(payload), source="fallback")
 
-    model = os.getenv("OPENAI_CHAT_MODEL", "gpt-4o-mini")
+    model = os.getenv("GEMINI_MODEL", "gemini-2.5-flash").removeprefix("models/")
     try:
         async with httpx.AsyncClient(timeout=35) as client:
             response = await client.post(
-                "https://api.openai.com/v1/chat/completions",
-                headers={
-                    "authorization": f"Bearer {api_key}",
-                    "content-type": "application/json",
-                },
-                json={
-                    "model": model,
-                    "messages": sanitize_chat_messages(payload),
-                    "temperature": 0.4,
-                    "max_tokens": 700,
-                },
+                f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
+                params={"key": api_key},
+                json=build_gemini_request_body(payload),
             )
             response.raise_for_status()
+    except httpx.HTTPStatusError as exc:
+        try:
+            error = exc.response.json().get("error", {})
+        except ValueError:
+            error = {}
+        status_code = exc.response.status_code
+        error_code = error.get("status") or error.get("code") or "unknown_error"
+        error_message = error.get("message") or str(exc)
+        return ChatResponse(
+            reply=(
+                "Mình đã nhận được Gemini API key, nhưng Gemini đang từ chối yêu cầu.\n\n"
+                f"Mã lỗi: {status_code} - {error_code}.\n"
+                f"Chi tiết: {error_message}\n\n"
+                "Bạn hãy kiểm tra lại GEMINI_API_KEY, quyền dùng Gemini API, quota miễn phí "
+                "hoặc thử đổi GEMINI_MODEL trong file .env."
+            ),
+            source=f"gemini-error:{status_code}:{error_code}",
+        )
     except httpx.HTTPError as exc:
         return ChatResponse(
             reply=(
-                "Mình chưa gọi được AI thật lúc này, nên trả lời tạm bằng chế độ mẫu.\n\n"
-                f"{build_fallback_chat_reply(payload)}"
+                "Mình đã nhận được Gemini API key, nhưng chưa kết nối được tới Gemini lúc này.\n\n"
+                f"Lỗi kỹ thuật: {exc.__class__.__name__}. Hãy kiểm tra mạng rồi thử lại."
             ),
-            source=f"fallback:{exc.__class__.__name__}",
+            source=f"gemini-fallback:{exc.__class__.__name__}",
         )
 
     data = response.json()
-    reply = (
-        data.get("choices", [{}])[0]
-        .get("message", {})
-        .get("content", "")
-        .strip()
+    reply = extract_gemini_reply(data)
+    return ChatResponse(reply=reply or build_gemini_fallback_chat_reply(payload), source="gemini")
+
+
+async def iter_gemini_text_stream(payload: ChatRequest):
+    api_key = os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
+    if not api_key:
+        yield build_gemini_fallback_chat_reply(payload)
+        return
+
+    model = os.getenv("GEMINI_MODEL", "gemini-2.5-flash").removeprefix("models/")
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:streamGenerateContent"
+
+    try:
+        async with httpx.AsyncClient(timeout=None) as client:
+            async with client.stream(
+                "POST",
+                url,
+                params={"key": api_key, "alt": "sse"},
+                json=build_gemini_request_body(payload),
+            ) as response:
+                if response.status_code >= 400:
+                    try:
+                        error = (await response.aread()).decode("utf-8", errors="replace")
+                    except httpx.HTTPError:
+                        error = ""
+                    yield (
+                        "Mình đã nhận được Gemini API key, nhưng Gemini đang từ chối yêu cầu.\n\n"
+                        f"Mã lỗi: {response.status_code}.\n"
+                        f"Chi tiết: {error[:500] or 'Không có nội dung lỗi.'}"
+                    )
+                    return
+
+                async for line in response.aiter_lines():
+                    if not line.startswith("data:"):
+                        continue
+                    raw = line.removeprefix("data:").strip()
+                    if not raw or raw == "[DONE]":
+                        continue
+                    try:
+                        data = json.loads(raw)
+                    except json.JSONDecodeError:
+                        continue
+                    text = extract_gemini_reply(data)
+                    if text:
+                        yield text
+    except httpx.HTTPError as exc:
+        yield (
+            "Mình đã nhận được Gemini API key, nhưng chưa kết nối được tới Gemini lúc này.\n\n"
+            f"Lỗi kỹ thuật: {exc.__class__.__name__}. Hãy kiểm tra mạng rồi thử lại."
+        )
+
+
+@app.post("/api/ai-chat/stream", tags=["AI Tutor"])
+async def ai_chat_stream(payload: ChatRequest) -> StreamingResponse:
+    return StreamingResponse(
+        iter_gemini_text_stream(payload),
+        media_type="text/plain; charset=utf-8",
+        headers={"x-ai-source": "gemini-stream"},
     )
-    return ChatResponse(reply=reply or build_fallback_chat_reply(payload), source="openai")
+
+
+@app.get("/api/ai-chat/stream", tags=["AI Tutor"])
+def ai_chat_stream_health() -> dict[str, str]:
+    return {"status": "ok", "mode": "gemini-stream"}
 
 
 @app.get("/api/lessons", response_model=list[LessonResponse], tags=["Lessons"])

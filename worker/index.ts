@@ -6,8 +6,9 @@ import { handleLearningApi } from "./api-data";
 interface Env {
   ASSETS: Fetcher;
   DB: D1Database;
-  OPENAI_API_KEY?: string;
-  OPENAI_CHAT_MODEL?: string;
+  GEMINI_API_KEY?: string;
+  GOOGLE_API_KEY?: string;
+  GEMINI_MODEL?: string;
   IMAGES: {
     input(stream: ReadableStream): {
       transform(options: Record<string, unknown>): {
@@ -33,6 +34,11 @@ type ChatPayload = {
   lesson_description?: string | null;
 };
 
+type GeminiContent = {
+  role: "user" | "model";
+  parts: Array<{ text: string }>;
+};
+
 function json(data: unknown, status = 200) {
   return new Response(JSON.stringify(data), {
     status,
@@ -52,7 +58,7 @@ function fallbackChatReply(payload: ChatPayload) {
 
   return [
     `Mình đã sẵn sàng làm trợ lý học tiếng Nhật${lessonContext}.`,
-    "Hiện chưa có OPENAI_API_KEY nên đây là phản hồi mẫu.",
+    "Hiện chưa có GEMINI_API_KEY nên đây là phản hồi mẫu.",
     `Bạn vừa hỏi: “${lastMessage.slice(0, 240)}”.`,
     "Gợi ý: gửi một câu tiếng Nhật, mình sẽ tách cụm, giải thích trợ từ, nghĩa tiếng Việt và cách đọc.",
   ].join("\n\n");
@@ -86,9 +92,167 @@ function sanitizeChatMessages(payload: ChatPayload) {
   return messages;
 }
 
+function buildChatSystemInstruction(payload: ChatPayload) {
+  let instruction =
+    "Bạn là Manabu AI, trợ lý luyện tiếng Nhật cho người Việt. Giải thích ngắn gọn, thân thiện, ưu tiên N5/N4, phương pháp chunking. Khi người học gửi tiếng Nhật, hãy tách cụm, nêu nghĩa tiếng Việt, cách đọc, điểm ngữ pháp và một ví dụ gần giống. Không bịa dữ liệu bài học.";
+
+  if (payload.lesson_title || payload.lesson_description) {
+    instruction += `\nNgữ cảnh bài học hiện tại: ${payload.lesson_title ?? ""} - ${payload.lesson_description ?? ""}`.trim();
+  }
+
+  return instruction;
+}
+
+function buildGeminiContents(payload: ChatPayload): GeminiContent[] {
+  const contents: GeminiContent[] = [];
+
+  for (const message of payload.messages?.slice(-12) ?? []) {
+    const content = message.content?.trim();
+    if (!content) continue;
+    contents.push({
+      role: message.role === "assistant" ? "model" : "user",
+      parts: [{ text: content.slice(0, 1200) }],
+    });
+  }
+
+  while (contents[0]?.role === "model") {
+    contents.shift();
+  }
+
+  return contents.length ? contents : [{ role: "user", parts: [{ text: "Xin chào" }] }];
+}
+
+function buildGeminiRequestBody(payload: ChatPayload) {
+  return {
+    systemInstruction: {
+      parts: [{ text: buildChatSystemInstruction(payload) }],
+    },
+    contents: buildGeminiContents(payload),
+    generationConfig: {
+      temperature: 0.4,
+      maxOutputTokens: 700,
+    },
+  };
+}
+
+function extractGeminiReply(data: unknown) {
+  const candidates = (data as {
+    candidates?: Array<{ content?: { parts?: Array<{ text?: string }> } }>;
+  }).candidates;
+  return candidates?.[0]?.content?.parts?.map((part) => part.text ?? "").join("").trim() ?? "";
+}
+
+function createGeminiPlainTextStream(upstream: Response): ReadableStream<Uint8Array> {
+  const encoder = new TextEncoder();
+  const decoder = new TextDecoder();
+
+  return new ReadableStream<Uint8Array>({
+    async start(controller) {
+      const reader = upstream.body?.getReader();
+      if (!reader) {
+        controller.close();
+        return;
+      }
+
+      let buffer = "";
+      const flushEvent = (event: string) => {
+        const data = event
+          .split(/\r?\n/)
+          .filter((line) => line.startsWith("data:"))
+          .map((line) => line.slice(5).trim())
+          .join("\n");
+
+        if (!data || data === "[DONE]") return;
+
+        try {
+          const text = extractGeminiReply(JSON.parse(data));
+          if (text) controller.enqueue(encoder.encode(text));
+        } catch {
+          // Ignore malformed keep-alive or partial SSE frames.
+        }
+      };
+
+      try {
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+          buffer += decoder.decode(value, { stream: true });
+          const events = buffer.split(/\r?\n\r?\n/);
+          buffer = events.pop() ?? "";
+          for (const event of events) flushEvent(event);
+        }
+
+        buffer += decoder.decode();
+        if (buffer.trim()) flushEvent(buffer);
+        controller.close();
+      } catch (error) {
+        controller.error(error);
+      } finally {
+        reader.releaseLock();
+      }
+    },
+  });
+}
+
+async function handleAiChatStream(payload: ChatPayload, env: Env): Promise<Response> {
+  const apiKey = env.GEMINI_API_KEY ?? env.GOOGLE_API_KEY;
+  const headers = {
+    "content-type": "text/plain; charset=utf-8",
+    "x-ai-source": "gemini-stream",
+  };
+
+  if (!apiKey) {
+    return new Response(fallbackChatReply(payload), {
+      headers: { ...headers, "x-ai-source": "fallback" },
+    });
+  }
+
+  try {
+    const model = (env.GEMINI_MODEL ?? "gemini-2.5-flash").replace(/^models\//, "");
+    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:streamGenerateContent?alt=sse&key=${encodeURIComponent(apiKey)}`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(buildGeminiRequestBody(payload)),
+    });
+
+    if (!response.ok) {
+      const detailText = await response.text();
+      let detail = detailText;
+      try {
+        const parsed = JSON.parse(detailText) as { error?: { message?: string; status?: string; code?: number } };
+        detail = [parsed.error?.status ?? parsed.error?.code, parsed.error?.message].filter(Boolean).join(" - ");
+      } catch {
+        // Keep raw response text.
+      }
+
+      return new Response([
+        "Mình đã nhận được Gemini API key, nhưng Gemini đang từ chối yêu cầu.",
+        `Mã lỗi: ${response.status}${detail ? ` - ${detail}` : ""}.`,
+        "Bạn hãy kiểm tra lại GEMINI_API_KEY, quota miễn phí hoặc thử đổi GEMINI_MODEL trong file môi trường.",
+      ].join("\n\n"), {
+        headers: { ...headers, "x-ai-source": `gemini-error:${response.status}` },
+      });
+    }
+
+    return new Response(createGeminiPlainTextStream(response), { headers });
+  } catch (error) {
+    return new Response([
+      "Mình đã nhận được Gemini API key, nhưng chưa kết nối được tới Gemini lúc này.",
+      `Lỗi kỹ thuật: ${error instanceof Error ? error.name : "UnknownError"}. Hãy kiểm tra mạng rồi thử lại.`,
+    ].join("\n\n"), {
+      headers: { ...headers, "x-ai-source": "gemini-fallback" },
+    });
+  }
+}
+
 async function handleAiChat(request: Request, env: Env): Promise<Response | null> {
   const url = new URL(request.url);
-  if (url.pathname !== "/api/ai-chat") return null;
+  if (url.pathname !== "/api/ai-chat" && url.pathname !== "/api/ai-chat/stream") return null;
+  if (url.pathname === "/api/ai-chat/stream" && request.method === "GET") {
+    return json({ status: "ok", mode: "gemini-stream" });
+  }
   if (request.method !== "POST") return json({ detail: "Method not allowed" }, 405);
 
   let payload: ChatPayload;
@@ -98,33 +262,54 @@ async function handleAiChat(request: Request, env: Env): Promise<Response | null
     return json({ detail: "Payload không hợp lệ." }, 400);
   }
 
-  if (!env.OPENAI_API_KEY) {
+  if (url.pathname === "/api/ai-chat/stream") {
+    return handleAiChatStream(payload, env);
+  }
+
+  const apiKey = env.GEMINI_API_KEY ?? env.GOOGLE_API_KEY;
+  if (!apiKey) {
     return json({ reply: fallbackChatReply(payload), source: "fallback" });
   }
 
   try {
-    const response = await fetch("https://api.openai.com/v1/chat/completions", {
+    const model = (env.GEMINI_MODEL ?? "gemini-2.5-flash").replace(/^models\//, "");
+    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${encodeURIComponent(apiKey)}`, {
       method: "POST",
       headers: {
-        authorization: `Bearer ${env.OPENAI_API_KEY}`,
         "content-type": "application/json",
       },
-      body: JSON.stringify({
-        model: env.OPENAI_CHAT_MODEL ?? "gpt-4o-mini",
-        messages: sanitizeChatMessages(payload),
-        temperature: 0.4,
-        max_tokens: 700,
-      }),
+      body: JSON.stringify(buildGeminiRequestBody(payload)),
     });
 
-    if (!response.ok) throw new Error(`OpenAI ${response.status}`);
-    const data = await response.json() as {
-      choices?: Array<{ message?: { content?: string } }>;
-    };
-    const reply = data.choices?.[0]?.message?.content?.trim();
-    return json({ reply: reply || fallbackChatReply(payload), source: "openai" });
-  } catch {
-    return json({ reply: fallbackChatReply(payload), source: "fallback" });
+    if (!response.ok) {
+      let detail = "";
+      try {
+        const data = await response.json() as { error?: { message?: string; status?: string; code?: number } };
+        detail = [data.error?.status ?? data.error?.code, data.error?.message].filter(Boolean).join(" - ");
+      } catch {
+        detail = await response.text();
+      }
+      return json({
+        reply: [
+          "Mình đã nhận được Gemini API key, nhưng Gemini đang từ chối yêu cầu.",
+          `Mã lỗi: ${response.status}${detail ? ` - ${detail}` : ""}.`,
+          "Bạn hãy kiểm tra lại GEMINI_API_KEY, quota miễn phí hoặc thử đổi GEMINI_MODEL trong file môi trường.",
+        ].join("\n\n"),
+        source: `gemini-error:${response.status}`,
+      });
+    }
+
+    const data = await response.json();
+    const reply = extractGeminiReply(data);
+    return json({ reply: reply || fallbackChatReply(payload), source: "gemini" });
+  } catch (error) {
+    return json({
+      reply: [
+        "Mình đã nhận được Gemini API key, nhưng chưa kết nối được tới Gemini lúc này.",
+        `Lỗi kỹ thuật: ${error instanceof Error ? error.name : "UnknownError"}. Hãy kiểm tra mạng rồi thử lại.`,
+      ].join("\n\n"),
+      source: "gemini-fallback",
+    });
   }
 }
 

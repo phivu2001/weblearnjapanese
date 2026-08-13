@@ -781,6 +781,55 @@ async function requestAiChat(payload: {
   return response.json() as Promise<AiChatResponse>;
 }
 
+async function streamAiChat(
+  payload: {
+    messages: Array<{ role: AiChatRole; content: string }>;
+    lesson_title?: string | null;
+    lesson_description?: string | null;
+  },
+  onChunk: (chunk: string, fullText: string) => void,
+): Promise<AiChatResponse> {
+  const response = await fetch(`${API_BASE}/ai-chat/stream`, {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+
+  if (!response.ok) {
+    throw new Error(`AI chat stream error ${response.status}`);
+  }
+
+  if (!response.body) {
+    const fallback = await requestAiChat(payload);
+    onChunk(fallback.reply, fallback.reply);
+    return fallback;
+  }
+
+  const reader = response.body.getReader();
+  const decoder = new TextDecoder();
+  let fullText = "";
+
+  while (true) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    const chunk = decoder.decode(value, { stream: true });
+    if (!chunk) continue;
+    fullText += chunk;
+    onChunk(chunk, fullText);
+  }
+
+  const tail = decoder.decode();
+  if (tail) {
+    fullText += tail;
+    onChunk(tail, fullText);
+  }
+
+  return {
+    reply: fullText.trim(),
+    source: response.headers.get("x-ai-source") ?? "gemini-stream",
+  };
+}
+
 function ArrowIcon() {
   return <span aria-hidden="true">↗</span>;
 }
@@ -3132,39 +3181,64 @@ function AiChatBox({ lesson }: { lesson: Lesson | null }) {
       content,
     };
     const nextMessages = [...messages, userMessage].slice(-16);
-    setMessages(nextMessages);
+    const assistantMessageId = `assistant-stream-${Date.now()}`;
+    setMessages([
+      ...nextMessages,
+      {
+        id: assistantMessageId,
+        role: "assistant",
+        content: "Đang suy nghĩ một chút…",
+        source: "gemini-stream",
+      },
+    ]);
     setInput("");
     setLoading(true);
 
     try {
-      const response = await requestAiChat({
+      const response = await streamAiChat({
         messages: nextMessages.map((message) => ({
           role: message.role,
           content: message.content,
         })),
         lesson_title: lesson?.title ?? null,
         lesson_description: lesson?.description ?? null,
+      }, (_chunk, fullText) => {
+        setMessages((current) =>
+          current.map((message) =>
+            message.id === assistantMessageId
+              ? {
+                  ...message,
+                  content: fullText || "Đang suy nghĩ một chút…",
+                  source: "gemini-stream",
+                }
+              : message,
+          ),
+        );
       });
-      setMessages((current) => [
-        ...current,
-        {
-          id: `assistant-${Date.now()}`,
-          role: "assistant",
-          content: response.reply,
-          source: response.source,
-        },
-      ]);
+      setMessages((current) =>
+        current.map((message) =>
+          message.id === assistantMessageId
+            ? {
+                ...message,
+                content: response.reply || "Mình chưa nhận được nội dung trả lời từ Gemini.",
+                source: response.source,
+              }
+            : message,
+        ),
+      );
     } catch {
-      setMessages((current) => [
-        ...current,
-        {
-          id: `assistant-error-${Date.now()}`,
-          role: "assistant",
-          content:
-            "Mình chưa kết nối được AI lúc này. Bạn kiểm tra backend đang chạy và OPENAI_API_KEY nếu muốn dùng AI thật nhé.",
-          source: "error",
-        },
-      ]);
+      setMessages((current) =>
+        current.map((message) =>
+          message.id === assistantMessageId
+            ? {
+                ...message,
+                content:
+                  "Mình chưa kết nối được AI lúc này. Bạn kiểm tra backend đang chạy và GEMINI_API_KEY nếu muốn dùng Gemini AI thật nhé.",
+                source: "error",
+              }
+            : message,
+        ),
+      );
     } finally {
       setLoading(false);
     }
@@ -3249,7 +3323,7 @@ function AiChatBox({ lesson }: { lesson: Lesson | null }) {
                 )}
               </div>
             ))}
-            {loading && (
+            {loading && !messages.some((message) => message.id.startsWith("assistant-stream-")) && (
               <div className="aiChatMessage assistant">
                 <p>Đang suy nghĩ một chút…</p>
               </div>
