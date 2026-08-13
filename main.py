@@ -5,7 +5,9 @@ from __future__ import annotations
 import json
 import os
 from contextlib import asynccontextmanager
+from pathlib import Path
 
+import httpx
 from fastapi import Depends, FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy import func, select
@@ -14,6 +16,8 @@ from sqlalchemy.orm import Session, selectinload
 from database import get_db
 from models import Lesson, Passage, Sentence
 from schemas import (
+    ChatRequest,
+    ChatResponse,
     HealthResponse,
     LessonDetailResponse,
     LessonResponse,
@@ -21,6 +25,22 @@ from schemas import (
     SentenceResponse,
 )
 from seed import seed_database
+
+
+def load_local_env() -> None:
+    env_path = Path(__file__).with_name(".env")
+    if not env_path.exists():
+        return
+
+    for raw_line in env_path.read_text(encoding="utf-8").splitlines():
+        line = raw_line.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        key, value = line.split("=", 1)
+        os.environ.setdefault(key.strip(), value.strip().strip("\"'"))
+
+
+load_local_env()
 
 
 @asynccontextmanager
@@ -48,9 +68,62 @@ app.add_middleware(
         "http://127.0.0.1:5173",
     ],
     allow_credentials=True,
-    allow_methods=["GET"],
+    allow_methods=["GET", "POST", "OPTIONS"],
     allow_headers=["*"],
 )
+
+
+def build_fallback_chat_reply(payload: ChatRequest) -> str:
+    last_message = payload.messages[-1].content.strip() if payload.messages else ""
+    lesson_context = ""
+    if payload.lesson_title or payload.lesson_description:
+        lesson_context = f" trong {payload.lesson_title or 'bài hiện tại'}"
+        if payload.lesson_description:
+            lesson_context += f" ({payload.lesson_description})"
+
+    if not last_message:
+        return "Bạn hãy nhập câu hỏi tiếng Nhật hoặc tiếng Việt, mình sẽ giúp giải thích theo từng cụm."
+
+    return (
+        "Mình đã sẵn sàng làm trợ lý học tiếng Nhật"
+        f"{lesson_context}. Hiện backend chưa có OPENAI_API_KEY nên đây là phản hồi mẫu.\n\n"
+        f"Bạn vừa hỏi: “{last_message[:240]}”.\n\n"
+        "Gợi ý học nhanh: hãy gửi một câu tiếng Nhật, ví dụ “わたしは 学生です”, "
+        "mình sẽ tách cụm, giải thích trợ từ, nghĩa tiếng Việt và cách đọc. "
+        "Để bật AI thật, thêm OPENAI_API_KEY vào file môi trường rồi khởi động lại web."
+    )
+
+
+def sanitize_chat_messages(payload: ChatRequest) -> list[dict[str, str]]:
+    messages: list[dict[str, str]] = [
+        {
+            "role": "system",
+            "content": (
+                "Bạn là Manabu AI, trợ lý luyện tiếng Nhật cho người Việt. "
+                "Giải thích ngắn gọn, thân thiện, ưu tiên N5/N4, phương pháp chunking. "
+                "Khi người học gửi tiếng Nhật, hãy tách cụm, nêu nghĩa tiếng Việt, cách đọc, "
+                "điểm ngữ pháp và một ví dụ gần giống. Không bịa dữ liệu bài học."
+            ),
+        }
+    ]
+    if payload.lesson_title or payload.lesson_description:
+        messages.append(
+            {
+                "role": "system",
+                "content": (
+                    "Ngữ cảnh bài học hiện tại: "
+                    f"{payload.lesson_title or ''} - {payload.lesson_description or ''}"
+                ).strip(),
+            }
+        )
+
+    for message in payload.messages[-12:]:
+        role = message.role if message.role in {"user", "assistant"} else "user"
+        content = message.content.strip()
+        if not content:
+            continue
+        messages.append({"role": role, "content": content[:1200]})
+    return messages
 
 
 def get_lesson_or_404(lesson_id: int, db: Session) -> Lesson:
@@ -63,6 +136,48 @@ def get_lesson_or_404(lesson_id: int, db: Session) -> Lesson:
 @app.get("/api/health", response_model=HealthResponse, tags=["System"])
 def health_check() -> HealthResponse:
     return HealthResponse(status="ok")
+
+
+@app.post("/api/ai-chat", response_model=ChatResponse, tags=["AI Tutor"])
+async def ai_chat(payload: ChatRequest) -> ChatResponse:
+    api_key = os.getenv("OPENAI_API_KEY")
+    if not api_key:
+        return ChatResponse(reply=build_fallback_chat_reply(payload), source="fallback")
+
+    model = os.getenv("OPENAI_CHAT_MODEL", "gpt-4o-mini")
+    try:
+        async with httpx.AsyncClient(timeout=35) as client:
+            response = await client.post(
+                "https://api.openai.com/v1/chat/completions",
+                headers={
+                    "authorization": f"Bearer {api_key}",
+                    "content-type": "application/json",
+                },
+                json={
+                    "model": model,
+                    "messages": sanitize_chat_messages(payload),
+                    "temperature": 0.4,
+                    "max_tokens": 700,
+                },
+            )
+            response.raise_for_status()
+    except httpx.HTTPError as exc:
+        return ChatResponse(
+            reply=(
+                "Mình chưa gọi được AI thật lúc này, nên trả lời tạm bằng chế độ mẫu.\n\n"
+                f"{build_fallback_chat_reply(payload)}"
+            ),
+            source=f"fallback:{exc.__class__.__name__}",
+        )
+
+    data = response.json()
+    reply = (
+        data.get("choices", [{}])[0]
+        .get("message", {})
+        .get("content", "")
+        .strip()
+    )
+    return ChatResponse(reply=reply or build_fallback_chat_reply(payload), source="openai")
 
 
 @app.get("/api/lessons", response_model=list[LessonResponse], tags=["Lessons"])

@@ -4,6 +4,7 @@
 
 import {
   Fragment,
+  type KeyboardEvent as ReactKeyboardEvent,
   useCallback,
   useEffect,
   useMemo,
@@ -107,6 +108,46 @@ type GrammarPoint = {
   answer: string;
   choices: string[];
 };
+
+type AiChatRole = "user" | "assistant";
+
+type AiChatMessage = {
+  id: string;
+  role: AiChatRole;
+  content: string;
+  source?: string;
+};
+
+type AiChatResponse = {
+  reply: string;
+  source: string;
+};
+
+type SpeechRecognitionAlternativeLike = {
+  transcript: string;
+};
+
+type SpeechRecognitionEventLike = {
+  results: {
+    length: number;
+    [index: number]: {
+      [index: number]: SpeechRecognitionAlternativeLike;
+    };
+  };
+};
+
+type SpeechRecognitionLike = {
+  lang: string;
+  interimResults: boolean;
+  maxAlternatives: number;
+  onresult: ((event: SpeechRecognitionEventLike) => void) | null;
+  onend: (() => void) | null;
+  onerror: (() => void) | null;
+  start: () => void;
+  stop: () => void;
+};
+
+type SpeechRecognitionConstructor = new () => SpeechRecognitionLike;
 
 const API_BASE =
   typeof process !== "undefined" && process.env.VITE_API_URL
@@ -724,6 +765,22 @@ async function requestJson<T>(path: string): Promise<T> {
   return response.json() as Promise<T>;
 }
 
+async function requestAiChat(payload: {
+  messages: Array<{ role: AiChatRole; content: string }>;
+  lesson_title?: string | null;
+  lesson_description?: string | null;
+}): Promise<AiChatResponse> {
+  const response = await fetch(`${API_BASE}/ai-chat`, {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+  if (!response.ok) {
+    throw new Error(`AI chat error ${response.status}`);
+  }
+  return response.json() as Promise<AiChatResponse>;
+}
+
 function ArrowIcon() {
   return <span aria-hidden="true">↗</span>;
 }
@@ -1150,7 +1207,14 @@ function ExerciseNav({
 }) {
   return (
     <div className="exerciseNav">
-      <button onClick={onPrevious} disabled={index === 0}>← Câu trước</button>
+      <button
+        className="navStepButton previousStep"
+        type="button"
+        onClick={onPrevious}
+        disabled={index === 0}
+      >
+        ← Câu trước
+      </button>
       <div className="progressDots" aria-label={`Câu ${index + 1} trên ${total}`}>
         {total > 30 ? (
           <span
@@ -1166,7 +1230,14 @@ function ExerciseNav({
       <button className="shuffleOrderButton" onClick={onShuffle} type="button" aria-label="Trộn ngẫu nhiên thứ tự bài luyện">
         ↻ Ngẫu nhiên
       </button>
-      <button onClick={onNext} disabled={index >= total - 1}>Câu tiếp →</button>
+      <button
+        className="navStepButton nextStep"
+        type="button"
+        onClick={onNext}
+        disabled={index >= total - 1}
+      >
+        Câu tiếp →
+      </button>
     </div>
   );
 }
@@ -1212,6 +1283,39 @@ function isTextEntryTarget(target: EventTarget | null) {
   );
 }
 
+function speakJapaneseText(text: string, rate = 0.82) {
+  if (
+    typeof window === "undefined" ||
+    !("speechSynthesis" in window) ||
+    !("SpeechSynthesisUtterance" in window)
+  ) {
+    return;
+  }
+
+  window.speechSynthesis.cancel();
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = "ja-JP";
+  utterance.rate = rate;
+  window.speechSynthesis.speak(utterance);
+}
+
+function speakAiText(text: string) {
+  if (
+    typeof window === "undefined" ||
+    !("speechSynthesis" in window) ||
+    !("SpeechSynthesisUtterance" in window)
+  ) {
+    return;
+  }
+
+  window.speechSynthesis.cancel();
+  const japaneseCharacters = text.match(/[\u3040-\u30ff\u3400-\u9fff]/gu)?.length ?? 0;
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = japaneseCharacters > text.length * 0.35 ? "ja-JP" : "vi-VN";
+  utterance.rate = 0.96;
+  window.speechSynthesis.speak(utterance);
+}
+
 function shouldUseEnterShortcut(event: KeyboardEvent) {
   const target = event.target as HTMLElement | null;
   const interactiveParent = target?.closest("button, a, select, [role='button']");
@@ -1254,6 +1358,10 @@ function ClozeMode({
   const [feedback, setFeedback] = useState<Feedback>(null);
   const [showAnswer, setShowAnswer] = useState(false);
   const keyChunks = sentence.chunks.filter((chunk) => chunk.is_grammar_key);
+
+  useEffect(() => {
+    return () => window.speechSynthesis?.cancel();
+  }, [sentence.id]);
 
   const check = () => {
     const correct = keyChunks.every((chunk) =>
@@ -1334,7 +1442,22 @@ function ClozeMode({
         {keyChunks.map((chunk) => chunk.vietnamese).join(" · ")}
       </div>
       <FeedbackBanner feedback={feedback} />
+      {feedback && (
+        <div className="hintLine clozeResultMeaning">
+          <span>NGHĨA CẢ CÂU</span>
+          {sentence.full_vietnamese}
+        </div>
+      )}
       <div className="clozeActions">
+        <button
+          className="answerButton listenSentenceButton"
+          type="button"
+          onClick={() => speakJapaneseText(sentence.full_japanese)}
+          aria-label="Đọc toàn bộ câu tiếng Nhật, bao gồm phần đang bị ẩn"
+        >
+          Đọc cả câu
+          <span aria-hidden="true">🔊</span>
+        </button>
         <button
           className="answerButton"
           type="button"
@@ -2977,6 +3100,203 @@ type ReviewItem = {
   back: string;
 };
 
+function AiChatBox({ lesson }: { lesson: Lesson | null }) {
+  const [open, setOpen] = useState(false);
+  const [input, setInput] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [listening, setListening] = useState(false);
+  const recognitionRef = useRef<SpeechRecognitionLike | null>(null);
+  const [messages, setMessages] = useState<AiChatMessage[]>([
+    {
+      id: "welcome",
+      role: "assistant",
+      content:
+        "Chào bạn, mình là Manabu AI. Bạn có thể hỏi ngữ pháp, nhờ tách chunk, dịch câu, hoặc bấm mic để nói với mình.",
+    },
+  ]);
+
+  useEffect(() => {
+    return () => {
+      recognitionRef.current?.stop();
+      window.speechSynthesis?.cancel();
+    };
+  }, []);
+
+  const sendMessage = useCallback(async () => {
+    const content = input.trim();
+    if (!content || loading) return;
+
+    const userMessage: AiChatMessage = {
+      id: `user-${Date.now()}`,
+      role: "user",
+      content,
+    };
+    const nextMessages = [...messages, userMessage].slice(-16);
+    setMessages(nextMessages);
+    setInput("");
+    setLoading(true);
+
+    try {
+      const response = await requestAiChat({
+        messages: nextMessages.map((message) => ({
+          role: message.role,
+          content: message.content,
+        })),
+        lesson_title: lesson?.title ?? null,
+        lesson_description: lesson?.description ?? null,
+      });
+      setMessages((current) => [
+        ...current,
+        {
+          id: `assistant-${Date.now()}`,
+          role: "assistant",
+          content: response.reply,
+          source: response.source,
+        },
+      ]);
+    } catch {
+      setMessages((current) => [
+        ...current,
+        {
+          id: `assistant-error-${Date.now()}`,
+          role: "assistant",
+          content:
+            "Mình chưa kết nối được AI lúc này. Bạn kiểm tra backend đang chạy và OPENAI_API_KEY nếu muốn dùng AI thật nhé.",
+          source: "error",
+        },
+      ]);
+    } finally {
+      setLoading(false);
+    }
+  }, [input, lesson?.description, lesson?.title, loading, messages]);
+
+  const startVoiceInput = () => {
+    if (typeof window === "undefined") return;
+    const speechWindow = window as Window & {
+      SpeechRecognition?: SpeechRecognitionConstructor;
+      webkitSpeechRecognition?: SpeechRecognitionConstructor;
+    };
+    const Recognition =
+      speechWindow.SpeechRecognition ?? speechWindow.webkitSpeechRecognition;
+
+    if (!Recognition) {
+      setMessages((current) => [
+        ...current,
+        {
+          id: `assistant-mic-${Date.now()}`,
+          role: "assistant",
+          content:
+            "Trình duyệt này chưa hỗ trợ nhận diện giọng nói. Bạn vẫn có thể nhập câu hỏi bằng bàn phím.",
+          source: "browser",
+        },
+      ]);
+      return;
+    }
+
+    if (listening) {
+      recognitionRef.current?.stop();
+      setListening(false);
+      return;
+    }
+
+    const recognition = new Recognition();
+    recognition.lang = "vi-VN";
+    recognition.interimResults = false;
+    recognition.maxAlternatives = 1;
+    recognition.onresult = (event) => {
+      const transcript = event.results[event.results.length - 1]?.[0]?.transcript ?? "";
+      setInput((current) => `${current}${current ? " " : ""}${transcript}`.trim());
+    };
+    recognition.onend = () => setListening(false);
+    recognition.onerror = () => setListening(false);
+    recognitionRef.current = recognition;
+    setListening(true);
+    recognition.start();
+  };
+
+  const handleInputKeyDown = (event: ReactKeyboardEvent<HTMLTextAreaElement>) => {
+    if (event.key === "Enter" && !event.shiftKey) {
+      event.preventDefault();
+      void sendMessage();
+    }
+  };
+
+  return (
+    <div className={`aiChatBox ${open ? "open" : ""}`} aria-live="polite">
+      {open && (
+        <section className="aiChatPanel" aria-label="Chat với Manabu AI">
+          <div className="aiChatHeader">
+            <div>
+              <span>AI TUTOR</span>
+              <strong>Manabu AI</strong>
+            </div>
+            <button type="button" onClick={() => setOpen(false)} aria-label="Đóng chat AI">
+              ×
+            </button>
+          </div>
+          <div className="aiChatMessages">
+            {messages.map((message) => (
+              <div key={message.id} className={`aiChatMessage ${message.role}`}>
+                <p>{message.content}</p>
+                {message.role === "assistant" && (
+                  <button
+                    type="button"
+                    onClick={() => speakAiText(message.content)}
+                    aria-label="Đọc câu trả lời AI"
+                  >
+                    🔊
+                  </button>
+                )}
+              </div>
+            ))}
+            {loading && (
+              <div className="aiChatMessage assistant">
+                <p>Đang suy nghĩ một chút…</p>
+              </div>
+            )}
+          </div>
+          <div className="aiChatLessonContext">
+            {lesson ? `${lesson.title}: ${lesson.description}` : "Hỏi tự do về tiếng Nhật"}
+          </div>
+          <div className="aiChatInputRow">
+            <button
+              className={listening ? "listening" : ""}
+              type="button"
+              onClick={startVoiceInput}
+              aria-label={listening ? "Dừng nghe" : "Nói với AI"}
+            >
+              🎙
+            </button>
+            <textarea
+              value={input}
+              onChange={(event) => setInput(event.target.value)}
+              onKeyDown={handleInputKeyDown}
+              placeholder="Hỏi AI: câu này nghĩa là gì, tách chunk giúp tôi..."
+              rows={2}
+            />
+            <button
+              type="button"
+              onClick={() => void sendMessage()}
+              disabled={!input.trim() || loading}
+              aria-label="Gửi tin nhắn"
+            >
+              ➤
+            </button>
+          </div>
+        </section>
+      )}
+      <button
+        className="aiChatToggle"
+        type="button"
+        onClick={() => setOpen((current) => !current)}
+        aria-label={open ? "Ẩn chat AI" : "Mở chat AI"}
+      >
+        <span aria-hidden="true">🤖</span>
+      </button>
+    </div>
+  );
+}
+
 function ReviewScreen({ lesson, onBack }: { lesson: Lesson; onBack: () => void }) {
   const [items, setItems] = useState<ReviewItem[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -3047,10 +3367,28 @@ function ReviewScreen({ lesson, onBack }: { lesson: Lesson; onBack: () => void }
               <div style={{ fontSize: '1.2rem', textAlign: 'center', color: '#10b981', fontWeight: 'bold' }}>
                 {currentItem.back}
               </div>
-              <div style={{ display: 'flex', gap: '10px', justifyContent: 'center' }}>
-                <button className="primaryButton" style={{ background: '#ef4444' }} onClick={() => handleRate(1)}>Quên (Lặp lại ngay)</button>
-                <button className="primaryButton" style={{ background: '#f59e0b' }} onClick={() => handleRate(3)}>Khó</button>
-                <button className="primaryButton" style={{ background: '#10b981' }} onClick={() => handleRate(5)}>Dễ (Nhớ lâu)</button>
+              <div className="reviewRatingActions">
+                <button
+                  className="reviewRatingButton forgot"
+                  type="button"
+                  onClick={() => handleRate(1)}
+                >
+                  Quên <small>Lặp lại ngay</small>
+                </button>
+                <button
+                  className="reviewRatingButton hard"
+                  type="button"
+                  onClick={() => handleRate(3)}
+                >
+                  Khó
+                </button>
+                <button
+                  className="reviewRatingButton easy"
+                  type="button"
+                  onClick={() => handleRate(5)}
+                >
+                  Dễ <small>Nhớ lâu</small>
+                </button>
               </div>
             </div>
           ) : (
@@ -3110,6 +3448,7 @@ export function LearningApp() {
       <div className="ambient ambientOne" />
       <div className="ambient ambientTwo" />
       <AppHeader onHome={goHome} />
+      <AiChatBox lesson={lesson} />
       {!lesson && !questionWordsOpen && !jlptPracticeOpen && (
         <Dashboard
           onSelect={(selected) => { setLesson(selected); window.scrollTo(0, 0); }}

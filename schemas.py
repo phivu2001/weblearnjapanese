@@ -60,3 +60,18 @@ class PassageResponse(BaseModel):
 class HealthResponse(BaseModel):
     status: str
 
+
+class ChatMessage(BaseModel):
+    role: str
+    content: str
+
+
+class ChatRequest(BaseModel):
+    messages: list[ChatMessage]
+    lesson_title: str | None = None
+    lesson_description: str | None = None
+
+
+class ChatResponse(BaseModel):
+    reply: str
+    source: str = "fallback"
