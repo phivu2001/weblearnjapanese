@@ -19,6 +19,7 @@ import {
   type JlptPracticeSection,
   type JlptPracticeTest,
 } from "./jlptPracticeData";
+import { updateSRSItem, isDueForReview } from "./srs";
 
 type Lesson = {
   id: number;
@@ -72,7 +73,8 @@ type ModeId =
   | "kanji"
   | "kanji-words"
   | "vocabulary"
-  | "grammar";
+  | "grammar"
+  | "review";
 type Feedback = { kind: "success" | "error"; message: string } | null;
 
 type KanjiVocabularyItem = {
@@ -954,11 +956,21 @@ function LessonMenu({
     mode.id !== "vocabulary" && mode.id !== "grammar",
   );
 
+  const [sentences, setSentences] = useState<Sentence[]>([]);
+
   useEffect(() => {
     requestJson<Lesson>(`/lessons/${lesson.id}`)
       .then(setDetail)
       .catch(() => setDetail(lesson));
+    requestJson<Sentence[]>(`/lessons/${lesson.id}/sentences`)
+      .then(setSentences)
+      .catch(() => {});
   }, [lesson]);
+
+  const vocabularyItems = useMemo(() => buildVocabularyItems(sentences), [sentences]);
+  const dueSentences = sentences.filter(s => isDueForReview("sentence_" + s.id));
+  const dueVocab = vocabularyItems.filter(v => isDueForReview("vocab_" + v.id));
+  const dueCount = dueSentences.length + dueVocab.length;
 
   return (
     <main className="lessonMenuPage">
@@ -975,9 +987,14 @@ function LessonMenu({
             cùng một cấu trúc câu theo một góc khác.
           </p>
         </div>
-        <div className="lessonStats">
+        <div className="lessonStats" style={{ display: 'flex', alignItems: 'center' }}>
           <div><strong>{detail.sentence_count ?? authoredSentenceCounts[lesson.id] ?? 0}</strong><span>CÂU MẪU</span></div>
           <div><strong>9</strong><span>CHẾ ĐỘ</span></div>
+          {dueCount > 0 && (
+            <button className="primaryButton" style={{ marginLeft: "auto", padding: "0 20px" }} onClick={() => onMode("review")}>
+              Ôn tập ngay ({dueCount})
+            </button>
+          )}
         </div>
       </section>
 
@@ -2842,7 +2859,14 @@ function PracticeScreen({
     }
   }, [lesson.id, modeId, total]);
   const displayedIndex = practiceOrder[index] ?? index;
-  const next = () => setIndex((current) => Math.min(current + 1, total - 1));
+  const next = () => {
+    if (modeId === "vocabulary" && vocabularyItems[displayedIndex]) {
+      updateSRSItem("vocab_" + vocabularyItems[displayedIndex].id, 4);
+    } else if ((modeId === "cloze" || modeId === "scramble" || modeId === "dictation" || modeId === "kanji") && activeSentences[displayedIndex]) {
+      updateSRSItem("sentence_" + activeSentences[displayedIndex].id, 4);
+    }
+    setIndex((current) => Math.min(current + 1, total - 1));
+  };
   const previous = () => setIndex((current) => Math.max(current - 1, 0));
   const shufflePractice = () => {
     setPracticeOrder((current) => shuffledOrder(total, current));
@@ -2946,6 +2970,100 @@ function PracticeScreen({
   );
 }
 
+type ReviewItem = {
+  id: string;
+  type: "sentence" | "vocab";
+  front: string;
+  back: string;
+};
+
+function ReviewScreen({ lesson, onBack }: { lesson: Lesson; onBack: () => void }) {
+  const [items, setItems] = useState<ReviewItem[]>([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [showAnswer, setShowAnswer] = useState(false);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    requestJson<Sentence[]>(`/lessons/${lesson.id}/sentences`).then(sentences => {
+      const dueSentences = sentences.filter(s => isDueForReview("sentence_" + s.id)).map(s => ({
+        id: "sentence_" + s.id,
+        type: "sentence" as const,
+        front: s.full_japanese,
+        back: s.full_vietnamese
+      }));
+      const vocabItems = buildVocabularyItems(sentences);
+      const dueVocab = vocabItems.filter(v => isDueForReview("vocab_" + v.id)).map(v => ({
+        id: "vocab_" + v.id,
+        type: "vocab" as const,
+        front: v.japanese,
+        back: v.vietnamese
+      }));
+      setItems([...dueSentences, ...dueVocab].sort(() => Math.random() - 0.5));
+      setLoading(false);
+    });
+  }, [lesson.id]);
+
+  if (loading) return <main className="practicePage"><div className="loadingState"><span /><p>Đang chuẩn bị bài luyện…</p></div></main>;
+
+  if (items.length === 0 || currentIndex >= items.length) {
+    return (
+      <main className="practicePage">
+        <section className="practiceCard mint" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100%', padding: '40px' }}>
+          <h2>Hoàn thành!</h2>
+          <p style={{marginBottom: 20}}>Bạn đã ôn tập xong tất cả các mục của bài này.</p>
+          <button className="primaryButton" onClick={onBack}>Quay lại</button>
+        </section>
+      </main>
+    );
+  }
+
+  const currentItem = items[currentIndex];
+
+  const handleRate = (quality: number) => {
+    updateSRSItem(currentItem.id, quality);
+    setShowAnswer(false);
+    setCurrentIndex(currentIndex + 1);
+  };
+
+  return (
+    <main className="practicePage">
+      <div className="practiceHeader">
+        <button className="textBack" onClick={onBack} aria-label="Quay lại">
+          <span aria-hidden="true">←</span> BÀI HỌC
+        </button>
+        <div className="practiceProgress">
+          <span>Ôn tập</span>
+          <strong>{currentIndex + 1} / {items.length}</strong>
+        </div>
+      </div>
+      <section className="practiceCard mint">
+        <div className="exerciseContent vocabularyContent">
+          <div className="vocabularyPrompt">
+            <span className="promptLabel">ÔN TẬP {currentItem.type === "vocab" ? "TỪ VỰNG" : "CÂU"}</span>
+            <strong lang="ja">{currentItem.front}</strong>
+          </div>
+          {showAnswer ? (
+            <div className="vocabularyOptions" style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+              <div style={{ fontSize: '1.2rem', textAlign: 'center', color: '#10b981', fontWeight: 'bold' }}>
+                {currentItem.back}
+              </div>
+              <div style={{ display: 'flex', gap: '10px', justifyContent: 'center' }}>
+                <button className="primaryButton" style={{ background: '#ef4444' }} onClick={() => handleRate(1)}>Quên (Lặp lại ngay)</button>
+                <button className="primaryButton" style={{ background: '#f59e0b' }} onClick={() => handleRate(3)}>Khó</button>
+                <button className="primaryButton" style={{ background: '#10b981' }} onClick={() => handleRate(5)}>Dễ (Nhớ lâu)</button>
+              </div>
+            </div>
+          ) : (
+            <div style={{ display: 'flex', justifyContent: 'center', marginTop: '40px' }}>
+              <button className="primaryButton" onClick={() => setShowAnswer(true)}>Hiện đáp án</button>
+            </div>
+          )}
+        </div>
+      </section>
+    </main>
+  );
+}
+
 export function LearningApp() {
   const [lesson, setLesson] = useState<Lesson | null>(null);
   const [mode, setMode] = useState<ModeId | null>(null);
@@ -3008,7 +3126,10 @@ export function LearningApp() {
           onMode={(selected) => { setMode(selected); window.scrollTo(0, 0); }}
         />
       )}
-      {lesson && mode && (
+      {lesson && mode === "review" && (
+        <ReviewScreen lesson={lesson} onBack={() => setMode(null)} />
+      )}
+      {lesson && mode && mode !== "review" && (
         <PracticeScreen
           lesson={lesson}
           modeId={mode}
