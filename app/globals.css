@@ -10,6 +10,8 @@
   --yellow: #f4bf49;
   --mint: #74bda2;
   --lavender: #9f91cc;
+  --sky: #5b9fc9;
+  --plum: #b36b98;
   --shadow: 0 24px 70px rgba(43, 44, 38, 0.12);
 }
 
@@ -219,7 +221,7 @@ footer {
 
 .hero h1 {
   margin: 26px 0 22px;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: Cambria, "Times New Roman", serif;
   font-size: clamp(3.7rem, 6vw, 6.6rem);
   font-weight: 500;
   letter-spacing: -0.062em;
@@ -346,7 +348,7 @@ footer {
 .methodFooter strong {
   max-width: 170px;
   color: var(--ink);
-  font-family: Georgia, serif;
+  font-family: Cambria, serif;
   font-size: 15px;
   font-weight: 500;
   letter-spacing: 0;
@@ -375,7 +377,7 @@ footer {
 .sectionHeading h2,
 .modeHeading h2 {
   margin: 8px 0 0;
-  font-family: Georgia, serif;
+  font-family: Cambria, serif;
   font-size: clamp(2.2rem, 4vw, 3.6rem);
   font-weight: 500;
   letter-spacing: -0.04em;
@@ -418,7 +420,7 @@ footer {
 }
 
 .searchBox > span:first-child {
-  font-family: Georgia, serif;
+  font-family: Cambria, serif;
   font-size: 25px;
 }
 
@@ -506,7 +508,7 @@ footer {
 
 .lessonNumber {
   color: var(--muted);
-  font-family: Georgia, serif;
+  font-family: Cambria, serif;
   font-size: 20px;
   font-style: italic;
 }
@@ -527,7 +529,7 @@ footer {
 
 .lessonCard h3 {
   margin: 3px 0 4px;
-  font-family: Georgia, serif;
+  font-family: Cambria, serif;
   font-size: 25px;
   font-weight: 500;
 }
@@ -561,6 +563,98 @@ footer {
 
 .hasContent .lessonMeta i {
   background: var(--mint);
+}
+
+.specialLesson {
+  position: relative;
+  min-height: 230px;
+  display: grid;
+  grid-template-columns: 1fr 150px auto;
+  align-items: center;
+  gap: 34px;
+  margin-top: 34px;
+  overflow: hidden;
+  border: 1px solid rgba(179, 107, 152, 0.25);
+  border-radius: 24px;
+  background: linear-gradient(115deg, rgba(240, 220, 232, 0.7), rgba(255, 252, 246, 0.78));
+  padding: 34px 40px;
+}
+
+.specialLesson::before {
+  content: "疑問詞";
+  position: absolute;
+  right: 12%;
+  bottom: -0.2em;
+  color: rgba(179, 107, 152, 0.06);
+  font-family: "Yu Mincho", serif;
+  font-size: 7rem;
+  pointer-events: none;
+}
+
+.specialLessonCopy {
+  position: relative;
+  z-index: 1;
+}
+
+.specialLessonCopy h3 {
+  margin: 5px 0 7px;
+  font-family: Cambria, serif;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  font-weight: 500;
+}
+
+.specialLessonCopy p {
+  max-width: 610px;
+  margin: 0;
+  color: var(--muted);
+}
+
+.specialQuestionMark {
+  position: relative;
+  z-index: 1;
+  width: 112px;
+  height: 112px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: white;
+  color: var(--plum);
+  font-family: "Yu Mincho", serif;
+  font-size: 54px;
+  box-shadow: 0 16px 36px rgba(86, 50, 73, 0.12);
+}
+
+.specialLessonButton {
+  position: relative;
+  z-index: 1;
+  min-width: 210px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--ink);
+  color: white;
+  padding: 15px 19px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+}
+
+.jlptSpecialLesson {
+  border-color: rgba(91, 159, 201, 0.28);
+  background: linear-gradient(115deg, rgba(217, 234, 244, 0.82), rgba(255, 252, 246, 0.78));
+}
+
+.jlptSpecialLesson::before {
+  content: "試験";
+  color: rgba(91, 159, 201, 0.08);
+}
+
+.jlptMark {
+  color: var(--sky);
 }
 
 .emptySearch,
@@ -605,7 +699,7 @@ footer {
   border-radius: 50%;
   background: var(--coral);
   color: white;
-  font-family: Georgia, serif;
+  font-family: Cambria, serif;
   font-size: 64px;
   font-style: italic;
   box-shadow: 0 20px 45px rgba(239, 113, 94, 0.27);
@@ -614,7 +708,7 @@ footer {
 .lessonIntro h1 {
   max-width: 680px;
   margin: 10px 0 12px;
-  font-family: Georgia, serif;
+  font-family: Cambria, serif;
   font-size: clamp(2.7rem, 5vw, 5.1rem);
   font-weight: 500;
   letter-spacing: -0.055em;
@@ -640,7 +734,7 @@ footer {
 }
 
 .lessonStats strong {
-  font-family: Georgia, serif;
+  font-family: Cambria, serif;
   font-size: 34px;
   font-weight: 500;
 }
@@ -665,9 +759,84 @@ footer {
   font-size: clamp(2rem, 3vw, 3rem);
 }
 
+.studyPathGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.studyPathCard {
+  position: relative;
+  min-height: 220px;
+  display: grid;
+  grid-template-columns: 88px 1fr auto;
+  align-items: center;
+  gap: 24px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: rgba(255, 252, 246, 0.68);
+  color: var(--ink);
+  padding: 28px;
+  text-align: left;
+  cursor: pointer;
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
+
+.studyPathCard:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+
+.studyPathCard.mint:hover { background: #d5eae2; }
+.studyPathCard.coral:hover { background: #f9d6cf; }
+
+.studyPathGlyph {
+  width: 82px;
+  height: 82px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: white;
+  font-family: "Yu Mincho", serif;
+  font-size: 40px;
+  box-shadow: 0 12px 30px rgba(23, 33, 31, 0.08);
+}
+
+.studyPathCard.mint .studyPathGlyph { color: #3f8c70; }
+.studyPathCard.coral .studyPathGlyph { color: var(--coral); }
+
+.studyPathCard > div > span {
+  color: var(--coral);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.studyPathCard h3 {
+  margin: 4px 0 7px;
+  font-family: Cambria, serif;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.studyPathCard p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.studyPathArrow {
+  font-size: 22px;
+}
+
+.activityHeading {
+  margin-top: 58px;
+}
+
 .modeGrid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 14px;
 }
 
@@ -695,13 +864,15 @@ footer {
 .modeCard.yellow:hover { background: #f8e6b9; }
 .modeCard.mint:hover { background: #d5eae2; }
 .modeCard.lavender:hover { background: #e2ddef; }
+.modeCard.sky:hover { background: #d9eaf4; }
+.modeCard.plum:hover { background: #f0dce8; }
 
 .modeTop {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   color: var(--muted);
-  font-family: Georgia, serif;
+  font-family: Cambria, serif;
   font-style: italic;
 }
 
@@ -722,6 +893,8 @@ footer {
 .yellow .modeGlyph { color: #c18a11; }
 .mint .modeGlyph { color: #3f8c70; }
 .lavender .modeGlyph { color: #7968ae; }
+.sky .modeGlyph { color: #397da7; }
+.plum .modeGlyph { color: #944f79; }
 
 .modeJapanese {
   color: var(--coral);
@@ -729,7 +902,7 @@ footer {
 
 .modeCard h3 {
   margin: 7px 0 8px;
-  font-family: Georgia, serif;
+  font-family: Cambria, serif;
   font-size: 27px;
   font-weight: 500;
 }
@@ -749,6 +922,261 @@ footer {
   font-size: 10px;
   font-weight: 800;
   letter-spacing: 0.13em;
+}
+
+.jlptPage {
+  width: min(1180px, calc(100% - 48px));
+  min-height: calc(100vh - 100px);
+  margin-inline: auto;
+  padding: 48px 0 100px;
+  position: relative;
+  z-index: 1;
+}
+
+.jlptHero {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: 46px;
+  margin: 48px 0 34px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 38px;
+}
+
+.jlptHero h1 {
+  max-width: 780px;
+  margin: 8px 0 12px;
+  font-family: Cambria, serif;
+  font-size: clamp(2.8rem, 5vw, 5.2rem);
+  font-weight: 500;
+  letter-spacing: -0.055em;
+  line-height: 0.98;
+}
+
+.jlptHero p {
+  max-width: 720px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 16px;
+}
+
+.jlptStats {
+  display: flex;
+  gap: 18px;
+}
+
+.jlptStats div {
+  min-width: 98px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: rgba(255, 252, 246, 0.64);
+  padding: 16px 14px;
+  text-align: center;
+}
+
+.jlptStats strong,
+.jlptStats span {
+  display: block;
+}
+
+.jlptStats strong {
+  font-family: Cambria, serif;
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.jlptStats span {
+  color: var(--muted);
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.jlptTabs {
+  display: inline-flex;
+  gap: 6px;
+  margin-bottom: 26px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.45);
+  padding: 5px;
+}
+
+.jlptTabs button {
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  padding: 10px 16px;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.jlptTabs button.active {
+  background: var(--ink);
+  color: white;
+}
+
+.jlptGroupGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.jlptGroupCard {
+  min-height: 275px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: rgba(255, 252, 246, 0.68);
+  padding: 24px;
+  box-shadow: 0 14px 36px rgba(23, 33, 31, 0.06);
+}
+
+.jlptGroupCard.mock {
+  grid-column: span 2;
+  background: linear-gradient(115deg, rgba(244, 191, 73, 0.2), rgba(255, 252, 246, 0.74));
+}
+
+.jlptGroupBadge {
+  color: var(--sky);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.jlptGroupCard h2 {
+  margin: 8px 0 8px;
+  font-family: Cambria, serif;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.jlptGroupCard p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.jlptGroupMeta {
+  display: flex;
+  gap: 10px;
+  margin-top: 22px;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.jlptGroupMeta span {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 6px 10px;
+}
+
+.jlptGroupActions {
+  display: flex;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.jlptGroupActions button {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: white;
+  color: var(--ink);
+  padding: 10px 14px;
+  font-size: 11px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.jlptGroupActions button:first-child {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  background: var(--ink);
+  color: white;
+}
+
+.jlptTestsPanel {
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: rgba(255, 252, 246, 0.66);
+  padding: 28px;
+}
+
+.jlptPanelHeading {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 28px;
+  margin-bottom: 24px;
+}
+
+.jlptPanelHeading h2 {
+  margin: 7px 0 7px;
+  font-family: Cambria, serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 500;
+}
+
+.jlptPanelHeading p {
+  max-width: 720px;
+  margin: 0;
+  color: var(--muted);
+}
+
+.jlptTestGrid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.jlptTestCard {
+  min-height: 132px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.58);
+  color: var(--ink);
+  padding: 16px;
+  text-align: left;
+  cursor: pointer;
+  transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+}
+
+.jlptTestCard:hover {
+  border-color: var(--sky);
+  background: white;
+  transform: translateY(-2px);
+}
+
+.jlptTestCard span {
+  color: var(--muted);
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.jlptTestCard strong {
+  font-family: Cambria, serif;
+  font-size: 23px;
+  font-weight: 500;
+}
+
+.jlptTestCard small {
+  color: var(--muted);
+  font-size: 11px;
 }
 
 .practicePage {
@@ -789,7 +1217,7 @@ footer {
 }
 
 .practiceIdentity strong {
-  font-family: Georgia, serif;
+  font-family: Cambria, serif;
   font-size: 25px;
   font-weight: 500;
 }
@@ -808,7 +1236,7 @@ footer {
 
 .practiceProgress strong {
   margin-top: 2px;
-  font-family: Georgia, serif;
+  font-family: Cambria, serif;
   font-size: 21px;
   font-weight: 500;
 }
@@ -829,6 +1257,9 @@ footer {
 .practiceCard.yellow { border-top: 5px solid var(--yellow); }
 .practiceCard.mint { border-top: 5px solid var(--mint); }
 .practiceCard.lavender { border-top: 5px solid var(--lavender); }
+.practiceCard.sky { border-top: 5px solid var(--sky); }
+.practiceCard.plum { border-top: 5px solid var(--plum); }
+.practiceCard.question { border-top: 5px solid var(--plum); }
 
 .exerciseContent {
   padding: 56px 66px 42px;
@@ -844,7 +1275,7 @@ footer {
 
 .promptBlock p {
   margin: 10px 0 0;
-  font-family: Georgia, serif;
+  font-family: Cambria, serif;
   font-size: 25px;
 }
 
@@ -911,6 +1342,47 @@ footer {
   font-size: 20px;
 }
 
+.clozeActions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.clozeActions .checkButton {
+  margin: 0;
+}
+
+.answerButton {
+  display: inline-flex;
+  min-width: 190px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: white;
+  color: var(--ink);
+  padding: 14px 18px 14px 22px;
+  font-size: 13px;
+  font-weight: 750;
+  cursor: pointer;
+  transition: border-color 180ms ease, color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+}
+
+.answerButton > span {
+  color: var(--coral);
+  font-size: 19px;
+}
+
+.answerButton:hover {
+  border-color: var(--coral);
+  color: var(--coral);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(23, 33, 31, 0.12);
+}
+
 .feedback {
   display: flex;
   gap: 10px;
@@ -937,7 +1409,7 @@ footer {
 
 .exerciseNav {
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: 1fr auto auto 1fr;
   align-items: center;
   gap: 20px;
   padding: 20px 30px;
@@ -957,6 +1429,24 @@ footer {
   text-align: right;
 }
 
+.exerciseNav > .shuffleOrderButton {
+  min-height: 36px;
+  padding: 8px 14px;
+  border: 1px solid rgba(23, 33, 31, 0.13);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--ink);
+  text-align: center;
+  white-space: nowrap;
+  transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+}
+
+.exerciseNav > .shuffleOrderButton:hover {
+  transform: translateY(-1px);
+  border-color: var(--mint);
+  background: rgba(116, 189, 162, 0.14);
+}
+
 .exerciseNav > button:disabled {
   opacity: 0.3;
   cursor: not-allowed;
@@ -966,6 +1456,21 @@ footer {
   display: flex;
   align-items: center;
   gap: 7px;
+}
+
+.progressDots:has(.longProgress) {
+  width: min(220px, 28vw);
+  height: 7px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #d5d5cd;
+}
+
+.progressDots .longProgress {
+  height: 100%;
+  border-radius: inherit;
+  background: var(--plum);
+  transition: width 180ms ease;
 }
 
 .progressDots span {
@@ -1160,13 +1665,90 @@ footer {
   margin-top: 15px;
 }
 
+.dictationCorrectAnswer {
+  align-items: flex-start;
+  border: 1px solid rgba(116, 189, 162, 0.28);
+  border-radius: 16px;
+  background: rgba(116, 189, 162, 0.1);
+  padding: 14px 16px;
+}
+
+.dictationCorrectAnswer > strong {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: var(--ink);
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: clamp(1.35rem, 3vw, 1.85rem);
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.dictationCorrectAnswer > strong small {
+  color: var(--muted);
+  font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+  font-size: 0.72em;
+  font-weight: 700;
+}
+
+.dictationReview {
+  margin-top: 18px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.58);
+  padding: 16px 18px;
+}
+
+.dictationReview > span {
+  color: var(--muted);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.dictationReviewText {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  margin-top: 10px;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: clamp(1.35rem, 3vw, 1.85rem);
+  line-height: 1.7;
+}
+
+.dictationReviewChar {
+  border-radius: 6px;
+  padding: 0 2px;
+}
+
+.dictationReviewChar.correct {
+  background: rgba(116, 189, 162, 0.18);
+  color: #247158;
+}
+
+.dictationReviewChar.wrong {
+  background: rgba(239, 113, 94, 0.13);
+  color: #a33f31;
+}
+
+.dictationReviewChar.neutral {
+  color: var(--muted);
+}
+
+.dictationReview small {
+  display: block;
+  margin-top: 9px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
 .readingContent {
   padding-bottom: 52px;
 }
 
 .readingTitle h2 {
   margin: 8px 0 5px;
-  font-family: Georgia, serif;
+  font-family: Cambria, serif;
   font-size: 28px;
   font-weight: 500;
 }
@@ -1297,6 +1879,528 @@ ruby rt {
   border-top: 2px dotted var(--lavender);
 }
 
+.kanjiPrompt {
+  text-align: center;
+}
+
+.clozeSentence input.revealedAnswer {
+  border-bottom-color: #4e9b7d;
+  background: rgba(116, 189, 162, 0.18);
+  color: #296950;
+  cursor: default;
+}
+
+.kanjiPrompt strong {
+  display: block;
+  margin-top: 14px;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1.55;
+}
+
+.kanjiPrompt p {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.kanjiOptions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 38px;
+}
+
+.kanjiOption {
+  min-height: 112px;
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.68);
+  color: var(--ink);
+  padding: 18px;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 160ms ease, background 160ms ease, transform 160ms ease;
+}
+
+.kanjiOption:hover {
+  border-color: var(--sky);
+  transform: translateY(-2px);
+}
+
+.kanjiOption > span {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(91, 159, 201, 0.12);
+  color: #397da7;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.kanjiOption strong {
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: clamp(1.15rem, 2.2vw, 1.55rem);
+  font-weight: 500;
+}
+
+.kanjiOption.correct {
+  border-color: var(--mint);
+  background: rgba(116, 189, 162, 0.15);
+}
+
+.kanjiOption.wrong {
+  border-color: var(--coral);
+  background: rgba(239, 113, 94, 0.1);
+}
+
+.kanjiWordPrompt {
+  text-align: center;
+}
+
+.kanjiWordPrompt > strong {
+  display: block;
+  margin: 14px 0 2px;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: clamp(4.8rem, 13vw, 8.5rem);
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+.kanjiWordPrompt p {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.kanjiReadingOptions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 34px;
+}
+
+.kanjiReadingOption {
+  min-height: 82px;
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.68);
+  color: var(--ink);
+  padding: 15px 18px;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 160ms ease, background 160ms ease, transform 160ms ease;
+}
+
+.kanjiReadingOption:hover {
+  border-color: var(--plum);
+  transform: translateY(-2px);
+}
+
+.kanjiReadingOption > span {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(179, 107, 152, 0.12);
+  color: #944f79;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.kanjiReadingOption strong {
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: clamp(1.45rem, 3vw, 2rem);
+  font-weight: 500;
+}
+
+.kanjiReadingOption.correct {
+  border-color: var(--mint);
+  background: rgba(116, 189, 162, 0.15);
+}
+
+.kanjiReadingOption.wrong {
+  border-color: var(--coral);
+  background: rgba(239, 113, 94, 0.1);
+}
+
+.questionWordPrompt {
+  text-align: center;
+}
+
+.questionWordPrompt > strong {
+  display: block;
+  margin: 18px 0 8px;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.questionWordPrompt p {
+  margin: 0;
+  color: var(--muted);
+  font-family: Cambria, serif;
+  font-size: 18px;
+}
+
+.questionWordOptions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 34px;
+}
+
+.questionWordOption {
+  min-height: 84px;
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.68);
+  color: var(--ink);
+  padding: 15px 18px;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 160ms ease, background 160ms ease, transform 160ms ease;
+}
+
+.questionWordOption:hover {
+  border-color: var(--plum);
+  transform: translateY(-2px);
+}
+
+.questionWordOption > span {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(179, 107, 152, 0.12);
+  color: #944f79;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.questionWordOption strong {
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 500;
+}
+
+.questionWordOption.correct {
+  border-color: var(--mint);
+  background: rgba(116, 189, 162, 0.15);
+}
+
+.questionWordOption.wrong {
+  border-color: var(--coral);
+  background: rgba(239, 113, 94, 0.1);
+}
+
+.vocabularyPrompt {
+  text-align: center;
+}
+
+.vocabularyPrompt > strong {
+  display: block;
+  margin: 18px 0 6px;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: clamp(3rem, 8vw, 5.6rem);
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.vocabularyPrompt p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.vocabularyOptions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 34px;
+}
+
+.vocabularyOption {
+  min-height: 82px;
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.68);
+  color: var(--ink);
+  padding: 15px 18px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.vocabularyOption:hover { border-color: var(--mint); }
+
+.vocabularyOption > span {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(116, 189, 162, 0.13);
+  color: #3f8c70;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.vocabularyOption strong {
+  font-size: 14px;
+}
+
+.vocabularyOption.correct {
+  border-color: var(--mint);
+  background: rgba(116, 189, 162, 0.15);
+}
+
+.vocabularyOption.wrong {
+  border-color: var(--coral);
+  background: rgba(239, 113, 94, 0.1);
+}
+
+.grammarLesson h2 {
+  margin: 8px 0 12px;
+  font-family: Cambria, serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 500;
+}
+
+.grammarPattern {
+  display: inline-block;
+  border-radius: 12px;
+  background: rgba(239, 113, 94, 0.1);
+  color: #9b4437;
+  padding: 10px 15px;
+  font-family: "Yu Mincho", serif;
+  font-size: 22px;
+}
+
+.grammarLesson > p {
+  margin: 16px 0 0;
+  color: var(--muted);
+}
+
+.grammarExample {
+  display: grid;
+  gap: 4px;
+  margin-top: 22px;
+  border-left: 4px solid var(--coral);
+  background: rgba(255, 255, 255, 0.5);
+  padding: 15px 18px;
+}
+
+.grammarExample span,
+.grammarQuiz > span {
+  color: var(--muted);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.grammarExample strong {
+  font-family: "Yu Mincho", serif;
+  font-size: 21px;
+  font-weight: 500;
+}
+
+.grammarExample small {
+  color: var(--muted);
+}
+
+.grammarQuiz {
+  margin-top: 30px;
+  border-top: 1px solid var(--line);
+  padding-top: 26px;
+}
+
+.grammarQuiz > strong {
+  display: block;
+  margin-top: 9px;
+  font-family: "Yu Mincho", serif;
+  font-size: clamp(1.7rem, 4vw, 2.5rem);
+  font-weight: 500;
+}
+
+.grammarChoices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.grammarChoices button {
+  min-width: 100px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: white;
+  color: var(--ink);
+  padding: 10px 17px;
+  font-family: "Yu Mincho", serif;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.grammarChoices button:hover { border-color: var(--coral); }
+.grammarChoices button.correct { border-color: var(--mint); background: rgba(116, 189, 162, 0.15); }
+.grammarChoices button.wrong { border-color: var(--coral); background: rgba(239, 113, 94, 0.1); }
+
+.jlptQuestionCard {
+  border-top: 5px solid var(--sky);
+}
+
+.jlptQuestionTop {
+  text-align: center;
+}
+
+.jlptQuestionTop h2 {
+  max-width: 720px;
+  margin: 18px auto 0;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: clamp(1.9rem, 4vw, 3rem);
+  font-weight: 500;
+  line-height: 1.55;
+}
+
+.jlptUnderline {
+  text-decoration-line: underline;
+  text-decoration-color: var(--coral);
+  text-decoration-thickness: 0.11em;
+  text-underline-offset: 0.18em;
+  text-decoration-skip-ink: none;
+}
+
+.jlptPassage {
+  max-width: 720px;
+  margin: 18px auto 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fffdf7;
+  padding: 22px;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: clamp(1.25rem, 2.5vw, 1.65rem);
+  line-height: 1.9;
+  text-align: left;
+}
+
+.jlptChoices,
+.jlptOrderChoices {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 34px;
+}
+
+.jlptChoices button,
+.jlptOrderChoices button {
+  min-height: 86px;
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.68);
+  color: var(--ink);
+  padding: 15px 18px;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 160ms ease, background 160ms ease, transform 160ms ease;
+}
+
+.jlptChoices button:hover,
+.jlptOrderChoices button:hover {
+  border-color: var(--sky);
+  transform: translateY(-2px);
+}
+
+.jlptChoices button > span,
+.jlptOrderChoices button > span {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(91, 159, 201, 0.12);
+  color: #397da7;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.jlptChoices button strong,
+.jlptOrderChoices button strong {
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: clamp(1.1rem, 2.3vw, 1.55rem);
+  font-weight: 500;
+}
+
+.jlptChoices button.selected,
+.jlptOrderChoices button.selected {
+  border-color: var(--sky);
+  background: rgba(91, 159, 201, 0.12);
+}
+
+.jlptChoices button.correct,
+.jlptOrderChoices button.correct {
+  border-color: var(--mint);
+  background: rgba(116, 189, 162, 0.17);
+}
+
+.jlptOrderAnswer {
+  margin-top: 28px;
+  border: 1px dashed rgba(91, 159, 201, 0.45);
+  border-radius: 16px;
+  background: rgba(91, 159, 201, 0.08);
+  padding: 17px 18px;
+  text-align: center;
+}
+
+.jlptOrderAnswer span {
+  display: block;
+  color: var(--muted);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.jlptOrderAnswer strong {
+  display: block;
+  margin-top: 5px;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: clamp(1.35rem, 3vw, 2rem);
+  font-weight: 500;
+}
+
+.jlptQuestionCard > .feedback {
+  margin: 0 66px 0;
+}
+
+.jlptAnswerActions {
+  padding: 0 66px 34px;
+}
+
 .loadingState span {
   display: block;
   width: 42px;
@@ -1331,7 +2435,7 @@ ruby rt {
 .emptyPractice h2 {
   margin: 0 0 10px;
   color: var(--ink);
-  font-family: Georgia, serif;
+  font-family: Cambria, serif;
   font-size: 29px;
   font-weight: 500;
 }
@@ -1363,7 +2467,7 @@ footer {
 }
 
 footer > p {
-  font-family: Georgia, serif;
+  font-family: Cambria, serif;
   font-size: 15px;
   font-style: italic;
 }
@@ -1388,6 +2492,8 @@ footer > span {
   .hero { grid-template-columns: 1fr 0.85fr; gap: 40px; }
   .lessonGrid { grid-template-columns: repeat(4, 1fr); }
   .modeGrid { grid-template-columns: repeat(2, 1fr); }
+  .jlptGroupGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .jlptTestGrid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .lessonIntro { grid-template-columns: 130px 1fr; }
   .lessonIntroNumber { width: 120px; height: 120px; font-size: 50px; }
   .lessonStats { grid-column: 2; justify-self: start; }
@@ -1399,6 +2505,7 @@ footer > span {
   .lessonSection,
   .lessonMenuPage,
   .practicePage,
+  .jlptPage,
   footer { width: min(100% - 30px, 620px); }
   .siteHeader { min-height: 82px; }
   .siteHeader nav { display: none; }
@@ -1413,17 +2520,40 @@ footer > span {
   .rangeTabs button { flex: 0 0 auto; }
   .lessonGrid { grid-template-columns: repeat(2, 1fr); }
   .lessonCard { min-height: 218px; padding: 18px; }
+  .specialLesson { grid-template-columns: 1fr; padding: 28px; }
+  .specialQuestionMark { display: none; }
+  .specialLessonButton { width: 100%; }
   .lessonIntro { grid-template-columns: 1fr; gap: 25px; margin: 40px 0 60px; }
   .lessonIntroNumber { width: 96px; height: 96px; font-size: 42px; }
   .lessonStats { grid-column: auto; }
   .modeGrid { grid-template-columns: 1fr; }
+  .jlptHero { grid-template-columns: 1fr; align-items: start; gap: 22px; }
+  .jlptStats { width: 100%; justify-content: space-between; }
+  .jlptStats div { flex: 1; min-width: 0; }
+  .jlptTabs { width: 100%; overflow-x: auto; }
+  .jlptTabs button { flex: 1 0 auto; }
+  .jlptGroupGrid { grid-template-columns: 1fr; }
+  .jlptGroupCard.mock { grid-column: auto; }
+  .jlptPanelHeading { flex-direction: column; }
+  .jlptPanelHeading .secondaryButton { width: 100%; }
+  .jlptTestGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .jlptChoices, .jlptOrderChoices { grid-template-columns: 1fr; }
+  .jlptQuestionCard > .feedback { margin-inline: 24px; }
+  .jlptAnswerActions { padding-inline: 24px; }
+  .studyPathGrid { grid-template-columns: 1fr; }
+  .studyPathCard { grid-template-columns: 70px 1fr auto; padding: 22px; }
+  .studyPathGlyph { width: 64px; height: 64px; font-size: 31px; }
+  .kanjiOptions { grid-template-columns: 1fr; }
+  .kanjiReadingOptions { grid-template-columns: 1fr; }
+  .questionWordOptions { grid-template-columns: 1fr; }
+  .vocabularyOptions { grid-template-columns: 1fr; }
   .modeCard { min-height: 315px; }
   .practiceHeader { grid-template-columns: 48px 1fr; }
   .practiceProgress { grid-column: 2; text-align: left; }
   .practiceCard { border-radius: 23px; }
   .exerciseContent { padding: 42px 24px 32px; }
   .clozeSentence { font-size: 1.9rem; }
-  .exerciseNav { grid-template-columns: 1fr 1fr; }
+  .exerciseNav { grid-template-columns: 1fr auto 1fr; gap: 10px; padding-inline: 18px; }
   .progressDots { grid-column: 1 / -1; grid-row: 1; justify-content: center; }
   .audioStage { flex-direction: column; text-align: center; }
   .soundRings { margin: -72px 0 0; }
@@ -1438,6 +2568,9 @@ footer > span {
 
 @media (max-width: 420px) {
   .lessonGrid { grid-template-columns: 1fr; }
+  .jlptTestGrid { grid-template-columns: 1fr; }
+  .jlptStats { flex-direction: column; }
+  .jlptGroupActions { flex-direction: column; }
   .lessonCard { min-height: 190px; }
   .methodFooter { align-items: flex-start; flex-direction: column; gap: 10px; }
   .methodFooter strong { text-align: left; }

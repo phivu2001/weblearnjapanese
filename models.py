@@ -51,6 +51,7 @@ class Sentence(Base):
     full_romaji: Mapped[str] = mapped_column(String)
     full_vietnamese: Mapped[str] = mapped_column(String)
     audio_url: Mapped[str | None] = mapped_column(String, nullable=True)
+    kanji_variants: Mapped[str | None] = mapped_column(String, nullable=True)
 
     lesson: Mapped[Lesson | None] = relationship(back_populates="sentences")
     passage: Mapped[Passage | None] = relationship(back_populates="sentences")
@@ -75,6 +76,7 @@ class Chunk(Base):
     japanese: Mapped[str] = mapped_column(String)
     vietnamese: Mapped[str] = mapped_column(String)
     is_grammar_key: Mapped[bool] = mapped_column(Boolean, default=False)
+    kanji_variants: Mapped[str | None] = mapped_column(String, nullable=True)
 
     sentence: Mapped[Sentence] = relationship(back_populates="chunks")
 

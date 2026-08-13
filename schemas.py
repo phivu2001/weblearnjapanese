@@ -26,6 +26,7 @@ class ChunkResponse(BaseModel):
     japanese: str
     vietnamese: str
     is_grammar_key: bool
+    kanji_variants: str | None = None
 
 
 class SentenceResponse(BaseModel):
@@ -38,6 +39,7 @@ class SentenceResponse(BaseModel):
     full_romaji: str
     full_vietnamese: str
     audio_url: str | None
+    kanji_variants: str | None = None
     chunks: list[ChunkResponse]
 
 

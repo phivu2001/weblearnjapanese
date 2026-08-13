@@ -1,0 +1,209 @@
+- link "dungmori-logo2.png":
+  - /url: https://dungmori.com
+  - img "dungmori-logo2.png"
+- link:
+  - /url: https://dungmori.com/khoa-hoc
+- text:       
+- generic: Đăng nhập
+- generic: Đăng ký
+- img "play-button"
+- generic: Click để tiếp tục
+- img "click.png"
+- generic: Hướng dẫn học bài
+- generic: Tiếng Nhật GUNGUN
+- generic: Luyện đề N5
+- generic: ぐんぐん上達！- Tiến bộ nhanh chóng cùng DUNGMORI!
+- generic: Với kho đề thi phong phú, sát thực tế, khóa "Luyện đề" là trợ thủ đắc lực số 1 giúp bạn tổng ôn kiến thức và rèn luyện kĩ năng làm bài trước mỗi kì thi!
+- generic: Giáo viên phụ trách
+- img "cô Thanh"
+- generic: Cô Nguyễn Ninh
+- generic: 400,000
+- generic: VNĐ
+- generic: Thời gian học 2 tháng
+- button "Mua ngay":
+  - generic: Mua ngay
+- link "play button Bắt đầu học Khóa luyện thi JLPT N5 Giới thiệu kì thi require.png":
+  - /url: https://dungmori.com/khoa-hoc/luyen-de-n5/lesson/10907-gioi-thieu-ki-thi
+  - img "play button"
+  - generic: Bắt đầu học
+  - generic: Khóa luyện thi JLPT N5
+  - text: Giới thiệu kì thi
+  - img "require.png"
+- generic: 0%
+- img "learning"
+- generic: Khóa luyện thi JLPT N5
+- generic: 145 bài Test
+- img "arrow"
+- generic: 0%
+- generic: Giới thiệu kì thi JLPT
+- img "arrow"
+- img "play button"
+- link "Về kì thi JLPT":
+  - /url: https://dungmori.com/khoa-hoc/luyen-de-n5/group/1796
+- generic: 2 bài test
+- generic: 10 phút
+- img "lock"
+- generic: Luyện kỹ năng thi JLPT
+- img "arrow"
+- img "play button"
+- link "Mondai 1 - Đọc chữ Hán":
+  - /url: https://dungmori.com/khoa-hoc/luyen-de-n5/group/1797
+- generic: 20 bài test
+- generic: 100 phút
+- img "lock"
+- img "play button"
+- link "Mondai 2 - Tìm chữ Hán đúng":
+  - /url: https://dungmori.com/khoa-hoc/luyen-de-n5/group/1798
+- generic: 20 bài test
+- generic: 96 phút
+- img "lock"
+- img "play button"
+- link "Mondai 3 - Chọn từ phù hợp để điền vào ô trống":
+  - /url: https://dungmori.com/khoa-hoc/luyen-de-n5/group/1799
+- generic: 20 bài test
+- generic: 100 phút
+- img "lock"
+- img "play button"
+- link "Mondai 4 - Chọn câu có nghĩa tương đồng":
+  - /url: https://dungmori.com/khoa-hoc/luyen-de-n5/group/1800
+- generic: 20 bài test
+- generic: 60 phút
+- img "lock"
+- img "play button"
+- link "Mondai 5 - Ngữ pháp 1":
+  - /url: https://dungmori.com/khoa-hoc/luyen-de-n5/group/1801
+- generic: 20 bài test
+- generic: 180 phút
+- img "lock"
+- img "play button"
+- link "Mondai 6 - Bài sắp xếp các đáp án thành câu có nghĩa":
+  - /url: https://dungmori.com/khoa-hoc/luyen-de-n5/group/1802
+- generic: 20 bài test
+- generic: 160 phút
+- img "lock"
+- img "play button"
+- link "Mondai 7 - Chọn đáp án thích hợp để hoàn thành đoạn văn":
+  - /url: https://dungmori.com/khoa-hoc/luyen-de-n5/group/1803
+- generic: 20 bài test
+- generic: 160 phút
+- img "lock"
+- generic: Luyện đề thi thử
+- img "arrow"
+- img "play button"
+- link "Luyện đề thi thử":
+  - /url: https://dungmori.com/khoa-hoc/luyen-de-n5/group/1804
+- generic: 5 bài test
+- generic: 450 phút
+- img "lock"
+- generic: Mục tiêu khóa học
+- img "check.png"
+- generic: Làm quen với cấu trúc đề thi JLPT N5, nắm rõ dạng câu hỏi, xây dựng chiến lược làm bài hiệu quả.
+- img "check.png"
+- generic: Rèn luyện kỹ năng làm bài thi, nâng cao tốc độ xử lý câu hỏi và phân bổ thời gian hợp lý.
+- img "check.png"
+- generic: Tăng sự tự tin trước kỳ thi, làm quen với áp lực thời gian và đánh giá năng lực để chuẩn bị tốt nhất.
+- text: Học mọi lúc,
+- text: mọi nơi
+- generic: Kho tàng kiến thức nằm ngay trong túi của bạn! Một chạm mở App DUNGMORI, bạn có thể bắt đầu giờ học ngay dù đang ở bất kì đâu!
+- link "apple-store.png":
+  - /url: https://apps.apple.com/us/app/dungmori/id1486123836
+  - img "apple-store.png"
+- link "google-play.png":
+  - /url: https://play.google.com/store/apps/details?id=com.dungmori.dungmoriapp&pli=1
+  - img "google-play.png"
+- img "phone.png"
+- text: 
+- generic: Về DUNGMORI
+- link "Về chúng tôi":
+  - /url: https://dungmori.com/ve-dungmori
+- link "Chính sách đổi trả":
+  - /url: https://dungmori.com/trang/chinh-sach-doi-tra
+- link "Chính sách gia hạn":
+  - /url: https://dungmori.com/ho-tro/chinh-sach-gia-han-khoa-hoc-online
+- link "Điều khoản sử dụng":
+  - /url: https://dungmori.com/trang/dieu-khoan-su-dung
+- link "Chính sách bảo mật":
+  - /url: https://dungmori.com/trang/chinh-sach-bao-mat
+- link "Tuyển dụng":
+  - /url: https://dungmori.com/tuyen-dung
+- generic: Fanpage
+- link "DUNGMORI":
+  - /url: https://www.facebook.com/dungmori
+- link "Nhật ngữ DUNGMORI":
+  - /url: https://www.facebook.com/Nhatngudungmori
+- link "Luyện thi JLPT":
+  - /url: https://www.facebook.com/dungmoriluyenthiJLPT
+- link "Phương Thanh":
+  - /url: https://www.facebook.com/profile.php?id=100085899283906
+- generic: Social
+- link:
+  - /url: https://www.facebook.com/dungmori
+- link:
+  - /url: https://www.youtube.com/user/moridung
+- link:
+  - /url: https://www.instagram.com/dung.mori
+- link:
+  - /url: https://zalo.me/3424692655094534236
+- link:
+  - /url: https://lin.ee/iNTtlvH
+- link:
+  - /url: https://www.tiktok.com/@dungmoriofficial
+- link:
+  - /url: https://www.tiktok.com/@phuongthanh.dungmori
+- link:
+  - /url: https://vt.tiktok.com/ZSXynKq45/?page=TikTokShop
+- link:
+  - /url: https://s.shopee.vn/9AN5i0QgGC
+- link:
+  - /url: https://apps.apple.com/us/app/id1486123836
+- link:
+  - /url: " https://play.google.com/store/apps/details?id=com.dungmori.dungmoriapp"
+- 'link "Trụ sở: Số 49 Galaxy 3, Vạn Phúc, Hà Đông, Hà Nội."':
+  - /url: https://www.google.com/maps/place/Nh%E1%BA%ADt+ng%E1%BB%AF+D%C5%A9ng+Mori/@20.9840508,105.7745928,18.57z/data=!4m6!3m5!1s0x3134530686edd6fb:0xf77a293c314835cd!8m2!3d20.9841005!4d105.7752573!16s%2Fg%2F11w4bq37rp?entry=ttu&g_ep=EgoyMDI0MTAwNy4xIKXMDSoASAFQAw%3D%3D
+  - text: "Trụ sở: Số 49 Galaxy 3, Vạn Phúc,"
+  - text: Hà Đông, Hà Nội.
+- link " (+84) 336 283 595":
+  - /url: tel:+84862056363
+  - generic: 
+  - text: (+84) 336 283 595
+- 'link "Cơ sở 2: Nhà liền kề số 03 VNT TOWER, Số 19 Nguyễn Trãi, Thanh Xuân, Hà Nội"':
+  - /url: https://www.google.com/maps/place/Nh%E1%BA%ADt+Ng%E1%BB%AF+Nihongonomori+Hanoi/@21.0016597,105.8200671,17z/data=!4m5!3m4!1s0x3135ac84ffd5e36f:0x127912f9639dc8d9!8m2!3d21.0016547!4d105.8200617
+- link " (+84) 969 856 116":
+  - /url: tel:+84969856116
+  - generic: 
+  - text: (+84) 969 856 116
+- 'link "Cơ sở 3: Số 457 Hoàng Quốc Việt, Cổ Nhuế, Bắc Từ Liêm, Hà Nội"':
+  - /url: https://www.google.com/maps/place/Trung+t%C3%A2m+ti%E1%BA%BFng+Nh%E1%BA%ADt+D%C5%A9ng+Mori/@21.0458207,105.7828938,17z/data=!3m1!4b1!4m6!3m5!1s0x3135ab74ed3e31b1:0x18998e5174af7527!8m2!3d21.0458207!4d105.7850825!16s%2Fg%2F11s4bw01p_
+  - text: "Cơ sở 3: Số 457 Hoàng Quốc Việt,"
+  - text: Cổ Nhuế, Bắc Từ Liêm, Hà Nội
+- link " (+84) 833 532 039":
+  - /url: tel:+84833532039
+  - generic: 
+  - text: (+84) 833 532 039
+- 'link "Cơ sở 4: Số 32 Đường số 2, P10, Q.Gò Vấp, TP.Hồ Chí Minh"':
+  - /url: https://maps.app.goo.gl/QhASqkNa6nuEuitQ7
+  - text: "Cơ sở 4: Số 32 Đường số 2,"
+  - text: P10, Q.Gò Vấp, TP.Hồ Chí Minh
+- link " (+84) 988 938 364":
+  - /url: tel:+84988938364
+  - generic: 
+  - text: (+84) 988 938 364
+- generic: "Thứ 2-6: 7h00 - 21h00"
+- generic: "Thứ 7: 8h00 - 15h00"
+- generic: "Email: cskh@dungmori.com"
+- 'link "Online: +84.981.060.702"':
+  - /url: tel:+84981060702
+- generic: Copyright © 2020 DUNGMORI
+- generic: Mã số thuế 0106799375, do Sở Kế hoạch và Đầu tư TP. Hà Nội cấp ngày 24/03/2015
+- generic: Quyết định thành lập Trung tâm Nhật ngữ DUNGMORI, số 3920 do Sở Giáo dục và Đào tạo Hà Nội cấp ngày 9/9/2019
+- link "dungmori logo":
+  - /url: http://online.gov.vn/HomePage/CustomWebsiteDisplay.aspx?DocId=59464
+  - img "dungmori logo"
+- link "Test":
+  - /url: https://dungmori.com/test-online
+  - generic: Test
+- link "Cửa hàng":
+  - /url: https://dungmori.com/bang-gia
+  - generic: Cửa hàng
+- generic: Tư vấn
+- generic: TẢI ỨNG DỤNG

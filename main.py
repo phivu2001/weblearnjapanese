@@ -25,7 +25,9 @@ from seed import seed_database
 
 @asynccontextmanager
 async def lifespan(_app: FastAPI):
-    if os.getenv("AUTO_SEED", "true").lower() in {"1", "true", "yes"}:
+    # Normal app launches only read the existing database. Seeding is an explicit
+    # maintenance action so opening the .bat file never rewrites lesson content.
+    if os.getenv("AUTO_SEED", "false").lower() in {"1", "true", "yes"}:
         seed_database()
     yield
 
@@ -115,6 +117,7 @@ def list_lesson_sentences(
             full_romaji=sentence.full_romaji,
             full_vietnamese=sentence.full_vietnamese,
             audio_url=sentence.audio_url,
+            kanji_variants=sentence.kanji_variants,
             chunks=sorted(sentence.chunks, key=lambda chunk: chunk.order_index),
         )
         for sentence in sentences
@@ -153,4 +156,3 @@ def list_lesson_passages(
             )
         )
     return response
-
