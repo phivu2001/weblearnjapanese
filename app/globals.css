@@ -1403,6 +1403,189 @@ footer {
   margin-top: 26px;
 }
 
+.conjugationHeaderTools {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 14px;
+}
+
+.rulesButton {
+  border: 1px solid rgba(23, 33, 31, 0.13);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.56);
+  color: var(--ink);
+  padding: 10px 14px;
+  font-size: 11px;
+  font-weight: 850;
+  cursor: pointer;
+  transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+}
+
+.rulesButton:hover {
+  border-color: var(--mint);
+  background: white;
+  transform: translateY(-1px);
+}
+
+.rulesModalBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  display: grid;
+  place-items: center;
+  background: rgba(23, 33, 31, 0.34);
+  padding: 24px;
+  backdrop-filter: blur(8px);
+}
+
+.rulesModal {
+  width: min(980px, 100%);
+  max-height: min(86vh, 820px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.64);
+  border-radius: 28px;
+  background: rgba(255, 252, 246, 0.96);
+  box-shadow: 0 30px 90px rgba(23, 33, 31, 0.22);
+}
+
+.rulesModalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid var(--line);
+  padding: 24px 28px 20px;
+}
+
+.rulesModalHeader h2 {
+  margin: 5px 0 0;
+  font-family: Cambria, serif;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+}
+
+.rulesModalHeader button {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 auto;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: white;
+  color: var(--ink);
+  font-size: 23px;
+  cursor: pointer;
+}
+
+.rulesModalBody {
+  display: grid;
+  gap: 16px;
+  overflow: auto;
+  padding: 22px 28px 30px;
+}
+
+.ruleBlock {
+  border: 1px solid rgba(23, 33, 31, 0.1);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.55);
+  padding: 18px;
+}
+
+.ruleBlock h3 {
+  margin: 0 0 14px;
+  color: var(--coral);
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.ruleGrid,
+.ruleTable {
+  display: grid;
+  gap: 10px;
+}
+
+.ruleGrid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.ruleGrid div,
+.ruleTable div {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(255, 252, 246, 0.72);
+  padding: 13px 14px;
+}
+
+.ruleGrid strong,
+.ruleTable strong,
+.ruleTable span,
+.ruleTable em {
+  display: block;
+}
+
+.ruleGrid strong,
+.ruleTable strong {
+  color: var(--ink);
+  font-weight: 950;
+}
+
+.ruleGrid p {
+  margin: 6px 0 0;
+  color: #33403b;
+  font-size: 13px;
+  font-weight: 760;
+  line-height: 1.55;
+}
+
+.ruleTable {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.ruleTable.twoColumn {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.ruleTable.threeColumn {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.ruleTable span {
+  color: #4d5b56;
+  font-size: 10.5px;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.ruleTable strong {
+  margin-top: 5px;
+  font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+  font-size: 22px;
+  font-weight: 950;
+}
+
+.ruleTable em {
+  margin-top: 7px;
+  color: #2f755a;
+  font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+  font-size: 14px;
+  font-weight: 850;
+  font-style: normal;
+  line-height: 1.5;
+}
+
+.ruleNote {
+  margin: 14px 0 0;
+  color: #3d4944;
+  font-size: 13px;
+  font-weight: 750;
+}
+
 .practicePage {
   min-height: calc(100vh - 100px);
   padding: 38px 0 90px;
@@ -3010,6 +3193,10 @@ footer > span {
   .jlptTestGrid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .n5ConjugationPromo { grid-template-columns: 1fr auto; }
   .n5ConjugationPromo .secondaryButton { grid-column: 1 / -1; width: max-content; }
+  .ruleGrid,
+  .ruleTable,
+  .ruleTable.twoColumn,
+  .ruleTable.threeColumn { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .lessonIntro { grid-template-columns: 130px 1fr; }
   .lessonIntroNumber { width: 120px; height: 120px; font-size: 50px; }
   .lessonStats { grid-column: 2; justify-self: start; }
@@ -3060,6 +3247,19 @@ footer > span {
   .conjugationChoices { grid-template-columns: 1fr; }
   .conjugationActions { flex-direction: column; }
   .conjugationActions > button { width: 100%; }
+  .conjugationHeaderTools {
+    grid-column: 2;
+    justify-content: space-between;
+    align-items: end;
+  }
+  .rulesModalBackdrop { padding: 12px; }
+  .rulesModal { max-height: 88vh; border-radius: 22px; }
+  .rulesModalHeader { padding: 20px; }
+  .rulesModalBody { padding: 18px; }
+  .ruleGrid,
+  .ruleTable,
+  .ruleTable.twoColumn,
+  .ruleTable.threeColumn { grid-template-columns: 1fr; }
   .jlptQuestionCard > .feedback { margin-inline: 24px; }
   .jlptAnswerActions { padding-inline: 24px; }
   .studyPathGrid { grid-template-columns: 1fr; }
@@ -3098,6 +3298,9 @@ footer > span {
   .jlptGroupActions { flex-direction: column; }
   .conjugationVerb { font-size: 3.6rem; }
   .conjugationChoices button { min-height: 82px; padding: 14px; }
+  .conjugationHeaderTools { flex-direction: column-reverse; align-items: stretch; }
+  .conjugationHeaderTools .practiceProgress { text-align: left; }
+  .rulesButton { width: 100%; }
   .lessonCard { min-height: 190px; }
   .methodFooter { align-items: flex-start; flex-direction: column; gap: 10px; }
   .methodFooter strong { text-align: left; }

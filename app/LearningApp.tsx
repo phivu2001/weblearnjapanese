@@ -3212,6 +3212,7 @@ function N5ConjugationScreen({ onBack }: { onBack: () => void }) {
   const [selected, setSelected] = useState<string | null>(null);
   const [feedback, setFeedback] = useState<Feedback>(null);
   const [showAnswer, setShowAnswer] = useState(false);
+  const [rulesOpen, setRulesOpen] = useState(false);
 
   const displayedIndex = questionOrder[index] ?? index;
   const item = n5ConjugationItems[displayedIndex];
@@ -3251,6 +3252,13 @@ function N5ConjugationScreen({ onBack }: { onBack: () => void }) {
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
+      if (rulesOpen) {
+        if (event.key === "Escape") {
+          event.preventDefault();
+          setRulesOpen(false);
+        }
+        return;
+      }
       if (isTextEntryTarget(event.target)) return;
       if (["1", "2", "3", "4"].includes(event.key)) {
         const choice = choices[Number(event.key) - 1];
@@ -3267,7 +3275,7 @@ function N5ConjugationScreen({ onBack }: { onBack: () => void }) {
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [choices, chooseAnswer, feedback, index, total]);
+  }, [choices, chooseAnswer, feedback, index, rulesOpen, total]);
 
   return (
     <main className="practicePage jlptRunnerPage">
@@ -3277,9 +3285,19 @@ function N5ConjugationScreen({ onBack }: { onBack: () => void }) {
           <span>CHIA THỂ N5</span>
           <strong>Từ vựng N5</strong>
         </div>
-        <div className="practiceProgress">
-          <span>Luyện tập</span>
-          <strong>{index + 1} / {total}</strong>
+        <div className="conjugationHeaderTools">
+          <button
+            className="rulesButton"
+            type="button"
+            onClick={() => setRulesOpen(true)}
+            aria-haspopup="dialog"
+          >
+            Quy tắc chia
+          </button>
+          <div className="practiceProgress">
+            <span>Luyện tập</span>
+            <strong>{index + 1} / {total}</strong>
+          </div>
         </div>
       </div>
 
@@ -3358,7 +3376,102 @@ function N5ConjugationScreen({ onBack }: { onBack: () => void }) {
         />
       </section>
       <p className="practiceTip">Mẹo: bấm phím 1–4 để chọn nhanh, Enter để sang câu tiếp sau khi đã trả lời.</p>
+      {rulesOpen && <N5ConjugationRulesModal onClose={() => setRulesOpen(false)} />}
     </main>
+  );
+}
+
+function N5ConjugationRulesModal({ onClose }: { onClose: () => void }) {
+  return (
+    <div
+      className="rulesModalBackdrop"
+      role="presentation"
+      onMouseDown={onClose}
+    >
+      <section
+        className="rulesModal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="n5-rules-title"
+        onMouseDown={(event) => event.stopPropagation()}
+      >
+        <header className="rulesModalHeader">
+          <div>
+            <span className="sectionKicker">N5 CONJUGATION RULES</span>
+            <h2 id="n5-rules-title">Quy tắc chia thể N5</h2>
+          </div>
+          <button type="button" onClick={onClose} aria-label="Đóng bảng quy tắc">×</button>
+        </header>
+
+        <div className="rulesModalBody">
+          <article className="ruleBlock">
+            <h3>1. Nhận diện nhóm động từ</h3>
+            <div className="ruleGrid">
+              <div><strong>Nhóm 1</strong><p>Động từ đổi âm trước ます: いきます, よみます, かいます, はなします.</p></div>
+              <div><strong>Nhóm 2</strong><p>Bỏ ます rồi thêm る ở thể từ điển: たべます→たべる, みます→みる.</p></div>
+              <div><strong>Nhóm 3</strong><p>Bất quy tắc: します→する, きます→くる.</p></div>
+            </div>
+          </article>
+
+          <article className="ruleBlock">
+            <h3>2. Thể lịch sự</h3>
+            <div className="ruleTable">
+              <div><span>Khẳng định hiện tại</span><strong>～ます</strong><em>いきます</em></div>
+              <div><span>Phủ định hiện tại</span><strong>～ません</strong><em>いきません</em></div>
+              <div><span>Khẳng định quá khứ</span><strong>～ました</strong><em>いきました</em></div>
+              <div><span>Phủ định quá khứ</span><strong>～ませんでした</strong><em>いきませんでした</em></div>
+            </div>
+          </article>
+
+          <article className="ruleBlock">
+            <h3>3. 辞書形・ない形</h3>
+            <div className="ruleTable twoColumn">
+              <div><span>Nhóm 1 辞書形</span><strong>い段 → う段</strong><em>かきます→かく / よみます→よむ</em></div>
+              <div><span>Nhóm 1 ない形</span><strong>い段 → あ段 + ない</strong><em>かきます→かかない / かいます→かわない</em></div>
+              <div><span>Nhóm 2</span><strong>Gốc + る / ない</strong><em>たべます→たべる / たべない</em></div>
+              <div><span>Nhóm 3</span><strong>する・くる</strong><em>します→する/しない, きます→くる/こない</em></div>
+            </div>
+          </article>
+
+          <article className="ruleBlock">
+            <h3>4. て形・た形 nhóm 1</h3>
+            <div className="ruleTable threeColumn">
+              <div><span>い・ち・り</span><strong>って / った</strong><em>かいます→かって / かった</em></div>
+              <div><span>み・び・に</span><strong>んで / んだ</strong><em>よみます→よんで / よんだ</em></div>
+              <div><span>き</span><strong>いて / いた</strong><em>かきます→かいて / かいた</em></div>
+              <div><span>ぎ</span><strong>いで / いだ</strong><em>およぎます→およいで / およいだ</em></div>
+              <div><span>し</span><strong>して / した</strong><em>はなします→はなして / はなした</em></div>
+              <div><span>ngoại lệ</span><strong>行きます</strong><em>いって / いった</em></div>
+            </div>
+          </article>
+
+          <article className="ruleBlock">
+            <h3>5. Các mẫu dùng với て形・ない形</h3>
+            <div className="ruleTable twoColumn">
+              <div><span>Yêu cầu lịch sự</span><strong>Vてください</strong><em>よんでください</em></div>
+              <div><span>Xin phép/cho phép</span><strong>Vてもいいです</strong><em>たべてもいいです</em></div>
+              <div><span>Cấm đoán</span><strong>Vてはいけません</strong><em>ここで すってはいけません</em></div>
+              <div><span>Đang diễn ra/trạng thái</span><strong>Vています</strong><em>べんきょうしています</em></div>
+              <div><span>Yêu cầu không làm</span><strong>Vないでください</strong><em>いかないでください</em></div>
+              <div><span>Nối hành động</span><strong>Vて、Vて、...</strong><em>たべて、ねます</em></div>
+            </div>
+          </article>
+
+          <article className="ruleBlock">
+            <h3>6. Tính từ N5</h3>
+            <div className="ruleTable twoColumn">
+              <div><span>Tính từ い hiện tại</span><strong>Aいです</strong><em>あたらしいです</em></div>
+              <div><span>Tính từ い phủ định</span><strong>Aくないです</strong><em>あたらしくないです</em></div>
+              <div><span>Tính từ い quá khứ</span><strong>Aかったです</strong><em>あたらしかったです</em></div>
+              <div><span>Tính từ い nối</span><strong>Aくて</strong><em>あたらしくて</em></div>
+              <div><span>Tính từ な</span><strong>Aです / Aじゃありません</strong><em>しずかです / しずかじゃありません</em></div>
+              <div><span>Bổ nghĩa danh từ</span><strong>Aい + N / Aな + N</strong><em>あたらしいほん / しずかなまち</em></div>
+            </div>
+            <p className="ruleNote">Lưu ý: いい là ngoại lệ: よくないです・よかったです・よくて.</p>
+          </article>
+        </div>
+      </section>
+    </div>
   );
 }
 
