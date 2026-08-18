@@ -27,6 +27,26 @@ from lesson_data_21_25 import (
     LESSON_PASSAGES as LESSON_PASSAGES_21_25,
     LESSON_SENTENCES as LESSON_SENTENCES_21_25,
 )
+from lesson_data_26_30 import (
+    LESSON_PASSAGES as LESSON_PASSAGES_26_30,
+    LESSON_SENTENCES as LESSON_SENTENCES_26_30,
+)
+from lesson_data_31_35 import (
+    LESSON_PASSAGES as LESSON_PASSAGES_31_35,
+    LESSON_SENTENCES as LESSON_SENTENCES_31_35,
+)
+from lesson_data_36_40 import (
+    LESSON_PASSAGES as LESSON_PASSAGES_36_40,
+    LESSON_SENTENCES as LESSON_SENTENCES_36_40,
+)
+from lesson_data_41_45 import (
+    LESSON_PASSAGES as LESSON_PASSAGES_41_45,
+    LESSON_SENTENCES as LESSON_SENTENCES_41_45,
+)
+from lesson_data_46_50 import (
+    LESSON_PASSAGES as LESSON_PASSAGES_46_50,
+    LESSON_SENTENCES as LESSON_SENTENCES_46_50,
+)
 from models import Chunk, Lesson, Passage, Sentence
 
 
@@ -433,6 +453,11 @@ AUTHORED_SENTENCES = {
     **LESSON_SENTENCES_11_15,
     **LESSON_SENTENCES_16_20,
     **LESSON_SENTENCES_21_25,
+    **LESSON_SENTENCES_26_30,
+    **LESSON_SENTENCES_31_35,
+    **LESSON_SENTENCES_36_40,
+    **LESSON_SENTENCES_41_45,
+    **LESSON_SENTENCES_46_50,
 }
 AUTHORED_PASSAGES = {
     **LESSON_PASSAGES_02_05,
@@ -440,13 +465,22 @@ AUTHORED_PASSAGES = {
     **LESSON_PASSAGES_11_15,
     **LESSON_PASSAGES_16_20,
     **LESSON_PASSAGES_21_25,
+    **LESSON_PASSAGES_26_30,
+    **LESSON_PASSAGES_31_35,
+    **LESSON_PASSAGES_36_40,
+    **LESSON_PASSAGES_41_45,
+    **LESSON_PASSAGES_46_50,
 }
 
 SEED_SENTENCES = {**DEMO_SENTENCES, **AUTHORED_SENTENCES}
 SEED_PASSAGES = {
     1: [DEMO_PASSAGES[1], DEMO_PASSAGES["1b"], DEMO_PASSAGES["1c"]],
     **{
-        lesson_id: [passage]
+        # Older lesson modules store one passage as a dictionary, while the
+        # newer modules store a list so a lesson can contain several passages.
+        # Normalize both formats here instead of wrapping an existing list in
+        # another list (which would make passage_item a list during seeding).
+        lesson_id: passage if isinstance(passage, list) else [passage]
         for lesson_id, passage in AUTHORED_PASSAGES.items()
     },
 }
@@ -1029,4 +1063,4 @@ def seed_database() -> None:
 
 if __name__ == "__main__":
     seed_database()
-    print("Seed complete: 50 lessons and learning data for lessons 1-25.")
+    print("Seed complete: 50 lessons and learning data for lessons 1-50.")

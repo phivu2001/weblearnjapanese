@@ -31,7 +31,7 @@ if not exist "%PYTHON_EXE%" (
     "%PYTHON_EXE%" -m pip install -r "%PROJECT_DIR%requirements.txt"
     if errorlevel 1 goto :python_error
 ) else (
-    echo [1/4] Python da san sang.
+    echo [1/5] Python da san sang.
 )
 
 rem Tim Node.js. Uu tien runtime di kem Codex, sau do den Node tren may.
@@ -61,7 +61,7 @@ if not exist "%PROJECT_DIR%node_modules\.bin\vinext.cmd" (
     call pnpm install
     if errorlevel 1 goto :frontend_error
 ) else (
-    echo [2/4] Giao dien da san sang.
+    echo [2/5] Giao dien da san sang.
 )
 
 if /I "%~1"=="--check" (
@@ -70,20 +70,15 @@ if /I "%~1"=="--check" (
     exit /b 0
 )
 
-echo [3/4] Dang khoi dong API...
-set "API_NEEDS_START=0"
-powershell.exe -NoProfile -Command "try { $r=Invoke-WebRequest -UseBasicParsing 'http://127.0.0.1:8000/api/health' -TimeoutSec 1; if ($r.StatusCode -eq 200) { exit 0 } } catch {}; exit 1" >nul 2>nul
-if errorlevel 1 (
-    set "API_NEEDS_START=1"
-)
-if "!API_NEEDS_START!"=="0" (
-    powershell.exe -NoProfile -Command "try { $body='{""messages"":[{""role"":""user"",""content"":""ping""}]}'; $r=Invoke-WebRequest -UseBasicParsing 'http://127.0.0.1:8000/api/ai-chat' -Method POST -ContentType 'application/json' -Body $body -TimeoutSec 3; $s=Invoke-WebRequest -UseBasicParsing 'http://127.0.0.1:8000/api/ai-chat/stream' -TimeoutSec 1; if ($r.StatusCode -eq 200 -and ($r.Content -match 'GEMINI_API_KEY|gemini') -and ($s.Content -match 'gemini-stream')) { exit 0 } } catch {}; exit 1" >nul 2>nul
-    if errorlevel 1 (
-        echo [3/4] API dang chay ban cu. Dang khoi dong lai...
-        powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "$line = netstat -ano | Select-String -Pattern '127\.0\.0\.1:8000\s+' | Select-Object -First 1; if ($line) { $parts = ($line.ToString() -split '\s+') | Where-Object { $_ -ne '' }; $pidToKill = $parts[-1]; taskkill /PID $pidToKill /F | Out-Null }"
-        set "API_NEEDS_START=1"
-    )
-)
+echo [3/5] Dang cap nhat du lieu bai hoc...
+"%PYTHON_EXE%" "%PROJECT_DIR%seed.py"
+if errorlevel 1 goto :python_error
+"%PYTHON_EXE%" "%PROJECT_DIR%scripts\export_edge_data.py"
+if errorlevel 1 goto :python_error
+
+echo [4/5] Dang khoi dong API...
+set "API_NEEDS_START=1"
+powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "$line = netstat -ano | Select-String -Pattern '127\.0\.0\.1:8000\s+' | Select-Object -First 1; if ($line) { $parts = ($line.ToString() -split '\s+') | Where-Object { $_ -ne '' }; $pidToKill = $parts[-1]; taskkill /PID $pidToKill /F | Out-Null }"
 if "!API_NEEDS_START!"=="1" (
     powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "$runtimePath=[Environment]::GetEnvironmentVariable('PATH','Process'); [Environment]::SetEnvironmentVariable('Path',$null,'Process'); [Environment]::SetEnvironmentVariable('PATH',$runtimePath,'Process'); Start-Process -FilePath '%PYTHON_EXE%' -ArgumentList @('-m','uvicorn','main:app','--host','127.0.0.1','--port','8000') -WorkingDirectory '%PROJECT_DIR%' -WindowStyle Hidden -RedirectStandardOutput '%PROJECT_DIR%backend.log' -RedirectStandardError '%PROJECT_DIR%backend.err'"
 )
@@ -98,7 +93,7 @@ timeout /t 1 /nobreak >nul
 goto :wait_for_api
 
 :start_frontend
-echo [4/4] Dang khoi dong trang web...
+echo [5/5] Dang khoi dong trang web...
 powershell.exe -NoProfile -Command "try { $r=Invoke-WebRequest -UseBasicParsing 'http://localhost:3000' -TimeoutSec 1; if ($r.Content -match 'MANABU') { exit 0 } } catch {}; exit 1" >nul 2>nul
 if errorlevel 1 (
     powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "$runtimePath=[Environment]::GetEnvironmentVariable('PATH','Process'); [Environment]::SetEnvironmentVariable('Path',$null,'Process'); [Environment]::SetEnvironmentVariable('PATH','%CODEX_RUNTIME%\node\bin;%CODEX_RUNTIME%\bin\fallback;'+$runtimePath,'Process'); Start-Process -FilePath 'cmd.exe' -ArgumentList @('/d','/c','node_modules\.bin\vinext.cmd dev 1^>frontend.log 2^>frontend.err') -WorkingDirectory '%PROJECT_DIR%' -WindowStyle Hidden"

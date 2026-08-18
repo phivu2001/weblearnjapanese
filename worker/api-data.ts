@@ -9,6 +9,7 @@ type EdgeChunk = {
   japanese: string;
   vietnamese: string;
   is_grammar_key: boolean;
+  kanji_variants?: string | null;
 };
 
 type EdgeSentence = {
@@ -19,6 +20,7 @@ type EdgeSentence = {
   full_romaji: string;
   full_vietnamese: string;
   audio_url: null;
+  kanji_variants?: string | null;
   chunks: EdgeChunk[];
 };
 
@@ -45,6 +47,8 @@ export const edgeLessons = descriptions.map((description, index) => ({
   id: index + 1,
   title: `Bài ${index + 1}`,
   description,
+  sentence_count: generatedSentences[index + 1]?.length ?? 0,
+  passage_count: generatedPassages[index + 1]?.length ?? 0,
 }));
 
 export const edgeSentences = generatedSentences as unknown as Record<

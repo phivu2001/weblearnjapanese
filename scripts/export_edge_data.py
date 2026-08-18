@@ -19,16 +19,20 @@ def build_sentences() -> dict[int, list[dict[str, object]]]:
         rows: list[dict[str, object]] = []
         for position, item in enumerate(items, start=1):
             sentence_id = lesson_id * 1000 + position
-            chunks = [
-                {
-                    "id": sentence_id * 10 + order_index,
-                    "order_index": order_index,
-                    "japanese": japanese,
-                    "vietnamese": vietnamese,
-                    "is_grammar_key": is_grammar_key,
-                }
-                for order_index, japanese, vietnamese, is_grammar_key in item["chunks"]
-            ]
+            chunks = []
+            for chunk_tuple in item["chunks"]:
+                order_index, japanese, vietnamese, is_grammar_key = chunk_tuple[:4]
+                kanji_variants = chunk_tuple[4] if len(chunk_tuple) > 4 else None
+                chunks.append(
+                    {
+                        "id": sentence_id * 10 + order_index,
+                        "order_index": order_index,
+                        "japanese": japanese,
+                        "vietnamese": vietnamese,
+                        "is_grammar_key": is_grammar_key,
+                        "kanji_variants": kanji_variants,
+                    }
+                )
             rows.append(
                 {
                     "id": sentence_id,
@@ -38,6 +42,7 @@ def build_sentences() -> dict[int, list[dict[str, object]]]:
                     "full_romaji": item["full_romaji"],
                     "full_vietnamese": item["full_vietnamese"],
                     "audio_url": None,
+                    "kanji_variants": item.get("kanji_variants"),
                     "chunks": chunks,
                 }
             )

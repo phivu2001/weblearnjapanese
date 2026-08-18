@@ -9,27 +9,31 @@ export const generatedSentences = {
       "full_romaji": "Watashi wa Guyen desu.",
       "full_vietnamese": "Tôi là Nguyễn.",
       "audio_url": null,
+      "kanji_variants": "私は グエンです。,私は阮です。",
       "chunks": [
         {
           "id": 10011,
           "order_index": 1,
           "japanese": "わたしは",
           "vietnamese": "tôi (chủ đề)",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": "私は"
         },
         {
           "id": 10012,
           "order_index": 2,
           "japanese": "グエン",
           "vietnamese": "Nguyễn",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": "阮"
         },
         {
           "id": 10013,
           "order_index": 3,
           "japanese": "です。",
           "vietnamese": "là",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -41,27 +45,31 @@ export const generatedSentences = {
       "full_romaji": "Watashitachi wa gakusei desu.",
       "full_vietnamese": "Chúng tôi là học sinh.",
       "audio_url": null,
+      "kanji_variants": "私たちは 学生です。",
       "chunks": [
         {
           "id": 10021,
           "order_index": 1,
           "japanese": "わたしたちは",
           "vietnamese": "chúng tôi (chủ đề)",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": "私たちは"
         },
         {
           "id": 10022,
           "order_index": 2,
           "japanese": "がくせい",
           "vietnamese": "học sinh",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": "学生"
         },
         {
           "id": 10023,
           "order_index": 3,
           "japanese": "です。",
           "vietnamese": "là",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -73,27 +81,31 @@ export const generatedSentences = {
       "full_romaji": "Anata wa gakusei desu ka.",
       "full_vietnamese": "Bạn có phải là học sinh không?",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 10031,
           "order_index": 1,
           "japanese": "あなたは",
           "vietnamese": "bạn (chủ đề)",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 10032,
           "order_index": 2,
           "japanese": "がくせい",
           "vietnamese": "học sinh",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 10033,
           "order_index": 3,
           "japanese": "ですか。",
           "vietnamese": "có phải... không?",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -105,27 +117,31 @@ export const generatedSentences = {
       "full_romaji": "Ano hito wa dare desu ka.",
       "full_vietnamese": "Người kia là ai?",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 10041,
           "order_index": 1,
           "japanese": "あのひとは",
           "vietnamese": "người kia (chủ đề)",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 10042,
           "order_index": 2,
           "japanese": "だれ",
           "vietnamese": "ai",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 10043,
           "order_index": 3,
           "japanese": "ですか。",
           "vietnamese": "là... phải không?",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -137,20 +153,23 @@ export const generatedSentences = {
       "full_romaji": "Minasan, hajimemashite.",
       "full_vietnamese": "Thưa mọi người, rất hân hạnh được gặp.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 10051,
           "order_index": 1,
           "japanese": "みなさん、",
           "vietnamese": "thưa mọi người",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 10052,
           "order_index": 2,
           "japanese": "はじめまして。",
           "vietnamese": "rất hân hạnh được gặp",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -162,27 +181,31 @@ export const generatedSentences = {
       "full_romaji": "Yamada-san wa sensei desu.",
       "full_vietnamese": "Anh Yamada là thầy giáo.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 10061,
           "order_index": 1,
           "japanese": "やまださんは",
           "vietnamese": "anh Yamada (chủ đề)",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 10062,
           "order_index": 2,
           "japanese": "せんせい",
           "vietnamese": "thầy/cô giáo",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 10063,
           "order_index": 3,
           "japanese": "です。",
           "vietnamese": "là",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -194,27 +217,31 @@ export const generatedSentences = {
       "full_romaji": "Watashi wa kyoushi dewa arimasen.",
       "full_vietnamese": "Tôi không phải là giáo viên.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 10071,
           "order_index": 1,
           "japanese": "わたしは",
           "vietnamese": "tôi (chủ đề)",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 10072,
           "order_index": 2,
           "japanese": "きょうし",
           "vietnamese": "giáo viên",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 10073,
           "order_index": 3,
           "japanese": "では ありません。",
           "vietnamese": "không phải là",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -226,27 +253,31 @@ export const generatedSentences = {
       "full_romaji": "Santosu-san wa kaishain desu.",
       "full_vietnamese": "Anh Santos là nhân viên công ty.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 10081,
           "order_index": 1,
           "japanese": "サントスさんは",
           "vietnamese": "anh Santos (chủ đề)",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 10082,
           "order_index": 2,
           "japanese": "かいしゃいん",
           "vietnamese": "nhân viên công ty",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 10083,
           "order_index": 3,
           "japanese": "です。",
           "vietnamese": "là",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -258,27 +289,31 @@ export const generatedSentences = {
       "full_romaji": "Kare wa ginkouin desu.",
       "full_vietnamese": "Anh ấy là nhân viên ngân hàng.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 10091,
           "order_index": 1,
           "japanese": "かれは",
           "vietnamese": "anh ấy (chủ đề)",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 10092,
           "order_index": 2,
           "japanese": "ぎんこういん",
           "vietnamese": "nhân viên ngân hàng",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 10093,
           "order_index": 3,
           "japanese": "です。",
           "vietnamese": "là",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -290,27 +325,31 @@ export const generatedSentences = {
       "full_romaji": "Tanaka-san wa isha desu.",
       "full_vietnamese": "Anh Tanaka là bác sĩ.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 10101,
           "order_index": 1,
           "japanese": "たなかさんは",
           "vietnamese": "anh Tanaka (chủ đề)",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 10102,
           "order_index": 2,
           "japanese": "いしゃ",
           "vietnamese": "bác sĩ",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 10103,
           "order_index": 3,
           "japanese": "です。",
           "vietnamese": "là",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -322,27 +361,31 @@ export const generatedSentences = {
       "full_romaji": "Miraa-san wa kenkyuusha desu.",
       "full_vietnamese": "Anh Miller là nhà nghiên cứu.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 10111,
           "order_index": 1,
           "japanese": "ミラーさんは",
           "vietnamese": "anh Miller (chủ đề)",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 10112,
           "order_index": 2,
           "japanese": "けんきゅうしゃ",
           "vietnamese": "nhà nghiên cứu",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 10113,
           "order_index": 3,
           "japanese": "です。",
           "vietnamese": "là",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -354,27 +397,31 @@ export const generatedSentences = {
       "full_romaji": "Watashi wa enjinia desu.",
       "full_vietnamese": "Tôi là kỹ sư.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 10121,
           "order_index": 1,
           "japanese": "わたしは",
           "vietnamese": "tôi (chủ đề)",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 10122,
           "order_index": 2,
           "japanese": "エンジニア",
           "vietnamese": "kỹ sư",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 10123,
           "order_index": 3,
           "japanese": "です。",
           "vietnamese": "là",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -386,27 +433,31 @@ export const generatedSentences = {
       "full_romaji": "Watashi wa Sakura-daigaku no gakusei desu.",
       "full_vietnamese": "Tôi là sinh viên trường đại học Sakura.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 10131,
           "order_index": 1,
           "japanese": "わたしは",
           "vietnamese": "tôi (chủ đề)",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 10132,
           "order_index": 2,
           "japanese": "さくらだいがくの",
           "vietnamese": "của đại học Sakura",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 10133,
           "order_index": 3,
           "japanese": "がくせいです。",
           "vietnamese": "là sinh viên",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -418,27 +469,31 @@ export const generatedSentences = {
       "full_romaji": "Tanaka-san wa byouin de hataraite imasu.",
       "full_vietnamese": "Anh Tanaka làm việc ở bệnh viện.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 10141,
           "order_index": 1,
           "japanese": "たなかさんは",
           "vietnamese": "anh Tanaka (chủ đề)",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 10142,
           "order_index": 2,
           "japanese": "びょういんで",
           "vietnamese": "ở bệnh viện",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 10143,
           "order_index": 3,
           "japanese": "はたらいています。",
           "vietnamese": "đang làm việc",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -450,20 +505,23 @@ export const generatedSentences = {
       "full_romaji": "Nansai desu ka.",
       "full_vietnamese": "Bao nhiêu tuổi?",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 10151,
           "order_index": 1,
           "japanese": "なんさい",
           "vietnamese": "bao nhiêu tuổi",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 10152,
           "order_index": 2,
           "japanese": "ですか。",
           "vietnamese": "câu hỏi lịch sự",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -475,27 +533,31 @@ export const generatedSentences = {
       "full_romaji": "Watashi wa nijuusan-sai desu.",
       "full_vietnamese": "Tôi 23 tuổi.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 10161,
           "order_index": 1,
           "japanese": "わたしは",
           "vietnamese": "tôi (chủ đề)",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 10162,
           "order_index": 2,
           "japanese": "にじゅうさん",
           "vietnamese": "23",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 10163,
           "order_index": 3,
           "japanese": "さいです。",
           "vietnamese": "tuổi",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -507,20 +569,23 @@ export const generatedSentences = {
       "full_romaji": "Hai, sou desu.",
       "full_vietnamese": "Vâng, đúng vậy.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 10171,
           "order_index": 1,
           "japanese": "はい、",
           "vietnamese": "vâng",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 10172,
           "order_index": 2,
           "japanese": "そうです。",
           "vietnamese": "đúng vậy",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -532,20 +597,23 @@ export const generatedSentences = {
       "full_romaji": "Iie, chigaimasu.",
       "full_vietnamese": "Không, không phải vậy.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 10181,
           "order_index": 1,
           "japanese": "いいえ、",
           "vietnamese": "không",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 10182,
           "order_index": 2,
           "japanese": "ちがいます。",
           "vietnamese": "không phải (vậy)",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -557,20 +625,23 @@ export const generatedSentences = {
       "full_romaji": "Shitsurei desu ga, onamae wa?",
       "full_vietnamese": "Xin lỗi, tên anh/chị là gì?",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 10191,
           "order_index": 1,
           "japanese": "しつれいですが、",
           "vietnamese": "xin lỗi",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 10192,
           "order_index": 2,
           "japanese": "おなまえは？",
           "vietnamese": "tên của bạn là...?",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -582,27 +653,31 @@ export const generatedSentences = {
       "full_romaji": "Hajimemashite. Douzo yoroshiku onegaishimasu.",
       "full_vietnamese": "Rất hân hạnh được gặp. Rất mong được sự giúp đỡ.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 10201,
           "order_index": 1,
           "japanese": "はじめまして。",
           "vietnamese": "rất hân hạnh được gặp",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 10202,
           "order_index": 2,
           "japanese": "どうぞ よろしく",
           "vietnamese": "rất mong được làm quen",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 10203,
           "order_index": 3,
           "japanese": "おねがいします。",
           "vietnamese": "xin nhờ anh/chị",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -614,27 +689,31 @@ export const generatedSentences = {
       "full_romaji": "Kochira wa Miraa-san desu.",
       "full_vietnamese": "Đây là anh Miller.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 10211,
           "order_index": 1,
           "japanese": "こちらは",
           "vietnamese": "đây (người này)",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 10212,
           "order_index": 2,
           "japanese": "ミラーさん",
           "vietnamese": "anh Miller",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 10213,
           "order_index": 3,
           "japanese": "です。",
           "vietnamese": "là",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -646,27 +725,31 @@ export const generatedSentences = {
       "full_romaji": "Watashi wa Betonamu kara kimashita.",
       "full_vietnamese": "Tôi đến từ Việt Nam.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 10221,
           "order_index": 1,
           "japanese": "わたしは",
           "vietnamese": "tôi (chủ đề)",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 10222,
           "order_index": 2,
           "japanese": "ベトナムから",
           "vietnamese": "từ Việt Nam",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 10223,
           "order_index": 3,
           "japanese": "きました。",
           "vietnamese": "đã đến",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -678,27 +761,31 @@ export const generatedSentences = {
       "full_romaji": "Mai-san wa Betonamu-jin desu.",
       "full_vietnamese": "Chị Mai là người Việt Nam.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 10231,
           "order_index": 1,
           "japanese": "マイさんは",
           "vietnamese": "chị Mai (chủ đề)",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 10232,
           "order_index": 2,
           "japanese": "ベトナム",
           "vietnamese": "Việt Nam",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 10233,
           "order_index": 3,
           "japanese": "じんです。",
           "vietnamese": "là người... (quốc tịch)",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -710,27 +797,31 @@ export const generatedSentences = {
       "full_romaji": "Santosu-san wa Burajiru-jin desu.",
       "full_vietnamese": "Anh Santos là người Brazil.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 10241,
           "order_index": 1,
           "japanese": "サントスさんは",
           "vietnamese": "anh Santos (chủ đề)",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 10242,
           "order_index": 2,
           "japanese": "ブラジル",
           "vietnamese": "Brazil",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 10243,
           "order_index": 3,
           "japanese": "じんです。",
           "vietnamese": "là người... (quốc tịch)",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -742,27 +833,31 @@ export const generatedSentences = {
       "full_romaji": "Miraa-san wa Amerika-jin desu ka.",
       "full_vietnamese": "Anh Miller có phải người Mỹ không?",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 10251,
           "order_index": 1,
           "japanese": "ミラーさんは",
           "vietnamese": "anh Miller (chủ đề)",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 10252,
           "order_index": 2,
           "japanese": "アメリカじん",
           "vietnamese": "người Mỹ",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 10253,
           "order_index": 3,
           "japanese": "ですか。",
           "vietnamese": "có phải... không?",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     }
@@ -776,27 +871,31 @@ export const generatedSentences = {
       "full_romaji": "Kore wa Nihongo no jisho desu.",
       "full_vietnamese": "Đây là từ điển tiếng Nhật.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 20011,
           "order_index": 1,
           "japanese": "これは",
           "vietnamese": "cái này thì",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 20012,
           "order_index": 2,
           "japanese": "日本語の",
           "vietnamese": "tiếng Nhật",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 20013,
           "order_index": 3,
           "japanese": "辞書です。",
           "vietnamese": "là từ điển",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -808,27 +907,31 @@ export const generatedSentences = {
       "full_romaji": "Sore wa Eigo no hon desu ka.",
       "full_vietnamese": "Đó có phải là sách tiếng Anh không?",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 20021,
           "order_index": 1,
           "japanese": "それは",
           "vietnamese": "cái đó thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 20022,
           "order_index": 2,
           "japanese": "英語の本",
           "vietnamese": "sách tiếng Anh",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 20023,
           "order_index": 3,
           "japanese": "ですか。",
           "vietnamese": "có phải không",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -840,27 +943,31 @@ export const generatedSentences = {
       "full_romaji": "Are wa nan no zasshi desu ka.",
       "full_vietnamese": "Kia là tạp chí gì?",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 20031,
           "order_index": 1,
           "japanese": "あれは",
           "vietnamese": "cái kia thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 20032,
           "order_index": 2,
           "japanese": "何の",
           "vietnamese": "về cái gì",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 20033,
           "order_index": 3,
           "japanese": "雑誌ですか。",
           "vietnamese": "là tạp chí vậy",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -872,27 +979,31 @@ export const generatedSentences = {
       "full_romaji": "Kono shinbun wa Nihon no desu.",
       "full_vietnamese": "Tờ báo này là của Nhật.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 20041,
           "order_index": 1,
           "japanese": "この新聞は",
           "vietnamese": "tờ báo này thì",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 20042,
           "order_index": 2,
           "japanese": "日本の",
           "vietnamese": "của Nhật",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 20043,
           "order_index": 3,
           "japanese": "です。",
           "vietnamese": "là",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -904,27 +1015,31 @@ export const generatedSentences = {
       "full_romaji": "Sono nooto to techou wa watashi no desu.",
       "full_vietnamese": "Quyển vở và sổ tay đó là của tôi.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 20051,
           "order_index": 1,
           "japanese": "そのノートと手帳は",
           "vietnamese": "quyển vở và sổ tay đó",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 20052,
           "order_index": 2,
           "japanese": "わたしの",
           "vietnamese": "của tôi",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 20053,
           "order_index": 3,
           "japanese": "です。",
           "vietnamese": "là",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -936,27 +1051,31 @@ export const generatedSentences = {
       "full_romaji": "Ano meishi wa Miraa-san no desu.",
       "full_vietnamese": "Tấm danh thiếp kia là của anh Miller.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 20061,
           "order_index": 1,
           "japanese": "あの名刺は",
           "vietnamese": "tấm danh thiếp kia",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 20062,
           "order_index": 2,
           "japanese": "ミラーさんの",
           "vietnamese": "của anh Miller",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 20063,
           "order_index": 3,
           "japanese": "です。",
           "vietnamese": "là",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -968,27 +1087,31 @@ export const generatedSentences = {
       "full_romaji": "Kore wa kaado desu ka, terehon kaado desu ka.",
       "full_vietnamese": "Đây là thẻ thường hay thẻ điện thoại?",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 20071,
           "order_index": 1,
           "japanese": "これは",
           "vietnamese": "cái này thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 20072,
           "order_index": 2,
           "japanese": "カードですか、",
           "vietnamese": "là thẻ thường",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 20073,
           "order_index": 3,
           "japanese": "テレホンカードですか。",
           "vietnamese": "hay là thẻ điện thoại",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -1000,27 +1123,31 @@ export const generatedSentences = {
       "full_romaji": "Enpitsu desu ka, boorupen desu ka.",
       "full_vietnamese": "Đó là bút chì hay bút bi?",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 20081,
           "order_index": 1,
           "japanese": "鉛筆ですか、",
           "vietnamese": "là bút chì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 20082,
           "order_index": 2,
           "japanese": "ボールペン",
           "vietnamese": "bút bi",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 20083,
           "order_index": 3,
           "japanese": "ですか。",
           "vietnamese": "hay là",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -1032,27 +1159,31 @@ export const generatedSentences = {
       "full_romaji": "Kore wa shaapu penshiru desu.",
       "full_vietnamese": "Đây là bút chì kim.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 20091,
           "order_index": 1,
           "japanese": "これは",
           "vietnamese": "cái này thì",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 20092,
           "order_index": 2,
           "japanese": "シャープペンシル",
           "vietnamese": "bút chì kim",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 20093,
           "order_index": 3,
           "japanese": "です。",
           "vietnamese": "là",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -1064,27 +1195,31 @@ export const generatedSentences = {
       "full_romaji": "Kono kagi to tokei wa Tanaka-san no desu.",
       "full_vietnamese": "Chìa khóa và đồng hồ này là của anh Tanaka.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 20101,
           "order_index": 1,
           "japanese": "この鍵と時計は",
           "vietnamese": "chìa khóa và đồng hồ này",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 20102,
           "order_index": 2,
           "japanese": "田中さんの",
           "vietnamese": "của anh Tanaka",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 20103,
           "order_index": 3,
           "japanese": "です。",
           "vietnamese": "là",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -1096,27 +1231,31 @@ export const generatedSentences = {
       "full_romaji": "Sono kasa to kaban wa dare no desu ka.",
       "full_vietnamese": "Chiếc ô và cái cặp đó là của ai?",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 20111,
           "order_index": 1,
           "japanese": "その傘とカバンは",
           "vietnamese": "chiếc ô và cái cặp đó",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 20112,
           "order_index": 2,
           "japanese": "だれの",
           "vietnamese": "của ai",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 20113,
           "order_index": 3,
           "japanese": "ですか。",
           "vietnamese": "vậy",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -1128,27 +1267,31 @@ export const generatedSentences = {
       "full_romaji": "Kore wa Nihongo no teepu desu.",
       "full_vietnamese": "Đây là băng tiếng Nhật.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 20121,
           "order_index": 1,
           "japanese": "これは",
           "vietnamese": "cái này thì",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 20122,
           "order_index": 2,
           "japanese": "日本語のテープ",
           "vietnamese": "băng tiếng Nhật",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 20123,
           "order_index": 3,
           "japanese": "です。",
           "vietnamese": "là",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -1160,27 +1303,31 @@ export const generatedSentences = {
       "full_romaji": "Are wa teepu rekoodaa desu.",
       "full_vietnamese": "Kia là máy ghi âm.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 20131,
           "order_index": 1,
           "japanese": "あれは",
           "vietnamese": "cái kia thì",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 20132,
           "order_index": 2,
           "japanese": "テープレコーダー",
           "vietnamese": "máy ghi âm",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 20133,
           "order_index": 3,
           "japanese": "です。",
           "vietnamese": "là",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -1192,27 +1339,31 @@ export const generatedSentences = {
       "full_romaji": "Kono terebi to rajio wa Nihon no desu.",
       "full_vietnamese": "Chiếc tivi và radio này là của Nhật.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 20141,
           "order_index": 1,
           "japanese": "このテレビとラジオは",
           "vietnamese": "chiếc tivi và radio này",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 20142,
           "order_index": 2,
           "japanese": "日本の",
           "vietnamese": "của Nhật",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 20143,
           "order_index": 3,
           "japanese": "です。",
           "vietnamese": "là",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -1224,27 +1375,31 @@ export const generatedSentences = {
       "full_romaji": "Sono kamera wa Doitsu no desu.",
       "full_vietnamese": "Máy ảnh đó là của Đức.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 20151,
           "order_index": 1,
           "japanese": "そのカメラは",
           "vietnamese": "máy ảnh đó",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 20152,
           "order_index": 2,
           "japanese": "ドイツの",
           "vietnamese": "của Đức",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 20153,
           "order_index": 3,
           "japanese": "です。",
           "vietnamese": "là",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -1256,27 +1411,31 @@ export const generatedSentences = {
       "full_romaji": "Ano konpyuutaa wa IMC no desu.",
       "full_vietnamese": "Máy tính kia là của công ty IMC.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 20161,
           "order_index": 1,
           "japanese": "あのコンピューターは",
           "vietnamese": "máy tính kia",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 20162,
           "order_index": 2,
           "japanese": "IMCの",
           "vietnamese": "của IMC",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 20163,
           "order_index": 3,
           "japanese": "です。",
           "vietnamese": "là",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -1288,27 +1447,31 @@ export const generatedSentences = {
       "full_romaji": "Kore wa Nihon no jidousha desu.",
       "full_vietnamese": "Đây là ô tô Nhật Bản.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 20171,
           "order_index": 1,
           "japanese": "これは",
           "vietnamese": "cái này thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 20172,
           "order_index": 2,
           "japanese": "日本の",
           "vietnamese": "của Nhật",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 20173,
           "order_index": 3,
           "japanese": "自動車です。",
           "vietnamese": "là ô tô",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -1320,27 +1483,31 @@ export const generatedSentences = {
       "full_romaji": "Kono tsukue to isu wa IMC no desu.",
       "full_vietnamese": "Cái bàn và ghế này là của công ty IMC.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 20181,
           "order_index": 1,
           "japanese": "この机と椅子は",
           "vietnamese": "cái bàn và ghế này",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 20182,
           "order_index": 2,
           "japanese": "IMCの",
           "vietnamese": "của công ty IMC",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 20183,
           "order_index": 3,
           "japanese": "です。",
           "vietnamese": "là",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -1352,27 +1519,31 @@ export const generatedSentences = {
       "full_romaji": "Kono chokoreeto to koohii wa omiyage desu.",
       "full_vietnamese": "Sô-cô-la và cà phê này là quà.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 20191,
           "order_index": 1,
           "japanese": "このチョコレートとコーヒーは",
           "vietnamese": "sô-cô-la và cà phê này",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 20192,
           "order_index": 2,
           "japanese": "お土産",
           "vietnamese": "quà lưu niệm",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 20193,
           "order_index": 3,
           "japanese": "です。",
           "vietnamese": "là",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -1384,34 +1555,39 @@ export const generatedSentences = {
       "full_romaji": "Kore wa kamera desu ka. Hai, sou desu. Sou desu ka.",
       "full_vietnamese": "Đây có phải là máy ảnh không? Vâng, đúng vậy. Ra là vậy.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 20201,
           "order_index": 1,
           "japanese": "これはカメラ",
           "vietnamese": "đây là máy ảnh",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 20202,
           "order_index": 2,
           "japanese": "ですか。",
           "vietnamese": "có phải không",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 20203,
           "order_index": 3,
           "japanese": "はい、そうです。",
           "vietnamese": "vâng, đúng vậy",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 20204,
           "order_index": 4,
           "japanese": "そうですか。",
           "vietnamese": "ra là vậy",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -1423,27 +1599,31 @@ export const generatedSentences = {
       "full_romaji": "Kore wa Eigo no jisho desu ka. Iie, chigaimasu.",
       "full_vietnamese": "Đây là từ điển tiếng Anh phải không? Không, không phải.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 20211,
           "order_index": 1,
           "japanese": "これは英語の辞書",
           "vietnamese": "đây là từ điển tiếng Anh",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 20212,
           "order_index": 2,
           "japanese": "ですか。",
           "vietnamese": "có phải không",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 20213,
           "order_index": 3,
           "japanese": "いいえ、違います。",
           "vietnamese": "không, không phải",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -1455,27 +1635,31 @@ export const generatedSentences = {
       "full_romaji": "Anou, kore wa honno kimochi desu. Douzo.",
       "full_vietnamese": "À, đây chỉ là chút lòng thành. Xin mời nhận.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 20221,
           "order_index": 1,
           "japanese": "あのう、",
           "vietnamese": "à, xin phép",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 20222,
           "order_index": 2,
           "japanese": "これはほんの気持ちです。",
           "vietnamese": "đây chỉ là chút lòng thành",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 20223,
           "order_index": 3,
           "japanese": "どうぞ。",
           "vietnamese": "xin mời nhận",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -1487,27 +1671,31 @@ export const generatedSentences = {
       "full_romaji": "Doumo arigatou gozaimasu. Kore kara osewa ni narimasu.",
       "full_vietnamese": "Xin cảm ơn rất nhiều. Từ nay mong anh/chị giúp đỡ.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 20231,
           "order_index": 1,
           "japanese": "どうもありがとうございます。",
           "vietnamese": "xin cảm ơn rất nhiều",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 20232,
           "order_index": 2,
           "japanese": "これから",
           "vietnamese": "từ nay",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 20233,
           "order_index": 3,
           "japanese": "お世話になります。",
           "vietnamese": "mong được giúp đỡ",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -1519,27 +1707,31 @@ export const generatedSentences = {
       "full_romaji": "Kochira koso yoroshiku onegaishimasu.",
       "full_vietnamese": "Chính tôi cũng mong được anh/chị giúp đỡ.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 20241,
           "order_index": 1,
           "japanese": "こちらこそ",
           "vietnamese": "chính tôi cũng vậy",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 20242,
           "order_index": 2,
           "japanese": "よろしく",
           "vietnamese": "mong được đối xử tốt",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 20243,
           "order_index": 3,
           "japanese": "お願いします。",
           "vietnamese": "xin nhờ anh/chị",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     }
@@ -1553,27 +1745,31 @@ export const generatedSentences = {
       "full_romaji": "Koko wa Nihongo no kyoushitsu desu.",
       "full_vietnamese": "Đây là phòng học tiếng Nhật.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 30011,
           "order_index": 1,
           "japanese": "ここは",
           "vietnamese": "nơi đây thì",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 30012,
           "order_index": 2,
           "japanese": "日本語の教室",
           "vietnamese": "phòng học tiếng Nhật",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 30013,
           "order_index": 3,
           "japanese": "です。",
           "vietnamese": "là",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -1585,27 +1781,31 @@ export const generatedSentences = {
       "full_romaji": "Soko wa kaisha no shokudou desu.",
       "full_vietnamese": "Chỗ đó là nhà ăn của công ty.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 30021,
           "order_index": 1,
           "japanese": "そこは",
           "vietnamese": "chỗ đó thì",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 30022,
           "order_index": 2,
           "japanese": "会社の食堂",
           "vietnamese": "nhà ăn của công ty",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 30023,
           "order_index": 3,
           "japanese": "です。",
           "vietnamese": "là",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -1617,27 +1817,31 @@ export const generatedSentences = {
       "full_romaji": "Asoko wa IMC no jimusho desu.",
       "full_vietnamese": "Đằng kia là văn phòng của IMC.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 30031,
           "order_index": 1,
           "japanese": "あそこは",
           "vietnamese": "đằng kia thì",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 30032,
           "order_index": 2,
           "japanese": "IMCの事務所",
           "vietnamese": "văn phòng của IMC",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 30033,
           "order_index": 3,
           "japanese": "です。",
           "vietnamese": "là",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -1649,27 +1853,31 @@ export const generatedSentences = {
       "full_romaji": "Kaigishitsu wa doko desu ka.",
       "full_vietnamese": "Phòng họp ở đâu?",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 30041,
           "order_index": 1,
           "japanese": "会議室は",
           "vietnamese": "phòng họp thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 30042,
           "order_index": 2,
           "japanese": "どこ",
           "vietnamese": "ở đâu",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 30043,
           "order_index": 3,
           "japanese": "ですか。",
           "vietnamese": "vậy",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -1681,27 +1889,31 @@ export const generatedSentences = {
       "full_romaji": "Uketsuke wa kochira desu.",
       "full_vietnamese": "Quầy tiếp tân ở phía này.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 30051,
           "order_index": 1,
           "japanese": "受付は",
           "vietnamese": "quầy tiếp tân thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 30052,
           "order_index": 2,
           "japanese": "こちら",
           "vietnamese": "phía này",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 30053,
           "order_index": 3,
           "japanese": "です。",
           "vietnamese": "ở",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -1713,27 +1925,31 @@ export const generatedSentences = {
       "full_romaji": "Robii wa sochira desu.",
       "full_vietnamese": "Sảnh ở phía đó.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 30061,
           "order_index": 1,
           "japanese": "ロビーは",
           "vietnamese": "sảnh thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 30062,
           "order_index": 2,
           "japanese": "そちら",
           "vietnamese": "phía đó",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 30063,
           "order_index": 3,
           "japanese": "です。",
           "vietnamese": "ở",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -1745,27 +1961,31 @@ export const generatedSentences = {
       "full_romaji": "Otearai wa achira desu.",
       "full_vietnamese": "Nhà vệ sinh ở phía đằng kia.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 30071,
           "order_index": 1,
           "japanese": "お手洗いは",
           "vietnamese": "nhà vệ sinh thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 30072,
           "order_index": 2,
           "japanese": "あちら",
           "vietnamese": "phía đằng kia",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 30073,
           "order_index": 3,
           "japanese": "です。",
           "vietnamese": "ở",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -1777,27 +1997,31 @@ export const generatedSentences = {
       "full_romaji": "Erebeetaa wa dochira desu ka.",
       "full_vietnamese": "Thang máy ở hướng nào ạ?",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 30081,
           "order_index": 1,
           "japanese": "エレベーターは",
           "vietnamese": "thang máy thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 30082,
           "order_index": 2,
           "japanese": "どちら",
           "vietnamese": "hướng nào",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 30083,
           "order_index": 3,
           "japanese": "ですか。",
           "vietnamese": "ạ",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -1809,27 +2033,31 @@ export const generatedSentences = {
       "full_romaji": "Watashi no heya wa sankai desu.",
       "full_vietnamese": "Phòng của tôi ở tầng ba.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 30091,
           "order_index": 1,
           "japanese": "わたしの部屋は",
           "vietnamese": "phòng của tôi thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 30092,
           "order_index": 2,
           "japanese": "三階",
           "vietnamese": "tầng ba",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 30093,
           "order_index": 3,
           "japanese": "です。",
           "vietnamese": "ở",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -1841,27 +2069,31 @@ export const generatedSentences = {
       "full_romaji": "Toire wa nikai desu. Kaidan wa asoko desu.",
       "full_vietnamese": "Nhà vệ sinh ở tầng hai. Cầu thang ở đằng kia.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 30101,
           "order_index": 1,
           "japanese": "トイレは二階です。",
           "vietnamese": "nhà vệ sinh ở tầng hai",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 30102,
           "order_index": 2,
           "japanese": "階段は",
           "vietnamese": "cầu thang thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 30103,
           "order_index": 3,
           "japanese": "あそこです。",
           "vietnamese": "ở đằng kia",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -1873,27 +2105,31 @@ export const generatedSentences = {
       "full_romaji": "Esukareetaa wa ikkai desu.",
       "full_vietnamese": "Thang cuốn ở tầng một.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 30111,
           "order_index": 1,
           "japanese": "エスカレーターは",
           "vietnamese": "thang cuốn thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 30112,
           "order_index": 2,
           "japanese": "一階",
           "vietnamese": "tầng một",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 30113,
           "order_index": 3,
           "japanese": "です。",
           "vietnamese": "ở",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -1905,27 +2141,31 @@ export const generatedSentences = {
       "full_romaji": "Denwa wa kochira desu.",
       "full_vietnamese": "Điện thoại ở phía này.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 30121,
           "order_index": 1,
           "japanese": "電話は",
           "vietnamese": "điện thoại thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 30122,
           "order_index": 2,
           "japanese": "こちら",
           "vietnamese": "phía này",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 30123,
           "order_index": 3,
           "japanese": "です。",
           "vietnamese": "ở",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -1937,27 +2177,31 @@ export const generatedSentences = {
       "full_romaji": "Okuni wa dochira desu ka.",
       "full_vietnamese": "Anh/chị đến từ nước nào?",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 30131,
           "order_index": 1,
           "japanese": "お国は",
           "vietnamese": "đất nước của anh/chị thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 30132,
           "order_index": 2,
           "japanese": "どちら",
           "vietnamese": "nước nào",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 30133,
           "order_index": 3,
           "japanese": "ですか。",
           "vietnamese": "vậy",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -1969,27 +2213,31 @@ export const generatedSentences = {
       "full_romaji": "Watashi no kaisha wa Toukyou desu.",
       "full_vietnamese": "Công ty của tôi ở Tokyo.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 30141,
           "order_index": 1,
           "japanese": "わたしの会社は",
           "vietnamese": "công ty của tôi thì",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 30142,
           "order_index": 2,
           "japanese": "東京",
           "vietnamese": "Tokyo",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 30143,
           "order_index": 3,
           "japanese": "です。",
           "vietnamese": "ở",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -2001,27 +2249,31 @@ export const generatedSentences = {
       "full_romaji": "Uchi wa Oosaka desu.",
       "full_vietnamese": "Nhà tôi ở Osaka.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 30151,
           "order_index": 1,
           "japanese": "うちは",
           "vietnamese": "nhà tôi thì",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 30152,
           "order_index": 2,
           "japanese": "大阪",
           "vietnamese": "Osaka",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 30153,
           "order_index": 3,
           "japanese": "です。",
           "vietnamese": "ở",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -2033,27 +2285,31 @@ export const generatedSentences = {
       "full_romaji": "Kutsu uriba wa chika desu.",
       "full_vietnamese": "Quầy bán giày ở tầng hầm.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 30161,
           "order_index": 1,
           "japanese": "靴売り場は",
           "vietnamese": "quầy bán giày thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 30162,
           "order_index": 2,
           "japanese": "地下",
           "vietnamese": "tầng hầm",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 30163,
           "order_index": 3,
           "japanese": "です。",
           "vietnamese": "ở",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -2065,27 +2321,31 @@ export const generatedSentences = {
       "full_romaji": "Nekutai uriba wa gokai desu.",
       "full_vietnamese": "Quầy bán cà vạt ở tầng năm.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 30171,
           "order_index": 1,
           "japanese": "ネクタイ売り場は",
           "vietnamese": "quầy bán cà vạt thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 30172,
           "order_index": 2,
           "japanese": "五階",
           "vietnamese": "tầng năm",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 30173,
           "order_index": 3,
           "japanese": "です。",
           "vietnamese": "ở",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -2097,27 +2357,31 @@ export const generatedSentences = {
       "full_romaji": "Wain to tabako no uriba wa nankai desu ka.",
       "full_vietnamese": "Quầy rượu vang và thuốc lá ở tầng mấy?",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 30181,
           "order_index": 1,
           "japanese": "ワインとタバコの売り場は",
           "vietnamese": "quầy rượu vang và thuốc lá",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 30182,
           "order_index": 2,
           "japanese": "何階",
           "vietnamese": "tầng mấy",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 30183,
           "order_index": 3,
           "japanese": "ですか。",
           "vietnamese": "vậy",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -2129,27 +2393,31 @@ export const generatedSentences = {
       "full_romaji": "Kono kutsu wa ikura desu ka. Sanzen-en desu.",
       "full_vietnamese": "Đôi giày này bao nhiêu tiền? Ba nghìn yên.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 30191,
           "order_index": 1,
           "japanese": "この靴は",
           "vietnamese": "đôi giày này thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 30192,
           "order_index": 2,
           "japanese": "いくらですか。",
           "vietnamese": "bao nhiêu tiền",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 30193,
           "order_index": 3,
           "japanese": "三千円です。",
           "vietnamese": "ba nghìn yên",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -2161,27 +2429,31 @@ export const generatedSentences = {
       "full_romaji": "Sono nekutai wa happyaku-en desu.",
       "full_vietnamese": "Chiếc cà vạt đó giá tám trăm yên.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 30201,
           "order_index": 1,
           "japanese": "そのネクタイは",
           "vietnamese": "chiếc cà vạt đó thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 30202,
           "order_index": 2,
           "japanese": "八百円",
           "vietnamese": "tám trăm yên",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 30203,
           "order_index": 3,
           "japanese": "です。",
           "vietnamese": "giá là",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -2193,27 +2465,31 @@ export const generatedSentences = {
       "full_romaji": "Kono wain wa ichiman-en desu.",
       "full_vietnamese": "Chai rượu vang này giá mười nghìn yên.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 30211,
           "order_index": 1,
           "japanese": "このワインは",
           "vietnamese": "chai rượu vang này thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 30212,
           "order_index": 2,
           "japanese": "一万円",
           "vietnamese": "mười nghìn yên",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 30213,
           "order_index": 3,
           "japanese": "です。",
           "vietnamese": "giá là",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -2225,27 +2501,31 @@ export const generatedSentences = {
       "full_romaji": "Sumimasen, kono kamera o misete kudasai.",
       "full_vietnamese": "Xin lỗi, cho tôi xem chiếc máy ảnh này.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 30221,
           "order_index": 1,
           "japanese": "すみません、",
           "vietnamese": "xin lỗi",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 30222,
           "order_index": 2,
           "japanese": "このカメラを",
           "vietnamese": "chiếc máy ảnh này",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 30223,
           "order_index": 3,
           "japanese": "見せてください。",
           "vietnamese": "xin hãy cho xem",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -2257,27 +2537,31 @@ export const generatedSentences = {
       "full_romaji": "Kochira wa uketsuke de gozaimasu.",
       "full_vietnamese": "Đây là quầy tiếp tân ạ.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 30231,
           "order_index": 1,
           "japanese": "こちらは",
           "vietnamese": "phía này thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 30232,
           "order_index": 2,
           "japanese": "受付",
           "vietnamese": "quầy tiếp tân",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 30233,
           "order_index": 3,
           "japanese": "でございます。",
           "vietnamese": "là (cách nói lịch sự)",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -2289,27 +2573,31 @@ export const generatedSentences = {
       "full_romaji": "Ja, kono kutsu o kudasai.",
       "full_vietnamese": "Vậy thì cho tôi đôi giày này.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 30241,
           "order_index": 1,
           "japanese": "じゃ、",
           "vietnamese": "vậy thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 30242,
           "order_index": 2,
           "japanese": "この靴を",
           "vietnamese": "đôi giày này",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 30243,
           "order_index": 3,
           "japanese": "ください。",
           "vietnamese": "xin cho tôi",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     }
@@ -2323,27 +2611,31 @@ export const generatedSentences = {
       "full_romaji": "Maiasa rokuji han ni okimasu.",
       "full_vietnamese": "Mỗi sáng tôi thức dậy lúc sáu giờ rưỡi.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 40011,
           "order_index": 1,
           "japanese": "毎朝",
           "vietnamese": "mỗi sáng",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 40012,
           "order_index": 2,
           "japanese": "六時半に",
           "vietnamese": "lúc sáu giờ rưỡi",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 40013,
           "order_index": 3,
           "japanese": "起きます。",
           "vietnamese": "thức dậy",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -2355,27 +2647,31 @@ export const generatedSentences = {
       "full_romaji": "Maiban juuichiji ni nemasu.",
       "full_vietnamese": "Mỗi tối tôi đi ngủ lúc mười một giờ.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 40021,
           "order_index": 1,
           "japanese": "毎晩",
           "vietnamese": "mỗi tối",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 40022,
           "order_index": 2,
           "japanese": "十一時に",
           "vietnamese": "lúc mười một giờ",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 40023,
           "order_index": 3,
           "japanese": "寝ます。",
           "vietnamese": "đi ngủ",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -2387,27 +2683,31 @@ export const generatedSentences = {
       "full_romaji": "Getsuyoubi kara kinyoubi made hatarakimasu.",
       "full_vietnamese": "Tôi làm việc từ thứ Hai đến thứ Sáu.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 40031,
           "order_index": 1,
           "japanese": "月曜日から",
           "vietnamese": "từ thứ Hai",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 40032,
           "order_index": 2,
           "japanese": "金曜日まで",
           "vietnamese": "đến thứ Sáu",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 40033,
           "order_index": 3,
           "japanese": "働きます。",
           "vietnamese": "làm việc",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -2419,20 +2719,23 @@ export const generatedSentences = {
       "full_romaji": "Doyoubi to nichiyoubi wa yasumimasu.",
       "full_vietnamese": "Tôi nghỉ vào thứ Bảy và Chủ nhật.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 40041,
           "order_index": 1,
           "japanese": "土曜日と日曜日は",
           "vietnamese": "thứ Bảy và Chủ nhật thì",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 40042,
           "order_index": 2,
           "japanese": "休みます。",
           "vietnamese": "nghỉ",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -2444,27 +2747,31 @@ export const generatedSentences = {
       "full_romaji": "Mainichi kuji kara Nihongo o benkyou shimasu.",
       "full_vietnamese": "Mỗi ngày tôi học tiếng Nhật từ chín giờ.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 40051,
           "order_index": 1,
           "japanese": "毎日",
           "vietnamese": "mỗi ngày",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 40052,
           "order_index": 2,
           "japanese": "九時から",
           "vietnamese": "từ chín giờ",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 40053,
           "order_index": 3,
           "japanese": "日本語を勉強します。",
           "vietnamese": "học tiếng Nhật",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -2476,27 +2783,31 @@ export const generatedSentences = {
       "full_romaji": "Kaisha wa gogo goji ni owarimasu.",
       "full_vietnamese": "Công ty kết thúc công việc lúc năm giờ chiều.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 40061,
           "order_index": 1,
           "japanese": "会社は",
           "vietnamese": "công ty thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 40062,
           "order_index": 2,
           "japanese": "午後五時に",
           "vietnamese": "lúc năm giờ chiều",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 40063,
           "order_index": 3,
           "japanese": "終わります。",
           "vietnamese": "kết thúc",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -2508,34 +2819,39 @@ export const generatedSentences = {
       "full_romaji": "Depaato wa gozen juuji kara gogo hachiji made desu.",
       "full_vietnamese": "Cửa hàng bách hóa mở từ mười giờ sáng đến tám giờ tối.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 40071,
           "order_index": 1,
           "japanese": "デパートは",
           "vietnamese": "cửa hàng bách hóa thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 40072,
           "order_index": 2,
           "japanese": "午前十時から",
           "vietnamese": "từ mười giờ sáng",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 40073,
           "order_index": 3,
           "japanese": "午後八時まで",
           "vietnamese": "đến tám giờ tối",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 40074,
           "order_index": 4,
           "japanese": "です。",
           "vietnamese": "mở cửa",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -2547,27 +2863,31 @@ export const generatedSentences = {
       "full_romaji": "Ginkou wa kuji kara sanji made desu.",
       "full_vietnamese": "Ngân hàng mở từ chín giờ đến ba giờ.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 40081,
           "order_index": 1,
           "japanese": "銀行は",
           "vietnamese": "ngân hàng thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 40082,
           "order_index": 2,
           "japanese": "九時から三時まで",
           "vietnamese": "từ chín giờ đến ba giờ",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 40083,
           "order_index": 3,
           "japanese": "です。",
           "vietnamese": "mở cửa",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -2579,27 +2899,31 @@ export const generatedSentences = {
       "full_romaji": "Yuubinkyoku wa kuji han kara goji han made desu.",
       "full_vietnamese": "Bưu điện mở từ chín giờ rưỡi đến năm giờ rưỡi.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 40091,
           "order_index": 1,
           "japanese": "郵便局は",
           "vietnamese": "bưu điện thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 40092,
           "order_index": 2,
           "japanese": "九時半から五時半まで",
           "vietnamese": "từ chín giờ rưỡi đến năm giờ rưỡi",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 40093,
           "order_index": 3,
           "japanese": "です。",
           "vietnamese": "mở cửa",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -2611,27 +2935,31 @@ export const generatedSentences = {
       "full_romaji": "Toshokan wa kayoubi ga yasumi desu.",
       "full_vietnamese": "Thư viện nghỉ vào thứ Ba.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 40101,
           "order_index": 1,
           "japanese": "図書館は",
           "vietnamese": "thư viện thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 40102,
           "order_index": 2,
           "japanese": "火曜日が",
           "vietnamese": "thứ Ba là",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 40103,
           "order_index": 3,
           "japanese": "休みです。",
           "vietnamese": "ngày nghỉ",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -2643,27 +2971,31 @@ export const generatedSentences = {
       "full_romaji": "Bijutsukan wa nanji kara nanji made desu ka.",
       "full_vietnamese": "Bảo tàng mỹ thuật mở từ mấy giờ đến mấy giờ?",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 40111,
           "order_index": 1,
           "japanese": "美術館は",
           "vietnamese": "bảo tàng mỹ thuật thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 40112,
           "order_index": 2,
           "japanese": "何時から何時まで",
           "vietnamese": "từ mấy giờ đến mấy giờ",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 40113,
           "order_index": 3,
           "japanese": "ですか。",
           "vietnamese": "vậy",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -2675,27 +3007,31 @@ export const generatedSentences = {
       "full_romaji": "Ima nanji nanpun desu ka.",
       "full_vietnamese": "Bây giờ là mấy giờ mấy phút?",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 40121,
           "order_index": 1,
           "japanese": "今",
           "vietnamese": "bây giờ",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 40122,
           "order_index": 2,
           "japanese": "何時何分",
           "vietnamese": "mấy giờ mấy phút",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 40123,
           "order_index": 3,
           "japanese": "ですか。",
           "vietnamese": "vậy",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -2707,27 +3043,31 @@ export const generatedSentences = {
       "full_romaji": "Gozen shichiji juppun desu.",
       "full_vietnamese": "Bây giờ là bảy giờ mười phút sáng.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 40131,
           "order_index": 1,
           "japanese": "午前",
           "vietnamese": "buổi sáng",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 40132,
           "order_index": 2,
           "japanese": "七時十分",
           "vietnamese": "bảy giờ mười phút",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 40133,
           "order_index": 3,
           "japanese": "です。",
           "vietnamese": "là",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -2739,27 +3079,31 @@ export const generatedSentences = {
       "full_romaji": "Asa kara ban made hatarakimasu. Yoru wa yasumimasu.",
       "full_vietnamese": "Tôi làm việc từ sáng đến tối. Ban đêm tôi nghỉ.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 40141,
           "order_index": 1,
           "japanese": "朝から晩まで",
           "vietnamese": "từ sáng đến tối",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 40142,
           "order_index": 2,
           "japanese": "働きます。",
           "vietnamese": "làm việc",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 40143,
           "order_index": 3,
           "japanese": "夜は休みます。",
           "vietnamese": "ban đêm thì nghỉ",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -2771,27 +3115,31 @@ export const generatedSentences = {
       "full_romaji": "Hiruyasumi wa juuniji kara ichiji made desu.",
       "full_vietnamese": "Giờ nghỉ trưa từ mười hai giờ đến một giờ.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 40151,
           "order_index": 1,
           "japanese": "昼休みは",
           "vietnamese": "giờ nghỉ trưa thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 40152,
           "order_index": 2,
           "japanese": "十二時から一時まで",
           "vietnamese": "từ mười hai giờ đến một giờ",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 40153,
           "order_index": 3,
           "japanese": "です。",
           "vietnamese": "là",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -2803,20 +3151,23 @@ export const generatedSentences = {
       "full_romaji": "Ototoi to kinou wa yasumi deshita.",
       "full_vietnamese": "Hôm kia và hôm qua là ngày nghỉ.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 40161,
           "order_index": 1,
           "japanese": "おとといときのうは",
           "vietnamese": "hôm kia và hôm qua thì",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 40162,
           "order_index": 2,
           "japanese": "休みでした。",
           "vietnamese": "đã là ngày nghỉ",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -2828,27 +3179,31 @@ export const generatedSentences = {
       "full_romaji": "Kyou wa suiyoubi desu. Ashita wa mokuyoubi desu.",
       "full_vietnamese": "Hôm nay là thứ Tư. Ngày mai là thứ Năm.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 40171,
           "order_index": 1,
           "japanese": "きょうは水曜日です。",
           "vietnamese": "hôm nay là thứ Tư",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 40172,
           "order_index": 2,
           "japanese": "あしたは",
           "vietnamese": "ngày mai thì",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 40173,
           "order_index": 3,
           "japanese": "木曜日です。",
           "vietnamese": "là thứ Năm",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -2860,27 +3215,31 @@ export const generatedSentences = {
       "full_romaji": "Asatte wa kinyoubi desu.",
       "full_vietnamese": "Ngày kia là thứ Sáu.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 40181,
           "order_index": 1,
           "japanese": "あさっては",
           "vietnamese": "ngày kia thì",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 40182,
           "order_index": 2,
           "japanese": "金曜日",
           "vietnamese": "thứ Sáu",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 40183,
           "order_index": 3,
           "japanese": "です。",
           "vietnamese": "là",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -2892,34 +3251,39 @@ export const generatedSentences = {
       "full_romaji": "Kesa wa rokuji ni okimashita. Konban wa juuji ni nemasu.",
       "full_vietnamese": "Sáng nay tôi dậy lúc sáu giờ. Tối nay tôi sẽ ngủ lúc mười giờ.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 40191,
           "order_index": 1,
           "japanese": "今朝は六時に起きました。",
           "vietnamese": "sáng nay đã dậy lúc sáu giờ",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 40192,
           "order_index": 2,
           "japanese": "今晩は",
           "vietnamese": "tối nay thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 40193,
           "order_index": 3,
           "japanese": "十時に",
           "vietnamese": "lúc mười giờ",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 40194,
           "order_index": 4,
           "japanese": "寝ます。",
           "vietnamese": "đi ngủ",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -2931,27 +3295,31 @@ export const generatedSentences = {
       "full_romaji": "Sochira wa nanyoubi ga yasumi desu ka.",
       "full_vietnamese": "Chỗ anh/chị nghỉ vào thứ mấy?",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 40201,
           "order_index": 1,
           "japanese": "そちらは",
           "vietnamese": "chỗ anh/chị thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 40202,
           "order_index": 2,
           "japanese": "何曜日が",
           "vietnamese": "thứ mấy là",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 40203,
           "order_index": 3,
           "japanese": "休みですか。",
           "vietnamese": "ngày nghỉ vậy",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -2963,27 +3331,31 @@ export const generatedSentences = {
       "full_romaji": "Denwa bangou wa nanban desu ka.",
       "full_vietnamese": "Số điện thoại là số mấy?",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 40211,
           "order_index": 1,
           "japanese": "電話番号は",
           "vietnamese": "số điện thoại thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 40212,
           "order_index": 2,
           "japanese": "何番",
           "vietnamese": "số mấy",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 40213,
           "order_index": 3,
           "japanese": "ですか。",
           "vietnamese": "vậy",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -2995,27 +3367,31 @@ export const generatedSentences = {
       "full_romaji": "Eeto, bangou annai o onegaishimasu.",
       "full_vietnamese": "Để tôi xem, xin nối dịch vụ tra số điện thoại.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 40221,
           "order_index": 1,
           "japanese": "えーと、",
           "vietnamese": "để tôi xem",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 40222,
           "order_index": 2,
           "japanese": "番号案内を",
           "vietnamese": "dịch vụ tra số",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 40223,
           "order_index": 3,
           "japanese": "お願いします。",
           "vietnamese": "xin nhờ",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -3027,27 +3403,31 @@ export const generatedSentences = {
       "full_romaji": "Hai, kashikomarimashita. Otoiawase no bangou wa ichi ni san yon desu.",
       "full_vietnamese": "Vâng, tôi hiểu rồi. Số anh/chị hỏi là 1234.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 40231,
           "order_index": 1,
           "japanese": "はい、かしこまりました。",
           "vietnamese": "vâng, tôi hiểu rồi",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 40232,
           "order_index": 2,
           "japanese": "お問い合わせの番号は",
           "vietnamese": "số được hỏi thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 40233,
           "order_index": 3,
           "japanese": "1234です。",
           "vietnamese": "là 1234",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -3059,27 +3439,31 @@ export const generatedSentences = {
       "full_romaji": "Mainichi taihen desu ne. Doumo arigatou gozaimashita.",
       "full_vietnamese": "Ngày nào cũng vất vả nhỉ. Xin cảm ơn rất nhiều.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 40241,
           "order_index": 1,
           "japanese": "毎日",
           "vietnamese": "mỗi ngày",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 40242,
           "order_index": 2,
           "japanese": "大変ですね。",
           "vietnamese": "vất vả nhỉ",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 40243,
           "order_index": 3,
           "japanese": "どうもありがとうございました。",
           "vietnamese": "xin cảm ơn rất nhiều",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     }
@@ -3093,27 +3477,31 @@ export const generatedSentences = {
       "full_romaji": "Raishuu, tomodachi to Kyouto e ikimasu.",
       "full_vietnamese": "Tuần sau tôi sẽ đi Kyoto cùng bạn.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 50011,
           "order_index": 1,
           "japanese": "来週、",
           "vietnamese": "tuần sau",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 50012,
           "order_index": 2,
           "japanese": "友達と",
           "vietnamese": "cùng bạn",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 50013,
           "order_index": 3,
           "japanese": "京都へ行きます。",
           "vietnamese": "đi Kyoto",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -3125,34 +3513,39 @@ export const generatedSentences = {
       "full_romaji": "Senshuu, kazoku ga Toukyou e kimashita.",
       "full_vietnamese": "Tuần trước gia đình tôi đã đến Tokyo.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 50021,
           "order_index": 1,
           "japanese": "先週、",
           "vietnamese": "tuần trước",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 50022,
           "order_index": 2,
           "japanese": "家族が",
           "vietnamese": "gia đình tôi",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 50023,
           "order_index": 3,
           "japanese": "東京へ",
           "vietnamese": "đến Tokyo",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 50024,
           "order_index": 4,
           "japanese": "来ました。",
           "vietnamese": "đã đến",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -3164,27 +3557,31 @@ export const generatedSentences = {
       "full_romaji": "Maiban shichiji ni uchi e kaerimasu.",
       "full_vietnamese": "Mỗi tối tôi về nhà lúc bảy giờ.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 50031,
           "order_index": 1,
           "japanese": "毎晩七時に",
           "vietnamese": "mỗi tối lúc bảy giờ",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 50032,
           "order_index": 2,
           "japanese": "うちへ",
           "vietnamese": "về nhà",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 50033,
           "order_index": 3,
           "japanese": "帰ります。",
           "vietnamese": "trở về",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -3196,27 +3593,31 @@ export const generatedSentences = {
       "full_romaji": "Gakkou e jitensha de ikimasu.",
       "full_vietnamese": "Tôi đi đến trường bằng xe đạp.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 50041,
           "order_index": 1,
           "japanese": "学校へ",
           "vietnamese": "đến trường",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 50042,
           "order_index": 2,
           "japanese": "自転車で",
           "vietnamese": "bằng xe đạp",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 50043,
           "order_index": 3,
           "japanese": "行きます。",
           "vietnamese": "đi",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -3228,27 +3629,31 @@ export const generatedSentences = {
       "full_romaji": "Suupaa e aruite ikimasu.",
       "full_vietnamese": "Tôi đi bộ đến siêu thị.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 50051,
           "order_index": 1,
           "japanese": "スーパーへ",
           "vietnamese": "đến siêu thị",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 50052,
           "order_index": 2,
           "japanese": "歩いて",
           "vietnamese": "bằng cách đi bộ",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 50053,
           "order_index": 3,
           "japanese": "行きます。",
           "vietnamese": "đi",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -3260,27 +3665,31 @@ export const generatedSentences = {
       "full_romaji": "Eki made basu de ikimasu.",
       "full_vietnamese": "Tôi đi xe buýt đến ga.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 50061,
           "order_index": 1,
           "japanese": "駅まで",
           "vietnamese": "đến ga",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 50062,
           "order_index": 2,
           "japanese": "バスで",
           "vietnamese": "bằng xe buýt",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 50063,
           "order_index": 3,
           "japanese": "行きます。",
           "vietnamese": "đi",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -3292,27 +3701,31 @@ export const generatedSentences = {
       "full_romaji": "Futsuu densha de Oosaka e ikimasu.",
       "full_vietnamese": "Tôi đi Osaka bằng tàu thường.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 50071,
           "order_index": 1,
           "japanese": "普通電車で",
           "vietnamese": "bằng tàu thường",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 50072,
           "order_index": 2,
           "japanese": "大阪へ",
           "vietnamese": "đến Osaka",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 50073,
           "order_index": 3,
           "japanese": "行きます。",
           "vietnamese": "đi",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -3324,27 +3737,31 @@ export const generatedSentences = {
       "full_romaji": "Kyuukou wa sanbansen, tokkyuu wa gobansen desu.",
       "full_vietnamese": "Tàu tốc hành ở đường ray số ba, tàu tốc hành đặc biệt ở đường ray số năm.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 50081,
           "order_index": 1,
           "japanese": "急行は三番線、",
           "vietnamese": "tàu tốc hành ở đường ray số ba",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 50082,
           "order_index": 2,
           "japanese": "特急は",
           "vietnamese": "tàu tốc hành đặc biệt thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 50083,
           "order_index": 3,
           "japanese": "五番線です。",
           "vietnamese": "ở đường ray số năm",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -3356,27 +3773,31 @@ export const generatedSentences = {
       "full_romaji": "Tsugi no shinkansen wa nanbansen desu ka.",
       "full_vietnamese": "Chuyến tàu Shinkansen tiếp theo ở đường ray số mấy?",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 50091,
           "order_index": 1,
           "japanese": "次の新幹線は",
           "vietnamese": "tàu Shinkansen tiếp theo thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 50092,
           "order_index": 2,
           "japanese": "何番線",
           "vietnamese": "đường ray số mấy",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 50093,
           "order_index": 3,
           "japanese": "ですか。",
           "vietnamese": "vậy",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -3388,27 +3809,31 @@ export const generatedSentences = {
       "full_romaji": "Hokkaidou e hikouki de ikimasu.",
       "full_vietnamese": "Tôi đi Hokkaido bằng máy bay.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 50101,
           "order_index": 1,
           "japanese": "北海道へ",
           "vietnamese": "đến Hokkaido",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 50102,
           "order_index": 2,
           "japanese": "飛行機で",
           "vietnamese": "bằng máy bay",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 50103,
           "order_index": 3,
           "japanese": "行きます。",
           "vietnamese": "đi",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -3420,27 +3845,31 @@ export const generatedSentences = {
       "full_romaji": "Oosaka e fune de ikimasu.",
       "full_vietnamese": "Tôi đi Osaka bằng tàu thủy.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 50111,
           "order_index": 1,
           "japanese": "大阪へ",
           "vietnamese": "đến Osaka",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 50112,
           "order_index": 2,
           "japanese": "船で",
           "vietnamese": "bằng tàu thủy",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 50113,
           "order_index": 3,
           "japanese": "行きます。",
           "vietnamese": "đi",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -3452,27 +3881,31 @@ export const generatedSentences = {
       "full_romaji": "Kaisha e chikatetsu de ikimasu.",
       "full_vietnamese": "Tôi đi đến công ty bằng tàu điện ngầm.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 50121,
           "order_index": 1,
           "japanese": "会社へ",
           "vietnamese": "đến công ty",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 50122,
           "order_index": 2,
           "japanese": "地下鉄で",
           "vietnamese": "bằng tàu điện ngầm",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 50123,
           "order_index": 3,
           "japanese": "行きます。",
           "vietnamese": "đi",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -3484,27 +3917,31 @@ export const generatedSentences = {
       "full_romaji": "Eki kara uchi made takushii de kaerimasu.",
       "full_vietnamese": "Tôi về nhà từ ga bằng taxi.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 50131,
           "order_index": 1,
           "japanese": "駅からうちまで",
           "vietnamese": "từ ga đến nhà",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 50132,
           "order_index": 2,
           "japanese": "タクシーで",
           "vietnamese": "bằng taxi",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 50133,
           "order_index": 3,
           "japanese": "帰ります。",
           "vietnamese": "trở về",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -3516,27 +3953,31 @@ export const generatedSentences = {
       "full_romaji": "Kare wa Betonamu no hito desu. Hitori de Nihon e kimashita.",
       "full_vietnamese": "Anh ấy là người Việt Nam. Anh ấy đã đến Nhật một mình.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 50141,
           "order_index": 1,
           "japanese": "彼はベトナムの人です。",
           "vietnamese": "anh ấy là người Việt Nam",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 50142,
           "order_index": 2,
           "japanese": "一人で",
           "vietnamese": "một mình",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 50143,
           "order_index": 3,
           "japanese": "日本へ来ました。",
           "vietnamese": "đã đến Nhật",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -3548,27 +3989,31 @@ export const generatedSentences = {
       "full_romaji": "Kanojo wa tomodachi to Kankoku e ikimasu.",
       "full_vietnamese": "Cô ấy đi Hàn Quốc cùng bạn.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 50151,
           "order_index": 1,
           "japanese": "彼女は",
           "vietnamese": "cô ấy thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 50152,
           "order_index": 2,
           "japanese": "友達と",
           "vietnamese": "cùng bạn",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 50153,
           "order_index": 3,
           "japanese": "韓国へ行きます。",
           "vietnamese": "đi Hàn Quốc",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -3580,27 +4025,31 @@ export const generatedSentences = {
       "full_romaji": "Konshuu wa doko e mo ikimasen.",
       "full_vietnamese": "Tuần này tôi không đi đâu cả.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 50161,
           "order_index": 1,
           "japanese": "今週は",
           "vietnamese": "tuần này thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 50162,
           "order_index": 2,
           "japanese": "どこへも",
           "vietnamese": "không đâu cả",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 50163,
           "order_index": 3,
           "japanese": "行きません。",
           "vietnamese": "không đi",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -3612,27 +4061,31 @@ export const generatedSentences = {
       "full_romaji": "Sengetsu wa Oosaka e ikimashita. Kongetsu wa Toukyou e ikimasu.",
       "full_vietnamese": "Tháng trước tôi đã đi Osaka. Tháng này tôi đi Tokyo.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 50171,
           "order_index": 1,
           "japanese": "先月は大阪へ行きました。",
           "vietnamese": "tháng trước đã đi Osaka",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 50172,
           "order_index": 2,
           "japanese": "今月は",
           "vietnamese": "tháng này thì",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 50173,
           "order_index": 3,
           "japanese": "東京へ行きます。",
           "vietnamese": "đi Tokyo",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -3644,34 +4097,39 @@ export const generatedSentences = {
       "full_romaji": "Raigetsu, kazoku wa kuni e kaerimasu.",
       "full_vietnamese": "Tháng sau gia đình tôi sẽ về nước.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 50181,
           "order_index": 1,
           "japanese": "来月、",
           "vietnamese": "tháng sau",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 50182,
           "order_index": 2,
           "japanese": "家族は",
           "vietnamese": "gia đình tôi thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 50183,
           "order_index": 3,
           "japanese": "国へ",
           "vietnamese": "về nước",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 50184,
           "order_index": 4,
           "japanese": "帰ります。",
           "vietnamese": "trở về",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -3683,27 +4141,31 @@ export const generatedSentences = {
       "full_romaji": "Kyonen wa Nihon e ikimashita. Kotoshi wa ikimasen.",
       "full_vietnamese": "Năm ngoái tôi đã đi Nhật. Năm nay tôi không đi.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 50191,
           "order_index": 1,
           "japanese": "去年は日本へ行きました。",
           "vietnamese": "năm ngoái đã đi Nhật",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 50192,
           "order_index": 2,
           "japanese": "今年は",
           "vietnamese": "năm nay thì",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 50193,
           "order_index": 3,
           "japanese": "行きません。",
           "vietnamese": "không đi",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -3715,27 +4177,31 @@ export const generatedSentences = {
       "full_romaji": "Rainen wa kazoku to Nihon e ikimasu.",
       "full_vietnamese": "Năm sau tôi sẽ đi Nhật cùng gia đình.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 50201,
           "order_index": 1,
           "japanese": "来年は",
           "vietnamese": "năm sau thì",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 50202,
           "order_index": 2,
           "japanese": "家族と",
           "vietnamese": "cùng gia đình",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 50203,
           "order_index": 3,
           "japanese": "日本へ行きます。",
           "vietnamese": "sẽ đi Nhật",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -3747,27 +4213,31 @@ export const generatedSentences = {
       "full_romaji": "Tanjoubi wa itsu desu ka. Nangatsu nannichi desu ka.",
       "full_vietnamese": "Sinh nhật của bạn khi nào? Là ngày mấy tháng mấy?",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 50211,
           "order_index": 1,
           "japanese": "誕生日はいつですか。",
           "vietnamese": "sinh nhật là khi nào",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 50212,
           "order_index": 2,
           "japanese": "何月何日",
           "vietnamese": "ngày mấy tháng mấy",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 50213,
           "order_index": 3,
           "japanese": "ですか。",
           "vietnamese": "vậy",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -3779,27 +4249,31 @@ export const generatedSentences = {
       "full_romaji": "Ichigatsu tsuitachi desu.",
       "full_vietnamese": "Là ngày mùng một tháng Một.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 50221,
           "order_index": 1,
           "japanese": "一月",
           "vietnamese": "tháng Một",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 50222,
           "order_index": 2,
           "japanese": "一日",
           "vietnamese": "ngày mùng một",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 50223,
           "order_index": 3,
           "japanese": "です。",
           "vietnamese": "là",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -3811,27 +4285,31 @@ export const generatedSentences = {
       "full_romaji": "Kaigi wa futsuka, mikka, yokka, juuyokka desu.",
       "full_vietnamese": "Các ngày họp là mùng 2, mùng 3, mùng 4 và ngày 14.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 50231,
           "order_index": 1,
           "japanese": "会議は",
           "vietnamese": "các buổi họp thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 50232,
           "order_index": 2,
           "japanese": "二日、三日、四日、十四日",
           "vietnamese": "mùng 2, mùng 3, mùng 4 và ngày 14",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 50233,
           "order_index": 3,
           "japanese": "です。",
           "vietnamese": "là",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -3843,27 +4321,31 @@ export const generatedSentences = {
       "full_romaji": "Yasumi wa itsuka, muika, nanoka, youka, kokonoka, tooka, hatsuka, nijuuyokka desu.",
       "full_vietnamese": "Các ngày nghỉ là mùng 5, 6, 7, 8, 9, 10, ngày 20 và ngày 24.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 50241,
           "order_index": 1,
           "japanese": "休みは",
           "vietnamese": "các ngày nghỉ thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 50242,
           "order_index": 2,
           "japanese": "五日、六日、七日、八日、九日、十日、二十日、二十四日",
           "vietnamese": "mùng 5 đến 10, ngày 20 và 24",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 50243,
           "order_index": 3,
           "japanese": "です。",
           "vietnamese": "là",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -3875,20 +4357,23 @@ export const generatedSentences = {
       "full_romaji": "Arigatou gozaimasu. Dou itashimashite.",
       "full_vietnamese": "Xin cảm ơn. Không có gì.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 50251,
           "order_index": 1,
           "japanese": "ありがとうございます。",
           "vietnamese": "xin cảm ơn",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 50252,
           "order_index": 2,
           "japanese": "どういたしまして。",
           "vietnamese": "không có gì",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     }
@@ -3902,27 +4387,31 @@ export const generatedSentences = {
       "full_romaji": "Maiasa pan to tamago o tabemasu.",
       "full_vietnamese": "Mỗi sáng tôi ăn bánh mì và trứng.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 60011,
           "order_index": 1,
           "japanese": "毎朝",
           "vietnamese": "mỗi sáng",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 60012,
           "order_index": 2,
           "japanese": "パンと卵を",
           "vietnamese": "bánh mì và trứng",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 60013,
           "order_index": 3,
           "japanese": "食べます。",
           "vietnamese": "ăn",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -3934,27 +4423,31 @@ export const generatedSentences = {
       "full_romaji": "Hirugohan wa resutoran de tabemasu.",
       "full_vietnamese": "Tôi ăn cơm trưa ở nhà hàng.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 60021,
           "order_index": 1,
           "japanese": "昼ご飯は",
           "vietnamese": "cơm trưa thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 60022,
           "order_index": 2,
           "japanese": "レストランで",
           "vietnamese": "tại nhà hàng",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 60023,
           "order_index": 3,
           "japanese": "食べます。",
           "vietnamese": "ăn",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -3966,27 +4459,31 @@ export const generatedSentences = {
       "full_romaji": "Bangohan ni gohan to niku to yasai o tabemasu.",
       "full_vietnamese": "Bữa tối tôi ăn cơm, thịt và rau.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 60031,
           "order_index": 1,
           "japanese": "晩ご飯に",
           "vietnamese": "vào bữa tối",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 60032,
           "order_index": 2,
           "japanese": "ご飯と肉と野菜を",
           "vietnamese": "cơm, thịt và rau",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 60033,
           "order_index": 3,
           "japanese": "食べます。",
           "vietnamese": "ăn",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -3998,34 +4495,39 @@ export const generatedSentences = {
       "full_romaji": "Mizu to ocha o nomimasu. Gyuunyuu wa nomimasen.",
       "full_vietnamese": "Tôi uống nước và trà. Tôi không uống sữa.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 60041,
           "order_index": 1,
           "japanese": "水とお茶を",
           "vietnamese": "nước và trà",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 60042,
           "order_index": 2,
           "japanese": "飲みます。",
           "vietnamese": "uống",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 60043,
           "order_index": 3,
           "japanese": "牛乳は",
           "vietnamese": "sữa thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 60044,
           "order_index": 4,
           "japanese": "飲みません。",
           "vietnamese": "không uống",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -4037,27 +4539,31 @@ export const generatedSentences = {
       "full_romaji": "Tokidoki juusu ya biiru o nomimasu.",
       "full_vietnamese": "Thỉnh thoảng tôi uống nước trái cây hoặc bia.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 60051,
           "order_index": 1,
           "japanese": "時々",
           "vietnamese": "thỉnh thoảng",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 60052,
           "order_index": 2,
           "japanese": "ジュースやビールを",
           "vietnamese": "nước trái cây, bia, v.v.",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 60053,
           "order_index": 3,
           "japanese": "飲みます。",
           "vietnamese": "uống",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -4069,27 +4575,31 @@ export const generatedSentences = {
       "full_romaji": "Chichi wa osake o nomimasu ga, tabako wa suimasen.",
       "full_vietnamese": "Bố tôi uống rượu nhưng không hút thuốc.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 60061,
           "order_index": 1,
           "japanese": "父はお酒を飲みますが、",
           "vietnamese": "bố uống rượu nhưng",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 60062,
           "order_index": 2,
           "japanese": "たばこは",
           "vietnamese": "thuốc lá thì",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 60063,
           "order_index": 3,
           "japanese": "吸いません。",
           "vietnamese": "không hút",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -4101,27 +4611,31 @@ export const generatedSentences = {
       "full_romaji": "Nichiyoubi ni uchi de eiga ya bideo o mimasu.",
       "full_vietnamese": "Chủ nhật tôi xem phim và video ở nhà.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 60071,
           "order_index": 1,
           "japanese": "日曜日に",
           "vietnamese": "vào Chủ nhật",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 60072,
           "order_index": 2,
           "japanese": "うちで",
           "vietnamese": "ở nhà",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 60073,
           "order_index": 3,
           "japanese": "映画やビデオを見ます。",
           "vietnamese": "xem phim, video, v.v.",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -4133,27 +4647,31 @@ export const generatedSentences = {
       "full_romaji": "Maiban shiidii o kikimasu.",
       "full_vietnamese": "Mỗi tối tôi nghe đĩa CD.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 60081,
           "order_index": 1,
           "japanese": "毎晩",
           "vietnamese": "mỗi tối",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 60082,
           "order_index": 2,
           "japanese": "CDを",
           "vietnamese": "đĩa CD",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 60083,
           "order_index": 3,
           "japanese": "聞きます。",
           "vietnamese": "nghe",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -4165,34 +4683,39 @@ export const generatedSentences = {
       "full_romaji": "Asa, shinbun o yomimasu. Sorekara hon o yomimasu.",
       "full_vietnamese": "Buổi sáng tôi đọc báo. Sau đó tôi đọc sách.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 60091,
           "order_index": 1,
           "japanese": "朝、新聞を",
           "vietnamese": "buổi sáng, báo",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 60092,
           "order_index": 2,
           "japanese": "読みます。",
           "vietnamese": "đọc",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 60093,
           "order_index": 3,
           "japanese": "それから",
           "vietnamese": "sau đó",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 60094,
           "order_index": 4,
           "japanese": "本を読みます。",
           "vietnamese": "đọc sách",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -4204,27 +4727,31 @@ export const generatedSentences = {
       "full_romaji": "Toshokan de tegami to repooto o kakimasu.",
       "full_vietnamese": "Tôi viết thư và báo cáo ở thư viện.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 60101,
           "order_index": 1,
           "japanese": "図書館で",
           "vietnamese": "tại thư viện",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 60102,
           "order_index": 2,
           "japanese": "手紙とレポートを",
           "vietnamese": "thư và báo cáo",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 60103,
           "order_index": 3,
           "japanese": "書きます。",
           "vietnamese": "viết",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -4236,27 +4763,31 @@ export const generatedSentences = {
       "full_romaji": "Mise de sakana to kudamono o kaimasu.",
       "full_vietnamese": "Tôi mua cá và trái cây ở cửa hàng.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 60111,
           "order_index": 1,
           "japanese": "店で",
           "vietnamese": "tại cửa hàng",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 60112,
           "order_index": 2,
           "japanese": "魚と果物を",
           "vietnamese": "cá và trái cây",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 60113,
           "order_index": 3,
           "japanese": "買います。",
           "vietnamese": "mua",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -4268,27 +4799,31 @@ export const generatedSentences = {
       "full_romaji": "Niwa de kazoku no shashin o torimasu.",
       "full_vietnamese": "Tôi chụp ảnh gia đình ở sân vườn.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 60121,
           "order_index": 1,
           "japanese": "庭で",
           "vietnamese": "tại sân vườn",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 60122,
           "order_index": 2,
           "japanese": "家族の写真を",
           "vietnamese": "ảnh gia đình",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 60123,
           "order_index": 3,
           "japanese": "撮ります。",
           "vietnamese": "chụp",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -4300,34 +4835,39 @@ export const generatedSentences = {
       "full_romaji": "Doyoubi ni tomodachi to tenisu o shimasu.",
       "full_vietnamese": "Thứ Bảy tôi chơi quần vợt cùng bạn.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 60131,
           "order_index": 1,
           "japanese": "土曜日に",
           "vietnamese": "vào thứ Bảy",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 60132,
           "order_index": 2,
           "japanese": "友達と",
           "vietnamese": "cùng bạn",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 60133,
           "order_index": 3,
           "japanese": "テニスを",
           "vietnamese": "quần vợt",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 60134,
           "order_index": 4,
           "japanese": "します。",
           "vietnamese": "chơi",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -4339,27 +4879,31 @@ export const generatedSentences = {
       "full_romaji": "Kouen de sakkaa o shimasu.",
       "full_vietnamese": "Tôi chơi bóng đá ở công viên.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 60141,
           "order_index": 1,
           "japanese": "公園で",
           "vietnamese": "tại công viên",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 60142,
           "order_index": 2,
           "japanese": "サッカーを",
           "vietnamese": "bóng đá",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 60143,
           "order_index": 3,
           "japanese": "します。",
           "vietnamese": "chơi",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -4371,34 +4915,39 @@ export const generatedSentences = {
       "full_romaji": "Mainichi uchi de shukudai o shimasu.",
       "full_vietnamese": "Hằng ngày tôi làm bài tập ở nhà.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 60151,
           "order_index": 1,
           "japanese": "毎日",
           "vietnamese": "hằng ngày",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 60152,
           "order_index": 2,
           "japanese": "うちで",
           "vietnamese": "ở nhà",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 60153,
           "order_index": 3,
           "japanese": "宿題を",
           "vietnamese": "bài tập",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 60154,
           "order_index": 4,
           "japanese": "します。",
           "vietnamese": "làm",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -4410,27 +4959,31 @@ export const generatedSentences = {
       "full_romaji": "Nichiyoubi ni kouen de ohanami o shimasu.",
       "full_vietnamese": "Chủ nhật tôi ngắm hoa anh đào ở công viên.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 60161,
           "order_index": 1,
           "japanese": "日曜日に",
           "vietnamese": "vào Chủ nhật",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 60162,
           "order_index": 2,
           "japanese": "公園で",
           "vietnamese": "tại công viên",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 60163,
           "order_index": 3,
           "japanese": "お花見をします。",
           "vietnamese": "ngắm hoa anh đào",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -4442,27 +4995,31 @@ export const generatedSentences = {
       "full_romaji": "Ashita nani o shimasu ka.",
       "full_vietnamese": "Ngày mai bạn làm gì?",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 60171,
           "order_index": 1,
           "japanese": "あした",
           "vietnamese": "ngày mai",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 60172,
           "order_index": 2,
           "japanese": "何を",
           "vietnamese": "làm gì",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 60173,
           "order_index": 3,
           "japanese": "しますか。",
           "vietnamese": "sẽ làm?",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -4474,27 +5031,31 @@ export const generatedSentences = {
       "full_romaji": "Issho ni hirugohan o tabemasen ka.",
       "full_vietnamese": "Bạn cùng ăn trưa nhé?",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 60181,
           "order_index": 1,
           "japanese": "いっしょに",
           "vietnamese": "cùng nhau",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 60182,
           "order_index": 2,
           "japanese": "昼ご飯を",
           "vietnamese": "cơm trưa",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 60183,
           "order_index": 3,
           "japanese": "食べませんか。",
           "vietnamese": "cùng ăn nhé?",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -4506,20 +5067,23 @@ export const generatedSentences = {
       "full_romaji": "Chotto yasumimashou.",
       "full_vietnamese": "Chúng ta nghỉ một chút nhé.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 60191,
           "order_index": 1,
           "japanese": "ちょっと",
           "vietnamese": "một chút",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 60192,
           "order_index": 2,
           "japanese": "休みましょう。",
           "vietnamese": "cùng nghỉ nhé",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -4531,34 +5095,39 @@ export const generatedSentences = {
       "full_romaji": "Itsumo eki de tomodachi ni aimasu.",
       "full_vietnamese": "Tôi luôn gặp bạn ở nhà ga.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 60201,
           "order_index": 1,
           "japanese": "いつも",
           "vietnamese": "luôn luôn",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 60202,
           "order_index": 2,
           "japanese": "駅で",
           "vietnamese": "tại nhà ga",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 60203,
           "order_index": 3,
           "japanese": "友達に",
           "vietnamese": "với bạn",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 60204,
           "order_index": 4,
           "japanese": "会います。",
           "vietnamese": "gặp",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -4570,27 +5139,31 @@ export const generatedSentences = {
       "full_romaji": "Kyou wa issho ni eiga o mimashou.",
       "full_vietnamese": "Hôm nay chúng ta cùng xem phim nhé.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 60211,
           "order_index": 1,
           "japanese": "きょうは",
           "vietnamese": "hôm nay thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 60212,
           "order_index": 2,
           "japanese": "いっしょに",
           "vietnamese": "cùng nhau",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 60213,
           "order_index": 3,
           "japanese": "映画を見ましょう。",
           "vietnamese": "cùng xem phim nhé",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -4602,27 +5175,31 @@ export const generatedSentences = {
       "full_romaji": "Ii desu ne. Ja, mata ashita.",
       "full_vietnamese": "Hay đấy. Vậy hẹn gặp lại ngày mai.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 60221,
           "order_index": 1,
           "japanese": "いいですね。",
           "vietnamese": "hay đấy nhỉ",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 60222,
           "order_index": 2,
           "japanese": "じゃ、",
           "vietnamese": "vậy thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 60223,
           "order_index": 3,
           "japanese": "またあした。",
           "vietnamese": "hẹn gặp lại ngày mai",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     }
@@ -4636,27 +5213,31 @@ export const generatedSentences = {
       "full_romaji": "Hashi de gohan o tabemasu.",
       "full_vietnamese": "Tôi ăn cơm bằng đũa.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 70011,
           "order_index": 1,
           "japanese": "箸で",
           "vietnamese": "bằng đũa",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 70012,
           "order_index": 2,
           "japanese": "ご飯を",
           "vietnamese": "cơm",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 70013,
           "order_index": 3,
           "japanese": "食べます。",
           "vietnamese": "ăn",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -4668,27 +5249,31 @@ export const generatedSentences = {
       "full_romaji": "Supuun de karee o tabemasu.",
       "full_vietnamese": "Tôi ăn cà ri bằng thìa.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 70021,
           "order_index": 1,
           "japanese": "スプーンで",
           "vietnamese": "bằng thìa",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 70022,
           "order_index": 2,
           "japanese": "カレーを",
           "vietnamese": "cà ri",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 70023,
           "order_index": 3,
           "japanese": "食べます。",
           "vietnamese": "ăn",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -4700,27 +5285,31 @@ export const generatedSentences = {
       "full_romaji": "Naifu de niku o kirimasu.",
       "full_vietnamese": "Tôi cắt thịt bằng dao.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 70031,
           "order_index": 1,
           "japanese": "ナイフで",
           "vietnamese": "bằng dao",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 70032,
           "order_index": 2,
           "japanese": "肉を",
           "vietnamese": "thịt",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 70033,
           "order_index": 3,
           "japanese": "切ります。",
           "vietnamese": "cắt",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -4732,27 +5321,31 @@ export const generatedSentences = {
       "full_romaji": "Hasami de kami o kirimasu.",
       "full_vietnamese": "Tôi cắt giấy bằng kéo.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 70041,
           "order_index": 1,
           "japanese": "はさみで",
           "vietnamese": "bằng kéo",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 70042,
           "order_index": 2,
           "japanese": "紙を",
           "vietnamese": "giấy",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 70043,
           "order_index": 3,
           "japanese": "切ります。",
           "vietnamese": "cắt",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -4764,27 +5357,31 @@ export const generatedSentences = {
       "full_romaji": "Pasokon de repooto o kakimasu.",
       "full_vietnamese": "Tôi viết báo cáo bằng máy tính.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 70051,
           "order_index": 1,
           "japanese": "パソコンで",
           "vietnamese": "bằng máy tính",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 70052,
           "order_index": 2,
           "japanese": "レポートを",
           "vietnamese": "báo cáo",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 70053,
           "order_index": 3,
           "japanese": "書きます。",
           "vietnamese": "viết",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -4796,27 +5393,31 @@ export const generatedSentences = {
       "full_romaji": "Keitai de haha ni denwa o kakemasu.",
       "full_vietnamese": "Tôi gọi điện cho mẹ bằng điện thoại di động.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 70061,
           "order_index": 1,
           "japanese": "携帯で",
           "vietnamese": "bằng điện thoại di động",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 70062,
           "order_index": 2,
           "japanese": "母に",
           "vietnamese": "cho mẹ",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 70063,
           "order_index": 3,
           "japanese": "電話をかけます。",
           "vietnamese": "gọi điện",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -4828,27 +5429,31 @@ export const generatedSentences = {
       "full_romaji": "Nihongo de meeru o kakimasu.",
       "full_vietnamese": "Tôi viết email bằng tiếng Nhật.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 70071,
           "order_index": 1,
           "japanese": "日本語で",
           "vietnamese": "bằng tiếng Nhật",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 70072,
           "order_index": 2,
           "japanese": "メールを",
           "vietnamese": "email",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 70073,
           "order_index": 3,
           "japanese": "書きます。",
           "vietnamese": "viết",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -4860,27 +5465,31 @@ export const generatedSentences = {
       "full_romaji": "Tomodachi ni nengajou o okurimasu.",
       "full_vietnamese": "Tôi gửi thiệp năm mới cho bạn.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 70081,
           "order_index": 1,
           "japanese": "友達に",
           "vietnamese": "cho bạn",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 70082,
           "order_index": 2,
           "japanese": "年賀状を",
           "vietnamese": "thiệp năm mới",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 70083,
           "order_index": 3,
           "japanese": "送ります。",
           "vietnamese": "gửi",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -4892,27 +5501,31 @@ export const generatedSentences = {
       "full_romaji": "Kore wa panchi to hotchikisu desu.",
       "full_vietnamese": "Đây là dụng cụ bấm lỗ và dập ghim.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 70091,
           "order_index": 1,
           "japanese": "これは",
           "vietnamese": "đây thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 70092,
           "order_index": 2,
           "japanese": "パンチとホッチキス",
           "vietnamese": "dụng cụ bấm lỗ và dập ghim",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 70093,
           "order_index": 3,
           "japanese": "です。",
           "vietnamese": "là",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -4924,27 +5537,31 @@ export const generatedSentences = {
       "full_romaji": "Sore wa seroteepu to keshigomu desu.",
       "full_vietnamese": "Đó là băng dính và cục tẩy.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 70101,
           "order_index": 1,
           "japanese": "それは",
           "vietnamese": "đó thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 70102,
           "order_index": 2,
           "japanese": "セロテープと消しゴム",
           "vietnamese": "băng dính và cục tẩy",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 70103,
           "order_index": 3,
           "japanese": "です。",
           "vietnamese": "là",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -4956,27 +5573,31 @@ export const generatedSentences = {
       "full_romaji": "Haha ni hana o agemasu.",
       "full_vietnamese": "Tôi tặng hoa cho mẹ.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 70111,
           "order_index": 1,
           "japanese": "母に",
           "vietnamese": "cho mẹ",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 70112,
           "order_index": 2,
           "japanese": "花を",
           "vietnamese": "hoa",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 70113,
           "order_index": 3,
           "japanese": "あげます。",
           "vietnamese": "tặng",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -4988,27 +5609,31 @@ export const generatedSentences = {
       "full_romaji": "Chichi ni shatsu o agemashita.",
       "full_vietnamese": "Tôi đã tặng áo sơ mi cho bố.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 70121,
           "order_index": 1,
           "japanese": "父に",
           "vietnamese": "cho bố",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 70122,
           "order_index": 2,
           "japanese": "シャツを",
           "vietnamese": "áo sơ mi",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 70123,
           "order_index": 3,
           "japanese": "あげました。",
           "vietnamese": "đã tặng",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -5020,27 +5645,31 @@ export const generatedSentences = {
       "full_romaji": "Tanjoubi ni tomodachi kara purezento o moraimashita.",
       "full_vietnamese": "Vào sinh nhật tôi đã nhận quà từ bạn.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 70131,
           "order_index": 1,
           "japanese": "誕生日に",
           "vietnamese": "vào sinh nhật",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 70132,
           "order_index": 2,
           "japanese": "友達から",
           "vietnamese": "từ bạn",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 70133,
           "order_index": 3,
           "japanese": "プレゼントをもらいました。",
           "vietnamese": "đã nhận quà",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -5052,27 +5681,31 @@ export const generatedSentences = {
       "full_romaji": "Sensei ni Nihon no omiyage o moraimashita.",
       "full_vietnamese": "Tôi đã nhận quà Nhật từ giáo viên.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 70141,
           "order_index": 1,
           "japanese": "先生に",
           "vietnamese": "từ giáo viên",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 70142,
           "order_index": 2,
           "japanese": "日本のお土産を",
           "vietnamese": "quà Nhật",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 70143,
           "order_index": 3,
           "japanese": "もらいました。",
           "vietnamese": "đã nhận",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -5084,27 +5717,31 @@ export const generatedSentences = {
       "full_romaji": "Chichi ni okane o karimasu.",
       "full_vietnamese": "Tôi mượn tiền của bố.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 70151,
           "order_index": 1,
           "japanese": "父に",
           "vietnamese": "từ bố",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 70152,
           "order_index": 2,
           "japanese": "お金を",
           "vietnamese": "tiền",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 70153,
           "order_index": 3,
           "japanese": "借ります。",
           "vietnamese": "mượn",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -5116,27 +5753,31 @@ export const generatedSentences = {
       "full_romaji": "Tomodachi ni jisho o kashimasu.",
       "full_vietnamese": "Tôi cho bạn mượn từ điển.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 70161,
           "order_index": 1,
           "japanese": "友達に",
           "vietnamese": "cho bạn",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 70162,
           "order_index": 2,
           "japanese": "辞書を",
           "vietnamese": "từ điển",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 70163,
           "order_index": 3,
           "japanese": "貸します。",
           "vietnamese": "cho mượn",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -5148,27 +5789,31 @@ export const generatedSentences = {
       "full_romaji": "Sensei ni Nihongo o naraimasu.",
       "full_vietnamese": "Tôi học tiếng Nhật từ giáo viên.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 70171,
           "order_index": 1,
           "japanese": "先生に",
           "vietnamese": "từ giáo viên",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 70172,
           "order_index": 2,
           "japanese": "日本語を",
           "vietnamese": "tiếng Nhật",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 70173,
           "order_index": 3,
           "japanese": "習います。",
           "vietnamese": "học",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -5180,27 +5825,31 @@ export const generatedSentences = {
       "full_romaji": "Haha ni Eigo o oshiemasu.",
       "full_vietnamese": "Tôi dạy tiếng Anh cho mẹ.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 70181,
           "order_index": 1,
           "japanese": "母に",
           "vietnamese": "cho mẹ",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 70182,
           "order_index": 2,
           "japanese": "英語を",
           "vietnamese": "tiếng Anh",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 70183,
           "order_index": 3,
           "japanese": "教えます。",
           "vietnamese": "dạy",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -5212,27 +5861,31 @@ export const generatedSentences = {
       "full_romaji": "Mou kippu o kaimashita.",
       "full_vietnamese": "Tôi đã mua vé rồi.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 70191,
           "order_index": 1,
           "japanese": "もう",
           "vietnamese": "đã rồi",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 70192,
           "order_index": 2,
           "japanese": "切符を",
           "vietnamese": "vé",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 70193,
           "order_index": 3,
           "japanese": "買いました。",
           "vietnamese": "đã mua",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -5244,27 +5897,31 @@ export const generatedSentences = {
       "full_romaji": "Nimotsu wa mou okurimashita ka.",
       "full_vietnamese": "Bạn đã gửi hành lý chưa?",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 70201,
           "order_index": 1,
           "japanese": "荷物は",
           "vietnamese": "hành lý thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 70202,
           "order_index": 2,
           "japanese": "もう",
           "vietnamese": "đã... chưa",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 70203,
           "order_index": 3,
           "japanese": "送りましたか。",
           "vietnamese": "đã gửi chưa",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -5276,27 +5933,31 @@ export const generatedSentences = {
       "full_romaji": "Iie, mada desu. Korekara okurimasu.",
       "full_vietnamese": "Chưa, vẫn chưa. Bây giờ tôi sẽ gửi.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 70211,
           "order_index": 1,
           "japanese": "いいえ、まだです。",
           "vietnamese": "chưa, vẫn chưa",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 70212,
           "order_index": 2,
           "japanese": "これから",
           "vietnamese": "từ bây giờ",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 70213,
           "order_index": 3,
           "japanese": "送ります。",
           "vietnamese": "sẽ gửi",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -5308,27 +5969,31 @@ export const generatedSentences = {
       "full_romaji": "Gomen kudasai. Douzo oagari kudasai.",
       "full_vietnamese": "Xin phép có ai ở nhà không? Xin mời vào.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 70221,
           "order_index": 1,
           "japanese": "ごめんください。",
           "vietnamese": "xin phép có ai ở nhà không",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 70222,
           "order_index": 2,
           "japanese": "どうぞ",
           "vietnamese": "xin mời",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 70223,
           "order_index": 3,
           "japanese": "お上がりください。",
           "vietnamese": "mời vào nhà",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -5340,20 +6005,23 @@ export const generatedSentences = {
       "full_romaji": "Koohii wa ikaga desu ka. Itadakimasu.",
       "full_vietnamese": "Bạn dùng cà phê nhé? Tôi xin nhận.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 70231,
           "order_index": 1,
           "japanese": "コーヒーはいかがですか。",
           "vietnamese": "bạn dùng cà phê nhé",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 70232,
           "order_index": 2,
           "japanese": "いただきます。",
           "vietnamese": "tôi xin nhận/dùng",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     }
@@ -5367,20 +6035,23 @@ export const generatedSentences = {
       "full_romaji": "Miraa-san wa hansamu desu.",
       "full_vietnamese": "Anh Miller đẹp trai.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 80011,
           "order_index": 1,
           "japanese": "ミラーさんは",
           "vietnamese": "anh Miller thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 80012,
           "order_index": 2,
           "japanese": "ハンサムです。",
           "vietnamese": "đẹp trai",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -5392,34 +6063,39 @@ export const generatedSentences = {
       "full_romaji": "Nara wa kirei na machi desu. Soshite shizuka desu.",
       "full_vietnamese": "Nara là một thành phố đẹp. Và nơi đó yên tĩnh.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 80021,
           "order_index": 1,
           "japanese": "奈良は",
           "vietnamese": "Nara thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 80022,
           "order_index": 2,
           "japanese": "きれいな町です。",
           "vietnamese": "là thành phố đẹp",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 80023,
           "order_index": 3,
           "japanese": "そして",
           "vietnamese": "và",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 80024,
           "order_index": 4,
           "japanese": "静かです。",
           "vietnamese": "yên tĩnh",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -5431,34 +6107,39 @@ export const generatedSentences = {
       "full_romaji": "Oosaka wa nigiyaka na machi desu. Soshite yuumei desu.",
       "full_vietnamese": "Osaka là một thành phố nhộn nhịp. Và nơi đó nổi tiếng.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 80031,
           "order_index": 1,
           "japanese": "大阪は",
           "vietnamese": "Osaka thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 80032,
           "order_index": 2,
           "japanese": "にぎやかな町です。",
           "vietnamese": "là thành phố nhộn nhịp",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 80033,
           "order_index": 3,
           "japanese": "そして",
           "vietnamese": "và",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 80034,
           "order_index": 4,
           "japanese": "有名です。",
           "vietnamese": "nổi tiếng",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -5470,20 +6151,23 @@ export const generatedSentences = {
       "full_romaji": "Yamada-sensei wa shinsetsu desu.",
       "full_vietnamese": "Thầy Yamada tốt bụng.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 80041,
           "order_index": 1,
           "japanese": "山田先生は",
           "vietnamese": "thầy Yamada thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 80042,
           "order_index": 2,
           "japanese": "親切です。",
           "vietnamese": "tốt bụng",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -5495,20 +6179,23 @@ export const generatedSentences = {
       "full_romaji": "Okaasan wa genki desu ka.",
       "full_vietnamese": "Mẹ bạn có khỏe không?",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 80051,
           "order_index": 1,
           "japanese": "お母さんは",
           "vietnamese": "mẹ bạn thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 80052,
           "order_index": 2,
           "japanese": "元気ですか。",
           "vietnamese": "có khỏe không",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -5520,20 +6207,23 @@ export const generatedSentences = {
       "full_romaji": "Kyou wa hima ja arimasen.",
       "full_vietnamese": "Hôm nay tôi không rảnh.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 80061,
           "order_index": 1,
           "japanese": "きょうは",
           "vietnamese": "hôm nay thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 80062,
           "order_index": 2,
           "japanese": "暇じゃありません。",
           "vietnamese": "không rảnh",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -5545,27 +6235,31 @@ export const generatedSentences = {
       "full_romaji": "Toukyou wa ookii machi desu.",
       "full_vietnamese": "Tokyo là thành phố lớn.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 80071,
           "order_index": 1,
           "japanese": "東京は",
           "vietnamese": "Tokyo thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 80072,
           "order_index": 2,
           "japanese": "大きい",
           "vietnamese": "lớn",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 80073,
           "order_index": 3,
           "japanese": "町です。",
           "vietnamese": "là thành phố",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -5577,20 +6271,23 @@ export const generatedSentences = {
       "full_romaji": "Kono jisho wa chiisai desu.",
       "full_vietnamese": "Quyển từ điển này nhỏ.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 80081,
           "order_index": 1,
           "japanese": "この辞書は",
           "vietnamese": "quyển từ điển này thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 80082,
           "order_index": 2,
           "japanese": "小さいです。",
           "vietnamese": "nhỏ",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -5602,27 +6299,31 @@ export const generatedSentences = {
       "full_romaji": "Kore wa atarashii kuruma desu.",
       "full_vietnamese": "Đây là chiếc ô tô mới.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 80091,
           "order_index": 1,
           "japanese": "これは",
           "vietnamese": "đây thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 80092,
           "order_index": 2,
           "japanese": "新しい",
           "vietnamese": "mới",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 80093,
           "order_index": 3,
           "japanese": "車です。",
           "vietnamese": "là ô tô",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -5634,20 +6335,23 @@ export const generatedSentences = {
       "full_romaji": "Ano kuruma wa furui desu.",
       "full_vietnamese": "Chiếc ô tô kia cũ.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 80101,
           "order_index": 1,
           "japanese": "あの車は",
           "vietnamese": "chiếc ô tô kia thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 80102,
           "order_index": 2,
           "japanese": "古いです。",
           "vietnamese": "cũ",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -5659,27 +6363,31 @@ export const generatedSentences = {
       "full_romaji": "Kono kamera wa ii desu. Ano kamera wa yokunai desu.",
       "full_vietnamese": "Máy ảnh này tốt. Máy ảnh kia không tốt.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 80111,
           "order_index": 1,
           "japanese": "このカメラはいいです。",
           "vietnamese": "máy ảnh này tốt",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 80112,
           "order_index": 2,
           "japanese": "あのカメラは",
           "vietnamese": "máy ảnh kia thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 80113,
           "order_index": 3,
           "japanese": "よくないです。",
           "vietnamese": "không tốt",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -5691,27 +6399,31 @@ export const generatedSentences = {
       "full_romaji": "Kyou wa atsui desu ga, Hokkaidou wa samui desu.",
       "full_vietnamese": "Hôm nay nóng nhưng Hokkaido lạnh.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 80121,
           "order_index": 1,
           "japanese": "きょうは暑いですが、",
           "vietnamese": "hôm nay nóng nhưng",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 80122,
           "order_index": 2,
           "japanese": "北海道は",
           "vietnamese": "Hokkaido thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 80123,
           "order_index": 3,
           "japanese": "寒いです。",
           "vietnamese": "lạnh",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -5723,20 +6435,23 @@ export const generatedSentences = {
       "full_romaji": "Hokkaidou wa suzushii desu.",
       "full_vietnamese": "Hokkaido mát mẻ.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 80131,
           "order_index": 1,
           "japanese": "北海道は",
           "vietnamese": "Hokkaido thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 80132,
           "order_index": 2,
           "japanese": "涼しいです。",
           "vietnamese": "mát mẻ",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -5748,27 +6463,31 @@ export const generatedSentences = {
       "full_romaji": "Nihongo wa muzukashii desu ga, omoshiroi desu.",
       "full_vietnamese": "Tiếng Nhật khó nhưng thú vị.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 80141,
           "order_index": 1,
           "japanese": "日本語は",
           "vietnamese": "tiếng Nhật thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 80142,
           "order_index": 2,
           "japanese": "難しいですが、",
           "vietnamese": "khó nhưng",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 80143,
           "order_index": 3,
           "japanese": "おもしろいです。",
           "vietnamese": "thú vị",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -5780,20 +6499,23 @@ export const generatedSentences = {
       "full_romaji": "Kono hon wa yasashii desu.",
       "full_vietnamese": "Quyển sách này dễ.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 80151,
           "order_index": 1,
           "japanese": "この本は",
           "vietnamese": "quyển sách này thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 80152,
           "order_index": 2,
           "japanese": "易しいです。",
           "vietnamese": "dễ",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -5805,27 +6527,31 @@ export const generatedSentences = {
       "full_romaji": "Kono tokei wa takai desu. Ano tokei wa yasui desu.",
       "full_vietnamese": "Đồng hồ này đắt. Đồng hồ kia rẻ.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 80161,
           "order_index": 1,
           "japanese": "この時計は高いです。",
           "vietnamese": "đồng hồ này đắt",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 80162,
           "order_index": 2,
           "japanese": "あの時計は",
           "vietnamese": "đồng hồ kia thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 80163,
           "order_index": 3,
           "japanese": "安いです。",
           "vietnamese": "rẻ",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -5837,27 +6563,31 @@ export const generatedSentences = {
       "full_romaji": "Fujisan wa takai yama desu.",
       "full_vietnamese": "Núi Phú Sĩ là ngọn núi cao.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 80171,
           "order_index": 1,
           "japanese": "富士山は",
           "vietnamese": "núi Phú Sĩ thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 80172,
           "order_index": 2,
           "japanese": "高い",
           "vietnamese": "cao",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 80173,
           "order_index": 3,
           "japanese": "山です。",
           "vietnamese": "là núi",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -5869,27 +6599,31 @@ export const generatedSentences = {
       "full_romaji": "Kono eiga wa totemo omoshiroi desu.",
       "full_vietnamese": "Bộ phim này rất thú vị.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 80181,
           "order_index": 1,
           "japanese": "この映画は",
           "vietnamese": "bộ phim này thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 80182,
           "order_index": 2,
           "japanese": "とても",
           "vietnamese": "rất",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 80183,
           "order_index": 3,
           "japanese": "おもしろいです。",
           "vietnamese": "thú vị",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -5901,20 +6635,23 @@ export const generatedSentences = {
       "full_romaji": "Nihon no tabemono wa oishii desu.",
       "full_vietnamese": "Đồ ăn Nhật ngon.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 80191,
           "order_index": 1,
           "japanese": "日本の食べ物は",
           "vietnamese": "đồ ăn Nhật thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 80192,
           "order_index": 2,
           "japanese": "おいしいです。",
           "vietnamese": "ngon",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -5926,27 +6663,31 @@ export const generatedSentences = {
       "full_romaji": "Mainichi isogashii desu ga, tanoshii desu.",
       "full_vietnamese": "Mỗi ngày bận nhưng vui.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 80201,
           "order_index": 1,
           "japanese": "毎日",
           "vietnamese": "mỗi ngày",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 80202,
           "order_index": 2,
           "japanese": "忙しいですが、",
           "vietnamese": "bận nhưng",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 80203,
           "order_index": 3,
           "japanese": "楽しいです。",
           "vietnamese": "vui",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -5958,27 +6699,31 @@ export const generatedSentences = {
       "full_romaji": "Shiroi shatsu to kuroi kutsu o kaimashita.",
       "full_vietnamese": "Tôi đã mua áo sơ mi trắng và giày đen.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 80211,
           "order_index": 1,
           "japanese": "白いシャツと",
           "vietnamese": "áo sơ mi trắng và",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 80212,
           "order_index": 2,
           "japanese": "黒い靴を",
           "vietnamese": "giày đen",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 80213,
           "order_index": 3,
           "japanese": "買いました。",
           "vietnamese": "đã mua",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -5990,34 +6735,39 @@ export const generatedSentences = {
       "full_romaji": "Kore wa akai hana desu. Are wa aoi hana desu.",
       "full_vietnamese": "Đây là hoa đỏ. Kia là hoa xanh.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 80221,
           "order_index": 1,
           "japanese": "これは",
           "vietnamese": "đây thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 80222,
           "order_index": 2,
           "japanese": "赤い花です。",
           "vietnamese": "là hoa đỏ",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 80223,
           "order_index": 3,
           "japanese": "あれは",
           "vietnamese": "kia thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 80224,
           "order_index": 4,
           "japanese": "青い花です。",
           "vietnamese": "là hoa xanh",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -6029,34 +6779,39 @@ export const generatedSentences = {
       "full_romaji": "Nara wa donna tokoro desu ka. Furui tokoro desu. Soshite shizuka desu.",
       "full_vietnamese": "Nara là nơi như thế nào? Đó là nơi cổ kính. Và nơi đó yên tĩnh.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 80231,
           "order_index": 1,
           "japanese": "奈良はどんな所ですか。",
           "vietnamese": "Nara là nơi như thế nào",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 80232,
           "order_index": 2,
           "japanese": "古い所です。",
           "vietnamese": "là nơi cổ kính",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 80233,
           "order_index": 3,
           "japanese": "そして",
           "vietnamese": "và",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 80234,
           "order_index": 4,
           "japanese": "静かです。",
           "vietnamese": "yên tĩnh",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -6068,27 +6823,31 @@ export const generatedSentences = {
       "full_romaji": "Kono ryou wa amari kirei ja arimasen.",
       "full_vietnamese": "Ký túc xá này không đẹp lắm.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 80241,
           "order_index": 1,
           "japanese": "この寮は",
           "vietnamese": "ký túc xá này thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 80242,
           "order_index": 2,
           "japanese": "あまり",
           "vietnamese": "không... lắm",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 80243,
           "order_index": 3,
           "japanese": "きれいじゃありません。",
           "vietnamese": "không đẹp/sạch",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     }
@@ -6102,27 +6861,31 @@ export const generatedSentences = {
       "full_romaji": "Watashi wa Nihongo ga wakarimasu.",
       "full_vietnamese": "Tôi hiểu tiếng Nhật.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 90011,
           "order_index": 1,
           "japanese": "わたしは",
           "vietnamese": "tôi thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 90012,
           "order_index": 2,
           "japanese": "日本語が",
           "vietnamese": "tiếng Nhật",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 90013,
           "order_index": 3,
           "japanese": "分かります。",
           "vietnamese": "hiểu",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -6134,27 +6897,31 @@ export const generatedSentences = {
       "full_romaji": "Maria-san wa Eigo ga yoku wakarimasu.",
       "full_vietnamese": "Chị Maria hiểu tiếng Anh rất rõ.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 90021,
           "order_index": 1,
           "japanese": "マリアさんは",
           "vietnamese": "chị Maria thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 90022,
           "order_index": 2,
           "japanese": "英語が",
           "vietnamese": "tiếng Anh",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 90023,
           "order_index": 3,
           "japanese": "よく分かります。",
           "vietnamese": "hiểu rõ",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -6166,27 +6933,31 @@ export const generatedSentences = {
       "full_romaji": "Kanji ga sukoshi wakarimasu.",
       "full_vietnamese": "Tôi hiểu một ít Kanji.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 90031,
           "order_index": 1,
           "japanese": "漢字が",
           "vietnamese": "Kanji",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 90032,
           "order_index": 2,
           "japanese": "少し",
           "vietnamese": "một ít",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 90033,
           "order_index": 3,
           "japanese": "分かります。",
           "vietnamese": "hiểu",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -6198,27 +6969,31 @@ export const generatedSentences = {
       "full_romaji": "Furansugo wa zenzen wakarimasen.",
       "full_vietnamese": "Tôi hoàn toàn không hiểu tiếng Pháp.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 90041,
           "order_index": 1,
           "japanese": "フランス語は",
           "vietnamese": "tiếng Pháp thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 90042,
           "order_index": 2,
           "japanese": "全然",
           "vietnamese": "hoàn toàn không",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 90043,
           "order_index": 3,
           "japanese": "分かりません。",
           "vietnamese": "không hiểu",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -6230,27 +7005,31 @@ export const generatedSentences = {
       "full_romaji": "Watashi wa ongaku ga suki desu.",
       "full_vietnamese": "Tôi thích âm nhạc.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 90051,
           "order_index": 1,
           "japanese": "わたしは",
           "vietnamese": "tôi thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 90052,
           "order_index": 2,
           "japanese": "音楽が",
           "vietnamese": "âm nhạc",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 90053,
           "order_index": 3,
           "japanese": "好きです。",
           "vietnamese": "thích",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -6262,27 +7041,31 @@ export const generatedSentences = {
       "full_romaji": "Tanaka-san wa kurashikku ga daisuki desu.",
       "full_vietnamese": "Anh Tanaka rất thích nhạc cổ điển.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 90061,
           "order_index": 1,
           "japanese": "田中さんは",
           "vietnamese": "anh Tanaka thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 90062,
           "order_index": 2,
           "japanese": "クラシックが",
           "vietnamese": "nhạc cổ điển",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 90063,
           "order_index": 3,
           "japanese": "大好きです。",
           "vietnamese": "rất thích",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -6294,27 +7077,31 @@ export const generatedSentences = {
       "full_romaji": "Imouto wa jazu ga amari suki ja arimasen.",
       "full_vietnamese": "Em gái tôi không thích nhạc jazz lắm.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 90071,
           "order_index": 1,
           "japanese": "妹は",
           "vietnamese": "em gái tôi thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 90072,
           "order_index": 2,
           "japanese": "ジャズが",
           "vietnamese": "nhạc jazz",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 90073,
           "order_index": 3,
           "japanese": "あまり好きじゃありません。",
           "vietnamese": "không thích lắm",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -6326,27 +7113,31 @@ export const generatedSentences = {
       "full_romaji": "Chichi wa yakyuu ga suki desu.",
       "full_vietnamese": "Bố tôi thích bóng chày.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 90081,
           "order_index": 1,
           "japanese": "父は",
           "vietnamese": "bố tôi thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 90082,
           "order_index": 2,
           "japanese": "野球が",
           "vietnamese": "bóng chày",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 90083,
           "order_index": 3,
           "japanese": "好きです。",
           "vietnamese": "thích",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -6358,27 +7149,31 @@ export const generatedSentences = {
       "full_romaji": "Haha wa ryouri ga jouzu desu.",
       "full_vietnamese": "Mẹ tôi nấu ăn giỏi.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 90091,
           "order_index": 1,
           "japanese": "母は",
           "vietnamese": "mẹ tôi thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 90092,
           "order_index": 2,
           "japanese": "料理が",
           "vietnamese": "nấu ăn",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 90093,
           "order_index": 3,
           "japanese": "上手です。",
           "vietnamese": "giỏi",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -6390,27 +7185,31 @@ export const generatedSentences = {
       "full_romaji": "Watashi wa uta ga heta desu.",
       "full_vietnamese": "Tôi hát không giỏi.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 90101,
           "order_index": 1,
           "japanese": "わたしは",
           "vietnamese": "tôi thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 90102,
           "order_index": 2,
           "japanese": "歌が",
           "vietnamese": "hát",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 90103,
           "order_index": 3,
           "japanese": "下手です。",
           "vietnamese": "không giỏi",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -6422,27 +7221,31 @@ export const generatedSentences = {
       "full_romaji": "Miraa-san wa katakana ga yoku wakarimasu.",
       "full_vietnamese": "Anh Miller hiểu Katakana rất rõ.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 90111,
           "order_index": 1,
           "japanese": "ミラーさんは",
           "vietnamese": "anh Miller thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 90112,
           "order_index": 2,
           "japanese": "カタカナが",
           "vietnamese": "Katakana",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 90113,
           "order_index": 3,
           "japanese": "よく分かります。",
           "vietnamese": "hiểu rõ",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -6454,27 +7257,31 @@ export const generatedSentences = {
       "full_romaji": "Santosu-san wa hiragana ga daitai wakarimasu.",
       "full_vietnamese": "Anh Santos hiểu phần lớn Hiragana.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 90121,
           "order_index": 1,
           "japanese": "サントスさんは",
           "vietnamese": "anh Santos thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 90122,
           "order_index": 2,
           "japanese": "ひらがなが",
           "vietnamese": "Hiragana",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 90123,
           "order_index": 3,
           "japanese": "だいたい分かります。",
           "vietnamese": "hiểu phần lớn",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -6486,27 +7293,31 @@ export const generatedSentences = {
       "full_romaji": "Nihongo no shiidii ga takusan arimasu.",
       "full_vietnamese": "Tôi có nhiều đĩa CD tiếng Nhật.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 90131,
           "order_index": 1,
           "japanese": "日本語のCDが",
           "vietnamese": "đĩa CD tiếng Nhật",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 90132,
           "order_index": 2,
           "japanese": "たくさん",
           "vietnamese": "nhiều",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 90133,
           "order_index": 3,
           "japanese": "あります。",
           "vietnamese": "có",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -6518,20 +7329,23 @@ export const generatedSentences = {
       "full_romaji": "Konsaato no chiketto ga arimasu.",
       "full_vietnamese": "Tôi có vé hòa nhạc.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 90141,
           "order_index": 1,
           "japanese": "コンサートのチケットが",
           "vietnamese": "vé hòa nhạc",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 90142,
           "order_index": 2,
           "japanese": "あります。",
           "vietnamese": "có",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -6543,27 +7357,31 @@ export const generatedSentences = {
       "full_romaji": "Komakai okane ga sukoshi arimasu.",
       "full_vietnamese": "Tôi có một ít tiền lẻ.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 90151,
           "order_index": 1,
           "japanese": "細かいお金が",
           "vietnamese": "tiền lẻ",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 90152,
           "order_index": 2,
           "japanese": "少し",
           "vietnamese": "một ít",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 90153,
           "order_index": 3,
           "japanese": "あります。",
           "vietnamese": "có",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -6575,27 +7393,31 @@ export const generatedSentences = {
       "full_romaji": "Kyou wa jikan ga arimasen.",
       "full_vietnamese": "Hôm nay tôi không có thời gian.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 90161,
           "order_index": 1,
           "japanese": "きょうは",
           "vietnamese": "hôm nay thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 90162,
           "order_index": 2,
           "japanese": "時間が",
           "vietnamese": "thời gian",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 90163,
           "order_index": 3,
           "japanese": "ありません。",
           "vietnamese": "không có",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -6607,27 +7429,31 @@ export const generatedSentences = {
       "full_romaji": "Ashita youji ga arimasu.",
       "full_vietnamese": "Ngày mai tôi có việc bận.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 90171,
           "order_index": 1,
           "japanese": "あした",
           "vietnamese": "ngày mai",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 90172,
           "order_index": 2,
           "japanese": "用事が",
           "vietnamese": "việc bận",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 90173,
           "order_index": 3,
           "japanese": "あります。",
           "vietnamese": "có",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -6639,27 +7465,31 @@ export const generatedSentences = {
       "full_romaji": "Konban tomodachi to yakusoku ga arimasu.",
       "full_vietnamese": "Tối nay tôi có hẹn với bạn.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 90181,
           "order_index": 1,
           "japanese": "今晩",
           "vietnamese": "tối nay",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 90182,
           "order_index": 2,
           "japanese": "友達と",
           "vietnamese": "với bạn",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 90183,
           "order_index": 3,
           "japanese": "約束があります。",
           "vietnamese": "có hẹn",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -6671,27 +7501,31 @@ export const generatedSentences = {
       "full_romaji": "Doushite hayaku kaerimasu ka. Youji ga arimasu kara.",
       "full_vietnamese": "Tại sao bạn về sớm? Vì tôi có việc bận.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 90191,
           "order_index": 1,
           "japanese": "どうして早く帰りますか。",
           "vietnamese": "tại sao về sớm",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 90192,
           "order_index": 2,
           "japanese": "用事が",
           "vietnamese": "việc bận",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 90193,
           "order_index": 3,
           "japanese": "ありますから。",
           "vietnamese": "vì có",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -6703,34 +7537,39 @@ export const generatedSentences = {
       "full_romaji": "Nihon no ryouri ga suki desu kara, Nihon e ikimasu.",
       "full_vietnamese": "Vì thích món Nhật nên tôi đi Nhật.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 90201,
           "order_index": 1,
           "japanese": "日本の料理が",
           "vietnamese": "món ăn Nhật",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 90202,
           "order_index": 2,
           "japanese": "好きですから、",
           "vietnamese": "vì thích",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 90203,
           "order_index": 3,
           "japanese": "日本へ",
           "vietnamese": "đến Nhật",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 90204,
           "order_index": 4,
           "japanese": "行きます。",
           "vietnamese": "đi",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -6742,20 +7581,23 @@ export const generatedSentences = {
       "full_romaji": "Karaoke wa dou desu ka. Ii desu ne.",
       "full_vietnamese": "Đi karaoke thì sao? Hay đấy nhỉ.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 90211,
           "order_index": 1,
           "japanese": "カラオケはどうですか。",
           "vietnamese": "karaoke thì sao",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 90212,
           "order_index": 2,
           "japanese": "いいですね。",
           "vietnamese": "hay đấy nhỉ",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -6767,27 +7609,31 @@ export const generatedSentences = {
       "full_romaji": "Kabuki o mimasen ka. Chotto...",
       "full_vietnamese": "Bạn đi xem Kabuki không? Tiếc là tôi hơi bận...",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 90221,
           "order_index": 1,
           "japanese": "歌舞伎を",
           "vietnamese": "Kabuki",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 90222,
           "order_index": 2,
           "japanese": "見ませんか。",
           "vietnamese": "cùng xem không",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 90223,
           "order_index": 3,
           "japanese": "ちょっと……。",
           "vietnamese": "hơi khó/không tiện",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -6799,27 +7645,31 @@ export const generatedSentences = {
       "full_romaji": "Doyoubi konsaato ga arimasu yo. Issho ni ikimasen ka.",
       "full_vietnamese": "Thứ Bảy có hòa nhạc đấy. Bạn cùng đi không?",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 90231,
           "order_index": 1,
           "japanese": "土曜日",
           "vietnamese": "thứ Bảy",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 90232,
           "order_index": 2,
           "japanese": "コンサートがありますよ。",
           "vietnamese": "có hòa nhạc đấy",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 90233,
           "order_index": 3,
           "japanese": "いっしょに行きませんか。",
           "vietnamese": "cùng đi không",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -6831,27 +7681,31 @@ export const generatedSentences = {
       "full_romaji": "Zannen desu ga, kyou wa arubaito ga arimasu.",
       "full_vietnamese": "Tiếc quá, nhưng hôm nay tôi có việc làm thêm.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 90241,
           "order_index": 1,
           "japanese": "残念ですが、",
           "vietnamese": "tiếc quá nhưng",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 90242,
           "order_index": 2,
           "japanese": "きょうは",
           "vietnamese": "hôm nay thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 90243,
           "order_index": 3,
           "japanese": "アルバイトがあります。",
           "vietnamese": "có việc làm thêm",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     }
@@ -6865,27 +7719,31 @@ export const generatedSentences = {
       "full_romaji": "Kyoushitsu ni sensei ga imasu.",
       "full_vietnamese": "Có giáo viên trong lớp học.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 100011,
           "order_index": 1,
           "japanese": "教室に",
           "vietnamese": "trong lớp học",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 100012,
           "order_index": 2,
           "japanese": "先生が",
           "vietnamese": "giáo viên",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 100013,
           "order_index": 3,
           "japanese": "います。",
           "vietnamese": "có/ở",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -6897,27 +7755,31 @@ export const generatedSentences = {
       "full_romaji": "Robii ni onna no hito ga imasu.",
       "full_vietnamese": "Có một người phụ nữ ở sảnh.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 100021,
           "order_index": 1,
           "japanese": "ロビーに",
           "vietnamese": "ở sảnh",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 100022,
           "order_index": 2,
           "japanese": "女の人が",
           "vietnamese": "người phụ nữ",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 100023,
           "order_index": 3,
           "japanese": "います。",
           "vietnamese": "có/ở",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -6929,27 +7791,31 @@ export const generatedSentences = {
       "full_romaji": "Kouen ni otoko no ko to onna no ko ga imasu.",
       "full_vietnamese": "Có một bé trai và một bé gái trong công viên.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 100031,
           "order_index": 1,
           "japanese": "公園に",
           "vietnamese": "trong công viên",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 100032,
           "order_index": 2,
           "japanese": "男の子と女の子が",
           "vietnamese": "bé trai và bé gái",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 100033,
           "order_index": 3,
           "japanese": "います。",
           "vietnamese": "có/ở",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -6961,27 +7827,31 @@ export const generatedSentences = {
       "full_romaji": "Uchi ni inu to neko ga imasu.",
       "full_vietnamese": "Nhà tôi có chó và mèo.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 100041,
           "order_index": 1,
           "japanese": "うちに",
           "vietnamese": "ở nhà",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 100042,
           "order_index": 2,
           "japanese": "犬と猫が",
           "vietnamese": "chó và mèo",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 100043,
           "order_index": 3,
           "japanese": "います。",
           "vietnamese": "có/ở",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -6993,27 +7863,31 @@ export const generatedSentences = {
       "full_romaji": "Tsukue no ue ni hon ga arimasu.",
       "full_vietnamese": "Có quyển sách ở trên bàn.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 100051,
           "order_index": 1,
           "japanese": "机の上に",
           "vietnamese": "trên bàn",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 100052,
           "order_index": 2,
           "japanese": "本が",
           "vietnamese": "quyển sách",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 100053,
           "order_index": 3,
           "japanese": "あります。",
           "vietnamese": "có/ở",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -7025,27 +7899,31 @@ export const generatedSentences = {
       "full_romaji": "Tsukue no shita ni hako ga arimasu.",
       "full_vietnamese": "Có cái hộp ở dưới bàn.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 100061,
           "order_index": 1,
           "japanese": "机の下に",
           "vietnamese": "dưới bàn",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 100062,
           "order_index": 2,
           "japanese": "箱が",
           "vietnamese": "cái hộp",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 100063,
           "order_index": 3,
           "japanese": "あります。",
           "vietnamese": "có/ở",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -7057,27 +7935,31 @@ export const generatedSentences = {
       "full_romaji": "Hako no naka ni tegami to shashin ga arimasu.",
       "full_vietnamese": "Có thư và ảnh trong hộp.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 100071,
           "order_index": 1,
           "japanese": "箱の中に",
           "vietnamese": "trong hộp",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 100072,
           "order_index": 2,
           "japanese": "手紙と写真が",
           "vietnamese": "thư và ảnh",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 100073,
           "order_index": 3,
           "japanese": "あります。",
           "vietnamese": "có",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -7089,27 +7971,31 @@ export const generatedSentences = {
       "full_romaji": "Isu no tonari ni kaban ga arimasu.",
       "full_vietnamese": "Có cái cặp bên cạnh ghế.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 100081,
           "order_index": 1,
           "japanese": "いすの隣に",
           "vietnamese": "bên cạnh ghế",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 100082,
           "order_index": 2,
           "japanese": "かばんが",
           "vietnamese": "cái cặp",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 100083,
           "order_index": 3,
           "japanese": "あります。",
           "vietnamese": "có/ở",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -7121,27 +8007,31 @@ export const generatedSentences = {
       "full_romaji": "Ginkou wa yuubinkyoku no migi ni arimasu.",
       "full_vietnamese": "Ngân hàng ở bên phải bưu điện.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 100091,
           "order_index": 1,
           "japanese": "銀行は",
           "vietnamese": "ngân hàng thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 100092,
           "order_index": 2,
           "japanese": "郵便局の右に",
           "vietnamese": "bên phải bưu điện",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 100093,
           "order_index": 3,
           "japanese": "あります。",
           "vietnamese": "ở",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -7153,27 +8043,31 @@ export const generatedSentences = {
       "full_romaji": "Honya wa kissaten no hidari ni arimasu.",
       "full_vietnamese": "Hiệu sách ở bên trái quán cà phê.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 100101,
           "order_index": 1,
           "japanese": "本屋は",
           "vietnamese": "hiệu sách thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 100102,
           "order_index": 2,
           "japanese": "喫茶店の左に",
           "vietnamese": "bên trái quán cà phê",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 100103,
           "order_index": 3,
           "japanese": "あります。",
           "vietnamese": "ở",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -7185,27 +8079,31 @@ export const generatedSentences = {
       "full_romaji": "Konbini wa eki no mae ni arimasu.",
       "full_vietnamese": "Cửa hàng tiện lợi ở trước nhà ga.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 100111,
           "order_index": 1,
           "japanese": "コンビニは",
           "vietnamese": "cửa hàng tiện lợi thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 100112,
           "order_index": 2,
           "japanese": "駅の前に",
           "vietnamese": "trước nhà ga",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 100113,
           "order_index": 3,
           "japanese": "あります。",
           "vietnamese": "ở",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -7217,27 +8115,31 @@ export const generatedSentences = {
       "full_romaji": "Kouen wa gakkou no ushiro ni arimasu.",
       "full_vietnamese": "Công viên ở phía sau trường học.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 100121,
           "order_index": 1,
           "japanese": "公園は",
           "vietnamese": "công viên thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 100122,
           "order_index": 2,
           "japanese": "学校の後ろに",
           "vietnamese": "phía sau trường học",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 100123,
           "order_index": 3,
           "japanese": "あります。",
           "vietnamese": "ở",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -7249,27 +8151,31 @@ export const generatedSentences = {
       "full_romaji": "Eki no chikaku ni eetiiemu ga arimasu.",
       "full_vietnamese": "Có máy ATM ở gần nhà ga.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 100131,
           "order_index": 1,
           "japanese": "駅の近くに",
           "vietnamese": "gần nhà ga",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 100132,
           "order_index": 2,
           "japanese": "ATMが",
           "vietnamese": "máy ATM",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 100133,
           "order_index": 3,
           "japanese": "あります。",
           "vietnamese": "có",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -7281,27 +8187,31 @@ export const generatedSentences = {
       "full_romaji": "Reizouko no naka ni nomimono ga arimasu.",
       "full_vietnamese": "Có đồ uống trong tủ lạnh.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 100141,
           "order_index": 1,
           "japanese": "冷蔵庫の中に",
           "vietnamese": "trong tủ lạnh",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 100142,
           "order_index": 2,
           "japanese": "飲み物が",
           "vietnamese": "đồ uống",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 100143,
           "order_index": 3,
           "japanese": "あります。",
           "vietnamese": "có",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -7313,27 +8223,31 @@ export const generatedSentences = {
       "full_romaji": "Teeburu no ue ni suicchi to denchi ga arimasu.",
       "full_vietnamese": "Có công tắc và pin ở trên bàn.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 100151,
           "order_index": 1,
           "japanese": "テーブルの上に",
           "vietnamese": "trên bàn",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 100152,
           "order_index": 2,
           "japanese": "スイッチと電池が",
           "vietnamese": "công tắc và pin",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 100153,
           "order_index": 3,
           "japanese": "あります。",
           "vietnamese": "có",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -7345,27 +8259,31 @@ export const generatedSentences = {
       "full_romaji": "Beddo to mado no aida ni tana ga arimasu.",
       "full_vietnamese": "Có cái kệ ở giữa giường và cửa sổ.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 100161,
           "order_index": 1,
           "japanese": "ベッドと窓の間に",
           "vietnamese": "giữa giường và cửa sổ",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 100162,
           "order_index": 2,
           "japanese": "棚が",
           "vietnamese": "cái kệ",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 100163,
           "order_index": 3,
           "japanese": "あります。",
           "vietnamese": "có/ở",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -7377,27 +8295,31 @@ export const generatedSentences = {
       "full_romaji": "Posuto wa biru no soto ni arimasu.",
       "full_vietnamese": "Hòm thư ở bên ngoài tòa nhà.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 100171,
           "order_index": 1,
           "japanese": "ポストは",
           "vietnamese": "hòm thư thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 100172,
           "order_index": 2,
           "japanese": "ビルの外に",
           "vietnamese": "bên ngoài tòa nhà",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 100173,
           "order_index": 3,
           "japanese": "あります。",
           "vietnamese": "ở",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -7409,27 +8331,31 @@ export const generatedSentences = {
       "full_romaji": "Erebeetaa wa doa no migi ni arimasu.",
       "full_vietnamese": "Thang máy ở bên phải cửa ra vào.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 100181,
           "order_index": 1,
           "japanese": "エレベーターは",
           "vietnamese": "thang máy thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 100182,
           "order_index": 2,
           "japanese": "ドアの右に",
           "vietnamese": "bên phải cửa",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 100183,
           "order_index": 3,
           "japanese": "あります。",
           "vietnamese": "ở",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -7441,27 +8367,31 @@ export const generatedSentences = {
       "full_romaji": "Asoko ni ookii ki ga arimasu.",
       "full_vietnamese": "Có một cái cây lớn ở đằng kia.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 100191,
           "order_index": 1,
           "japanese": "あそこに",
           "vietnamese": "ở đằng kia",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 100192,
           "order_index": 2,
           "japanese": "大きい木が",
           "vietnamese": "cái cây lớn",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 100193,
           "order_index": 3,
           "japanese": "あります。",
           "vietnamese": "có",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -7473,27 +8403,31 @@ export const generatedSentences = {
       "full_romaji": "Kyoushitsu ni dare ga imasu ka. Satou-sensei ga imasu.",
       "full_vietnamese": "Ai ở trong lớp học? Có thầy Sato.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 100201,
           "order_index": 1,
           "japanese": "教室に",
           "vietnamese": "trong lớp học",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 100202,
           "order_index": 2,
           "japanese": "だれがいますか。",
           "vietnamese": "có ai",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 100203,
           "order_index": 3,
           "japanese": "佐藤先生がいます。",
           "vietnamese": "có thầy Sato",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -7505,27 +8439,31 @@ export const generatedSentences = {
       "full_romaji": "Hako no naka ni nani ga arimasu ka. Firumu ga arimasu.",
       "full_vietnamese": "Trong hộp có gì? Có cuộn phim.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 100211,
           "order_index": 1,
           "japanese": "箱の中に",
           "vietnamese": "trong hộp",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 100212,
           "order_index": 2,
           "japanese": "何がありますか。",
           "vietnamese": "có gì",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 100213,
           "order_index": 3,
           "japanese": "フィルムがあります。",
           "vietnamese": "có cuộn phim",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -7537,27 +8475,31 @@ export const generatedSentences = {
       "full_romaji": "Miraa-san wa doko ni imasu ka. Kaigishitsu ni imasu.",
       "full_vietnamese": "Anh Miller ở đâu? Anh ấy ở phòng họp.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 100221,
           "order_index": 1,
           "japanese": "ミラーさんは",
           "vietnamese": "anh Miller thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 100222,
           "order_index": 2,
           "japanese": "どこにいますか。",
           "vietnamese": "ở đâu",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 100223,
           "order_index": 3,
           "japanese": "会議室にいます。",
           "vietnamese": "ở phòng họp",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -7569,27 +8511,31 @@ export const generatedSentences = {
       "full_romaji": "Noriba wa doko ni arimasu ka. Ano biru no naka desu.",
       "full_vietnamese": "Bến đón xe ở đâu? Ở trong tòa nhà kia.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 100231,
           "order_index": 1,
           "japanese": "乗り場は",
           "vietnamese": "bến đón xe thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 100232,
           "order_index": 2,
           "japanese": "どこにありますか。",
           "vietnamese": "ở đâu",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 100233,
           "order_index": 3,
           "japanese": "あのビルの中です。",
           "vietnamese": "ở trong tòa nhà kia",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -7601,27 +8547,31 @@ export const generatedSentences = {
       "full_romaji": "Kouen ni ki ya hana nado ga arimasu.",
       "full_vietnamese": "Trong công viên có cây, hoa, v.v.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 100241,
           "order_index": 1,
           "japanese": "公園に",
           "vietnamese": "trong công viên",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 100242,
           "order_index": 2,
           "japanese": "木や花などが",
           "vietnamese": "cây, hoa, v.v.",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 100243,
           "order_index": 3,
           "japanese": "あります。",
           "vietnamese": "có",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     }
@@ -7635,27 +8585,31 @@ export const generatedSentences = {
       "full_romaji": "Kodomo ga futari imasu.",
       "full_vietnamese": "Tôi có hai người con.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 110011,
           "order_index": 1,
           "japanese": "子どもが",
           "vietnamese": "con",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 110012,
           "order_index": 2,
           "japanese": "二人",
           "vietnamese": "hai người",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 110013,
           "order_index": 3,
           "japanese": "います。",
           "vietnamese": "có",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -7667,27 +8621,31 @@ export const generatedSentences = {
       "full_romaji": "Kyoudai ga sannin imasu.",
       "full_vietnamese": "Tôi có ba anh chị em.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 110021,
           "order_index": 1,
           "japanese": "兄弟が",
           "vietnamese": "anh chị em",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 110022,
           "order_index": 2,
           "japanese": "三人",
           "vietnamese": "ba người",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 110023,
           "order_index": 3,
           "japanese": "います。",
           "vietnamese": "có",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -7699,27 +8657,31 @@ export const generatedSentences = {
       "full_romaji": "Ringo o yottsu kaimashita.",
       "full_vietnamese": "Tôi đã mua bốn quả táo.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 110031,
           "order_index": 1,
           "japanese": "りんごを",
           "vietnamese": "táo",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 110032,
           "order_index": 2,
           "japanese": "四つ",
           "vietnamese": "bốn quả",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 110033,
           "order_index": 3,
           "japanese": "買いました。",
           "vietnamese": "đã mua",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -7731,27 +8693,31 @@ export const generatedSentences = {
       "full_romaji": "Mikan o itsutsu kudasai.",
       "full_vietnamese": "Cho tôi năm quả quýt.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 110041,
           "order_index": 1,
           "japanese": "みかんを",
           "vietnamese": "quýt",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 110042,
           "order_index": 2,
           "japanese": "五つ",
           "vietnamese": "năm quả",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 110043,
           "order_index": 3,
           "japanese": "ください。",
           "vietnamese": "xin cho tôi",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -7763,34 +8729,39 @@ export const generatedSentences = {
       "full_romaji": "Kaisha ni kuruma ga nidai arimasu.",
       "full_vietnamese": "Công ty có hai chiếc ô tô.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 110051,
           "order_index": 1,
           "japanese": "会社に",
           "vietnamese": "ở công ty",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 110052,
           "order_index": 2,
           "japanese": "車が",
           "vietnamese": "ô tô",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 110053,
           "order_index": 3,
           "japanese": "二台",
           "vietnamese": "hai chiếc",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 110054,
           "order_index": 4,
           "japanese": "あります。",
           "vietnamese": "có",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -7802,27 +8773,31 @@ export const generatedSentences = {
       "full_romaji": "Kitte o juumai kaimasu.",
       "full_vietnamese": "Tôi mua mười con tem.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 110061,
           "order_index": 1,
           "japanese": "切手を",
           "vietnamese": "tem",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 110062,
           "order_index": 2,
           "japanese": "十枚",
           "vietnamese": "mười tờ",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 110063,
           "order_index": 3,
           "japanese": "買います。",
           "vietnamese": "mua",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -7834,34 +8809,39 @@ export const generatedSentences = {
       "full_romaji": "Sengetsu, hon o sansatsu yomimashita.",
       "full_vietnamese": "Tháng trước tôi đã đọc ba quyển sách.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 110071,
           "order_index": 1,
           "japanese": "先月、",
           "vietnamese": "tháng trước",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 110072,
           "order_index": 2,
           "japanese": "本を",
           "vietnamese": "sách",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 110073,
           "order_index": 3,
           "japanese": "三冊",
           "vietnamese": "ba quyển",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 110074,
           "order_index": 4,
           "japanese": "読みました。",
           "vietnamese": "đã đọc",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -7873,27 +8853,31 @@ export const generatedSentences = {
       "full_romaji": "Isshuukan ni nikai tenisu o shimasu.",
       "full_vietnamese": "Tôi chơi quần vợt hai lần một tuần.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 110081,
           "order_index": 1,
           "japanese": "一週間に",
           "vietnamese": "trong một tuần",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 110082,
           "order_index": 2,
           "japanese": "二回",
           "vietnamese": "hai lần",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 110083,
           "order_index": 3,
           "japanese": "テニスをします。",
           "vietnamese": "chơi quần vợt",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -7905,27 +8889,31 @@ export const generatedSentences = {
       "full_romaji": "Mainichi nijikan Nihongo o benkyou shimasu.",
       "full_vietnamese": "Mỗi ngày tôi học tiếng Nhật hai tiếng.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 110091,
           "order_index": 1,
           "japanese": "毎日",
           "vietnamese": "mỗi ngày",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 110092,
           "order_index": 2,
           "japanese": "二時間",
           "vietnamese": "hai tiếng",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 110093,
           "order_index": 3,
           "japanese": "日本語を勉強します。",
           "vietnamese": "học tiếng Nhật",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -7937,27 +8925,31 @@ export const generatedSentences = {
       "full_romaji": "Nihon ni ichinen imasu.",
       "full_vietnamese": "Tôi ở Nhật một năm.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 110101,
           "order_index": 1,
           "japanese": "日本に",
           "vietnamese": "ở Nhật",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 110102,
           "order_index": 2,
           "japanese": "一年",
           "vietnamese": "một năm",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 110103,
           "order_index": 3,
           "japanese": "います。",
           "vietnamese": "ở",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -7969,27 +8961,31 @@ export const generatedSentences = {
       "full_romaji": "Kyouto made sanjikan kakarimasu.",
       "full_vietnamese": "Đến Kyoto mất ba tiếng.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 110111,
           "order_index": 1,
           "japanese": "京都まで",
           "vietnamese": "đến Kyoto",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 110112,
           "order_index": 2,
           "japanese": "三時間",
           "vietnamese": "ba tiếng",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 110113,
           "order_index": 3,
           "japanese": "かかります。",
           "vietnamese": "mất",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -8001,34 +8997,39 @@ export const generatedSentences = {
       "full_romaji": "Oosaka kara Toukyou made shinkansen de nijikanhan kakarimasu.",
       "full_vietnamese": "Từ Osaka đến Tokyo bằng Shinkansen mất hai tiếng rưỡi.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 110121,
           "order_index": 1,
           "japanese": "大阪から東京まで",
           "vietnamese": "từ Osaka đến Tokyo",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 110122,
           "order_index": 2,
           "japanese": "新幹線で",
           "vietnamese": "bằng Shinkansen",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 110123,
           "order_index": 3,
           "japanese": "二時間半",
           "vietnamese": "hai tiếng rưỡi",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 110124,
           "order_index": 4,
           "japanese": "かかります。",
           "vietnamese": "mất",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -8040,27 +9041,31 @@ export const generatedSentences = {
       "full_romaji": "Kono nimotsu o koukuubin de gaikoku e okurimasu.",
       "full_vietnamese": "Tôi gửi kiện hàng này ra nước ngoài bằng đường hàng không.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 110131,
           "order_index": 1,
           "japanese": "この荷物を",
           "vietnamese": "kiện hàng này",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 110132,
           "order_index": 2,
           "japanese": "航空便で",
           "vietnamese": "bằng đường hàng không",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 110133,
           "order_index": 3,
           "japanese": "外国へ送ります。",
           "vietnamese": "gửi ra nước ngoài",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -8072,27 +9077,31 @@ export const generatedSentences = {
       "full_romaji": "Funabin de ikkagetsu gurai kakarimasu.",
       "full_vietnamese": "Gửi đường biển mất khoảng một tháng.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 110141,
           "order_index": 1,
           "japanese": "船便で",
           "vietnamese": "bằng đường biển",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 110142,
           "order_index": 2,
           "japanese": "一か月ぐらい",
           "vietnamese": "khoảng một tháng",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 110143,
           "order_index": 3,
           "japanese": "かかります。",
           "vietnamese": "mất",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -8104,27 +9113,31 @@ export const generatedSentences = {
       "full_romaji": "Kono tegami wa sokutatsu de onegai shimasu.",
       "full_vietnamese": "Xin gửi lá thư này bằng chuyển phát nhanh.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 110151,
           "order_index": 1,
           "japanese": "この手紙は",
           "vietnamese": "lá thư này thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 110152,
           "order_index": 2,
           "japanese": "速達で",
           "vietnamese": "bằng chuyển phát nhanh",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 110153,
           "order_index": 3,
           "japanese": "お願いします。",
           "vietnamese": "xin nhờ",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -8136,27 +9149,31 @@ export const generatedSentences = {
       "full_romaji": "Fuutou o ichimai to hagaki o nimai kudasai.",
       "full_vietnamese": "Cho tôi một phong bì và hai bưu thiếp.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 110161,
           "order_index": 1,
           "japanese": "封筒を一枚と",
           "vietnamese": "một phong bì và",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 110162,
           "order_index": 2,
           "japanese": "はがきを二枚",
           "vietnamese": "hai bưu thiếp",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 110163,
           "order_index": 3,
           "japanese": "ください。",
           "vietnamese": "xin cho tôi",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -8168,27 +9185,31 @@ export const generatedSentences = {
       "full_romaji": "Ringo wa ikutsu arimasu ka. Yattsu arimasu.",
       "full_vietnamese": "Có bao nhiêu quả táo? Có tám quả.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 110171,
           "order_index": 1,
           "japanese": "りんごは",
           "vietnamese": "táo thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 110172,
           "order_index": 2,
           "japanese": "いくつありますか。",
           "vietnamese": "có bao nhiêu",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 110173,
           "order_index": 3,
           "japanese": "八つあります。",
           "vietnamese": "có tám quả",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -8200,27 +9221,31 @@ export const generatedSentences = {
       "full_romaji": "Gakusei ga nannin imasu ka. Juugonin imasu.",
       "full_vietnamese": "Có bao nhiêu học sinh? Có mười lăm người.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 110181,
           "order_index": 1,
           "japanese": "学生が",
           "vietnamese": "học sinh",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 110182,
           "order_index": 2,
           "japanese": "何人いますか。",
           "vietnamese": "có bao nhiêu người",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 110183,
           "order_index": 3,
           "japanese": "十五人います。",
           "vietnamese": "có mười lăm người",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -8232,27 +9257,31 @@ export const generatedSentences = {
       "full_romaji": "Nihon ni dono kurai imasu ka. Sannen imasu.",
       "full_vietnamese": "Bạn ở Nhật bao lâu? Ba năm.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 110191,
           "order_index": 1,
           "japanese": "日本に",
           "vietnamese": "ở Nhật",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 110192,
           "order_index": 2,
           "japanese": "どのくらいいますか。",
           "vietnamese": "trong bao lâu",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 110193,
           "order_index": 3,
           "japanese": "三年います。",
           "vietnamese": "ở ba năm",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -8264,27 +9293,31 @@ export const generatedSentences = {
       "full_romaji": "Zenbu de ikura desu ka. Sen nihyaku en desu.",
       "full_vietnamese": "Tổng cộng bao nhiêu tiền? 1.200 yên.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 110201,
           "order_index": 1,
           "japanese": "全部で",
           "vietnamese": "tổng cộng",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 110202,
           "order_index": 2,
           "japanese": "いくらですか。",
           "vietnamese": "bao nhiêu tiền",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 110203,
           "order_index": 3,
           "japanese": "千二百円です。",
           "vietnamese": "là 1.200 yên",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -8296,34 +9329,39 @@ export const generatedSentences = {
       "full_romaji": "Senshuu, kaisha o isshuukan yasumimashita.",
       "full_vietnamese": "Tuần trước tôi đã nghỉ công ty một tuần.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 110211,
           "order_index": 1,
           "japanese": "先週、",
           "vietnamese": "tuần trước",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 110212,
           "order_index": 2,
           "japanese": "会社を",
           "vietnamese": "công ty",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 110213,
           "order_index": 3,
           "japanese": "一週間",
           "vietnamese": "một tuần",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 110214,
           "order_index": 4,
           "japanese": "休みました。",
           "vietnamese": "đã nghỉ",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -8335,27 +9373,31 @@ export const generatedSentences = {
       "full_romaji": "Ani ga hitori to ane ga futari imasu.",
       "full_vietnamese": "Tôi có một anh trai và hai chị gái.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 110221,
           "order_index": 1,
           "japanese": "兄が一人と",
           "vietnamese": "một anh trai và",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 110222,
           "order_index": 2,
           "japanese": "姉が二人",
           "vietnamese": "hai chị gái",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 110223,
           "order_index": 3,
           "japanese": "います。",
           "vietnamese": "có",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -8367,27 +9409,31 @@ export const generatedSentences = {
       "full_romaji": "Chotto yuubinkyoku made. Itte irasshai.",
       "full_vietnamese": "Tôi đi bưu điện một lát. Đi rồi về nhé.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 110231,
           "order_index": 1,
           "japanese": "ちょっと",
           "vietnamese": "một lát",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 110232,
           "order_index": 2,
           "japanese": "郵便局まで。",
           "vietnamese": "đến bưu điện",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 110233,
           "order_index": 3,
           "japanese": "いっていらっしゃい。",
           "vietnamese": "đi rồi về nhé",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -8399,20 +9445,23 @@ export const generatedSentences = {
       "full_romaji": "Ii otenki desu ne. Odekake desu ka.",
       "full_vietnamese": "Thời tiết đẹp nhỉ. Bạn ra ngoài à?",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 110241,
           "order_index": 1,
           "japanese": "いいお天気ですね。",
           "vietnamese": "thời tiết đẹp nhỉ",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 110242,
           "order_index": 2,
           "japanese": "お出かけですか。",
           "vietnamese": "bạn ra ngoài à",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     }
@@ -8426,20 +9475,23 @@ export const generatedSentences = {
       "full_romaji": "Kinou wa ame deshita.",
       "full_vietnamese": "Hôm qua trời mưa.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 120011,
           "order_index": 1,
           "japanese": "きのうは",
           "vietnamese": "hôm qua thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 120012,
           "order_index": 2,
           "japanese": "雨でした。",
           "vietnamese": "đã là trời mưa",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -8451,20 +9503,23 @@ export const generatedSentences = {
       "full_romaji": "Ototoi wa yuki deshita.",
       "full_vietnamese": "Hôm kia trời có tuyết.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 120021,
           "order_index": 1,
           "japanese": "おとといは",
           "vietnamese": "hôm kia thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 120022,
           "order_index": 2,
           "japanese": "雪でした。",
           "vietnamese": "đã là trời tuyết",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -8476,27 +9531,31 @@ export const generatedSentences = {
       "full_romaji": "Gion-matsuri wa totemo nigiyaka deshita.",
       "full_vietnamese": "Lễ hội Gion đã rất nhộn nhịp.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 120031,
           "order_index": 1,
           "japanese": "祇園祭は",
           "vietnamese": "lễ hội Gion thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 120032,
           "order_index": 2,
           "japanese": "とても",
           "vietnamese": "rất",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 120033,
           "order_index": 3,
           "japanese": "にぎやかでした。",
           "vietnamese": "đã nhộn nhịp",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -8508,20 +9567,23 @@ export const generatedSentences = {
       "full_romaji": "Kinou no paatii wa shizuka ja arimasen deshita.",
       "full_vietnamese": "Bữa tiệc hôm qua không yên tĩnh.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 120041,
           "order_index": 1,
           "japanese": "きのうのパーティーは",
           "vietnamese": "bữa tiệc hôm qua thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 120042,
           "order_index": 2,
           "japanese": "静かじゃありませんでした。",
           "vietnamese": "đã không yên tĩnh",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -8533,27 +9595,31 @@ export const generatedSentences = {
       "full_romaji": "Oosaka wa atsukatta desu ga, Hokkaidou wa suzushikatta desu.",
       "full_vietnamese": "Osaka nóng, còn Hokkaido mát mẻ.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 120051,
           "order_index": 1,
           "japanese": "大阪は暑かったですが、",
           "vietnamese": "Osaka đã nóng nhưng",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 120052,
           "order_index": 2,
           "japanese": "北海道は",
           "vietnamese": "Hokkaido thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 120053,
           "order_index": 3,
           "japanese": "涼しかったです。",
           "vietnamese": "đã mát mẻ",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -8565,27 +9631,31 @@ export const generatedSentences = {
       "full_romaji": "Senshuu wa totemo isogashikatta desu.",
       "full_vietnamese": "Tuần trước tôi rất bận.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 120061,
           "order_index": 1,
           "japanese": "先週は",
           "vietnamese": "tuần trước thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 120062,
           "order_index": 2,
           "japanese": "とても",
           "vietnamese": "rất",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 120063,
           "order_index": 3,
           "japanese": "忙しかったです。",
           "vietnamese": "đã bận",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -8597,20 +9667,23 @@ export const generatedSentences = {
       "full_romaji": "Kyouto no ryokou wa tanoshikatta desu.",
       "full_vietnamese": "Chuyến du lịch Kyoto rất vui.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 120071,
           "order_index": 1,
           "japanese": "京都の旅行は",
           "vietnamese": "chuyến du lịch Kyoto thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 120072,
           "order_index": 2,
           "japanese": "楽しかったです。",
           "vietnamese": "đã vui",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -8622,20 +9695,23 @@ export const generatedSentences = {
       "full_romaji": "Hoteru no heya wa kirei deshita.",
       "full_vietnamese": "Phòng khách sạn đã rất sạch đẹp.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 120081,
           "order_index": 1,
           "japanese": "ホテルの部屋は",
           "vietnamese": "phòng khách sạn thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 120082,
           "order_index": 2,
           "japanese": "きれいでした。",
           "vietnamese": "đã sạch đẹp",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -8647,20 +9723,23 @@ export const generatedSentences = {
       "full_romaji": "Hoteru no shokuji wa oishikatta desu.",
       "full_vietnamese": "Bữa ăn tại khách sạn rất ngon.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 120091,
           "order_index": 1,
           "japanese": "ホテルの食事は",
           "vietnamese": "bữa ăn khách sạn thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 120092,
           "order_index": 2,
           "japanese": "おいしかったです。",
           "vietnamese": "đã ngon",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -8672,20 +9751,23 @@ export const generatedSentences = {
       "full_romaji": "Ano mise no sushi wa takakunakatta desu.",
       "full_vietnamese": "Sushi của cửa hàng kia đã không đắt.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 120101,
           "order_index": 1,
           "japanese": "あの店のすしは",
           "vietnamese": "sushi của cửa hàng kia thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 120102,
           "order_index": 2,
           "japanese": "高くなかったです。",
           "vietnamese": "đã không đắt",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -8697,20 +9779,23 @@ export const generatedSentences = {
       "full_romaji": "Kinou no tenki wa yokunakatta desu.",
       "full_vietnamese": "Thời tiết hôm qua không đẹp.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 120111,
           "order_index": 1,
           "japanese": "きのうの天気は",
           "vietnamese": "thời tiết hôm qua thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 120112,
           "order_index": 2,
           "japanese": "よくなかったです。",
           "vietnamese": "đã không tốt",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -8722,20 +9807,23 @@ export const generatedSentences = {
       "full_romaji": "Shiken wa kantan ja arimasen deshita.",
       "full_vietnamese": "Bài thi đã không đơn giản.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 120121,
           "order_index": 1,
           "japanese": "試験は",
           "vietnamese": "bài thi thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 120122,
           "order_index": 2,
           "japanese": "簡単じゃありませんでした。",
           "vietnamese": "đã không đơn giản",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -8747,27 +9835,31 @@ export const generatedSentences = {
       "full_romaji": "Toukyou to Oosaka to dochira ga ookii desu ka.",
       "full_vietnamese": "Tokyo và Osaka, nơi nào lớn hơn?",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 120131,
           "order_index": 1,
           "japanese": "東京と大阪と",
           "vietnamese": "Tokyo và Osaka",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 120132,
           "order_index": 2,
           "japanese": "どちらが",
           "vietnamese": "nơi nào",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 120133,
           "order_index": 3,
           "japanese": "大きいですか。",
           "vietnamese": "lớn hơn",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -8779,27 +9871,31 @@ export const generatedSentences = {
       "full_romaji": "Toukyou no hou ga Oosaka yori ookii desu.",
       "full_vietnamese": "Tokyo lớn hơn Osaka.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 120141,
           "order_index": 1,
           "japanese": "東京のほうが",
           "vietnamese": "phía Tokyo",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 120142,
           "order_index": 2,
           "japanese": "大阪より",
           "vietnamese": "so với Osaka",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 120143,
           "order_index": 3,
           "japanese": "大きいです。",
           "vietnamese": "lớn hơn",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -8811,27 +9907,31 @@ export const generatedSentences = {
       "full_romaji": "Hikouki to shinkansen to dochira ga hayai desu ka.",
       "full_vietnamese": "Máy bay và Shinkansen, phương tiện nào nhanh hơn?",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 120151,
           "order_index": 1,
           "japanese": "飛行機と新幹線と",
           "vietnamese": "máy bay và Shinkansen",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 120152,
           "order_index": 2,
           "japanese": "どちらが",
           "vietnamese": "phương tiện nào",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 120153,
           "order_index": 3,
           "japanese": "速いですか。",
           "vietnamese": "nhanh hơn",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -8843,27 +9943,31 @@ export const generatedSentences = {
       "full_romaji": "Hikouki no hou ga shinkansen yori hayai desu.",
       "full_vietnamese": "Máy bay nhanh hơn Shinkansen.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 120161,
           "order_index": 1,
           "japanese": "飛行機のほうが",
           "vietnamese": "phía máy bay",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 120162,
           "order_index": 2,
           "japanese": "新幹線より",
           "vietnamese": "so với Shinkansen",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 120163,
           "order_index": 3,
           "japanese": "速いです。",
           "vietnamese": "nhanh hơn",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -8875,27 +9979,31 @@ export const generatedSentences = {
       "full_romaji": "Supootsu de nani ga ichiban omoshiroi desu ka.",
       "full_vietnamese": "Trong các môn thể thao, môn nào thú vị nhất?",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 120171,
           "order_index": 1,
           "japanese": "スポーツで",
           "vietnamese": "trong các môn thể thao",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 120172,
           "order_index": 2,
           "japanese": "何が",
           "vietnamese": "môn nào",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 120173,
           "order_index": 3,
           "japanese": "いちばんおもしろいですか。",
           "vietnamese": "thú vị nhất",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -8907,27 +10015,31 @@ export const generatedSentences = {
       "full_romaji": "Sakkaa ga ichiban omoshiroi desu.",
       "full_vietnamese": "Bóng đá thú vị nhất.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 120181,
           "order_index": 1,
           "japanese": "サッカーが",
           "vietnamese": "bóng đá",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 120182,
           "order_index": 2,
           "japanese": "いちばん",
           "vietnamese": "nhất",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 120183,
           "order_index": 3,
           "japanese": "おもしろいです。",
           "vietnamese": "thú vị",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -8939,27 +10051,31 @@ export const generatedSentences = {
       "full_romaji": "Nihon no kisetsu de haru ga ichiban suki desu.",
       "full_vietnamese": "Trong các mùa ở Nhật, tôi thích mùa xuân nhất.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 120191,
           "order_index": 1,
           "japanese": "日本の季節で",
           "vietnamese": "trong các mùa ở Nhật",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 120192,
           "order_index": 2,
           "japanese": "春が",
           "vietnamese": "mùa xuân",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 120193,
           "order_index": 3,
           "japanese": "いちばん好きです。",
           "vietnamese": "thích nhất",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -8971,27 +10087,31 @@ export const generatedSentences = {
       "full_romaji": "Yama to umi to dochira ga suki desu ka. Dochira mo suki desu.",
       "full_vietnamese": "Bạn thích núi hay biển hơn? Tôi thích cả hai.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 120201,
           "order_index": 1,
           "japanese": "山と海と",
           "vietnamese": "núi và biển",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 120202,
           "order_index": 2,
           "japanese": "どちらが好きですか。",
           "vietnamese": "thích bên nào hơn",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 120203,
           "order_index": 3,
           "japanese": "どちらも好きです。",
           "vietnamese": "thích cả hai",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -9003,27 +10123,31 @@ export const generatedSentences = {
       "full_romaji": "Oosaka to Kyouto to Nara de Nara ga ichiban shizuka desu.",
       "full_vietnamese": "Trong Osaka, Kyoto và Nara, Nara yên tĩnh nhất.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 120211,
           "order_index": 1,
           "japanese": "大阪と京都と奈良で",
           "vietnamese": "trong Osaka, Kyoto và Nara",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 120212,
           "order_index": 2,
           "japanese": "奈良が",
           "vietnamese": "Nara",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 120213,
           "order_index": 3,
           "japanese": "いちばん静かです。",
           "vietnamese": "yên tĩnh nhất",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -9035,27 +10159,31 @@ export const generatedSentences = {
       "full_romaji": "Fuyu wa aki yori zutto samui desu.",
       "full_vietnamese": "Mùa đông lạnh hơn mùa thu rất nhiều.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 120221,
           "order_index": 1,
           "japanese": "冬は",
           "vietnamese": "mùa đông thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 120222,
           "order_index": 2,
           "japanese": "秋より",
           "vietnamese": "so với mùa thu",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 120223,
           "order_index": 3,
           "japanese": "ずっと寒いです。",
           "vietnamese": "lạnh hơn nhiều",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -9067,27 +10195,31 @@ export const generatedSentences = {
       "full_romaji": "Hokkaidou wa yuki ga ooi desu.",
       "full_vietnamese": "Hokkaido có nhiều tuyết.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 120231,
           "order_index": 1,
           "japanese": "北海道は",
           "vietnamese": "Hokkaido thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 120232,
           "order_index": 2,
           "japanese": "雪が",
           "vietnamese": "tuyết",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 120233,
           "order_index": 3,
           "japanese": "多いです。",
           "vietnamese": "nhiều",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -9099,27 +10231,31 @@ export const generatedSentences = {
       "full_romaji": "Kono nimotsu wa omoi desu ga, ano nimotsu wa karui desu.",
       "full_vietnamese": "Hành lý này nặng, còn hành lý kia nhẹ.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 120241,
           "order_index": 1,
           "japanese": "この荷物は重いですが、",
           "vietnamese": "hành lý này nặng nhưng",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 120242,
           "order_index": 2,
           "japanese": "あの荷物は",
           "vietnamese": "hành lý kia thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 120243,
           "order_index": 3,
           "japanese": "軽いです。",
           "vietnamese": "nhẹ",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     }
@@ -9133,27 +10269,31 @@ export const generatedSentences = {
       "full_romaji": "Watashi wa atarashii kuruma ga hoshii desu.",
       "full_vietnamese": "Tôi muốn một chiếc ô tô mới.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 130011,
           "order_index": 1,
           "japanese": "わたしは",
           "vietnamese": "tôi thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 130012,
           "order_index": 2,
           "japanese": "新しい車が",
           "vietnamese": "ô tô mới",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 130013,
           "order_index": 3,
           "japanese": "欲しいです。",
           "vietnamese": "muốn có",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -9165,27 +10305,31 @@ export const generatedSentences = {
       "full_romaji": "Tanjoubi ni kamera ga hoshii desu.",
       "full_vietnamese": "Tôi muốn một chiếc máy ảnh vào sinh nhật.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 130021,
           "order_index": 1,
           "japanese": "誕生日に",
           "vietnamese": "vào sinh nhật",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 130022,
           "order_index": 2,
           "japanese": "カメラが",
           "vietnamese": "máy ảnh",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 130023,
           "order_index": 3,
           "japanese": "欲しいです。",
           "vietnamese": "muốn có",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -9197,27 +10341,31 @@ export const generatedSentences = {
       "full_romaji": "Ima, nani ga ichiban hoshii desu ka.",
       "full_vietnamese": "Bây giờ bạn muốn thứ gì nhất?",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 130031,
           "order_index": 1,
           "japanese": "今、",
           "vietnamese": "bây giờ",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 130032,
           "order_index": 2,
           "japanese": "何が",
           "vietnamese": "thứ gì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 130033,
           "order_index": 3,
           "japanese": "いちばん欲しいですか。",
           "vietnamese": "muốn nhất",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -9229,20 +10377,23 @@ export const generatedSentences = {
       "full_romaji": "Jikan ga hoshii desu.",
       "full_vietnamese": "Tôi muốn có thời gian.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 130041,
           "order_index": 1,
           "japanese": "時間が",
           "vietnamese": "thời gian",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 130042,
           "order_index": 2,
           "japanese": "欲しいです。",
           "vietnamese": "muốn có",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -9254,27 +10405,31 @@ export const generatedSentences = {
       "full_romaji": "Watashi wa tomodachi ga hoshii desu.",
       "full_vietnamese": "Tôi muốn có bạn.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 130051,
           "order_index": 1,
           "japanese": "わたしは",
           "vietnamese": "tôi thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 130052,
           "order_index": 2,
           "japanese": "友達が",
           "vietnamese": "bạn bè",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 130053,
           "order_index": 3,
           "japanese": "欲しいです。",
           "vietnamese": "muốn có",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -9286,27 +10441,31 @@ export const generatedSentences = {
       "full_romaji": "Watashi wa kodomo ga hoshikunai desu.",
       "full_vietnamese": "Tôi không muốn có con.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 130061,
           "order_index": 1,
           "japanese": "わたしは",
           "vietnamese": "tôi thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 130062,
           "order_index": 2,
           "japanese": "子どもが",
           "vietnamese": "con",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 130063,
           "order_index": 3,
           "japanese": "欲しくないです。",
           "vietnamese": "không muốn có",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -9318,27 +10477,31 @@ export const generatedSentences = {
       "full_romaji": "Natsuyasumi ni Okinawa e ikitai desu.",
       "full_vietnamese": "Tôi muốn đi Okinawa vào kỳ nghỉ hè.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 130071,
           "order_index": 1,
           "japanese": "夏休みに",
           "vietnamese": "vào kỳ nghỉ hè",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 130072,
           "order_index": 2,
           "japanese": "沖縄へ",
           "vietnamese": "đến Okinawa",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 130073,
           "order_index": 3,
           "japanese": "行きたいです。",
           "vietnamese": "muốn đi",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -9350,27 +10513,31 @@ export const generatedSentences = {
       "full_romaji": "Shuumatsu wa umi de oyogitai desu.",
       "full_vietnamese": "Cuối tuần tôi muốn bơi ở biển.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 130081,
           "order_index": 1,
           "japanese": "週末は",
           "vietnamese": "cuối tuần thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 130082,
           "order_index": 2,
           "japanese": "海で",
           "vietnamese": "ở biển",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 130083,
           "order_index": 3,
           "japanese": "泳ぎたいです。",
           "vietnamese": "muốn bơi",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -9382,27 +10549,31 @@ export const generatedSentences = {
       "full_romaji": "Nodo ga kawakimashita. Tsumetai mizu o nomitai desu.",
       "full_vietnamese": "Tôi khát rồi. Tôi muốn uống nước lạnh.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 130091,
           "order_index": 1,
           "japanese": "のどが渇きました。",
           "vietnamese": "đã khát",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 130092,
           "order_index": 2,
           "japanese": "冷たい水を",
           "vietnamese": "nước lạnh",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 130093,
           "order_index": 3,
           "japanese": "飲みたいです。",
           "vietnamese": "muốn uống",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -9414,27 +10585,31 @@ export const generatedSentences = {
       "full_romaji": "Onaka ga sukimashita. Nanika tabetai desu.",
       "full_vietnamese": "Tôi đói rồi. Tôi muốn ăn gì đó.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 130101,
           "order_index": 1,
           "japanese": "おなかがすきました。",
           "vietnamese": "đã đói",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 130102,
           "order_index": 2,
           "japanese": "何か",
           "vietnamese": "thứ gì đó",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 130103,
           "order_index": 3,
           "japanese": "食べたいです。",
           "vietnamese": "muốn ăn",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -9446,27 +10621,31 @@ export const generatedSentences = {
       "full_romaji": "Kyou wa tsukaremashita kara, nanimo shitakunai desu.",
       "full_vietnamese": "Hôm nay vì mệt nên tôi không muốn làm gì cả.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 130111,
           "order_index": 1,
           "japanese": "きょうは疲れましたから、",
           "vietnamese": "vì hôm nay đã mệt",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 130112,
           "order_index": 2,
           "japanese": "何も",
           "vietnamese": "không gì cả",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 130113,
           "order_index": 3,
           "japanese": "したくないです。",
           "vietnamese": "không muốn làm",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -9478,20 +10657,23 @@ export const generatedSentences = {
       "full_romaji": "Donna ongaku o kikitai desu ka.",
       "full_vietnamese": "Bạn muốn nghe loại nhạc nào?",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 130121,
           "order_index": 1,
           "japanese": "どんな音楽を",
           "vietnamese": "loại nhạc nào",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 130122,
           "order_index": 2,
           "japanese": "聞きたいですか。",
           "vietnamese": "muốn nghe",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -9503,27 +10685,31 @@ export const generatedSentences = {
       "full_romaji": "Shuumatsu, nani o shitai desu ka. Eiga o mitai desu.",
       "full_vietnamese": "Cuối tuần bạn muốn làm gì? Tôi muốn xem phim.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 130131,
           "order_index": 1,
           "japanese": "週末、何をしたいですか。",
           "vietnamese": "cuối tuần muốn làm gì",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 130132,
           "order_index": 2,
           "japanese": "映画を",
           "vietnamese": "phim",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 130133,
           "order_index": 3,
           "japanese": "見たいです。",
           "vietnamese": "muốn xem",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -9535,27 +10721,31 @@ export const generatedSentences = {
       "full_romaji": "Kyouto e Nihon no bunka o benkyou shi ni ikimasu.",
       "full_vietnamese": "Tôi đi Kyoto để học văn hóa Nhật.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 130141,
           "order_index": 1,
           "japanese": "京都へ",
           "vietnamese": "đến Kyoto",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 130142,
           "order_index": 2,
           "japanese": "日本の文化を",
           "vietnamese": "văn hóa Nhật",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 130143,
           "order_index": 3,
           "japanese": "勉強しに行きます。",
           "vietnamese": "đi để học",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -9567,27 +10757,31 @@ export const generatedSentences = {
       "full_romaji": "Depaato e kaimono ni ikimasu.",
       "full_vietnamese": "Tôi đi trung tâm thương mại để mua sắm.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 130151,
           "order_index": 1,
           "japanese": "デパートへ",
           "vietnamese": "đến trung tâm thương mại",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 130152,
           "order_index": 2,
           "japanese": "買い物に",
           "vietnamese": "để mua sắm",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 130153,
           "order_index": 3,
           "japanese": "行きます。",
           "vietnamese": "đi",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -9599,27 +10793,31 @@ export const generatedSentences = {
       "full_romaji": "Yuubinkyoku e nimotsu o dashi ni ikimasu.",
       "full_vietnamese": "Tôi đi bưu điện để gửi kiện hàng.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 130161,
           "order_index": 1,
           "japanese": "郵便局へ",
           "vietnamese": "đến bưu điện",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 130162,
           "order_index": 2,
           "japanese": "荷物を",
           "vietnamese": "kiện hàng",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 130163,
           "order_index": 3,
           "japanese": "出しに行きます。",
           "vietnamese": "đi để gửi",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -9631,27 +10829,31 @@ export const generatedSentences = {
       "full_romaji": "Eki e tomodachi o mukae ni ikimasu.",
       "full_vietnamese": "Tôi đi nhà ga để đón bạn.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 130171,
           "order_index": 1,
           "japanese": "駅へ",
           "vietnamese": "đến nhà ga",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 130172,
           "order_index": 2,
           "japanese": "友達を",
           "vietnamese": "bạn",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 130173,
           "order_index": 3,
           "japanese": "迎えに行きます。",
           "vietnamese": "đi đón",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -9663,27 +10865,31 @@ export const generatedSentences = {
       "full_romaji": "Kissaten e koohii o nomi ni ikimasen ka.",
       "full_vietnamese": "Bạn cùng đi quán cà phê uống cà phê không?",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 130181,
           "order_index": 1,
           "japanese": "喫茶店へ",
           "vietnamese": "đến quán cà phê",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 130182,
           "order_index": 2,
           "japanese": "コーヒーを",
           "vietnamese": "cà phê",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 130183,
           "order_index": 3,
           "japanese": "飲みに行きませんか。",
           "vietnamese": "cùng đi uống không",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -9695,27 +10901,31 @@ export const generatedSentences = {
       "full_romaji": "Kouen e sanpo ni ikimasu.",
       "full_vietnamese": "Tôi đi công viên để đi dạo.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 130191,
           "order_index": 1,
           "japanese": "公園へ",
           "vietnamese": "đến công viên",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 130192,
           "order_index": 2,
           "japanese": "散歩に",
           "vietnamese": "để đi dạo",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 130193,
           "order_index": 3,
           "japanese": "行きます。",
           "vietnamese": "đi",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -9727,27 +10937,31 @@ export const generatedSentences = {
       "full_romaji": "Resutoran e hirugohan o tabe ni ikimashita.",
       "full_vietnamese": "Tôi đã đi nhà hàng để ăn trưa.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 130201,
           "order_index": 1,
           "japanese": "レストランへ",
           "vietnamese": "đến nhà hàng",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 130202,
           "order_index": 2,
           "japanese": "昼ご飯を",
           "vietnamese": "cơm trưa",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 130203,
           "order_index": 3,
           "japanese": "食べに行きました。",
           "vietnamese": "đã đi ăn",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -9759,27 +10973,31 @@ export const generatedSentences = {
       "full_romaji": "Hokkaidou e sukii ni ikitai desu.",
       "full_vietnamese": "Tôi muốn đi Hokkaido để trượt tuyết.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 130211,
           "order_index": 1,
           "japanese": "北海道へ",
           "vietnamese": "đến Hokkaido",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 130212,
           "order_index": 2,
           "japanese": "スキーに",
           "vietnamese": "để trượt tuyết",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 130213,
           "order_index": 3,
           "japanese": "行きたいです。",
           "vietnamese": "muốn đi",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -9791,27 +11009,31 @@ export const generatedSentences = {
       "full_romaji": "Onaka ga ippai desu kara, nanimo tabetakunai desu.",
       "full_vietnamese": "Vì no rồi nên tôi không muốn ăn gì cả.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 130221,
           "order_index": 1,
           "japanese": "おなかがいっぱいですから、",
           "vietnamese": "vì đã no",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 130222,
           "order_index": 2,
           "japanese": "何も",
           "vietnamese": "không gì cả",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 130223,
           "order_index": 3,
           "japanese": "食べたくないです。",
           "vietnamese": "không muốn ăn",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -9823,20 +11045,23 @@ export const generatedSentences = {
       "full_romaji": "Chuumon wa nani ni shimasu ka. Karee raisu ni shimasu.",
       "full_vietnamese": "Bạn chọn gọi món gì? Tôi chọn cơm cà ri.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 130231,
           "order_index": 1,
           "japanese": "注文は何にしますか。",
           "vietnamese": "chọn gọi món gì",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 130232,
           "order_index": 2,
           "japanese": "カレーライスにします。",
           "vietnamese": "chọn cơm cà ri",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -9848,20 +11073,23 @@ export const generatedSentences = {
       "full_romaji": "Shoushou omachi kudasai.",
       "full_vietnamese": "Xin vui lòng đợi một chút.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 130241,
           "order_index": 1,
           "japanese": "少々",
           "vietnamese": "một chút",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 130242,
           "order_index": 2,
           "japanese": "お待ちください。",
           "vietnamese": "xin vui lòng đợi",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     }
@@ -9875,27 +11103,31 @@ export const generatedSentences = {
       "full_romaji": "Koko ni namae to juusho o kaite kudasai.",
       "full_vietnamese": "Hãy viết tên và địa chỉ vào đây.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 140011,
           "order_index": 1,
           "japanese": "ここに",
           "vietnamese": "vào đây",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 140012,
           "order_index": 2,
           "japanese": "名前と住所を",
           "vietnamese": "tên và địa chỉ",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 140013,
           "order_index": 3,
           "japanese": "書いてください。",
           "vietnamese": "hãy viết",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -9907,20 +11139,23 @@ export const generatedSentences = {
       "full_romaji": "Chotto matte kudasai.",
       "full_vietnamese": "Xin hãy đợi một chút.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 140021,
           "order_index": 1,
           "japanese": "ちょっと",
           "vietnamese": "một chút",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 140022,
           "order_index": 2,
           "japanese": "待ってください。",
           "vietnamese": "xin hãy đợi",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -9932,20 +11167,23 @@ export const generatedSentences = {
       "full_romaji": "Migi e magatte kudasai.",
       "full_vietnamese": "Xin hãy rẽ phải.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 140031,
           "order_index": 1,
           "japanese": "右へ",
           "vietnamese": "sang phải",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 140032,
           "order_index": 2,
           "japanese": "曲がってください。",
           "vietnamese": "xin hãy rẽ",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -9957,27 +11195,31 @@ export const generatedSentences = {
       "full_romaji": "Tsugi no kousaten o hidari e magatte kudasai.",
       "full_vietnamese": "Xin hãy rẽ trái ở ngã tư tiếp theo.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 140041,
           "order_index": 1,
           "japanese": "次の交差点を",
           "vietnamese": "tại ngã tư tiếp theo",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 140042,
           "order_index": 2,
           "japanese": "左へ",
           "vietnamese": "sang trái",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 140043,
           "order_index": 3,
           "japanese": "曲がってください。",
           "vietnamese": "xin hãy rẽ",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -9989,20 +11231,23 @@ export const generatedSentences = {
       "full_romaji": "Massugu itte kudasai.",
       "full_vietnamese": "Xin hãy đi thẳng.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 140051,
           "order_index": 1,
           "japanese": "まっすぐ",
           "vietnamese": "thẳng",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 140052,
           "order_index": 2,
           "japanese": "行ってください。",
           "vietnamese": "xin hãy đi",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -10014,20 +11259,23 @@ export const generatedSentences = {
       "full_romaji": "Shingou o watatte kudasai.",
       "full_vietnamese": "Xin hãy đi qua chỗ đèn giao thông.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 140061,
           "order_index": 1,
           "japanese": "信号を",
           "vietnamese": "chỗ đèn giao thông",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 140062,
           "order_index": 2,
           "japanese": "渡ってください。",
           "vietnamese": "xin hãy đi qua",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -10039,27 +11287,31 @@ export const generatedSentences = {
       "full_romaji": "Isoide kudasai. Densha ga kimasu.",
       "full_vietnamese": "Xin hãy nhanh lên. Tàu sắp đến.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 140071,
           "order_index": 1,
           "japanese": "急いでください。",
           "vietnamese": "xin hãy nhanh lên",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 140072,
           "order_index": 2,
           "japanese": "電車が",
           "vietnamese": "tàu điện",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 140073,
           "order_index": 3,
           "japanese": "来ます。",
           "vietnamese": "đến",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -10071,20 +11323,23 @@ export const generatedSentences = {
       "full_romaji": "Kono nimotsu o motte kudasai.",
       "full_vietnamese": "Xin hãy cầm hành lý này.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 140081,
           "order_index": 1,
           "japanese": "この荷物を",
           "vietnamese": "hành lý này",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 140082,
           "order_index": 2,
           "japanese": "持ってください。",
           "vietnamese": "xin hãy cầm",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -10096,20 +11351,23 @@ export const generatedSentences = {
       "full_romaji": "Denki o tsukete kudasai.",
       "full_vietnamese": "Xin hãy bật đèn.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 140091,
           "order_index": 1,
           "japanese": "電気を",
           "vietnamese": "đèn điện",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 140092,
           "order_index": 2,
           "japanese": "つけてください。",
           "vietnamese": "xin hãy bật",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -10121,20 +11379,23 @@ export const generatedSentences = {
       "full_romaji": "Eakon o keshite kudasai.",
       "full_vietnamese": "Xin hãy tắt điều hòa.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 140101,
           "order_index": 1,
           "japanese": "エアコンを",
           "vietnamese": "điều hòa",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 140102,
           "order_index": 2,
           "japanese": "消してください。",
           "vietnamese": "xin hãy tắt",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -10146,20 +11407,23 @@ export const generatedSentences = {
       "full_romaji": "Doa o akete kudasai.",
       "full_vietnamese": "Xin hãy mở cửa.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 140111,
           "order_index": 1,
           "japanese": "ドアを",
           "vietnamese": "cửa",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 140112,
           "order_index": 2,
           "japanese": "開けてください。",
           "vietnamese": "xin hãy mở",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -10171,20 +11435,23 @@ export const generatedSentences = {
       "full_romaji": "Mado o shimete kudasai.",
       "full_vietnamese": "Xin hãy đóng cửa sổ.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 140121,
           "order_index": 1,
           "japanese": "窓を",
           "vietnamese": "cửa sổ",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 140122,
           "order_index": 2,
           "japanese": "閉めてください。",
           "vietnamese": "xin hãy đóng",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -10196,27 +11463,31 @@ export const generatedSentences = {
       "full_romaji": "Kopii o juumai totte kudasai.",
       "full_vietnamese": "Xin hãy sao chép mười bản.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 140131,
           "order_index": 1,
           "japanese": "コピーを",
           "vietnamese": "bản sao",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 140132,
           "order_index": 2,
           "japanese": "十枚",
           "vietnamese": "mười tờ",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 140133,
           "order_index": 3,
           "japanese": "取ってください。",
           "vietnamese": "xin hãy sao chép",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -10228,20 +11499,23 @@ export const generatedSentences = {
       "full_romaji": "Kono kanji o yonde kudasai.",
       "full_vietnamese": "Xin hãy đọc chữ Kanji này.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 140141,
           "order_index": 1,
           "japanese": "この漢字を",
           "vietnamese": "chữ Kanji này",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 140142,
           "order_index": 2,
           "japanese": "読んでください。",
           "vietnamese": "xin hãy đọc",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -10253,27 +11527,31 @@ export const generatedSentences = {
       "full_romaji": "Sensei wa ima gakusei to hanashite imasu.",
       "full_vietnamese": "Bây giờ giáo viên đang nói chuyện với học sinh.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 140151,
           "order_index": 1,
           "japanese": "先生は今",
           "vietnamese": "bây giờ giáo viên",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 140152,
           "order_index": 2,
           "japanese": "学生と",
           "vietnamese": "với học sinh",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 140153,
           "order_index": 3,
           "japanese": "話しています。",
           "vietnamese": "đang nói chuyện",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -10285,27 +11563,31 @@ export const generatedSentences = {
       "full_romaji": "Miraa-san wa denwa o kakete imasu.",
       "full_vietnamese": "Anh Miller đang gọi điện thoại.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 140161,
           "order_index": 1,
           "japanese": "ミラーさんは",
           "vietnamese": "anh Miller thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 140162,
           "order_index": 2,
           "japanese": "電話を",
           "vietnamese": "điện thoại",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 140163,
           "order_index": 3,
           "japanese": "かけています。",
           "vietnamese": "đang gọi",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -10317,27 +11599,31 @@ export const generatedSentences = {
       "full_romaji": "Maria-san wa repooto o kaite imasu.",
       "full_vietnamese": "Chị Maria đang viết báo cáo.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 140171,
           "order_index": 1,
           "japanese": "マリアさんは",
           "vietnamese": "chị Maria thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 140172,
           "order_index": 2,
           "japanese": "レポートを",
           "vietnamese": "báo cáo",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 140173,
           "order_index": 3,
           "japanese": "書いています。",
           "vietnamese": "đang viết",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -10349,27 +11635,31 @@ export const generatedSentences = {
       "full_romaji": "Kodomotachi wa kouen de asonde imasu.",
       "full_vietnamese": "Bọn trẻ đang chơi trong công viên.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 140181,
           "order_index": 1,
           "japanese": "子どもたちは",
           "vietnamese": "bọn trẻ thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 140182,
           "order_index": 2,
           "japanese": "公園で",
           "vietnamese": "trong công viên",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 140183,
           "order_index": 3,
           "japanese": "遊んでいます。",
           "vietnamese": "đang chơi",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -10381,20 +11671,23 @@ export const generatedSentences = {
       "full_romaji": "Ame ga futte imasu.",
       "full_vietnamese": "Trời đang mưa.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 140191,
           "order_index": 1,
           "japanese": "雨が",
           "vietnamese": "mưa",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 140192,
           "order_index": 2,
           "japanese": "降っています。",
           "vietnamese": "đang rơi",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -10406,20 +11699,23 @@ export const generatedSentences = {
       "full_romaji": "Takushii o yobimashou ka.",
       "full_vietnamese": "Tôi gọi taxi giúp nhé?",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 140201,
           "order_index": 1,
           "japanese": "タクシーを",
           "vietnamese": "taxi",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 140202,
           "order_index": 2,
           "japanese": "呼びましょうか。",
           "vietnamese": "tôi gọi giúp nhé",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -10431,27 +11727,31 @@ export const generatedSentences = {
       "full_romaji": "Nimotsu o mochimashou ka. Onegai shimasu.",
       "full_vietnamese": "Tôi cầm hành lý giúp nhé? Xin nhờ bạn.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 140211,
           "order_index": 1,
           "japanese": "荷物を",
           "vietnamese": "hành lý",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 140212,
           "order_index": 2,
           "japanese": "持ちましょうか。",
           "vietnamese": "tôi cầm giúp nhé",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 140213,
           "order_index": 3,
           "japanese": "お願いします。",
           "vietnamese": "xin nhờ bạn",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -10463,27 +11763,31 @@ export const generatedSentences = {
       "full_romaji": "Mado o akemashou ka. Iie, kekkou desu.",
       "full_vietnamese": "Tôi mở cửa sổ nhé? Không, như vậy được rồi.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 140221,
           "order_index": 1,
           "japanese": "窓を",
           "vietnamese": "cửa sổ",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 140222,
           "order_index": 2,
           "japanese": "開けましょうか。",
           "vietnamese": "tôi mở giúp nhé",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 140223,
           "order_index": 3,
           "japanese": "いいえ、けっこうです。",
           "vietnamese": "không, được rồi",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -10495,20 +11799,23 @@ export const generatedSentences = {
       "full_romaji": "Eki made onegai shimasu.",
       "full_vietnamese": "Xin cho tôi đến nhà ga.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 140231,
           "order_index": 1,
           "japanese": "駅まで",
           "vietnamese": "đến nhà ga",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 140232,
           "order_index": 2,
           "japanese": "お願いします。",
           "vietnamese": "xin nhờ",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -10520,20 +11827,23 @@ export const generatedSentences = {
       "full_romaji": "Otsuri desu. Doumo.",
       "full_vietnamese": "Tiền thừa của bạn đây. Cảm ơn.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 140241,
           "order_index": 1,
           "japanese": "お釣りです。",
           "vietnamese": "tiền thừa đây",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 140242,
           "order_index": 2,
           "japanese": "どうも。",
           "vietnamese": "cảm ơn",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     }
@@ -10547,27 +11857,31 @@ export const generatedSentences = {
       "full_romaji": "Koko de shashin o totte mo ii desu ka.",
       "full_vietnamese": "Tôi chụp ảnh ở đây được không?",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 150011,
           "order_index": 1,
           "japanese": "ここで",
           "vietnamese": "ở đây",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 150012,
           "order_index": 2,
           "japanese": "写真を",
           "vietnamese": "ảnh",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 150013,
           "order_index": 3,
           "japanese": "撮ってもいいですか。",
           "vietnamese": "chụp được không",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -10579,20 +11893,23 @@ export const generatedSentences = {
       "full_romaji": "Kono katarogu o mite mo ii desu ka.",
       "full_vietnamese": "Tôi xem cuốn catalog này được không?",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 150021,
           "order_index": 1,
           "japanese": "このカタログを",
           "vietnamese": "cuốn catalog này",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 150022,
           "order_index": 2,
           "japanese": "見てもいいですか。",
           "vietnamese": "xem được không",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -10604,20 +11921,23 @@ export const generatedSentences = {
       "full_romaji": "Kono pasokon o tsukatte mo ii desu ka.",
       "full_vietnamese": "Tôi dùng máy tính này được không?",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 150031,
           "order_index": 1,
           "japanese": "このパソコンを",
           "vietnamese": "máy tính này",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 150032,
           "order_index": 2,
           "japanese": "使ってもいいですか。",
           "vietnamese": "dùng được không",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -10629,27 +11949,31 @@ export const generatedSentences = {
       "full_romaji": "Koko ni suwatte mo ii desu ka. Hai, douzo.",
       "full_vietnamese": "Tôi ngồi đây được không? Vâng, xin mời.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 150041,
           "order_index": 1,
           "japanese": "ここに",
           "vietnamese": "ở đây",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 150042,
           "order_index": 2,
           "japanese": "座ってもいいですか。",
           "vietnamese": "ngồi được không",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 150043,
           "order_index": 3,
           "japanese": "はい、どうぞ。",
           "vietnamese": "vâng, xin mời",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -10661,20 +11985,23 @@ export const generatedSentences = {
       "full_romaji": "Mado o akete mo ii desu ka.",
       "full_vietnamese": "Tôi mở cửa sổ được không?",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 150051,
           "order_index": 1,
           "japanese": "窓を",
           "vietnamese": "cửa sổ",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 150052,
           "order_index": 2,
           "japanese": "開けてもいいですか。",
           "vietnamese": "mở được không",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -10686,27 +12013,31 @@ export const generatedSentences = {
       "full_romaji": "Koko de tabako o sutte wa ikemasen.",
       "full_vietnamese": "Không được hút thuốc ở đây.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 150061,
           "order_index": 1,
           "japanese": "ここで",
           "vietnamese": "ở đây",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 150062,
           "order_index": 2,
           "japanese": "たばこを",
           "vietnamese": "thuốc lá",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 150063,
           "order_index": 3,
           "japanese": "吸ってはいけません。",
           "vietnamese": "không được hút",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -10718,27 +12049,31 @@ export const generatedSentences = {
       "full_romaji": "Bijutsukan de shashin o totte wa ikemasen.",
       "full_vietnamese": "Không được chụp ảnh trong bảo tàng mỹ thuật.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 150071,
           "order_index": 1,
           "japanese": "美術館で",
           "vietnamese": "trong bảo tàng mỹ thuật",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 150072,
           "order_index": 2,
           "japanese": "写真を",
           "vietnamese": "ảnh",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 150073,
           "order_index": 3,
           "japanese": "撮ってはいけません。",
           "vietnamese": "không được chụp",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -10750,27 +12085,31 @@ export const generatedSentences = {
       "full_romaji": "Koko ni kuruma o tomete wa ikemasen.",
       "full_vietnamese": "Không được đỗ ô tô ở đây.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 150081,
           "order_index": 1,
           "japanese": "ここに",
           "vietnamese": "ở đây",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 150082,
           "order_index": 2,
           "japanese": "車を",
           "vietnamese": "ô tô",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 150083,
           "order_index": 3,
           "japanese": "止めてはいけません。",
           "vietnamese": "không được đỗ",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -10782,27 +12121,31 @@ export const generatedSentences = {
       "full_romaji": "Toshokan de ookii koe de hanashite wa ikemasen.",
       "full_vietnamese": "Không được nói lớn tiếng trong thư viện.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 150091,
           "order_index": 1,
           "japanese": "図書館で",
           "vietnamese": "trong thư viện",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 150092,
           "order_index": 2,
           "japanese": "大きい声で",
           "vietnamese": "bằng giọng lớn",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 150093,
           "order_index": 3,
           "japanese": "話してはいけません。",
           "vietnamese": "không được nói",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -10814,20 +12157,23 @@ export const generatedSentences = {
       "full_romaji": "Kono heya ni haitte wa ikemasen.",
       "full_vietnamese": "Không được vào căn phòng này.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 150101,
           "order_index": 1,
           "japanese": "この部屋に",
           "vietnamese": "vào căn phòng này",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 150102,
           "order_index": 2,
           "japanese": "入ってはいけません。",
           "vietnamese": "không được vào",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -10839,27 +12185,31 @@ export const generatedSentences = {
       "full_romaji": "Miraa-san wa Oosaka ni sunde imasu.",
       "full_vietnamese": "Anh Miller sống ở Osaka.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 150111,
           "order_index": 1,
           "japanese": "ミラーさんは",
           "vietnamese": "anh Miller thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 150112,
           "order_index": 2,
           "japanese": "大阪に",
           "vietnamese": "ở Osaka",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 150113,
           "order_index": 3,
           "japanese": "住んでいます。",
           "vietnamese": "đang sống",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -10871,20 +12221,23 @@ export const generatedSentences = {
       "full_romaji": "Satou-san wa kekkon shite imasu.",
       "full_vietnamese": "Anh Sato đã kết hôn.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 150121,
           "order_index": 1,
           "japanese": "佐藤さんは",
           "vietnamese": "anh Sato thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 150122,
           "order_index": 2,
           "japanese": "結婚しています。",
           "vietnamese": "đã kết hôn",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -10896,27 +12249,31 @@ export const generatedSentences = {
       "full_romaji": "Tanaka-san wa kuruma o motte imasu.",
       "full_vietnamese": "Anh Tanaka có ô tô.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 150131,
           "order_index": 1,
           "japanese": "田中さんは",
           "vietnamese": "anh Tanaka thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 150132,
           "order_index": 2,
           "japanese": "車を",
           "vietnamese": "ô tô",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 150133,
           "order_index": 3,
           "japanese": "持っています。",
           "vietnamese": "có/sở hữu",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -10928,27 +12285,31 @@ export const generatedSentences = {
       "full_romaji": "Watashi wa Yamada-san o shitte imasu.",
       "full_vietnamese": "Tôi biết anh Yamada.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 150141,
           "order_index": 1,
           "japanese": "わたしは",
           "vietnamese": "tôi thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 150142,
           "order_index": 2,
           "japanese": "山田さんを",
           "vietnamese": "anh Yamada",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 150143,
           "order_index": 3,
           "japanese": "知っています。",
           "vietnamese": "biết",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -10960,27 +12321,31 @@ export const generatedSentences = {
       "full_romaji": "Ano hito o shitte imasu ka. Iie, shirimasen.",
       "full_vietnamese": "Bạn có biết người kia không? Không, tôi không biết.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 150151,
           "order_index": 1,
           "japanese": "あの人を",
           "vietnamese": "người kia",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 150152,
           "order_index": 2,
           "japanese": "知っていますか。",
           "vietnamese": "có biết không",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 150153,
           "order_index": 3,
           "japanese": "いいえ、知りません。",
           "vietnamese": "không, không biết",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -10992,27 +12357,31 @@ export const generatedSentences = {
       "full_romaji": "Chichi wa ginkou de hataraite imasu.",
       "full_vietnamese": "Bố tôi làm việc tại ngân hàng.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 150161,
           "order_index": 1,
           "japanese": "父は",
           "vietnamese": "bố tôi thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 150162,
           "order_index": 2,
           "japanese": "銀行で",
           "vietnamese": "tại ngân hàng",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 150163,
           "order_index": 3,
           "japanese": "働いています。",
           "vietnamese": "đang làm việc",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -11024,27 +12393,31 @@ export const generatedSentences = {
       "full_romaji": "Haha wa daigaku de Eigo o oshiete imasu.",
       "full_vietnamese": "Mẹ tôi dạy tiếng Anh tại trường đại học.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 150171,
           "order_index": 1,
           "japanese": "母は大学で",
           "vietnamese": "mẹ tại đại học",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 150172,
           "order_index": 2,
           "japanese": "英語を",
           "vietnamese": "tiếng Anh",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 150173,
           "order_index": 3,
           "japanese": "教えています。",
           "vietnamese": "đang dạy",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -11056,27 +12429,31 @@ export const generatedSentences = {
       "full_romaji": "Ane wa konpyuutaa no kaisha de hataraite imasu.",
       "full_vietnamese": "Chị gái tôi làm việc tại công ty máy tính.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 150181,
           "order_index": 1,
           "japanese": "姉は",
           "vietnamese": "chị gái tôi thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 150182,
           "order_index": 2,
           "japanese": "コンピューターの会社で",
           "vietnamese": "tại công ty máy tính",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 150183,
           "order_index": 3,
           "japanese": "働いています。",
           "vietnamese": "đang làm việc",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -11088,27 +12465,31 @@ export const generatedSentences = {
       "full_romaji": "Otouto wa Toukyou no daigaku de benkyou shite imasu.",
       "full_vietnamese": "Em trai tôi học tại một trường đại học ở Tokyo.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 150191,
           "order_index": 1,
           "japanese": "弟は",
           "vietnamese": "em trai tôi thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 150192,
           "order_index": 2,
           "japanese": "東京の大学で",
           "vietnamese": "tại đại học ở Tokyo",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 150193,
           "order_index": 3,
           "japanese": "勉強しています。",
           "vietnamese": "đang học",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -11120,27 +12501,31 @@ export const generatedSentences = {
       "full_romaji": "Gokazoku wa doko ni sunde imasu ka.",
       "full_vietnamese": "Gia đình bạn sống ở đâu?",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 150201,
           "order_index": 1,
           "japanese": "ご家族は",
           "vietnamese": "gia đình bạn thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 150202,
           "order_index": 2,
           "japanese": "どこに",
           "vietnamese": "ở đâu",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 150203,
           "order_index": 3,
           "japanese": "住んでいますか。",
           "vietnamese": "đang sống",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -11152,27 +12537,31 @@ export const generatedSentences = {
       "full_romaji": "Shigoto wa nan desu ka. Nihongo o oshiete imasu.",
       "full_vietnamese": "Công việc của bạn là gì? Tôi dạy tiếng Nhật.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 150211,
           "order_index": 1,
           "japanese": "仕事は何ですか。",
           "vietnamese": "công việc là gì",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 150212,
           "order_index": 2,
           "japanese": "日本語を",
           "vietnamese": "tiếng Nhật",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 150213,
           "order_index": 3,
           "japanese": "教えています。",
           "vietnamese": "đang dạy",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -11184,20 +12573,23 @@ export const generatedSentences = {
       "full_romaji": "Shiyakusho no denwa bangou o shitte imasu ka.",
       "full_vietnamese": "Bạn có biết số điện thoại tòa thị chính không?",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 150221,
           "order_index": 1,
           "japanese": "市役所の電話番号を",
           "vietnamese": "số điện thoại tòa thị chính",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 150222,
           "order_index": 2,
           "japanese": "知っていますか。",
           "vietnamese": "có biết không",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -11209,27 +12601,31 @@ export const generatedSentences = {
       "full_romaji": "Shiryou o moratte mo ii desu ka. Hai, douzo.",
       "full_vietnamese": "Tôi nhận tài liệu này được không? Vâng, xin mời.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 150231,
           "order_index": 1,
           "japanese": "資料を",
           "vietnamese": "tài liệu",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 150232,
           "order_index": 2,
           "japanese": "もらってもいいですか。",
           "vietnamese": "nhận được không",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 150233,
           "order_index": 3,
           "japanese": "はい、どうぞ。",
           "vietnamese": "vâng, xin mời",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -11241,27 +12637,31 @@ export const generatedSentences = {
       "full_romaji": "Zannen desu ga, kyou wa chotto...",
       "full_vietnamese": "Rất tiếc nhưng hôm nay tôi hơi bận...",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 150241,
           "order_index": 1,
           "japanese": "残念ですが、",
           "vietnamese": "rất tiếc nhưng",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 150242,
           "order_index": 2,
           "japanese": "きょうは",
           "vietnamese": "hôm nay thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 150243,
           "order_index": 3,
           "japanese": "ちょっと……。",
           "vietnamese": "hơi không tiện",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     }
@@ -11275,27 +12675,31 @@ export const generatedSentences = {
       "full_romaji": "Asa okite, kao o aratte, asagohan o tabemasu.",
       "full_vietnamese": "Buổi sáng tôi thức dậy, rửa mặt rồi ăn sáng.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 160011,
           "order_index": 1,
           "japanese": "朝起きて、",
           "vietnamese": "buổi sáng thức dậy rồi",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 160012,
           "order_index": 2,
           "japanese": "顔を洗って、",
           "vietnamese": "rửa mặt rồi",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 160013,
           "order_index": 3,
           "japanese": "朝御飯を食べます。",
           "vietnamese": "ăn sáng",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -11307,20 +12711,23 @@ export const generatedSentences = {
       "full_romaji": "Shawaa o abite, kaisha e ikimasu.",
       "full_vietnamese": "Tôi tắm vòi sen rồi đi làm.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 160021,
           "order_index": 1,
           "japanese": "シャワーを浴びて、",
           "vietnamese": "tắm vòi sen rồi",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 160022,
           "order_index": 2,
           "japanese": "会社へ行きます。",
           "vietnamese": "đi công ty",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -11332,20 +12739,23 @@ export const generatedSentences = {
       "full_romaji": "Eki made aruite, densha ni norimasu.",
       "full_vietnamese": "Tôi đi bộ đến ga rồi lên tàu.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 160031,
           "order_index": 1,
           "japanese": "駅まで歩いて、",
           "vietnamese": "đi bộ đến ga rồi",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 160032,
           "order_index": 2,
           "japanese": "電車に乗ります。",
           "vietnamese": "lên tàu",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -11357,27 +12767,31 @@ export const generatedSentences = {
       "full_romaji": "Kyouto-eki de densha o orite, basu ni norikaemasu.",
       "full_vietnamese": "Tôi xuống tàu ở ga Kyoto rồi chuyển sang xe buýt.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 160041,
           "order_index": 1,
           "japanese": "京都駅で",
           "vietnamese": "tại ga Kyoto",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 160042,
           "order_index": 2,
           "japanese": "電車を降りて、",
           "vietnamese": "xuống tàu rồi",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 160043,
           "order_index": 3,
           "japanese": "バスに乗り換えます。",
           "vietnamese": "chuyển sang xe buýt",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -11389,20 +12803,23 @@ export const generatedSentences = {
       "full_romaji": "Juurokuba n no basu ni notte, daigaku-mae de orimasu.",
       "full_vietnamese": "Tôi lên xe buýt số 16 rồi xuống trước trường đại học.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 160051,
           "order_index": 1,
           "japanese": "十六番のバスに乗って、",
           "vietnamese": "lên xe buýt số 16 rồi",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 160052,
           "order_index": 2,
           "japanese": "大学前で降ります。",
           "vietnamese": "xuống trước đại học",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -11414,20 +12831,23 @@ export const generatedSentences = {
       "full_romaji": "Ginkou e itte, okane o oroshimasu.",
       "full_vietnamese": "Tôi đến ngân hàng rồi rút tiền.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 160061,
           "order_index": 1,
           "japanese": "銀行へ行って、",
           "vietnamese": "đến ngân hàng rồi",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 160062,
           "order_index": 2,
           "japanese": "お金を下ろします。",
           "vietnamese": "rút tiền",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -11439,20 +12859,23 @@ export const generatedSentences = {
       "full_romaji": "Okane o oroshite kara, kaimono ni ikimasu.",
       "full_vietnamese": "Sau khi rút tiền, tôi đi mua sắm.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 160071,
           "order_index": 1,
           "japanese": "お金を下ろしてから、",
           "vietnamese": "sau khi rút tiền",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 160072,
           "order_index": 2,
           "japanese": "買い物に行きます。",
           "vietnamese": "đi mua sắm",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -11464,20 +12887,23 @@ export const generatedSentences = {
       "full_romaji": "Bangohan o tabete kara, shukudai o shimasu.",
       "full_vietnamese": "Sau khi ăn tối, tôi làm bài tập.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 160081,
           "order_index": 1,
           "japanese": "晩御飯を食べてから、",
           "vietnamese": "sau khi ăn tối",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 160082,
           "order_index": 2,
           "japanese": "宿題をします。",
           "vietnamese": "làm bài tập",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -11489,20 +12915,23 @@ export const generatedSentences = {
       "full_romaji": "Daigaku o dete kara, Nihon no kaisha ni hairimashita.",
       "full_vietnamese": "Sau khi tốt nghiệp đại học, tôi đã vào một công ty Nhật.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 160091,
           "order_index": 1,
           "japanese": "大学を出てから、",
           "vietnamese": "sau khi tốt nghiệp đại học",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 160092,
           "order_index": 2,
           "japanese": "日本の会社に入りました。",
           "vietnamese": "đã vào công ty Nhật",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -11514,20 +12943,23 @@ export const generatedSentences = {
       "full_romaji": "Shigoto ga owatte kara, jogingu o shimasu.",
       "full_vietnamese": "Sau khi làm việc xong, tôi chạy bộ.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 160101,
           "order_index": 1,
           "japanese": "仕事が終わってから、",
           "vietnamese": "sau khi công việc kết thúc",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 160102,
           "order_index": 2,
           "japanese": "ジョギングをします。",
           "vietnamese": "chạy bộ",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -11539,27 +12971,31 @@ export const generatedSentences = {
       "full_romaji": "Kono heya wa hirokute, akarui desu.",
       "full_vietnamese": "Căn phòng này rộng và sáng.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 160111,
           "order_index": 1,
           "japanese": "この部屋は",
           "vietnamese": "căn phòng này thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 160112,
           "order_index": 2,
           "japanese": "広くて、",
           "vietnamese": "rộng và",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 160113,
           "order_index": 3,
           "japanese": "明るいです。",
           "vietnamese": "sáng",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -11571,27 +13007,31 @@ export const generatedSentences = {
       "full_romaji": "Kono kaban wa karukute, benri desu.",
       "full_vietnamese": "Chiếc cặp này nhẹ và tiện lợi.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 160121,
           "order_index": 1,
           "japanese": "このかばんは",
           "vietnamese": "chiếc cặp này thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 160122,
           "order_index": 2,
           "japanese": "軽くて、",
           "vietnamese": "nhẹ và",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 160123,
           "order_index": 3,
           "japanese": "便利です。",
           "vietnamese": "tiện lợi",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -11603,27 +13043,31 @@ export const generatedSentences = {
       "full_romaji": "Nara wa shizuka de, midori ga ooi desu.",
       "full_vietnamese": "Nara yên tĩnh và có nhiều cây xanh.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 160131,
           "order_index": 1,
           "japanese": "奈良は",
           "vietnamese": "Nara thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 160132,
           "order_index": 2,
           "japanese": "静かで、",
           "vietnamese": "yên tĩnh và",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 160133,
           "order_index": 3,
           "japanese": "緑が多いです。",
           "vietnamese": "có nhiều cây xanh",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -11635,27 +13079,31 @@ export const generatedSentences = {
       "full_romaji": "Miraa-san wa wakakute, genki desu.",
       "full_vietnamese": "Anh Miller trẻ và khỏe mạnh.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 160141,
           "order_index": 1,
           "japanese": "ミラーさんは",
           "vietnamese": "anh Miller thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 160142,
           "order_index": 2,
           "japanese": "若くて、",
           "vietnamese": "trẻ và",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 160143,
           "order_index": 3,
           "japanese": "元気です。",
           "vietnamese": "khỏe mạnh",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -11667,27 +13115,31 @@ export const generatedSentences = {
       "full_romaji": "Yamada-san wa shinsetsu de, atama ga ii desu.",
       "full_vietnamese": "Anh Yamada tốt bụng và thông minh.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 160151,
           "order_index": 1,
           "japanese": "山田さんは",
           "vietnamese": "anh Yamada thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 160152,
           "order_index": 2,
           "japanese": "親切で、",
           "vietnamese": "tốt bụng và",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 160153,
           "order_index": 3,
           "japanese": "頭がいいです。",
           "vietnamese": "thông minh",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -11699,27 +13151,31 @@ export const generatedSentences = {
       "full_romaji": "Oosaka wa tabemono ga oishii desu.",
       "full_vietnamese": "Osaka có đồ ăn ngon.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 160161,
           "order_index": 1,
           "japanese": "大阪は",
           "vietnamese": "Osaka thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 160162,
           "order_index": 2,
           "japanese": "食べ物が",
           "vietnamese": "đồ ăn",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 160163,
           "order_index": 3,
           "japanese": "おいしいです。",
           "vietnamese": "ngon",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -11731,27 +13187,31 @@ export const generatedSentences = {
       "full_romaji": "Maria-san wa kami ga nagai desu.",
       "full_vietnamese": "Chị Maria có mái tóc dài.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 160171,
           "order_index": 1,
           "japanese": "マリアさんは",
           "vietnamese": "chị Maria thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 160172,
           "order_index": 2,
           "japanese": "髪が",
           "vietnamese": "tóc",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 160173,
           "order_index": 3,
           "japanese": "長いです。",
           "vietnamese": "dài",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -11763,27 +13223,31 @@ export const generatedSentences = {
       "full_romaji": "Ano otoko no hito wa se ga takai desu.",
       "full_vietnamese": "Người đàn ông kia cao.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 160181,
           "order_index": 1,
           "japanese": "あの男の人は",
           "vietnamese": "người đàn ông kia thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 160182,
           "order_index": 2,
           "japanese": "背が",
           "vietnamese": "chiều cao",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 160183,
           "order_index": 3,
           "japanese": "高いです。",
           "vietnamese": "cao",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -11795,27 +13259,31 @@ export const generatedSentences = {
       "full_romaji": "Ano onna no ko wa me ga ookii desu.",
       "full_vietnamese": "Bé gái kia có đôi mắt to.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 160191,
           "order_index": 1,
           "japanese": "あの女の子は",
           "vietnamese": "bé gái kia thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 160192,
           "order_index": 2,
           "japanese": "目が",
           "vietnamese": "mắt",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 160193,
           "order_index": 3,
           "japanese": "大きいです。",
           "vietnamese": "to",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -11827,27 +13295,31 @@ export const generatedSentences = {
       "full_romaji": "Daigaku made douyatte ikimasu ka.",
       "full_vietnamese": "Bạn đến trường đại học bằng cách nào?",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 160201,
           "order_index": 1,
           "japanese": "大学まで",
           "vietnamese": "đến đại học",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 160202,
           "order_index": 2,
           "japanese": "どうやって",
           "vietnamese": "bằng cách nào",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 160203,
           "order_index": 3,
           "japanese": "行きますか。",
           "vietnamese": "đi",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -11859,27 +13331,31 @@ export const generatedSentences = {
       "full_romaji": "Eki kara basu ni notte, daigaku-mae de orimasu.",
       "full_vietnamese": "Từ ga tôi lên xe buýt rồi xuống trước đại học.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 160211,
           "order_index": 1,
           "japanese": "駅から",
           "vietnamese": "từ ga",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 160212,
           "order_index": 2,
           "japanese": "バスに乗って、",
           "vietnamese": "lên xe buýt rồi",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 160213,
           "order_index": 3,
           "japanese": "大学前で降ります。",
           "vietnamese": "xuống trước đại học",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -11891,20 +13367,23 @@ export const generatedSentences = {
       "full_romaji": "Yamada-san wa dono hito desu ka.",
       "full_vietnamese": "Anh Yamada là người nào?",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 160221,
           "order_index": 1,
           "japanese": "山田さんは",
           "vietnamese": "anh Yamada thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 160222,
           "order_index": 2,
           "japanese": "どの人ですか。",
           "vietnamese": "là người nào",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -11916,27 +13395,31 @@ export const generatedSentences = {
       "full_romaji": "Ano se ga takakute, kami ga mijikai hito desu.",
       "full_vietnamese": "Là người cao và tóc ngắn kia.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 160231,
           "order_index": 1,
           "japanese": "あの",
           "vietnamese": "kia",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 160232,
           "order_index": 2,
           "japanese": "背が高くて、",
           "vietnamese": "cao và",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 160233,
           "order_index": 3,
           "japanese": "髪が短い人です。",
           "vietnamese": "là người tóc ngắn",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -11948,27 +13431,31 @@ export const generatedSentences = {
       "full_romaji": "Mazu kaado o irete, tsugi ni anshou bangou o oshite kudasai.",
       "full_vietnamese": "Trước hết hãy cho thẻ vào, tiếp theo hãy bấm mã PIN.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 160241,
           "order_index": 1,
           "japanese": "まずカードを入れて、",
           "vietnamese": "trước hết cho thẻ vào",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 160242,
           "order_index": 2,
           "japanese": "次に",
           "vietnamese": "tiếp theo",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 160243,
           "order_index": 3,
           "japanese": "暗証番号を押してください。",
           "vietnamese": "hãy bấm mã PIN",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     }
@@ -11982,27 +13469,31 @@ export const generatedSentences = {
       "full_romaji": "Koko de shashin o toranaide kudasai.",
       "full_vietnamese": "Xin đừng chụp ảnh ở đây.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 170011,
           "order_index": 1,
           "japanese": "ここで",
           "vietnamese": "ở đây",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 170012,
           "order_index": 2,
           "japanese": "写真を",
           "vietnamese": "ảnh",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 170013,
           "order_index": 3,
           "japanese": "撮らないでください。",
           "vietnamese": "xin đừng chụp",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -12014,20 +13505,23 @@ export const generatedSentences = {
       "full_romaji": "Kono heya ni hairanaide kudasai.",
       "full_vietnamese": "Xin đừng vào căn phòng này.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 170021,
           "order_index": 1,
           "japanese": "この部屋に",
           "vietnamese": "vào căn phòng này",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 170022,
           "order_index": 2,
           "japanese": "入らないでください。",
           "vietnamese": "xin đừng vào",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -12039,20 +13533,23 @@ export const generatedSentences = {
       "full_romaji": "Taisetsu na shorui o nakusanaide kudasai.",
       "full_vietnamese": "Xin đừng làm mất tài liệu quan trọng.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 170031,
           "order_index": 1,
           "japanese": "大切な書類を",
           "vietnamese": "tài liệu quan trọng",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 170032,
           "order_index": 2,
           "japanese": "なくさないでください。",
           "vietnamese": "xin đừng làm mất",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -12064,20 +13561,23 @@ export const generatedSentences = {
       "full_romaji": "Pasupooto o wasurenaide kudasai.",
       "full_vietnamese": "Xin đừng quên hộ chiếu.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 170041,
           "order_index": 1,
           "japanese": "パスポートを",
           "vietnamese": "hộ chiếu",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 170042,
           "order_index": 2,
           "japanese": "忘れないでください。",
           "vietnamese": "xin đừng quên",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -12089,27 +13589,31 @@ export const generatedSentences = {
       "full_romaji": "Koko ni kuruma o tomenaide kudasai.",
       "full_vietnamese": "Xin đừng đỗ xe ở đây.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 170051,
           "order_index": 1,
           "japanese": "ここに",
           "vietnamese": "ở đây",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 170052,
           "order_index": 2,
           "japanese": "車を",
           "vietnamese": "ô tô",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 170053,
           "order_index": 3,
           "japanese": "止めないでください。",
           "vietnamese": "xin đừng đỗ",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -12121,27 +13625,31 @@ export const generatedSentences = {
       "full_romaji": "Ashita made ni repooto o dasanakereba narimasen.",
       "full_vietnamese": "Tôi phải nộp báo cáo trước ngày mai.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 170061,
           "order_index": 1,
           "japanese": "あしたまでに",
           "vietnamese": "trước ngày mai",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 170062,
           "order_index": 2,
           "japanese": "レポートを",
           "vietnamese": "báo cáo",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 170063,
           "order_index": 3,
           "japanese": "出さなければなりません。",
           "vietnamese": "phải nộp",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -12153,27 +13661,31 @@ export const generatedSentences = {
       "full_romaji": "Mainichi kanji o oboenakereba narimasen.",
       "full_vietnamese": "Mỗi ngày tôi phải học thuộc Kanji.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 170071,
           "order_index": 1,
           "japanese": "毎日",
           "vietnamese": "mỗi ngày",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 170072,
           "order_index": 2,
           "japanese": "漢字を",
           "vietnamese": "Kanji",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 170073,
           "order_index": 3,
           "japanese": "覚えなければなりません。",
           "vietnamese": "phải học thuộc",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -12185,27 +13697,31 @@ export const generatedSentences = {
       "full_romaji": "Ginkou e itte, okane o harawanakereba narimasen.",
       "full_vietnamese": "Tôi phải đến ngân hàng và trả tiền.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 170081,
           "order_index": 1,
           "japanese": "銀行へ行って、",
           "vietnamese": "đến ngân hàng rồi",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 170082,
           "order_index": 2,
           "japanese": "お金を",
           "vietnamese": "tiền",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 170083,
           "order_index": 3,
           "japanese": "払わなければなりません。",
           "vietnamese": "phải trả",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -12217,27 +13733,31 @@ export const generatedSentences = {
       "full_romaji": "Kuji made ni kaisha e ikanakereba narimasen.",
       "full_vietnamese": "Tôi phải đến công ty trước chín giờ.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 170091,
           "order_index": 1,
           "japanese": "九時までに",
           "vietnamese": "trước chín giờ",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 170092,
           "order_index": 2,
           "japanese": "会社へ",
           "vietnamese": "đến công ty",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 170093,
           "order_index": 3,
           "japanese": "行かなければなりません。",
           "vietnamese": "phải đi",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -12249,27 +13769,31 @@ export const generatedSentences = {
       "full_romaji": "Nihon no uchi de kutsu o nuganakereba narimasen.",
       "full_vietnamese": "Trong nhà Nhật phải cởi giày.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 170101,
           "order_index": 1,
           "japanese": "日本のうちで",
           "vietnamese": "trong nhà Nhật",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 170102,
           "order_index": 2,
           "japanese": "靴を",
           "vietnamese": "giày",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 170103,
           "order_index": 3,
           "japanese": "脱がなければなりません。",
           "vietnamese": "phải cởi",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -12281,27 +13805,31 @@ export const generatedSentences = {
       "full_romaji": "Kusuri o ichinichi sankai nomanakereba narimasen.",
       "full_vietnamese": "Tôi phải uống thuốc ba lần một ngày.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 170111,
           "order_index": 1,
           "japanese": "薬を",
           "vietnamese": "thuốc",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 170112,
           "order_index": 2,
           "japanese": "一日三回",
           "vietnamese": "ba lần một ngày",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 170113,
           "order_index": 3,
           "japanese": "飲まなければなりません。",
           "vietnamese": "phải uống",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -12313,20 +13841,23 @@ export const generatedSentences = {
       "full_romaji": "Kyou wa zangyou shinakereba narimasen.",
       "full_vietnamese": "Hôm nay tôi phải làm thêm giờ.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 170121,
           "order_index": 1,
           "japanese": "きょうは",
           "vietnamese": "hôm nay thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 170122,
           "order_index": 2,
           "japanese": "残業しなければなりません。",
           "vietnamese": "phải làm thêm giờ",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -12338,27 +13869,31 @@ export const generatedSentences = {
       "full_romaji": "Ashita wa hayaku okinakute mo ii desu.",
       "full_vietnamese": "Ngày mai không cần dậy sớm.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 170131,
           "order_index": 1,
           "japanese": "あしたは",
           "vietnamese": "ngày mai thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 170132,
           "order_index": 2,
           "japanese": "早く",
           "vietnamese": "sớm",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 170133,
           "order_index": 3,
           "japanese": "起きなくてもいいです。",
           "vietnamese": "không cần thức dậy",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -12370,27 +13905,31 @@ export const generatedSentences = {
       "full_romaji": "Doyoubi wa kaisha e ikanakute mo ii desu.",
       "full_vietnamese": "Thứ Bảy không cần đến công ty.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 170141,
           "order_index": 1,
           "japanese": "土曜日は",
           "vietnamese": "thứ Bảy thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 170142,
           "order_index": 2,
           "japanese": "会社へ",
           "vietnamese": "đến công ty",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 170143,
           "order_index": 3,
           "japanese": "行かなくてもいいです。",
           "vietnamese": "không cần đi",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -12402,20 +13941,23 @@ export const generatedSentences = {
       "full_romaji": "Kono kusuri wa nomanakute mo ii desu.",
       "full_vietnamese": "Thuốc này không cần uống.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 170151,
           "order_index": 1,
           "japanese": "この薬は",
           "vietnamese": "thuốc này thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 170152,
           "order_index": 2,
           "japanese": "飲まなくてもいいです。",
           "vietnamese": "không cần uống",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -12427,20 +13969,23 @@ export const generatedSentences = {
       "full_romaji": "Uwagi o nuganakute mo ii desu.",
       "full_vietnamese": "Bạn không cần cởi áo khoác.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 170161,
           "order_index": 1,
           "japanese": "上着を",
           "vietnamese": "áo khoác",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 170162,
           "order_index": 2,
           "japanese": "脱がなくてもいいです。",
           "vietnamese": "không cần cởi",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -12452,27 +13997,31 @@ export const generatedSentences = {
       "full_romaji": "Shukudai wa kyou dasanakute mo ii desu.",
       "full_vietnamese": "Bài tập không cần nộp hôm nay.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 170171,
           "order_index": 1,
           "japanese": "宿題は",
           "vietnamese": "bài tập thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 170172,
           "order_index": 2,
           "japanese": "きょう",
           "vietnamese": "hôm nay",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 170173,
           "order_index": 3,
           "japanese": "出さなくてもいいです。",
           "vietnamese": "không cần nộp",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -12484,27 +14033,31 @@ export const generatedSentences = {
       "full_romaji": "Kinyoubi made ni hon o kaeshite kudasai.",
       "full_vietnamese": "Hãy trả sách trước thứ Sáu.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 170181,
           "order_index": 1,
           "japanese": "金曜日までに",
           "vietnamese": "trước thứ Sáu",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 170182,
           "order_index": 2,
           "japanese": "本を",
           "vietnamese": "sách",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 170183,
           "order_index": 3,
           "japanese": "返してください。",
           "vietnamese": "hãy trả",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -12516,27 +14069,31 @@ export const generatedSentences = {
       "full_romaji": "Kaigi wa goji made ni owarimasu.",
       "full_vietnamese": "Cuộc họp sẽ kết thúc trước năm giờ.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 170191,
           "order_index": 1,
           "japanese": "会議は",
           "vietnamese": "cuộc họp thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 170192,
           "order_index": 2,
           "japanese": "五時までに",
           "vietnamese": "trước năm giờ",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 170193,
           "order_index": 3,
           "japanese": "終わります。",
           "vietnamese": "kết thúc",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -12548,20 +14105,23 @@ export const generatedSentences = {
       "full_romaji": "Dou shimashita ka. Atama ga itai desu.",
       "full_vietnamese": "Bạn bị sao vậy? Tôi đau đầu.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 170201,
           "order_index": 1,
           "japanese": "どうしましたか。",
           "vietnamese": "bạn bị sao vậy",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 170202,
           "order_index": 2,
           "japanese": "頭が痛いです。",
           "vietnamese": "đau đầu",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -12573,27 +14133,31 @@ export const generatedSentences = {
       "full_romaji": "Netsu ga arimasu kara, ni-sannichi yasunde kudasai.",
       "full_vietnamese": "Vì bạn bị sốt nên hãy nghỉ hai, ba ngày.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 170211,
           "order_index": 1,
           "japanese": "熱がありますから、",
           "vietnamese": "vì bị sốt",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 170212,
           "order_index": 2,
           "japanese": "二、三日",
           "vietnamese": "hai, ba ngày",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 170213,
           "order_index": 3,
           "japanese": "休んでください。",
           "vietnamese": "hãy nghỉ",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -12605,27 +14169,31 @@ export const generatedSentences = {
       "full_romaji": "Konban wa ofuro ni hairanaide kudasai.",
       "full_vietnamese": "Tối nay xin đừng tắm bồn.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 170221,
           "order_index": 1,
           "japanese": "今晩は",
           "vietnamese": "tối nay thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 170222,
           "order_index": 2,
           "japanese": "お風呂に",
           "vietnamese": "vào bồn tắm",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 170223,
           "order_index": 3,
           "japanese": "入らないでください。",
           "vietnamese": "xin đừng vào",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -12637,20 +14205,23 @@ export const generatedSentences = {
       "full_romaji": "Hokenshou o motte konakereba narimasen.",
       "full_vietnamese": "Tôi phải mang thẻ bảo hiểm đến.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 170231,
           "order_index": 1,
           "japanese": "保険証を",
           "vietnamese": "thẻ bảo hiểm",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 170232,
           "order_index": 2,
           "japanese": "持って来なければなりません。",
           "vietnamese": "phải mang đến",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -12662,20 +14233,23 @@ export const generatedSentences = {
       "full_romaji": "Mou daijoubu desu. Odaiji ni.",
       "full_vietnamese": "Giờ tôi ổn rồi. Chúc bạn mau khỏe.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 170241,
           "order_index": 1,
           "japanese": "もう大丈夫です。",
           "vietnamese": "giờ đã ổn",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 170242,
           "order_index": 2,
           "japanese": "お大事に。",
           "vietnamese": "chúc mau khỏe",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     }
@@ -12689,27 +14263,31 @@ export const generatedSentences = {
       "full_romaji": "Watashi wa kuruma o unten suru koto ga dekimasu.",
       "full_vietnamese": "Tôi có thể lái ô tô.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 180011,
           "order_index": 1,
           "japanese": "わたしは",
           "vietnamese": "tôi thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 180012,
           "order_index": 2,
           "japanese": "車を運転することが",
           "vietnamese": "việc lái ô tô",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 180013,
           "order_index": 3,
           "japanese": "できます。",
           "vietnamese": "có thể",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -12721,27 +14299,31 @@ export const generatedSentences = {
       "full_romaji": "Miraa-san wa Nihongo o hanasu koto ga dekimasu.",
       "full_vietnamese": "Anh Miller có thể nói tiếng Nhật.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 180021,
           "order_index": 1,
           "japanese": "ミラーさんは",
           "vietnamese": "anh Miller thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 180022,
           "order_index": 2,
           "japanese": "日本語を話すことが",
           "vietnamese": "việc nói tiếng Nhật",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 180023,
           "order_index": 3,
           "japanese": "できます。",
           "vietnamese": "có thể",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -12753,27 +14335,31 @@ export const generatedSentences = {
       "full_romaji": "Koko de uma ni noru koto ga dekimasu.",
       "full_vietnamese": "Ở đây có thể cưỡi ngựa.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 180031,
           "order_index": 1,
           "japanese": "ここで",
           "vietnamese": "ở đây",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 180032,
           "order_index": 2,
           "japanese": "馬に乗ることが",
           "vietnamese": "việc cưỡi ngựa",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 180033,
           "order_index": 3,
           "japanese": "できます。",
           "vietnamese": "có thể",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -12785,27 +14371,31 @@ export const generatedSentences = {
       "full_romaji": "Kono kaado de genkin o orosu koto ga dekimasu.",
       "full_vietnamese": "Có thể rút tiền mặt bằng thẻ này.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 180041,
           "order_index": 1,
           "japanese": "このカードで",
           "vietnamese": "bằng thẻ này",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 180042,
           "order_index": 2,
           "japanese": "現金を下ろすことが",
           "vietnamese": "việc rút tiền mặt",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 180043,
           "order_index": 3,
           "japanese": "できます。",
           "vietnamese": "có thể",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -12817,27 +14407,31 @@ export const generatedSentences = {
       "full_romaji": "Kono hoteru de intaanetto ga dekimasu.",
       "full_vietnamese": "Có thể sử dụng Internet tại khách sạn này.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 180051,
           "order_index": 1,
           "japanese": "このホテルで",
           "vietnamese": "tại khách sạn này",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 180052,
           "order_index": 2,
           "japanese": "インターネットが",
           "vietnamese": "Internet",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 180053,
           "order_index": 3,
           "japanese": "できます。",
           "vietnamese": "có thể dùng",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -12849,27 +14443,31 @@ export const generatedSentences = {
       "full_romaji": "Maria-san wa piano ga dekimasu.",
       "full_vietnamese": "Chị Maria biết chơi piano.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 180061,
           "order_index": 1,
           "japanese": "マリアさんは",
           "vietnamese": "chị Maria thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 180062,
           "order_index": 2,
           "japanese": "ピアノが",
           "vietnamese": "piano",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 180063,
           "order_index": 3,
           "japanese": "できます。",
           "vietnamese": "biết chơi",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -12881,27 +14479,31 @@ export const generatedSentences = {
       "full_romaji": "Watashi wa hyaku meetoru oyogu koto ga dekimasu.",
       "full_vietnamese": "Tôi có thể bơi 100 mét.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 180071,
           "order_index": 1,
           "japanese": "わたしは",
           "vietnamese": "tôi thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 180072,
           "order_index": 2,
           "japanese": "百メートル泳ぐことが",
           "vietnamese": "việc bơi 100 mét",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 180073,
           "order_index": 3,
           "japanese": "できます。",
           "vietnamese": "có thể",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -12913,20 +14515,23 @@ export const generatedSentences = {
       "full_romaji": "Kanji o yomu koto ga dekimasen.",
       "full_vietnamese": "Tôi không thể đọc Kanji.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 180081,
           "order_index": 1,
           "japanese": "漢字を読むことが",
           "vietnamese": "việc đọc Kanji",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 180082,
           "order_index": 2,
           "japanese": "できません。",
           "vietnamese": "không thể",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -12938,20 +14543,23 @@ export const generatedSentences = {
       "full_romaji": "Shumi wa shashin o toru koto desu.",
       "full_vietnamese": "Sở thích của tôi là chụp ảnh.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 180091,
           "order_index": 1,
           "japanese": "趣味は",
           "vietnamese": "sở thích thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 180092,
           "order_index": 2,
           "japanese": "写真を撮ることです。",
           "vietnamese": "là chụp ảnh",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -12963,20 +14571,23 @@ export const generatedSentences = {
       "full_romaji": "Chichi no shumi wa kuruma o unten suru koto desu.",
       "full_vietnamese": "Sở thích của bố tôi là lái xe.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 180101,
           "order_index": 1,
           "japanese": "父の趣味は",
           "vietnamese": "sở thích của bố thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 180102,
           "order_index": 2,
           "japanese": "車を運転することです。",
           "vietnamese": "là lái xe",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -12988,20 +14599,23 @@ export const generatedSentences = {
       "full_romaji": "Haha no shumi wa hana o atsumeru koto desu.",
       "full_vietnamese": "Sở thích của mẹ tôi là sưu tầm hoa.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 180111,
           "order_index": 1,
           "japanese": "母の趣味は",
           "vietnamese": "sở thích của mẹ thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 180112,
           "order_index": 2,
           "japanese": "花を集めることです。",
           "vietnamese": "là sưu tầm hoa",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -13013,20 +14627,23 @@ export const generatedSentences = {
       "full_romaji": "Otouto no shumi wa uta o utau koto desu.",
       "full_vietnamese": "Sở thích của em trai tôi là hát.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 180121,
           "order_index": 1,
           "japanese": "弟の趣味は",
           "vietnamese": "sở thích của em trai thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 180122,
           "order_index": 2,
           "japanese": "歌を歌うことです。",
           "vietnamese": "là hát",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -13038,27 +14655,31 @@ export const generatedSentences = {
       "full_romaji": "Maiban neru mae ni nikki o kakimasu.",
       "full_vietnamese": "Mỗi tối trước khi ngủ tôi viết nhật ký.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 180131,
           "order_index": 1,
           "japanese": "毎晩",
           "vietnamese": "mỗi tối",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 180132,
           "order_index": 2,
           "japanese": "寝る前に",
           "vietnamese": "trước khi ngủ",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 180133,
           "order_index": 3,
           "japanese": "日記を書きます。",
           "vietnamese": "viết nhật ký",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -13070,20 +14691,23 @@ export const generatedSentences = {
       "full_romaji": "Shokuji no mae ni te o araimasu.",
       "full_vietnamese": "Trước bữa ăn tôi rửa tay.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 180141,
           "order_index": 1,
           "japanese": "食事の前に",
           "vietnamese": "trước bữa ăn",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 180142,
           "order_index": 2,
           "japanese": "手を洗います。",
           "vietnamese": "rửa tay",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -13095,20 +14719,23 @@ export const generatedSentences = {
       "full_romaji": "Kaigi no mae ni shiryou o kopii shimasu.",
       "full_vietnamese": "Trước cuộc họp tôi sao chép tài liệu.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 180151,
           "order_index": 1,
           "japanese": "会議の前に",
           "vietnamese": "trước cuộc họp",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 180152,
           "order_index": 2,
           "japanese": "資料をコピーします。",
           "vietnamese": "sao chép tài liệu",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -13120,20 +14747,23 @@ export const generatedSentences = {
       "full_romaji": "Nihon e kuru mae ni Nihongo o benkyou shimashita.",
       "full_vietnamese": "Trước khi đến Nhật tôi đã học tiếng Nhật.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 180161,
           "order_index": 1,
           "japanese": "日本へ来る前に",
           "vietnamese": "trước khi đến Nhật",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 180162,
           "order_index": 2,
           "japanese": "日本語を勉強しました。",
           "vietnamese": "đã học tiếng Nhật",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -13145,20 +14775,23 @@ export const generatedSentences = {
       "full_romaji": "Kuni e kaeru mae ni omiyage o kaimasu.",
       "full_vietnamese": "Trước khi về nước tôi mua quà.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 180171,
           "order_index": 1,
           "japanese": "国へ帰る前に",
           "vietnamese": "trước khi về nước",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 180172,
           "order_index": 2,
           "japanese": "お土産を買います。",
           "vietnamese": "mua quà",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -13170,20 +14803,23 @@ export const generatedSentences = {
       "full_romaji": "Sannen mae ni Nihongo no benkyou o hajimemashita.",
       "full_vietnamese": "Tôi đã bắt đầu học tiếng Nhật ba năm trước.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 180181,
           "order_index": 1,
           "japanese": "三年前に",
           "vietnamese": "ba năm trước",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 180182,
           "order_index": 2,
           "japanese": "日本語の勉強を始めました。",
           "vietnamese": "đã bắt đầu học tiếng Nhật",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -13195,20 +14831,23 @@ export const generatedSentences = {
       "full_romaji": "Hoteru o yoyaku suru mae ni kachou ni kikimasu.",
       "full_vietnamese": "Trước khi đặt khách sạn tôi hỏi trưởng phòng.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 180191,
           "order_index": 1,
           "japanese": "ホテルを予約する前に",
           "vietnamese": "trước khi đặt khách sạn",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 180192,
           "order_index": 2,
           "japanese": "課長に聞きます。",
           "vietnamese": "hỏi trưởng phòng",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -13220,27 +14859,31 @@ export const generatedSentences = {
       "full_romaji": "Furui kitte o atarashii kitte ni kaeru koto ga dekimasu.",
       "full_vietnamese": "Có thể đổi tem cũ sang tem mới.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 180201,
           "order_index": 1,
           "japanese": "古い切手を",
           "vietnamese": "tem cũ",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 180202,
           "order_index": 2,
           "japanese": "新しい切手に換えることが",
           "vietnamese": "việc đổi sang tem mới",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 180203,
           "order_index": 3,
           "japanese": "できます。",
           "vietnamese": "có thể",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -13252,27 +14895,31 @@ export const generatedSentences = {
       "full_romaji": "Koko ni gomi o suteru koto ga dekimasen.",
       "full_vietnamese": "Không thể vứt rác ở đây.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 180211,
           "order_index": 1,
           "japanese": "ここに",
           "vietnamese": "ở đây",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 180212,
           "order_index": 2,
           "japanese": "ごみを捨てることが",
           "vietnamese": "việc vứt rác",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 180213,
           "order_index": 3,
           "japanese": "できません。",
           "vietnamese": "không thể",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -13284,27 +14931,31 @@ export const generatedSentences = {
       "full_romaji": "Nakanaka uma ni noru koto ga dekimasen.",
       "full_vietnamese": "Tôi mãi vẫn chưa cưỡi ngựa được.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 180221,
           "order_index": 1,
           "japanese": "なかなか",
           "vietnamese": "mãi vẫn chưa",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 180222,
           "order_index": 2,
           "japanese": "馬に乗ることが",
           "vietnamese": "việc cưỡi ngựa",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 180223,
           "order_index": 3,
           "japanese": "できません。",
           "vietnamese": "không thể",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -13316,27 +14967,31 @@ export const generatedSentences = {
       "full_romaji": "Zehi bokujou e asobi ni kite kudasai.",
       "full_vietnamese": "Nhất định hãy đến trang trại chơi nhé.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 180231,
           "order_index": 1,
           "japanese": "ぜひ",
           "vietnamese": "nhất định",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 180232,
           "order_index": 2,
           "japanese": "牧場へ",
           "vietnamese": "đến trang trại",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 180233,
           "order_index": 3,
           "japanese": "遊びに来てください。",
           "vietnamese": "hãy đến chơi",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -13348,20 +15003,23 @@ export const generatedSentences = {
       "full_romaji": "Hee, sore wa omoshiroi desu ne.",
       "full_vietnamese": "Ồ, điều đó thú vị nhỉ.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 180241,
           "order_index": 1,
           "japanese": "へえ、",
           "vietnamese": "ồ",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 180242,
           "order_index": 2,
           "japanese": "それはおもしろいですね。",
           "vietnamese": "điều đó thú vị nhỉ",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     }
@@ -13375,20 +15033,23 @@ export const generatedSentences = {
       "full_romaji": "Fujisan ni nobotta koto ga arimasu.",
       "full_vietnamese": "Tôi đã từng leo núi Phú Sĩ.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 190011,
           "order_index": 1,
           "japanese": "富士山に",
           "vietnamese": "núi Phú Sĩ",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 190012,
           "order_index": 2,
           "japanese": "登ったことがあります。",
           "vietnamese": "đã từng leo",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -13400,20 +15061,23 @@ export const generatedSentences = {
       "full_romaji": "Hokkaidou e itta koto ga arimasu.",
       "full_vietnamese": "Tôi đã từng đi Hokkaido.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 190021,
           "order_index": 1,
           "japanese": "北海道へ",
           "vietnamese": "đến Hokkaido",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 190022,
           "order_index": 2,
           "japanese": "行ったことがあります。",
           "vietnamese": "đã từng đi",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -13425,20 +15089,23 @@ export const generatedSentences = {
       "full_romaji": "Nihon no ryokan ni tomatta koto ga arimasu.",
       "full_vietnamese": "Tôi đã từng ở nhà trọ kiểu Nhật.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 190031,
           "order_index": 1,
           "japanese": "日本の旅館に",
           "vietnamese": "ở nhà trọ Nhật",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 190032,
           "order_index": 2,
           "japanese": "泊まったことがあります。",
           "vietnamese": "đã từng ở",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -13450,20 +15117,23 @@ export const generatedSentences = {
       "full_romaji": "Uma ni notta koto ga arimasu.",
       "full_vietnamese": "Tôi đã từng cưỡi ngựa.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 190041,
           "order_index": 1,
           "japanese": "馬に",
           "vietnamese": "ngựa",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 190042,
           "order_index": 2,
           "japanese": "乗ったことがあります。",
           "vietnamese": "đã từng cưỡi",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -13475,20 +15145,23 @@ export const generatedSentences = {
       "full_romaji": "Kabuki o mita koto ga arimasu.",
       "full_vietnamese": "Tôi đã từng xem Kabuki.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 190051,
           "order_index": 1,
           "japanese": "歌舞伎を",
           "vietnamese": "Kabuki",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 190052,
           "order_index": 2,
           "japanese": "見たことがあります。",
           "vietnamese": "đã từng xem",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -13500,20 +15173,23 @@ export const generatedSentences = {
       "full_romaji": "Ikebana o shita koto ga arimasu.",
       "full_vietnamese": "Tôi đã từng cắm hoa Ikebana.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 190061,
           "order_index": 1,
           "japanese": "生け花を",
           "vietnamese": "cắm hoa Ikebana",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 190062,
           "order_index": 2,
           "japanese": "したことがあります。",
           "vietnamese": "đã từng làm",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -13525,20 +15201,23 @@ export const generatedSentences = {
       "full_romaji": "Sumou o mita koto ga arimasen.",
       "full_vietnamese": "Tôi chưa từng xem Sumo.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 190071,
           "order_index": 1,
           "japanese": "相撲を",
           "vietnamese": "Sumo",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 190072,
           "order_index": 2,
           "japanese": "見たことがありません。",
           "vietnamese": "chưa từng xem",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -13550,20 +15229,23 @@ export const generatedSentences = {
       "full_romaji": "Gaikoku ni sunda koto ga arimasen.",
       "full_vietnamese": "Tôi chưa từng sống ở nước ngoài.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 190081,
           "order_index": 1,
           "japanese": "外国に",
           "vietnamese": "ở nước ngoài",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 190082,
           "order_index": 2,
           "japanese": "住んだことがありません。",
           "vietnamese": "chưa từng sống",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -13575,27 +15257,31 @@ export const generatedSentences = {
       "full_romaji": "Nichiyoubi wa souji shitari, sentaku shitari shimasu.",
       "full_vietnamese": "Chủ nhật tôi dọn dẹp, giặt giũ, v.v.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 190091,
           "order_index": 1,
           "japanese": "日曜日は",
           "vietnamese": "Chủ nhật thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 190092,
           "order_index": 2,
           "japanese": "掃除したり、",
           "vietnamese": "dọn dẹp",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 190093,
           "order_index": 3,
           "japanese": "洗濯したりします。",
           "vietnamese": "giặt giũ, v.v.",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -13607,27 +15293,31 @@ export const generatedSentences = {
       "full_romaji": "Yasumi no hi wa hon o yondari, eiga o mitari shimasu.",
       "full_vietnamese": "Ngày nghỉ tôi đọc sách, xem phim, v.v.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 190101,
           "order_index": 1,
           "japanese": "休みの日は",
           "vietnamese": "ngày nghỉ thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 190102,
           "order_index": 2,
           "japanese": "本を読んだり、",
           "vietnamese": "đọc sách",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 190103,
           "order_index": 3,
           "japanese": "映画を見たりします。",
           "vietnamese": "xem phim, v.v.",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -13639,27 +15329,31 @@ export const generatedSentences = {
       "full_romaji": "Natsuyasumi wa oyoidari, yama ni nobottari shimashita.",
       "full_vietnamese": "Kỳ nghỉ hè tôi đã bơi, leo núi, v.v.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 190111,
           "order_index": 1,
           "japanese": "夏休みは",
           "vietnamese": "kỳ nghỉ hè thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 190112,
           "order_index": 2,
           "japanese": "泳いだり、",
           "vietnamese": "bơi",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 190113,
           "order_index": 3,
           "japanese": "山に登ったりしました。",
           "vietnamese": "leo núi, v.v.",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -13671,27 +15365,31 @@ export const generatedSentences = {
       "full_romaji": "Kyouto de otera o mitari, shashin o tottari shimashita.",
       "full_vietnamese": "Ở Kyoto tôi đã thăm chùa, chụp ảnh, v.v.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 190121,
           "order_index": 1,
           "japanese": "京都で",
           "vietnamese": "ở Kyoto",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 190122,
           "order_index": 2,
           "japanese": "お寺を見たり、",
           "vietnamese": "thăm chùa",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 190123,
           "order_index": 3,
           "japanese": "写真を撮ったりしました。",
           "vietnamese": "chụp ảnh, v.v.",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -13703,27 +15401,31 @@ export const generatedSentences = {
       "full_romaji": "Maiban ongaku o kiitari, nikki o kaitari shimasu.",
       "full_vietnamese": "Mỗi tối tôi nghe nhạc, viết nhật ký, v.v.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 190131,
           "order_index": 1,
           "japanese": "毎晩",
           "vietnamese": "mỗi tối",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 190132,
           "order_index": 2,
           "japanese": "音楽を聞いたり、",
           "vietnamese": "nghe nhạc",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 190133,
           "order_index": 3,
           "japanese": "日記を書いたりします。",
           "vietnamese": "viết nhật ký, v.v.",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -13735,27 +15437,31 @@ export const generatedSentences = {
       "full_romaji": "Korekara dandan atsuku narimasu.",
       "full_vietnamese": "Từ giờ trời sẽ dần nóng lên.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 190141,
           "order_index": 1,
           "japanese": "これから",
           "vietnamese": "từ giờ",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 190142,
           "order_index": 2,
           "japanese": "だんだん",
           "vietnamese": "dần dần",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 190143,
           "order_index": 3,
           "japanese": "暑くなります。",
           "vietnamese": "trở nên nóng",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -13767,20 +15473,23 @@ export const generatedSentences = {
       "full_romaji": "Aki ni naru to, suzushiku narimasu.",
       "full_vietnamese": "Khi sang thu, trời trở nên mát.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 190151,
           "order_index": 1,
           "japanese": "秋になると、",
           "vietnamese": "khi sang thu",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 190152,
           "order_index": 2,
           "japanese": "涼しくなります。",
           "vietnamese": "trở nên mát",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -13792,20 +15501,23 @@ export const generatedSentences = {
       "full_romaji": "Nihongo ga jouzu ni narimashita.",
       "full_vietnamese": "Tiếng Nhật của tôi đã trở nên giỏi hơn.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 190161,
           "order_index": 1,
           "japanese": "日本語が",
           "vietnamese": "tiếng Nhật",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 190162,
           "order_index": 2,
           "japanese": "上手になりました。",
           "vietnamese": "đã trở nên giỏi",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -13817,20 +15529,23 @@ export const generatedSentences = {
       "full_romaji": "Heya ga kirei ni narimashita.",
       "full_vietnamese": "Căn phòng đã trở nên sạch đẹp.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 190171,
           "order_index": 1,
           "japanese": "部屋が",
           "vietnamese": "căn phòng",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 190172,
           "order_index": 2,
           "japanese": "きれいになりました。",
           "vietnamese": "đã trở nên sạch đẹp",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -13842,20 +15557,23 @@ export const generatedSentences = {
       "full_romaji": "Musuko wa juuhassai ni narimashita.",
       "full_vietnamese": "Con trai tôi đã tròn 18 tuổi.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 190181,
           "order_index": 1,
           "japanese": "息子は",
           "vietnamese": "con trai tôi thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 190182,
           "order_index": 2,
           "japanese": "十八歳になりました。",
           "vietnamese": "đã tròn 18 tuổi",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -13867,27 +15585,31 @@ export const generatedSentences = {
       "full_romaji": "Rainen, chichi wa rokujussai ni narimasu.",
       "full_vietnamese": "Năm sau bố tôi sẽ tròn 60 tuổi.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 190191,
           "order_index": 1,
           "japanese": "来年、",
           "vietnamese": "năm sau",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 190192,
           "order_index": 2,
           "japanese": "父は",
           "vietnamese": "bố tôi thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 190193,
           "order_index": 3,
           "japanese": "六十歳になります。",
           "vietnamese": "sẽ tròn 60 tuổi",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -13899,27 +15621,31 @@ export const generatedSentences = {
       "full_romaji": "Saikin, hi ga nagaku narimashita.",
       "full_vietnamese": "Gần đây ngày đã dài hơn.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 190201,
           "order_index": 1,
           "japanese": "最近、",
           "vietnamese": "gần đây",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 190202,
           "order_index": 2,
           "japanese": "日が",
           "vietnamese": "ngày",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 190203,
           "order_index": 3,
           "japanese": "長くなりました。",
           "vietnamese": "đã trở nên dài",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -13931,20 +15657,23 @@ export const generatedSentences = {
       "full_romaji": "Karada no choushi ga yoku narimashita.",
       "full_vietnamese": "Tình trạng sức khỏe đã tốt hơn.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 190211,
           "order_index": 1,
           "japanese": "体の調子が",
           "vietnamese": "tình trạng sức khỏe",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 190212,
           "order_index": 2,
           "japanese": "よくなりました。",
           "vietnamese": "đã tốt hơn",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -13956,20 +15685,23 @@ export const generatedSentences = {
       "full_romaji": "Ichido sushi o tsukutta koto ga arimasu.",
       "full_vietnamese": "Tôi đã từng làm sushi một lần.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 190221,
           "order_index": 1,
           "japanese": "一度",
           "vietnamese": "một lần",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 190222,
           "order_index": 2,
           "japanese": "すしを作ったことがあります。",
           "vietnamese": "đã từng làm sushi",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -13981,20 +15713,23 @@ export const generatedSentences = {
       "full_romaji": "Zehi ichido asobi ni kite kudasai.",
       "full_vietnamese": "Nhất định hãy đến chơi một lần nhé.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 190231,
           "order_index": 1,
           "japanese": "ぜひ一度",
           "vietnamese": "nhất định một lần",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 190232,
           "order_index": 2,
           "japanese": "遊びに来てください。",
           "vietnamese": "hãy đến chơi",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -14006,27 +15741,31 @@ export const generatedSentences = {
       "full_romaji": "Sou desu ne. Watashi mo ikitai desu.",
       "full_vietnamese": "Đúng nhỉ. Tôi cũng muốn đi.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 190241,
           "order_index": 1,
           "japanese": "そうですね。",
           "vietnamese": "đúng nhỉ",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 190242,
           "order_index": 2,
           "japanese": "わたしも",
           "vietnamese": "tôi cũng",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 190243,
           "order_index": 3,
           "japanese": "行きたいです。",
           "vietnamese": "muốn đi",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     }
@@ -14040,27 +15779,31 @@ export const generatedSentences = {
       "full_romaji": "Ashita Toukyou e iku.",
       "full_vietnamese": "Ngày mai tôi đi Tokyo.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 200011,
           "order_index": 1,
           "japanese": "あした",
           "vietnamese": "ngày mai",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 200012,
           "order_index": 2,
           "japanese": "東京へ",
           "vietnamese": "đến Tokyo",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 200013,
           "order_index": 3,
           "japanese": "行く。",
           "vietnamese": "đi",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -14072,27 +15815,31 @@ export const generatedSentences = {
       "full_romaji": "Kyou wa doko e mo ikanai.",
       "full_vietnamese": "Hôm nay tôi không đi đâu cả.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 200021,
           "order_index": 1,
           "japanese": "きょうは",
           "vietnamese": "hôm nay thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 200022,
           "order_index": 2,
           "japanese": "どこへも",
           "vietnamese": "không đâu cả",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 200023,
           "order_index": 3,
           "japanese": "行かない。",
           "vietnamese": "không đi",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -14104,27 +15851,31 @@ export const generatedSentences = {
       "full_romaji": "Kinou eiga o mita.",
       "full_vietnamese": "Hôm qua tôi đã xem phim.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 200031,
           "order_index": 1,
           "japanese": "きのう",
           "vietnamese": "hôm qua",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 200032,
           "order_index": 2,
           "japanese": "映画を",
           "vietnamese": "phim",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 200033,
           "order_index": 3,
           "japanese": "見た。",
           "vietnamese": "đã xem",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -14136,20 +15887,23 @@ export const generatedSentences = {
       "full_romaji": "Asagohan o tabenakatta.",
       "full_vietnamese": "Tôi đã không ăn sáng.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 200041,
           "order_index": 1,
           "japanese": "朝御飯を",
           "vietnamese": "bữa sáng",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 200042,
           "order_index": 2,
           "japanese": "食べなかった。",
           "vietnamese": "đã không ăn",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -14161,20 +15915,23 @@ export const generatedSentences = {
       "full_romaji": "Mainichi isogashii.",
       "full_vietnamese": "Mỗi ngày đều bận.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 200051,
           "order_index": 1,
           "japanese": "毎日",
           "vietnamese": "mỗi ngày",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 200052,
           "order_index": 2,
           "japanese": "忙しい。",
           "vietnamese": "bận",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -14186,20 +15943,23 @@ export const generatedSentences = {
       "full_romaji": "Kono hon wa omoshirokunai.",
       "full_vietnamese": "Quyển sách này không thú vị.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 200061,
           "order_index": 1,
           "japanese": "この本は",
           "vietnamese": "quyển sách này thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 200062,
           "order_index": 2,
           "japanese": "おもしろくない。",
           "vietnamese": "không thú vị",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -14211,20 +15971,23 @@ export const generatedSentences = {
       "full_romaji": "Kinou wa samukatta.",
       "full_vietnamese": "Hôm qua trời lạnh.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 200071,
           "order_index": 1,
           "japanese": "きのうは",
           "vietnamese": "hôm qua thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 200072,
           "order_index": 2,
           "japanese": "寒かった。",
           "vietnamese": "đã lạnh",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -14236,20 +15999,23 @@ export const generatedSentences = {
       "full_romaji": "Shiken wa muzukashikunakatta.",
       "full_vietnamese": "Bài thi đã không khó.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 200081,
           "order_index": 1,
           "japanese": "試験は",
           "vietnamese": "bài thi thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 200082,
           "order_index": 2,
           "japanese": "難しくなかった。",
           "vietnamese": "đã không khó",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -14261,20 +16027,23 @@ export const generatedSentences = {
       "full_romaji": "Kono machi wa shizuka da.",
       "full_vietnamese": "Thành phố này yên tĩnh.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 200091,
           "order_index": 1,
           "japanese": "この町は",
           "vietnamese": "thành phố này thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 200092,
           "order_index": 2,
           "japanese": "静かだ。",
           "vietnamese": "yên tĩnh",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -14286,20 +16055,23 @@ export const generatedSentences = {
       "full_romaji": "Ano hito wa gakusei ja nai.",
       "full_vietnamese": "Người kia không phải học sinh.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 200101,
           "order_index": 1,
           "japanese": "あの人は",
           "vietnamese": "người kia thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 200102,
           "order_index": 2,
           "japanese": "学生じゃない。",
           "vietnamese": "không phải học sinh",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -14311,20 +16083,23 @@ export const generatedSentences = {
       "full_romaji": "Kinou wa yasumi datta.",
       "full_vietnamese": "Hôm qua là ngày nghỉ.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 200111,
           "order_index": 1,
           "japanese": "きのうは",
           "vietnamese": "hôm qua thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 200112,
           "order_index": 2,
           "japanese": "休みだった。",
           "vietnamese": "đã là ngày nghỉ",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -14336,20 +16111,23 @@ export const generatedSentences = {
       "full_romaji": "Paatii wa nigiyaka ja nakatta.",
       "full_vietnamese": "Bữa tiệc đã không nhộn nhịp.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 200121,
           "order_index": 1,
           "japanese": "パーティーは",
           "vietnamese": "bữa tiệc thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 200122,
           "order_index": 2,
           "japanese": "にぎやかじゃなかった。",
           "vietnamese": "đã không nhộn nhịp",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -14361,20 +16139,23 @@ export const generatedSentences = {
       "full_romaji": "Natsuyasumi, kuni e kaeru?",
       "full_vietnamese": "Nghỉ hè cậu về nước à?",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 200131,
           "order_index": 1,
           "japanese": "夏休み、",
           "vietnamese": "kỳ nghỉ hè",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 200132,
           "order_index": 2,
           "japanese": "国へ帰る？",
           "vietnamese": "về nước à",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -14386,20 +16167,23 @@ export const generatedSentences = {
       "full_romaji": "Un, kaeru.",
       "full_vietnamese": "Ừ, mình về.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 200141,
           "order_index": 1,
           "japanese": "うん、",
           "vietnamese": "ừ",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 200142,
           "order_index": 2,
           "japanese": "帰る。",
           "vietnamese": "về",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -14411,20 +16195,23 @@ export const generatedSentences = {
       "full_romaji": "Pasupooto ga iru?",
       "full_vietnamese": "Có cần hộ chiếu không?",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 200151,
           "order_index": 1,
           "japanese": "パスポートが",
           "vietnamese": "hộ chiếu",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 200152,
           "order_index": 2,
           "japanese": "要る？",
           "vietnamese": "có cần không",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -14436,20 +16223,23 @@ export const generatedSentences = {
       "full_romaji": "Uun, iranai.",
       "full_vietnamese": "Không, không cần.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 200161,
           "order_index": 1,
           "japanese": "ううん、",
           "vietnamese": "không",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 200162,
           "order_index": 2,
           "japanese": "要らない。",
           "vietnamese": "không cần",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -14461,20 +16251,23 @@ export const generatedSentences = {
       "full_romaji": "Nichiyoubi, nani o shita?",
       "full_vietnamese": "Chủ nhật cậu đã làm gì?",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 200171,
           "order_index": 1,
           "japanese": "日曜日、",
           "vietnamese": "Chủ nhật",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 200172,
           "order_index": 2,
           "japanese": "何をした？",
           "vietnamese": "đã làm gì",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -14486,27 +16279,31 @@ export const generatedSentences = {
       "full_romaji": "Tomodachi to sakkaa o shita.",
       "full_vietnamese": "Mình đã chơi bóng đá với bạn.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 200181,
           "order_index": 1,
           "japanese": "友達と",
           "vietnamese": "với bạn",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 200182,
           "order_index": 2,
           "japanese": "サッカーを",
           "vietnamese": "bóng đá",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 200183,
           "order_index": 3,
           "japanese": "した。",
           "vietnamese": "đã chơi",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -14518,20 +16315,23 @@ export const generatedSentences = {
       "full_romaji": "Koohii, nomu?",
       "full_vietnamese": "Uống cà phê không?",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 200191,
           "order_index": 1,
           "japanese": "コーヒー、",
           "vietnamese": "cà phê",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 200192,
           "order_index": 2,
           "japanese": "飲む？",
           "vietnamese": "uống không",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -14543,20 +16343,23 @@ export const generatedSentences = {
       "full_romaji": "Un, nomu.",
       "full_vietnamese": "Ừ, uống.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 200201,
           "order_index": 1,
           "japanese": "うん、",
           "vietnamese": "ừ",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 200202,
           "order_index": 2,
           "japanese": "飲む。",
           "vietnamese": "uống",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -14568,20 +16371,23 @@ export const generatedSentences = {
       "full_romaji": "Sono jitensha, dou shita no?",
       "full_vietnamese": "Chiếc xe đạp đó làm sao vậy?",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 200211,
           "order_index": 1,
           "japanese": "その自転車、",
           "vietnamese": "chiếc xe đạp đó",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 200212,
           "order_index": 2,
           "japanese": "どうしたの？",
           "vietnamese": "làm sao vậy",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -14593,20 +16399,23 @@ export const generatedSentences = {
       "full_romaji": "Tomodachi ga kureta.",
       "full_vietnamese": "Bạn đã tặng mình.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 200221,
           "order_index": 1,
           "japanese": "友達が",
           "vietnamese": "bạn",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 200222,
           "order_index": 2,
           "japanese": "くれた。",
           "vietnamese": "đã tặng mình",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -14618,27 +16427,31 @@ export const generatedSentences = {
       "full_romaji": "Chotto kotoba no imi o shiraberu.",
       "full_vietnamese": "Mình tra nghĩa của từ một chút.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 200231,
           "order_index": 1,
           "japanese": "ちょっと",
           "vietnamese": "một chút",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 200232,
           "order_index": 2,
           "japanese": "言葉の意味を",
           "vietnamese": "nghĩa của từ",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 200233,
           "order_index": 3,
           "japanese": "調べる。",
           "vietnamese": "tra cứu",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -14650,20 +16463,23 @@ export const generatedSentences = {
       "full_romaji": "Kowareta jitensha o naosu.",
       "full_vietnamese": "Mình sửa chiếc xe đạp bị hỏng.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 200241,
           "order_index": 1,
           "japanese": "壊れた自転車を",
           "vietnamese": "xe đạp bị hỏng",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 200242,
           "order_index": 2,
           "japanese": "直す。",
           "vietnamese": "sửa",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     }
@@ -14677,20 +16493,23 @@ export const generatedSentences = {
       "full_romaji": "Ashita ame ga furu to omoimasu.",
       "full_vietnamese": "Tôi nghĩ ngày mai trời sẽ mưa.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 210011,
           "order_index": 1,
           "japanese": "あした雨が降る",
           "vietnamese": "ngày mai trời sẽ mưa",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 210012,
           "order_index": 2,
           "japanese": "と思います。",
           "vietnamese": "tôi nghĩ rằng",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -14702,20 +16521,23 @@ export const generatedSentences = {
       "full_romaji": "Nihon wa bukka ga takai to omoimasu.",
       "full_vietnamese": "Tôi nghĩ vật giá ở Nhật cao.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 210021,
           "order_index": 1,
           "japanese": "日本は物価が高い",
           "vietnamese": "vật giá ở Nhật cao",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 210022,
           "order_index": 2,
           "japanese": "と思います。",
           "vietnamese": "tôi nghĩ rằng",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -14727,20 +16549,23 @@ export const generatedSentences = {
       "full_romaji": "Kono shigoto wa taihen da to omoimasu.",
       "full_vietnamese": "Tôi nghĩ công việc này vất vả.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 210031,
           "order_index": 1,
           "japanese": "この仕事は大変だ",
           "vietnamese": "công việc này vất vả",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 210032,
           "order_index": 2,
           "japanese": "と思います。",
           "vietnamese": "tôi nghĩ rằng",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -14752,20 +16577,23 @@ export const generatedSentences = {
       "full_romaji": "Miraa-san wa konai to omoimasu.",
       "full_vietnamese": "Tôi nghĩ anh Miller sẽ không đến.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 210041,
           "order_index": 1,
           "japanese": "ミラーさんは来ない",
           "vietnamese": "anh Miller sẽ không đến",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 210042,
           "order_index": 2,
           "japanese": "と思います。",
           "vietnamese": "tôi nghĩ rằng",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -14777,20 +16605,23 @@ export const generatedSentences = {
       "full_romaji": "Kinou Tanaka-san wa yasunda to omoimasu.",
       "full_vietnamese": "Tôi nghĩ hôm qua anh Tanaka đã nghỉ.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 210051,
           "order_index": 1,
           "japanese": "きのう田中さんは休んだ",
           "vietnamese": "hôm qua Tanaka đã nghỉ",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 210052,
           "order_index": 2,
           "japanese": "と思います。",
           "vietnamese": "tôi nghĩ rằng",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -14802,20 +16633,23 @@ export const generatedSentences = {
       "full_romaji": "Ano eiga wa omoshirokunakatta to omoimasu.",
       "full_vietnamese": "Tôi nghĩ bộ phim kia đã không thú vị.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 210061,
           "order_index": 1,
           "japanese": "あの映画はおもしろくなかった",
           "vietnamese": "phim kia đã không thú vị",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 210062,
           "order_index": 2,
           "japanese": "と思います。",
           "vietnamese": "tôi nghĩ rằng",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -14827,20 +16661,23 @@ export const generatedSentences = {
       "full_romaji": "Atarashii kuukou wa benri da to omoimasu.",
       "full_vietnamese": "Tôi nghĩ sân bay mới tiện lợi.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 210071,
           "order_index": 1,
           "japanese": "新しい空港は便利だ",
           "vietnamese": "sân bay mới tiện lợi",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 210072,
           "order_index": 2,
           "japanese": "と思います。",
           "vietnamese": "tôi nghĩ rằng",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -14852,20 +16689,23 @@ export const generatedSentences = {
       "full_romaji": "Nihon ni tsuite dou omoimasu ka.",
       "full_vietnamese": "Bạn nghĩ thế nào về Nhật Bản?",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 210081,
           "order_index": 1,
           "japanese": "日本について",
           "vietnamese": "về Nhật Bản",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 210082,
           "order_index": 2,
           "japanese": "どう思いますか。",
           "vietnamese": "nghĩ thế nào",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -14877,20 +16717,23 @@ export const generatedSentences = {
       "full_romaji": "Nihon wa koutsuu ga benri da to omoimasu.",
       "full_vietnamese": "Tôi nghĩ giao thông Nhật Bản tiện lợi.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 210091,
           "order_index": 1,
           "japanese": "日本は交通が便利だ",
           "vietnamese": "giao thông Nhật tiện lợi",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 210092,
           "order_index": 2,
           "japanese": "と思います。",
           "vietnamese": "tôi nghĩ rằng",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -14902,20 +16745,23 @@ export const generatedSentences = {
       "full_romaji": "Watashi mo sou omoimasu.",
       "full_vietnamese": "Tôi cũng nghĩ vậy.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 210101,
           "order_index": 1,
           "japanese": "わたしも",
           "vietnamese": "tôi cũng",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 210102,
           "order_index": 2,
           "japanese": "そう思います。",
           "vietnamese": "nghĩ như vậy",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -14927,20 +16773,23 @@ export const generatedSentences = {
       "full_romaji": "Watashi wa sou omoimasen.",
       "full_vietnamese": "Tôi không nghĩ vậy.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 210111,
           "order_index": 1,
           "japanese": "わたしは",
           "vietnamese": "tôi thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 210112,
           "order_index": 2,
           "japanese": "そう思いません。",
           "vietnamese": "không nghĩ vậy",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -14952,20 +16801,23 @@ export const generatedSentences = {
       "full_romaji": "Sensei wa ashita shiken ga aru to iimashita.",
       "full_vietnamese": "Giáo viên nói ngày mai có bài thi.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 210121,
           "order_index": 1,
           "japanese": "先生はあした試験がある",
           "vietnamese": "giáo viên: ngày mai có bài thi",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 210122,
           "order_index": 2,
           "japanese": "と言いました。",
           "vietnamese": "đã nói rằng",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -14977,20 +16829,23 @@ export const generatedSentences = {
       "full_romaji": "Tanaka-san wa raigetsu Oosaka e iku to iimashita.",
       "full_vietnamese": "Anh Tanaka nói tháng sau sẽ đi Osaka.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 210131,
           "order_index": 1,
           "japanese": "田中さんは来月大阪へ行く",
           "vietnamese": "Tanaka tháng sau đi Osaka",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 210132,
           "order_index": 2,
           "japanese": "と言いました。",
           "vietnamese": "đã nói rằng",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -15002,20 +16857,23 @@ export const generatedSentences = {
       "full_romaji": "Haha wa hayaku kaette kudasai to iimashita.",
       "full_vietnamese": "Mẹ nói: Hãy về sớm.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 210141,
           "order_index": 1,
           "japanese": "母は「早く帰ってください」",
           "vietnamese": "mẹ: hãy về sớm",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 210142,
           "order_index": 2,
           "japanese": "と言いました。",
           "vietnamese": "đã nói",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -15027,20 +16885,23 @@ export const generatedSentences = {
       "full_romaji": "Yamada-san wa kaigi ni demasen to iimashita.",
       "full_vietnamese": "Anh Yamada nói: Tôi không dự họp.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 210151,
           "order_index": 1,
           "japanese": "山田さんは「会議に出ません」",
           "vietnamese": "Yamada: không dự họp",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 210152,
           "order_index": 2,
           "japanese": "と言いました。",
           "vietnamese": "đã nói",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -15052,20 +16913,23 @@ export const generatedSentences = {
       "full_romaji": "Neru mae ni oyasuminasai to iimasu.",
       "full_vietnamese": "Trước khi ngủ, chúng ta nói chúc ngủ ngon.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 210161,
           "order_index": 1,
           "japanese": "寝る前に「お休みなさい」",
           "vietnamese": "trước khi ngủ: chúc ngủ ngon",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 210162,
           "order_index": 2,
           "japanese": "と言います。",
           "vietnamese": "nói",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -15077,20 +16941,23 @@ export const generatedSentences = {
       "full_romaji": "Nihon no kuruma wa hinshitsu ga ii deshou.",
       "full_vietnamese": "Ô tô Nhật có chất lượng tốt phải không?",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 210171,
           "order_index": 1,
           "japanese": "日本の車は品質がいい",
           "vietnamese": "ô tô Nhật có chất lượng tốt",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 210172,
           "order_index": 2,
           "japanese": "でしょう。",
           "vietnamese": "đúng không nhỉ",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -15102,20 +16969,23 @@ export const generatedSentences = {
       "full_romaji": "Hokkaidou wa samukatta deshou.",
       "full_vietnamese": "Hokkaido đã lạnh lắm phải không?",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 210181,
           "order_index": 1,
           "japanese": "北海道は寒かった",
           "vietnamese": "Hokkaido đã lạnh",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 210182,
           "order_index": 2,
           "japanese": "でしょう。",
           "vietnamese": "phải không",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -15127,20 +16997,23 @@ export const generatedSentences = {
       "full_romaji": "Kono dezain wa suteki deshou.",
       "full_vietnamese": "Thiết kế này đẹp phải không?",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 210191,
           "order_index": 1,
           "japanese": "このデザインはすてき",
           "vietnamese": "thiết kế này đẹp",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 210192,
           "order_index": 2,
           "japanese": "でしょう。",
           "vietnamese": "phải không",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -15152,20 +17025,23 @@ export const generatedSentences = {
       "full_romaji": "Yamada-san wa kaigi ni deru deshou.",
       "full_vietnamese": "Anh Yamada sẽ dự họp phải không?",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 210201,
           "order_index": 1,
           "japanese": "山田さんは会議に出る",
           "vietnamese": "Yamada sẽ dự họp",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 210202,
           "order_index": 2,
           "japanese": "でしょう。",
           "vietnamese": "phải không",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -15177,20 +17053,23 @@ export const generatedSentences = {
       "full_romaji": "Nihon de ichiban ninki ga aru supootsu wa nan desu ka.",
       "full_vietnamese": "Môn thể thao phổ biến nhất ở Nhật là gì?",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 210211,
           "order_index": 1,
           "japanese": "日本でいちばん人気があるスポーツは",
           "vietnamese": "môn thể thao phổ biến nhất ở Nhật",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 210212,
           "order_index": 2,
           "japanese": "何ですか。",
           "vietnamese": "là gì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -15202,20 +17081,23 @@ export const generatedSentences = {
       "full_romaji": "Sumou da to omoimasu.",
       "full_vietnamese": "Tôi nghĩ là Sumo.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 210221,
           "order_index": 1,
           "japanese": "相撲だ",
           "vietnamese": "là Sumo",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 210222,
           "order_index": 2,
           "japanese": "と思います。",
           "vietnamese": "tôi nghĩ",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -15227,20 +17109,23 @@ export const generatedSentences = {
       "full_romaji": "Saikin no nyuusu ni tsuite hanashimashou.",
       "full_vietnamese": "Hãy nói về tin tức gần đây.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 210231,
           "order_index": 1,
           "japanese": "最近のニュースについて",
           "vietnamese": "về tin tức gần đây",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 210232,
           "order_index": 2,
           "japanese": "話しましょう。",
           "vietnamese": "hãy nói chuyện",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -15252,20 +17137,23 @@ export const generatedSentences = {
       "full_romaji": "Kono iken wa yaku ni tatsu to omoimasu.",
       "full_vietnamese": "Tôi nghĩ ý kiến này hữu ích.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 210241,
           "order_index": 1,
           "japanese": "この意見は役に立つ",
           "vietnamese": "ý kiến này hữu ích",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 210242,
           "order_index": 2,
           "japanese": "と思います。",
           "vietnamese": "tôi nghĩ rằng",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     }
@@ -15279,20 +17167,23 @@ export const generatedSentences = {
       "full_romaji": "Kore wa Miraa-san ga tsukutta keeki desu.",
       "full_vietnamese": "Đây là chiếc bánh anh Miller đã làm.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 220011,
           "order_index": 1,
           "japanese": "これは",
           "vietnamese": "đây thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 220012,
           "order_index": 2,
           "japanese": "ミラーさんが作ったケーキです。",
           "vietnamese": "là bánh Miller đã làm",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -15304,20 +17195,23 @@ export const generatedSentences = {
       "full_romaji": "Kore wa Kyouto de totta shashin desu.",
       "full_vietnamese": "Đây là bức ảnh được chụp ở Kyoto.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 220021,
           "order_index": 1,
           "japanese": "これは",
           "vietnamese": "đây thì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 220022,
           "order_index": 2,
           "japanese": "京都で撮った写真です。",
           "vietnamese": "là ảnh chụp ở Kyoto",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -15329,20 +17223,23 @@ export const generatedSentences = {
       "full_romaji": "Asoko ni tatte iru hito wa dare desu ka.",
       "full_vietnamese": "Người đang đứng ở đằng kia là ai?",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 220031,
           "order_index": 1,
           "japanese": "あそこに立っている人は",
           "vietnamese": "người đang đứng ở kia",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 220032,
           "order_index": 2,
           "japanese": "だれですか。",
           "vietnamese": "là ai",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -15354,20 +17251,23 @@ export const generatedSentences = {
       "full_romaji": "Shinbun o yonde iru hito wa chichi desu.",
       "full_vietnamese": "Người đang đọc báo là bố tôi.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 220041,
           "order_index": 1,
           "japanese": "新聞を読んでいる人は",
           "vietnamese": "người đang đọc báo",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 220042,
           "order_index": 2,
           "japanese": "父です。",
           "vietnamese": "là bố tôi",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -15379,20 +17279,23 @@ export const generatedSentences = {
       "full_romaji": "Ano megane o kakete iru hito wa Yamada-san desu.",
       "full_vietnamese": "Người đeo kính kia là anh Yamada.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 220051,
           "order_index": 1,
           "japanese": "あの眼鏡をかけている人は",
           "vietnamese": "người đang đeo kính kia",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 220052,
           "order_index": 2,
           "japanese": "山田さんです。",
           "vietnamese": "là anh Yamada",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -15404,20 +17307,23 @@ export const generatedSentences = {
       "full_romaji": "Watashi ga itsumo kaimono suru mise wa eki no mae desu.",
       "full_vietnamese": "Cửa hàng tôi thường mua sắm ở trước ga.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 220061,
           "order_index": 1,
           "japanese": "わたしがいつも買い物する店は",
           "vietnamese": "cửa hàng tôi thường mua sắm",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 220062,
           "order_index": 2,
           "japanese": "駅の前です。",
           "vietnamese": "ở trước ga",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -15429,20 +17335,23 @@ export const generatedSentences = {
       "full_romaji": "Haha ga tsukuru ryouri wa oishii desu.",
       "full_vietnamese": "Món mẹ tôi nấu rất ngon.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 220071,
           "order_index": 1,
           "japanese": "母が作る料理は",
           "vietnamese": "món mẹ nấu",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 220072,
           "order_index": 2,
           "japanese": "おいしいです。",
           "vietnamese": "ngon",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -15454,20 +17363,23 @@ export const generatedSentences = {
       "full_romaji": "Kinou katta kutsu o hakimasu.",
       "full_vietnamese": "Tôi đi đôi giày đã mua hôm qua.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 220081,
           "order_index": 1,
           "japanese": "昨日買った靴を",
           "vietnamese": "đôi giày mua hôm qua",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 220082,
           "order_index": 2,
           "japanese": "履きます。",
           "vietnamese": "đi/mang",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -15479,20 +17391,23 @@ export const generatedSentences = {
       "full_romaji": "Tomodachi ni moratta tokei o nakushimashita.",
       "full_vietnamese": "Tôi đã làm mất chiếc đồng hồ nhận từ bạn.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 220091,
           "order_index": 1,
           "japanese": "友達にもらった時計を",
           "vietnamese": "đồng hồ nhận từ bạn",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 220092,
           "order_index": 2,
           "japanese": "なくしました。",
           "vietnamese": "đã làm mất",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -15504,20 +17419,23 @@ export const generatedSentences = {
       "full_romaji": "Nihon de katta kaban o tsukatte imasu.",
       "full_vietnamese": "Tôi đang dùng chiếc cặp đã mua ở Nhật.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 220101,
           "order_index": 1,
           "japanese": "日本で買ったかばんを",
           "vietnamese": "chiếc cặp mua ở Nhật",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 220102,
           "order_index": 2,
           "japanese": "使っています。",
           "vietnamese": "đang dùng",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -15529,20 +17447,23 @@ export const generatedSentences = {
       "full_romaji": "Watashi ga sunde iru machi wa shizuka desu.",
       "full_vietnamese": "Thành phố tôi đang sống yên tĩnh.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 220111,
           "order_index": 1,
           "japanese": "わたしが住んでいる町は",
           "vietnamese": "thành phố tôi đang sống",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 220112,
           "order_index": 2,
           "japanese": "静かです。",
           "vietnamese": "yên tĩnh",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -15554,20 +17475,23 @@ export const generatedSentences = {
       "full_romaji": "Miraa-san ga hataraite iru kaisha wa IMC desu.",
       "full_vietnamese": "Công ty anh Miller làm việc là IMC.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 220121,
           "order_index": 1,
           "japanese": "ミラーさんが働いている会社は",
           "vietnamese": "công ty Miller làm việc",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 220122,
           "order_index": 2,
           "japanese": "IMCです。",
           "vietnamese": "là IMC",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -15579,20 +17503,23 @@ export const generatedSentences = {
       "full_romaji": "Eki no chikaku ni aru kissaten de aimashou.",
       "full_vietnamese": "Chúng ta gặp ở quán cà phê gần ga nhé.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 220131,
           "order_index": 1,
           "japanese": "駅の近くにある喫茶店で",
           "vietnamese": "tại quán cà phê gần ga",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 220132,
           "order_index": 2,
           "japanese": "会いましょう。",
           "vietnamese": "hãy gặp nhau",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -15604,20 +17531,23 @@ export const generatedSentences = {
       "full_romaji": "Niwa ga aru uchi ga hoshii desu.",
       "full_vietnamese": "Tôi muốn một căn nhà có sân vườn.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 220141,
           "order_index": 1,
           "japanese": "庭があるうちが",
           "vietnamese": "căn nhà có sân vườn",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 220142,
           "order_index": 2,
           "japanese": "欲しいです。",
           "vietnamese": "muốn có",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -15629,20 +17559,23 @@ export const generatedSentences = {
       "full_romaji": "Ryouri o tsukuru daidokoro ga hiroi uchi o sagashite imasu.",
       "full_vietnamese": "Tôi đang tìm căn nhà có bếp nấu ăn rộng.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 220151,
           "order_index": 1,
           "japanese": "料理を作る台所が広いうちを",
           "vietnamese": "căn nhà có bếp nấu ăn rộng",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 220152,
           "order_index": 2,
           "japanese": "探しています。",
           "vietnamese": "đang tìm",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -15654,20 +17587,23 @@ export const generatedSentences = {
       "full_romaji": "Kazoku ga sumu heya ga mittsu irimasu.",
       "full_vietnamese": "Tôi cần ba phòng cho gia đình ở.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 220161,
           "order_index": 1,
           "japanese": "家族が住む部屋が",
           "vietnamese": "phòng gia đình sẽ ở",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 220162,
           "order_index": 2,
           "japanese": "三つ要ります。",
           "vietnamese": "cần ba phòng",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -15679,20 +17615,23 @@ export const generatedSentences = {
       "full_romaji": "Nichiyoubi ni suru shigoto ga arimasu.",
       "full_vietnamese": "Tôi có việc phải làm vào Chủ nhật.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 220171,
           "order_index": 1,
           "japanese": "日曜日にする仕事が",
           "vietnamese": "việc làm vào Chủ nhật",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 220172,
           "order_index": 2,
           "japanese": "あります。",
           "vietnamese": "có",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -15704,20 +17643,23 @@ export const generatedSentences = {
       "full_romaji": "Ginkou e iku jikan ga arimasen.",
       "full_vietnamese": "Tôi không có thời gian đi ngân hàng.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 220181,
           "order_index": 1,
           "japanese": "銀行へ行く時間が",
           "vietnamese": "thời gian đi ngân hàng",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 220182,
           "order_index": 2,
           "japanese": "ありません。",
           "vietnamese": "không có",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -15729,20 +17671,23 @@ export const generatedSentences = {
       "full_romaji": "Tomodachi to eiga o miru yakusoku ga arimasu.",
       "full_vietnamese": "Tôi có hẹn xem phim với bạn.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 220191,
           "order_index": 1,
           "japanese": "友達と映画を見る約束が",
           "vietnamese": "cuộc hẹn xem phim với bạn",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 220192,
           "order_index": 2,
           "japanese": "あります。",
           "vietnamese": "có",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -15754,20 +17699,23 @@ export const generatedSentences = {
       "full_romaji": "Ryokou de kiru fuku o kaimashita.",
       "full_vietnamese": "Tôi đã mua quần áo để mặc khi du lịch.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 220201,
           "order_index": 1,
           "japanese": "旅行で着る服を",
           "vietnamese": "quần áo mặc khi du lịch",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 220202,
           "order_index": 2,
           "japanese": "買いました。",
           "vietnamese": "đã mua",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -15779,20 +17727,23 @@ export const generatedSentences = {
       "full_romaji": "Paatii de haku kutsu o erabimasu.",
       "full_vietnamese": "Tôi chọn giày để đi trong bữa tiệc.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 220211,
           "order_index": 1,
           "japanese": "パーティーで履く靴を",
           "vietnamese": "giày đi trong bữa tiệc",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 220212,
           "order_index": 2,
           "japanese": "選びます。",
           "vietnamese": "chọn",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -15804,20 +17755,23 @@ export const generatedSentences = {
       "full_romaji": "Atama ga yokute, shinsetsu na hito to kekkon shitai desu.",
       "full_vietnamese": "Tôi muốn kết hôn với người thông minh và tốt bụng.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 220221,
           "order_index": 1,
           "japanese": "頭がよくて、親切な人と",
           "vietnamese": "với người thông minh, tốt bụng",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 220222,
           "order_index": 2,
           "japanese": "結婚したいです。",
           "vietnamese": "muốn kết hôn",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -15829,20 +17783,23 @@ export const generatedSentences = {
       "full_romaji": "Akai nekutai o shite iru hito o shitte imasu ka.",
       "full_vietnamese": "Bạn có biết người đang đeo cà vạt đỏ không?",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 220231,
           "order_index": 1,
           "japanese": "赤いネクタイをしている人を",
           "vietnamese": "người đeo cà vạt đỏ",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 220232,
           "order_index": 2,
           "japanese": "知っていますか。",
           "vietnamese": "có biết không",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -15854,20 +17811,23 @@ export const generatedSentences = {
       "full_romaji": "Donna heya o osagashi desu ka.",
       "full_vietnamese": "Bạn đang tìm căn phòng như thế nào?",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 220241,
           "order_index": 1,
           "japanese": "どんな部屋を",
           "vietnamese": "căn phòng thế nào",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 220242,
           "order_index": 2,
           "japanese": "お探しですか。",
           "vietnamese": "đang tìm",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     }
@@ -15881,20 +17841,23 @@ export const generatedSentences = {
       "full_romaji": "Toshokan de hon o kariru toki, kaado ga irimasu.",
       "full_vietnamese": "Khi mượn sách ở thư viện, cần có thẻ.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 230011,
           "order_index": 1,
           "japanese": "図書館で本を借りるとき、",
           "vietnamese": "khi mượn sách ở thư viện",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 230012,
           "order_index": 2,
           "japanese": "カードが要ります。",
           "vietnamese": "cần thẻ",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -15906,20 +17869,23 @@ export const generatedSentences = {
       "full_romaji": "Tsukaikata ga wakaranai toki, sensei ni kikimasu.",
       "full_vietnamese": "Khi không hiểu cách dùng, tôi hỏi giáo viên.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 230021,
           "order_index": 1,
           "japanese": "使い方が分からないとき、",
           "vietnamese": "khi không hiểu cách dùng",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 230022,
           "order_index": 2,
           "japanese": "先生に聞きます。",
           "vietnamese": "hỏi giáo viên",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -15931,20 +17897,23 @@ export const generatedSentences = {
       "full_romaji": "Hima na toki, ongaku o kikimasu.",
       "full_vietnamese": "Khi rảnh tôi nghe nhạc.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 230031,
           "order_index": 1,
           "japanese": "暇なとき、",
           "vietnamese": "khi rảnh",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 230032,
           "order_index": 2,
           "japanese": "音楽を聞きます。",
           "vietnamese": "nghe nhạc",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -15956,20 +17925,23 @@ export const generatedSentences = {
       "full_romaji": "Kodomo no toki, yoku kawa de oyogimashita.",
       "full_vietnamese": "Khi còn nhỏ tôi thường bơi ở sông.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 230041,
           "order_index": 1,
           "japanese": "子どものとき、",
           "vietnamese": "khi còn nhỏ",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 230042,
           "order_index": 2,
           "japanese": "よく川で泳ぎました。",
           "vietnamese": "thường bơi ở sông",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -15981,20 +17953,23 @@ export const generatedSentences = {
       "full_romaji": "Wakai toki, gaikoku o ryokou shimashita.",
       "full_vietnamese": "Khi còn trẻ tôi đã du lịch nước ngoài.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 230051,
           "order_index": 1,
           "japanese": "若いとき、",
           "vietnamese": "khi còn trẻ",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 230052,
           "order_index": 2,
           "japanese": "外国を旅行しました。",
           "vietnamese": "đã du lịch nước ngoài",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -16006,20 +17981,23 @@ export const generatedSentences = {
       "full_romaji": "Nihon e kuru toki, kuukou de shashin o torimashita.",
       "full_vietnamese": "Khi đến Nhật, tôi đã chụp ảnh ở sân bay.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 230061,
           "order_index": 1,
           "japanese": "日本へ来るとき、",
           "vietnamese": "khi đang đến Nhật",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 230062,
           "order_index": 2,
           "japanese": "空港で写真を撮りました。",
           "vietnamese": "đã chụp ảnh ở sân bay",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -16031,20 +18009,23 @@ export const generatedSentences = {
       "full_romaji": "Nihon e kita toki, kuukou de tomodachi ni aimashita.",
       "full_vietnamese": "Khi đã đến Nhật, tôi gặp bạn ở sân bay.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 230071,
           "order_index": 1,
           "japanese": "日本へ来たとき、",
           "vietnamese": "khi đã đến Nhật",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 230072,
           "order_index": 2,
           "japanese": "空港で友達に会いました。",
           "vietnamese": "đã gặp bạn ở sân bay",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -16056,20 +18037,23 @@ export const generatedSentences = {
       "full_romaji": "Michi o wataru toki, kuruma ni ki o tsukemasu.",
       "full_vietnamese": "Khi qua đường tôi chú ý ô tô.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 230081,
           "order_index": 1,
           "japanese": "道を渡るとき、",
           "vietnamese": "khi qua đường",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 230082,
           "order_index": 2,
           "japanese": "車に気をつけます。",
           "vietnamese": "chú ý ô tô",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -16081,20 +18065,23 @@ export const generatedSentences = {
       "full_romaji": "Uchi o deru toki, denki o keshimasu.",
       "full_vietnamese": "Khi ra khỏi nhà tôi tắt điện.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 230091,
           "order_index": 1,
           "japanese": "うちを出るとき、",
           "vietnamese": "khi ra khỏi nhà",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 230092,
           "order_index": 2,
           "japanese": "電気を消します。",
           "vietnamese": "tắt điện",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -16106,20 +18093,23 @@ export const generatedSentences = {
       "full_romaji": "Tsukareta toki, atsui ofuro ni hairimasu.",
       "full_vietnamese": "Khi mệt tôi tắm bồn nước nóng.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 230101,
           "order_index": 1,
           "japanese": "疲れたとき、",
           "vietnamese": "khi mệt",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 230102,
           "order_index": 2,
           "japanese": "熱いお風呂に入ります。",
           "vietnamese": "tắm bồn nước nóng",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -16131,20 +18121,23 @@ export const generatedSentences = {
       "full_romaji": "Kono botan o osu to, juusu ga demasu.",
       "full_vietnamese": "Khi bấm nút này, nước trái cây chảy ra.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 230111,
           "order_index": 1,
           "japanese": "このボタンを押すと、",
           "vietnamese": "khi bấm nút này",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 230112,
           "order_index": 2,
           "japanese": "ジュースが出ます。",
           "vietnamese": "nước trái cây chảy ra",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -16156,20 +18149,23 @@ export const generatedSentences = {
       "full_romaji": "Kono tsumami o migi e mawasu to, oto ga ookiku narimasu.",
       "full_vietnamese": "Khi xoay núm này sang phải, âm thanh lớn hơn.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 230121,
           "order_index": 1,
           "japanese": "このつまみを右へ回すと、",
           "vietnamese": "khi xoay núm sang phải",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 230122,
           "order_index": 2,
           "japanese": "音が大きくなります。",
           "vietnamese": "âm thanh lớn hơn",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -16181,20 +18177,23 @@ export const generatedSentences = {
       "full_romaji": "Haru ni naru to, sakura ga sakimasu.",
       "full_vietnamese": "Khi sang xuân, hoa anh đào nở.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 230131,
           "order_index": 1,
           "japanese": "春になると、",
           "vietnamese": "khi sang xuân",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 230132,
           "order_index": 2,
           "japanese": "桜が咲きます。",
           "vietnamese": "hoa anh đào nở",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -16206,20 +18205,23 @@ export const generatedSentences = {
       "full_romaji": "Ame ga furu to, michi ga kuraku narimasu.",
       "full_vietnamese": "Khi trời mưa, đường trở nên tối.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 230141,
           "order_index": 1,
           "japanese": "雨が降ると、",
           "vietnamese": "khi trời mưa",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 230142,
           "order_index": 2,
           "japanese": "道が暗くなります。",
           "vietnamese": "đường trở nên tối",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -16231,20 +18233,23 @@ export const generatedSentences = {
       "full_romaji": "Koko ni sawaru to, kikai ga tomarimasu.",
       "full_vietnamese": "Nếu chạm vào đây, máy sẽ dừng.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 230151,
           "order_index": 1,
           "japanese": "ここに触ると、",
           "vietnamese": "nếu chạm vào đây",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 230152,
           "order_index": 2,
           "japanese": "機械が止まります。",
           "vietnamese": "máy dừng",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -16256,20 +18261,23 @@ export const generatedSentences = {
       "full_romaji": "Kono rebaa o hiku to, doa ga akimasu.",
       "full_vietnamese": "Khi kéo cần này, cửa mở.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 230161,
           "order_index": 1,
           "japanese": "このレバーを引くと、",
           "vietnamese": "khi kéo cần này",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 230162,
           "order_index": 2,
           "japanese": "ドアが開きます。",
           "vietnamese": "cửa mở",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -16281,20 +18289,23 @@ export const generatedSentences = {
       "full_romaji": "Shingou ga ao ni naru to, michi o watarimasu.",
       "full_vietnamese": "Khi đèn chuyển xanh, tôi qua đường.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 230171,
           "order_index": 1,
           "japanese": "信号が青になると、",
           "vietnamese": "khi đèn chuyển xanh",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 230172,
           "order_index": 2,
           "japanese": "道を渡ります。",
           "vietnamese": "qua đường",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -16306,20 +18317,23 @@ export const generatedSentences = {
       "full_romaji": "Dou suru to, otsuri ga demasu ka.",
       "full_vietnamese": "Làm thế nào thì tiền thừa chảy ra?",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 230181,
           "order_index": 1,
           "japanese": "どうすると、",
           "vietnamese": "làm thế nào thì",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 230182,
           "order_index": 2,
           "japanese": "お釣りが出ますか。",
           "vietnamese": "tiền thừa chảy ra",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -16331,20 +18345,23 @@ export const generatedSentences = {
       "full_romaji": "Eki e iku toki, kono hashi o watarimasu.",
       "full_vietnamese": "Khi đi tới ga, tôi qua cây cầu này.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 230191,
           "order_index": 1,
           "japanese": "駅へ行くとき、",
           "vietnamese": "khi đi đến ga",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 230192,
           "order_index": 2,
           "japanese": "この橋を渡ります。",
           "vietnamese": "qua cầu này",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -16356,20 +18373,23 @@ export const generatedSentences = {
       "full_romaji": "Futatsume no kado o migi e magatte kudasai.",
       "full_vietnamese": "Hãy rẽ phải ở góc thứ hai.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 230201,
           "order_index": 1,
           "japanese": "二つ目の角を",
           "vietnamese": "ở góc thứ hai",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 230202,
           "order_index": 2,
           "japanese": "右へ曲がってください。",
           "vietnamese": "hãy rẽ phải",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -16381,20 +18401,23 @@ export const generatedSentences = {
       "full_romaji": "Kousaten o wataru to, hidari ni chuushajou ga arimasu.",
       "full_vietnamese": "Qua ngã tư thì có bãi đỗ xe bên trái.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 230211,
           "order_index": 1,
           "japanese": "交差点を渡ると、",
           "vietnamese": "khi qua ngã tư",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 230212,
           "order_index": 2,
           "japanese": "左に駐車場があります。",
           "vietnamese": "có bãi đỗ xe bên trái",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -16406,20 +18429,23 @@ export const generatedSentences = {
       "full_romaji": "Kikai ga koshou shita toki, denkiya o yobimasu.",
       "full_vietnamese": "Khi máy bị hỏng, tôi gọi thợ điện.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 230221,
           "order_index": 1,
           "japanese": "機械が故障したとき、",
           "vietnamese": "khi máy bị hỏng",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 230222,
           "order_index": 2,
           "japanese": "電気屋を呼びます。",
           "vietnamese": "gọi thợ điện",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -16431,20 +18457,23 @@ export const generatedSentences = {
       "full_romaji": "Hikkoshi suru toki, juusho o kaemasu.",
       "full_vietnamese": "Khi chuyển nhà, tôi đổi địa chỉ.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 230231,
           "order_index": 1,
           "japanese": "引っ越しするとき、",
           "vietnamese": "khi chuyển nhà",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 230232,
           "order_index": 2,
           "japanese": "住所を変えます。",
           "vietnamese": "đổi địa chỉ",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -16456,20 +18485,23 @@ export const generatedSentences = {
       "full_romaji": "Michi ga wakaranai toki, chikaku no hito ni kikimasu.",
       "full_vietnamese": "Khi không biết đường, tôi hỏi người gần đó.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 230241,
           "order_index": 1,
           "japanese": "道が分からないとき、",
           "vietnamese": "khi không biết đường",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 230242,
           "order_index": 2,
           "japanese": "近くの人に聞きます。",
           "vietnamese": "hỏi người gần đó",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     }
@@ -16483,20 +18515,23 @@ export const generatedSentences = {
       "full_romaji": "Satou-san ga watashi ni hana o kuremashita.",
       "full_vietnamese": "Chị Sato đã tặng hoa cho tôi.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 240011,
           "order_index": 1,
           "japanese": "佐藤さんがわたしに",
           "vietnamese": "chị Sato cho tôi",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 240012,
           "order_index": 2,
           "japanese": "花をくれました。",
           "vietnamese": "đã tặng hoa",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -16508,20 +18543,23 @@ export const generatedSentences = {
       "full_romaji": "Tomodachi ga tanjoubi ni tokei o kuremashita.",
       "full_vietnamese": "Bạn đã tặng tôi đồng hồ vào sinh nhật.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 240021,
           "order_index": 1,
           "japanese": "友達が誕生日に",
           "vietnamese": "bạn vào sinh nhật",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 240022,
           "order_index": 2,
           "japanese": "時計をくれました。",
           "vietnamese": "đã tặng tôi đồng hồ",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -16533,20 +18571,23 @@ export const generatedSentences = {
       "full_romaji": "Haha ga seetaa o okutte kuremashita.",
       "full_vietnamese": "Mẹ đã gửi áo len cho tôi.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 240031,
           "order_index": 1,
           "japanese": "母が",
           "vietnamese": "mẹ",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 240032,
           "order_index": 2,
           "japanese": "セーターを送ってくれました。",
           "vietnamese": "đã gửi áo len cho tôi",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -16558,20 +18599,23 @@ export const generatedSentences = {
       "full_romaji": "Yamada-san ga eki made okutte kuremashita.",
       "full_vietnamese": "Anh Yamada đã đưa tôi đến ga.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 240041,
           "order_index": 1,
           "japanese": "山田さんが",
           "vietnamese": "anh Yamada",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 240042,
           "order_index": 2,
           "japanese": "駅まで送ってくれました。",
           "vietnamese": "đã đưa tôi đến ga",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -16583,20 +18627,23 @@ export const generatedSentences = {
       "full_romaji": "Sensei ga kanji no yomikata o oshiete kuremashita.",
       "full_vietnamese": "Giáo viên đã dạy tôi cách đọc Kanji.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 240051,
           "order_index": 1,
           "japanese": "先生が",
           "vietnamese": "giáo viên",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 240052,
           "order_index": 2,
           "japanese": "漢字の読み方を教えてくれました。",
           "vietnamese": "đã dạy tôi cách đọc Kanji",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -16608,20 +18655,23 @@ export const generatedSentences = {
       "full_romaji": "Tomodachi ga hikkoshi o tetsudatte kuremashita.",
       "full_vietnamese": "Bạn đã giúp tôi chuyển nhà.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 240061,
           "order_index": 1,
           "japanese": "友達が",
           "vietnamese": "bạn",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 240062,
           "order_index": 2,
           "japanese": "引っ越しを手伝ってくれました。",
           "vietnamese": "đã giúp tôi chuyển nhà",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -16633,20 +18683,23 @@ export const generatedSentences = {
       "full_romaji": "Sobo ga bentou o tsukutte kuremashita.",
       "full_vietnamese": "Bà đã làm cơm hộp cho tôi.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 240071,
           "order_index": 1,
           "japanese": "祖母が",
           "vietnamese": "bà",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 240072,
           "order_index": 2,
           "japanese": "弁当を作ってくれました。",
           "vietnamese": "đã làm cơm hộp cho tôi",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -16658,20 +18711,23 @@ export const generatedSentences = {
       "full_romaji": "Miraa-san ga Toukyou o annai shite kuremashita.",
       "full_vietnamese": "Anh Miller đã dẫn tôi tham quan Tokyo.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 240081,
           "order_index": 1,
           "japanese": "ミラーさんが",
           "vietnamese": "anh Miller",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 240082,
           "order_index": 2,
           "japanese": "東京を案内してくれました。",
           "vietnamese": "đã dẫn tôi tham quan Tokyo",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -16683,20 +18739,23 @@ export const generatedSentences = {
       "full_romaji": "Watashi wa imouto ni hon o yonde agemashita.",
       "full_vietnamese": "Tôi đã đọc sách cho em gái.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 240091,
           "order_index": 1,
           "japanese": "わたしは妹に",
           "vietnamese": "tôi cho em gái",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 240092,
           "order_index": 2,
           "japanese": "本を読んであげました。",
           "vietnamese": "đã đọc sách giúp",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -16708,20 +18767,23 @@ export const generatedSentences = {
       "full_romaji": "Ojiisan ni michi o oshiete agemashita.",
       "full_vietnamese": "Tôi đã chỉ đường cho một ông cụ.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 240101,
           "order_index": 1,
           "japanese": "おじいさんに",
           "vietnamese": "cho ông cụ",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 240102,
           "order_index": 2,
           "japanese": "道を教えてあげました。",
           "vietnamese": "đã chỉ đường giúp",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -16733,20 +18795,23 @@ export const generatedSentences = {
       "full_romaji": "Tomodachi ni shashin o okutte agemasu.",
       "full_vietnamese": "Tôi sẽ gửi ảnh cho bạn.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 240111,
           "order_index": 1,
           "japanese": "友達に",
           "vietnamese": "cho bạn",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 240112,
           "order_index": 2,
           "japanese": "写真を送ってあげます。",
           "vietnamese": "sẽ gửi ảnh giúp",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -16758,20 +18823,23 @@ export const generatedSentences = {
       "full_romaji": "Kodomo o doubutsuen e tsurete itte agemashita.",
       "full_vietnamese": "Tôi đã đưa đứa trẻ đi sở thú.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 240121,
           "order_index": 1,
           "japanese": "子どもを",
           "vietnamese": "đứa trẻ",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 240122,
           "order_index": 2,
           "japanese": "動物園へ連れて行ってあげました。",
           "vietnamese": "đã đưa đi sở thú",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -16783,20 +18851,23 @@ export const generatedSentences = {
       "full_romaji": "Sofu ni tegami o kaite agemashita.",
       "full_vietnamese": "Tôi đã viết thư giúp ông.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 240131,
           "order_index": 1,
           "japanese": "祖父に",
           "vietnamese": "cho ông",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 240132,
           "order_index": 2,
           "japanese": "手紙を書いてあげました。",
           "vietnamese": "đã viết thư giúp",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -16808,20 +18879,23 @@ export const generatedSentences = {
       "full_romaji": "Watashi wa sensei ni sakubun o naoshite moraimashita.",
       "full_vietnamese": "Tôi đã nhờ giáo viên sửa bài văn.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 240141,
           "order_index": 1,
           "japanese": "わたしは先生に",
           "vietnamese": "tôi nhờ giáo viên",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 240142,
           "order_index": 2,
           "japanese": "作文を直してもらいました。",
           "vietnamese": "đã được sửa bài văn",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -16833,20 +18907,23 @@ export const generatedSentences = {
       "full_romaji": "Tomodachi ni ryokou no shashin o misete moraimashita.",
       "full_vietnamese": "Tôi đã được bạn cho xem ảnh du lịch.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 240151,
           "order_index": 1,
           "japanese": "友達に",
           "vietnamese": "từ bạn",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 240152,
           "order_index": 2,
           "japanese": "旅行の写真を見せてもらいました。",
           "vietnamese": "đã được cho xem ảnh",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -16858,20 +18935,23 @@ export const generatedSentences = {
       "full_romaji": "Ani ni kuruma de okutte moraimashita.",
       "full_vietnamese": "Tôi đã được anh trai chở bằng ô tô.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 240161,
           "order_index": 1,
           "japanese": "兄に",
           "vietnamese": "nhờ anh trai",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 240162,
           "order_index": 2,
           "japanese": "車で送ってもらいました。",
           "vietnamese": "đã được chở bằng ô tô",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -16883,20 +18963,23 @@ export const generatedSentences = {
       "full_romaji": "Tanaka-san ni shigoto o tetsudatte moraimashita.",
       "full_vietnamese": "Tôi đã nhờ anh Tanaka giúp công việc.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 240171,
           "order_index": 1,
           "japanese": "田中さんに",
           "vietnamese": "nhờ anh Tanaka",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 240172,
           "order_index": 2,
           "japanese": "仕事を手伝ってもらいました。",
           "vietnamese": "đã được giúp công việc",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -16908,20 +18991,23 @@ export const generatedSentences = {
       "full_romaji": "Ekiin ni michi o setsumei shite moraimashita.",
       "full_vietnamese": "Tôi đã được nhân viên nhà ga giải thích đường đi.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 240181,
           "order_index": 1,
           "japanese": "駅員に",
           "vietnamese": "nhờ nhân viên ga",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 240182,
           "order_index": 2,
           "japanese": "道を説明してもらいました。",
           "vietnamese": "đã được giải thích đường",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -16933,20 +19019,23 @@ export const generatedSentences = {
       "full_romaji": "Dare ga kono okashi o kuremashita ka.",
       "full_vietnamese": "Ai đã tặng bạn bánh kẹo này?",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 240191,
           "order_index": 1,
           "japanese": "だれが",
           "vietnamese": "ai",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 240192,
           "order_index": 2,
           "japanese": "このお菓子をくれましたか。",
           "vietnamese": "đã tặng bánh này",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -16958,20 +19047,23 @@ export const generatedSentences = {
       "full_romaji": "Hikkoshi o tetsudatte kuremasen ka.",
       "full_vietnamese": "Bạn giúp tôi chuyển nhà được không?",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 240201,
           "order_index": 1,
           "japanese": "引っ越しを",
           "vietnamese": "việc chuyển nhà",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 240202,
           "order_index": 2,
           "japanese": "手伝ってくれませんか。",
           "vietnamese": "giúp tôi được không",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -16983,20 +19075,23 @@ export const generatedSentences = {
       "full_romaji": "Eki made mukae ni kite kuremasen ka.",
       "full_vietnamese": "Bạn đến ga đón tôi được không?",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 240211,
           "order_index": 1,
           "japanese": "駅まで",
           "vietnamese": "đến ga",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 240212,
           "order_index": 2,
           "japanese": "迎えに来てくれませんか。",
           "vietnamese": "đến đón tôi được không",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -17008,20 +19103,23 @@ export const generatedSentences = {
       "full_romaji": "Kono kotoba no imi o setsumei shite kuremasen ka.",
       "full_vietnamese": "Bạn giải thích nghĩa từ này giúp tôi được không?",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 240221,
           "order_index": 1,
           "japanese": "この言葉の意味を",
           "vietnamese": "nghĩa của từ này",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 240222,
           "order_index": 2,
           "japanese": "説明してくれませんか。",
           "vietnamese": "giải thích giúp được không",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -17033,20 +19131,23 @@ export const generatedSentences = {
       "full_romaji": "Zenbu jibun de junbi shimashita.",
       "full_vietnamese": "Tôi đã tự chuẩn bị tất cả.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 240231,
           "order_index": 1,
           "japanese": "全部",
           "vietnamese": "tất cả",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 240232,
           "order_index": 2,
           "japanese": "自分で準備しました。",
           "vietnamese": "đã tự chuẩn bị",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -17058,20 +19159,23 @@ export const generatedSentences = {
       "full_romaji": "Hoka ni nanika tetsudaimashou ka.",
       "full_vietnamese": "Tôi giúp thêm gì khác nhé?",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 240241,
           "order_index": 1,
           "japanese": "ほかに何か",
           "vietnamese": "gì khác nữa",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 240242,
           "order_index": 2,
           "japanese": "手伝いましょうか。",
           "vietnamese": "tôi giúp nhé",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     }
@@ -17085,20 +19189,23 @@ export const generatedSentences = {
       "full_romaji": "Ame ga futtara, dekakemasen.",
       "full_vietnamese": "Nếu trời mưa, tôi sẽ không ra ngoài.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 250011,
           "order_index": 1,
           "japanese": "雨が降ったら、",
           "vietnamese": "nếu trời mưa",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 250012,
           "order_index": 2,
           "japanese": "出かけません。",
           "vietnamese": "không ra ngoài",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -17110,20 +19217,23 @@ export const generatedSentences = {
       "full_romaji": "Tenki ga yokattara, kouen e ikimasu.",
       "full_vietnamese": "Nếu thời tiết đẹp, tôi sẽ đi công viên.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 250021,
           "order_index": 1,
           "japanese": "天気がよかったら、",
           "vietnamese": "nếu thời tiết đẹp",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 250022,
           "order_index": 2,
           "japanese": "公園へ行きます。",
           "vietnamese": "đi công viên",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -17135,20 +19245,23 @@ export const generatedSentences = {
       "full_romaji": "Hima dattara, asobi ni kite kudasai.",
       "full_vietnamese": "Nếu rảnh, hãy đến chơi nhé.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 250031,
           "order_index": 1,
           "japanese": "暇だったら、",
           "vietnamese": "nếu rảnh",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 250032,
           "order_index": 2,
           "japanese": "遊びに来てください。",
           "vietnamese": "hãy đến chơi",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -17160,20 +19273,23 @@ export const generatedSentences = {
       "full_romaji": "Yasukattara, kono pasokon o kaimasu.",
       "full_vietnamese": "Nếu rẻ, tôi sẽ mua máy tính này.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 250041,
           "order_index": 1,
           "japanese": "安かったら、",
           "vietnamese": "nếu rẻ",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 250042,
           "order_index": 2,
           "japanese": "このパソコンを買います。",
           "vietnamese": "mua máy tính này",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -17185,20 +19301,23 @@ export const generatedSentences = {
       "full_romaji": "Moshi hyakuman en attara, nani o shitai desu ka.",
       "full_vietnamese": "Nếu có một triệu yên, bạn muốn làm gì?",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 250051,
           "order_index": 1,
           "japanese": "もし百万円あったら、",
           "vietnamese": "nếu có một triệu yên",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 250052,
           "order_index": 2,
           "japanese": "何をしたいですか。",
           "vietnamese": "muốn làm gì",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -17210,20 +19329,23 @@ export const generatedSentences = {
       "full_romaji": "Gaikoku o ryokou shitai desu.",
       "full_vietnamese": "Tôi muốn du lịch nước ngoài.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 250061,
           "order_index": 1,
           "japanese": "外国を",
           "vietnamese": "nước ngoài",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 250062,
           "order_index": 2,
           "japanese": "旅行したいです。",
           "vietnamese": "muốn du lịch",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     },
@@ -17235,20 +19357,23 @@ export const generatedSentences = {
       "full_romaji": "Shigoto ga owattara, nomi ni ikimashou.",
       "full_vietnamese": "Khi công việc xong, chúng ta đi uống nhé.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 250071,
           "order_index": 1,
           "japanese": "仕事が終わったら、",
           "vietnamese": "khi công việc xong",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 250072,
           "order_index": 2,
           "japanese": "飲みに行きましょう。",
           "vietnamese": "hãy đi uống",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -17260,20 +19385,23 @@ export const generatedSentences = {
       "full_romaji": "Eki ni tsuitara, denwa shite kudasai.",
       "full_vietnamese": "Khi đến ga, hãy gọi điện cho tôi.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 250081,
           "order_index": 1,
           "japanese": "駅に着いたら、",
           "vietnamese": "khi đến ga",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 250082,
           "order_index": 2,
           "japanese": "電話してください。",
           "vietnamese": "hãy gọi điện",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -17285,20 +19413,23 @@ export const generatedSentences = {
       "full_romaji": "Uchi e kaettara, sugu shukudai o shimasu.",
       "full_vietnamese": "Khi về nhà, tôi sẽ làm bài tập ngay.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 250091,
           "order_index": 1,
           "japanese": "うちへ帰ったら、",
           "vietnamese": "khi về nhà",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 250092,
           "order_index": 2,
           "japanese": "すぐ宿題をします。",
           "vietnamese": "làm bài tập ngay",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -17310,20 +19441,23 @@ export const generatedSentences = {
       "full_romaji": "Hatachi ni nattara, kuruma o kaitai desu.",
       "full_vietnamese": "Khi 20 tuổi, tôi muốn mua ô tô.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 250101,
           "order_index": 1,
           "japanese": "二十歳になったら、",
           "vietnamese": "khi tròn 20 tuổi",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 250102,
           "order_index": 2,
           "japanese": "車を買いたいです。",
           "vietnamese": "muốn mua ô tô",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -17335,20 +19469,23 @@ export const generatedSentences = {
       "full_romaji": "Nihon e ittara, Fujisan ni noboritai desu.",
       "full_vietnamese": "Khi đi Nhật, tôi muốn leo núi Phú Sĩ.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 250111,
           "order_index": 1,
           "japanese": "日本へ行ったら、",
           "vietnamese": "khi đi Nhật",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 250112,
           "order_index": 2,
           "japanese": "富士山に登りたいです。",
           "vietnamese": "muốn leo Phú Sĩ",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -17360,20 +19497,23 @@ export const generatedSentences = {
       "full_romaji": "Kaigi ga owattara, shiryou o katazukete kudasai.",
       "full_vietnamese": "Khi cuộc họp kết thúc, hãy dọn tài liệu.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 250121,
           "order_index": 1,
           "japanese": "会議が終わったら、",
           "vietnamese": "khi cuộc họp kết thúc",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 250122,
           "order_index": 2,
           "japanese": "資料を片づけてください。",
           "vietnamese": "hãy dọn tài liệu",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -17385,20 +19525,23 @@ export const generatedSentences = {
       "full_romaji": "Ame ga futte mo, kaisha e ikimasu.",
       "full_vietnamese": "Dù trời mưa, tôi vẫn đi làm.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 250131,
           "order_index": 1,
           "japanese": "雨が降っても、",
           "vietnamese": "dù trời mưa",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 250132,
           "order_index": 2,
           "japanese": "会社へ行きます。",
           "vietnamese": "đi công ty",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -17410,20 +19553,23 @@ export const generatedSentences = {
       "full_romaji": "Takakute mo, kono tokei o kaitai desu.",
       "full_vietnamese": "Dù đắt, tôi vẫn muốn mua đồng hồ này.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 250141,
           "order_index": 1,
           "japanese": "高くても、",
           "vietnamese": "dù đắt",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 250142,
           "order_index": 2,
           "japanese": "この時計を買いたいです。",
           "vietnamese": "muốn mua đồng hồ này",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -17435,20 +19581,23 @@ export const generatedSentences = {
       "full_romaji": "Muzukashikute mo, Nihongo no benkyou o tsuzukemasu.",
       "full_vietnamese": "Dù khó, tôi vẫn tiếp tục học tiếng Nhật.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 250151,
           "order_index": 1,
           "japanese": "難しくても、",
           "vietnamese": "dù khó",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 250152,
           "order_index": 2,
           "japanese": "日本語の勉強を続けます。",
           "vietnamese": "tiếp tục học tiếng Nhật",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -17460,20 +19609,23 @@ export const generatedSentences = {
       "full_romaji": "Shizuka demo, ano machi ni wa sumitakunai desu.",
       "full_vietnamese": "Dù yên tĩnh, tôi không muốn sống ở thành phố kia.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 250161,
           "order_index": 1,
           "japanese": "静かでも、",
           "vietnamese": "dù yên tĩnh",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 250162,
           "order_index": 2,
           "japanese": "あの町には住みたくないです。",
           "vietnamese": "không muốn sống ở thành phố kia",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -17485,20 +19637,23 @@ export const generatedSentences = {
       "full_romaji": "Nichiyoubi demo, chichi wa hatarakimasu.",
       "full_vietnamese": "Dù là Chủ nhật, bố tôi vẫn làm việc.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 250171,
           "order_index": 1,
           "japanese": "日曜日でも、",
           "vietnamese": "dù là Chủ nhật",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 250172,
           "order_index": 2,
           "japanese": "父は働きます。",
           "vietnamese": "bố vẫn làm việc",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -17510,20 +19665,23 @@ export const generatedSentences = {
       "full_romaji": "Ikura yonde mo, henji ga arimasen.",
       "full_vietnamese": "Dù gọi bao nhiêu lần cũng không có trả lời.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 250181,
           "order_index": 1,
           "japanese": "いくら呼んでも、",
           "vietnamese": "dù gọi bao nhiêu",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 250182,
           "order_index": 2,
           "japanese": "返事がありません。",
           "vietnamese": "không có trả lời",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -17535,20 +19693,23 @@ export const generatedSentences = {
       "full_romaji": "Ikura kangaete mo, kotae ga wakarimasen.",
       "full_vietnamese": "Dù suy nghĩ bao nhiêu tôi vẫn không biết đáp án.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 250191,
           "order_index": 1,
           "japanese": "いくら考えても、",
           "vietnamese": "dù suy nghĩ bao nhiêu",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 250192,
           "order_index": 2,
           "japanese": "答えが分かりません。",
           "vietnamese": "không hiểu đáp án",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -17560,20 +19721,23 @@ export const generatedSentences = {
       "full_romaji": "Moshi shigoto ga mitsukattara, Nihon de hatarakitai desu.",
       "full_vietnamese": "Nếu tìm được việc, tôi muốn làm việc ở Nhật.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 250201,
           "order_index": 1,
           "japanese": "もし仕事が見つかったら、",
           "vietnamese": "nếu tìm được việc",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 250202,
           "order_index": 2,
           "japanese": "日本で働きたいです。",
           "vietnamese": "muốn làm việc ở Nhật",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -17585,20 +19749,23 @@ export const generatedSentences = {
       "full_romaji": "Tomodachi ga konakattara, hitori de ikimasu.",
       "full_vietnamese": "Nếu bạn không đến, tôi sẽ đi một mình.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 250211,
           "order_index": 1,
           "japanese": "友達が来なかったら、",
           "vietnamese": "nếu bạn không đến",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 250212,
           "order_index": 2,
           "japanese": "一人で行きます。",
           "vietnamese": "đi một mình",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -17610,20 +19777,23 @@ export const generatedSentences = {
       "full_romaji": "Karada no choushi ga warukattara, yasunde kudasai.",
       "full_vietnamese": "Nếu sức khỏe không tốt, hãy nghỉ ngơi.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 250221,
           "order_index": 1,
           "japanese": "体の調子が悪かったら、",
           "vietnamese": "nếu sức khỏe không tốt",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 250222,
           "order_index": 2,
           "japanese": "休んでください。",
           "vietnamese": "hãy nghỉ",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -17635,20 +19805,23 @@ export const generatedSentences = {
       "full_romaji": "Tenkin shite mo, mata aimashou.",
       "full_vietnamese": "Dù chuyển công tác, chúng ta lại gặp nhau nhé.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 250231,
           "order_index": 1,
           "japanese": "転勤しても、",
           "vietnamese": "dù chuyển công tác",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
         },
         {
           "id": 250232,
           "order_index": 2,
           "japanese": "また会いましょう。",
           "vietnamese": "hãy gặp lại",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         }
       ]
     },
@@ -17660,20 +19833,9569 @@ export const generatedSentences = {
       "full_romaji": "Iroiro osewa ni narimashita.",
       "full_vietnamese": "Cảm ơn bạn đã giúp đỡ tôi nhiều.",
       "audio_url": null,
+      "kanji_variants": null,
       "chunks": [
         {
           "id": 250241,
           "order_index": 1,
           "japanese": "いろいろ",
           "vietnamese": "nhiều mặt",
-          "is_grammar_key": false
+          "is_grammar_key": false,
+          "kanji_variants": null
         },
         {
           "id": 250242,
           "order_index": 2,
           "japanese": "お世話になりました。",
           "vietnamese": "đã được giúp đỡ",
-          "is_grammar_key": true
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    }
+  ],
+  "26": [
+    {
+      "id": 26001,
+      "lesson_id": 26,
+      "passage_id": null,
+      "full_japanese": "あしたから旅行なんです。",
+      "full_romaji": "Ashita kara ryokou nan desu.",
+      "full_vietnamese": "Từ ngày mai tôi sẽ đi du lịch.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 260011,
+          "order_index": 1,
+          "japanese": "あしたから",
+          "vietnamese": "từ ngày mai",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 260012,
+          "order_index": 2,
+          "japanese": "旅行",
+          "vietnamese": "du lịch",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 260013,
+          "order_index": 3,
+          "japanese": "なんです。",
+          "vietnamese": "sẽ... (nhấn mạnh)",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 26002,
+      "lesson_id": 26,
+      "passage_id": null,
+      "full_japanese": "どうして遅れたんですか。",
+      "full_romaji": "Doushite okuretan desu ka.",
+      "full_vietnamese": "Tại sao bạn lại đến muộn vậy?",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 260021,
+          "order_index": 1,
+          "japanese": "どうして",
+          "vietnamese": "tại sao",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 260022,
+          "order_index": 2,
+          "japanese": "遅れた",
+          "vietnamese": "đã đến muộn",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 260023,
+          "order_index": 3,
+          "japanese": "んですか。",
+          "vietnamese": "vậy? (nhấn mạnh lý do)",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 26003,
+      "lesson_id": 26,
+      "passage_id": null,
+      "full_japanese": "頭が痛いんです。",
+      "full_romaji": "Atama ga itain desu.",
+      "full_vietnamese": "Tôi bị đau đầu.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 260031,
+          "order_index": 1,
+          "japanese": "頭が",
+          "vietnamese": "đầu (của tôi)",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 260032,
+          "order_index": 2,
+          "japanese": "痛い",
+          "vietnamese": "đau",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 260033,
+          "order_index": 3,
+          "japanese": "んです。",
+          "vietnamese": "lắm (giải thích tình trạng)",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 26004,
+      "lesson_id": 26,
+      "passage_id": null,
+      "full_japanese": "日本語がわからないんですが、英語で話していただけませんか。",
+      "full_romaji": "Nihongo ga wakaranain desu ga, Eigo de hanashite itadakemasen ka.",
+      "full_vietnamese": "Tôi không hiểu tiếng Nhật, bạn có thể nói bằng tiếng Anh giúp tôi được không?",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 260041,
+          "order_index": 1,
+          "japanese": "日本語が",
+          "vietnamese": "tiếng Nhật",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 260042,
+          "order_index": 2,
+          "japanese": "わからないんですが、",
+          "vietnamese": "tôi không hiểu (trình bày hoàn cảnh)",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 260043,
+          "order_index": 3,
+          "japanese": "英語で",
+          "vietnamese": "bằng tiếng Anh",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 260044,
+          "order_index": 4,
+          "japanese": "話して",
+          "vietnamese": "nói",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 260045,
+          "order_index": 5,
+          "japanese": "いただけませんか。",
+          "vietnamese": "giúp tôi được không? (nhờ vả lịch sự)",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 26005,
+      "lesson_id": 26,
+      "passage_id": null,
+      "full_japanese": "カメラを買いたいんですが、どこで買ったらいいですか。",
+      "full_romaji": "Kamera o kaitain desu ga, doko de kattara ii desu ka.",
+      "full_vietnamese": "Tôi muốn mua máy ảnh, mua ở đâu thì tốt nhỉ?",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 260051,
+          "order_index": 1,
+          "japanese": "カメラを",
+          "vietnamese": "máy ảnh",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 260052,
+          "order_index": 2,
+          "japanese": "買いたいんですが、",
+          "vietnamese": "tôi muốn mua (trình bày)",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 260053,
+          "order_index": 3,
+          "japanese": "どこで",
+          "vietnamese": "ở đâu",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 260054,
+          "order_index": 4,
+          "japanese": "買ったらいい",
+          "vietnamese": "nếu mua thì tốt",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 260055,
+          "order_index": 5,
+          "japanese": "ですか。",
+          "vietnamese": "nhỉ? (xin lời khuyên)",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 26006,
+      "lesson_id": 26,
+      "passage_id": null,
+      "full_japanese": "ごみを出したいんですが、どこに出したらいいですか。",
+      "full_romaji": "Gomi o dashitain desu ga, doko ni dashitara ii desu ka.",
+      "full_vietnamese": "Tôi muốn đổ rác, nên mang ra chỗ nào thì được?",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 260061,
+          "order_index": 1,
+          "japanese": "ごみを",
+          "vietnamese": "rác",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 260062,
+          "order_index": 2,
+          "japanese": "出したいんですが、",
+          "vietnamese": "tôi muốn mang ra/đổ (mở lời)",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 260063,
+          "order_index": 3,
+          "japanese": "どこに",
+          "vietnamese": "ở đâu / vào chỗ nào",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 260064,
+          "order_index": 4,
+          "japanese": "出したらいい",
+          "vietnamese": "nên mang ra thì tốt",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 260065,
+          "order_index": 5,
+          "japanese": "ですか。",
+          "vietnamese": "ạ?",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 26007,
+      "lesson_id": 26,
+      "passage_id": null,
+      "full_japanese": "運動会に参加したいんですが、申し込みはどこですか。",
+      "full_romaji": "Undoukai ni sanka shitain desu ga, moushikomi wa doko desu ka.",
+      "full_vietnamese": "Tôi muốn tham gia hội thao, đăng ký ở đâu vậy?",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 260071,
+          "order_index": 1,
+          "japanese": "運動会に",
+          "vietnamese": "hội thao",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 260072,
+          "order_index": 2,
+          "japanese": "参加したいんですが、",
+          "vietnamese": "tôi muốn tham gia (mở lời)",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 260073,
+          "order_index": 3,
+          "japanese": "申し込みは",
+          "vietnamese": "việc đăng ký thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 260074,
+          "order_index": 4,
+          "japanese": "どこですか。",
+          "vietnamese": "ở đâu vậy?",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 26008,
+      "lesson_id": 26,
+      "passage_id": null,
+      "full_japanese": "気分が悪いんですが、早く帰ってもいいですか。",
+      "full_romaji": "Kibun ga waruin desu ga, hayaku kaette mo ii desu ka.",
+      "full_vietnamese": "Tôi thấy không khỏe, tôi về sớm có được không?",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 260081,
+          "order_index": 1,
+          "japanese": "気分が",
+          "vietnamese": "tình trạng/cảm giác",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 260082,
+          "order_index": 2,
+          "japanese": "悪いんですが、",
+          "vietnamese": "không tốt (trình bày hoàn cảnh)",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 260083,
+          "order_index": 3,
+          "japanese": "早く",
+          "vietnamese": "sớm",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 260084,
+          "order_index": 4,
+          "japanese": "帰ってもいい",
+          "vietnamese": "về có được không",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 260085,
+          "order_index": 5,
+          "japanese": "ですか。",
+          "vietnamese": "ạ?",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 26009,
+      "lesson_id": 26,
+      "passage_id": null,
+      "full_japanese": "この書類を直接渡していただけませんか。",
+      "full_romaji": "Kono shorui o chokusetsu watashite itadakemasen ka.",
+      "full_vietnamese": "Bạn có thể trao trực tiếp tài liệu này giúp tôi được không?",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 260091,
+          "order_index": 1,
+          "japanese": "この書類を",
+          "vietnamese": "tài liệu này",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 260092,
+          "order_index": 2,
+          "japanese": "直接",
+          "vietnamese": "trực tiếp",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 260093,
+          "order_index": 3,
+          "japanese": "渡して",
+          "vietnamese": "trao, đưa",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 260094,
+          "order_index": 4,
+          "japanese": "いただけませんか。",
+          "vietnamese": "giúp tôi được không?",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 26010,
+      "lesson_id": 26,
+      "passage_id": null,
+      "full_japanese": "都合が悪いんですが、時間を変えていただけませんか。",
+      "full_romaji": "Tsugou ga waruin desu ga, jikan o kaete itadakemasen ka.",
+      "full_vietnamese": "Tôi không tiện, bạn có thể đổi giờ giúp tôi được không?",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 260101,
+          "order_index": 1,
+          "japanese": "都合が",
+          "vietnamese": "lịch trình/sự thuận tiện",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 260102,
+          "order_index": 2,
+          "japanese": "悪いんですが、",
+          "vietnamese": "không tiện (mở lời)",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 260103,
+          "order_index": 3,
+          "japanese": "時間を",
+          "vietnamese": "thời gian",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 260104,
+          "order_index": 4,
+          "japanese": "変えて",
+          "vietnamese": "đổi",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 260105,
+          "order_index": 5,
+          "japanese": "いただけませんか。",
+          "vietnamese": "giúp tôi được không?",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    }
+  ],
+  "27": [
+    {
+      "id": 27001,
+      "lesson_id": 27,
+      "passage_id": null,
+      "full_japanese": "私は日本語の新聞が読めます。",
+      "full_romaji": "Watashi wa Nihongo no shinbun ga yomemasu.",
+      "full_vietnamese": "Tôi có thể đọc được báo tiếng Nhật.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 270011,
+          "order_index": 1,
+          "japanese": "私は",
+          "vietnamese": "tôi thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 270012,
+          "order_index": 2,
+          "japanese": "日本語の新聞が",
+          "vietnamese": "báo tiếng Nhật (đối tượng của khả năng)",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 270013,
+          "order_index": 3,
+          "japanese": "読めます。",
+          "vietnamese": "có thể đọc",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 27002,
+      "lesson_id": 27,
+      "passage_id": null,
+      "full_japanese": "ここで写真が撮れますか。",
+      "full_romaji": "Koko de shashin ga toremasu ka.",
+      "full_vietnamese": "Ở đây có thể chụp ảnh được không?",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 270021,
+          "order_index": 1,
+          "japanese": "ここで",
+          "vietnamese": "ở đây",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 270022,
+          "order_index": 2,
+          "japanese": "写真が",
+          "vietnamese": "ảnh",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 270023,
+          "order_index": 3,
+          "japanese": "撮れますか。",
+          "vietnamese": "có thể chụp không?",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 27003,
+      "lesson_id": 27,
+      "passage_id": null,
+      "full_japanese": "富士山が見えます。",
+      "full_romaji": "Fujisan ga miemasu.",
+      "full_vietnamese": "Có thể nhìn thấy núi Phú Sĩ.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 270031,
+          "order_index": 1,
+          "japanese": "富士山が",
+          "vietnamese": "núi Phú Sĩ",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 270032,
+          "order_index": 2,
+          "japanese": "見えます。",
+          "vietnamese": "có thể nhìn thấy (tự nhiên lọt vào mắt)",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 27004,
+      "lesson_id": 27,
+      "passage_id": null,
+      "full_japanese": "波の音が聞こえます。",
+      "full_romaji": "Nami no oto ga kikoemasu.",
+      "full_vietnamese": "Có thể nghe thấy tiếng sóng.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 270041,
+          "order_index": 1,
+          "japanese": "波の音が",
+          "vietnamese": "tiếng sóng",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 270042,
+          "order_index": 2,
+          "japanese": "聞こえます。",
+          "vietnamese": "có thể nghe thấy (tự nhiên lọt vào tai)",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 27005,
+      "lesson_id": 27,
+      "passage_id": null,
+      "full_japanese": "ローマ字しか書けません。",
+      "full_romaji": "Roomaji shika kakemasen.",
+      "full_vietnamese": "Tôi chỉ có thể viết được Romaji.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 270051,
+          "order_index": 1,
+          "japanese": "ローマ字",
+          "vietnamese": "chữ Romaji",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 270052,
+          "order_index": 2,
+          "japanese": "しか",
+          "vietnamese": "chỉ (đi với phủ định)",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 270053,
+          "order_index": 3,
+          "japanese": "書けません。",
+          "vietnamese": "không thể viết",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 27006,
+      "lesson_id": 27,
+      "passage_id": null,
+      "full_japanese": "このアパートではペットが飼えます。",
+      "full_romaji": "Kono apaato de wa petto ga kaemasu.",
+      "full_vietnamese": "Ở căn hộ này có thể nuôi thú cưng.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 270061,
+          "order_index": 1,
+          "japanese": "このアパートでは",
+          "vietnamese": "ở căn hộ này thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 270062,
+          "order_index": 2,
+          "japanese": "ペットが",
+          "vietnamese": "thú cưng (đối tượng khả năng)",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 270063,
+          "order_index": 3,
+          "japanese": "飼えます。",
+          "vietnamese": "có thể nuôi",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 27007,
+      "lesson_id": 27,
+      "passage_id": null,
+      "full_japanese": "来週から新しい図書館が使えます。",
+      "full_romaji": "Raishuu kara atarashii toshokan ga tsukaemasu.",
+      "full_vietnamese": "Từ tuần sau có thể dùng thư viện mới.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 270071,
+          "order_index": 1,
+          "japanese": "来週から",
+          "vietnamese": "từ tuần sau",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 270072,
+          "order_index": 2,
+          "japanese": "新しい図書館が",
+          "vietnamese": "thư viện mới",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 270073,
+          "order_index": 3,
+          "japanese": "使えます。",
+          "vietnamese": "có thể sử dụng",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 27008,
+      "lesson_id": 27,
+      "passage_id": null,
+      "full_japanese": "この部屋から海が見えます。",
+      "full_romaji": "Kono heya kara umi ga miemasu.",
+      "full_vietnamese": "Từ căn phòng này có thể nhìn thấy biển.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 270081,
+          "order_index": 1,
+          "japanese": "この部屋から",
+          "vietnamese": "từ căn phòng này",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 270082,
+          "order_index": 2,
+          "japanese": "海が",
+          "vietnamese": "biển",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 270083,
+          "order_index": 3,
+          "japanese": "見えます。",
+          "vietnamese": "có thể nhìn thấy",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 27009,
+      "lesson_id": 27,
+      "passage_id": null,
+      "full_japanese": "隣の部屋から子供の声が聞こえます。",
+      "full_romaji": "Tonari no heya kara kodomo no koe ga kikoemasu.",
+      "full_vietnamese": "Từ phòng bên cạnh nghe thấy tiếng trẻ con.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 270091,
+          "order_index": 1,
+          "japanese": "隣の部屋から",
+          "vietnamese": "từ phòng bên cạnh",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 270092,
+          "order_index": 2,
+          "japanese": "子供の声が",
+          "vietnamese": "tiếng trẻ con",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 270093,
+          "order_index": 3,
+          "japanese": "聞こえます。",
+          "vietnamese": "có thể nghe thấy",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 27010,
+      "lesson_id": 27,
+      "passage_id": null,
+      "full_japanese": "日曜日しか休みが取れません。",
+      "full_romaji": "Nichiyoubi shika yasumi ga toremasen.",
+      "full_vietnamese": "Tôi chỉ có thể xin nghỉ vào Chủ nhật.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 270101,
+          "order_index": 1,
+          "japanese": "日曜日",
+          "vietnamese": "Chủ nhật",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 270102,
+          "order_index": 2,
+          "japanese": "しか",
+          "vietnamese": "chỉ (đi với phủ định)",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 270103,
+          "order_index": 3,
+          "japanese": "休みが",
+          "vietnamese": "ngày nghỉ",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 270104,
+          "order_index": 4,
+          "japanese": "取れません。",
+          "vietnamese": "không thể lấy/xin",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    }
+  ],
+  "28": [
+    {
+      "id": 28001,
+      "lesson_id": 28,
+      "passage_id": null,
+      "full_japanese": "音楽を聞きながら食事します。",
+      "full_romaji": "Ongaku o kikinagara shokuji shimasu.",
+      "full_vietnamese": "Tôi vừa nghe nhạc vừa dùng bữa.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 280011,
+          "order_index": 1,
+          "japanese": "音楽を",
+          "vietnamese": "nhạc",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 280012,
+          "order_index": 2,
+          "japanese": "聞きながら",
+          "vietnamese": "vừa nghe...",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 280013,
+          "order_index": 3,
+          "japanese": "食事します。",
+          "vietnamese": "...vừa dùng bữa.",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 28002,
+      "lesson_id": 28,
+      "passage_id": null,
+      "full_japanese": "毎朝ジョギングをしています。",
+      "full_romaji": "Maiasa jogingu o shite imasu.",
+      "full_vietnamese": "Mỗi sáng tôi đều chạy bộ.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 280021,
+          "order_index": 1,
+          "japanese": "毎朝",
+          "vietnamese": "mỗi sáng",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 280022,
+          "order_index": 2,
+          "japanese": "ジョギングを",
+          "vietnamese": "việc chạy bộ",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 280023,
+          "order_index": 3,
+          "japanese": "しています。",
+          "vietnamese": "đang làm (thói quen lặp lại)",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 28003,
+      "lesson_id": 28,
+      "passage_id": null,
+      "full_japanese": "鈴木さんは英語もわかるし、中国語もわかります。",
+      "full_romaji": "Suzuki-san wa Eigo mo wakaru shi, Chuugokugo mo wakarimasu.",
+      "full_vietnamese": "Anh Suzuki hiểu cả tiếng Anh lẫn tiếng Trung.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 280031,
+          "order_index": 1,
+          "japanese": "鈴木さんは",
+          "vietnamese": "anh Suzuki thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 280032,
+          "order_index": 2,
+          "japanese": "英語もわかるし、",
+          "vietnamese": "vừa hiểu tiếng Anh,",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 280033,
+          "order_index": 3,
+          "japanese": "中国語も",
+          "vietnamese": "tiếng Trung cũng",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 280034,
+          "order_index": 4,
+          "japanese": "わかります。",
+          "vietnamese": "hiểu.",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 28004,
+      "lesson_id": 28,
+      "passage_id": null,
+      "full_japanese": "この店は安いし、おいしいし、いつも人が多いです。",
+      "full_romaji": "Kono mise wa yasui shi, oishii shi, itsumo hito ga ooi desu.",
+      "full_vietnamese": "Cửa hàng này vừa rẻ, vừa ngon nên lúc nào cũng đông khách.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 280041,
+          "order_index": 1,
+          "japanese": "この店は",
+          "vietnamese": "cửa hàng này thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 280042,
+          "order_index": 2,
+          "japanese": "安いし、",
+          "vietnamese": "vừa rẻ,",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 280043,
+          "order_index": 3,
+          "japanese": "おいしいし、",
+          "vietnamese": "vừa ngon,",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 280044,
+          "order_index": 4,
+          "japanese": "いつも",
+          "vietnamese": "lúc nào cũng",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 280045,
+          "order_index": 5,
+          "japanese": "人が多いです。",
+          "vietnamese": "đông người.",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 28005,
+      "lesson_id": 28,
+      "passage_id": null,
+      "full_japanese": "母は働きながら日本語を勉強しています。",
+      "full_romaji": "Haha wa hatarakinagara Nihongo o benkyou shite imasu.",
+      "full_vietnamese": "Mẹ tôi vừa đi làm vừa học tiếng Nhật.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 280051,
+          "order_index": 1,
+          "japanese": "母は",
+          "vietnamese": "mẹ tôi thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 280052,
+          "order_index": 2,
+          "japanese": "働きながら",
+          "vietnamese": "vừa làm việc",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 280053,
+          "order_index": 3,
+          "japanese": "日本語を",
+          "vietnamese": "tiếng Nhật",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 280054,
+          "order_index": 4,
+          "japanese": "勉強しています。",
+          "vietnamese": "đang học / học thường xuyên",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 28006,
+      "lesson_id": 28,
+      "passage_id": null,
+      "full_japanese": "兄は毎週ダンス教室に通っています。",
+      "full_romaji": "Ani wa maishuu dansu kyoushitsu ni kayotte imasu.",
+      "full_vietnamese": "Anh trai tôi hằng tuần đều đi học lớp nhảy.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 280061,
+          "order_index": 1,
+          "japanese": "兄は",
+          "vietnamese": "anh trai tôi thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 280062,
+          "order_index": 2,
+          "japanese": "毎週",
+          "vietnamese": "mỗi tuần",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 280063,
+          "order_index": 3,
+          "japanese": "ダンス教室に",
+          "vietnamese": "đến lớp nhảy",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 280064,
+          "order_index": 4,
+          "japanese": "通っています。",
+          "vietnamese": "đi học/đi lại thường xuyên",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 28007,
+      "lesson_id": 28,
+      "passage_id": null,
+      "full_japanese": "この番組はおもしろいし、勉強にもなります。",
+      "full_romaji": "Kono bangumi wa omoshiroi shi, benkyou ni mo narimasu.",
+      "full_vietnamese": "Chương trình này vừa thú vị, lại còn có ích cho việc học.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 280071,
+          "order_index": 1,
+          "japanese": "この番組は",
+          "vietnamese": "chương trình này thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 280072,
+          "order_index": 2,
+          "japanese": "おもしろいし、",
+          "vietnamese": "vừa thú vị,",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 280073,
+          "order_index": 3,
+          "japanese": "勉強にも",
+          "vietnamese": "cũng cho việc học",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 280074,
+          "order_index": 4,
+          "japanese": "なります。",
+          "vietnamese": "trở thành/có ích",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 28008,
+      "lesson_id": 28,
+      "passage_id": null,
+      "full_japanese": "娘は歌も上手だし、踊りも上手です。",
+      "full_romaji": "Musume wa uta mo jouzu da shi, odori mo jouzu desu.",
+      "full_vietnamese": "Con gái tôi hát cũng giỏi mà nhảy cũng giỏi.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 280081,
+          "order_index": 1,
+          "japanese": "娘は",
+          "vietnamese": "con gái tôi thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 280082,
+          "order_index": 2,
+          "japanese": "歌も上手だし、",
+          "vietnamese": "hát cũng giỏi,",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 280083,
+          "order_index": 3,
+          "japanese": "踊りも",
+          "vietnamese": "nhảy cũng",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 280084,
+          "order_index": 4,
+          "japanese": "上手です。",
+          "vietnamese": "giỏi.",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 28009,
+      "lesson_id": 28,
+      "passage_id": null,
+      "full_japanese": "給料もいいし、休みも多いです。",
+      "full_romaji": "Kyuuryou mo ii shi, yasumi mo ooi desu.",
+      "full_vietnamese": "Lương cũng tốt, ngày nghỉ cũng nhiều.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 280091,
+          "order_index": 1,
+          "japanese": "給料も",
+          "vietnamese": "lương cũng",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 280092,
+          "order_index": 2,
+          "japanese": "いいし、",
+          "vietnamese": "tốt,",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 280093,
+          "order_index": 3,
+          "japanese": "休みも",
+          "vietnamese": "ngày nghỉ cũng",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 280094,
+          "order_index": 4,
+          "japanese": "多いです。",
+          "vietnamese": "nhiều.",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 28010,
+      "lesson_id": 28,
+      "passage_id": null,
+      "full_japanese": "ガムをかみながら話さないでください。",
+      "full_romaji": "Gamu o kaminagara hanasanaide kudasai.",
+      "full_vietnamese": "Xin đừng vừa nhai kẹo cao su vừa nói chuyện.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 280101,
+          "order_index": 1,
+          "japanese": "ガムを",
+          "vietnamese": "kẹo cao su",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 280102,
+          "order_index": 2,
+          "japanese": "かみながら",
+          "vietnamese": "vừa nhai",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 280103,
+          "order_index": 3,
+          "japanese": "話さないで",
+          "vietnamese": "đừng nói chuyện",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 280104,
+          "order_index": 4,
+          "japanese": "ください。",
+          "vietnamese": "xin hãy",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    }
+  ],
+  "29": [
+    {
+      "id": 29001,
+      "lesson_id": 29,
+      "passage_id": null,
+      "full_japanese": "ドアが開いています。",
+      "full_romaji": "Doa ga aite imasu.",
+      "full_vietnamese": "Cửa đang mở.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 290011,
+          "order_index": 1,
+          "japanese": "ドアが",
+          "vietnamese": "cửa (tự động từ)",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 290012,
+          "order_index": 2,
+          "japanese": "開いています。",
+          "vietnamese": "đang mở (trạng thái)",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 29002,
+      "lesson_id": 29,
+      "passage_id": null,
+      "full_japanese": "このパソコンは壊れています。",
+      "full_romaji": "Kono pasokon wa kowarete imasu.",
+      "full_vietnamese": "Cái máy tính này đang bị hỏng.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 290021,
+          "order_index": 1,
+          "japanese": "このパソコンは",
+          "vietnamese": "cái máy tính này thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 290022,
+          "order_index": 2,
+          "japanese": "壊れています。",
+          "vietnamese": "đang bị hỏng (trạng thái)",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 29003,
+      "lesson_id": 29,
+      "passage_id": null,
+      "full_japanese": "電車に傘を忘れてしまいました。",
+      "full_romaji": "Densha ni kasa o wasurete shimaimashita.",
+      "full_vietnamese": "Tôi đã lỡ để quên ô trên tàu điện rồi.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 290031,
+          "order_index": 1,
+          "japanese": "電車に",
+          "vietnamese": "ở trên tàu điện",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 290032,
+          "order_index": 2,
+          "japanese": "傘を",
+          "vietnamese": "chiếc ô",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 290033,
+          "order_index": 3,
+          "japanese": "忘れてしまいました。",
+          "vietnamese": "đã lỡ để quên mất rồi (sự tiếc nuối)",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 29004,
+      "lesson_id": 29,
+      "passage_id": null,
+      "full_japanese": "漢字の宿題はもうやってしまいました。",
+      "full_romaji": "Kanji no shukudai wa mou yatte shimaimashita.",
+      "full_vietnamese": "Tôi đã làm xong hết bài tập Hán tự rồi.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 290041,
+          "order_index": 1,
+          "japanese": "漢字の宿題は",
+          "vietnamese": "bài tập Hán tự thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 290042,
+          "order_index": 2,
+          "japanese": "もう",
+          "vietnamese": "đã... rồi",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 290043,
+          "order_index": 3,
+          "japanese": "やってしまいました。",
+          "vietnamese": "làm xong hết rồi (hoàn thành triệt để)",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 29005,
+      "lesson_id": 29,
+      "passage_id": null,
+      "full_japanese": "窓が閉まっています。",
+      "full_romaji": "Mado ga shimatte imasu.",
+      "full_vietnamese": "Cửa sổ đang đóng.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 290051,
+          "order_index": 1,
+          "japanese": "窓が",
+          "vietnamese": "cửa sổ (tự động từ)",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 290052,
+          "order_index": 2,
+          "japanese": "閉まっています。",
+          "vietnamese": "đang đóng (trạng thái)",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 29006,
+      "lesson_id": 29,
+      "passage_id": null,
+      "full_japanese": "電気が消えています。",
+      "full_romaji": "Denki ga kiete imasu.",
+      "full_vietnamese": "Đèn đang tắt.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 290061,
+          "order_index": 1,
+          "japanese": "電気が",
+          "vietnamese": "đèn",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 290062,
+          "order_index": 2,
+          "japanese": "消えています。",
+          "vietnamese": "đang tắt (trạng thái)",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 29007,
+      "lesson_id": 29,
+      "passage_id": null,
+      "full_japanese": "このコップは割れています。",
+      "full_romaji": "Kono koppu wa warete imasu.",
+      "full_vietnamese": "Cái cốc này bị vỡ.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 290071,
+          "order_index": 1,
+          "japanese": "このコップは",
+          "vietnamese": "cái cốc này thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 290072,
+          "order_index": 2,
+          "japanese": "割れています。",
+          "vietnamese": "đang bị vỡ",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 29008,
+      "lesson_id": 29,
+      "passage_id": null,
+      "full_japanese": "かばんのボタンが外れています。",
+      "full_romaji": "Kaban no botan ga hazurete imasu.",
+      "full_vietnamese": "Nút của cái cặp bị bung ra.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 290081,
+          "order_index": 1,
+          "japanese": "かばんのボタンが",
+          "vietnamese": "nút của cái cặp",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 290082,
+          "order_index": 2,
+          "japanese": "外れています。",
+          "vietnamese": "bị tuột/bung",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 29009,
+      "lesson_id": 29,
+      "passage_id": null,
+      "full_japanese": "財布をどこかに落としてしまいました。",
+      "full_romaji": "Saifu o dokoka ni otoshite shimaimashita.",
+      "full_vietnamese": "Tôi lỡ đánh rơi ví ở đâu đó mất rồi.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 290091,
+          "order_index": 1,
+          "japanese": "財布を",
+          "vietnamese": "ví",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 290092,
+          "order_index": 2,
+          "japanese": "どこかに",
+          "vietnamese": "ở đâu đó",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 290093,
+          "order_index": 3,
+          "japanese": "落としてしまいました。",
+          "vietnamese": "đã lỡ đánh rơi mất rồi",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 29010,
+      "lesson_id": 29,
+      "passage_id": null,
+      "full_japanese": "レポートを全部書いてしまいました。",
+      "full_romaji": "Repooto o zenbu kaite shimaimashita.",
+      "full_vietnamese": "Tôi đã viết xong toàn bộ báo cáo rồi.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 290101,
+          "order_index": 1,
+          "japanese": "レポートを",
+          "vietnamese": "báo cáo",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 290102,
+          "order_index": 2,
+          "japanese": "全部",
+          "vietnamese": "toàn bộ",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 290103,
+          "order_index": 3,
+          "japanese": "書いてしまいました。",
+          "vietnamese": "đã viết xong hết",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    }
+  ],
+  "30": [
+    {
+      "id": 30001,
+      "lesson_id": 30,
+      "passage_id": null,
+      "full_japanese": "壁にカレンダーが張ってあります。",
+      "full_romaji": "Kabe ni karendaa ga hatte arimasu.",
+      "full_vietnamese": "Trên tường có dán tờ lịch.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 300011,
+          "order_index": 1,
+          "japanese": "壁に",
+          "vietnamese": "trên tường",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 300012,
+          "order_index": 2,
+          "japanese": "カレンダーが",
+          "vietnamese": "tờ lịch",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 300013,
+          "order_index": 3,
+          "japanese": "張ってあります。",
+          "vietnamese": "được dán sẵn (trạng thái có chủ đích)",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 30002,
+      "lesson_id": 30,
+      "passage_id": null,
+      "full_japanese": "パスポートは引き出しの中にしまってあります。",
+      "full_romaji": "Pasupooto wa hikidashi no naka ni shimatte arimasu.",
+      "full_vietnamese": "Hộ chiếu đã được cất ở trong ngăn kéo.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 300021,
+          "order_index": 1,
+          "japanese": "パスポートは",
+          "vietnamese": "hộ chiếu thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 300022,
+          "order_index": 2,
+          "japanese": "引き出しの中に",
+          "vietnamese": "ở trong ngăn kéo",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 300023,
+          "order_index": 3,
+          "japanese": "しまってあります。",
+          "vietnamese": "được cất sẵn",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 30003,
+      "lesson_id": 30,
+      "passage_id": null,
+      "full_japanese": "旅行の前に、切符を買っておきます。",
+      "full_romaji": "Ryokou no mae ni, kippu o katte okimasu.",
+      "full_vietnamese": "Trước khi đi du lịch, tôi sẽ mua sẵn vé.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 300031,
+          "order_index": 1,
+          "japanese": "旅行の前に、",
+          "vietnamese": "trước chuyến du lịch,",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 300032,
+          "order_index": 2,
+          "japanese": "切符を",
+          "vietnamese": "vé",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 300033,
+          "order_index": 3,
+          "japanese": "買っておきます。",
+          "vietnamese": "tôi sẽ mua sẵn (chuẩn bị trước)",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 30004,
+      "lesson_id": 30,
+      "passage_id": null,
+      "full_japanese": "使ったら、元の所に戻しておいてください。",
+      "full_romaji": "Tsukattara, moto no tokoro ni modoshite oite kudasai.",
+      "full_vietnamese": "Sau khi dùng xong, xin hãy để lại vị trí cũ.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 300041,
+          "order_index": 1,
+          "japanese": "使ったら、",
+          "vietnamese": "sau khi dùng xong,",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 300042,
+          "order_index": 2,
+          "japanese": "元の所に",
+          "vietnamese": "về vị trí ban đầu",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 300043,
+          "order_index": 3,
+          "japanese": "戻しておいてください。",
+          "vietnamese": "hãy để lại (như cũ)",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 30005,
+      "lesson_id": 30,
+      "passage_id": null,
+      "full_japanese": "玄関に花が飾ってあります。",
+      "full_romaji": "Genkan ni hana ga kazatte arimasu.",
+      "full_vietnamese": "Ở cửa ra vào có trang trí hoa.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 300051,
+          "order_index": 1,
+          "japanese": "玄関に",
+          "vietnamese": "ở cửa ra vào",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 300052,
+          "order_index": 2,
+          "japanese": "花が",
+          "vietnamese": "hoa",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 300053,
+          "order_index": 3,
+          "japanese": "飾ってあります。",
+          "vietnamese": "được trang trí sẵn",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 30006,
+      "lesson_id": 30,
+      "passage_id": null,
+      "full_japanese": "机の上に書類が並べてあります。",
+      "full_romaji": "Tsukue no ue ni shorui ga narabete arimasu.",
+      "full_vietnamese": "Trên bàn có xếp sẵn tài liệu.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 300061,
+          "order_index": 1,
+          "japanese": "机の上に",
+          "vietnamese": "trên bàn",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 300062,
+          "order_index": 2,
+          "japanese": "書類が",
+          "vietnamese": "tài liệu",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 300063,
+          "order_index": 3,
+          "japanese": "並べてあります。",
+          "vietnamese": "được xếp sẵn",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 30007,
+      "lesson_id": 30,
+      "passage_id": null,
+      "full_japanese": "会議の前に資料をコピーしておきます。",
+      "full_romaji": "Kaigi no mae ni shiryou o kopi shite okimasu.",
+      "full_vietnamese": "Trước cuộc họp, tôi sẽ photo sẵn tài liệu.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 300071,
+          "order_index": 1,
+          "japanese": "会議の前に",
+          "vietnamese": "trước cuộc họp",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 300072,
+          "order_index": 2,
+          "japanese": "資料を",
+          "vietnamese": "tài liệu",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 300073,
+          "order_index": 3,
+          "japanese": "コピーしておきます。",
+          "vietnamese": "photo sẵn",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 30008,
+      "lesson_id": 30,
+      "passage_id": null,
+      "full_japanese": "授業の前に予習しておいてください。",
+      "full_romaji": "Jugyou no mae ni yoshuu shite oite kudasai.",
+      "full_vietnamese": "Trước giờ học, xin hãy chuẩn bị bài trước.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 300081,
+          "order_index": 1,
+          "japanese": "授業の前に",
+          "vietnamese": "trước giờ học",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 300082,
+          "order_index": 2,
+          "japanese": "予習して",
+          "vietnamese": "chuẩn bị bài trước",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 300083,
+          "order_index": 3,
+          "japanese": "おいてください。",
+          "vietnamese": "hãy làm sẵn",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 30009,
+      "lesson_id": 30,
+      "passage_id": null,
+      "full_japanese": "予定はまだ決めてありません。",
+      "full_romaji": "Yotei wa mada kimete arimasen.",
+      "full_vietnamese": "Lịch trình vẫn chưa được quyết định sẵn.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 300091,
+          "order_index": 1,
+          "japanese": "予定は",
+          "vietnamese": "lịch trình thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 300092,
+          "order_index": 2,
+          "japanese": "まだ",
+          "vietnamese": "vẫn chưa",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 300093,
+          "order_index": 3,
+          "japanese": "決めてありません。",
+          "vietnamese": "chưa được quyết định sẵn",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 30010,
+      "lesson_id": 30,
+      "passage_id": null,
+      "full_japanese": "窓はそのままにしておいてください。",
+      "full_romaji": "Mado wa sono mama ni shite oite kudasai.",
+      "full_vietnamese": "Xin cứ để cửa sổ nguyên như vậy.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 300101,
+          "order_index": 1,
+          "japanese": "窓は",
+          "vietnamese": "cửa sổ thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 300102,
+          "order_index": 2,
+          "japanese": "そのままにして",
+          "vietnamese": "để nguyên như vậy",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 300103,
+          "order_index": 3,
+          "japanese": "おいてください。",
+          "vietnamese": "xin hãy giữ sẵn",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    }
+  ],
+  "31": [
+    {
+      "id": 31001,
+      "lesson_id": 31,
+      "passage_id": null,
+      "full_japanese": "週末は海へ行こうと思っています。",
+      "full_romaji": "Shuumatsu wa umi e ikou to omotte imasu.",
+      "full_vietnamese": "Cuối tuần tôi dự định sẽ đi biển.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 310011,
+          "order_index": 1,
+          "japanese": "週末は",
+          "vietnamese": "cuối tuần thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 310012,
+          "order_index": 2,
+          "japanese": "海へ",
+          "vietnamese": "đến biển",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 310013,
+          "order_index": 3,
+          "japanese": "行こうと",
+          "vietnamese": "đi (thể ý chí)",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 310014,
+          "order_index": 4,
+          "japanese": "思っています。",
+          "vietnamese": "tôi đang dự định",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 31002,
+      "lesson_id": 31,
+      "passage_id": null,
+      "full_japanese": "将来、自分の会社を作るつもりです。",
+      "full_romaji": "Shourai, jibun no kaisha o tsukuru tsumori desu.",
+      "full_vietnamese": "Tương lai, tôi dự định sẽ thành lập công ty của riêng mình.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 310021,
+          "order_index": 1,
+          "japanese": "将来、",
+          "vietnamese": "trong tương lai,",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 310022,
+          "order_index": 2,
+          "japanese": "自分の会社を",
+          "vietnamese": "công ty của chính mình",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 310023,
+          "order_index": 3,
+          "japanese": "作る",
+          "vietnamese": "làm / thành lập",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 310024,
+          "order_index": 4,
+          "japanese": "つもりです。",
+          "vietnamese": "tôi dự định sẽ",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 31003,
+      "lesson_id": 31,
+      "passage_id": null,
+      "full_japanese": "来年からはタバコを吸わないつもりです。",
+      "full_romaji": "Rainen kara wa tabako o suwanai tsumori desu.",
+      "full_vietnamese": "Từ năm sau tôi dự định sẽ không hút thuốc nữa.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 310031,
+          "order_index": 1,
+          "japanese": "来年からは",
+          "vietnamese": "từ năm sau thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 310032,
+          "order_index": 2,
+          "japanese": "タバコを",
+          "vietnamese": "thuốc lá",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 310033,
+          "order_index": 3,
+          "japanese": "吸わない",
+          "vietnamese": "không hút",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 310034,
+          "order_index": 4,
+          "japanese": "つもりです。",
+          "vietnamese": "tôi dự định sẽ",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 31004,
+      "lesson_id": 31,
+      "passage_id": null,
+      "full_japanese": "７月の終わりに、ドイツへ出張する予定です。",
+      "full_romaji": "Shichigatsu no owari ni, Doitsu e shucchou suru yotei desu.",
+      "full_vietnamese": "Vào cuối tháng 7, theo kế hoạch tôi sẽ đi công tác ở Đức.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 310041,
+          "order_index": 1,
+          "japanese": "７月の終わりに、",
+          "vietnamese": "vào cuối tháng 7,",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 310042,
+          "order_index": 2,
+          "japanese": "ドイツへ",
+          "vietnamese": "đến Đức",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 310043,
+          "order_index": 3,
+          "japanese": "出張する",
+          "vietnamese": "đi công tác",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 310044,
+          "order_index": 4,
+          "japanese": "予定です。",
+          "vietnamese": "theo kế hoạch là",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 31005,
+      "lesson_id": 31,
+      "passage_id": null,
+      "full_japanese": "会議は10時からの予定です。",
+      "full_romaji": "Kaigi wa juuji kara no yotei desu.",
+      "full_vietnamese": "Cuộc họp dự kiến bắt đầu từ 10 giờ.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 310051,
+          "order_index": 1,
+          "japanese": "会議は",
+          "vietnamese": "cuộc họp thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 310052,
+          "order_index": 2,
+          "japanese": "10時からの",
+          "vietnamese": "từ 10 giờ",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 310053,
+          "order_index": 3,
+          "japanese": "予定です。",
+          "vietnamese": "theo kế hoạch là",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 31006,
+      "lesson_id": 31,
+      "passage_id": null,
+      "full_japanese": "明日から毎日作文を書こうと思っています。",
+      "full_romaji": "Ashita kara mainichi sakubun o kakou to omotte imasu.",
+      "full_vietnamese": "Từ ngày mai tôi định viết văn mỗi ngày.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 310061,
+          "order_index": 1,
+          "japanese": "明日から",
+          "vietnamese": "từ ngày mai",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 310062,
+          "order_index": 2,
+          "japanese": "毎日",
+          "vietnamese": "mỗi ngày",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 310063,
+          "order_index": 3,
+          "japanese": "作文を",
+          "vietnamese": "bài văn",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 310064,
+          "order_index": 4,
+          "japanese": "書こうと",
+          "vietnamese": "sẽ viết (ý chí)",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 310065,
+          "order_index": 5,
+          "japanese": "思っています。",
+          "vietnamese": "đang định",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 31007,
+      "lesson_id": 31,
+      "passage_id": null,
+      "full_japanese": "大学院の試験を受けるつもりです。",
+      "full_romaji": "Daigakuin no shiken o ukeru tsumori desu.",
+      "full_vietnamese": "Tôi định dự thi cao học.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 310071,
+          "order_index": 1,
+          "japanese": "大学院の試験を",
+          "vietnamese": "kỳ thi cao học",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 310072,
+          "order_index": 2,
+          "japanese": "受ける",
+          "vietnamese": "dự thi",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 310073,
+          "order_index": 3,
+          "japanese": "つもりです。",
+          "vietnamese": "dự định sẽ",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 31008,
+      "lesson_id": 31,
+      "passage_id": null,
+      "full_japanese": "卒業してから、本社で働く予定です。",
+      "full_romaji": "Sotsugyou shite kara, honsha de hataraku yotei desu.",
+      "full_vietnamese": "Sau khi tốt nghiệp, theo kế hoạch tôi sẽ làm việc ở trụ sở chính.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 310081,
+          "order_index": 1,
+          "japanese": "卒業してから、",
+          "vietnamese": "sau khi tốt nghiệp,",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 310082,
+          "order_index": 2,
+          "japanese": "本社で",
+          "vietnamese": "ở trụ sở chính",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 310083,
+          "order_index": 3,
+          "japanese": "働く",
+          "vietnamese": "làm việc",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 310084,
+          "order_index": 4,
+          "japanese": "予定です。",
+          "vietnamese": "theo kế hoạch",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 31009,
+      "lesson_id": 31,
+      "passage_id": null,
+      "full_japanese": "展覧会に出席しようと思っています。",
+      "full_romaji": "Tenrankai ni shusseki shiyou to omotte imasu.",
+      "full_vietnamese": "Tôi định tham dự buổi triển lãm.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 310091,
+          "order_index": 1,
+          "japanese": "展覧会に",
+          "vietnamese": "buổi triển lãm",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 310092,
+          "order_index": 2,
+          "japanese": "出席しようと",
+          "vietnamese": "định tham dự",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 310093,
+          "order_index": 3,
+          "japanese": "思っています。",
+          "vietnamese": "đang nghĩ/dự định",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 31010,
+      "lesson_id": 31,
+      "passage_id": null,
+      "full_japanese": "来月の連休は温泉へ行くつもりです。",
+      "full_romaji": "Raigetsu no renkyuu wa onsen e iku tsumori desu.",
+      "full_vietnamese": "Kỳ nghỉ liền ngày tháng sau tôi định đi suối nước nóng.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 310101,
+          "order_index": 1,
+          "japanese": "来月の連休は",
+          "vietnamese": "kỳ nghỉ liền ngày tháng sau thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 310102,
+          "order_index": 2,
+          "japanese": "温泉へ",
+          "vietnamese": "đến suối nước nóng",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 310103,
+          "order_index": 3,
+          "japanese": "行く",
+          "vietnamese": "đi",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 310104,
+          "order_index": 4,
+          "japanese": "つもりです。",
+          "vietnamese": "dự định sẽ",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    }
+  ],
+  "32": [
+    {
+      "id": 32001,
+      "lesson_id": 32,
+      "passage_id": null,
+      "full_japanese": "毎日、運動したほうがいいですよ。",
+      "full_romaji": "Mainichi, undou shita hou ga ii desu yo.",
+      "full_vietnamese": "Mỗi ngày bạn nên vận động thì tốt hơn đấy.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 320011,
+          "order_index": 1,
+          "japanese": "毎日、",
+          "vietnamese": "mỗi ngày,",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 320012,
+          "order_index": 2,
+          "japanese": "運動した",
+          "vietnamese": "đã vận động",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 320013,
+          "order_index": 3,
+          "japanese": "ほうがいいですよ。",
+          "vietnamese": "thì tốt hơn đấy (khuyên nhủ)",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 32002,
+      "lesson_id": 32,
+      "passage_id": null,
+      "full_japanese": "熱があるんですか。じゃ、お風呂に入らないほうがいいですよ。",
+      "full_romaji": "Netsu ga arun desu ka. Ja, ofuro ni hairanai hou ga ii desu yo.",
+      "full_vietnamese": "Bạn bị sốt à? Thế thì không nên tắm đâu.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 320021,
+          "order_index": 1,
+          "japanese": "熱が",
+          "vietnamese": "sốt",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 320022,
+          "order_index": 2,
+          "japanese": "あるんですか。",
+          "vietnamese": "bị (sốt) à?",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 320023,
+          "order_index": 3,
+          "japanese": "じゃ、",
+          "vietnamese": "thế thì,",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 320024,
+          "order_index": 4,
+          "japanese": "お風呂に",
+          "vietnamese": "vào bồn tắm",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 320025,
+          "order_index": 5,
+          "japanese": "入らないほうがいいですよ。",
+          "vietnamese": "không nên vào thì tốt hơn đấy.",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 32003,
+      "lesson_id": 32,
+      "passage_id": null,
+      "full_japanese": "明日は雨が降るでしょう。",
+      "full_romaji": "Ashita wa ame ga furu deshou.",
+      "full_vietnamese": "Có lẽ ngày mai trời sẽ mưa.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 320031,
+          "order_index": 1,
+          "japanese": "明日は",
+          "vietnamese": "ngày mai thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 320032,
+          "order_index": 2,
+          "japanese": "雨が降る",
+          "vietnamese": "trời mưa",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 320033,
+          "order_index": 3,
+          "japanese": "でしょう。",
+          "vietnamese": "có lẽ (phỏng đoán)",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 32004,
+      "lesson_id": 32,
+      "passage_id": null,
+      "full_japanese": "午後は雪になるかもしれません。",
+      "full_romaji": "Gogo wa yuki ni naru kamo shiremasen.",
+      "full_vietnamese": "Biết đâu chiều nay trời sẽ có tuyết.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 320041,
+          "order_index": 1,
+          "japanese": "午後は",
+          "vietnamese": "buổi chiều thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 320042,
+          "order_index": 2,
+          "japanese": "雪になる",
+          "vietnamese": "trở thành tuyết",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 320043,
+          "order_index": 3,
+          "japanese": "かもしれません。",
+          "vietnamese": "cũng không biết chừng (xác suất thấp)",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 32005,
+      "lesson_id": 32,
+      "passage_id": null,
+      "full_japanese": "約束の時間に間に合わないかもしれません。",
+      "full_romaji": "Yakusoku no jikan ni maniawanai kamo shiremasen.",
+      "full_vietnamese": "Không chừng chúng ta sẽ không kịp giờ hẹn mất.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 320051,
+          "order_index": 1,
+          "japanese": "約束の時間に",
+          "vietnamese": "vào giờ hẹn",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 320052,
+          "order_index": 2,
+          "japanese": "間に合わない",
+          "vietnamese": "không kịp",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 320053,
+          "order_index": 3,
+          "japanese": "かもしれません。",
+          "vietnamese": "cũng không biết chừng",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 32006,
+      "lesson_id": 32,
+      "passage_id": null,
+      "full_japanese": "咳が出ますから、無理をしないほうがいいです。",
+      "full_romaji": "Seki ga demasu kara, muri o shinai hou ga ii desu.",
+      "full_vietnamese": "Vì bạn bị ho nên không nên làm quá sức.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 320061,
+          "order_index": 1,
+          "japanese": "咳が",
+          "vietnamese": "cơn ho",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 320062,
+          "order_index": 2,
+          "japanese": "出ますから、",
+          "vietnamese": "vì xuất hiện/bị",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 320063,
+          "order_index": 3,
+          "japanese": "無理をしない",
+          "vietnamese": "không làm quá sức",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 320064,
+          "order_index": 4,
+          "japanese": "ほうがいいです。",
+          "vietnamese": "thì tốt hơn",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 32007,
+      "lesson_id": 32,
+      "passage_id": null,
+      "full_japanese": "今夜は風が強くなるでしょう。",
+      "full_romaji": "Konya wa kaze ga tsuyoku naru deshou.",
+      "full_vietnamese": "Tối nay có lẽ gió sẽ mạnh lên.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 320071,
+          "order_index": 1,
+          "japanese": "今夜は",
+          "vietnamese": "tối nay thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 320072,
+          "order_index": 2,
+          "japanese": "風が",
+          "vietnamese": "gió",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 320073,
+          "order_index": 3,
+          "japanese": "強くなる",
+          "vietnamese": "trở nên mạnh",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 320074,
+          "order_index": 4,
+          "japanese": "でしょう。",
+          "vietnamese": "có lẽ",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 32008,
+      "lesson_id": 32,
+      "passage_id": null,
+      "full_japanese": "薬を飲めば、すぐ治るかもしれません。",
+      "full_romaji": "Kusuri o nomeba, sugu naoru kamo shiremasen.",
+      "full_vietnamese": "Nếu uống thuốc, có thể sẽ khỏi ngay.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 320081,
+          "order_index": 1,
+          "japanese": "薬を",
+          "vietnamese": "thuốc",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 320082,
+          "order_index": 2,
+          "japanese": "飲めば、",
+          "vietnamese": "nếu uống,",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 320083,
+          "order_index": 3,
+          "japanese": "すぐ",
+          "vietnamese": "ngay",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 320084,
+          "order_index": 4,
+          "japanese": "治る",
+          "vietnamese": "khỏi",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 320085,
+          "order_index": 5,
+          "japanese": "かもしれません。",
+          "vietnamese": "có thể",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 32009,
+      "lesson_id": 32,
+      "passage_id": null,
+      "full_japanese": "試験は難しいかもしれません。",
+      "full_romaji": "Shiken wa muzukashii kamo shiremasen.",
+      "full_vietnamese": "Bài thi có thể sẽ khó.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 320091,
+          "order_index": 1,
+          "japanese": "試験は",
+          "vietnamese": "bài thi thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 320092,
+          "order_index": 2,
+          "japanese": "難しい",
+          "vietnamese": "khó",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 320093,
+          "order_index": 3,
+          "japanese": "かもしれません。",
+          "vietnamese": "có thể",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 32010,
+      "lesson_id": 32,
+      "passage_id": null,
+      "full_japanese": "十分休んだほうがいいですよ。",
+      "full_romaji": "Juubun yasunda hou ga ii desu yo.",
+      "full_vietnamese": "Bạn nên nghỉ ngơi đầy đủ thì tốt hơn đấy.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 320101,
+          "order_index": 1,
+          "japanese": "十分",
+          "vietnamese": "đầy đủ",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 320102,
+          "order_index": 2,
+          "japanese": "休んだ",
+          "vietnamese": "đã nghỉ",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 320103,
+          "order_index": 3,
+          "japanese": "ほうがいいですよ。",
+          "vietnamese": "nên... thì tốt hơn đấy",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    }
+  ],
+  "33": [
+    {
+      "id": 33001,
+      "lesson_id": 33,
+      "passage_id": null,
+      "full_japanese": "早く起きろ！",
+      "full_romaji": "Hayaku okiro!",
+      "full_vietnamese": "Dậy sớm đi!",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 330011,
+          "order_index": 1,
+          "japanese": "早く",
+          "vietnamese": "sớm",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 330012,
+          "order_index": 2,
+          "japanese": "起きろ！",
+          "vietnamese": "hãy dậy! (mệnh lệnh)",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 33002,
+      "lesson_id": 33,
+      "passage_id": null,
+      "full_japanese": "ここに車を止めるな！",
+      "full_romaji": "Koko ni kuruma o tomeru na!",
+      "full_vietnamese": "Không được đỗ xe ở đây!",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 330021,
+          "order_index": 1,
+          "japanese": "ここに",
+          "vietnamese": "ở đây",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 330022,
+          "order_index": 2,
+          "japanese": "車を止める",
+          "vietnamese": "đỗ xe",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 330023,
+          "order_index": 3,
+          "japanese": "な！",
+          "vietnamese": "cấm! (cấm chỉ)",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 33003,
+      "lesson_id": 33,
+      "passage_id": null,
+      "full_japanese": "あそこに「止まれ」と書いてあります。",
+      "full_romaji": "Asoko ni 'tomare' to kaite arimasu.",
+      "full_vietnamese": "Ở đằng kia có viết chữ 'Dừng lại'.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 330031,
+          "order_index": 1,
+          "japanese": "あそこに",
+          "vietnamese": "ở đằng kia",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 330032,
+          "order_index": 2,
+          "japanese": "「止まれ」と",
+          "vietnamese": "rằng 'Hãy dừng lại'",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 330033,
+          "order_index": 3,
+          "japanese": "書いてあります。",
+          "vietnamese": "có viết (trạng thái)",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 33004,
+      "lesson_id": 33,
+      "passage_id": null,
+      "full_japanese": "「立入禁止」は入るなという意味です。",
+      "full_romaji": "'Tachiiri kinshi' wa hairu na to iu imi desu.",
+      "full_vietnamese": "'Tachiiri kinshi' có nghĩa là cấm vào.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 330041,
+          "order_index": 1,
+          "japanese": "「立入禁止」は",
+          "vietnamese": "chữ 'Cấm vào' thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 330042,
+          "order_index": 2,
+          "japanese": "入るなと",
+          "vietnamese": "cấm vào",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 330043,
+          "order_index": 3,
+          "japanese": "いう意味です。",
+          "vietnamese": "có ý nghĩa là",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 33005,
+      "lesson_id": 33,
+      "passage_id": null,
+      "full_japanese": "田中さんは明日休むと言っていました。",
+      "full_romaji": "Tanaka-san wa ashita yasumu to itte imashita.",
+      "full_vietnamese": "Anh Tanaka đã nói là ngày mai anh ấy sẽ nghỉ.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 330051,
+          "order_index": 1,
+          "japanese": "田中さんは",
+          "vietnamese": "anh Tanaka thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 330052,
+          "order_index": 2,
+          "japanese": "明日休むと",
+          "vietnamese": "rằng ngày mai nghỉ",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 330053,
+          "order_index": 3,
+          "japanese": "言っていました。",
+          "vietnamese": "đã nói",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 33006,
+      "lesson_id": 33,
+      "passage_id": null,
+      "full_japanese": "非常口には「走るな」と書いてあります。",
+      "full_romaji": "Hijouguchi ni wa 'hashiru na' to kaite arimasu.",
+      "full_vietnamese": "Ở cửa thoát hiểm có viết 'Không được chạy'.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 330061,
+          "order_index": 1,
+          "japanese": "非常口には",
+          "vietnamese": "ở cửa thoát hiểm thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 330062,
+          "order_index": 2,
+          "japanese": "「走るな」と",
+          "vietnamese": "rằng 'không được chạy'",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 330063,
+          "order_index": 3,
+          "japanese": "書いてあります。",
+          "vietnamese": "có viết",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 33007,
+      "lesson_id": 33,
+      "passage_id": null,
+      "full_japanese": "先生はボールを投げろと言いました。",
+      "full_romaji": "Sensei wa booru o nagero to iimashita.",
+      "full_vietnamese": "Thầy/cô đã nói: 'Hãy ném bóng'.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 330071,
+          "order_index": 1,
+          "japanese": "先生は",
+          "vietnamese": "thầy/cô thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 330072,
+          "order_index": 2,
+          "japanese": "ボールを",
+          "vietnamese": "quả bóng",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 330073,
+          "order_index": 3,
+          "japanese": "投げろと",
+          "vietnamese": "rằng hãy ném",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 330074,
+          "order_index": 4,
+          "japanese": "言いました。",
+          "vietnamese": "đã nói",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 33008,
+      "lesson_id": 33,
+      "passage_id": null,
+      "full_japanese": "このマークは写真を撮るなという意味です。",
+      "full_romaji": "Kono maaku wa shashin o toru na to iu imi desu.",
+      "full_vietnamese": "Ký hiệu này có nghĩa là cấm chụp ảnh.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 330081,
+          "order_index": 1,
+          "japanese": "このマークは",
+          "vietnamese": "ký hiệu này thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 330082,
+          "order_index": 2,
+          "japanese": "写真を撮るなと",
+          "vietnamese": "cấm chụp ảnh",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 330083,
+          "order_index": 3,
+          "japanese": "いう意味です。",
+          "vietnamese": "có nghĩa là",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 33009,
+      "lesson_id": 33,
+      "passage_id": null,
+      "full_japanese": "規則を守れと注意されました。",
+      "full_romaji": "Kisoku o mamore to chuui saremashita.",
+      "full_vietnamese": "Tôi đã bị nhắc là hãy tuân thủ quy tắc.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 330091,
+          "order_index": 1,
+          "japanese": "規則を",
+          "vietnamese": "quy tắc",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 330092,
+          "order_index": 2,
+          "japanese": "守れと",
+          "vietnamese": "rằng hãy tuân thủ",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 330093,
+          "order_index": 3,
+          "japanese": "注意されました。",
+          "vietnamese": "đã bị nhắc nhở",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 33010,
+      "lesson_id": 33,
+      "passage_id": null,
+      "full_japanese": "警察はここに入るなと言っています。",
+      "full_romaji": "Keisatsu wa koko ni hairu na to itte imasu.",
+      "full_vietnamese": "Cảnh sát đang nói rằng không được vào đây.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 330101,
+          "order_index": 1,
+          "japanese": "警察は",
+          "vietnamese": "cảnh sát thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 330102,
+          "order_index": 2,
+          "japanese": "ここに",
+          "vietnamese": "vào đây",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 330103,
+          "order_index": 3,
+          "japanese": "入るなと",
+          "vietnamese": "rằng cấm vào",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 330104,
+          "order_index": 4,
+          "japanese": "言っています。",
+          "vietnamese": "đang nói",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    }
+  ],
+  "34": [
+    {
+      "id": 34001,
+      "lesson_id": 34,
+      "passage_id": null,
+      "full_japanese": "私が言うとおりに、書いてください。",
+      "full_romaji": "Watashi ga iu toori ni, kaite kudasai.",
+      "full_vietnamese": "Xin hãy viết đúng như những gì tôi nói.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 340011,
+          "order_index": 1,
+          "japanese": "私が言う",
+          "vietnamese": "những gì tôi nói",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 340012,
+          "order_index": 2,
+          "japanese": "とおりに、",
+          "vietnamese": "đúng theo như,",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 340013,
+          "order_index": 3,
+          "japanese": "書いてください。",
+          "vietnamese": "xin hãy viết.",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 34002,
+      "lesson_id": 34,
+      "passage_id": null,
+      "full_japanese": "線のとおりに、紙を切ってください。",
+      "full_romaji": "Sen no toori ni, kami o kitte kudasai.",
+      "full_vietnamese": "Xin hãy cắt giấy theo đúng đường kẻ.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 340021,
+          "order_index": 1,
+          "japanese": "線の",
+          "vietnamese": "đường kẻ",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 340022,
+          "order_index": 2,
+          "japanese": "とおりに、",
+          "vietnamese": "đúng theo như,",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 340023,
+          "order_index": 3,
+          "japanese": "紙を切ってください。",
+          "vietnamese": "xin hãy cắt giấy.",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 34003,
+      "lesson_id": 34,
+      "passage_id": null,
+      "full_japanese": "仕事のあとで、飲みに行きませんか。",
+      "full_romaji": "Shigoto no ato de, nomi ni ikimasen ka.",
+      "full_vietnamese": "Sau khi xong việc, có muốn đi uống chút gì không?",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 340031,
+          "order_index": 1,
+          "japanese": "仕事の",
+          "vietnamese": "công việc",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 340032,
+          "order_index": 2,
+          "japanese": "あとで、",
+          "vietnamese": "sau khi,",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 340033,
+          "order_index": 3,
+          "japanese": "飲みに",
+          "vietnamese": "để uống",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 340034,
+          "order_index": 4,
+          "japanese": "行きませんか。",
+          "vietnamese": "đi... không?",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 34004,
+      "lesson_id": 34,
+      "passage_id": null,
+      "full_japanese": "新しいのを買ったあとで、なくした時計が見つかりました。",
+      "full_romaji": "Atarashii no o katta ato de, nakushita tokei ga mitsukarimashita.",
+      "full_vietnamese": "Sau khi tôi đã mua cái mới thì lại tìm thấy cái đồng hồ bị mất.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 340041,
+          "order_index": 1,
+          "japanese": "新しいのを",
+          "vietnamese": "cái (đồng hồ) mới",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 340042,
+          "order_index": 2,
+          "japanese": "買った",
+          "vietnamese": "đã mua",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 340043,
+          "order_index": 3,
+          "japanese": "あとで、",
+          "vietnamese": "sau khi,",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 340044,
+          "order_index": 4,
+          "japanese": "なくした時計が",
+          "vietnamese": "cái đồng hồ đã mất",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 340045,
+          "order_index": 5,
+          "japanese": "見つかりました。",
+          "vietnamese": "đã được tìm thấy.",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 34005,
+      "lesson_id": 34,
+      "passage_id": null,
+      "full_japanese": "コーヒーに砂糖を入れないで飲みます。",
+      "full_romaji": "Koohii ni satou o irenaide nomimasu.",
+      "full_vietnamese": "Tôi uống cà phê mà không bỏ đường.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 340051,
+          "order_index": 1,
+          "japanese": "コーヒーに",
+          "vietnamese": "vào cà phê",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 340052,
+          "order_index": 2,
+          "japanese": "砂糖を",
+          "vietnamese": "đường",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 340053,
+          "order_index": 3,
+          "japanese": "入れないで",
+          "vietnamese": "không bỏ (mà để nguyên trạng thái)",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 340054,
+          "order_index": 4,
+          "japanese": "飲みます。",
+          "vietnamese": "uống.",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 34006,
+      "lesson_id": 34,
+      "passage_id": null,
+      "full_japanese": "説明書のとおりに組み立ててください。",
+      "full_romaji": "Setsumeisho no toori ni kumitatete kudasai.",
+      "full_vietnamese": "Xin hãy lắp ráp theo đúng sách hướng dẫn.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 340061,
+          "order_index": 1,
+          "japanese": "説明書の",
+          "vietnamese": "của sách hướng dẫn",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 340062,
+          "order_index": 2,
+          "japanese": "とおりに",
+          "vietnamese": "đúng theo như",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 340063,
+          "order_index": 3,
+          "japanese": "組み立てて",
+          "vietnamese": "lắp ráp",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 340064,
+          "order_index": 4,
+          "japanese": "ください。",
+          "vietnamese": "xin hãy",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 34007,
+      "lesson_id": 34,
+      "passage_id": null,
+      "full_japanese": "歯を磨いたあとで、寝ます。",
+      "full_romaji": "Ha o migaita ato de, nemasu.",
+      "full_vietnamese": "Sau khi đánh răng, tôi đi ngủ.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 340071,
+          "order_index": 1,
+          "japanese": "歯を",
+          "vietnamese": "răng",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 340072,
+          "order_index": 2,
+          "japanese": "磨いた",
+          "vietnamese": "đã đánh",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 340073,
+          "order_index": 3,
+          "japanese": "あとで、",
+          "vietnamese": "sau khi",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 340074,
+          "order_index": 4,
+          "japanese": "寝ます。",
+          "vietnamese": "ngủ",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 34008,
+      "lesson_id": 34,
+      "passage_id": null,
+      "full_japanese": "茶道の先生がするように、お茶をたてます。",
+      "full_romaji": "Sadou no sensei ga suru you ni, ocha o tatemasu.",
+      "full_vietnamese": "Tôi pha trà giống như thầy/cô trà đạo làm.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 340081,
+          "order_index": 1,
+          "japanese": "茶道の先生が",
+          "vietnamese": "thầy/cô trà đạo",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 340082,
+          "order_index": 2,
+          "japanese": "するように、",
+          "vietnamese": "theo như cách làm",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 340083,
+          "order_index": 3,
+          "japanese": "お茶を",
+          "vietnamese": "trà",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 340084,
+          "order_index": 4,
+          "japanese": "たてます。",
+          "vietnamese": "pha trà",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 34009,
+      "lesson_id": 34,
+      "passage_id": null,
+      "full_japanese": "朝ご飯を食べないで会社へ行きました。",
+      "full_romaji": "Asagohan o tabenaide kaisha e ikimashita.",
+      "full_vietnamese": "Tôi đã đi làm mà không ăn sáng.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 340091,
+          "order_index": 1,
+          "japanese": "朝ご飯を",
+          "vietnamese": "bữa sáng",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 340092,
+          "order_index": 2,
+          "japanese": "食べないで",
+          "vietnamese": "không ăn mà",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 340093,
+          "order_index": 3,
+          "japanese": "会社へ",
+          "vietnamese": "đến công ty",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 340094,
+          "order_index": 4,
+          "japanese": "行きました。",
+          "vietnamese": "đã đi",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 34010,
+      "lesson_id": 34,
+      "passage_id": null,
+      "full_japanese": "矢印のとおりに進んでください。",
+      "full_romaji": "Yajirushi no toori ni susunde kudasai.",
+      "full_vietnamese": "Xin hãy đi theo đúng mũi tên.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 340101,
+          "order_index": 1,
+          "japanese": "矢印の",
+          "vietnamese": "của mũi tên",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 340102,
+          "order_index": 2,
+          "japanese": "とおりに",
+          "vietnamese": "đúng theo",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 340103,
+          "order_index": 3,
+          "japanese": "進んで",
+          "vietnamese": "tiến đi",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 340104,
+          "order_index": 4,
+          "japanese": "ください。",
+          "vietnamese": "xin hãy",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    }
+  ],
+  "35": [
+    {
+      "id": 35001,
+      "lesson_id": 35,
+      "passage_id": null,
+      "full_japanese": "ボタンを押せば、窓が開きます。",
+      "full_romaji": "Botan o oseba, mado ga akimasu.",
+      "full_vietnamese": "Nếu bấm nút, cửa sổ sẽ mở.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 350011,
+          "order_index": 1,
+          "japanese": "ボタンを",
+          "vietnamese": "nút",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 350012,
+          "order_index": 2,
+          "japanese": "押せば、",
+          "vietnamese": "nếu bấm (thể điều kiện),",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 350013,
+          "order_index": 3,
+          "japanese": "窓が",
+          "vietnamese": "cửa sổ",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 350014,
+          "order_index": 4,
+          "japanese": "開きます。",
+          "vietnamese": "sẽ mở.",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 35002,
+      "lesson_id": 35,
+      "passage_id": null,
+      "full_japanese": "天気がよければ、山が見えます。",
+      "full_romaji": "Tenki ga yokereba, yama ga miemasu.",
+      "full_vietnamese": "Nếu thời tiết đẹp, sẽ có thể nhìn thấy núi.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 350021,
+          "order_index": 1,
+          "japanese": "天気が",
+          "vietnamese": "thời tiết",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 350022,
+          "order_index": 2,
+          "japanese": "よければ、",
+          "vietnamese": "nếu tốt,",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 350023,
+          "order_index": 3,
+          "japanese": "山が",
+          "vietnamese": "núi",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 350024,
+          "order_index": 4,
+          "japanese": "見えます。",
+          "vietnamese": "có thể nhìn thấy.",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 35003,
+      "lesson_id": 35,
+      "passage_id": null,
+      "full_japanese": "明日、時間がなければ、行きません。",
+      "full_romaji": "Ashita, jikan ga nakereba, ikimasen.",
+      "full_vietnamese": "Ngày mai nếu không có thời gian, tôi sẽ không đi.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 350031,
+          "order_index": 1,
+          "japanese": "明日、",
+          "vietnamese": "ngày mai,",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 350032,
+          "order_index": 2,
+          "japanese": "時間が",
+          "vietnamese": "thời gian",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 350033,
+          "order_index": 3,
+          "japanese": "なければ、",
+          "vietnamese": "nếu không có,",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 350034,
+          "order_index": 4,
+          "japanese": "行きません。",
+          "vietnamese": "tôi sẽ không đi.",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 35004,
+      "lesson_id": 35,
+      "passage_id": null,
+      "full_japanese": "パソコンを買いたいんですが、どこで買えばいいですか。",
+      "full_romaji": "Pasokon o kaitain desu ga, doko de kaeba ii desu ka.",
+      "full_vietnamese": "Tôi muốn mua máy tính, nên mua ở đâu thì tốt nhỉ?",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 350041,
+          "order_index": 1,
+          "japanese": "パソコンを",
+          "vietnamese": "máy tính",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 350042,
+          "order_index": 2,
+          "japanese": "買いたいんですが、",
+          "vietnamese": "tôi muốn mua (trình bày hoàn cảnh),",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 350043,
+          "order_index": 3,
+          "japanese": "どこで",
+          "vietnamese": "ở đâu",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 350044,
+          "order_index": 4,
+          "japanese": "買えばいい",
+          "vietnamese": "nếu mua thì tốt",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 350045,
+          "order_index": 5,
+          "japanese": "ですか。",
+          "vietnamese": "nhỉ?",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 35005,
+      "lesson_id": 35,
+      "passage_id": null,
+      "full_japanese": "温泉なら、白馬がいいですよ。",
+      "full_romaji": "Onsen nara, Hakuba ga ii desu yo.",
+      "full_vietnamese": "Nếu là suối nước nóng thì Hakuba được đấy.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 350051,
+          "order_index": 1,
+          "japanese": "温泉",
+          "vietnamese": "suối nước nóng",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 350052,
+          "order_index": 2,
+          "japanese": "なら、",
+          "vietnamese": "nếu là (giới hạn phạm vi),",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 350053,
+          "order_index": 3,
+          "japanese": "白馬が",
+          "vietnamese": "Hakuba (địa danh)",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 350054,
+          "order_index": 4,
+          "japanese": "いいですよ。",
+          "vietnamese": "tốt đấy.",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 35006,
+      "lesson_id": 35,
+      "passage_id": null,
+      "full_japanese": "春になれば、桜が咲きます。",
+      "full_romaji": "Haru ni nareba, sakura ga sakimasu.",
+      "full_vietnamese": "Nếu đến mùa xuân, hoa anh đào sẽ nở.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 350061,
+          "order_index": 1,
+          "japanese": "春に",
+          "vietnamese": "thành mùa xuân",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 350062,
+          "order_index": 2,
+          "japanese": "なれば、",
+          "vietnamese": "nếu trở thành/đến",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 350063,
+          "order_index": 3,
+          "japanese": "桜が",
+          "vietnamese": "hoa anh đào",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 350064,
+          "order_index": 4,
+          "japanese": "咲きます。",
+          "vietnamese": "sẽ nở",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 35007,
+      "lesson_id": 35,
+      "passage_id": null,
+      "full_japanese": "操作方法がわからなければ、係の人に聞いてください。",
+      "full_romaji": "Sousa houhou ga wakaranakereba, kakari no hito ni kiite kudasai.",
+      "full_vietnamese": "Nếu không hiểu cách thao tác, hãy hỏi nhân viên phụ trách.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 350071,
+          "order_index": 1,
+          "japanese": "操作方法が",
+          "vietnamese": "cách thao tác",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 350072,
+          "order_index": 2,
+          "japanese": "わからなければ、",
+          "vietnamese": "nếu không hiểu",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 350073,
+          "order_index": 3,
+          "japanese": "係の人に",
+          "vietnamese": "người phụ trách",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 350074,
+          "order_index": 4,
+          "japanese": "聞いてください。",
+          "vietnamese": "hãy hỏi",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 35008,
+      "lesson_id": 35,
+      "passage_id": null,
+      "full_japanese": "正しければ、丸を付けてください。",
+      "full_romaji": "Tadashikereba, maru o tsukete kudasai.",
+      "full_vietnamese": "Nếu đúng, xin hãy đánh dấu tròn.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 350081,
+          "order_index": 1,
+          "japanese": "正しければ、",
+          "vietnamese": "nếu đúng",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 350082,
+          "order_index": 2,
+          "japanese": "丸を",
+          "vietnamese": "dấu tròn",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 350083,
+          "order_index": 3,
+          "japanese": "付けて",
+          "vietnamese": "đánh dấu",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 350084,
+          "order_index": 4,
+          "japanese": "ください。",
+          "vietnamese": "xin hãy",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 35009,
+      "lesson_id": 35,
+      "passage_id": null,
+      "full_japanese": "海外旅行なら、旅行社に相談したほうがいいです。",
+      "full_romaji": "Kaigai ryokou nara, ryokousha ni soudan shita hou ga ii desu.",
+      "full_vietnamese": "Nếu là du lịch nước ngoài thì nên trao đổi với công ty du lịch.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 350091,
+          "order_index": 1,
+          "japanese": "海外旅行",
+          "vietnamese": "du lịch nước ngoài",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 350092,
+          "order_index": 2,
+          "japanese": "なら、",
+          "vietnamese": "nếu là",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 350093,
+          "order_index": 3,
+          "japanese": "旅行社に",
+          "vietnamese": "với công ty du lịch",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 350094,
+          "order_index": 4,
+          "japanese": "相談したほうがいいです。",
+          "vietnamese": "nên trao đổi thì tốt hơn",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 35010,
+      "lesson_id": 35,
+      "passage_id": null,
+      "full_japanese": "時間があれば、山登りに行きたいです。",
+      "full_romaji": "Jikan ga areba, yamanobori ni ikitai desu.",
+      "full_vietnamese": "Nếu có thời gian, tôi muốn đi leo núi.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 350101,
+          "order_index": 1,
+          "japanese": "時間が",
+          "vietnamese": "thời gian",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 350102,
+          "order_index": 2,
+          "japanese": "あれば、",
+          "vietnamese": "nếu có",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 350103,
+          "order_index": 3,
+          "japanese": "山登りに",
+          "vietnamese": "để leo núi",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 350104,
+          "order_index": 4,
+          "japanese": "行きたいです。",
+          "vietnamese": "muốn đi",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    }
+  ],
+  "36": [
+    {
+      "id": 36001,
+      "lesson_id": 36,
+      "passage_id": null,
+      "full_japanese": "速く泳げるように、毎日練習しています。",
+      "full_romaji": "Hayaku oyogeru you ni, mainichi renshuu shite imasu.",
+      "full_vietnamese": "Tôi đang luyện tập mỗi ngày để có thể bơi nhanh.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 360011,
+          "order_index": 1,
+          "japanese": "速く",
+          "vietnamese": "nhanh",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 360012,
+          "order_index": 2,
+          "japanese": "泳げるように、",
+          "vietnamese": "để có thể bơi,",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 360013,
+          "order_index": 3,
+          "japanese": "毎日",
+          "vietnamese": "mỗi ngày",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 360014,
+          "order_index": 4,
+          "japanese": "練習しています。",
+          "vietnamese": "tôi đang luyện tập.",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 36002,
+      "lesson_id": 36,
+      "passage_id": null,
+      "full_japanese": "忘れないように、メモしておきます。",
+      "full_romaji": "Wasurenai you ni, memo shite okimasu.",
+      "full_vietnamese": "Tôi sẽ ghi chú lại để không bị quên.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 360021,
+          "order_index": 1,
+          "japanese": "忘れないように、",
+          "vietnamese": "để không bị quên,",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 360022,
+          "order_index": 2,
+          "japanese": "メモしておきます。",
+          "vietnamese": "tôi sẽ ghi chú lại (chuẩn bị trước).",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 36003,
+      "lesson_id": 36,
+      "passage_id": null,
+      "full_japanese": "毎日練習して、泳げるようになりました。",
+      "full_romaji": "Mainichi renshuu shite, oyogeru you ni narimashita.",
+      "full_vietnamese": "Nhờ luyện tập mỗi ngày, tôi đã trở nên biết bơi.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 360031,
+          "order_index": 1,
+          "japanese": "毎日練習して、",
+          "vietnamese": "nhờ luyện tập mỗi ngày,",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 360032,
+          "order_index": 2,
+          "japanese": "泳げるように",
+          "vietnamese": "có thể bơi",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 360033,
+          "order_index": 3,
+          "japanese": "なりました。",
+          "vietnamese": "tôi đã trở nên",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 36004,
+      "lesson_id": 36,
+      "passage_id": null,
+      "full_japanese": "最近、日本語の新聞が読めるようになりました。",
+      "full_romaji": "Saikin, Nihongo no shinbun ga yomeru you ni narimashita.",
+      "full_vietnamese": "Dạo này tôi đã trở nên có thể đọc được báo tiếng Nhật.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 360041,
+          "order_index": 1,
+          "japanese": "最近、",
+          "vietnamese": "dạo này,",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 360042,
+          "order_index": 2,
+          "japanese": "日本語の新聞が",
+          "vietnamese": "báo tiếng Nhật",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 360043,
+          "order_index": 3,
+          "japanese": "読めるように",
+          "vietnamese": "có thể đọc",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 360044,
+          "order_index": 4,
+          "japanese": "なりました。",
+          "vietnamese": "tôi đã trở nên",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 36005,
+      "lesson_id": 36,
+      "passage_id": null,
+      "full_japanese": "野菜をたくさん食べるようにしています。",
+      "full_romaji": "Yasai o takusan taberu you ni shite imasu.",
+      "full_vietnamese": "Tôi đang cố gắng ăn nhiều rau.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 360051,
+          "order_index": 1,
+          "japanese": "野菜を",
+          "vietnamese": "rau",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 360052,
+          "order_index": 2,
+          "japanese": "たくさん食べるように",
+          "vietnamese": "ăn nhiều",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 360053,
+          "order_index": 3,
+          "japanese": "しています。",
+          "vietnamese": "tôi đang cố gắng",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 36006,
+      "lesson_id": 36,
+      "passage_id": null,
+      "full_japanese": "日本の生活に慣れるように、毎日日本人と話しています。",
+      "full_romaji": "Nihon no seikatsu ni nareru you ni, mainichi Nihonjin to hanashite imasu.",
+      "full_vietnamese": "Để quen với cuộc sống ở Nhật, tôi nói chuyện với người Nhật mỗi ngày.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 360061,
+          "order_index": 1,
+          "japanese": "日本の生活に",
+          "vietnamese": "với cuộc sống ở Nhật",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 360062,
+          "order_index": 2,
+          "japanese": "慣れるように、",
+          "vietnamese": "để quen được",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 360063,
+          "order_index": 3,
+          "japanese": "毎日",
+          "vietnamese": "mỗi ngày",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 360064,
+          "order_index": 4,
+          "japanese": "日本人と",
+          "vietnamese": "với người Nhật",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 360065,
+          "order_index": 5,
+          "japanese": "話しています。",
+          "vietnamese": "đang nói chuyện",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 36007,
+      "lesson_id": 36,
+      "passage_id": null,
+      "full_japanese": "健康のために、夜遅く寝ないようにしています。",
+      "full_romaji": "Kenkou no tame ni, yoru osoku nenai you ni shite imasu.",
+      "full_vietnamese": "Vì sức khỏe, tôi cố gắng không ngủ muộn.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 360071,
+          "order_index": 1,
+          "japanese": "健康のために、",
+          "vietnamese": "vì sức khỏe",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 360072,
+          "order_index": 2,
+          "japanese": "夜遅く",
+          "vietnamese": "muộn ban đêm",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 360073,
+          "order_index": 3,
+          "japanese": "寝ないように",
+          "vietnamese": "không ngủ",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 360074,
+          "order_index": 4,
+          "japanese": "しています。",
+          "vietnamese": "đang cố gắng",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 36008,
+      "lesson_id": 36,
+      "passage_id": null,
+      "full_japanese": "やっと電子メールが打てるようになりました。",
+      "full_romaji": "Yatto denshi meeru ga uteru you ni narimashita.",
+      "full_vietnamese": "Cuối cùng tôi đã có thể gõ email.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 360081,
+          "order_index": 1,
+          "japanese": "やっと",
+          "vietnamese": "cuối cùng",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 360082,
+          "order_index": 2,
+          "japanese": "電子メールが",
+          "vietnamese": "email",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 360083,
+          "order_index": 3,
+          "japanese": "打てるように",
+          "vietnamese": "có thể gõ",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 360084,
+          "order_index": 4,
+          "japanese": "なりました。",
+          "vietnamese": "đã trở nên",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 36009,
+      "lesson_id": 36,
+      "passage_id": null,
+      "full_japanese": "貯金できるように、毎月少しずつお金を入れています。",
+      "full_romaji": "Chokin dekiru you ni, maitsuki sukoshi zutsu okane o irete imasu.",
+      "full_vietnamese": "Để có thể tiết kiệm, mỗi tháng tôi gửi từng chút tiền.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 360091,
+          "order_index": 1,
+          "japanese": "貯金できるように、",
+          "vietnamese": "để có thể tiết kiệm",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 360092,
+          "order_index": 2,
+          "japanese": "毎月",
+          "vietnamese": "mỗi tháng",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 360093,
+          "order_index": 3,
+          "japanese": "少しずつ",
+          "vietnamese": "từng chút một",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 360094,
+          "order_index": 4,
+          "japanese": "お金を",
+          "vietnamese": "tiền",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 360095,
+          "order_index": 5,
+          "japanese": "入れています。",
+          "vietnamese": "đang bỏ vào/gửi",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 36010,
+      "lesson_id": 36,
+      "passage_id": null,
+      "full_japanese": "絶対に忘れないようにしてください。",
+      "full_romaji": "Zettai ni wasurenai you ni shite kudasai.",
+      "full_vietnamese": "Xin hãy cố gắng tuyệt đối đừng quên.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 360101,
+          "order_index": 1,
+          "japanese": "絶対に",
+          "vietnamese": "tuyệt đối",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 360102,
+          "order_index": 2,
+          "japanese": "忘れないように",
+          "vietnamese": "để không quên",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 360103,
+          "order_index": 3,
+          "japanese": "してください。",
+          "vietnamese": "xin hãy cố gắng",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    }
+  ],
+  "37": [
+    {
+      "id": 37001,
+      "lesson_id": 37,
+      "passage_id": null,
+      "full_japanese": "私は先生に褒められました。",
+      "full_romaji": "Watashi wa sensei ni homeraremashita.",
+      "full_vietnamese": "Tôi đã được giáo viên khen.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 370011,
+          "order_index": 1,
+          "japanese": "私は",
+          "vietnamese": "tôi thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 370012,
+          "order_index": 2,
+          "japanese": "先生に",
+          "vietnamese": "bởi giáo viên",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 370013,
+          "order_index": 3,
+          "japanese": "褒められました。",
+          "vietnamese": "đã được khen. (bị động)",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 37002,
+      "lesson_id": 37,
+      "passage_id": null,
+      "full_japanese": "私は犬に手をかまれました。",
+      "full_romaji": "Watashi wa inu ni te o kamaremashita.",
+      "full_vietnamese": "Tôi bị chó cắn vào tay.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 370021,
+          "order_index": 1,
+          "japanese": "私は",
+          "vietnamese": "tôi thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 370022,
+          "order_index": 2,
+          "japanese": "犬に",
+          "vietnamese": "bởi con chó",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 370023,
+          "order_index": 3,
+          "japanese": "手を",
+          "vietnamese": "vào tay",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 370024,
+          "order_index": 4,
+          "japanese": "かまれました。",
+          "vietnamese": "đã bị cắn.",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 37003,
+      "lesson_id": 37,
+      "passage_id": null,
+      "full_japanese": "弟にパソコンを壊されました。",
+      "full_romaji": "Otouto ni pasokon o kowasaremashita.",
+      "full_vietnamese": "Tôi bị em trai làm hỏng máy tính.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 370031,
+          "order_index": 1,
+          "japanese": "弟に",
+          "vietnamese": "bởi em trai",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 370032,
+          "order_index": 2,
+          "japanese": "パソコンを",
+          "vietnamese": "máy tính",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 370033,
+          "order_index": 3,
+          "japanese": "壊されました。",
+          "vietnamese": "đã bị làm hỏng. (bị động gián tiếp)",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 37004,
+      "lesson_id": 37,
+      "passage_id": null,
+      "full_japanese": "大阪で展覧会が開かれます。",
+      "full_romaji": "Oosaka de tenrankai ga hirakaremasu.",
+      "full_vietnamese": "Triển lãm sẽ được tổ chức ở Osaka.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 370041,
+          "order_index": 1,
+          "japanese": "大阪で",
+          "vietnamese": "ở Osaka",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 370042,
+          "order_index": 2,
+          "japanese": "展覧会が",
+          "vietnamese": "triển lãm",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 370043,
+          "order_index": 3,
+          "japanese": "開かれます。",
+          "vietnamese": "sẽ được tổ chức.",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 37005,
+      "lesson_id": 37,
+      "passage_id": null,
+      "full_japanese": "電話はベルによって発明されました。",
+      "full_romaji": "Denwa wa Beru ni yotte hatsumei saremashita.",
+      "full_vietnamese": "Điện thoại được phát minh bởi Bell.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 370051,
+          "order_index": 1,
+          "japanese": "電話は",
+          "vietnamese": "điện thoại thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 370052,
+          "order_index": 2,
+          "japanese": "ベルによって",
+          "vietnamese": "bởi Bell",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 370053,
+          "order_index": 3,
+          "japanese": "発明されました。",
+          "vietnamese": "đã được phát minh.",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 37006,
+      "lesson_id": 37,
+      "passage_id": null,
+      "full_japanese": "私は友達にパーティーに誘われました。",
+      "full_romaji": "Watashi wa tomodachi ni paatii ni sasowaremashita.",
+      "full_vietnamese": "Tôi được bạn rủ đến bữa tiệc.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 370061,
+          "order_index": 1,
+          "japanese": "私は",
+          "vietnamese": "tôi thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 370062,
+          "order_index": 2,
+          "japanese": "友達に",
+          "vietnamese": "bởi bạn",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 370063,
+          "order_index": 3,
+          "japanese": "パーティーに",
+          "vietnamese": "đến bữa tiệc",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 370064,
+          "order_index": 4,
+          "japanese": "誘われました。",
+          "vietnamese": "được rủ",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 37007,
+      "lesson_id": 37,
+      "passage_id": null,
+      "full_japanese": "母に朝早く起こされました。",
+      "full_romaji": "Haha ni asa hayaku okosaremashita.",
+      "full_vietnamese": "Tôi bị mẹ đánh thức từ sáng sớm.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 370071,
+          "order_index": 1,
+          "japanese": "母に",
+          "vietnamese": "bởi mẹ",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 370072,
+          "order_index": 2,
+          "japanese": "朝早く",
+          "vietnamese": "sáng sớm",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 370073,
+          "order_index": 3,
+          "japanese": "起こされました。",
+          "vietnamese": "bị đánh thức",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 37008,
+      "lesson_id": 37,
+      "passage_id": null,
+      "full_japanese": "この小説は世界中で読まれています。",
+      "full_romaji": "Kono shousetsu wa sekaijuu de yomarete imasu.",
+      "full_vietnamese": "Cuốn tiểu thuyết này đang được đọc khắp thế giới.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 370081,
+          "order_index": 1,
+          "japanese": "この小説は",
+          "vietnamese": "cuốn tiểu thuyết này thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 370082,
+          "order_index": 2,
+          "japanese": "世界中で",
+          "vietnamese": "khắp thế giới",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 370083,
+          "order_index": 3,
+          "japanese": "読まれています。",
+          "vietnamese": "đang được đọc",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 37009,
+      "lesson_id": 37,
+      "passage_id": null,
+      "full_japanese": "米はアジアの国々へ輸出されています。",
+      "full_romaji": "Kome wa Ajia no kuniguni e yushutsu sarete imasu.",
+      "full_vietnamese": "Gạo đang được xuất khẩu sang các nước châu Á.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 370091,
+          "order_index": 1,
+          "japanese": "米は",
+          "vietnamese": "gạo thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 370092,
+          "order_index": 2,
+          "japanese": "アジアの国々へ",
+          "vietnamese": "đến các nước châu Á",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 370093,
+          "order_index": 3,
+          "japanese": "輸出されています。",
+          "vietnamese": "đang được xuất khẩu",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 37010,
+      "lesson_id": 37,
+      "passage_id": null,
+      "full_japanese": "泥棒に財布を取られました。",
+      "full_romaji": "Dorobou ni saifu o toraremashita.",
+      "full_vietnamese": "Tôi bị kẻ trộm lấy mất ví.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 370101,
+          "order_index": 1,
+          "japanese": "泥棒に",
+          "vietnamese": "bởi kẻ trộm",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 370102,
+          "order_index": 2,
+          "japanese": "財布を",
+          "vietnamese": "ví",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 370103,
+          "order_index": 3,
+          "japanese": "取られました。",
+          "vietnamese": "bị lấy mất",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    }
+  ],
+  "38": [
+    {
+      "id": 38001,
+      "lesson_id": 38,
+      "passage_id": null,
+      "full_japanese": "絵を描くのは楽しいです。",
+      "full_romaji": "E o kaku no wa tanoshii desu.",
+      "full_vietnamese": "Việc vẽ tranh thì rất vui.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 380011,
+          "order_index": 1,
+          "japanese": "絵を描くのは",
+          "vietnamese": "việc vẽ tranh thì",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 380012,
+          "order_index": 2,
+          "japanese": "楽しいです。",
+          "vietnamese": "rất vui.",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 38002,
+      "lesson_id": 38,
+      "passage_id": null,
+      "full_japanese": "私は星を見るのが好きです。",
+      "full_romaji": "Watashi wa hoshi o miru no ga suki desu.",
+      "full_vietnamese": "Tôi thích việc ngắm sao.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 380021,
+          "order_index": 1,
+          "japanese": "私は",
+          "vietnamese": "tôi thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 380022,
+          "order_index": 2,
+          "japanese": "星を見るのが",
+          "vietnamese": "việc ngắm sao",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 380023,
+          "order_index": 3,
+          "japanese": "好きです。",
+          "vietnamese": "thích.",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 38003,
+      "lesson_id": 38,
+      "passage_id": null,
+      "full_japanese": "薬を飲むのを忘れました。",
+      "full_romaji": "Kusuri o nomu no o wasuremashita.",
+      "full_vietnamese": "Tôi đã quên việc uống thuốc.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 380031,
+          "order_index": 1,
+          "japanese": "薬を飲むのを",
+          "vietnamese": "việc uống thuốc",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 380032,
+          "order_index": 2,
+          "japanese": "忘れました。",
+          "vietnamese": "tôi đã quên.",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 38004,
+      "lesson_id": 38,
+      "passage_id": null,
+      "full_japanese": "鈴木さんが結婚したのを知っていますか。",
+      "full_romaji": "Suzuki-san ga kekkon shita no o shitte imasu ka.",
+      "full_vietnamese": "Bạn có biết việc anh Suzuki đã kết hôn không?",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 380041,
+          "order_index": 1,
+          "japanese": "鈴木さんが",
+          "vietnamese": "anh Suzuki",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 380042,
+          "order_index": 2,
+          "japanese": "結婚したのを",
+          "vietnamese": "việc đã kết hôn",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 380043,
+          "order_index": 3,
+          "japanese": "知っていますか。",
+          "vietnamese": "bạn có biết không?",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 38005,
+      "lesson_id": 38,
+      "passage_id": null,
+      "full_japanese": "初めて会ったのは3年前です。",
+      "full_romaji": "Hajimete atta no wa sannen mae desu.",
+      "full_vietnamese": "Lần đầu tiên chúng tôi gặp nhau là 3 năm trước.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 380051,
+          "order_index": 1,
+          "japanese": "初めて会ったのは",
+          "vietnamese": "lần đầu gặp gỡ là",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 380052,
+          "order_index": 2,
+          "japanese": "3年前です。",
+          "vietnamese": "3 năm trước.",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 38006,
+      "lesson_id": 38,
+      "passage_id": null,
+      "full_japanese": "赤ちゃんを育てるのは大変です。",
+      "full_romaji": "Akachan o sodateru no wa taihen desu.",
+      "full_vietnamese": "Việc nuôi em bé rất vất vả.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 380061,
+          "order_index": 1,
+          "japanese": "赤ちゃんを育てるのは",
+          "vietnamese": "việc nuôi em bé thì",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 380062,
+          "order_index": 2,
+          "japanese": "大変です。",
+          "vietnamese": "vất vả",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 38007,
+      "lesson_id": 38,
+      "passage_id": null,
+      "full_japanese": "電源を切るのを忘れないでください。",
+      "full_romaji": "Dengen o kiru no o wasurenaide kudasai.",
+      "full_vietnamese": "Xin đừng quên tắt nguồn điện.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 380071,
+          "order_index": 1,
+          "japanese": "電源を切るのを",
+          "vietnamese": "việc tắt nguồn điện",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 380072,
+          "order_index": 2,
+          "japanese": "忘れないで",
+          "vietnamese": "đừng quên",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 380073,
+          "order_index": 3,
+          "japanese": "ください。",
+          "vietnamese": "xin hãy",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 38008,
+      "lesson_id": 38,
+      "passage_id": null,
+      "full_japanese": "駅前に新しい病院ができたのを知っていますか。",
+      "full_romaji": "Ekimae ni atarashii byouin ga dekita no o shitte imasu ka.",
+      "full_vietnamese": "Bạn có biết việc một bệnh viện mới được xây trước ga không?",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 380081,
+          "order_index": 1,
+          "japanese": "駅前に",
+          "vietnamese": "trước ga",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 380082,
+          "order_index": 2,
+          "japanese": "新しい病院が",
+          "vietnamese": "bệnh viện mới",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 380083,
+          "order_index": 3,
+          "japanese": "できたのを",
+          "vietnamese": "việc đã được xây/có",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 380084,
+          "order_index": 4,
+          "japanese": "知っていますか。",
+          "vietnamese": "bạn có biết không?",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 38009,
+      "lesson_id": 38,
+      "passage_id": null,
+      "full_japanese": "書類を整理するのに時間がかかります。",
+      "full_romaji": "Shorui o seiri suru noni jikan ga kakarimasu.",
+      "full_vietnamese": "Việc sắp xếp giấy tờ mất thời gian.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 380091,
+          "order_index": 1,
+          "japanese": "書類を整理するのに",
+          "vietnamese": "cho việc sắp xếp giấy tờ",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 380092,
+          "order_index": 2,
+          "japanese": "時間が",
+          "vietnamese": "thời gian",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 380093,
+          "order_index": 3,
+          "japanese": "かかります。",
+          "vietnamese": "tốn/mất",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 38010,
+      "lesson_id": 38,
+      "passage_id": null,
+      "full_japanese": "海岸を散歩するのは気持ちがいいです。",
+      "full_romaji": "Kaigan o sanpo suru no wa kimochi ga ii desu.",
+      "full_vietnamese": "Việc đi dạo ở bờ biển rất dễ chịu.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 380101,
+          "order_index": 1,
+          "japanese": "海岸を散歩するのは",
+          "vietnamese": "việc đi dạo ở bờ biển thì",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 380102,
+          "order_index": 2,
+          "japanese": "気持ちがいいです。",
+          "vietnamese": "dễ chịu",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    }
+  ],
+  "39": [
+    {
+      "id": 39001,
+      "lesson_id": 39,
+      "passage_id": null,
+      "full_japanese": "ニュースを聞いて、びっくりしました。",
+      "full_romaji": "Nyuusu o kiite, bikkuri shimashita.",
+      "full_vietnamese": "Nghe tin tức xong, tôi đã rất ngạc nhiên.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 390011,
+          "order_index": 1,
+          "japanese": "ニュースを聞いて、",
+          "vietnamese": "nghe tin tức xong (lý do),",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 390012,
+          "order_index": 2,
+          "japanese": "びっくりしました。",
+          "vietnamese": "tôi đã rất ngạc nhiên.",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 39002,
+      "lesson_id": 39,
+      "passage_id": null,
+      "full_japanese": "家族に会えなくて、寂しいです。",
+      "full_romaji": "Kazoku ni aenakute, sabishii desu.",
+      "full_vietnamese": "Vì không được gặp gia đình nên tôi rất buồn.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 390021,
+          "order_index": 1,
+          "japanese": "家族に会えなくて、",
+          "vietnamese": "vì không thể gặp gia đình,",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 390022,
+          "order_index": 2,
+          "japanese": "寂しいです。",
+          "vietnamese": "nên tôi buồn.",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 39003,
+      "lesson_id": 39,
+      "passage_id": null,
+      "full_japanese": "お金がなくて、パソコンが買えません。",
+      "full_romaji": "Okane ga nakute, pasokon ga kaemasen.",
+      "full_vietnamese": "Vì không có tiền nên tôi không thể mua máy tính.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 390031,
+          "order_index": 1,
+          "japanese": "お金がなくて、",
+          "vietnamese": "vì không có tiền,",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 390032,
+          "order_index": 2,
+          "japanese": "パソコンが買えません。",
+          "vietnamese": "nên không thể mua máy tính.",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 39004,
+      "lesson_id": 39,
+      "passage_id": null,
+      "full_japanese": "事故で電車が止まりました。",
+      "full_romaji": "Jiko de densha ga tomarimashita.",
+      "full_vietnamese": "Vì tai nạn nên tàu điện đã dừng lại.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 390041,
+          "order_index": 1,
+          "japanese": "事故で",
+          "vietnamese": "vì tai nạn,",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 390042,
+          "order_index": 2,
+          "japanese": "電車が",
+          "vietnamese": "tàu điện",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 390043,
+          "order_index": 3,
+          "japanese": "止まりました。",
+          "vietnamese": "đã dừng lại.",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 39005,
+      "lesson_id": 39,
+      "passage_id": null,
+      "full_japanese": "病気で学校を休みました。",
+      "full_romaji": "Byouki de gakkou o yasumimashita.",
+      "full_vietnamese": "Vì bị ốm nên tôi đã nghỉ học.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 390051,
+          "order_index": 1,
+          "japanese": "病気で",
+          "vietnamese": "vì bị ốm,",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 390052,
+          "order_index": 2,
+          "japanese": "学校を",
+          "vietnamese": "trường học",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 390053,
+          "order_index": 3,
+          "japanese": "休みました。",
+          "vietnamese": "đã nghỉ.",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 39006,
+      "lesson_id": 39,
+      "passage_id": null,
+      "full_japanese": "試験に合格して、安心しました。",
+      "full_romaji": "Shiken ni goukaku shite, anshin shimashita.",
+      "full_vietnamese": "Vì đã đỗ kỳ thi nên tôi thấy yên tâm.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 390061,
+          "order_index": 1,
+          "japanese": "試験に合格して、",
+          "vietnamese": "vì đã đỗ kỳ thi",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 390062,
+          "order_index": 2,
+          "japanese": "安心しました。",
+          "vietnamese": "tôi thấy yên tâm",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 39007,
+      "lesson_id": 39,
+      "passage_id": null,
+      "full_japanese": "友達に会えて、うれしいです。",
+      "full_romaji": "Tomodachi ni aete, ureshii desu.",
+      "full_vietnamese": "Vì gặp được bạn nên tôi vui.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 390071,
+          "order_index": 1,
+          "japanese": "友達に会えて、",
+          "vietnamese": "vì gặp được bạn",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 390072,
+          "order_index": 2,
+          "japanese": "うれしいです。",
+          "vietnamese": "tôi vui",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 39008,
+      "lesson_id": 39,
+      "passage_id": null,
+      "full_japanese": "台風で木が倒れました。",
+      "full_romaji": "Taifuu de ki ga taoremashita.",
+      "full_vietnamese": "Vì bão nên cây đã đổ.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 390081,
+          "order_index": 1,
+          "japanese": "台風で",
+          "vietnamese": "vì bão",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 390082,
+          "order_index": 2,
+          "japanese": "木が",
+          "vietnamese": "cây",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 390083,
+          "order_index": 3,
+          "japanese": "倒れました。",
+          "vietnamese": "đã đổ",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 39009,
+      "lesson_id": 39,
+      "passage_id": null,
+      "full_japanese": "火事で店が焼けました。",
+      "full_romaji": "Kaji de mise ga yakemashita.",
+      "full_vietnamese": "Vì hỏa hoạn nên cửa hàng đã cháy.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 390091,
+          "order_index": 1,
+          "japanese": "火事で",
+          "vietnamese": "vì hỏa hoạn",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 390092,
+          "order_index": 2,
+          "japanese": "店が",
+          "vietnamese": "cửa hàng",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 390093,
+          "order_index": 3,
+          "japanese": "焼けました。",
+          "vietnamese": "đã cháy",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 39010,
+      "lesson_id": 39,
+      "passage_id": null,
+      "full_japanese": "道が複雑で、迷ってしまいました。",
+      "full_romaji": "Michi ga fukuzatsu de, mayotte shimaimashita.",
+      "full_vietnamese": "Vì đường phức tạp nên tôi đã lạc mất.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 390101,
+          "order_index": 1,
+          "japanese": "道が",
+          "vietnamese": "đường",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 390102,
+          "order_index": 2,
+          "japanese": "複雑で、",
+          "vietnamese": "vì phức tạp",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 390103,
+          "order_index": 3,
+          "japanese": "迷ってしまいました。",
+          "vietnamese": "đã lạc mất",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    }
+  ],
+  "40": [
+    {
+      "id": 40001,
+      "lesson_id": 40,
+      "passage_id": null,
+      "full_japanese": "会議は何時に終わるか、わかりません。",
+      "full_romaji": "Kaigi wa nanji ni owaru ka, wakarimasen.",
+      "full_vietnamese": "Tôi không biết cuộc họp sẽ kết thúc lúc mấy giờ.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 400011,
+          "order_index": 1,
+          "japanese": "会議は",
+          "vietnamese": "cuộc họp thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 400012,
+          "order_index": 2,
+          "japanese": "何時に終わるか、",
+          "vietnamese": "kết thúc lúc mấy giờ,",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 400013,
+          "order_index": 3,
+          "japanese": "わかりません。",
+          "vietnamese": "tôi không biết.",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 40002,
+      "lesson_id": 40,
+      "passage_id": null,
+      "full_japanese": "どこでなくしたか、覚えていません。",
+      "full_romaji": "Doko de nakushita ka, oboete imasen.",
+      "full_vietnamese": "Tôi không nhớ là đã làm mất ở đâu.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 400021,
+          "order_index": 1,
+          "japanese": "どこでなくしたか、",
+          "vietnamese": "đã làm mất ở đâu,",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 400022,
+          "order_index": 2,
+          "japanese": "覚えていません。",
+          "vietnamese": "tôi không nhớ.",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 40003,
+      "lesson_id": 40,
+      "passage_id": null,
+      "full_japanese": "その話が本当かどうか、わかりません。",
+      "full_romaji": "Sono hanashi ga hontou ka dou ka, wakarimasen.",
+      "full_vietnamese": "Tôi không biết câu chuyện đó có thật hay không.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 400031,
+          "order_index": 1,
+          "japanese": "その話が",
+          "vietnamese": "câu chuyện đó",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 400032,
+          "order_index": 2,
+          "japanese": "本当かどうか、",
+          "vietnamese": "có thật hay không,",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 400033,
+          "order_index": 3,
+          "japanese": "わかりません。",
+          "vietnamese": "tôi không biết.",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 40004,
+      "lesson_id": 40,
+      "passage_id": null,
+      "full_japanese": "間違いがないかどうか、調べてください。",
+      "full_romaji": "Machigai ga nai ka dou ka, shirabete kudasai.",
+      "full_vietnamese": "Hãy kiểm tra xem có sai sót hay không.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 400041,
+          "order_index": 1,
+          "japanese": "間違いがないかどうか、",
+          "vietnamese": "có lỗi sai hay không,",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 400042,
+          "order_index": 2,
+          "japanese": "調べてください。",
+          "vietnamese": "xin hãy kiểm tra.",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 40005,
+      "lesson_id": 40,
+      "passage_id": null,
+      "full_japanese": "新しい靴を履いてみます。",
+      "full_romaji": "Atarashii kutsu o haite mimasu.",
+      "full_vietnamese": "Tôi sẽ đi thử đôi giày mới.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 400051,
+          "order_index": 1,
+          "japanese": "新しい靴を",
+          "vietnamese": "đôi giày mới",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 400052,
+          "order_index": 2,
+          "japanese": "履いてみます。",
+          "vietnamese": "tôi sẽ mang thử.",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 40006,
+      "lesson_id": 40,
+      "passage_id": null,
+      "full_japanese": "電車が何番線に到着するか、駅員に聞きます。",
+      "full_romaji": "Densha ga nanbansen ni touchaku suru ka, ekiin ni kikimasu.",
+      "full_vietnamese": "Tôi sẽ hỏi nhân viên nhà ga xem tàu đến đường ray số mấy.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 400061,
+          "order_index": 1,
+          "japanese": "電車が",
+          "vietnamese": "tàu điện",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 400062,
+          "order_index": 2,
+          "japanese": "何番線に到着するか、",
+          "vietnamese": "đến đường ray số mấy",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 400063,
+          "order_index": 3,
+          "japanese": "駅員に",
+          "vietnamese": "nhân viên nhà ga",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 400064,
+          "order_index": 4,
+          "japanese": "聞きます。",
+          "vietnamese": "hỏi",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 40007,
+      "lesson_id": 40,
+      "passage_id": null,
+      "full_japanese": "このズボンの長さが合うかどうか、確かめます。",
+      "full_romaji": "Kono zubon no nagasa ga au ka dou ka, tashikamemasu.",
+      "full_vietnamese": "Tôi sẽ xác nhận xem chiều dài của cái quần này có vừa không.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 400071,
+          "order_index": 1,
+          "japanese": "このズボンの長さが",
+          "vietnamese": "chiều dài của quần này",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 400072,
+          "order_index": 2,
+          "japanese": "合うかどうか、",
+          "vietnamese": "có vừa hay không",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 400073,
+          "order_index": 3,
+          "japanese": "確かめます。",
+          "vietnamese": "xác nhận",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 40008,
+      "lesson_id": 40,
+      "passage_id": null,
+      "full_japanese": "荷物の重さを測ってみます。",
+      "full_romaji": "Nimotsu no omosa o hakatte mimasu.",
+      "full_vietnamese": "Tôi sẽ thử cân trọng lượng hành lý.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 400081,
+          "order_index": 1,
+          "japanese": "荷物の重さを",
+          "vietnamese": "trọng lượng hành lý",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 400082,
+          "order_index": 2,
+          "japanese": "測ってみます。",
+          "vietnamese": "thử cân/đo",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 40009,
+      "lesson_id": 40,
+      "passage_id": null,
+      "full_japanese": "返事が来たかどうか、メールを見てください。",
+      "full_romaji": "Henji ga kita ka dou ka, meeru o mite kudasai.",
+      "full_vietnamese": "Hãy xem email xem đã có hồi âm chưa.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 400091,
+          "order_index": 1,
+          "japanese": "返事が",
+          "vietnamese": "hồi âm",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 400092,
+          "order_index": 2,
+          "japanese": "来たかどうか、",
+          "vietnamese": "đã đến hay chưa",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 400093,
+          "order_index": 3,
+          "japanese": "メールを",
+          "vietnamese": "email",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 400094,
+          "order_index": 4,
+          "japanese": "見てください。",
+          "vietnamese": "hãy xem",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 40010,
+      "lesson_id": 40,
+      "passage_id": null,
+      "full_japanese": "この料理を一度食べてみてもいいですか。",
+      "full_romaji": "Kono ryouri o ichido tabete mite mo ii desu ka.",
+      "full_vietnamese": "Tôi ăn thử món này một lần có được không?",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 400101,
+          "order_index": 1,
+          "japanese": "この料理を",
+          "vietnamese": "món ăn này",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 400102,
+          "order_index": 2,
+          "japanese": "一度",
+          "vietnamese": "một lần",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 400103,
+          "order_index": 3,
+          "japanese": "食べてみてもいい",
+          "vietnamese": "ăn thử có được không",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 400104,
+          "order_index": 4,
+          "japanese": "ですか。",
+          "vietnamese": "ạ?",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    }
+  ],
+  "41": [
+    {
+      "id": 41001,
+      "lesson_id": 41,
+      "passage_id": null,
+      "full_japanese": "私は部長に時計をいただきました。",
+      "full_romaji": "Watashi wa buchou ni tokei o itadakimashita.",
+      "full_vietnamese": "Tôi đã được trưởng phòng tặng cho chiếc đồng hồ.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 410011,
+          "order_index": 1,
+          "japanese": "私は",
+          "vietnamese": "tôi thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 410012,
+          "order_index": 2,
+          "japanese": "部長に",
+          "vietnamese": "từ trưởng phòng",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 410013,
+          "order_index": 3,
+          "japanese": "時計を",
+          "vietnamese": "chiếc đồng hồ",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 410014,
+          "order_index": 4,
+          "japanese": "いただきました。",
+          "vietnamese": "tôi đã nhận được (khiêm nhường).",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 41002,
+      "lesson_id": 41,
+      "passage_id": null,
+      "full_japanese": "社長が私にお土産をくださいました。",
+      "full_romaji": "Shachou ga watashi ni omiyage o kudasaimashita.",
+      "full_vietnamese": "Giám đốc đã tặng quà lưu niệm cho tôi.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 410021,
+          "order_index": 1,
+          "japanese": "社長が",
+          "vietnamese": "giám đốc",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 410022,
+          "order_index": 2,
+          "japanese": "私に",
+          "vietnamese": "cho tôi",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 410023,
+          "order_index": 3,
+          "japanese": "お土産を",
+          "vietnamese": "quà lưu niệm",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 410024,
+          "order_index": 4,
+          "japanese": "くださいました。",
+          "vietnamese": "đã tặng cho (tôn kính).",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 41003,
+      "lesson_id": 41,
+      "passage_id": null,
+      "full_japanese": "私は犬にえさをやります。",
+      "full_romaji": "Watashi wa inu ni esa o yarimasu.",
+      "full_vietnamese": "Tôi cho chó ăn.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 410031,
+          "order_index": 1,
+          "japanese": "私は",
+          "vietnamese": "tôi thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 410032,
+          "order_index": 2,
+          "japanese": "犬に",
+          "vietnamese": "cho chó",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 410033,
+          "order_index": 3,
+          "japanese": "えさを",
+          "vietnamese": "thức ăn",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 410034,
+          "order_index": 4,
+          "japanese": "やります。",
+          "vietnamese": "tôi cho (người dưới/động vật).",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 41004,
+      "lesson_id": 41,
+      "passage_id": null,
+      "full_japanese": "先生に本を貸していただきました。",
+      "full_romaji": "Sensei ni hon o kashite itadakimashita.",
+      "full_vietnamese": "Tôi đã được thầy giáo cho mượn sách.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 410041,
+          "order_index": 1,
+          "japanese": "先生に",
+          "vietnamese": "từ thầy giáo",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 410042,
+          "order_index": 2,
+          "japanese": "本を貸して",
+          "vietnamese": "cho mượn sách",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 410043,
+          "order_index": 3,
+          "japanese": "いただきました。",
+          "vietnamese": "tôi đã nhận được (nhờ vả lịch sự).",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 41005,
+      "lesson_id": 41,
+      "passage_id": null,
+      "full_japanese": "先生が漢字を教えてくださいました。",
+      "full_romaji": "Sensei ga kanji o oshiete kudasaimashita.",
+      "full_vietnamese": "Thầy giáo đã dạy Hán tự cho tôi.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 410051,
+          "order_index": 1,
+          "japanese": "先生が",
+          "vietnamese": "thầy giáo",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 410052,
+          "order_index": 2,
+          "japanese": "漢字を教えて",
+          "vietnamese": "dạy Hán tự",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 410053,
+          "order_index": 3,
+          "japanese": "くださいました。",
+          "vietnamese": "đã làm giúp cho (tôn kính).",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 41006,
+      "lesson_id": 41,
+      "passage_id": null,
+      "full_japanese": "祖母に手袋を編んでいただきました。",
+      "full_romaji": "Sobo ni tebukuro o ande itadakimashita.",
+      "full_vietnamese": "Tôi được bà đan găng tay cho.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 410061,
+          "order_index": 1,
+          "japanese": "祖母に",
+          "vietnamese": "từ bà tôi",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 410062,
+          "order_index": 2,
+          "japanese": "手袋を",
+          "vietnamese": "găng tay",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 410063,
+          "order_index": 3,
+          "japanese": "編んで",
+          "vietnamese": "đan",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 410064,
+          "order_index": 4,
+          "japanese": "いただきました。",
+          "vietnamese": "được làm cho (khiêm nhường)",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 41007,
+      "lesson_id": 41,
+      "passage_id": null,
+      "full_japanese": "課長が新しい情報を教えてくださいました。",
+      "full_romaji": "Kachou ga atarashii jouhou o oshiete kudasaimashita.",
+      "full_vietnamese": "Trưởng nhóm đã cho tôi biết thông tin mới.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 410071,
+          "order_index": 1,
+          "japanese": "課長が",
+          "vietnamese": "trưởng nhóm",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 410072,
+          "order_index": 2,
+          "japanese": "新しい情報を",
+          "vietnamese": "thông tin mới",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 410073,
+          "order_index": 3,
+          "japanese": "教えて",
+          "vietnamese": "chỉ/báo cho",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 410074,
+          "order_index": 4,
+          "japanese": "くださいました。",
+          "vietnamese": "đã làm cho tôi (tôn kính)",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 41008,
+      "lesson_id": 41,
+      "passage_id": null,
+      "full_japanese": "私は孫に絵本を読んでやりました。",
+      "full_romaji": "Watashi wa mago ni ehon o yonde yarimashita.",
+      "full_vietnamese": "Tôi đã đọc truyện tranh cho cháu.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 410081,
+          "order_index": 1,
+          "japanese": "私は",
+          "vietnamese": "tôi thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 410082,
+          "order_index": 2,
+          "japanese": "孫に",
+          "vietnamese": "cho cháu",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 410083,
+          "order_index": 3,
+          "japanese": "絵本を読んで",
+          "vietnamese": "đọc truyện tranh",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 410084,
+          "order_index": 4,
+          "japanese": "やりました。",
+          "vietnamese": "làm cho (người dưới)",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 41009,
+      "lesson_id": 41,
+      "passage_id": null,
+      "full_japanese": "部長に発音を直していただきました。",
+      "full_romaji": "Buchou ni hatsuon o naoshite itadakimashita.",
+      "full_vietnamese": "Tôi được trưởng phòng sửa phát âm cho.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 410091,
+          "order_index": 1,
+          "japanese": "部長に",
+          "vietnamese": "bởi trưởng phòng",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 410092,
+          "order_index": 2,
+          "japanese": "発音を",
+          "vietnamese": "phát âm",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 410093,
+          "order_index": 3,
+          "japanese": "直して",
+          "vietnamese": "sửa",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 410094,
+          "order_index": 4,
+          "japanese": "いただきました。",
+          "vietnamese": "được làm giúp",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 41010,
+      "lesson_id": 41,
+      "passage_id": null,
+      "full_japanese": "申し訳ありませんが、荷物を預かっていただけませんか。",
+      "full_romaji": "Moushiwake arimasen ga, nimotsu o azukatte itadakemasen ka.",
+      "full_vietnamese": "Xin lỗi, anh/chị có thể giữ hộ hành lý giúp tôi được không?",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 410101,
+          "order_index": 1,
+          "japanese": "申し訳ありませんが、",
+          "vietnamese": "xin lỗi nhưng",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 410102,
+          "order_index": 2,
+          "japanese": "荷物を",
+          "vietnamese": "hành lý",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 410103,
+          "order_index": 3,
+          "japanese": "預かって",
+          "vietnamese": "giữ hộ",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 410104,
+          "order_index": 4,
+          "japanese": "いただけませんか。",
+          "vietnamese": "giúp tôi được không?",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    }
+  ],
+  "42": [
+    {
+      "id": 42001,
+      "lesson_id": 42,
+      "passage_id": null,
+      "full_japanese": "自分の店を持つために、貯金しています。",
+      "full_romaji": "Jibun no mise o motsu tame ni, chokin shite imasu.",
+      "full_vietnamese": "Tôi đang tiết kiệm tiền để mở cửa hàng của riêng mình.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 420011,
+          "order_index": 1,
+          "japanese": "自分の店を",
+          "vietnamese": "cửa hàng của chính mình",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 420012,
+          "order_index": 2,
+          "japanese": "持つために、",
+          "vietnamese": "để có,",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 420013,
+          "order_index": 3,
+          "japanese": "貯金しています。",
+          "vietnamese": "tôi đang tiết kiệm tiền.",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 42002,
+      "lesson_id": 42,
+      "passage_id": null,
+      "full_japanese": "家族のために、家を建てるつもりです。",
+      "full_romaji": "Kazoku no tame ni, ie o tateru tsumori desu.",
+      "full_vietnamese": "Tôi dự định xây nhà cho gia đình.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 420021,
+          "order_index": 1,
+          "japanese": "家族のために、",
+          "vietnamese": "vì gia đình,",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 420022,
+          "order_index": 2,
+          "japanese": "家を建てる",
+          "vietnamese": "xây nhà",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 420023,
+          "order_index": 3,
+          "japanese": "つもりです。",
+          "vietnamese": "tôi dự định.",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 42003,
+      "lesson_id": 42,
+      "passage_id": null,
+      "full_japanese": "このはさみは花を切るのに使います。",
+      "full_romaji": "Kono hasami wa hana o kiru no ni tsukaimasu.",
+      "full_vietnamese": "Cái kéo này được dùng để cắt hoa.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 420031,
+          "order_index": 1,
+          "japanese": "このはさみは",
+          "vietnamese": "cái kéo này thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 420032,
+          "order_index": 2,
+          "japanese": "花を切るのに",
+          "vietnamese": "vào việc cắt hoa",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 420033,
+          "order_index": 3,
+          "japanese": "使います。",
+          "vietnamese": "được sử dụng.",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 42004,
+      "lesson_id": 42,
+      "passage_id": null,
+      "full_japanese": "日本へ来るのに、いくらかかりましたか。",
+      "full_romaji": "Nihon e kuru no ni, ikura kakarimashita ka.",
+      "full_vietnamese": "Để đến được Nhật Bản thì đã mất bao nhiêu tiền?",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 420041,
+          "order_index": 1,
+          "japanese": "日本へ来るのに、",
+          "vietnamese": "để đến Nhật Bản,",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 420042,
+          "order_index": 2,
+          "japanese": "いくら",
+          "vietnamese": "bao nhiêu",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 420043,
+          "order_index": 3,
+          "japanese": "かかりましたか。",
+          "vietnamese": "đã tốn (thời gian/tiền bạc)?",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 42005,
+      "lesson_id": 42,
+      "passage_id": null,
+      "full_japanese": "健康のために、毎日歩いています。",
+      "full_romaji": "Kenkou no tame ni, mainichi aruite imasu.",
+      "full_vietnamese": "Tôi đi bộ mỗi ngày vì sức khỏe.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 420051,
+          "order_index": 1,
+          "japanese": "健康のために、",
+          "vietnamese": "vì sức khỏe,",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 420052,
+          "order_index": 2,
+          "japanese": "毎日",
+          "vietnamese": "mỗi ngày",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 420053,
+          "order_index": 3,
+          "japanese": "歩いています。",
+          "vietnamese": "tôi đang đi bộ.",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 42006,
+      "lesson_id": 42,
+      "passage_id": null,
+      "full_japanese": "平和のために、国連で働きたいです。",
+      "full_romaji": "Heiwa no tame ni, Kokuren de hatarakitai desu.",
+      "full_vietnamese": "Tôi muốn làm việc ở Liên Hợp Quốc vì hòa bình.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 420061,
+          "order_index": 1,
+          "japanese": "平和のために、",
+          "vietnamese": "vì hòa bình",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 420062,
+          "order_index": 2,
+          "japanese": "国連で",
+          "vietnamese": "ở Liên Hợp Quốc",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 420063,
+          "order_index": 3,
+          "japanese": "働きたいです。",
+          "vietnamese": "muốn làm việc",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 42007,
+      "lesson_id": 42,
+      "passage_id": null,
+      "full_japanese": "論文を書くために、データを集めています。",
+      "full_romaji": "Ronbun o kaku tame ni, deeta o atsumete imasu.",
+      "full_vietnamese": "Tôi đang thu thập dữ liệu để viết luận văn.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 420071,
+          "order_index": 1,
+          "japanese": "論文を書くために、",
+          "vietnamese": "để viết luận văn",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 420072,
+          "order_index": 2,
+          "japanese": "データを",
+          "vietnamese": "dữ liệu",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 420073,
+          "order_index": 3,
+          "japanese": "集めています。",
+          "vietnamese": "đang thu thập",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 42008,
+      "lesson_id": 42,
+      "passage_id": null,
+      "full_japanese": "このやかんはお湯を沸かすのに使います。",
+      "full_romaji": "Kono yakan wa oyu o wakasu noni tsukaimasu.",
+      "full_vietnamese": "Cái ấm này dùng để đun nước nóng.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 420081,
+          "order_index": 1,
+          "japanese": "このやかんは",
+          "vietnamese": "cái ấm này thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 420082,
+          "order_index": 2,
+          "japanese": "お湯を沸かすのに",
+          "vietnamese": "vào việc đun nước nóng",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 420083,
+          "order_index": 3,
+          "japanese": "使います。",
+          "vietnamese": "dùng",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 42009,
+      "lesson_id": 42,
+      "passage_id": null,
+      "full_japanese": "体温計は熱を測るのに必要です。",
+      "full_romaji": "Tai onkei wa netsu o hakaru noni hitsuyou desu.",
+      "full_vietnamese": "Nhiệt kế cần thiết để đo sốt.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 420091,
+          "order_index": 1,
+          "japanese": "体温計は",
+          "vietnamese": "nhiệt kế thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 420092,
+          "order_index": 2,
+          "japanese": "熱を測るのに",
+          "vietnamese": "cho việc đo sốt",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 420093,
+          "order_index": 3,
+          "japanese": "必要です。",
+          "vietnamese": "cần thiết",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 42010,
+      "lesson_id": 42,
+      "passage_id": null,
+      "full_japanese": "この仕事をするのに、法律の知識が必要です。",
+      "full_romaji": "Kono shigoto o suru noni, houritsu no chishiki ga hitsuyou desu.",
+      "full_vietnamese": "Để làm công việc này cần kiến thức pháp luật.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 420101,
+          "order_index": 1,
+          "japanese": "この仕事をするのに、",
+          "vietnamese": "để làm công việc này",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 420102,
+          "order_index": 2,
+          "japanese": "法律の知識が",
+          "vietnamese": "kiến thức pháp luật",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 420103,
+          "order_index": 3,
+          "japanese": "必要です。",
+          "vietnamese": "cần thiết",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    }
+  ],
+  "43": [
+    {
+      "id": 43001,
+      "lesson_id": 43,
+      "passage_id": null,
+      "full_japanese": "今にも雨が降りそうです。",
+      "full_romaji": "Ima ni mo ame ga furisou desu.",
+      "full_vietnamese": "Trời trông có vẻ sắp mưa đến nơi rồi.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 430011,
+          "order_index": 1,
+          "japanese": "今にも",
+          "vietnamese": "ngay bây giờ",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 430012,
+          "order_index": 2,
+          "japanese": "雨が",
+          "vietnamese": "trời (mưa)",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 430013,
+          "order_index": 3,
+          "japanese": "降りそうです。",
+          "vietnamese": "trông có vẻ sắp mưa.",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 43002,
+      "lesson_id": 43,
+      "passage_id": null,
+      "full_japanese": "この料理は辛そうですね。",
+      "full_romaji": "Kono ryouri wa karasou desu ne.",
+      "full_vietnamese": "Món ăn này trông có vẻ cay nhỉ.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 430021,
+          "order_index": 1,
+          "japanese": "この料理は",
+          "vietnamese": "món ăn này thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 430022,
+          "order_index": 2,
+          "japanese": "辛そうですね。",
+          "vietnamese": "trông có vẻ cay nhỉ.",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 43003,
+      "lesson_id": 43,
+      "passage_id": null,
+      "full_japanese": "ちょっとたばこを買って来ます。",
+      "full_romaji": "Chotto tabako o katte kimasu.",
+      "full_vietnamese": "Tôi đi mua bao thuốc một lát rồi về.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 430031,
+          "order_index": 1,
+          "japanese": "ちょっと",
+          "vietnamese": "một lát",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 430032,
+          "order_index": 2,
+          "japanese": "たばこを買って",
+          "vietnamese": "mua thuốc lá rồi",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 430033,
+          "order_index": 3,
+          "japanese": "来ます。",
+          "vietnamese": "sẽ quay lại ngay (đi rồi về).",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 43004,
+      "lesson_id": 43,
+      "passage_id": null,
+      "full_japanese": "スーパーで牛乳を買って来てください。",
+      "full_romaji": "Suupaa de gyuunyuu o katte kite kudasai.",
+      "full_vietnamese": "Hãy đi siêu thị mua sữa rồi về nhé.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 430041,
+          "order_index": 1,
+          "japanese": "スーパーで",
+          "vietnamese": "ở siêu thị",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 430042,
+          "order_index": 2,
+          "japanese": "牛乳を買って",
+          "vietnamese": "mua sữa rồi",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 430043,
+          "order_index": 3,
+          "japanese": "来てください。",
+          "vietnamese": "hãy quay về nhé.",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 43005,
+      "lesson_id": 43,
+      "passage_id": null,
+      "full_japanese": "ボタンが取れそうです。",
+      "full_romaji": "Botan ga toresou desu.",
+      "full_vietnamese": "Cái cúc áo trông có vẻ sắp đứt ra rồi.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 430051,
+          "order_index": 1,
+          "japanese": "ボタンが",
+          "vietnamese": "cái cúc áo",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 430052,
+          "order_index": 2,
+          "japanese": "取れそうです。",
+          "vietnamese": "trông có vẻ sắp tuột ra.",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 43006,
+      "lesson_id": 43,
+      "passage_id": null,
+      "full_japanese": "ガソリンの値段が上がりそうです。",
+      "full_romaji": "Gasorin no nedan ga agarisou desu.",
+      "full_vietnamese": "Giá xăng trông có vẻ sắp tăng.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 430061,
+          "order_index": 1,
+          "japanese": "ガソリンの値段が",
+          "vietnamese": "giá xăng",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 430062,
+          "order_index": 2,
+          "japanese": "上がりそうです。",
+          "vietnamese": "trông có vẻ sắp tăng",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 43007,
+      "lesson_id": 43,
+      "passage_id": null,
+      "full_japanese": "このかばんは丈夫そうです。",
+      "full_romaji": "Kono kaban wa joubu sou desu.",
+      "full_vietnamese": "Cái cặp này trông có vẻ chắc chắn.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 430071,
+          "order_index": 1,
+          "japanese": "このかばんは",
+          "vietnamese": "cái cặp này thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 430072,
+          "order_index": 2,
+          "japanese": "丈夫そうです。",
+          "vietnamese": "trông có vẻ chắc chắn",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 43008,
+      "lesson_id": 43,
+      "passage_id": null,
+      "full_japanese": "この部屋はよさそうですね。",
+      "full_romaji": "Kono heya wa yosasou desu ne.",
+      "full_vietnamese": "Căn phòng này trông có vẻ tốt nhỉ.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 430081,
+          "order_index": 1,
+          "japanese": "この部屋は",
+          "vietnamese": "căn phòng này thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 430082,
+          "order_index": 2,
+          "japanese": "よさそうですね。",
+          "vietnamese": "trông có vẻ tốt nhỉ",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 43009,
+      "lesson_id": 43,
+      "passage_id": null,
+      "full_japanese": "ちょっと会員カードを取って来ます。",
+      "full_romaji": "Chotto kaiin kaado o totte kimasu.",
+      "full_vietnamese": "Tôi đi lấy thẻ hội viên một lát rồi quay lại.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 430091,
+          "order_index": 1,
+          "japanese": "ちょっと",
+          "vietnamese": "một lát",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 430092,
+          "order_index": 2,
+          "japanese": "会員カードを",
+          "vietnamese": "thẻ hội viên",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 430093,
+          "order_index": 3,
+          "japanese": "取って",
+          "vietnamese": "lấy",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 430094,
+          "order_index": 4,
+          "japanese": "来ます。",
+          "vietnamese": "đi rồi quay lại",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 43010,
+      "lesson_id": 43,
+      "passage_id": null,
+      "full_japanese": "火を消して来てください。",
+      "full_romaji": "Hi o keshite kite kudasai.",
+      "full_vietnamese": "Xin hãy đi tắt lửa rồi quay lại.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 430101,
+          "order_index": 1,
+          "japanese": "火を",
+          "vietnamese": "lửa",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 430102,
+          "order_index": 2,
+          "japanese": "消して",
+          "vietnamese": "tắt",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 430103,
+          "order_index": 3,
+          "japanese": "来てください。",
+          "vietnamese": "hãy đi rồi quay lại",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    }
+  ],
+  "44": [
+    {
+      "id": 44001,
+      "lesson_id": 44,
+      "passage_id": null,
+      "full_japanese": "昨日の夜、お酒を飲みすぎました。",
+      "full_romaji": "Kinou no yoru, osake o nomisugimashita.",
+      "full_vietnamese": "Tối qua, tôi đã uống quá nhiều rượu.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 440011,
+          "order_index": 1,
+          "japanese": "昨日の夜、",
+          "vietnamese": "tối qua,",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 440012,
+          "order_index": 2,
+          "japanese": "お酒を",
+          "vietnamese": "rượu",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 440013,
+          "order_index": 3,
+          "japanese": "飲みすぎました。",
+          "vietnamese": "tôi đã uống quá nhiều.",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 44002,
+      "lesson_id": 44,
+      "passage_id": null,
+      "full_japanese": "このパソコンは使いやすいです。",
+      "full_romaji": "Kono pasokon wa tsukaiyasui desu.",
+      "full_vietnamese": "Cái máy tính này rất dễ sử dụng.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 440021,
+          "order_index": 1,
+          "japanese": "このパソコンは",
+          "vietnamese": "máy tính này thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 440022,
+          "order_index": 2,
+          "japanese": "使いやすいです。",
+          "vietnamese": "rất dễ sử dụng.",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 44003,
+      "lesson_id": 44,
+      "passage_id": null,
+      "full_japanese": "東京は人が多くて、住みにくいです。",
+      "full_romaji": "Toukyou wa hito ga ookute, suminikui desu.",
+      "full_vietnamese": "Tokyo đông người nên rất khó sống.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 440031,
+          "order_index": 1,
+          "japanese": "東京は",
+          "vietnamese": "Tokyo thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 440032,
+          "order_index": 2,
+          "japanese": "人が多くて、",
+          "vietnamese": "người đông nên",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 440033,
+          "order_index": 3,
+          "japanese": "住みにくいです。",
+          "vietnamese": "khó sống.",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 44004,
+      "lesson_id": 44,
+      "passage_id": null,
+      "full_japanese": "テレビの音を大きくします。",
+      "full_romaji": "Terebi no oto o ookiku shimasu.",
+      "full_vietnamese": "Tôi sẽ bật âm thanh tivi to lên.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 440041,
+          "order_index": 1,
+          "japanese": "テレビの音を",
+          "vietnamese": "âm thanh tivi",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 440042,
+          "order_index": 2,
+          "japanese": "大きくします。",
+          "vietnamese": "tôi sẽ làm cho to lên.",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 44005,
+      "lesson_id": 44,
+      "passage_id": null,
+      "full_japanese": "部屋をきれいにします。",
+      "full_romaji": "Heya o kirei ni shimasu.",
+      "full_vietnamese": "Tôi sẽ dọn dẹp phòng cho sạch sẽ.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 440051,
+          "order_index": 1,
+          "japanese": "部屋を",
+          "vietnamese": "căn phòng",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 440052,
+          "order_index": 2,
+          "japanese": "きれいにします。",
+          "vietnamese": "tôi sẽ làm cho sạch sẽ.",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 44006,
+      "lesson_id": 44,
+      "passage_id": null,
+      "full_japanese": "このスープは塩を入れすぎました。",
+      "full_romaji": "Kono suupu wa shio o iresugimashita.",
+      "full_vietnamese": "Món súp này đã cho quá nhiều muối.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 440061,
+          "order_index": 1,
+          "japanese": "このスープは",
+          "vietnamese": "món súp này thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 440062,
+          "order_index": 2,
+          "japanese": "塩を",
+          "vietnamese": "muối",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 440063,
+          "order_index": 3,
+          "japanese": "入れすぎました。",
+          "vietnamese": "đã cho vào quá nhiều",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 44007,
+      "lesson_id": 44,
+      "passage_id": null,
+      "full_japanese": "この説明書は字が細かくて、読みにくいです。",
+      "full_romaji": "Kono setsumeisho wa ji ga komakakute, yominikui desu.",
+      "full_vietnamese": "Sách hướng dẫn này chữ nhỏ chi tiết nên khó đọc.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 440071,
+          "order_index": 1,
+          "japanese": "この説明書は",
+          "vietnamese": "sách hướng dẫn này thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 440072,
+          "order_index": 2,
+          "japanese": "字が細かくて、",
+          "vietnamese": "chữ nhỏ/chi tiết nên",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 440073,
+          "order_index": 3,
+          "japanese": "読みにくいです。",
+          "vietnamese": "khó đọc",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 44008,
+      "lesson_id": 44,
+      "passage_id": null,
+      "full_japanese": "空気が乾いていますから、加湿器を強くします。",
+      "full_romaji": "Kuuki ga kawaite imasu kara, kashitsuki o tsuyoku shimasu.",
+      "full_vietnamese": "Vì không khí khô nên tôi chỉnh máy tạo ẩm mạnh lên.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 440081,
+          "order_index": 1,
+          "japanese": "空気が",
+          "vietnamese": "không khí",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 440082,
+          "order_index": 2,
+          "japanese": "乾いていますから、",
+          "vietnamese": "vì đang khô",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 440083,
+          "order_index": 3,
+          "japanese": "加湿器を",
+          "vietnamese": "máy tạo ẩm",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 440084,
+          "order_index": 4,
+          "japanese": "強くします。",
+          "vietnamese": "làm cho mạnh lên",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 44009,
+      "lesson_id": 44,
+      "passage_id": null,
+      "full_japanese": "洗濯物を半分にします。",
+      "full_romaji": "Sentakumono o hanbun ni shimasu.",
+      "full_vietnamese": "Tôi chia đồ giặt ra một nửa.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 440091,
+          "order_index": 1,
+          "japanese": "洗濯物を",
+          "vietnamese": "đồ giặt",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 440092,
+          "order_index": 2,
+          "japanese": "半分にします。",
+          "vietnamese": "làm thành một nửa",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 44010,
+      "lesson_id": 44,
+      "passage_id": null,
+      "full_japanese": "安全にするために、火を小さくしてください。",
+      "full_romaji": "Anzen ni suru tame ni, hi o chiisaku shite kudasai.",
+      "full_vietnamese": "Để an toàn, xin hãy vặn nhỏ lửa.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 440101,
+          "order_index": 1,
+          "japanese": "安全にするために、",
+          "vietnamese": "để làm cho an toàn",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 440102,
+          "order_index": 2,
+          "japanese": "火を",
+          "vietnamese": "lửa",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 440103,
+          "order_index": 3,
+          "japanese": "小さくして",
+          "vietnamese": "làm nhỏ",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 440104,
+          "order_index": 4,
+          "japanese": "ください。",
+          "vietnamese": "xin hãy",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    }
+  ],
+  "45": [
+    {
+      "id": 45001,
+      "lesson_id": 45,
+      "passage_id": null,
+      "full_japanese": "パスポートをなくした場合は、どうしたらいいですか。",
+      "full_romaji": "Pasupooto o nakushita baai wa, doushitara ii desu ka.",
+      "full_vietnamese": "Trong trường hợp làm mất hộ chiếu thì nên làm thế nào?",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 450011,
+          "order_index": 1,
+          "japanese": "パスポートを",
+          "vietnamese": "hộ chiếu",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 450012,
+          "order_index": 2,
+          "japanese": "なくした場合は、",
+          "vietnamese": "trong trường hợp đánh mất,",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 450013,
+          "order_index": 3,
+          "japanese": "どうしたらいいですか。",
+          "vietnamese": "tôi nên làm thế nào?",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 45002,
+      "lesson_id": 45,
+      "passage_id": null,
+      "full_japanese": "火事の場合は、119番に電話してください。",
+      "full_romaji": "Kaji no baai wa, hyakujuukyuuban ni denwa shite kudasai.",
+      "full_vietnamese": "Trong trường hợp hỏa hoạn, xin hãy gọi số 119.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 450021,
+          "order_index": 1,
+          "japanese": "火事の場合は、",
+          "vietnamese": "trong trường hợp hỏa hoạn,",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 450022,
+          "order_index": 2,
+          "japanese": "119番に",
+          "vietnamese": "vào số 119",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 450023,
+          "order_index": 3,
+          "japanese": "電話してください。",
+          "vietnamese": "xin hãy gọi điện.",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 45003,
+      "lesson_id": 45,
+      "passage_id": null,
+      "full_japanese": "約束をしたのに、彼女は来ませんでした。",
+      "full_romaji": "Yakusoku o shita no ni, kanojo wa kimasen deshita.",
+      "full_vietnamese": "Mặc dù đã hẹn rồi vậy mà cô ấy lại không đến.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 450031,
+          "order_index": 1,
+          "japanese": "約束をしたのに、",
+          "vietnamese": "mặc dù đã hẹn vậy mà,",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 450032,
+          "order_index": 2,
+          "japanese": "彼女は",
+          "vietnamese": "cô ấy",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 450033,
+          "order_index": 3,
+          "japanese": "来ませんでした。",
+          "vietnamese": "đã không đến.",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 45004,
+      "lesson_id": 45,
+      "passage_id": null,
+      "full_japanese": "毎日練習しているのに、上手になりません。",
+      "full_romaji": "Mainichi renshuu shite iru no ni, jouzu ni narimasen.",
+      "full_vietnamese": "Mặc dù ngày nào tôi cũng luyện tập, vậy mà vẫn không giỏi lên.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 450041,
+          "order_index": 1,
+          "japanese": "毎日練習しているのに、",
+          "vietnamese": "mặc dù ngày nào cũng luyện tập vậy mà,",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 450042,
+          "order_index": 2,
+          "japanese": "上手に",
+          "vietnamese": "giỏi lên",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 450043,
+          "order_index": 3,
+          "japanese": "なりません。",
+          "vietnamese": "lại không trở nên.",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 45005,
+      "lesson_id": 45,
+      "passage_id": null,
+      "full_japanese": "日曜日なのに、仕事をしなければなりません。",
+      "full_romaji": "Nichiyoubi na no ni, shigoto o shinakereba narimasen.",
+      "full_vietnamese": "Dù là ngày Chủ Nhật vậy mà tôi vẫn phải làm việc.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 450051,
+          "order_index": 1,
+          "japanese": "日曜日なのに、",
+          "vietnamese": "mặc dù là Chủ Nhật vậy mà,",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 450052,
+          "order_index": 2,
+          "japanese": "仕事を",
+          "vietnamese": "công việc",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 450053,
+          "order_index": 3,
+          "japanese": "しなければなりません。",
+          "vietnamese": "vẫn phải làm.",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 45006,
+      "lesson_id": 45,
+      "passage_id": null,
+      "full_japanese": "雨の場合は、キャンプは中止です。",
+      "full_romaji": "Ame no baai wa, kyanpu wa chuushi desu.",
+      "full_vietnamese": "Trường hợp trời mưa thì buổi cắm trại sẽ bị hủy.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 450061,
+          "order_index": 1,
+          "japanese": "雨の場合は、",
+          "vietnamese": "trường hợp trời mưa thì",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 450062,
+          "order_index": 2,
+          "japanese": "キャンプは",
+          "vietnamese": "buổi cắm trại thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 450063,
+          "order_index": 3,
+          "japanese": "中止です。",
+          "vietnamese": "bị hủy",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 45007,
+      "lesson_id": 45,
+      "passage_id": null,
+      "full_japanese": "事故に会った場合は、すぐ係に連絡してください。",
+      "full_romaji": "Jiko ni atta baai wa, sugu kakari ni renraku shite kudasai.",
+      "full_vietnamese": "Trường hợp gặp tai nạn, hãy liên lạc ngay với người phụ trách.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 450071,
+          "order_index": 1,
+          "japanese": "事故に会った場合は、",
+          "vietnamese": "trường hợp gặp tai nạn thì",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 450072,
+          "order_index": 2,
+          "japanese": "すぐ",
+          "vietnamese": "ngay",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 450073,
+          "order_index": 3,
+          "japanese": "係に",
+          "vietnamese": "người phụ trách",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 450074,
+          "order_index": 4,
+          "japanese": "連絡してください。",
+          "vietnamese": "hãy liên lạc",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 45008,
+      "lesson_id": 45,
+      "passage_id": null,
+      "full_japanese": "保証書があるのに、取り替えてくれませんでした。",
+      "full_romaji": "Hoshousho ga aru noni, torikaete kuremasen deshita.",
+      "full_vietnamese": "Mặc dù có giấy bảo hành vậy mà họ đã không đổi cho tôi.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 450081,
+          "order_index": 1,
+          "japanese": "保証書があるのに、",
+          "vietnamese": "mặc dù có giấy bảo hành vậy mà",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 450082,
+          "order_index": 2,
+          "japanese": "取り替えて",
+          "vietnamese": "đổi lại",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 450083,
+          "order_index": 3,
+          "japanese": "くれませんでした。",
+          "vietnamese": "đã không làm cho tôi",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 45009,
+      "lesson_id": 45,
+      "passage_id": null,
+      "full_japanese": "急に用事ができた場合は、電話してください。",
+      "full_romaji": "Kyuu ni youji ga dekita baai wa, denwa shite kudasai.",
+      "full_vietnamese": "Trường hợp đột nhiên có việc bận, hãy gọi điện.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 450091,
+          "order_index": 1,
+          "japanese": "急に",
+          "vietnamese": "đột nhiên",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 450092,
+          "order_index": 2,
+          "japanese": "用事ができた場合は、",
+          "vietnamese": "trường hợp có việc bận",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 450093,
+          "order_index": 3,
+          "japanese": "電話してください。",
+          "vietnamese": "hãy gọi điện",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 45010,
+      "lesson_id": 45,
+      "passage_id": null,
+      "full_japanese": "ちゃんと用意したのに、忘れてしまいました。",
+      "full_romaji": "Chanto youi shita noni, wasurete shimaimashita.",
+      "full_vietnamese": "Mặc dù đã chuẩn bị hẳn hoi vậy mà tôi lại quên mất.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 450101,
+          "order_index": 1,
+          "japanese": "ちゃんと",
+          "vietnamese": "hẳn hoi",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 450102,
+          "order_index": 2,
+          "japanese": "用意したのに、",
+          "vietnamese": "mặc dù đã chuẩn bị vậy mà",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 450103,
+          "order_index": 3,
+          "japanese": "忘れてしまいました。",
+          "vietnamese": "đã lỡ quên mất",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    }
+  ],
+  "46": [
+    {
+      "id": 46001,
+      "lesson_id": 46,
+      "passage_id": null,
+      "full_japanese": "今から昼ごはんを食べるところです。",
+      "full_romaji": "Ima kara hirugohan o taberu tokoro desu.",
+      "full_vietnamese": "Tôi đang chuẩn bị ăn trưa ngay bây giờ.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 460011,
+          "order_index": 1,
+          "japanese": "今から",
+          "vietnamese": "ngay bây giờ,",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 460012,
+          "order_index": 2,
+          "japanese": "昼ごはんを食べる",
+          "vietnamese": "ăn bữa trưa",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 460013,
+          "order_index": 3,
+          "japanese": "ところです。",
+          "vietnamese": "đang chuẩn bị (sắp sửa).",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 46002,
+      "lesson_id": 46,
+      "passage_id": null,
+      "full_japanese": "今、部屋を掃除しているところです。",
+      "full_romaji": "Ima, heya o souji shite iru tokoro desu.",
+      "full_vietnamese": "Bây giờ tôi đang trong lúc dọn phòng.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 460021,
+          "order_index": 1,
+          "japanese": "今、",
+          "vietnamese": "bây giờ,",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 460022,
+          "order_index": 2,
+          "japanese": "部屋を掃除している",
+          "vietnamese": "đang dọn phòng",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 460023,
+          "order_index": 3,
+          "japanese": "ところです。",
+          "vietnamese": "đúng trong lúc.",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 46003,
+      "lesson_id": 46,
+      "passage_id": null,
+      "full_japanese": "たった今、バスが出たところです。",
+      "full_romaji": "Tatta ima, basu ga deta tokoro desu.",
+      "full_vietnamese": "Xe buýt vừa mới khởi hành đúng lúc nãy xong.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 460031,
+          "order_index": 1,
+          "japanese": "たった今、",
+          "vietnamese": "đúng lúc nãy,",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 460032,
+          "order_index": 2,
+          "japanese": "バスが出た",
+          "vietnamese": "xe buýt đã khởi hành",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 460033,
+          "order_index": 3,
+          "japanese": "ところです。",
+          "vietnamese": "vừa mới xong.",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 46004,
+      "lesson_id": 46,
+      "passage_id": null,
+      "full_japanese": "会議は終わりましたか。いいえ、今終わったところです。",
+      "full_romaji": "Kaigi wa owarimashita ka. Iie, ima owatta tokoro desu.",
+      "full_vietnamese": "Cuộc họp đã kết thúc chưa? Không, nó vừa mới kết thúc xong.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 460041,
+          "order_index": 1,
+          "japanese": "会議は終わりましたか。",
+          "vietnamese": "cuộc họp đã xong chưa?",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 460042,
+          "order_index": 2,
+          "japanese": "いいえ、",
+          "vietnamese": "chưa,",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 460043,
+          "order_index": 3,
+          "japanese": "今終わったところです。",
+          "vietnamese": "vừa mới kết thúc tức thì.",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 46005,
+      "lesson_id": 46,
+      "passage_id": null,
+      "full_japanese": "今、資料を作っているところですから、もう少し待ってください。",
+      "full_romaji": "Ima, shiryou o tsukutte iru tokoro desu kara, mou sukoshi matte kudasai.",
+      "full_vietnamese": "Tôi đang trong lúc làm tài liệu, nên xin hãy đợi thêm một chút.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 460051,
+          "order_index": 1,
+          "japanese": "今、",
+          "vietnamese": "bây giờ,",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 460052,
+          "order_index": 2,
+          "japanese": "資料を作っているところですから、",
+          "vietnamese": "vì đúng trong lúc đang làm tài liệu,",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 460053,
+          "order_index": 3,
+          "japanese": "もう少し",
+          "vietnamese": "thêm một chút nữa",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 460054,
+          "order_index": 4,
+          "japanese": "待ってください。",
+          "vietnamese": "hãy đợi.",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 46006,
+      "lesson_id": 46,
+      "passage_id": null,
+      "full_japanese": "荷物はもう届いたはずです。",
+      "full_romaji": "Nimotsu wa mou todoita hazu desu.",
+      "full_vietnamese": "Hành lý chắc là đã đến rồi.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 460061,
+          "order_index": 1,
+          "japanese": "荷物は",
+          "vietnamese": "hành lý thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 460062,
+          "order_index": 2,
+          "japanese": "もう",
+          "vietnamese": "đã... rồi",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 460063,
+          "order_index": 3,
+          "japanese": "届いたはずです。",
+          "vietnamese": "chắc là đã đến.",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 46007,
+      "lesson_id": 46,
+      "passage_id": null,
+      "full_japanese": "田中さんはきょう留守のはずです。",
+      "full_romaji": "Tanaka-san wa kyou rusu no hazu desu.",
+      "full_vietnamese": "Hôm nay anh Tanaka chắc là đi vắng.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 460071,
+          "order_index": 1,
+          "japanese": "田中さんは",
+          "vietnamese": "anh Tanaka thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 460072,
+          "order_index": 2,
+          "japanese": "きょう",
+          "vietnamese": "hôm nay",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 460073,
+          "order_index": 3,
+          "japanese": "留守のはずです。",
+          "vietnamese": "chắc là vắng nhà.",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 46008,
+      "lesson_id": 46,
+      "passage_id": null,
+      "full_japanese": "このパンは焼いたばかりですから、まだ温かいです。",
+      "full_romaji": "Kono pan wa yaita bakari desu kara, mada atatakai desu.",
+      "full_vietnamese": "Bánh mì này vừa mới nướng nên vẫn còn ấm.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 460081,
+          "order_index": 1,
+          "japanese": "このパンは",
+          "vietnamese": "bánh mì này thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 460082,
+          "order_index": 2,
+          "japanese": "焼いたばかりですから、",
+          "vietnamese": "vì vừa mới nướng,",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 460083,
+          "order_index": 3,
+          "japanese": "まだ",
+          "vietnamese": "vẫn còn",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 460084,
+          "order_index": 4,
+          "japanese": "温かいです。",
+          "vietnamese": "ấm.",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 46009,
+      "lesson_id": 46,
+      "passage_id": null,
+      "full_japanese": "先生はもうすぐ帰ってくるはずです。",
+      "full_romaji": "Sensei wa mou sugu kaette kuru hazu desu.",
+      "full_vietnamese": "Thầy chắc là sắp quay lại.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 460091,
+          "order_index": 1,
+          "japanese": "先生は",
+          "vietnamese": "thầy/cô thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 460092,
+          "order_index": 2,
+          "japanese": "もうすぐ",
+          "vietnamese": "sắp sửa",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 460093,
+          "order_index": 3,
+          "japanese": "帰ってくるはずです。",
+          "vietnamese": "chắc là sẽ quay lại.",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 46010,
+      "lesson_id": 46,
+      "passage_id": null,
+      "full_japanese": "薬を飲んだばかりですから、少し休んでください。",
+      "full_romaji": "Kusuri o nonda bakari desu kara, sukoshi yasunde kudasai.",
+      "full_vietnamese": "Anh vừa uống thuốc xong nên hãy nghỉ một chút.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 460101,
+          "order_index": 1,
+          "japanese": "薬を",
+          "vietnamese": "thuốc",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 460102,
+          "order_index": 2,
+          "japanese": "飲んだばかりですから、",
+          "vietnamese": "vì vừa mới uống,",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 460103,
+          "order_index": 3,
+          "japanese": "少し",
+          "vietnamese": "một chút",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 460104,
+          "order_index": 4,
+          "japanese": "休んでください。",
+          "vietnamese": "hãy nghỉ.",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    }
+  ],
+  "47": [
+    {
+      "id": 47001,
+      "lesson_id": 47,
+      "passage_id": null,
+      "full_japanese": "天気予報によると、明日は寒くなるそうです。",
+      "full_romaji": "Tenki yohou ni yoru to, ashita wa samuku naru sou desu.",
+      "full_vietnamese": "Theo dự báo thời tiết, nghe nói ngày mai sẽ trở lạnh.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 470011,
+          "order_index": 1,
+          "japanese": "天気予報によると、",
+          "vietnamese": "theo dự báo thời tiết,",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 470012,
+          "order_index": 2,
+          "japanese": "明日は",
+          "vietnamese": "ngày mai",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 470013,
+          "order_index": 3,
+          "japanese": "寒くなるそうです。",
+          "vietnamese": "nghe nói sẽ trở lạnh.",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 47002,
+      "lesson_id": 47,
+      "passage_id": null,
+      "full_japanese": "クララさんは子どもの時、フランスに住んでいたそうです。",
+      "full_romaji": "Kurara-san wa kodomo no toki, Furansu ni sunde ita sou desu.",
+      "full_vietnamese": "Nghe nói hồi còn nhỏ chị Klara đã từng sống ở Pháp.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 470021,
+          "order_index": 1,
+          "japanese": "クララさんは",
+          "vietnamese": "chị Klara thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 470022,
+          "order_index": 2,
+          "japanese": "子どもの時、",
+          "vietnamese": "hồi còn nhỏ,",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 470023,
+          "order_index": 3,
+          "japanese": "フランスに",
+          "vietnamese": "ở Pháp",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 470024,
+          "order_index": 4,
+          "japanese": "住んでいたそうです。",
+          "vietnamese": "nghe nói đã từng sống.",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 47003,
+      "lesson_id": 47,
+      "passage_id": null,
+      "full_japanese": "人が大勢集まっていますね。事故のようです。",
+      "full_romaji": "Hito ga oozei atsumatte imasu ne. Jiko no you desu.",
+      "full_vietnamese": "Mọi người đang tập trung đông quá nhỉ. Hình như có tai nạn.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 470031,
+          "order_index": 1,
+          "japanese": "人が大勢集まっていますね。",
+          "vietnamese": "người đông quá nhỉ.",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 470032,
+          "order_index": 2,
+          "japanese": "事故のようです。",
+          "vietnamese": "hình như là một vụ tai nạn.",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 47004,
+      "lesson_id": 47,
+      "passage_id": null,
+      "full_japanese": "咳も出るし、頭も痛いし、どうも風邪を引いたようです。",
+      "full_romaji": "Seki mo deru shi, atama mo itai shi, doumo kaze o hiita you desu.",
+      "full_vietnamese": "Vừa ho, vừa đau đầu, hình như tôi đã bị cảm rồi.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 470041,
+          "order_index": 1,
+          "japanese": "咳も出るし、",
+          "vietnamese": "vừa bị ho,",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 470042,
+          "order_index": 2,
+          "japanese": "頭も痛いし、",
+          "vietnamese": "vừa đau đầu,",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 470043,
+          "order_index": 3,
+          "japanese": "どうも",
+          "vietnamese": "rất có thể là",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 470044,
+          "order_index": 4,
+          "japanese": "風邪を引いたようです。",
+          "vietnamese": "hình như đã bị cảm.",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 47005,
+      "lesson_id": 47,
+      "passage_id": null,
+      "full_japanese": "隣の部屋に誰かいるようです。",
+      "full_romaji": "Tonari no heya ni dareka iru you desu.",
+      "full_vietnamese": "Hình như có ai đó ở phòng bên cạnh.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 470051,
+          "order_index": 1,
+          "japanese": "隣の部屋に",
+          "vietnamese": "ở phòng bên cạnh",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 470052,
+          "order_index": 2,
+          "japanese": "誰かいるようです。",
+          "vietnamese": "hình như có ai đó đang ở.",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 47006,
+      "lesson_id": 47,
+      "passage_id": null,
+      "full_japanese": "この料理は変なにおいがします。",
+      "full_romaji": "Kono ryouri wa hen na nioi ga shimasu.",
+      "full_vietnamese": "Món ăn này có mùi lạ.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 470061,
+          "order_index": 1,
+          "japanese": "この料理は",
+          "vietnamese": "món ăn này thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 470062,
+          "order_index": 2,
+          "japanese": "変な",
+          "vietnamese": "lạ",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 470063,
+          "order_index": 3,
+          "japanese": "においがします。",
+          "vietnamese": "có mùi.",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 47007,
+      "lesson_id": 47,
+      "passage_id": null,
+      "full_japanese": "ニュースによると、人口が少し減ったそうです。",
+      "full_romaji": "Nyuusu ni yoru to, jinkou ga sukoshi hetta sou desu.",
+      "full_vietnamese": "Theo tin tức, nghe nói dân số đã giảm một chút.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 470071,
+          "order_index": 1,
+          "japanese": "ニュースによると、",
+          "vietnamese": "theo tin tức,",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 470072,
+          "order_index": 2,
+          "japanese": "人口が",
+          "vietnamese": "dân số",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 470073,
+          "order_index": 3,
+          "japanese": "少し",
+          "vietnamese": "một chút",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 470074,
+          "order_index": 4,
+          "japanese": "減ったそうです。",
+          "vietnamese": "nghe nói đã giảm.",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 47008,
+      "lesson_id": 47,
+      "passage_id": null,
+      "full_japanese": "駅の前に救急車が止まっています。けが人がいるようです。",
+      "full_romaji": "Eki no mae ni kyuukyuusha ga tomatte imasu. Keganin ga iru you desu.",
+      "full_vietnamese": "Có xe cấp cứu đang đỗ trước ga. Hình như có người bị thương.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 470081,
+          "order_index": 1,
+          "japanese": "駅の前に",
+          "vietnamese": "trước nhà ga",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 470082,
+          "order_index": 2,
+          "japanese": "救急車が止まっています。",
+          "vietnamese": "xe cấp cứu đang đỗ.",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 470083,
+          "order_index": 3,
+          "japanese": "けが人がいるようです。",
+          "vietnamese": "hình như có người bị thương.",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 47009,
+      "lesson_id": 47,
+      "passage_id": null,
+      "full_japanese": "あの人は田中さんの知り合いのようです。",
+      "full_romaji": "Ano hito wa Tanaka-san no shiriai no you desu.",
+      "full_vietnamese": "Người kia hình như là người quen của anh Tanaka.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 470091,
+          "order_index": 1,
+          "japanese": "あの人は",
+          "vietnamese": "người kia thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 470092,
+          "order_index": 2,
+          "japanese": "田中さんの",
+          "vietnamese": "của anh Tanaka",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 470093,
+          "order_index": 3,
+          "japanese": "知り合いのようです。",
+          "vietnamese": "hình như là người quen.",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 47010,
+      "lesson_id": 47,
+      "passage_id": null,
+      "full_japanese": "友達の話では、二人は婚約したそうです。",
+      "full_romaji": "Tomodachi no hanashi dewa, futari wa konyaku shita sou desu.",
+      "full_vietnamese": "Theo lời bạn tôi, nghe nói hai người đã đính hôn.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 470101,
+          "order_index": 1,
+          "japanese": "友達の話では、",
+          "vietnamese": "theo câu chuyện của bạn,",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 470102,
+          "order_index": 2,
+          "japanese": "二人は",
+          "vietnamese": "hai người thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 470103,
+          "order_index": 3,
+          "japanese": "婚約したそうです。",
+          "vietnamese": "nghe nói đã đính hôn.",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    }
+  ],
+  "48": [
+    {
+      "id": 48001,
+      "lesson_id": 48,
+      "passage_id": null,
+      "full_japanese": "部長は私を大阪へ出張させました。",
+      "full_romaji": "Buchou wa watashi o Oosaka e shucchou sasemashita.",
+      "full_vietnamese": "Trưởng phòng đã bắt tôi đi công tác ở Osaka.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 480011,
+          "order_index": 1,
+          "japanese": "部長は",
+          "vietnamese": "trưởng phòng thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 480012,
+          "order_index": 2,
+          "japanese": "私を",
+          "vietnamese": "tôi",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 480013,
+          "order_index": 3,
+          "japanese": "大阪へ",
+          "vietnamese": "đến Osaka",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 480014,
+          "order_index": 4,
+          "japanese": "出張させました。",
+          "vietnamese": "đã bắt đi công tác. (sai khiến)",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 48002,
+      "lesson_id": 48,
+      "passage_id": null,
+      "full_japanese": "お母さんは子どもに野菜を食べさせます。",
+      "full_romaji": "Okaa-san wa kodomo ni yasai o tabesasemasu.",
+      "full_vietnamese": "Mẹ bắt con ăn rau.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 480021,
+          "order_index": 1,
+          "japanese": "お母さんは",
+          "vietnamese": "người mẹ thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 480022,
+          "order_index": 2,
+          "japanese": "子どもに",
+          "vietnamese": "đối với đứa trẻ",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 480023,
+          "order_index": 3,
+          "japanese": "野菜を",
+          "vietnamese": "rau",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 480024,
+          "order_index": 4,
+          "japanese": "食べさせます。",
+          "vietnamese": "bắt ăn. (sai khiến)",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 48003,
+      "lesson_id": 48,
+      "passage_id": null,
+      "full_japanese": "先生は生徒に自由に意見を言わせました。",
+      "full_romaji": "Sensei wa seito ni jiyuu ni iken o iwasemashita.",
+      "full_vietnamese": "Giáo viên đã cho phép học sinh tự do phát biểu ý kiến.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 480031,
+          "order_index": 1,
+          "japanese": "先生は",
+          "vietnamese": "giáo viên thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 480032,
+          "order_index": 2,
+          "japanese": "生徒に",
+          "vietnamese": "cho học sinh",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 480033,
+          "order_index": 3,
+          "japanese": "自由に",
+          "vietnamese": "một cách tự do",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 480034,
+          "order_index": 4,
+          "japanese": "意見を言わせました。",
+          "vietnamese": "đã cho phép phát biểu ý kiến. (sai khiến)",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 48004,
+      "lesson_id": 48,
+      "passage_id": null,
+      "full_japanese": "子どもを塾に行かせてください。",
+      "full_romaji": "Kodomo o juku ni ikasete kudasai.",
+      "full_vietnamese": "Xin hãy cho phép con tôi được đi học thêm.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 480041,
+          "order_index": 1,
+          "japanese": "子どもを",
+          "vietnamese": "đứa trẻ",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 480042,
+          "order_index": 2,
+          "japanese": "塾に",
+          "vietnamese": "đến lớp học thêm",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 480043,
+          "order_index": 3,
+          "japanese": "行かせてください。",
+          "vietnamese": "xin hãy cho phép đi.",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 48005,
+      "lesson_id": 48,
+      "passage_id": null,
+      "full_japanese": "すみません、明日休ませていただけませんか。",
+      "full_romaji": "Sumimasen, ashita yasumasete itadakemasen ka.",
+      "full_vietnamese": "Xin lỗi, ngày mai cho phép tôi nghỉ được không ạ?",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 480051,
+          "order_index": 1,
+          "japanese": "すみません、",
+          "vietnamese": "xin lỗi,",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 480052,
+          "order_index": 2,
+          "japanese": "明日",
+          "vietnamese": "ngày mai",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 480053,
+          "order_index": 3,
+          "japanese": "休ませていただけませんか。",
+          "vietnamese": "có thể cho phép tôi nghỉ được không ạ?",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 48006,
+      "lesson_id": 48,
+      "passage_id": null,
+      "full_japanese": "母は弟に部屋を掃除させました。",
+      "full_romaji": "Haha wa otouto ni heya o souji sasemashita.",
+      "full_vietnamese": "Mẹ tôi đã bắt em trai dọn phòng.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 480061,
+          "order_index": 1,
+          "japanese": "母は",
+          "vietnamese": "mẹ tôi thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 480062,
+          "order_index": 2,
+          "japanese": "弟に",
+          "vietnamese": "đối với em trai",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 480063,
+          "order_index": 3,
+          "japanese": "部屋を",
+          "vietnamese": "phòng",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 480064,
+          "order_index": 4,
+          "japanese": "掃除させました。",
+          "vietnamese": "bắt dọn dẹp.",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 48007,
+      "lesson_id": 48,
+      "passage_id": null,
+      "full_japanese": "課長は社員を早く帰らせました。",
+      "full_romaji": "Kachou wa shain o hayaku kaerasemashita.",
+      "full_vietnamese": "Trưởng nhóm đã cho nhân viên về sớm.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 480071,
+          "order_index": 1,
+          "japanese": "課長は",
+          "vietnamese": "trưởng nhóm thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 480072,
+          "order_index": 2,
+          "japanese": "社員を",
+          "vietnamese": "nhân viên",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 480073,
+          "order_index": 3,
+          "japanese": "早く",
+          "vietnamese": "sớm",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 480074,
+          "order_index": 4,
+          "japanese": "帰らせました。",
+          "vietnamese": "cho về.",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 48008,
+      "lesson_id": 48,
+      "passage_id": null,
+      "full_japanese": "子どもに好きなことをさせるのは大切です。",
+      "full_romaji": "Kodomo ni sukina koto o saseru no wa taisetsu desu.",
+      "full_vietnamese": "Việc cho trẻ làm điều mình thích là quan trọng.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 480081,
+          "order_index": 1,
+          "japanese": "子どもに",
+          "vietnamese": "cho trẻ con",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 480082,
+          "order_index": 2,
+          "japanese": "好きなことを",
+          "vietnamese": "việc mình thích",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 480083,
+          "order_index": 3,
+          "japanese": "させるのは",
+          "vietnamese": "việc cho làm thì",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 480084,
+          "order_index": 4,
+          "japanese": "大切です。",
+          "vietnamese": "quan trọng.",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 48009,
+      "lesson_id": 48,
+      "passage_id": null,
+      "full_japanese": "荷物をここに置かせていただけませんか。",
+      "full_romaji": "Nimotsu o koko ni okasete itadakemasen ka.",
+      "full_vietnamese": "Cho phép tôi để hành lý ở đây được không ạ?",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 480091,
+          "order_index": 1,
+          "japanese": "荷物を",
+          "vietnamese": "hành lý",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 480092,
+          "order_index": 2,
+          "japanese": "ここに",
+          "vietnamese": "ở đây",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 480093,
+          "order_index": 3,
+          "japanese": "置かせていただけませんか。",
+          "vietnamese": "có thể cho phép tôi để không ạ?",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 48010,
+      "lesson_id": 48,
+      "passage_id": null,
+      "full_japanese": "忙しい時は、家族に手伝わせます。",
+      "full_romaji": "Isogashii toki wa, kazoku ni tetsudawasemasu.",
+      "full_vietnamese": "Khi bận, tôi nhờ/bảo gia đình giúp.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 480101,
+          "order_index": 1,
+          "japanese": "忙しい時は、",
+          "vietnamese": "khi bận,",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 480102,
+          "order_index": 2,
+          "japanese": "家族に",
+          "vietnamese": "cho gia đình",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 480103,
+          "order_index": 3,
+          "japanese": "手伝わせます。",
+          "vietnamese": "bảo/nhờ giúp.",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    }
+  ],
+  "49": [
+    {
+      "id": 49001,
+      "lesson_id": 49,
+      "passage_id": null,
+      "full_japanese": "社長はもうお帰りになりました。",
+      "full_romaji": "Shachou wa mou okaeri ni narimashita.",
+      "full_vietnamese": "Giám đốc đã về rồi ạ.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 490011,
+          "order_index": 1,
+          "japanese": "社長は",
+          "vietnamese": "giám đốc thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 490012,
+          "order_index": 2,
+          "japanese": "もう",
+          "vietnamese": "đã... rồi",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 490013,
+          "order_index": 3,
+          "japanese": "お帰りになりました。",
+          "vietnamese": "đã về. (tôn kính)",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 49002,
+      "lesson_id": 49,
+      "passage_id": null,
+      "full_japanese": "先生は何を召し上がりますか。",
+      "full_romaji": "Sensei wa nani o meshiagarimasu ka.",
+      "full_vietnamese": "Thầy sẽ dùng món gì ạ?",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 490021,
+          "order_index": 1,
+          "japanese": "先生は",
+          "vietnamese": "thầy giáo thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 490022,
+          "order_index": 2,
+          "japanese": "何を",
+          "vietnamese": "cái gì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 490023,
+          "order_index": 3,
+          "japanese": "召し上がりますか。",
+          "vietnamese": "sẽ dùng (ăn/uống)? (tôn kính)",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 49003,
+      "lesson_id": 49,
+      "passage_id": null,
+      "full_japanese": "部長はアメリカへ出張されます。",
+      "full_romaji": "Buchou wa Amerika e shucchou saremasu.",
+      "full_vietnamese": "Trưởng phòng sẽ đi công tác ở Mỹ ạ.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 490031,
+          "order_index": 1,
+          "japanese": "部長は",
+          "vietnamese": "trưởng phòng thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 490032,
+          "order_index": 2,
+          "japanese": "アメリカへ",
+          "vietnamese": "đến Mỹ",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 490033,
+          "order_index": 3,
+          "japanese": "出張されます。",
+          "vietnamese": "sẽ đi công tác. (tôn kính)",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 49004,
+      "lesson_id": 49,
+      "passage_id": null,
+      "full_japanese": "どうぞ、こちらにお座りください。",
+      "full_romaji": "Douzo, kochira ni osuwari kudasai.",
+      "full_vietnamese": "Xin mời ngài ngồi vào chỗ này.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 490041,
+          "order_index": 1,
+          "japanese": "どうぞ、",
+          "vietnamese": "xin mời,",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 490042,
+          "order_index": 2,
+          "japanese": "こちらに",
+          "vietnamese": "vào chỗ này",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 490043,
+          "order_index": 3,
+          "japanese": "お座りください。",
+          "vietnamese": "hãy ngồi. (tôn kính)",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 49005,
+      "lesson_id": 49,
+      "passage_id": null,
+      "full_japanese": "あの方は松本先生でいらっしゃいます。",
+      "full_romaji": "Ano kata wa Matsumoto-sensei de irasshaimasu.",
+      "full_vietnamese": "Vị kia là thầy Matsumoto ạ.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 490051,
+          "order_index": 1,
+          "japanese": "あの方は",
+          "vietnamese": "vị kia thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 490052,
+          "order_index": 2,
+          "japanese": "松本先生",
+          "vietnamese": "thầy Matsumoto",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 490053,
+          "order_index": 3,
+          "japanese": "でいらっしゃいます。",
+          "vietnamese": "là (tôn kính).",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 49006,
+      "lesson_id": 49,
+      "passage_id": null,
+      "full_japanese": "社長は会場をご覧になりました。",
+      "full_romaji": "Shachou wa kaijou o goran ni narimashita.",
+      "full_vietnamese": "Giám đốc đã xem hội trường ạ.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 490061,
+          "order_index": 1,
+          "japanese": "社長は",
+          "vietnamese": "giám đốc thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 490062,
+          "order_index": 2,
+          "japanese": "会場を",
+          "vietnamese": "hội trường",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 490063,
+          "order_index": 3,
+          "japanese": "ご覧になりました。",
+          "vietnamese": "đã xem. (tôn kính)",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 49007,
+      "lesson_id": 49,
+      "passage_id": null,
+      "full_japanese": "先生は日本の文化をご存知です。",
+      "full_romaji": "Sensei wa Nihon no bunka o gozonji desu.",
+      "full_vietnamese": "Thầy biết văn hóa Nhật ạ.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 490071,
+          "order_index": 1,
+          "japanese": "先生は",
+          "vietnamese": "thầy/cô thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 490072,
+          "order_index": 2,
+          "japanese": "日本の文化を",
+          "vietnamese": "văn hóa Nhật",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 490073,
+          "order_index": 3,
+          "japanese": "ご存知です。",
+          "vietnamese": "biết. (tôn kính)",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 49008,
+      "lesson_id": 49,
+      "passage_id": null,
+      "full_japanese": "お客様は三階にいらっしゃいます。",
+      "full_romaji": "Okyaku-sama wa sankai ni irasshaimasu.",
+      "full_vietnamese": "Khách đang ở tầng ba ạ.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 490081,
+          "order_index": 1,
+          "japanese": "お客様は",
+          "vietnamese": "quý khách thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 490082,
+          "order_index": 2,
+          "japanese": "三階に",
+          "vietnamese": "ở tầng ba",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 490083,
+          "order_index": 3,
+          "japanese": "いらっしゃいます。",
+          "vietnamese": "ở/có. (tôn kính)",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 49009,
+      "lesson_id": 49,
+      "passage_id": null,
+      "full_japanese": "こちらで少々お待ちください。",
+      "full_romaji": "Kochira de shoushou omachi kudasai.",
+      "full_vietnamese": "Xin quý khách vui lòng chờ một chút ở đây.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 490091,
+          "order_index": 1,
+          "japanese": "こちらで",
+          "vietnamese": "ở đây",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 490092,
+          "order_index": 2,
+          "japanese": "少々",
+          "vietnamese": "một chút",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 490093,
+          "order_index": 3,
+          "japanese": "お待ちください。",
+          "vietnamese": "xin hãy chờ. (tôn kính)",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 49010,
+      "lesson_id": 49,
+      "passage_id": null,
+      "full_japanese": "先生は何とおっしゃいましたか。",
+      "full_romaji": "Sensei wa nan to osshaimashita ka.",
+      "full_vietnamese": "Thầy đã nói gì ạ?",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 490101,
+          "order_index": 1,
+          "japanese": "先生は",
+          "vietnamese": "thầy/cô thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 490102,
+          "order_index": 2,
+          "japanese": "何と",
+          "vietnamese": "rằng gì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 490103,
+          "order_index": 3,
+          "japanese": "おっしゃいましたか。",
+          "vietnamese": "đã nói? (tôn kính)",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    }
+  ],
+  "50": [
+    {
+      "id": 50001,
+      "lesson_id": 50,
+      "passage_id": null,
+      "full_japanese": "私はグエンと申します。",
+      "full_romaji": "Watashi wa Guen to moushimasu.",
+      "full_vietnamese": "Tôi tên là Nguyễn ạ.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 500011,
+          "order_index": 1,
+          "japanese": "私は",
+          "vietnamese": "tôi thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 500012,
+          "order_index": 2,
+          "japanese": "グエンと",
+          "vietnamese": "Nguyễn",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 500013,
+          "order_index": 3,
+          "japanese": "申します。",
+          "vietnamese": "được gọi là. (khiêm nhường)",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 50002,
+      "lesson_id": 50,
+      "passage_id": null,
+      "full_japanese": "明日、先生のお宅へ伺います。",
+      "full_romaji": "Ashita, sensei no otaku e ukagaimasu.",
+      "full_vietnamese": "Ngày mai tôi sẽ đến thăm nhà thầy ạ.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 500021,
+          "order_index": 1,
+          "japanese": "明日、",
+          "vietnamese": "ngày mai,",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 500022,
+          "order_index": 2,
+          "japanese": "先生のお宅へ",
+          "vietnamese": "đến nhà của thầy",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 500023,
+          "order_index": 3,
+          "japanese": "伺います。",
+          "vietnamese": "tôi sẽ đến thăm. (khiêm nhường)",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 50003,
+      "lesson_id": 50,
+      "passage_id": null,
+      "full_japanese": "私が荷物をお持ちします。",
+      "full_romaji": "Watashi ga nimotsu o omochi shimasu.",
+      "full_vietnamese": "Để tôi mang hành lý cho ạ.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 500031,
+          "order_index": 1,
+          "japanese": "私が",
+          "vietnamese": "chính tôi",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 500032,
+          "order_index": 2,
+          "japanese": "荷物を",
+          "vietnamese": "hành lý",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 500033,
+          "order_index": 3,
+          "japanese": "お持ちします。",
+          "vietnamese": "sẽ mang giúp cho. (khiêm nhường)",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 50004,
+      "lesson_id": 50,
+      "passage_id": null,
+      "full_japanese": "スケジュールをお送りいたします。",
+      "full_romaji": "Sukejuuru o ookuri itashimasu.",
+      "full_vietnamese": "Tôi xin phép được gửi lịch trình ạ.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 500041,
+          "order_index": 1,
+          "japanese": "スケジュールを",
+          "vietnamese": "lịch trình",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 500042,
+          "order_index": 2,
+          "japanese": "お送りいたします。",
+          "vietnamese": "tôi xin gửi. (khiêm nhường)",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 50005,
+      "lesson_id": 50,
+      "passage_id": null,
+      "full_japanese": "はい、わかりました。すぐ参ります。",
+      "full_romaji": "Hai, wakarimashita. Sugu mairimasu.",
+      "full_vietnamese": "Vâng, tôi hiểu rồi. Tôi sẽ đến ngay ạ.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 500051,
+          "order_index": 1,
+          "japanese": "はい、",
+          "vietnamese": "vâng,",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 500052,
+          "order_index": 2,
+          "japanese": "わかりました。",
+          "vietnamese": "tôi đã hiểu.",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 500053,
+          "order_index": 3,
+          "japanese": "すぐ",
+          "vietnamese": "ngay lập tức",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 500054,
+          "order_index": 4,
+          "japanese": "参ります。",
+          "vietnamese": "tôi sẽ đi/đến. (khiêm nhường)",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 50006,
+      "lesson_id": 50,
+      "passage_id": null,
+      "full_japanese": "この資料を拝見してもよろしいでしょうか。",
+      "full_romaji": "Kono shiryou o haiken shite mo yoroshii deshou ka.",
+      "full_vietnamese": "Tôi xem tài liệu này có được không ạ?",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 500061,
+          "order_index": 1,
+          "japanese": "この資料を",
+          "vietnamese": "tài liệu này",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 500062,
+          "order_index": 2,
+          "japanese": "拝見しても",
+          "vietnamese": "xem (khiêm nhường) thì",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        },
+        {
+          "id": 500063,
+          "order_index": 3,
+          "japanese": "よろしいでしょうか。",
+          "vietnamese": "có được không ạ?",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 50007,
+      "lesson_id": 50,
+      "passage_id": null,
+      "full_japanese": "私はハノイから参りました。",
+      "full_romaji": "Watashi wa Hanoi kara mairimashita.",
+      "full_vietnamese": "Tôi đến từ Hà Nội ạ.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 500071,
+          "order_index": 1,
+          "japanese": "私は",
+          "vietnamese": "tôi thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 500072,
+          "order_index": 2,
+          "japanese": "ハノイから",
+          "vietnamese": "từ Hà Nội",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 500073,
+          "order_index": 3,
+          "japanese": "参りました。",
+          "vietnamese": "đã đến. (khiêm nhường)",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 50008,
+      "lesson_id": 50,
+      "passage_id": null,
+      "full_japanese": "詳しいことはまだ存じません。",
+      "full_romaji": "Kuwashii koto wa mada zonjimasen.",
+      "full_vietnamese": "Tôi vẫn chưa biết chi tiết ạ.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 500081,
+          "order_index": 1,
+          "japanese": "詳しいことは",
+          "vietnamese": "việc chi tiết thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 500082,
+          "order_index": 2,
+          "japanese": "まだ",
+          "vietnamese": "vẫn chưa",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 500083,
+          "order_index": 3,
+          "japanese": "存じません。",
+          "vietnamese": "không biết. (khiêm nhường)",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 50009,
+      "lesson_id": 50,
+      "passage_id": null,
+      "full_japanese": "こちらは会議室でございます。",
+      "full_romaji": "Kochira wa kaigishitsu de gozaimasu.",
+      "full_vietnamese": "Đây là phòng họp ạ.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 500091,
+          "order_index": 1,
+          "japanese": "こちらは",
+          "vietnamese": "đây thì",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 500092,
+          "order_index": 2,
+          "japanese": "会議室",
+          "vietnamese": "phòng họp",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 500093,
+          "order_index": 3,
+          "japanese": "でございます。",
+          "vietnamese": "là. (lịch sự)",
+          "is_grammar_key": true,
+          "kanji_variants": null
+        }
+      ]
+    },
+    {
+      "id": 50010,
+      "lesson_id": 50,
+      "passage_id": null,
+      "full_japanese": "皆様のご協力に心から感謝いたします。",
+      "full_romaji": "Minasama no gokyouryoku ni kokoro kara kansha itashimasu.",
+      "full_vietnamese": "Tôi xin chân thành cảm ơn sự hợp tác của quý vị.",
+      "audio_url": null,
+      "kanji_variants": null,
+      "chunks": [
+        {
+          "id": 500101,
+          "order_index": 1,
+          "japanese": "皆様の",
+          "vietnamese": "của quý vị",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 500102,
+          "order_index": 2,
+          "japanese": "ご協力に",
+          "vietnamese": "đối với sự hợp tác",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 500103,
+          "order_index": 3,
+          "japanese": "心から",
+          "vietnamese": "từ tận đáy lòng",
+          "is_grammar_key": false,
+          "kanji_variants": null
+        },
+        {
+          "id": 500104,
+          "order_index": 4,
+          "japanese": "感謝いたします。",
+          "vietnamese": "xin cảm ơn. (khiêm nhường)",
+          "is_grammar_key": true,
+          "kanji_variants": null
         }
       ]
     }
@@ -19034,6 +30756,2426 @@ export const generatedPassages = {
           "furigana": "とおくにすんでも、ともだちをわすれません",
           "meaning": "Dù sống ở xa, tôi sẽ không quên bạn bè.",
           "note": "Vても diễn tả dù hành động xảy ra."
+        }
+      ]
+    }
+  ],
+  "26": [
+    {
+      "id": 2601,
+      "lesson_id": 26,
+      "title": "どうして遅れたんですか — Tại sao lại muộn?",
+      "content": [
+        {
+          "text": "すみません、",
+          "meaning": "Xin lỗi,"
+        },
+        {
+          "text": "遅れました。",
+          "meaning": "tôi đến muộn."
+        },
+        {
+          "text": "どうして",
+          "meaning": "Tại sao"
+        },
+        {
+          "text": "遅れたんですか。",
+          "meaning": "bạn lại đến muộn vậy?",
+          "note": "Dùng んですか để hỏi lý do một cách quan tâm hoặc căn vặn."
+        },
+        {
+          "text": "実は、",
+          "meaning": "Thực ra là,"
+        },
+        {
+          "text": "バスが",
+          "meaning": "xe buýt"
+        },
+        {
+          "text": "来なかったんです。",
+          "meaning": "đã không đến.",
+          "note": "Dùng んです để giải thích lý do một cách mềm mỏng."
+        }
+      ]
+    },
+    {
+      "id": 2602,
+      "lesson_id": 26,
+      "title": "ごみの出し方 — Cách đổ rác",
+      "content": [
+        {
+          "text": "すみません、",
+          "meaning": "Xin lỗi,"
+        },
+        {
+          "text": "ごみを",
+          "meaning": "rác"
+        },
+        {
+          "text": "出したいんですが、",
+          "meaning": "tôi muốn mang ra/đổ rác,",
+          "note": "たいんですが dùng để mở lời trước khi hỏi hoặc nhờ."
+        },
+        {
+          "text": "どこに",
+          "meaning": "ở đâu"
+        },
+        {
+          "text": "出したらいいですか。",
+          "meaning": "thì nên mang ra?",
+          "note": "Vたらいいですか dùng khi xin lời khuyên nên làm gì."
+        },
+        {
+          "text": "月・水・金の朝、",
+          "meaning": "Sáng thứ Hai, Tư, Sáu,"
+        },
+        {
+          "text": "置き場に",
+          "meaning": "ở nơi để rác"
+        },
+        {
+          "text": "出してください。",
+          "meaning": "hãy mang ra."
+        }
+      ]
+    }
+  ],
+  "27": [
+    {
+      "id": 2701,
+      "lesson_id": 27,
+      "title": "何ができますか — Bạn có thể làm gì?",
+      "content": [
+        {
+          "text": "日本語の",
+          "meaning": "Của tiếng Nhật"
+        },
+        {
+          "text": "新聞が",
+          "meaning": "tờ báo"
+        },
+        {
+          "text": "読めますか。",
+          "meaning": "bạn có thể đọc được không?",
+          "note": "読めます là thể khả năng của 読みます. Trợ từ を chuyển thành が."
+        },
+        {
+          "text": "いいえ、",
+          "meaning": "Không,"
+        },
+        {
+          "text": "漢字が",
+          "meaning": "Hán tự"
+        },
+        {
+          "text": "むずかしいですから、",
+          "meaning": "vì khó nên,"
+        },
+        {
+          "text": "まだ読めません。",
+          "meaning": "tôi vẫn chưa thể đọc được."
+        }
+      ]
+    },
+    {
+      "id": 2702,
+      "lesson_id": 27,
+      "title": "窓から見える景色 — Phong cảnh nhìn từ cửa sổ",
+      "content": [
+        {
+          "text": "この部屋から",
+          "meaning": "Từ căn phòng này"
+        },
+        {
+          "text": "海が",
+          "meaning": "biển"
+        },
+        {
+          "text": "見えます。",
+          "meaning": "có thể nhìn thấy.",
+          "note": "見えます là khả năng nhìn thấy tự nhiên do điều kiện bên ngoài."
+        },
+        {
+          "text": "夜は",
+          "meaning": "Ban đêm thì"
+        },
+        {
+          "text": "波の音も",
+          "meaning": "cả tiếng sóng"
+        },
+        {
+          "text": "聞こえます。",
+          "meaning": "có thể nghe thấy."
+        },
+        {
+          "text": "でも、",
+          "meaning": "Nhưng,"
+        },
+        {
+          "text": "小さい字は",
+          "meaning": "chữ nhỏ thì"
+        },
+        {
+          "text": "まだ読めません。",
+          "meaning": "vẫn chưa đọc được."
+        }
+      ]
+    }
+  ],
+  "28": [
+    {
+      "id": 2801,
+      "lesson_id": 28,
+      "title": "休みの日は何をしていますか — Ngày nghỉ bạn thường làm gì?",
+      "content": [
+        {
+          "text": "休みの日は",
+          "meaning": "Vào ngày nghỉ thì"
+        },
+        {
+          "text": "いつも",
+          "meaning": "lúc nào cũng"
+        },
+        {
+          "text": "何を",
+          "meaning": "cái gì"
+        },
+        {
+          "text": "していますか。",
+          "meaning": "bạn thường làm?",
+          "note": "しています dùng để diễn tả thói quen lặp đi lặp lại."
+        },
+        {
+          "text": "そうですね。",
+          "meaning": "Để xem nào."
+        },
+        {
+          "text": "音楽を",
+          "meaning": "Nhạc"
+        },
+        {
+          "text": "聞きながら、",
+          "meaning": "vừa nghe,"
+        },
+        {
+          "text": "本を読んだり、",
+          "meaning": "vừa đọc sách, hoặc là"
+        },
+        {
+          "text": "掃除したり",
+          "meaning": "hoặc là dọn dẹp"
+        },
+        {
+          "text": "しています。",
+          "meaning": "tôi thường làm (những việc như vậy)."
+        }
+      ]
+    },
+    {
+      "id": 2802,
+      "lesson_id": 28,
+      "title": "いい会社 — Công ty tốt",
+      "content": [
+        {
+          "text": "この会社は",
+          "meaning": "Công ty này thì"
+        },
+        {
+          "text": "給料もいいし、",
+          "meaning": "lương cũng tốt,",
+          "note": "し liệt kê một lý do hoặc đặc điểm, gợi ý còn lý do khác."
+        },
+        {
+          "text": "休みも多いし、",
+          "meaning": "ngày nghỉ cũng nhiều,"
+        },
+        {
+          "text": "働きやすいです。",
+          "meaning": "dễ làm việc."
+        },
+        {
+          "text": "社員は",
+          "meaning": "Nhân viên thì"
+        },
+        {
+          "text": "音楽を聞きながら",
+          "meaning": "vừa nghe nhạc"
+        },
+        {
+          "text": "仕事をしてもいいです。",
+          "meaning": "cũng được làm việc."
+        }
+      ]
+    }
+  ],
+  "29": [
+    {
+      "id": 2901,
+      "lesson_id": 29,
+      "title": "忘れ物 — Đồ bỏ quên",
+      "content": [
+        {
+          "text": "あ、",
+          "meaning": "Á,"
+        },
+        {
+          "text": "しまった！",
+          "meaning": "chết rồi!"
+        },
+        {
+          "text": "どうしたんですか。",
+          "meaning": "Có chuyện gì vậy?"
+        },
+        {
+          "text": "電車に",
+          "meaning": "Trên tàu điện"
+        },
+        {
+          "text": "傘を",
+          "meaning": "chiếc ô"
+        },
+        {
+          "text": "忘れてしまいました。",
+          "meaning": "tôi đã lỡ để quên mất rồi.",
+          "note": "てしまいました thể hiện sự tiếc nuối, hối hận."
+        },
+        {
+          "text": "それは",
+          "meaning": "Việc đó thì"
+        },
+        {
+          "text": "たいへんですね。",
+          "meaning": "thật gay go nhỉ."
+        }
+      ]
+    },
+    {
+      "id": 2902,
+      "lesson_id": 29,
+      "title": "壊れている物 — Đồ bị hỏng",
+      "content": [
+        {
+          "text": "この部屋は",
+          "meaning": "Căn phòng này thì"
+        },
+        {
+          "text": "ドアが",
+          "meaning": "cửa"
+        },
+        {
+          "text": "開いています。",
+          "meaning": "đang mở.",
+          "note": "Tự động từ + ています diễn tả trạng thái."
+        },
+        {
+          "text": "でも、",
+          "meaning": "Nhưng,"
+        },
+        {
+          "text": "窓は",
+          "meaning": "cửa sổ thì"
+        },
+        {
+          "text": "閉まっています。",
+          "meaning": "đang đóng."
+        },
+        {
+          "text": "机の上のコップは",
+          "meaning": "Cái cốc trên bàn thì"
+        },
+        {
+          "text": "割れてしまいました。",
+          "meaning": "đã lỡ bị vỡ mất rồi.",
+          "note": "てしまいました có sắc thái tiếc nuối."
+        }
+      ]
+    }
+  ],
+  "30": [
+    {
+      "id": 3001,
+      "lesson_id": 30,
+      "title": "旅行の準備 — Chuẩn bị du lịch",
+      "content": [
+        {
+          "text": "来週の旅行の",
+          "meaning": "Của chuyến du lịch tuần sau"
+        },
+        {
+          "text": "ホテルは",
+          "meaning": "khách sạn thì"
+        },
+        {
+          "text": "もう",
+          "meaning": "đã"
+        },
+        {
+          "text": "予約してありますか。",
+          "meaning": "được đặt sẵn chưa?",
+          "note": "てあります diễn tả trạng thái của sự vật sau khi ai đó đã tác động vào có mục đích."
+        },
+        {
+          "text": "はい、",
+          "meaning": "Vâng,"
+        },
+        {
+          "text": "もう",
+          "meaning": "đã"
+        },
+        {
+          "text": "予約してあります。",
+          "meaning": "được đặt sẵn rồi."
+        },
+        {
+          "text": "じゃ、",
+          "meaning": "Vậy thì,"
+        },
+        {
+          "text": "旅行の前に、",
+          "meaning": "trước chuyến du lịch,"
+        },
+        {
+          "text": "ガイドブックを",
+          "meaning": "sách hướng dẫn"
+        },
+        {
+          "text": "買っておきます。",
+          "meaning": "tôi sẽ mua sẵn.",
+          "note": "ておきます diễn tả việc chuẩn bị trước một hành động nào đó."
+        }
+      ]
+    },
+    {
+      "id": 3002,
+      "lesson_id": 30,
+      "title": "教室の準備 — Chuẩn bị lớp học",
+      "content": [
+        {
+          "text": "教室の壁に",
+          "meaning": "Trên tường lớp học"
+        },
+        {
+          "text": "ポスターが",
+          "meaning": "áp phích"
+        },
+        {
+          "text": "張ってあります。",
+          "meaning": "được dán sẵn.",
+          "note": "てあります diễn tả trạng thái có chủ đích sau khi ai đó làm."
+        },
+        {
+          "text": "机の上には",
+          "meaning": "Trên bàn thì"
+        },
+        {
+          "text": "資料が",
+          "meaning": "tài liệu"
+        },
+        {
+          "text": "並べてあります。",
+          "meaning": "được xếp sẵn."
+        },
+        {
+          "text": "授業の前に",
+          "meaning": "Trước giờ học"
+        },
+        {
+          "text": "予習しておいてください。",
+          "meaning": "hãy chuẩn bị bài trước.",
+          "note": "ておいてください dùng để yêu cầu chuẩn bị trước."
+        }
+      ]
+    }
+  ],
+  "31": [
+    {
+      "id": 3101,
+      "lesson_id": 31,
+      "title": "夏休みの予定 — Kế hoạch nghỉ hè",
+      "content": [
+        {
+          "text": "今年の",
+          "meaning": "Của năm nay"
+        },
+        {
+          "text": "夏休みは",
+          "meaning": "kỳ nghỉ hè thì"
+        },
+        {
+          "text": "国へ",
+          "meaning": "về nước"
+        },
+        {
+          "text": "帰るんですか。",
+          "meaning": "bạn sẽ về chứ?"
+        },
+        {
+          "text": "いいえ、",
+          "meaning": "Không,"
+        },
+        {
+          "text": "帰らないつもりです。",
+          "meaning": "tôi dự định sẽ không về.",
+          "note": "つもりです dùng để diễn tả ý định đã được quyết định."
+        },
+        {
+          "text": "大学院の",
+          "meaning": "Của cao học"
+        },
+        {
+          "text": "試験が",
+          "meaning": "kỳ thi"
+        },
+        {
+          "text": "ありますから。",
+          "meaning": "vì có."
+        },
+        {
+          "text": "そうですか。",
+          "meaning": "Vậy à."
+        },
+        {
+          "text": "がんばってくださいね。",
+          "meaning": "Hãy cố gắng lên nhé."
+        }
+      ]
+    },
+    {
+      "id": 3102,
+      "lesson_id": 31,
+      "title": "連休の計画 — Kế hoạch kỳ nghỉ liền ngày",
+      "content": [
+        {
+          "text": "来月の連休は",
+          "meaning": "Kỳ nghỉ liền ngày tháng sau thì"
+        },
+        {
+          "text": "どこへ",
+          "meaning": "đi đâu"
+        },
+        {
+          "text": "行く予定ですか。",
+          "meaning": "theo kế hoạch sẽ đi?",
+          "note": "予定です dùng cho kế hoạch hoặc lịch trình đã được sắp xếp."
+        },
+        {
+          "text": "温泉へ",
+          "meaning": "đến suối nước nóng"
+        },
+        {
+          "text": "行こうと",
+          "meaning": "sẽ đi"
+        },
+        {
+          "text": "思っています。",
+          "meaning": "tôi đang định.",
+          "note": "意向形 + と思っています diễn tả ý định đang giữ trong đầu."
+        },
+        {
+          "text": "でも、",
+          "meaning": "Nhưng,"
+        },
+        {
+          "text": "雨なら",
+          "meaning": "nếu trời mưa thì"
+        },
+        {
+          "text": "家で",
+          "meaning": "ở nhà"
+        },
+        {
+          "text": "作文を",
+          "meaning": "bài văn"
+        },
+        {
+          "text": "書くつもりです。",
+          "meaning": "tôi định viết.",
+          "note": "Vる + つもりです nói dự định làm."
+        }
+      ]
+    }
+  ],
+  "32": [
+    {
+      "id": 3201,
+      "lesson_id": 32,
+      "title": "天気予報 — Dự báo thời tiết",
+      "content": [
+        {
+          "text": "今日の",
+          "meaning": "Của hôm nay"
+        },
+        {
+          "text": "天気予報",
+          "meaning": "dự báo thời tiết"
+        },
+        {
+          "text": "見ましたか。",
+          "meaning": "bạn đã xem chưa?"
+        },
+        {
+          "text": "ええ。",
+          "meaning": "Rồi."
+        },
+        {
+          "text": "午後は",
+          "meaning": "Buổi chiều thì"
+        },
+        {
+          "text": "雨が",
+          "meaning": "mưa"
+        },
+        {
+          "text": "降るかもしれません。",
+          "meaning": "có thể sẽ rơi.",
+          "note": "かもしれません diễn tả phỏng đoán với xác suất thấp (khoảng 50%)."
+        },
+        {
+          "text": "じゃ、",
+          "meaning": "Vậy thì,"
+        },
+        {
+          "text": "傘を",
+          "meaning": "cái ô"
+        },
+        {
+          "text": "持って行った",
+          "meaning": "mang đi"
+        },
+        {
+          "text": "ほうがいいですね。",
+          "meaning": "thì tốt hơn nhỉ.",
+          "note": "ほうがいいです dùng để khuyên nhủ ai đó nên làm gì."
+        }
+      ]
+    },
+    {
+      "id": 3202,
+      "lesson_id": 32,
+      "title": "体の調子 — Tình trạng cơ thể",
+      "content": [
+        {
+          "text": "昨日から",
+          "meaning": "Từ hôm qua"
+        },
+        {
+          "text": "せきが",
+          "meaning": "cơn ho"
+        },
+        {
+          "text": "続いています。",
+          "meaning": "vẫn tiếp tục."
+        },
+        {
+          "text": "それはいけませんね。",
+          "meaning": "Vậy thì không ổn rồi."
+        },
+        {
+          "text": "今日は",
+          "meaning": "Hôm nay"
+        },
+        {
+          "text": "無理をしない",
+          "meaning": "không làm quá sức"
+        },
+        {
+          "text": "ほうがいいですよ。",
+          "meaning": "thì tốt hơn đấy.",
+          "note": "Vない + ほうがいいです dùng để khuyên không nên làm."
+        },
+        {
+          "text": "熱も",
+          "meaning": "Sốt cũng"
+        },
+        {
+          "text": "あるかもしれませんから、",
+          "meaning": "có thể có nên,"
+        },
+        {
+          "text": "病院へ",
+          "meaning": "đến bệnh viện"
+        },
+        {
+          "text": "行ったほうがいいです。",
+          "meaning": "nên đi."
+        }
+      ]
+    }
+  ],
+  "33": [
+    {
+      "id": 3301,
+      "lesson_id": 33,
+      "title": "標識の意味 — Ý nghĩa của biển báo",
+      "content": [
+        {
+          "text": "あそこに",
+          "meaning": "Ở đằng kia"
+        },
+        {
+          "text": "何と",
+          "meaning": "(là) chữ gì"
+        },
+        {
+          "text": "書いてあるんですか。",
+          "meaning": "có viết thế?"
+        },
+        {
+          "text": "「止まれ」と",
+          "meaning": "Rằng 'Hãy dừng lại'"
+        },
+        {
+          "text": "書いてあります。",
+          "meaning": "có viết."
+        },
+        {
+          "text": "どういう",
+          "meaning": "Thế nào"
+        },
+        {
+          "text": "意味ですか。",
+          "meaning": "là ý nghĩa?"
+        },
+        {
+          "text": "車を",
+          "meaning": "Xe ô tô"
+        },
+        {
+          "text": "止めるなと",
+          "meaning": "rằng cấm đỗ"
+        },
+        {
+          "text": "いう意味です。",
+          "meaning": "là có ý nghĩa đó.",
+          "note": "～という意味です dùng để giải thích ý nghĩa của một từ hoặc ký hiệu."
+        }
+      ]
+    },
+    {
+      "id": 3302,
+      "lesson_id": 33,
+      "title": "学校の規則 — Nội quy trường học",
+      "content": [
+        {
+          "text": "先生は",
+          "meaning": "Thầy/cô thì"
+        },
+        {
+          "text": "教室で",
+          "meaning": "trong lớp học"
+        },
+        {
+          "text": "騒ぐなと",
+          "meaning": "rằng không được ồn ào",
+          "note": "辞書形 + な là dạng cấm mạnh."
+        },
+        {
+          "text": "言っていました。",
+          "meaning": "đã nói."
+        },
+        {
+          "text": "壁には",
+          "meaning": "Trên tường thì"
+        },
+        {
+          "text": "「携帯電話使用禁止」と",
+          "meaning": "rằng 'Cấm dùng điện thoại'"
+        },
+        {
+          "text": "書いてあります。",
+          "meaning": "có viết."
+        },
+        {
+          "text": "これは",
+          "meaning": "Điều này"
+        },
+        {
+          "text": "授業中に",
+          "meaning": "trong giờ học"
+        },
+        {
+          "text": "電話を使うな",
+          "meaning": "không được dùng điện thoại"
+        },
+        {
+          "text": "という意味です。",
+          "meaning": "có nghĩa là."
+        }
+      ]
+    }
+  ],
+  "34": [
+    {
+      "id": 3401,
+      "lesson_id": 34,
+      "title": "料理の作り方 — Cách nấu ăn",
+      "content": [
+        {
+          "text": "この料理の",
+          "meaning": "Của món ăn này"
+        },
+        {
+          "text": "作り方を",
+          "meaning": "cách làm"
+        },
+        {
+          "text": "教えてください。",
+          "meaning": "hãy chỉ cho tôi."
+        },
+        {
+          "text": "はい。",
+          "meaning": "Vâng."
+        },
+        {
+          "text": "私が",
+          "meaning": "Tôi"
+        },
+        {
+          "text": "するとおりに、",
+          "meaning": "theo đúng như tôi làm,",
+          "note": "とおりに nghĩa là làm giống y hệt một mẫu hoặc hành động trước đó."
+        },
+        {
+          "text": "やってください。",
+          "meaning": "hãy làm theo."
+        },
+        {
+          "text": "野菜を",
+          "meaning": "Rau"
+        },
+        {
+          "text": "切ったあとで、",
+          "meaning": "sau khi cắt,",
+          "note": "Vた + あとで nghĩa là sau khi hoàn tất việc V."
+        },
+        {
+          "text": "肉と",
+          "meaning": "với thịt"
+        },
+        {
+          "text": "炒めます。",
+          "meaning": "sẽ xào."
+        }
+      ]
+    },
+    {
+      "id": 3402,
+      "lesson_id": 34,
+      "title": "家具を組み立てる — Lắp đồ nội thất",
+      "content": [
+        {
+          "text": "この家具は",
+          "meaning": "Đồ nội thất này thì"
+        },
+        {
+          "text": "説明書の",
+          "meaning": "của sách hướng dẫn"
+        },
+        {
+          "text": "とおりに",
+          "meaning": "đúng theo như",
+          "note": "Nのとおりに nghĩa là theo đúng danh từ/mẫu đã nêu."
+        },
+        {
+          "text": "組み立ててください。",
+          "meaning": "hãy lắp ráp."
+        },
+        {
+          "text": "線のとおりに",
+          "meaning": "theo đúng đường kẻ"
+        },
+        {
+          "text": "板を",
+          "meaning": "tấm ván"
+        },
+        {
+          "text": "折らないで、",
+          "meaning": "không bẻ/gấp mà,"
+        },
+        {
+          "text": "矢印の方向へ",
+          "meaning": "về hướng mũi tên"
+        },
+        {
+          "text": "動かします。",
+          "meaning": "di chuyển."
+        },
+        {
+          "text": "終わったあとで、",
+          "meaning": "sau khi xong,"
+        },
+        {
+          "text": "ねじを",
+          "meaning": "ốc vít"
+        },
+        {
+          "text": "もう一度確認してください。",
+          "meaning": "hãy kiểm tra lại lần nữa."
+        }
+      ]
+    }
+  ],
+  "35": [
+    {
+      "id": 3501,
+      "lesson_id": 35,
+      "title": "電化製品の使い方 — Cách dùng đồ điện",
+      "content": [
+        {
+          "text": "この",
+          "meaning": "Cái này"
+        },
+        {
+          "text": "コピー機は",
+          "meaning": "máy photocopy thì"
+        },
+        {
+          "text": "どうやって",
+          "meaning": "làm thế nào"
+        },
+        {
+          "text": "使うんですか。",
+          "meaning": "để dùng vậy?"
+        },
+        {
+          "text": "ここに",
+          "meaning": "Ở đây"
+        },
+        {
+          "text": "紙を",
+          "meaning": "giấy"
+        },
+        {
+          "text": "入れれば、",
+          "meaning": "nếu cho vào,",
+          "note": "Vれば là thể điều kiện, nếu làm V thì kết quả sẽ xảy ra."
+        },
+        {
+          "text": "動きますよ。",
+          "meaning": "nó sẽ hoạt động đấy."
+        },
+        {
+          "text": "もし",
+          "meaning": "Giả sử"
+        },
+        {
+          "text": "動かなければ、",
+          "meaning": "nếu nó không hoạt động,"
+        },
+        {
+          "text": "あの",
+          "meaning": "cái kia"
+        },
+        {
+          "text": "赤いボタンを",
+          "meaning": "nút màu đỏ"
+        },
+        {
+          "text": "押してください。",
+          "meaning": "hãy bấm."
+        }
+      ]
+    },
+    {
+      "id": 3502,
+      "lesson_id": 35,
+      "title": "旅行の相談 — Tư vấn du lịch",
+      "content": [
+        {
+          "text": "海外旅行なら、",
+          "meaning": "Nếu là du lịch nước ngoài thì",
+          "note": "Nなら dùng để nêu chủ đề giả định hoặc phạm vi."
+        },
+        {
+          "text": "旅行社に",
+          "meaning": "với công ty du lịch"
+        },
+        {
+          "text": "相談したほうがいいです。",
+          "meaning": "nên trao đổi thì tốt hơn."
+        },
+        {
+          "text": "時間が",
+          "meaning": "Thời gian"
+        },
+        {
+          "text": "あれば、",
+          "meaning": "nếu có,"
+        },
+        {
+          "text": "詳しい",
+          "meaning": "chi tiết"
+        },
+        {
+          "text": "パンフレットを",
+          "meaning": "tờ thông tin"
+        },
+        {
+          "text": "もらえます。",
+          "meaning": "có thể nhận."
+        },
+        {
+          "text": "山登りなら、",
+          "meaning": "Nếu là leo núi thì"
+        },
+        {
+          "text": "春に",
+          "meaning": "vào mùa xuân"
+        },
+        {
+          "text": "行けば",
+          "meaning": "nếu đi"
+        },
+        {
+          "text": "花が咲いていて、",
+          "meaning": "hoa đang nở,"
+        },
+        {
+          "text": "きれいですよ。",
+          "meaning": "đẹp đấy."
+        }
+      ]
+    }
+  ],
+  "36": [
+    {
+      "id": 3601,
+      "lesson_id": 36,
+      "title": "目標 — Mục tiêu",
+      "content": [
+        {
+          "text": "来年",
+          "meaning": "Năm sau"
+        },
+        {
+          "text": "日本へ",
+          "meaning": "đến Nhật"
+        },
+        {
+          "text": "行くんですか。",
+          "meaning": "bạn sẽ đi à?"
+        },
+        {
+          "text": "ええ。",
+          "meaning": "Vâng."
+        },
+        {
+          "text": "日本の",
+          "meaning": "Của Nhật"
+        },
+        {
+          "text": "大学で",
+          "meaning": "ở đại học"
+        },
+        {
+          "text": "勉強できるように、",
+          "meaning": "để có thể học tập,",
+          "note": "ように chỉ mục tiêu."
+        },
+        {
+          "text": "今",
+          "meaning": "bây giờ"
+        },
+        {
+          "text": "一生懸命",
+          "meaning": "chăm chỉ"
+        },
+        {
+          "text": "日本語を",
+          "meaning": "tiếng Nhật"
+        },
+        {
+          "text": "勉強しています。",
+          "meaning": "tôi đang học."
+        }
+      ]
+    },
+    {
+      "id": 3602,
+      "lesson_id": 36,
+      "title": "健康のために — Vì sức khỏe",
+      "content": [
+        {
+          "text": "このごろ",
+          "meaning": "Gần đây"
+        },
+        {
+          "text": "少し",
+          "meaning": "một chút"
+        },
+        {
+          "text": "太りました。",
+          "meaning": "tôi đã tăng cân."
+        },
+        {
+          "text": "健康のために、",
+          "meaning": "Vì sức khỏe,"
+        },
+        {
+          "text": "夜遅く",
+          "meaning": "muộn ban đêm"
+        },
+        {
+          "text": "食べないように",
+          "meaning": "để không ăn,",
+          "note": "Vないようにしています diễn tả cố gắng tránh làm một việc."
+        },
+        {
+          "text": "しています。",
+          "meaning": "tôi đang cố gắng."
+        },
+        {
+          "text": "それから、",
+          "meaning": "Ngoài ra,"
+        },
+        {
+          "text": "毎週",
+          "meaning": "mỗi tuần"
+        },
+        {
+          "text": "水泳を",
+          "meaning": "môn bơi"
+        },
+        {
+          "text": "するように",
+          "meaning": "để duy trì làm"
+        },
+        {
+          "text": "しています。",
+          "meaning": "tôi đang cố gắng."
+        }
+      ]
+    }
+  ],
+  "37": [
+    {
+      "id": 3701,
+      "lesson_id": 37,
+      "title": "子供のころ — Hồi còn nhỏ",
+      "content": [
+        {
+          "text": "子供のころ、",
+          "meaning": "Hồi còn nhỏ,"
+        },
+        {
+          "text": "よく",
+          "meaning": "thường xuyên"
+        },
+        {
+          "text": "お母さんに",
+          "meaning": "bởi mẹ"
+        },
+        {
+          "text": "叱られましたか。",
+          "meaning": "bạn có bị mắng không?",
+          "note": "叱られました là thể bị động của 叱ります (mắng)."
+        },
+        {
+          "text": "ええ。",
+          "meaning": "Có."
+        },
+        {
+          "text": "よく",
+          "meaning": "Thường xuyên"
+        },
+        {
+          "text": "弟を",
+          "meaning": "em trai"
+        },
+        {
+          "text": "泣かせましたから。",
+          "meaning": "vì tôi đã làm cho khóc."
+        },
+        {
+          "text": "それで、",
+          "meaning": "Vì thế,"
+        },
+        {
+          "text": "母に",
+          "meaning": "bởi mẹ"
+        },
+        {
+          "text": "叱られました。",
+          "meaning": "tôi đã bị mắng."
+        }
+      ]
+    },
+    {
+      "id": 3702,
+      "lesson_id": 37,
+      "title": "有名な発明 — Phát minh nổi tiếng",
+      "content": [
+        {
+          "text": "電話は",
+          "meaning": "Điện thoại thì"
+        },
+        {
+          "text": "ベルによって",
+          "meaning": "bởi Bell",
+          "note": "によって dùng để nêu người phát minh, sáng tác hoặc thiết kế."
+        },
+        {
+          "text": "発明されました。",
+          "meaning": "đã được phát minh."
+        },
+        {
+          "text": "飛行機は",
+          "meaning": "Máy bay thì"
+        },
+        {
+          "text": "ライト兄弟によって",
+          "meaning": "bởi anh em nhà Wright"
+        },
+        {
+          "text": "作られました。",
+          "meaning": "được tạo ra."
+        },
+        {
+          "text": "今では",
+          "meaning": "Ngày nay thì"
+        },
+        {
+          "text": "世界中で",
+          "meaning": "khắp thế giới"
+        },
+        {
+          "text": "利用されています。",
+          "meaning": "đang được sử dụng."
+        }
+      ]
+    }
+  ],
+  "38": [
+    {
+      "id": 3801,
+      "lesson_id": 38,
+      "title": "片付け — Việc dọn dẹp",
+      "content": [
+        {
+          "text": "部屋を",
+          "meaning": "Căn phòng"
+        },
+        {
+          "text": "片付けるのは",
+          "meaning": "việc dọn dẹp thì",
+          "note": "のは dùng để danh từ hóa cụm động từ đóng vai trò chủ đề."
+        },
+        {
+          "text": "好きですか。",
+          "meaning": "bạn có thích không?"
+        },
+        {
+          "text": "いいえ、",
+          "meaning": "Không,"
+        },
+        {
+          "text": "好きじゃありません。",
+          "meaning": "tôi không thích."
+        },
+        {
+          "text": "私は",
+          "meaning": "Tôi thì"
+        },
+        {
+          "text": "本を",
+          "meaning": "sách"
+        },
+        {
+          "text": "読むのが",
+          "meaning": "việc đọc",
+          "note": "のが dùng để danh từ hóa đi với các tính từ chỉ sở thích, kỹ năng."
+        },
+        {
+          "text": "好きですから、",
+          "meaning": "vì thích nên,"
+        },
+        {
+          "text": "部屋には",
+          "meaning": "ở trong phòng thì"
+        },
+        {
+          "text": "本が",
+          "meaning": "sách"
+        },
+        {
+          "text": "たくさん",
+          "meaning": "rất nhiều"
+        },
+        {
+          "text": "あります。",
+          "meaning": "có."
+        }
+      ]
+    },
+    {
+      "id": 3802,
+      "lesson_id": 38,
+      "title": "研究室のルール — Quy tắc phòng nghiên cứu",
+      "content": [
+        {
+          "text": "研究室を",
+          "meaning": "Phòng nghiên cứu"
+        },
+        {
+          "text": "きちんと",
+          "meaning": "ngăn nắp"
+        },
+        {
+          "text": "整理するのは",
+          "meaning": "việc sắp xếp thì",
+          "note": "Vるのは biến cả cụm động từ thành chủ đề."
+        },
+        {
+          "text": "大切です。",
+          "meaning": "quan trọng."
+        },
+        {
+          "text": "電源を",
+          "meaning": "nguồn điện"
+        },
+        {
+          "text": "切るのを",
+          "meaning": "việc tắt"
+        },
+        {
+          "text": "忘れないでください。",
+          "meaning": "xin đừng quên."
+        },
+        {
+          "text": "書類を",
+          "meaning": "giấy tờ"
+        },
+        {
+          "text": "運ぶのに",
+          "meaning": "cho việc vận chuyển"
+        },
+        {
+          "text": "時間が",
+          "meaning": "thời gian"
+        },
+        {
+          "text": "かかります。",
+          "meaning": "mất."
+        }
+      ]
+    }
+  ],
+  "39": [
+    {
+      "id": 3901,
+      "lesson_id": 39,
+      "title": "遅刻の理由 — Lý do đi muộn",
+      "content": [
+        {
+          "text": "どうして",
+          "meaning": "Tại sao"
+        },
+        {
+          "text": "遅れたんですか。",
+          "meaning": "bạn lại đến muộn vậy?"
+        },
+        {
+          "text": "すみません。",
+          "meaning": "Tôi xin lỗi."
+        },
+        {
+          "text": "事故で",
+          "meaning": "Vì tai nạn,",
+          "note": "N + で dùng để chỉ nguyên nhân thiên tai, sự cố."
+        },
+        {
+          "text": "バスが",
+          "meaning": "xe buýt"
+        },
+        {
+          "text": "来なかったんです。",
+          "meaning": "đã không đến."
+        },
+        {
+          "text": "そうですか。",
+          "meaning": "Vậy à."
+        },
+        {
+          "text": "次からは",
+          "meaning": "Từ lần sau thì"
+        },
+        {
+          "text": "気を付けてくださいね。",
+          "meaning": "hãy cẩn thận nhé."
+        }
+      ]
+    },
+    {
+      "id": 3902,
+      "lesson_id": 39,
+      "title": "台風の日 — Ngày bão",
+      "content": [
+        {
+          "text": "昨日は",
+          "meaning": "Hôm qua thì"
+        },
+        {
+          "text": "台風で",
+          "meaning": "vì bão",
+          "note": "Nで chỉ nguyên nhân như thiên tai, tai nạn, bệnh tật."
+        },
+        {
+          "text": "電車が",
+          "meaning": "tàu điện"
+        },
+        {
+          "text": "止まりました。",
+          "meaning": "đã dừng."
+        },
+        {
+          "text": "大勢の人が",
+          "meaning": "nhiều người"
+        },
+        {
+          "text": "駅で",
+          "meaning": "ở ga"
+        },
+        {
+          "text": "並んでいました。",
+          "meaning": "đã xếp hàng."
+        },
+        {
+          "text": "ニュースを聞いて、",
+          "meaning": "nghe tin xong,"
+        },
+        {
+          "text": "びっくりしました。",
+          "meaning": "tôi đã ngạc nhiên."
+        }
+      ]
+    }
+  ],
+  "40": [
+    {
+      "id": 4001,
+      "lesson_id": 40,
+      "title": "服のサイズ — Kích cỡ quần áo",
+      "content": [
+        {
+          "text": "この",
+          "meaning": "Cái này"
+        },
+        {
+          "text": "ズボン、",
+          "meaning": "quần dài,"
+        },
+        {
+          "text": "いいですね。",
+          "meaning": "đẹp nhỉ."
+        },
+        {
+          "text": "ええ。",
+          "meaning": "Vâng."
+        },
+        {
+          "text": "でも、",
+          "meaning": "Nhưng mà,"
+        },
+        {
+          "text": "サイズが",
+          "meaning": "kích cỡ"
+        },
+        {
+          "text": "合うかどうか",
+          "meaning": "có vừa hay không,",
+          "note": "かどうか dùng để lồng câu hỏi Yes/No vào trong một câu khác."
+        },
+        {
+          "text": "わかりません。",
+          "meaning": "tôi không biết."
+        },
+        {
+          "text": "じゃ、",
+          "meaning": "Vậy thì,"
+        },
+        {
+          "text": "一度",
+          "meaning": "một lần"
+        },
+        {
+          "text": "はいてみたら",
+          "meaning": "nếu thử mặc",
+          "note": "てみます nghĩa là thử làm một việc gì đó."
+        },
+        {
+          "text": "どうですか。",
+          "meaning": "thì sao?"
+        }
+      ]
+    },
+    {
+      "id": 4002,
+      "lesson_id": 40,
+      "title": "忘年会の確認 — Xác nhận tiệc tất niên",
+      "content": [
+        {
+          "text": "忘年会は",
+          "meaning": "Tiệc tất niên thì"
+        },
+        {
+          "text": "何人",
+          "meaning": "bao nhiêu người"
+        },
+        {
+          "text": "来るか",
+          "meaning": "sẽ đến,",
+          "note": "疑問詞 + か dùng để lồng câu hỏi có từ nghi vấn vào câu lớn."
+        },
+        {
+          "text": "数えてください。",
+          "meaning": "hãy đếm."
+        },
+        {
+          "text": "会場が",
+          "meaning": "hội trường"
+        },
+        {
+          "text": "必要な大きさかどうか",
+          "meaning": "có kích thước cần thiết hay không",
+          "note": "かどうか dùng cho câu hỏi có/không."
+        },
+        {
+          "text": "確かめます。",
+          "meaning": "sẽ xác nhận."
+        },
+        {
+          "text": "新しい料理も",
+          "meaning": "món ăn mới cũng"
+        },
+        {
+          "text": "食べてみましょう。",
+          "meaning": "hãy thử ăn."
+        }
+      ]
+    }
+  ],
+  "41": [
+    {
+      "id": 4101,
+      "lesson_id": 41,
+      "title": "プレゼント — Món quà",
+      "content": [
+        {
+          "text": "素敵な",
+          "meaning": "Đẹp"
+        },
+        {
+          "text": "ネクタイですね。",
+          "meaning": "cái cà vạt nhỉ."
+        },
+        {
+          "text": "ありがとうございます。",
+          "meaning": "Xin cảm ơn."
+        },
+        {
+          "text": "誕生日に",
+          "meaning": "Vào dịp sinh nhật"
+        },
+        {
+          "text": "部長に",
+          "meaning": "từ trưởng phòng"
+        },
+        {
+          "text": "いただいたんです。",
+          "meaning": "tôi đã được tặng.",
+          "note": "いただきました là khiêm nhường ngữ của もらいました."
+        },
+        {
+          "text": "そうですか。",
+          "meaning": "Vậy à."
+        },
+        {
+          "text": "いいですね。",
+          "meaning": "Tuyệt quá nhỉ."
+        }
+      ]
+    },
+    {
+      "id": 4102,
+      "lesson_id": 41,
+      "title": "助かりました — May mà được giúp",
+      "content": [
+        {
+          "text": "先日は",
+          "meaning": "Mấy hôm trước"
+        },
+        {
+          "text": "文法を",
+          "meaning": "ngữ pháp"
+        },
+        {
+          "text": "教えてくださって、",
+          "meaning": "thầy/cô đã dạy cho tôi,",
+          "note": "Vてくださいます nói người trên làm việc có lợi cho mình."
+        },
+        {
+          "text": "ありがとうございました。",
+          "meaning": "xin cảm ơn."
+        },
+        {
+          "text": "いいえ。",
+          "meaning": "Không có gì."
+        },
+        {
+          "text": "また",
+          "meaning": "Lại/nữa"
+        },
+        {
+          "text": "わからない所が",
+          "meaning": "chỗ không hiểu"
+        },
+        {
+          "text": "あったら、",
+          "meaning": "nếu có,"
+        },
+        {
+          "text": "いつでも",
+          "meaning": "bất cứ lúc nào"
+        },
+        {
+          "text": "聞いてください。",
+          "meaning": "hãy hỏi."
+        },
+        {
+          "text": "助かります。",
+          "meaning": "Thế thì may quá/có ích quá."
+        }
+      ]
+    }
+  ],
+  "42": [
+    {
+      "id": 4201,
+      "lesson_id": 42,
+      "title": "目的 — Mục đích",
+      "content": [
+        {
+          "text": "ボーナスは",
+          "meaning": "Tiền thưởng thì"
+        },
+        {
+          "text": "何に",
+          "meaning": "vào việc gì"
+        },
+        {
+          "text": "使いますか。",
+          "meaning": "bạn sẽ dùng?"
+        },
+        {
+          "text": "将来",
+          "meaning": "Trong tương lai"
+        },
+        {
+          "text": "自分の",
+          "meaning": "của chính mình"
+        },
+        {
+          "text": "店を",
+          "meaning": "cửa hàng"
+        },
+        {
+          "text": "持つために、",
+          "meaning": "để có,",
+          "note": "ために dùng để chỉ mục đích mạnh mẽ."
+        },
+        {
+          "text": "貯金しようと",
+          "meaning": "để tiết kiệm"
+        },
+        {
+          "text": "思っています。",
+          "meaning": "tôi đang dự định."
+        }
+      ]
+    },
+    {
+      "id": 4202,
+      "lesson_id": 42,
+      "title": "便利な道具 — Dụng cụ tiện lợi",
+      "content": [
+        {
+          "text": "これは",
+          "meaning": "Đây là"
+        },
+        {
+          "text": "何に",
+          "meaning": "vào việc gì"
+        },
+        {
+          "text": "使うんですか。",
+          "meaning": "dùng vậy?"
+        },
+        {
+          "text": "これは",
+          "meaning": "Cái này"
+        },
+        {
+          "text": "びんのふたを",
+          "meaning": "nắp chai"
+        },
+        {
+          "text": "開けるのに",
+          "meaning": "cho việc mở,",
+          "note": "Vるのに使います nói công dụng của đồ vật."
+        },
+        {
+          "text": "使います。",
+          "meaning": "dùng."
+        },
+        {
+          "text": "薄い紙を",
+          "meaning": "giấy mỏng"
+        },
+        {
+          "text": "包むのにも",
+          "meaning": "cho việc gói cũng"
+        },
+        {
+          "text": "便利です。",
+          "meaning": "tiện."
+        }
+      ]
+    }
+  ],
+  "43": [
+    {
+      "id": 4301,
+      "lesson_id": 43,
+      "title": "様子 — Vẻ ngoài",
+      "content": [
+        {
+          "text": "あ、",
+          "meaning": "Á,"
+        },
+        {
+          "text": "危ない！",
+          "meaning": "nguy hiểm quá!"
+        },
+        {
+          "text": "荷物が",
+          "meaning": "Hành lý"
+        },
+        {
+          "text": "落ちそうですよ。",
+          "meaning": "trông có vẻ sắp rơi kìa.",
+          "note": "そうです diễn tả một trạng thái sắp sửa xảy ra do phán đoán qua thị giác."
+        },
+        {
+          "text": "あ、",
+          "meaning": "A,"
+        },
+        {
+          "text": "本当だ。",
+          "meaning": "đúng thật."
+        },
+        {
+          "text": "どうも",
+          "meaning": "Thật sự"
+        },
+        {
+          "text": "ありがとうございます。",
+          "meaning": "xin cảm ơn."
+        }
+      ]
+    },
+    {
+      "id": 4302,
+      "lesson_id": 43,
+      "title": "変な音 — Âm thanh lạ",
+      "content": [
+        {
+          "text": "この暖房、",
+          "meaning": "Máy sưởi này,"
+        },
+        {
+          "text": "変な音が",
+          "meaning": "âm thanh lạ"
+        },
+        {
+          "text": "しますね。",
+          "meaning": "phát ra nhỉ."
+        },
+        {
+          "text": "ええ。",
+          "meaning": "Vâng."
+        },
+        {
+          "text": "すぐ",
+          "meaning": "ngay"
+        },
+        {
+          "text": "壊れそうです。",
+          "meaning": "trông có vẻ sắp hỏng.",
+          "note": "Vます bỏます + そうです nói dấu hiệu sắp xảy ra."
+        },
+        {
+          "text": "じゃ、",
+          "meaning": "Vậy thì,"
+        },
+        {
+          "text": "係の人を",
+          "meaning": "người phụ trách"
+        },
+        {
+          "text": "呼んで来ます。",
+          "meaning": "tôi đi gọi rồi quay lại.",
+          "note": "Vて来ます diễn tả đi làm gì đó rồi quay về."
+        }
+      ]
+    }
+  ],
+  "44": [
+    {
+      "id": 4401,
+      "lesson_id": 44,
+      "title": "使いやすさ — Sự dễ dùng",
+      "content": [
+        {
+          "text": "この",
+          "meaning": "Cái"
+        },
+        {
+          "text": "パソコンは",
+          "meaning": "máy tính này thì"
+        },
+        {
+          "text": "新しいのですね。",
+          "meaning": "là cái mới nhỉ."
+        },
+        {
+          "text": "ええ。",
+          "meaning": "Vâng."
+        },
+        {
+          "text": "とても",
+          "meaning": "Rất"
+        },
+        {
+          "text": "軽くて、",
+          "meaning": "nhẹ và"
+        },
+        {
+          "text": "持ち運び",
+          "meaning": "mang đi mang lại"
+        },
+        {
+          "text": "しやすいです。",
+          "meaning": "thì rất dễ.",
+          "note": "V-ます bỏ ます + やすいです dùng để chỉ việc dễ làm điều gì đó."
+        }
+      ]
+    },
+    {
+      "id": 4402,
+      "lesson_id": 44,
+      "title": "レストランで — Ở nhà hàng",
+      "content": [
+        {
+          "text": "この料理は",
+          "meaning": "Món này thì"
+        },
+        {
+          "text": "量が",
+          "meaning": "lượng"
+        },
+        {
+          "text": "多すぎます。",
+          "meaning": "quá nhiều.",
+          "note": "すぎます diễn tả vượt quá mức bình thường."
+        },
+        {
+          "text": "半分に",
+          "meaning": "thành một nửa"
+        },
+        {
+          "text": "できますか。",
+          "meaning": "có thể làm được không?"
+        },
+        {
+          "text": "はい。",
+          "meaning": "Vâng."
+        },
+        {
+          "text": "味も",
+          "meaning": "vị cũng"
+        },
+        {
+          "text": "薄く",
+          "meaning": "nhạt đi"
+        },
+        {
+          "text": "しましょうか。",
+          "meaning": "tôi làm cho nhé?"
+        },
+        {
+          "text": "お願いします。",
+          "meaning": "Nhờ anh/chị."
+        }
+      ]
+    }
+  ],
+  "45": [
+    {
+      "id": 4501,
+      "lesson_id": 45,
+      "title": "がっかり — Thất vọng",
+      "content": [
+        {
+          "text": "どうしたんですか。",
+          "meaning": "Có chuyện gì vậy?"
+        },
+        {
+          "text": "一生懸命",
+          "meaning": "Rất chăm chỉ"
+        },
+        {
+          "text": "勉強したのに、",
+          "meaning": "mặc dù đã học,",
+          "note": "のに diễn tả sự bất mãn hoặc bất ngờ trước một kết quả trái ngược."
+        },
+        {
+          "text": "試験に",
+          "meaning": "kỳ thi"
+        },
+        {
+          "text": "落ちてしまったんです。",
+          "meaning": "tôi đã lỡ trượt mất rồi."
+        },
+        {
+          "text": "それは",
+          "meaning": "Điều đó thì"
+        },
+        {
+          "text": "残念ですね。",
+          "meaning": "thật đáng tiếc nhỉ."
+        }
+      ]
+    },
+    {
+      "id": 4502,
+      "lesson_id": 45,
+      "title": "キャンプの場合 — Trường hợp cắm trại",
+      "content": [
+        {
+          "text": "明日のキャンプは",
+          "meaning": "Buổi cắm trại ngày mai thì"
+        },
+        {
+          "text": "雨の場合、",
+          "meaning": "trường hợp trời mưa,",
+          "note": "Nの場合は nêu tình huống giả định cụ thể."
+        },
+        {
+          "text": "中止ですか。",
+          "meaning": "sẽ hủy à?"
+        },
+        {
+          "text": "いいえ。",
+          "meaning": "Không."
+        },
+        {
+          "text": "少し雨が",
+          "meaning": "mưa một chút"
+        },
+        {
+          "text": "降っても",
+          "meaning": "dù có rơi"
+        },
+        {
+          "text": "行います。",
+          "meaning": "vẫn tổ chức."
+        },
+        {
+          "text": "でも、",
+          "meaning": "Nhưng,"
+        },
+        {
+          "text": "台風が来た場合は、",
+          "meaning": "trường hợp bão đến thì"
+        },
+        {
+          "text": "中止します。",
+          "meaning": "sẽ hủy."
+        },
+        {
+          "text": "楽しみにしていたのに、",
+          "meaning": "mặc dù tôi đã mong chờ vậy mà,",
+          "note": "のに thể hiện trái kỳ vọng, thường có cảm xúc tiếc nuối."
+        },
+        {
+          "text": "残念ですね。",
+          "meaning": "tiếc nhỉ."
+        }
+      ]
+    }
+  ],
+  "46": [
+    {
+      "id": 4601,
+      "lesson_id": 46,
+      "title": "電話 — Cuộc gọi",
+      "content": [
+        {
+          "text": "もしもし、",
+          "meaning": "Alo,"
+        },
+        {
+          "text": "今",
+          "meaning": "bây giờ"
+        },
+        {
+          "text": "いいですか。",
+          "meaning": "có tiện không?"
+        },
+        {
+          "text": "すみません。",
+          "meaning": "Xin lỗi."
+        },
+        {
+          "text": "今",
+          "meaning": "Bây giờ"
+        },
+        {
+          "text": "から",
+          "meaning": "từ lúc này"
+        },
+        {
+          "text": "出かける",
+          "meaning": "ra ngoài"
+        },
+        {
+          "text": "ところなんです。",
+          "meaning": "tôi đang chuẩn bị.",
+          "note": "ところです biểu thị một hành động sắp sửa, đang, hoặc vừa mới diễn ra."
+        },
+        {
+          "text": "じゃ、",
+          "meaning": "Vậy thì,"
+        },
+        {
+          "text": "また",
+          "meaning": "lại"
+        },
+        {
+          "text": "あとで",
+          "meaning": "sau"
+        },
+        {
+          "text": "電話します。",
+          "meaning": "tôi sẽ gọi điện."
+        }
+      ]
+    },
+    {
+      "id": 4602,
+      "lesson_id": 46,
+      "title": "宅配便 — Giao hàng tận nhà",
+      "content": [
+        {
+          "text": "宅配便が",
+          "meaning": "dịch vụ giao hàng"
+        },
+        {
+          "text": "来た",
+          "meaning": "đã đến"
+        },
+        {
+          "text": "ところです。",
+          "meaning": "vừa mới đến.",
+          "note": "Vたところです nhấn mạnh hành động vừa kết thúc ngay lúc này."
+        },
+        {
+          "text": "田中さんは",
+          "meaning": "anh Tanaka thì"
+        },
+        {
+          "text": "留守の",
+          "meaning": "vắng nhà"
+        },
+        {
+          "text": "はずですから、",
+          "meaning": "chắc là vì vậy,"
+        },
+        {
+          "text": "荷物を",
+          "meaning": "hành lý/đồ gửi"
+        },
+        {
+          "text": "受付に",
+          "meaning": "ở quầy lễ tân"
+        },
+        {
+          "text": "預けます。",
+          "meaning": "tôi sẽ gửi lại."
+        }
+      ]
+    }
+  ],
+  "47": [
+    {
+      "id": 4701,
+      "lesson_id": 47,
+      "title": "伝聞 — Tin đồn",
+      "content": [
+        {
+          "text": "田中さんが",
+          "meaning": "Anh Tanaka"
+        },
+        {
+          "text": "会社を",
+          "meaning": "công ty"
+        },
+        {
+          "text": "辞めるそうですよ。",
+          "meaning": "nghe nói sẽ nghỉ việc đấy.",
+          "note": "そうです (nghe nói) dùng để truyền đạt lại thông tin nghe được."
+        },
+        {
+          "text": "えっ、",
+          "meaning": "Hả,"
+        },
+        {
+          "text": "本当ですか。",
+          "meaning": "thật không?"
+        },
+        {
+          "text": "ええ、",
+          "meaning": "Vâng,"
+        },
+        {
+          "text": "自分で",
+          "meaning": "tự mình"
+        },
+        {
+          "text": "会社を",
+          "meaning": "công ty"
+        },
+        {
+          "text": "作るそうです。",
+          "meaning": "nghe nói anh ấy sẽ lập."
+        }
+      ]
+    },
+    {
+      "id": 4702,
+      "lesson_id": 47,
+      "title": "駅前 — Trước nhà ga",
+      "content": [
+        {
+          "text": "駅の前に",
+          "meaning": "trước nhà ga"
+        },
+        {
+          "text": "人が",
+          "meaning": "người"
+        },
+        {
+          "text": "大勢",
+          "meaning": "rất đông"
+        },
+        {
+          "text": "集まっています。",
+          "meaning": "đang tập trung."
+        },
+        {
+          "text": "パトカーと",
+          "meaning": "xe cảnh sát và"
+        },
+        {
+          "text": "救急車も",
+          "meaning": "cả xe cấp cứu"
+        },
+        {
+          "text": "来ました。",
+          "meaning": "đã đến."
+        },
+        {
+          "text": "どうも",
+          "meaning": "có lẽ"
+        },
+        {
+          "text": "事故のようです。",
+          "meaning": "hình như là tai nạn.",
+          "note": "ようです dùng để suy đoán từ điều mình nhìn, nghe hoặc cảm nhận."
+        }
+      ]
+    }
+  ],
+  "48": [
+    {
+      "id": 4801,
+      "lesson_id": 48,
+      "title": "子育て — Nuôi con",
+      "content": [
+        {
+          "text": "子どもが",
+          "meaning": "Đứa trẻ"
+        },
+        {
+          "text": "ピアノを",
+          "meaning": "đàn piano"
+        },
+        {
+          "text": "習いたいと",
+          "meaning": "rằng muốn học"
+        },
+        {
+          "text": "言っているんですが。",
+          "meaning": "đang nói như vậy."
+        },
+        {
+          "text": "じゃ、",
+          "meaning": "Vậy thì,"
+        },
+        {
+          "text": "習わせて",
+          "meaning": "cho phép học"
+        },
+        {
+          "text": "あげたら",
+          "meaning": "nếu làm cho"
+        },
+        {
+          "text": "どうですか。",
+          "meaning": "thì sao?",
+          "note": "習わせます là thể sai khiến, chỉ sự cho phép."
+        },
+        {
+          "text": "好きな",
+          "meaning": "Yêu thích"
+        },
+        {
+          "text": "ことを",
+          "meaning": "những việc"
+        },
+        {
+          "text": "させるのは",
+          "meaning": "việc cho phép làm thì"
+        },
+        {
+          "text": "いいことですよ。",
+          "meaning": "là điều tốt đấy."
+        }
+      ]
+    },
+    {
+      "id": 4802,
+      "lesson_id": 48,
+      "title": "会社で — Ở công ty",
+      "content": [
+        {
+          "text": "課長は",
+          "meaning": "trưởng nhóm"
+        },
+        {
+          "text": "新しい社員に",
+          "meaning": "nhân viên mới"
+        },
+        {
+          "text": "資料を",
+          "meaning": "tài liệu"
+        },
+        {
+          "text": "届けさせました。",
+          "meaning": "đã bảo đi giao.",
+          "note": "Người sai khiến + người bị sai khiến に/を + động từ sai khiến."
+        },
+        {
+          "text": "そのあと、",
+          "meaning": "sau đó,"
+        },
+        {
+          "text": "社員を",
+          "meaning": "nhân viên"
+        },
+        {
+          "text": "早く",
+          "meaning": "sớm"
+        },
+        {
+          "text": "帰らせました。",
+          "meaning": "cho về."
+        }
+      ]
+    }
+  ],
+  "49": [
+    {
+      "id": 4901,
+      "lesson_id": 49,
+      "title": "尊敬語 — Tôn kính ngữ",
+      "content": [
+        {
+          "text": "先生、",
+          "meaning": "Thưa thầy,"
+        },
+        {
+          "text": "あしたの",
+          "meaning": "của ngày mai"
+        },
+        {
+          "text": "パーティーに",
+          "meaning": "vào buổi tiệc"
+        },
+        {
+          "text": "いらっしゃいますか。",
+          "meaning": "thầy có đến không ạ?",
+          "note": "いらっしゃいます là tôn kính ngữ của 来ます."
+        },
+        {
+          "text": "ええ、",
+          "meaning": "Có,"
+        },
+        {
+          "text": "行きますよ。",
+          "meaning": "tôi sẽ đi."
+        },
+        {
+          "text": "奥様も",
+          "meaning": "Cả phu nhân"
+        },
+        {
+          "text": "いらっしゃいますか。",
+          "meaning": "cũng đến chứ ạ?"
+        },
+        {
+          "text": "ええ、",
+          "meaning": "Có,"
+        },
+        {
+          "text": "妻も",
+          "meaning": "cả vợ tôi"
+        },
+        {
+          "text": "行きます。",
+          "meaning": "cũng sẽ đi."
+        }
+      ]
+    },
+    {
+      "id": 4902,
+      "lesson_id": 49,
+      "title": "旅館 — Nhà trọ kiểu Nhật",
+      "content": [
+        {
+          "text": "お客様、",
+          "meaning": "quý khách,"
+        },
+        {
+          "text": "こちらに",
+          "meaning": "ở phía này"
+        },
+        {
+          "text": "お掛けください。",
+          "meaning": "xin hãy ngồi.",
+          "note": "お + gốc ます + ください là mẫu yêu cầu tôn kính."
+        },
+        {
+          "text": "社長は",
+          "meaning": "giám đốc"
+        },
+        {
+          "text": "もう",
+          "meaning": "đã"
+        },
+        {
+          "text": "お帰りに",
+          "meaning": "về"
+        },
+        {
+          "text": "なりました。",
+          "meaning": "rồi."
+        },
+        {
+          "text": "また",
+          "meaning": "lại"
+        },
+        {
+          "text": "お電話",
+          "meaning": "gọi điện"
+        },
+        {
+          "text": "ください。",
+          "meaning": "xin hãy."
+        }
+      ]
+    }
+  ],
+  "50": [
+    {
+      "id": 5001,
+      "lesson_id": 50,
+      "title": "謙譲語 — Khiêm nhường ngữ",
+      "content": [
+        {
+          "text": "お飲み物は",
+          "meaning": "Đồ uống thì"
+        },
+        {
+          "text": "いかがですか。",
+          "meaning": "ngài thấy sao ạ?"
+        },
+        {
+          "text": "コーヒーを",
+          "meaning": "Cà phê"
+        },
+        {
+          "text": "お願いします。",
+          "meaning": "xin hãy cho tôi."
+        },
+        {
+          "text": "かしこまりました。",
+          "meaning": "Tôi đã hiểu thưa ngài."
+        },
+        {
+          "text": "すぐ",
+          "meaning": "Ngay lập tức"
+        },
+        {
+          "text": "お持ちします。",
+          "meaning": "tôi sẽ mang đến ạ.",
+          "note": "お持ちします là khiêm nhường ngữ, thể hiện sự hạ mình của người nói khi thực hiện hành động cho người nghe."
+        }
+      ]
+    },
+    {
+      "id": 5002,
+      "lesson_id": 50,
+      "title": "ご挨拶 — Lời chào trang trọng",
+      "content": [
+        {
+          "text": "皆様、",
+          "meaning": "kính thưa quý vị,"
+        },
+        {
+          "text": "本日は",
+          "meaning": "hôm nay"
+        },
+        {
+          "text": "お忙しい中、",
+          "meaning": "trong lúc bận rộn"
+        },
+        {
+          "text": "お集まりいただき、",
+          "meaning": "đã tập trung đến,",
+          "note": "いただきます dùng khiêm nhường để nói mình nhận được hành động tốt từ người khác."
+        },
+        {
+          "text": "ありがとうございます。",
+          "meaning": "xin cảm ơn."
+        },
+        {
+          "text": "心から",
+          "meaning": "từ tận đáy lòng"
+        },
+        {
+          "text": "感謝いたします。",
+          "meaning": "xin cảm tạ."
         }
       ]
     }

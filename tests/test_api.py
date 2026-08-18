@@ -47,12 +47,37 @@ def test_learning_endpoints() -> None:
             23: 24,
             24: 24,
             25: 24,
+            26: 10,
+            27: 10,
+            28: 10,
+            29: 10,
+            30: 10,
+            31: 10,
+            32: 10,
+            33: 10,
+            34: 10,
+            35: 10,
+            36: 10,
+            37: 10,
+            38: 10,
+            39: 10,
+            40: 10,
+            41: 10,
+            42: 10,
+            43: 10,
+            44: 10,
+            45: 10,
+            46: 10,
+            47: 10,
+            48: 10,
+            49: 10,
+            50: 10,
         }.items():
             lesson_sentences = client.get(f"/api/lessons/{lesson_id}/sentences")
             assert lesson_sentences.status_code == 200
             assert len(lesson_sentences.json()) == expected_count
             assert all(
-                sum(chunk["is_grammar_key"] for chunk in sentence["chunks"]) == 1
+                1 <= sum(chunk["is_grammar_key"] for chunk in sentence["chunks"]) <= 2
                 for sentence in lesson_sentences.json()
             )
 
@@ -60,5 +85,10 @@ def test_learning_endpoints() -> None:
             passages = client.get(f"/api/lessons/{lesson_id}/passages")
             assert passages.status_code == 200
             assert len(passages.json()) == 1
+
+        for lesson_id in range(26, 51):
+            passages = client.get(f"/api/lessons/{lesson_id}/passages")
+            assert passages.status_code == 200
+            assert len(passages.json()) == 2
 
         assert client.get("/api/lessons/99").status_code == 404

@@ -15,6 +15,12 @@ import {
 } from "react";
 import HanziWriter from "hanzi-writer";
 import { grammarPoints16to25, kanjiVocabulary16to25 } from "./lessonContent16to25";
+import { grammarPoints26to30, kanjiVocabulary26to30 } from "./lessonContent26to30";
+import { grammarPoints31to35, kanjiVocabulary31to35 } from "./lessonContent31to35";
+import { grammarPoints36to40, kanjiVocabulary36to40 } from "./lessonContent36to40";
+import { grammarPoints41to45, kanjiVocabulary41to45 } from "./lessonContent41to45";
+import { grammarPoints46to50, kanjiVocabulary46to50 } from "./lessonContent46to50";
+import { minnaVocabulary } from "./minnaVocabularyData";
 import {
   KANJI_STUDY_GUIDES,
   type KanjiStudyGuide,
@@ -104,6 +110,7 @@ type QuestionWordItem = {
 type VocabularyQuizItem = {
   id: number;
   japanese: string;
+  kana?: string;
   vietnamese: string;
 };
 
@@ -363,6 +370,31 @@ const authoredSentenceCounts: Record<number, number> = {
   23: 24,
   24: 24,
   25: 24,
+  26: 10,
+  27: 10,
+  28: 10,
+  29: 10,
+  30: 10,
+  31: 10,
+  32: 10,
+  33: 10,
+  34: 10,
+  35: 10,
+  36: 10,
+  37: 10,
+  38: 10,
+  39: 10,
+  40: 10,
+  41: 10,
+  42: 10,
+  43: 10,
+  44: 10,
+  45: 10,
+  46: 10,
+  47: 10,
+  48: 10,
+  49: 10,
+  50: 10,
 };
 
 const modes: Array<{
@@ -731,6 +763,11 @@ const kanjiVocabulary: Record<number, KanjiVocabularyItem[]> = {
     { kanji: "電話番号", reading: "でんわばんごう", vietnamese: "số điện thoại" },
   ],
   ...kanjiVocabulary16to25,
+  ...kanjiVocabulary26to30,
+  ...kanjiVocabulary31to35,
+  ...kanjiVocabulary36to40,
+  ...kanjiVocabulary41to45,
+  ...kanjiVocabulary46to50,
 };
 
 const questionWordItems: QuestionWordItem[] = [
@@ -1392,6 +1429,11 @@ const grammarPoints: Record<number, GrammarPoint[]> = {
     { title: "Nghề nghiệp và hoạt động thường xuyên", pattern: "Nơi で Vて います", explanation: "Vています có thể nói công việc hoặc hoạt động được duy trì thường xuyên.", example: "だいがくで えいごを おしえています。", translation: "Tôi dạy tiếng Anh tại đại học.", question: "ちちは ぎんこうで はたらい ＿＿＿。", answer: "ています", choices: ["ています", "てください", "たいです", "ましたか"] },
   ],
   ...grammarPoints16to25,
+  ...grammarPoints26to30,
+  ...grammarPoints31to35,
+  ...grammarPoints36to40,
+  ...grammarPoints41to45,
+  ...grammarPoints46to50,
 };
 
 async function requestJson<T>(path: string): Promise<T> {
@@ -1568,16 +1610,586 @@ function AppHeader({
   );
 }
 
+type N4RoadmapWeek = {
+  id: string;
+  start: string;
+  end: string;
+  badge: string;
+  title: string;
+  focus: string;
+  lessons: string;
+  goals: string[];
+  tasks: string[];
+  daily: string[];
+};
+
+type RoadmapTaskAction = {
+  label: string;
+  lessonId?: number;
+  modeId?: ModeId;
+  special?: "jlpt" | "n5-conjugation";
+};
+
+const N4_ROADMAP_STORAGE_KEY = "manabu-n4-roadmap-v1";
+const N4_EXAM_DATE = "2026-12-06";
+const N4_ROADMAP_WEEKS: N4RoadmapWeek[] = [
+  {
+    id: "w01",
+    start: "2026-08-18",
+    end: "2026-08-24",
+    badge: "Tuần 1",
+    title: "Chốt nền N5 trước khi lên N4",
+    focus: "Ôn trợ từ, các thể động từ cơ bản và kiểm tra lỗ hổng.",
+    lessons: "Minna 1–25",
+    goals: ["Nắm lại は/が/を/に/で/へ/と", "Tự chia được て・ない・た・辞書形", "Biết phần yếu nhất của mình"],
+    tasks: [
+      "Làm 1 đề kiểm tra N5/N4 nhẹ để đo đầu vào",
+      "Ôn trợ từ bằng 30 câu ví dụ",
+      "Ôn て形・ない形・た形・辞書形",
+      "Ôn 150 từ N5 hay quên",
+      "Nghe 5 đoạn hội thoại N5/N4 chậm",
+      "Viết sổ lỗi: 20 lỗi đầu tiên",
+    ],
+    daily: [
+      "Ôn trợ từ + làm 20 câu chia thể",
+      "Ôn từ vựng N5 bằng SRS 25 phút",
+      "Nghe chép 3 câu ngắn",
+      "Làm 1 mini test ngữ pháp",
+      "Đọc 1 đoạn ngắn và gạch trợ từ",
+      "Sửa lại toàn bộ lỗi trong tuần",
+      "Nghỉ nhẹ: nghe 20 phút + flashcard",
+    ],
+  },
+  {
+    id: "w02",
+    start: "2026-08-25",
+    end: "2026-08-31",
+    badge: "Tuần 2",
+    title: "Vào N4: giải thích, khả năng, thói quen",
+    focus: "Học các mẫu thường xuất hiện ở đầu N4.",
+    lessons: "Minna 26–28",
+    goals: ["Dùng được んです", "Nhận diện thể khả năng", "Hiểu ながら và ています chỉ thói quen"],
+    tasks: [
+      "Học bài 26: んです・Vていただけませんか",
+      "Học bài 27: thể khả năng",
+      "Học bài 28: ながら・ています",
+      "Tạo 30 flashcard từ mới",
+      "Làm 3 bài ghép câu theo chunk",
+      "Nghe 30 phút hội thoại sinh hoạt",
+      "Đọc 2 đoạn ngắn N4",
+    ],
+    daily: [
+      "Học 1 mẫu ngữ pháp và đặt 3 câu",
+      "Ôn 30 từ + 10 Kanji",
+      "Làm Cloze/Ghép câu 25 phút",
+      "Nghe chép 5 câu có んです",
+      "Đọc 1 đoạn và ghi 5 cụm chunk",
+      "Mini test 20 câu",
+      "Sửa lỗi + ôn SRS",
+    ],
+  },
+  {
+    id: "w03",
+    start: "2026-09-01",
+    end: "2026-09-07",
+    badge: "Tuần 3",
+    title: "Trạng thái kết quả và chuẩn bị trước",
+    focus: "Nắm 自動詞/他動詞, てあります, ておきます.",
+    lessons: "Minna 29–30",
+    goals: ["Phân biệt cửa mở/có ai mở", "Dùng てあります cho trạng thái đã chuẩn bị", "Dùng ておきます cho chuẩn bị trước"],
+    tasks: [
+      "Học bài 29: 自動詞・ています",
+      "Học bài 30: てあります・ておきます",
+      "Lập bảng 20 cặp tự động/tác động",
+      "Làm 40 câu chọn động từ đúng",
+      "Nghe 4 đoạn mô tả tình huống",
+      "Đọc 2 đoạn thông báo ngắn",
+    ],
+    daily: [
+      "Ôn 5 cặp 自動詞/他動詞",
+      "Viết 5 câu với てあります",
+      "Viết 5 câu với ておきます",
+      "Luyện nghe tình huống 20 phút",
+      "Làm bài đọc thông báo",
+      "Mini test bài 29–30",
+      "Sửa sổ lỗi",
+    ],
+  },
+  {
+    id: "w04",
+    start: "2026-09-08",
+    end: "2026-09-14",
+    badge: "Tuần 4",
+    title: "Ý định, lời khuyên, dự đoán",
+    focus: "つもり, 予定, ほうがいい, でしょう, かもしれません.",
+    lessons: "Minna 31–32",
+    goals: ["Nói được dự định", "Khuyên người khác bằng ほうがいい", "Đoán xác suất bằng でしょう/かもしれません"],
+    tasks: [
+      "Học bài 31: つもり・予定",
+      "Học bài 32: ほうがいい・でしょう・かもしれません",
+      "Làm 50 câu chia mẫu",
+      "Viết lịch tuần bằng tiếng Nhật đơn giản",
+      "Nghe 5 đoạn dự báo/thời tiết",
+      "Đọc 2 đoạn hội thoại về kế hoạch",
+    ],
+    daily: [
+      "Đặt 5 câu với つもり",
+      "Đặt 5 câu lời khuyên",
+      "Luyện nghe dự báo 20 phút",
+      "Ôn 40 từ mới",
+      "Đọc hội thoại và tách chunk",
+      "Mini test 25 câu",
+      "Sửa lỗi + SRS",
+    ],
+  },
+  {
+    id: "w05",
+    start: "2026-09-15",
+    end: "2026-09-21",
+    badge: "Tuần 5",
+    title: "Mệnh lệnh, cấm đoán, làm theo mẫu",
+    focus: "命令形, 禁止形, とおりに, あとで.",
+    lessons: "Minna 33–34",
+    goals: ["Nhận diện mệnh lệnh/cấm đoán", "Làm theo hướng dẫn với とおりに", "Nói thứ tự hành động với あとで"],
+    tasks: [
+      "Học bài 33: mệnh lệnh/cấm đoán",
+      "Học bài 34: とおりに・あとで",
+      "Làm 30 câu biển báo/thông báo",
+      "Luyện đọc chỉ dẫn ngắn",
+      "Nghe 4 đoạn hướng dẫn",
+      "Ôn 50 Kanji/từ có trong bài 26–34",
+    ],
+    daily: [
+      "Ôn biển báo/mệnh lệnh 20 phút",
+      "Làm 15 câu とおりに",
+      "Nghe hướng dẫn và ghi bước",
+      "Đọc thông báo ngắn",
+      "Ôn Kanji bằng mode viết",
+      "Mini test bài 33–34",
+      "Sửa lỗi tuần",
+    ],
+  },
+  {
+    id: "w06",
+    start: "2026-09-22",
+    end: "2026-09-28",
+    badge: "Tuần 6",
+    title: "Điều kiện và mục tiêu",
+    focus: "条件形 ば, ように.",
+    lessons: "Minna 35–36",
+    goals: ["Chia đúng thể điều kiện ば", "Hiểu điều kiện nếu/thì", "Dùng ように cho mục tiêu/thay đổi khả năng"],
+    tasks: [
+      "Học bài 35: thể ば",
+      "Học bài 36: ように",
+      "Làm 60 câu chia thể điều kiện",
+      "Viết 10 câu mục tiêu học tiếng Nhật",
+      "Đọc 2 đoạn có điều kiện",
+      "Nghe 4 đoạn về mục tiêu/thói quen",
+    ],
+    daily: [
+      "Chia 20 câu thể ば",
+      "Đặt 5 câu ように",
+      "Ôn từ vựng bài 35–36",
+      "Nghe chép 5 câu",
+      "Đọc 1 đoạn và gạch điều kiện",
+      "Mini test 30 câu",
+      "Sửa lỗi + SRS",
+    ],
+  },
+  {
+    id: "w07",
+    start: "2026-09-29",
+    end: "2026-10-05",
+    badge: "Tuần 7",
+    title: "Bị động và danh từ hóa",
+    focus: "受身形 và の dùng để danh từ hóa.",
+    lessons: "Minna 37–38",
+    goals: ["Nhận diện câu bị động", "Không sợ câu dài", "Dùng の để biến mệnh đề thành danh từ"],
+    tasks: [
+      "Học bài 37: thể bị động",
+      "Học bài 38: Vのは/Vのが/Vのを",
+      "Làm 40 câu bị động",
+      "Đọc 3 đoạn có câu dài",
+      "Nghe 4 đoạn kể chuyện/sự việc",
+      "Tóm tắt 5 câu bằng tiếng Việt sau khi đọc",
+    ],
+    daily: [
+      "Chia 15 câu bị động",
+      "Làm 10 câu danh từ hóa の",
+      "Đọc 1 đoạn và tách chủ-vị",
+      "Nghe kể chuyện 20 phút",
+      "Ôn 40 từ",
+      "Mini test bài 37–38",
+      "Sửa lỗi tuần",
+    ],
+  },
+  {
+    id: "w08",
+    start: "2026-10-06",
+    end: "2026-10-12",
+    badge: "Tuần 8",
+    title: "Lý do và câu hỏi lồng trong câu",
+    focus: "て/で chỉ nguyên nhân, câu hỏi lồng か.",
+    lessons: "Minna 39–40",
+    goals: ["Hiểu lý do với て/で", "Đọc được câu có 疑問詞 + か", "Trả lời câu hỏi lồng"],
+    tasks: [
+      "Học bài 39: nguyên nhân/lý do",
+      "Học bài 40: câu hỏi lồng trong câu",
+      "Làm 50 câu chọn mẫu",
+      "Đọc 3 đoạn giải thích lý do",
+      "Nghe 5 đoạn hỏi thông tin",
+      "Ôn lại toàn bộ bài 26–40 bằng sơ đồ",
+    ],
+    daily: [
+      "Làm 15 câu nguyên nhân",
+      "Làm 15 câu 疑問詞 + か",
+      "Nghe hỏi đường/thông tin",
+      "Đọc 1 đoạn ngắn",
+      "Ôn Kanji bài 26–40",
+      "Mini test tổng bài 26–40",
+      "Sửa sổ lỗi",
+    ],
+  },
+  {
+    id: "w09",
+    start: "2026-10-13",
+    end: "2026-10-19",
+    badge: "Tuần 9",
+    title: "Cho - nhận và mục đích",
+    focus: "てあげる/てもらう/てくれる, ために.",
+    lessons: "Minna 41–42",
+    goals: ["Nhìn đúng hướng lợi ích", "Dùng に/を đúng trong cho-nhận", "Hiểu ために chỉ mục đích"],
+    tasks: [
+      "Học bài 41: cho-nhận hành động",
+      "Học bài 42: ために・のに",
+      "Vẽ sơ đồ hướng lợi ích 20 câu",
+      "Làm 50 câu chọn あげる/もらう/くれる",
+      "Đọc 2 đoạn nói mục đích",
+      "Nghe 4 đoạn nhờ vả/cảm ơn",
+    ],
+    daily: [
+      "Làm 15 câu cho-nhận",
+      "Đặt 5 câu ために",
+      "Nghe hội thoại nhờ vả",
+      "Đọc 1 đoạn mục đích",
+      "Ôn từ vựng bài 41–42",
+      "Mini test 30 câu",
+      "Sửa lỗi + SRS",
+    ],
+  },
+  {
+    id: "w10",
+    start: "2026-10-20",
+    end: "2026-10-26",
+    badge: "Tuần 10",
+    title: "Trông có vẻ, dễ/khó, trường hợp",
+    focus: "そうです, すぎる, やすい/にくい, 場合.",
+    lessons: "Minna 43–45",
+    goals: ["Nói cảm nhận bên ngoài bằng そう", "Dùng やすい/にくい tự nhiên", "Hiểu 場合 và のに"],
+    tasks: [
+      "Học bài 43: そう・すぎる・やすい/にくい",
+      "Học bài 44–45: 場合・のに",
+      "Làm 60 câu tổng hợp",
+      "Đọc 3 đoạn tình huống",
+      "Nghe 5 đoạn phàn nàn/khuyên nhủ",
+      "Ôn ngữ pháp bài 26–45",
+    ],
+    daily: [
+      "Luyện そう・すぎる 20 phút",
+      "Luyện やすい/にくい 20 phút",
+      "Đọc tình huống 場合",
+      "Nghe 20 phút",
+      "Ôn Kanji/từ bài 43–45",
+      "Mini test tổng hợp",
+      "Sửa lỗi tuần",
+    ],
+  },
+  {
+    id: "w11",
+    start: "2026-10-27",
+    end: "2026-11-02",
+    badge: "Tuần 11",
+    title: "Hoàn thành Minna 46–50",
+    focus: "ところ, ばかり, ようです, sai khiến, kính ngữ/khiêm nhường.",
+    lessons: "Minna 46–50",
+    goals: ["Nhận diện mẫu cuối sách", "Không mất điểm câu cơ bản", "Biết kính ngữ ở mức nhận diện"],
+    tasks: [
+      "Học bài 46: ところ・ばかり",
+      "Học bài 47: そうです・ようです",
+      "Học bài 48: sai khiến",
+      "Học bài 49–50: kính ngữ/khiêm nhường",
+      "Làm 80 câu tổng bài 46–50",
+      "Đọc 2 đoạn N4 cuối sách",
+      "Nghe 5 đoạn hội thoại lịch sự",
+    ],
+    daily: [
+      "Học 1 bài mới hoặc ôn 1 bài khó",
+      "Làm 20 câu ngữ pháp",
+      "Nghe 20 phút hội thoại lịch sự",
+      "Đọc 1 đoạn ngắn",
+      "Ôn từ vựng/Kanji",
+      "Mini test bài 46–50",
+      "Sửa lỗi tuần",
+    ],
+  },
+  {
+    id: "w12",
+    start: "2026-11-03",
+    end: "2026-11-09",
+    badge: "Tuần 12",
+    title: "Chuyển sang luyện đề",
+    focus: "Làm đề từng phần và đo điểm thật.",
+    lessons: "Tổng ôn 26–50",
+    goals: ["Biết tốc độ làm bài", "Tạo sổ lỗi đề thi", "Nghe không dưới 25/60"],
+    tasks: [
+      "Làm 2 đề từ vựng/ngữ pháp",
+      "Làm 2 bài đọc ngắn",
+      "Làm 2 bài nghe N4",
+      "Sửa kỹ từng lỗi và ghi mẫu đúng",
+      "Ôn lại 80 từ sai",
+      "Ôn 30 mẫu ngữ pháp sai nhiều",
+    ],
+    daily: [
+      "Làm 1 phần đề 30 phút",
+      "Sửa đề 30 phút",
+      "Nghe 20 phút",
+      "Ôn sổ lỗi",
+      "Đọc 1 đoạn",
+      "Mini mock 60 phút",
+      "Tổng kết điểm tuần",
+    ],
+  },
+  {
+    id: "w13",
+    start: "2026-11-10",
+    end: "2026-11-16",
+    badge: "Tuần 13",
+    title: "Đẩy điểm đọc hiểu",
+    focus: "Đọc nhanh, tìm ý chính, đọc thông báo.",
+    lessons: "Reading N4",
+    goals: ["Đọc đoạn ngắn dưới 4 phút", "Biết tìm từ khóa", "Không bỏ câu thông tin"],
+    tasks: [
+      "Làm 6 đoạn đọc ngắn",
+      "Làm 3 bài đọc thông báo",
+      "Gạch từ khóa trong mọi bài đọc",
+      "Ôn liên từ: しかし, それで, だから, それから",
+      "Làm 1 đề đọc tính giờ",
+      "Sửa 20 lỗi đọc hiểu",
+    ],
+    daily: [
+      "Đọc 2 đoạn ngắn",
+      "Gạch từ khóa và dịch ý chính",
+      "Ôn liên từ 15 phút",
+      "Làm bài thông báo",
+      "Nghe 20 phút để giữ nhịp",
+      "Đề đọc tính giờ",
+      "Sửa lỗi đọc",
+    ],
+  },
+  {
+    id: "w14",
+    start: "2026-11-17",
+    end: "2026-11-23",
+    badge: "Tuần 14",
+    title: "Đẩy điểm nghe",
+    focus: "Nghe câu hỏi trước, bắt từ khóa và phản xạ nhanh.",
+    lessons: "Listening N4",
+    goals: ["Nghe đạt 35/60 trở lên", "Không hoảng khi bỏ lỡ 1 câu", "Bắt được ai/làm gì/ở đâu/khi nào"],
+    tasks: [
+      "Nghe 5 bài task-based comprehension",
+      "Nghe 5 bài quick response",
+      "Chép chính tả 25 câu ngắn",
+      "Ôn cụm hội thoại đời sống",
+      "Làm 1 đề nghe tính giờ",
+      "Sửa lỗi nghe bằng transcript",
+    ],
+    daily: [
+      "Nghe 25 phút",
+      "Chép chính tả 5 câu",
+      "Ôn cụm phản xạ nhanh",
+      "Làm quick response",
+      "Làm nghe theo tình huống",
+      "Đề nghe tính giờ",
+      "Sửa lỗi nghe",
+    ],
+  },
+  {
+    id: "w15",
+    start: "2026-11-24",
+    end: "2026-11-30",
+    badge: "Tuần 15",
+    title: "Thi thử nghiêm túc",
+    focus: "Làm đề full, kiểm tra điểm an toàn.",
+    lessons: "Full mock N4",
+    goals: ["Tổng điểm mock ≥ 115/180", "Không phần nào dưới ngưỡng", "Biết chiến thuật phòng thi"],
+    tasks: [
+      "Làm 2 đề full N4 tính giờ",
+      "Sửa toàn bộ lỗi trong 2 đề",
+      "Ôn 100 từ sai nhiều nhất",
+      "Ôn 40 mẫu ngữ pháp sai nhiều nhất",
+      "Làm lại các bài đọc từng sai",
+      "Nghe lại các câu từng sai",
+    ],
+    daily: [
+      "Mock test hoặc sửa mock",
+      "Ôn 30 từ sai",
+      "Ôn 10 mẫu sai",
+      "Đọc lại bài sai",
+      "Nghe lại bài sai",
+      "Mock test cuối tuần",
+      "Tổng kết chiến thuật",
+    ],
+  },
+  {
+    id: "w16",
+    start: "2026-12-01",
+    end: "2026-12-06",
+    badge: "Tuần 16",
+    title: "Tuần thi: nhẹ nhưng sắc",
+    focus: "Không học lan man; chỉ ôn sổ lỗi, nghe nhẹ, ngủ đủ.",
+    lessons: "Final review",
+    goals: ["Giữ nhịp não tiếng Nhật", "Không nhồi kiến thức mới", "Vào phòng thi bình tĩnh"],
+    tasks: [
+      "Ôn toàn bộ sổ lỗi",
+      "Làm lại 1 đề đã từng làm",
+      "Nghe nhẹ 20 phút mỗi ngày",
+      "Ôn danh sách trợ từ và thể động từ",
+      "Chuẩn bị giấy tờ/đồ đi thi",
+      "Ngủ đủ trước ngày thi",
+    ],
+    daily: [
+      "Ôn sổ lỗi 30 phút",
+      "Nghe nhẹ 20 phút",
+      "Làm lại 20 câu từng sai",
+      "Ôn trợ từ/thể động từ",
+      "Chuẩn bị đồ thi",
+      "Nghỉ sớm trước ngày thi",
+    ],
+  },
+];
+
+function parseRoadmapDate(value: string) {
+  const [year, month, day] = value.split("-").map(Number);
+  return new Date(year, month - 1, day);
+}
+
+function formatRoadmapRange(week: N4RoadmapWeek) {
+  const format = (value: string) => {
+    const date = parseRoadmapDate(value);
+    return `${String(date.getDate()).padStart(2, "0")}/${String(date.getMonth() + 1).padStart(2, "0")}`;
+  };
+  return `${format(week.start)} – ${format(week.end)}`;
+}
+
+function daysBetween(start: Date, end: Date) {
+  const startUtc = Date.UTC(start.getFullYear(), start.getMonth(), start.getDate());
+  const endUtc = Date.UTC(end.getFullYear(), end.getMonth(), end.getDate());
+  return Math.round((endUtc - startUtc) / 86400000);
+}
+
+function getRoadmapWeekIndex(today = new Date()) {
+  const current = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+  const foundIndex = N4_ROADMAP_WEEKS.findIndex((week) => {
+    const start = parseRoadmapDate(week.start);
+    const end = parseRoadmapDate(week.end);
+    return current >= start && current <= end;
+  });
+
+  if (foundIndex !== -1) return foundIndex;
+
+  if (current < parseRoadmapDate(N4_ROADMAP_WEEKS[0].start)) return 0;
+  return N4_ROADMAP_WEEKS.length - 1;
+}
+
+function getRoadmapTaskId(weekId: string, taskIndex: number) {
+  return `${weekId}-${taskIndex}`;
+}
+
+function getRoadmapLessonIds(week: N4RoadmapWeek) {
+  const rangeMatch = week.lessons.match(/Minna\s+(\d+)(?:[–-](\d+))?/i);
+  if (!rangeMatch) return [];
+
+  const start = Number(rangeMatch[1]);
+  const end = Number(rangeMatch[2] ?? rangeMatch[1]);
+  return Array.from({ length: end - start + 1 }, (_, index) => start + index);
+}
+
+function getRoadmapTaskAction(week: N4RoadmapWeek, task: string): RoadmapTaskAction {
+  const lessonIds = getRoadmapLessonIds(week);
+  const taskLessonMatch = task.match(/bài\s*(\d+)/i);
+  const lessonId = taskLessonMatch
+    ? Number(taskLessonMatch[1])
+    : lessonIds[0];
+  const normalizedTask = task.toLocaleLowerCase("vi");
+
+  if (
+    normalizedTask.includes("đề") ||
+    normalizedTask.includes("mock") ||
+    normalizedTask.includes("thi") ||
+    week.lessons.includes("Reading") ||
+    week.lessons.includes("Listening") ||
+    week.lessons.includes("Full mock") ||
+    week.lessons.includes("Final review")
+  ) {
+    return { label: "Mở luyện đề", special: "jlpt" };
+  }
+
+  if (
+    normalizedTask.includes("chia") ||
+    normalizedTask.includes("て形") ||
+    normalizedTask.includes("ない形") ||
+    normalizedTask.includes("た形") ||
+    normalizedTask.includes("辞書形") ||
+    normalizedTask.includes("động từ")
+  ) {
+    return { label: "Mở chia thể", special: "n5-conjugation" };
+  }
+
+  if (!lessonId) return { label: "Mở luyện đề", special: "jlpt" };
+
+  if (normalizedTask.includes("kanji")) {
+    return { label: `Mở Kanji bài ${lessonId}`, lessonId, modeId: "kanji-words" };
+  }
+
+  if (
+    normalizedTask.includes("từ") ||
+    normalizedTask.includes("flashcard") ||
+    normalizedTask.includes("srs")
+  ) {
+    return { label: `Mở từ vựng bài ${lessonId}`, lessonId, modeId: "vocabulary" };
+  }
+
+  if (normalizedTask.includes("nghe")) {
+    return { label: `Mở nghe bài ${lessonId}`, lessonId, modeId: "dictation" };
+  }
+
+  if (normalizedTask.includes("đọc")) {
+    return { label: `Mở đọc bài ${lessonId}`, lessonId, modeId: "reading" };
+  }
+
+  if (normalizedTask.includes("ghép") || normalizedTask.includes("chunk")) {
+    return { label: `Mở ghép câu bài ${lessonId}`, lessonId, modeId: "scramble" };
+  }
+
+  if (normalizedTask.includes("sửa lỗi")) {
+    return { label: `Mở ôn tập bài ${lessonId}`, lessonId, modeId: "review" };
+  }
+
+  return { label: `Mở ngữ pháp bài ${lessonId}`, lessonId, modeId: "grammar" };
+}
+
 function Dashboard({
   onSelect,
   onQuestionWords,
   onJlptPractice,
   onN5Conjugation,
+  onN4Roadmap,
 }: {
   onSelect: (lesson: Lesson) => void;
   onQuestionWords: () => void;
   onJlptPractice: () => void;
   onN5Conjugation: () => void;
+  onN4Roadmap: () => void;
 }) {
   const [lessons, setLessons] = useState<Lesson[]>(lessonFallback);
   const [query, setQuery] = useState("");
@@ -1692,7 +2304,8 @@ function Dashboard({
 
         <div className="lessonGrid">
           {filtered.map((lesson) => {
-            const available = lesson.id in authoredSentenceCounts;
+            const available =
+              (lesson.sentence_count ?? authoredSentenceCounts[lesson.id] ?? 0) > 0;
             return (
               <button
                 className={`lessonCard ${available ? "hasContent" : ""}`}
@@ -1764,6 +2377,20 @@ function Dashboard({
             LUYỆN {n5ConjugationItems.length} CÂU <ArrowIcon />
           </button>
         </section>
+        <section className="specialLesson n4RoadmapSpecialLesson" aria-labelledby="n4-roadmap-home-title">
+          <div className="specialLessonCopy">
+            <span className="sectionKicker">ROADMAP N4 · THÁNG 12</span>
+            <h3 id="n4-roadmap-home-title">Lộ trình đỗ N4 ngày 06/12</h3>
+            <p>
+              Checklist 16 tuần từ nền N5 đến luyện đề N4: hôm nay học gì,
+              còn mục nào cần ôn và tiến độ tổng thể lưu ngay trên máy bạn.
+            </p>
+          </div>
+          <div className="specialQuestionMark n4RoadmapMark" aria-hidden="true">道</div>
+          <button className="specialLessonButton" onClick={onN4Roadmap}>
+            MỞ LỘ TRÌNH N4 <ArrowIcon />
+          </button>
+        </section>
       </section>
     </>
   );
@@ -1801,7 +2428,10 @@ function LessonMenu({
       .catch(() => setPassageCount(lesson.passage_count ?? 0));
   }, [lesson]);
 
-  const vocabularyItems = useMemo(() => buildVocabularyItems(sentences), [sentences]);
+  const vocabularyItems = useMemo(
+    () => buildVocabularyItems(sentences, lesson.id),
+    [lesson.id, sentences],
+  );
   const dueSentences = sentences.filter(s => isDueForReview("sentence_" + s.id));
   const dueVocab = vocabularyItems.filter(v => isDueForReview("vocab_" + v.id));
   const dueCount = dueSentences.length + dueVocab.length;
@@ -3622,6 +4252,7 @@ function KanjiWordMode({
   onAdvance: () => void;
 }) {
   const [selectedReading, setSelectedReading] = useState<string | null>(null);
+  const [listOpen, setListOpen] = useState(false);
   const options = useMemo(() => {
     const distractors = items
       .filter((candidate) => candidate.reading !== item.reading)
@@ -3651,6 +4282,15 @@ function KanjiWordMode({
         <span className="promptLabel">CHỌN CÁCH ĐỌC HIRAGANA</span>
         <strong lang="ja">{item.kanji}</strong>
         <p>Từ Kanji này được đọc như thế nào?</p>
+        <button
+          className="secondaryButton vocabularyListButton kanjiListButton"
+          type="button"
+          onClick={() => setListOpen(true)}
+          aria-haspopup="dialog"
+        >
+          <span aria-hidden="true">☷</span>
+          Xem toàn bộ Kanji ({items.length})
+        </button>
       </div>
       <div className="kanjiReadingOptions" role="group" aria-label="Các cách đọc Hiragana">
         {options.map((option, optionIndex) => {
@@ -3674,6 +4314,7 @@ function KanjiWordMode({
         })}
       </div>
       <FeedbackBanner feedback={feedback} />
+      {listOpen && <KanjiListModal items={items} onClose={() => setListOpen(false)} />}
     </div>
   );
 }
@@ -3739,7 +4380,6 @@ function KanjiStudyPanel({
 
         <article className="kanjiStudyCard kanjiStudyWordsCard">
           <span className="kanjiStudyLabel">Từ có Kanji này</span>
-          <h4>Nhiều ví dụ để gặp lại chữ</h4>
           <div className="kanjiWordExampleList">
             {wordExamples.map((word) => (
               <span className="kanjiWordExample" key={`${word.kanji}-${word.reading}`}>
@@ -3757,6 +4397,7 @@ function KanjiStudyPanel({
 
 function KanjiWritingMode({
   item,
+  items,
   onAdvance,
 }: {
   item: KanjiVocabularyItem;
@@ -3778,6 +4419,7 @@ function KanjiWritingMode({
   const [guidedSuccess, setGuidedSuccess] = useState(false);
   const [writerError, setWriterError] = useState<string | null>(null);
   const [comparisonVisible, setComparisonVisible] = useState(false);
+  const [listOpen, setListOpen] = useState(false);
   const guidedContainerRef = useRef<HTMLDivElement>(null);
   const comparisonContainerRef = useRef<HTMLDivElement>(null);
   const guidedWriterRef = useRef<HanziWriterInstance | null>(null);
@@ -4033,9 +4675,19 @@ function KanjiWritingMode({
           <span className="emptyGlyph">筆</span>
           <h2>Không có Kanji để luyện viết</h2>
           <p>Từ này không chứa ký tự Kanji. Hãy chọn mục khác trong bài.</p>
+          <button
+            className="secondaryButton kanjiListButton"
+            type="button"
+            onClick={() => setListOpen(true)}
+            aria-haspopup="dialog"
+          >
+            <span aria-hidden="true">☷</span>
+            Xem toàn bộ Kanji ({items.length})
+          </button>
           <button className="secondaryButton" type="button" onClick={onAdvance}>
             Câu tiếp <ArrowIcon />
           </button>
+          {listOpen && <KanjiListModal items={items} onClose={() => setListOpen(false)} />}
         </div>
       </div>
     );
@@ -4052,9 +4704,19 @@ function KanjiWritingMode({
               ? `Đang tải dữ liệu nét cho ${item.kanji}.`
               : writerError ?? "Thư viện chưa có dữ liệu nét cho từ này."}
           </p>
+          <button
+            className="secondaryButton kanjiListButton"
+            type="button"
+            onClick={() => setListOpen(true)}
+            aria-haspopup="dialog"
+          >
+            <span aria-hidden="true">☷</span>
+            Xem toàn bộ Kanji ({items.length})
+          </button>
           <button className="secondaryButton" type="button" onClick={onAdvance}>
             Câu tiếp <ArrowIcon />
           </button>
+          {listOpen && <KanjiListModal items={items} onClose={() => setListOpen(false)} />}
         </div>
       </div>
     );
@@ -4072,21 +4734,32 @@ function KanjiWritingMode({
               : "Nhìn cách đọc và nghĩa, tự nhớ Kanji rồi viết vào ô bên dưới."}
           </p>
         </div>
-        <div className="kanjiWritingTabs" role="group" aria-label="Chọn kiểu luyện viết Kanji">
+        <div className="kanjiWritingHeaderActions">
           <button
+            className="secondaryButton kanjiListButton"
             type="button"
-            className={writingMode === "guided" ? "active" : ""}
-            onClick={() => setWritingMode("guided")}
+            onClick={() => setListOpen(true)}
+            aria-haspopup="dialog"
           >
-            Theo nét
+            <span aria-hidden="true">☷</span>
+            Xem toàn bộ Kanji ({items.length})
           </button>
-          <button
-            type="button"
-            className={writingMode === "free" ? "active" : ""}
-            onClick={() => setWritingMode("free")}
-          >
-            Tự viết mù
-          </button>
+          <div className="kanjiWritingTabs" role="group" aria-label="Chọn kiểu luyện viết Kanji">
+            <button
+              type="button"
+              className={writingMode === "guided" ? "active" : ""}
+              onClick={() => setWritingMode("guided")}
+            >
+              Theo nét
+            </button>
+            <button
+              type="button"
+              className={writingMode === "free" ? "active" : ""}
+              onClick={() => setWritingMode("free")}
+            >
+              Tự viết mù
+            </button>
+          </div>
         </div>
       </div>
 
@@ -4163,11 +4836,18 @@ function KanjiWritingMode({
         guide={studyGuide}
         wordExamples={relatedKanjiWords}
       />
+      {listOpen && <KanjiListModal items={items} onClose={() => setListOpen(false)} />}
     </div>
   );
 }
 
-function buildVocabularyItems(sentences: Sentence[]) {
+function buildVocabularyItems(sentences: Sentence[], lessonId?: number) {
+  const resolvedLessonId = lessonId ?? sentences[0]?.lesson_id ?? undefined;
+  const lessonItems = resolvedLessonId
+    ? minnaVocabulary[resolvedLessonId]
+    : undefined;
+  if (lessonItems?.length) return lessonItems;
+
   const seen = new Set<string>();
   const items: VocabularyQuizItem[] = [];
 
@@ -4198,15 +4878,20 @@ function VocabularyMode({
   onAdvance: () => void;
 }) {
   const [selectedMeaning, setSelectedMeaning] = useState<string | null>(null);
+  const [listOpen, setListOpen] = useState(false);
   const options = useMemo(() => {
-    const distractors = items
-      .filter(
-        (candidate) =>
-          candidate.id !== item.id && candidate.vietnamese !== item.vietnamese,
-      )
+    const distractors = Array.from(
+      new Set(
+        items
+          .filter(
+            (candidate) =>
+              candidate.id !== item.id && candidate.vietnamese !== item.vietnamese,
+          )
+          .map((candidate) => candidate.vietnamese),
+      ),
+    )
       .sort(() => Math.random() - 0.5)
-      .slice(0, 3)
-      .map((candidate) => candidate.vietnamese);
+      .slice(0, 3);
     return [item.vietnamese, ...distractors].sort(() => Math.random() - 0.5);
   }, [item, items]);
   const feedback: Feedback =
@@ -4230,6 +4915,15 @@ function VocabularyMode({
         <span className="promptLabel">CHỌN NGHĨA TIẾNG VIỆT</span>
         <strong lang="ja">{item.japanese}</strong>
         <p>Từ hoặc cụm từ này có nghĩa là gì?</p>
+        <button
+          className="secondaryButton vocabularyListButton"
+          type="button"
+          onClick={() => setListOpen(true)}
+          aria-haspopup="dialog"
+        >
+          <span aria-hidden="true">☷</span>
+          Xem toàn bộ từ vựng ({items.length})
+        </button>
       </div>
       <div className="vocabularyOptions" role="group" aria-label="Các nghĩa tiếng Việt">
         {options.map((option, optionIndex) => {
@@ -4253,6 +4947,141 @@ function VocabularyMode({
         })}
       </div>
       <FeedbackBanner feedback={feedback} />
+      {listOpen && (
+        <VocabularyListModal items={items} onClose={() => setListOpen(false)} />
+      )}
+    </div>
+  );
+}
+
+function VocabularyListModal({
+  items,
+  onClose,
+}: {
+  items: VocabularyQuizItem[];
+  onClose: () => void;
+}) {
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [onClose]);
+
+  return (
+    <div
+      className="rulesModalBackdrop"
+      role="presentation"
+      onMouseDown={onClose}
+    >
+      <section
+        className="rulesModal vocabularyListModal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="vocabulary-list-title"
+        onMouseDown={(event) => event.stopPropagation()}
+      >
+        <header className="rulesModalHeader">
+          <div>
+            <span className="sectionKicker">{items.length} MỤC TỪ</span>
+            <h2 id="vocabulary-list-title">Toàn bộ từ vựng của bài</h2>
+          </div>
+          <button type="button" onClick={onClose} aria-label="Đóng danh sách từ vựng">
+            ×
+          </button>
+        </header>
+        <div className="rulesModalBody vocabularyListBody">
+          <div className="vocabularyTableScroll">
+            <table className="vocabularyListTable">
+              <thead>
+                <tr>
+                  <th scope="col">Từ vựng</th>
+                  <th scope="col">Chữ Hán</th>
+                  <th scope="col">Ý nghĩa</th>
+                </tr>
+              </thead>
+              <tbody>
+                {items.map((vocabularyItem) => (
+                  <tr key={vocabularyItem.id}>
+                    <td lang="ja">{vocabularyItem.kana ?? vocabularyItem.japanese}</td>
+                    <td lang="ja">
+                      {vocabularyItem.kana && vocabularyItem.kana !== vocabularyItem.japanese
+                        ? vocabularyItem.japanese
+                        : ""}
+                    </td>
+                    <td>{vocabularyItem.vietnamese}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+function KanjiListModal({
+  items,
+  onClose,
+}: {
+  items: KanjiVocabularyItem[];
+  onClose: () => void;
+}) {
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [onClose]);
+
+  return (
+    <div
+      className="rulesModalBackdrop"
+      role="presentation"
+      onMouseDown={onClose}
+    >
+      <section
+        className="rulesModal vocabularyListModal kanjiListModal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="kanji-list-title"
+        onMouseDown={(event) => event.stopPropagation()}
+      >
+        <header className="rulesModalHeader">
+          <div>
+            <span className="sectionKicker">{items.length} MỤC KANJI</span>
+            <h2 id="kanji-list-title">Toàn bộ Kanji của bài</h2>
+          </div>
+          <button type="button" onClick={onClose} aria-label="Đóng danh sách Kanji">
+            ×
+          </button>
+        </header>
+        <div className="rulesModalBody vocabularyListBody">
+          <div className="vocabularyTableScroll">
+            <table className="vocabularyListTable kanjiListTable">
+              <thead>
+                <tr>
+                  <th scope="col">Kanji</th>
+                  <th scope="col">Cách đọc</th>
+                  <th scope="col">Ý nghĩa</th>
+                </tr>
+              </thead>
+              <tbody>
+                {items.map((kanjiItem, index) => (
+                  <tr key={`${kanjiItem.kanji}-${kanjiItem.reading}-${index}`}>
+                    <td lang="ja">{kanjiItem.kanji}</td>
+                    <td lang="ja">{kanjiItem.reading}</td>
+                    <td>{kanjiItem.vietnamese}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
@@ -4320,6 +5149,253 @@ function GrammarMode({
       </div>
       <FeedbackBanner feedback={feedback} />
     </div>
+  );
+}
+
+function N4RoadmapScreen({
+  onBack,
+  onOpenPractice,
+  onOpenJlptPractice,
+  onOpenN5Conjugation,
+}: {
+  onBack: () => void;
+  onOpenPractice: (lessonId: number, modeId: ModeId) => void;
+  onOpenJlptPractice: () => void;
+  onOpenN5Conjugation: () => void;
+}) {
+  const [completedTaskIds, setCompletedTaskIds] = useState<string[]>([]);
+  const [storageReady, setStorageReady] = useState(false);
+  const today = useMemo(() => new Date(), []);
+  const currentWeekIndex = useMemo(() => getRoadmapWeekIndex(today), [today]);
+  const currentWeek = N4_ROADMAP_WEEKS[currentWeekIndex];
+  const completedSet = useMemo(() => new Set(completedTaskIds), [completedTaskIds]);
+  const totalTasks = N4_ROADMAP_WEEKS.reduce((sum, week) => sum + week.tasks.length, 0);
+  const allTaskIds = useMemo(
+    () =>
+      new Set(
+        N4_ROADMAP_WEEKS.flatMap((week) =>
+          week.tasks.map((_, taskIndex) => getRoadmapTaskId(week.id, taskIndex)),
+        ),
+      ),
+    [],
+  );
+  const completedCount = completedTaskIds.filter((id) => allTaskIds.has(id)).length;
+  const progress = Math.min(100, Math.round((completedCount / totalTasks) * 100));
+  const daysLeft = Math.max(0, daysBetween(today, parseRoadmapDate(N4_EXAM_DATE)));
+  const todayOffset = Math.max(
+    0,
+    Math.min(
+      currentWeek.daily.length - 1,
+      daysBetween(parseRoadmapDate(currentWeek.start), today),
+    ),
+  );
+  const todayTask = currentWeek.daily[todayOffset] ?? currentWeek.daily[0];
+  const overdueTasks = N4_ROADMAP_WEEKS.slice(0, currentWeekIndex + 1)
+    .flatMap((week) =>
+      week.tasks.map((task, taskIndex) => ({
+        week,
+        task,
+        id: getRoadmapTaskId(week.id, taskIndex),
+      })),
+    )
+    .filter((item) => !completedSet.has(item.id))
+    .slice(0, 6);
+
+  useEffect(() => {
+    try {
+      const stored = window.localStorage.getItem(N4_ROADMAP_STORAGE_KEY);
+      if (stored) {
+        const parsed: unknown = JSON.parse(stored);
+        if (Array.isArray(parsed)) {
+          setCompletedTaskIds(parsed.filter((item): item is string => typeof item === "string"));
+        }
+      }
+    } catch {
+      setCompletedTaskIds([]);
+    }
+
+    setStorageReady(true);
+  }, []);
+
+  useEffect(() => {
+    if (!storageReady) return;
+
+    try {
+      window.localStorage.setItem(
+        N4_ROADMAP_STORAGE_KEY,
+        JSON.stringify(completedTaskIds),
+      );
+    } catch {
+      // Roadmap progress is helpful but the plan can still be used without storage.
+    }
+  }, [completedTaskIds, storageReady]);
+
+  const toggleTask = (taskId: string) => {
+    setCompletedTaskIds((current) =>
+      current.includes(taskId)
+        ? current.filter((id) => id !== taskId)
+        : [...current, taskId],
+    );
+  };
+
+  const toggleWeek = (week: N4RoadmapWeek) => {
+    const weekTaskIds = week.tasks.map((_, taskIndex) =>
+      getRoadmapTaskId(week.id, taskIndex),
+    );
+    const allDone = weekTaskIds.every((id) => completedSet.has(id));
+
+    setCompletedTaskIds((current) => {
+      const next = new Set(current);
+      if (allDone) {
+        weekTaskIds.forEach((id) => next.delete(id));
+      } else {
+        weekTaskIds.forEach((id) => next.add(id));
+      }
+      return Array.from(next);
+    });
+  };
+
+  const openTaskAction = (action: RoadmapTaskAction) => {
+    if (action.special === "jlpt") {
+      onOpenJlptPractice();
+      return;
+    }
+
+    if (action.special === "n5-conjugation") {
+      onOpenN5Conjugation();
+      return;
+    }
+
+    if (action.lessonId && action.modeId) {
+      onOpenPractice(action.lessonId, action.modeId);
+    }
+  };
+
+  return (
+    <main className="jlptPage n4RoadmapPage">
+      <button className="textBack" onClick={onBack}>
+        <span aria-hidden="true">←</span> Trang chủ
+      </button>
+
+      <section className="jlptHero n4RoadmapHero" aria-labelledby="n4-roadmap-title">
+        <div>
+          <span className="sectionKicker">JLPT N4 ROADMAP · 18/08 → 06/12</span>
+          <h1 id="n4-roadmap-title">Chương trình học N4 đến tháng 12</h1>
+          <p>
+            Đi theo checklist từng tuần: học bài mới, ôn từ/Kanji, luyện đọc,
+            luyện nghe và làm đề. Mục tiêu an toàn: mock test đạt 115–125/180.
+          </p>
+        </div>
+        <div className="jlptStats n4RoadmapStats" aria-label="Tiến độ lộ trình N4">
+          <div><strong>{progress}%</strong><span>TIẾN ĐỘ</span></div>
+          <div><strong>{daysLeft}</strong><span>NGÀY CÒN LẠI</span></div>
+          <div><strong>{completedCount}/{totalTasks}</strong><span>CHECKLIST</span></div>
+        </div>
+      </section>
+
+      <section className="n4RoadmapOverview" aria-label="Việc học hôm nay">
+        <article className="n4TodayCard">
+          <span className="sectionKicker">HÔM NAY</span>
+          <h2>{todayTask}</h2>
+          <p>
+            Tuần hiện tại: <strong>{currentWeek.badge}</strong> · {currentWeek.title}
+          </p>
+          <div className="n4ProgressTrack" aria-label={`Tiến độ ${progress}%`}>
+            <span style={{ width: `${progress}%` }} />
+          </div>
+        </article>
+        <article className="n4ReminderCard">
+          <span className="sectionKicker">CẦN ÔN / CHƯA XONG</span>
+          {overdueTasks.length ? (
+            <ul>
+              {overdueTasks.map((item) => (
+                <li key={item.id}>
+                  <strong>{item.week.badge}</strong>
+                  <span>{item.task}</span>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p>Đẹp rồi. Không còn mục tồn trong tuần hiện tại và các tuần trước.</p>
+          )}
+        </article>
+      </section>
+
+      <section className="n4RoadmapWeeks" aria-label="Checklist từng tuần N4">
+        {N4_ROADMAP_WEEKS.map((week, weekIndex) => {
+          const weekTaskIds = week.tasks.map((_, taskIndex) =>
+            getRoadmapTaskId(week.id, taskIndex),
+          );
+          const weekDoneCount = weekTaskIds.filter((id) => completedSet.has(id)).length;
+          const weekDone = weekDoneCount === week.tasks.length;
+          const isCurrent = weekIndex === currentWeekIndex;
+
+          return (
+            <article
+              className={`n4WeekCard ${isCurrent ? "current" : ""} ${weekDone ? "done" : ""}`}
+              key={week.id}
+            >
+              <div className="n4WeekHeader">
+                <div>
+                  <span className="sectionKicker">
+                    {week.badge} · {formatRoadmapRange(week)}
+                  </span>
+                  <h2>{week.title}</h2>
+                  <p>{week.focus}</p>
+                </div>
+                <button className="secondaryButton" type="button" onClick={() => toggleWeek(week)}>
+                  {weekDone ? "Bỏ tick tuần" : "Xong tuần này"}
+                </button>
+              </div>
+
+              <div className="n4WeekMeta">
+                <span>{week.lessons}</span>
+                <span>{weekDoneCount}/{week.tasks.length} mục xong</span>
+              </div>
+
+              <div className="n4GoalList">
+                {week.goals.map((goal) => (
+                  <span key={goal}>{goal}</span>
+                ))}
+              </div>
+
+              <div className="n4Checklist">
+                {week.tasks.map((task, taskIndex) => {
+                  const taskId = getRoadmapTaskId(week.id, taskIndex);
+                  const done = completedSet.has(taskId);
+                  const taskAction = getRoadmapTaskAction(week, task);
+                  return (
+                    <div
+                      key={taskId}
+                      className={`n4ChecklistItem ${done ? "done" : ""}`}
+                    >
+                      <button
+                        className="n4ChecklistToggle"
+                        type="button"
+                        onClick={() => toggleTask(taskId)}
+                        role="checkbox"
+                        aria-checked={done}
+                      >
+                        <span aria-hidden="true">{done ? "✓" : ""}</span>
+                        <strong>{task}</strong>
+                      </button>
+                      <button
+                        className="n4OpenTaskButton"
+                        type="button"
+                        onClick={() => openTaskAction(taskAction)}
+                        aria-label={`${taskAction.label}: ${task}`}
+                      >
+                        {taskAction.label} <ArrowIcon />
+                      </button>
+                    </div>
+                  );
+                })}
+              </div>
+            </article>
+          );
+        })}
+      </section>
+    </main>
   );
 }
 
@@ -5096,8 +6172,8 @@ function PracticeScreen({
   );
   const kanjiWords = kanjiVocabulary[lesson.id] ?? [];
   const vocabularyItems = useMemo(
-    () => buildVocabularyItems(sentences),
-    [sentences],
+    () => buildVocabularyItems(sentences, lesson.id),
+    [lesson.id, sentences],
   );
   const lessonGrammarPoints = grammarPoints[lesson.id] ?? [];
   const total =
@@ -5485,7 +6561,7 @@ function ReviewScreen({ lesson, onBack }: { lesson: Lesson; onBack: () => void }
         front: s.full_japanese,
         back: s.full_vietnamese
       }));
-      const vocabItems = buildVocabularyItems(sentences);
+      const vocabItems = buildVocabularyItems(sentences, lesson.id);
       const dueVocab = vocabItems.filter(v => isDueForReview("vocab_" + v.id)).map(v => ({
         id: "vocab_" + v.id,
         type: "vocab" as const,
@@ -5637,6 +6713,7 @@ export function LearningApp() {
   const [questionWordsOpen, setQuestionWordsOpen] = useState(false);
   const [jlptPracticeOpen, setJlptPracticeOpen] = useState(false);
   const [n5ConjugationOpen, setN5ConjugationOpen] = useState(false);
+  const [n4RoadmapOpen, setN4RoadmapOpen] = useState(false);
   const [theme, setTheme] = useState<ThemeMode>("light");
   const [themePreferenceReady, setThemePreferenceReady] = useState(false);
   const [showFurigana, setShowFurigana] = useState(true);
@@ -5700,7 +6777,44 @@ export function LearningApp() {
     setQuestionWordsOpen(false);
     setJlptPracticeOpen(false);
     setN5ConjugationOpen(false);
+    setN4RoadmapOpen(false);
     window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const openLessonPractice = (lessonId: number, modeId: ModeId) => {
+    const fallbackLesson = lessonFallback[lessonId - 1];
+    if (!fallbackLesson) return;
+
+    setLesson({
+      ...fallbackLesson,
+      sentence_count: authoredSentenceCounts[lessonId] ?? fallbackLesson.sentence_count,
+    });
+    setMode(modeId);
+    setQuestionWordsOpen(false);
+    setJlptPracticeOpen(false);
+    setN5ConjugationOpen(false);
+    setN4RoadmapOpen(false);
+    window.scrollTo(0, 0);
+  };
+
+  const openJlptPractice = () => {
+    setLesson(null);
+    setMode(null);
+    setQuestionWordsOpen(false);
+    setJlptPracticeOpen(true);
+    setN5ConjugationOpen(false);
+    setN4RoadmapOpen(false);
+    window.scrollTo(0, 0);
+  };
+
+  const openN5Conjugation = () => {
+    setLesson(null);
+    setMode(null);
+    setQuestionWordsOpen(false);
+    setJlptPracticeOpen(false);
+    setN5ConjugationOpen(true);
+    setN4RoadmapOpen(false);
+    window.scrollTo(0, 0);
   };
 
   return (
@@ -5717,17 +6831,26 @@ export function LearningApp() {
         onToggleFurigana={() => setShowFurigana((current) => !current)}
       />
       <AiChatBox lesson={lesson} />
-      {!lesson && !questionWordsOpen && !jlptPracticeOpen && !n5ConjugationOpen && (
+      {!lesson && !questionWordsOpen && !jlptPracticeOpen && !n5ConjugationOpen && !n4RoadmapOpen && (
         <Dashboard
           onSelect={(selected) => { setLesson(selected); window.scrollTo(0, 0); }}
           onQuestionWords={() => { setQuestionWordsOpen(true); window.scrollTo(0, 0); }}
-          onJlptPractice={() => { setJlptPracticeOpen(true); window.scrollTo(0, 0); }}
-          onN5Conjugation={() => { setN5ConjugationOpen(true); window.scrollTo(0, 0); }}
+          onJlptPractice={openJlptPractice}
+          onN5Conjugation={openN5Conjugation}
+          onN4Roadmap={() => { setN4RoadmapOpen(true); window.scrollTo(0, 0); }}
         />
       )}
       {questionWordsOpen && <QuestionWordsScreen onBack={goHome} />}
       {jlptPracticeOpen && <JlptPracticeScreen onBack={goHome} />}
       {n5ConjugationOpen && <N5ConjugationScreen onBack={goHome} />}
+      {n4RoadmapOpen && (
+        <N4RoadmapScreen
+          onBack={goHome}
+          onOpenPractice={openLessonPractice}
+          onOpenJlptPractice={openJlptPractice}
+          onOpenN5Conjugation={openN5Conjugation}
+        />
+      )}
       {lesson && !mode && (
         <LessonMenu
           lesson={lesson}

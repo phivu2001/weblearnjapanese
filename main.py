@@ -221,6 +221,53 @@ def extract_gemini_reply(data: dict[str, object]) -> str:
     return "".join(reply_parts).strip()
 
 
+GEMINI_DEFAULT_API_BASE = "https://generativelanguage.googleapis.com/v1beta"
+
+
+def get_gemini_api_key() -> str:
+    return (os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY") or "").strip()
+
+
+def get_gemini_model() -> str:
+    return os.getenv("GEMINI_MODEL", "gemini-3.1-flash-lite").strip().removeprefix("models/")
+
+
+def get_gemini_api_base() -> str:
+    return os.getenv("GEMINI_API_BASE", GEMINI_DEFAULT_API_BASE).strip().rstrip("/")
+
+
+def build_gemini_url(model: str, action: str) -> str:
+    return f"{get_gemini_api_base()}/models/{model}:{action}"
+
+
+def looks_like_google_ai_studio_key(api_key: str) -> bool:
+    # Google AI Studio API keys normally start with "AIza". Avoid logging or exposing
+    # the actual key; this only helps users catch a copied wrong token quickly.
+    return api_key.startswith("AIza") and len(api_key) >= 30
+
+
+def build_gemini_connection_error_reply(exc: httpx.HTTPError, api_key: str, model: str) -> str:
+    key_hint = ""
+    if api_key and not looks_like_google_ai_studio_key(api_key):
+        key_hint = (
+            "\n\nLưu ý: GEMINI_API_KEY hiện tại không giống định dạng key Google AI Studio "
+            "(thường bắt đầu bằng “AIza…”). Nếu bạn lấy nhầm token từ nơi khác, hãy tạo lại key "
+            "trong Google AI Studio rồi thay vào file .env."
+        )
+
+    return (
+        "Mình đã nhận được Gemini API key, nhưng máy hiện chưa mở được kết nối tới Gemini.\n\n"
+        f"Model đang dùng: {model}\n"
+        f"Lỗi kỹ thuật: {exc.__class__.__name__}\n\n"
+        "Bạn kiểm tra theo thứ tự này nhé:\n"
+        "1. Máy có vào được https://generativelanguage.googleapis.com không.\n"
+        "2. VPN/proxy/firewall có chặn Google API không.\n"
+        "3. Key có phải key tạo từ Google AI Studio không.\n"
+        "4. Sau khi sửa .env, tắt cửa sổ .bat cũ rồi mở lại."
+        f"{key_hint}"
+    )
+
+
 def get_lesson_or_404(lesson_id: int, db: Session) -> Lesson:
     lesson = db.get(Lesson, lesson_id)
     if lesson is None:
@@ -235,15 +282,15 @@ def health_check() -> HealthResponse:
 
 @app.post("/api/ai-chat", response_model=ChatResponse, tags=["AI Tutor"])
 async def ai_chat(payload: ChatRequest) -> ChatResponse:
-    api_key = os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
+    api_key = get_gemini_api_key()
     if not api_key:
         return ChatResponse(reply=build_gemini_fallback_chat_reply(payload), source="fallback")
 
-    model = os.getenv("GEMINI_MODEL", "gemini-2.5-flash").removeprefix("models/")
+    model = get_gemini_model()
     try:
         async with httpx.AsyncClient(timeout=35) as client:
             response = await client.post(
-                f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
+                build_gemini_url(model, "generateContent"),
                 params={"key": api_key},
                 json=build_gemini_request_body(payload),
             )
@@ -268,10 +315,7 @@ async def ai_chat(payload: ChatRequest) -> ChatResponse:
         )
     except httpx.HTTPError as exc:
         return ChatResponse(
-            reply=(
-                "Mình đã nhận được Gemini API key, nhưng chưa kết nối được tới Gemini lúc này.\n\n"
-                f"Lỗi kỹ thuật: {exc.__class__.__name__}. Hãy kiểm tra mạng rồi thử lại."
-            ),
+            reply=build_gemini_connection_error_reply(exc, api_key, model),
             source=f"gemini-fallback:{exc.__class__.__name__}",
         )
 
@@ -281,16 +325,16 @@ async def ai_chat(payload: ChatRequest) -> ChatResponse:
 
 
 async def iter_gemini_text_stream(payload: ChatRequest):
-    api_key = os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
+    api_key = get_gemini_api_key()
     if not api_key:
         yield build_gemini_fallback_chat_reply(payload)
         return
 
-    model = os.getenv("GEMINI_MODEL", "gemini-2.5-flash").removeprefix("models/")
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:streamGenerateContent"
+    model = get_gemini_model()
+    url = build_gemini_url(model, "streamGenerateContent")
 
     try:
-        async with httpx.AsyncClient(timeout=None) as client:
+        async with httpx.AsyncClient(timeout=httpx.Timeout(60, connect=10)) as client:
             async with client.stream(
                 "POST",
                 url,
@@ -323,10 +367,49 @@ async def iter_gemini_text_stream(payload: ChatRequest):
                     if text:
                         yield text
     except httpx.HTTPError as exc:
-        yield (
-            "Mình đã nhận được Gemini API key, nhưng chưa kết nối được tới Gemini lúc này.\n\n"
-            f"Lỗi kỹ thuật: {exc.__class__.__name__}. Hãy kiểm tra mạng rồi thử lại."
+        yield build_gemini_connection_error_reply(exc, api_key, model)
+
+
+@app.get("/api/ai-chat/status", tags=["AI Tutor"])
+async def ai_chat_status() -> dict[str, object]:
+    api_key = get_gemini_api_key()
+    model = get_gemini_model()
+    status: dict[str, object] = {
+        "key_present": bool(api_key),
+        "key_looks_like_google_ai_studio": looks_like_google_ai_studio_key(api_key)
+        if api_key
+        else False,
+        "model": model,
+        "api_base": get_gemini_api_base(),
+        "ok": False,
+    }
+    if not api_key:
+        status["message"] = "Chưa có GEMINI_API_KEY trong file .env."
+        return status
+
+    try:
+        async with httpx.AsyncClient(timeout=httpx.Timeout(12, connect=6)) as client:
+            response = await client.get(
+                f"{get_gemini_api_base()}/models/{model}",
+                params={"key": api_key},
+            )
+            if response.status_code == 200:
+                status["ok"] = True
+                status["message"] = "Kết nối Gemini OK."
+            else:
+                status["status_code"] = response.status_code
+                try:
+                    error = response.json().get("error", {})
+                except ValueError:
+                    error = {}
+                status["message"] = error.get("message") or response.text[:500]
+    except httpx.HTTPError as exc:
+        status["error_type"] = exc.__class__.__name__
+        status["message"] = (
+            "Không kết nối được tới Gemini. Hãy kiểm tra mạng, VPN/proxy/firewall "
+            "hoặc key Google AI Studio."
         )
+    return status
 
 
 @app.post("/api/ai-chat/stream", tags=["AI Tutor"])
@@ -343,9 +426,25 @@ def ai_chat_stream_health() -> dict[str, str]:
     return {"status": "ok", "mode": "gemini-stream"}
 
 
-@app.get("/api/lessons", response_model=list[LessonResponse], tags=["Lessons"])
-def list_lessons(db: Session = Depends(get_db)) -> list[Lesson]:
-    return list(db.scalars(select(Lesson).order_by(Lesson.id)).all())
+@app.get("/api/lessons", response_model=list[LessonDetailResponse], tags=["Lessons"])
+def list_lessons(db: Session = Depends(get_db)) -> list[LessonDetailResponse]:
+    lessons = db.scalars(select(Lesson).order_by(Lesson.id)).all()
+    return [
+        LessonDetailResponse(
+            id=lesson.id,
+            title=lesson.title,
+            description=lesson.description,
+            sentence_count=db.scalar(
+                select(func.count(Sentence.id)).where(Sentence.lesson_id == lesson.id)
+            )
+            or 0,
+            passage_count=db.scalar(
+                select(func.count(Passage.id)).where(Passage.lesson_id == lesson.id)
+            )
+            or 0,
+        )
+        for lesson in lessons
+    ]
 
 
 @app.get(

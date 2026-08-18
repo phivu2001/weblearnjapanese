@@ -801,6 +801,22 @@ footer {
   color: #4e9b7d;
 }
 
+.n4RoadmapSpecialLesson {
+  border-color: rgba(91, 159, 201, 0.32);
+  background:
+    radial-gradient(circle at 82% 15%, rgba(116, 189, 162, 0.24), transparent 34%),
+    linear-gradient(115deg, rgba(227, 239, 248, 0.88), rgba(255, 252, 246, 0.78));
+}
+
+.n4RoadmapSpecialLesson::before {
+  content: "道程";
+  color: rgba(91, 159, 201, 0.08);
+}
+
+.n4RoadmapMark {
+  color: #4f89b8;
+}
+
 .emptySearch,
 .loadingState,
 .emptyPractice {
@@ -1407,6 +1423,330 @@ footer {
   font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+}
+
+.n4RoadmapPage {
+  padding-bottom: 120px;
+}
+
+.n4RoadmapHero {
+  align-items: center;
+}
+
+.n4RoadmapStats div {
+  background: rgba(255, 252, 246, 0.72);
+  backdrop-filter: blur(14px);
+}
+
+.n4RoadmapOverview {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(310px, 0.9fr);
+  gap: 18px;
+  margin: 26px 0 22px;
+}
+
+.n4TodayCard,
+.n4ReminderCard,
+.n4WeekCard {
+  border: 1px solid var(--line);
+  background: var(--glass-strong);
+  backdrop-filter: blur(14px);
+  box-shadow: var(--shadow-soft);
+}
+
+.n4TodayCard,
+.n4ReminderCard {
+  border-radius: 28px;
+  padding: clamp(22px, 3vw, 32px);
+}
+
+.n4TodayCard {
+  position: relative;
+  overflow: hidden;
+}
+
+.n4TodayCard::after {
+  content: "N4";
+  position: absolute;
+  right: 26px;
+  bottom: -38px;
+  color: rgba(91, 159, 201, 0.07);
+  font-family: Cambria, serif;
+  font-size: 8rem;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.n4TodayCard h2 {
+  max-width: 780px;
+  margin: 9px 0 12px;
+  font-family: Cambria, serif;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 1.08;
+}
+
+.n4TodayCard p,
+.n4ReminderCard p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.n4ProgressTrack {
+  position: relative;
+  height: 13px;
+  margin-top: 24px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: var(--progress-track);
+}
+
+.n4ProgressTrack span {
+  display: block;
+  height: 100%;
+  min-width: 8px;
+  border-radius: inherit;
+  background: var(--progress-fill);
+  transition: width 260ms ease;
+}
+
+.n4ReminderCard ul {
+  display: grid;
+  gap: 10px;
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.n4ReminderCard li {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  align-items: start;
+  gap: 10px;
+  border: 1px solid rgba(239, 113, 94, 0.18);
+  border-radius: 16px;
+  background: rgba(239, 113, 94, 0.07);
+  padding: 11px 12px;
+}
+
+.n4ReminderCard li strong {
+  color: var(--coral);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.n4ReminderCard li span {
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.n4RoadmapWeeks {
+  display: grid;
+  gap: 18px;
+}
+
+.n4WeekCard {
+  position: relative;
+  overflow: hidden;
+  border-radius: 28px;
+  padding: clamp(22px, 3vw, 30px);
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.n4WeekCard::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-top: 5px solid transparent;
+  pointer-events: none;
+}
+
+.n4WeekCard.current {
+  border-color: rgba(116, 189, 162, 0.58);
+}
+
+.n4WeekCard.current::before {
+  border-top-color: var(--mint);
+}
+
+.n4WeekCard.done {
+  border-color: rgba(116, 189, 162, 0.5);
+  background:
+    radial-gradient(circle at 96% 8%, rgba(116, 189, 162, 0.16), transparent 32%),
+    var(--glass-strong);
+}
+
+.n4WeekCard:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+}
+
+.n4WeekHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 24px;
+}
+
+.n4WeekHeader h2 {
+  margin: 7px 0 8px;
+  font-family: Cambria, serif;
+  font-size: clamp(1.8rem, 3vw, 3rem);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+}
+
+.n4WeekHeader p {
+  max-width: 760px;
+  margin: 0;
+  color: var(--muted);
+}
+
+.n4WeekHeader .secondaryButton {
+  min-width: 150px;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.n4WeekMeta,
+.n4GoalList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.n4WeekMeta {
+  margin-top: 20px;
+}
+
+.n4WeekMeta span,
+.n4GoalList span {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.48);
+  color: var(--muted);
+  padding: 7px 11px;
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.n4GoalList {
+  margin-top: 16px;
+}
+
+.n4GoalList span {
+  border-color: rgba(91, 159, 201, 0.2);
+  background: rgba(91, 159, 201, 0.08);
+  color: #447ea8;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.n4Checklist {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 11px;
+  margin-top: 20px;
+}
+
+.n4ChecklistItem {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  min-height: 64px;
+  border: 1px solid var(--line);
+  border-radius: 17px;
+  background: rgba(255, 255, 255, 0.56);
+  color: var(--ink);
+  padding: 10px;
+  text-align: left;
+  transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+}
+
+.n4ChecklistItem:hover {
+  border-color: var(--mint);
+  background: white;
+  transform: translateY(-2px);
+}
+
+.n4ChecklistToggle {
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 44px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  padding: 3px 5px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.n4ChecklistToggle > span {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: rgba(255, 252, 246, 0.72);
+  color: white;
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.n4ChecklistItem strong {
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.n4OpenTaskButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 38px;
+  border: 1px solid rgba(91, 159, 201, 0.28);
+  border-radius: 999px;
+  background: rgba(91, 159, 201, 0.1);
+  color: #477da7;
+  padding: 0 13px;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
+}
+
+.n4OpenTaskButton:hover {
+  border-color: rgba(91, 159, 201, 0.48);
+  background: rgba(91, 159, 201, 0.18);
+  transform: translateY(-1px);
+}
+
+.n4ChecklistItem.done {
+  border-color: rgba(116, 189, 162, 0.56);
+  background: rgba(116, 189, 162, 0.13);
+}
+
+.n4ChecklistItem.done .n4ChecklistToggle > span {
+  border-color: var(--mint);
+  background: var(--mint);
+}
+
+.n4ChecklistItem.done strong {
+  color: #357d61;
 }
 
 .conjugationQuestionCard {
@@ -2673,6 +3013,13 @@ ruby rt {
   gap: 24px;
 }
 
+.kanjiWritingHeaderActions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
 .kanjiWritingHeader h2 {
   margin: 6px 0 8px;
   font-family: Cambria, serif;
@@ -3114,6 +3461,123 @@ ruby rt {
 .vocabularyPrompt p {
   margin: 0;
   color: var(--muted);
+}
+
+.vocabularyListButton {
+  width: max-content;
+  margin: 20px auto 0;
+  padding: 11px 17px;
+}
+
+.vocabularyListButton > span {
+  margin-right: 7px;
+  font-size: 16px;
+}
+
+.kanjiListButton {
+  gap: 7px;
+}
+
+.kanjiListButton > span {
+  font-size: 16px;
+}
+
+.vocabularyListModal {
+  width: min(1120px, 100%);
+  max-height: min(90vh, 900px);
+}
+
+.vocabularyListModal .rulesModalHeader {
+  padding: 15px 20px 13px;
+}
+
+.vocabularyListModal .rulesModalHeader h2 {
+  margin-top: 2px;
+  font-size: clamp(1.55rem, 3vw, 2.15rem);
+}
+
+.vocabularyListModal .rulesModalHeader button {
+  width: 36px;
+  height: 36px;
+  font-size: 20px;
+}
+
+.vocabularyListBody {
+  padding: 12px 18px 18px;
+}
+
+.vocabularyTableScroll {
+  overflow: auto;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+}
+
+.vocabularyListTable {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--ink);
+  font-size: 12px;
+  line-height: 1.25;
+}
+
+.vocabularyListTable th,
+.vocabularyListTable td {
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 7px 10px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.vocabularyListTable th:last-child,
+.vocabularyListTable td:last-child {
+  border-right: 0;
+}
+
+.vocabularyListTable tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.vocabularyListTable th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: color-mix(in srgb, var(--coral) 15%, var(--paper));
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.vocabularyListTable th:first-child,
+.vocabularyListTable td:first-child,
+.vocabularyListTable td:nth-child(2) {
+  width: 29%;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.vocabularyListTable tbody tr:nth-child(even) td {
+  background: color-mix(in srgb, var(--mint) 5%, transparent);
+}
+
+.vocabularyListTable tbody tr:hover td {
+  background: color-mix(in srgb, var(--mint) 12%, transparent);
+}
+
+.kanjiListModal {
+  width: min(860px, 100%);
+}
+
+.kanjiListTable th:first-child,
+.kanjiListTable td:first-child,
+.kanjiListTable td:nth-child(2) {
+  width: 28%;
+}
+
+.kanjiListTable td:first-child {
+  font-size: 1.15rem;
 }
 
 .vocabularyOptions {
@@ -3840,6 +4304,12 @@ footer > span {
   .kanjiComponentPill,
   .kanjiReadingGrid > div,
   .kanjiWordExample,
+  .n4TodayCard,
+  .n4ReminderCard,
+  .n4WeekCard,
+  .n4ChecklistItem,
+  .n4WeekMeta span,
+  .n4GoalList span,
   .searchBox,
   .rangeTabs,
   .jlptTabs,
@@ -3913,6 +4383,43 @@ footer > span {
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.28);
 }
 
+:root[data-theme="dark"] .n4TodayCard::after {
+  color: rgba(124, 199, 255, 0.055);
+}
+
+:root[data-theme="dark"] .n4ReminderCard li {
+  border-color: rgba(255, 138, 118, 0.24);
+  background: rgba(255, 138, 118, 0.1);
+}
+
+:root[data-theme="dark"] .n4GoalList span {
+  color: #a9d9ff;
+  border-color: rgba(124, 199, 255, 0.2);
+  background: rgba(124, 199, 255, 0.1);
+}
+
+:root[data-theme="dark"] .n4ChecklistItem:hover {
+  background: rgba(30, 41, 59, 0.88);
+}
+
+:root[data-theme="dark"] .n4ChecklistItem.done {
+  background: rgba(125, 216, 184, 0.15);
+}
+
+:root[data-theme="dark"] .n4ChecklistItem.done strong {
+  color: #9ff2d2;
+}
+
+:root[data-theme="dark"] .n4OpenTaskButton {
+  border-color: rgba(125, 216, 184, 0.32);
+  background: rgba(125, 216, 184, 0.12);
+  color: #a5f3d2;
+}
+
+:root[data-theme="dark"] .n4OpenTaskButton:hover {
+  background: rgba(125, 216, 184, 0.2);
+}
+
 :root[data-theme="dark"] :where(.primaryCta, .primaryButton, .checkButton, .secondaryButton, .specialLessonButton, .exerciseNav > .nextStep) {
   background: #e8f5ef;
   color: #0f172a;
@@ -3979,6 +4486,8 @@ footer > span {
   .modeGrid { grid-template-columns: repeat(2, 1fr); }
   .jlptGroupGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .jlptTestGrid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .n4RoadmapOverview { grid-template-columns: 1fr; }
+  .n4Checklist { grid-template-columns: 1fr; }
   .n5ConjugationPromo { grid-template-columns: 1fr auto; }
   .n5ConjugationPromo .secondaryButton { grid-column: 1 / -1; width: max-content; }
   .ruleGrid,
@@ -4023,6 +4532,12 @@ footer > span {
   .jlptHero { grid-template-columns: 1fr; align-items: start; gap: 22px; }
   .jlptStats { width: 100%; justify-content: space-between; }
   .jlptStats div { flex: 1; min-width: 0; }
+  .n4RoadmapOverview { margin-top: 18px; }
+  .n4WeekHeader { flex-direction: column; }
+  .n4WeekHeader .secondaryButton { width: 100%; }
+  .n4ChecklistItem { grid-template-columns: 1fr; }
+  .n4OpenTaskButton { width: 100%; }
+  .n4ReminderCard li { grid-template-columns: 1fr; }
   .jlptTabs { width: 100%; overflow-x: auto; }
   .jlptTabs button { flex: 1 0 auto; }
   .jlptGroupGrid { grid-template-columns: 1fr; }
@@ -4058,6 +4573,7 @@ footer > span {
   .kanjiOptions { grid-template-columns: 1fr; }
   .kanjiReadingOptions { grid-template-columns: 1fr; }
   .kanjiWritingHeader { flex-direction: column; }
+  .kanjiWritingHeaderActions { width: 100%; justify-content: flex-start; }
   .kanjiWritingTabs { width: 100%; }
   .kanjiWritingTabs button { flex: 1; }
   .kanjiWritingStage,
@@ -4070,6 +4586,8 @@ footer > span {
   .kanjiWordExample { min-width: min(100%, 190px); flex: 1 1 170px; }
   .questionWordOptions { grid-template-columns: 1fr; }
   .vocabularyOptions { grid-template-columns: 1fr; }
+  .vocabularyListTable { min-width: 520px; }
+  .vocabularyListButton { width: 100%; }
   .reviewRatingActions { grid-template-columns: 1fr; }
   .modeCard { min-height: 315px; }
   .practiceHeader { grid-template-columns: 48px 1fr; }

@@ -41,7 +41,9 @@ test("edge API mirrors the read-only learning data", async () => {
     ctx,
   );
   assert.equal(lessonsResponse.status, 200);
-  assert.equal((await lessonsResponse.json()).length, 50);
+  const lessons = await lessonsResponse.json();
+  assert.equal(lessons.length, 50);
+  assert.equal(lessons.at(-1).id, 50);
 
   const sentencesResponse = await worker.fetch(
     new Request("http://localhost/api/lessons/1/sentences"),
@@ -81,6 +83,31 @@ test("edge API mirrors the read-only learning data", async () => {
     [23, 24],
     [24, 24],
     [25, 24],
+    [26, 10],
+    [27, 10],
+    [28, 10],
+    [29, 10],
+    [30, 10],
+    [31, 10],
+    [32, 10],
+    [33, 10],
+    [34, 10],
+    [35, 10],
+    [36, 10],
+    [37, 10],
+    [38, 10],
+    [39, 10],
+    [40, 10],
+    [41, 10],
+    [42, 10],
+    [43, 10],
+    [44, 10],
+    [45, 10],
+    [46, 10],
+    [47, 10],
+    [48, 10],
+    [49, 10],
+    [50, 10],
   ]) {
     const response = await worker.fetch(
       new Request(`http://localhost/api/lessons/${lessonId}/sentences`),
