@@ -247,6 +247,237 @@ async function handleAiChatStream(payload: ChatPayload, env: Env): Promise<Respo
   }
 }
 
+type PronunciationEvaluatePayload = {
+  target?: string;
+  transcript?: string;
+  chunks?: string[];
+  variants?: string[];
+  chunk_variants?: string[][];
+};
+
+type RoleplayPayload = {
+  scenario?: string;
+  target_grammar?: string;
+  ai_role?: string;
+  level?: string;
+  script_preference?: string;
+  messages?: ChatMessage[];
+};
+
+const roleplayScenarios = [
+  { scenario: "Ở nhà hàng", ai_role: "Nhân viên phục vụ", target_grammar: "〜てください", description: "Gọi món, yêu cầu nước hoặc hỏi thực đơn." },
+  { scenario: "Ở nhà ga", ai_role: "Nhân viên nhà ga", target_grammar: "〜へ行きたいです / 〜はどこですか", description: "Hỏi đường, mua vé, hỏi sân ga." },
+  { scenario: "Ở lớp học", ai_role: "Giáo viên tiếng Nhật", target_grammar: "〜てもいいですか / 〜てはいけません", description: "Xin phép, hỏi quy định trong lớp." },
+  { scenario: "Rủ bạn đi chơi", ai_role: "Bạn người Nhật", target_grammar: "〜ませんか / 〜ましょう", description: "Mời đi ăn, xem phim, học chung." },
+];
+
+function normalizeForJapaneseSpeech(value = "") {
+  return value
+    .normalize("NFKC")
+    .replace(/[\s、。？！?!.・「」『』（）()\[\]【】…,.，;；:：~〜\-]+/gu, "")
+    .trim()
+    .toLocaleLowerCase("ja");
+}
+
+function workerLevenshteinDistance(left: string, right: string) {
+  if (left === right) return 0;
+  if (!left) return right.length;
+  if (!right) return left.length;
+
+  let previous = Array.from({ length: right.length + 1 }, (_, index) => index);
+  for (let leftIndex = 0; leftIndex < left.length; leftIndex += 1) {
+    const current = [leftIndex + 1];
+    for (let rightIndex = 0; rightIndex < right.length; rightIndex += 1) {
+      current.push(
+        Math.min(
+          current[rightIndex] + 1,
+          previous[rightIndex + 1] + 1,
+          previous[rightIndex] + (left[leftIndex] === right[rightIndex] ? 0 : 1),
+        ),
+      );
+    }
+    previous = current;
+  }
+  return previous[right.length];
+}
+
+function workerSimilarityScore(target: string, transcript: string, variants: string[] = []) {
+  const normalizedTranscript = normalizeForJapaneseSpeech(transcript);
+  const targets = [target, ...variants].map(normalizeForJapaneseSpeech).filter(Boolean);
+  if (!targets.length && !normalizedTranscript) return 100;
+  if (!targets.length || !normalizedTranscript) return 0;
+  return Math.max(
+    0,
+    ...targets.map((candidate) => {
+      const distance = workerLevenshteinDistance(candidate, normalizedTranscript);
+      const maxLength = Math.max(candidate.length, normalizedTranscript.length, 1);
+      return Math.max(0, Math.min(100, Math.round((1 - distance / maxLength) * 100)));
+    }),
+  );
+}
+
+function splitWorkerTargetTokens(target: string, chunks?: string[]) {
+  const chunkTokens = chunks?.map((chunk) => chunk.trim()).filter(Boolean) ?? [];
+  if (chunkTokens.length) return chunkTokens;
+  const spaced = target.split(/\s+/).filter(Boolean);
+  return spaced.length ? spaced : [...target].filter((character) => normalizeForJapaneseSpeech(character));
+}
+
+function workerPronunciationFeedback(payload: PronunciationEvaluatePayload) {
+  const target = payload.target ?? "";
+  const transcript = payload.transcript ?? "";
+  const transcriptKey = normalizeForJapaneseSpeech(transcript);
+  let cursor = 0;
+  const tokens = splitWorkerTargetTokens(target, payload.chunks).map((token, tokenIndex) => {
+    const keys = [token, ...(payload.chunk_variants?.[tokenIndex] ?? [])]
+      .map(normalizeForJapaneseSpeech)
+      .filter(Boolean);
+    let matched = false;
+    let matchedIndex = -1;
+    let matchedLength = 0;
+    for (const key of keys) {
+      const localIndex = transcriptKey.indexOf(key, cursor);
+      const globalIndex = localIndex >= 0 ? localIndex : transcriptKey.indexOf(key);
+      if (globalIndex >= 0) {
+        matched = true;
+        matchedIndex = globalIndex;
+        matchedLength = key.length;
+        break;
+      }
+    }
+    if (matched) cursor = matchedIndex + matchedLength;
+    return { target: token, spoken: matched ? transcript : null, matched };
+  });
+
+  return {
+    score: workerSimilarityScore(target, transcript, payload.variants ?? []),
+    normalized_target: normalizeForJapaneseSpeech(target),
+    normalized_transcript: transcriptKey,
+    tokens,
+  };
+}
+
+function buildRoleplayOpeningMessage(payload: RoleplayPayload) {
+  const scenarioKey = (payload.scenario ?? "").normalize("NFKC").toLocaleLowerCase("vi");
+  const grammar = payload.target_grammar?.trim() || "今日の文法";
+  const hint = `『${grammar}』を使って、短く答えてください。`;
+  if (scenarioKey.includes("nhà hàng") || scenarioKey.includes("restaurant") || scenarioKey.includes("レストラン")) {
+    return `いらっしゃいませ。ご注文は何ですか。${hint}`;
+  }
+  if (scenarioKey.includes("nhà ga") || scenarioKey.includes("station") || scenarioKey.includes("駅")) {
+    return `こんにちは。どこへ行きたいですか。${hint}`;
+  }
+  if (scenarioKey.includes("lớp") || scenarioKey.includes("class") || scenarioKey.includes("教室")) {
+    return `こんにちは。きょうは何をしたいですか。${hint}`;
+  }
+  if (scenarioKey.includes("rủ") || scenarioKey.includes("bạn") || scenarioKey.includes("friend") || scenarioKey.includes("友達")) {
+    return `こんにちは。週末、何をしましょうか。${hint}`;
+  }
+  return `こんにちは。ロールプレイを始めましょう。${hint}`;
+}
+
+function buildRoleplaySystemInstruction(payload: RoleplayPayload) {
+  const scenario = payload.scenario?.trim().slice(0, 180) || "Daily conversation";
+  const targetGrammar = payload.target_grammar?.trim().slice(0, 120) || "N5/N4 grammar";
+  const aiRole = payload.ai_role?.trim().slice(0, 120) || "Japanese conversation partner";
+  const level = payload.level?.trim().slice(0, 40) || "N5/N4";
+  const scriptPreference = payload.script_preference?.trim().slice(0, 80) || "kana_with_simple_kanji";
+
+  return [
+    "You are Manabu AI, a Japanese output coach for Vietnamese learners.",
+    `Scenario: ${scenario}`,
+    `AI role: ${aiRole}`,
+    `Learner level: ${level}`,
+    `Target grammar the learner must practice: ${targetGrammar}`,
+    `Script preference: ${scriptPreference}`,
+    "Rules: stay in role-play, keep Japanese short, steer the learner to use target grammar, correct mistakes briefly in Vietnamese first, then continue in Japanese.",
+    "Response format: Sửa nhanh: <Vietnamese correction or Không cần sửa.>\nMẫu đúng: <one model Japanese answer>\nAI: <your in-character Japanese reply>",
+  ].join("\n");
+}
+
+function buildRoleplayGeminiRequestBody(payload: RoleplayPayload) {
+  const contents: GeminiContent[] = [];
+  for (const message of payload.messages?.slice(-14) ?? []) {
+    const content = message.content?.trim();
+    if (!content) continue;
+    contents.push({
+      role: message.role === "assistant" ? "model" : "user",
+      parts: [{ text: content.slice(0, 1400) }],
+    });
+  }
+  while (contents[0]?.role === "model") contents.shift();
+
+  return {
+    systemInstruction: { parts: [{ text: buildRoleplaySystemInstruction(payload) }] },
+    contents: contents.length ? contents : [{ role: "user", parts: [{ text: "Start the role-play." }] }],
+    generationConfig: { temperature: 0.55, maxOutputTokens: 850 },
+  };
+}
+
+async function handleRoleplayStream(payload: RoleplayPayload, env: Env) {
+  const apiKey = env.GEMINI_API_KEY ?? env.GOOGLE_API_KEY;
+  const headers = { "content-type": "text/plain; charset=utf-8", "x-ai-source": "gemini-roleplay-stream" };
+  if (!apiKey) {
+    return new Response([
+      "Sửa nhanh: Chưa có GEMINI_API_KEY nên đây là phiên luyện mẫu offline.",
+      `Mẫu đúng: ${buildRoleplayOpeningMessage(payload)}`,
+      "AI: もう一度、短い日本語で答えてください。",
+    ].join("\n"), { headers: { ...headers, "x-ai-source": "fallback" } });
+  }
+
+  try {
+    const model = (env.GEMINI_MODEL ?? "gemini-3.1-flash-lite").replace(/^models\//, "");
+    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:streamGenerateContent?alt=sse&key=${encodeURIComponent(apiKey)}`, {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(buildRoleplayGeminiRequestBody(payload)),
+    });
+    if (!response.ok) {
+      return new Response([
+        "Sửa nhanh: Chưa gọi được Gemini cho phòng role-play.",
+        "Mẫu đúng: もう一度、短い日本語で言ってください。",
+        `AI: エラー ${response.status} です。あとでまた練習しましょう。`,
+      ].join("\n"), { headers: { ...headers, "x-ai-source": `gemini-error:${response.status}` } });
+    }
+    return new Response(createGeminiPlainTextStream(response), { headers });
+  } catch (error) {
+    return new Response([
+      "Sửa nhanh: Chưa kết nối được Gemini cho role-play.",
+      "Mẫu đúng: もう一度、ゆっくり言ってください。",
+      `AI: すみません。${error instanceof Error ? error.name : "エラー"} です。`,
+    ].join("\n"), { headers: { ...headers, "x-ai-source": "gemini-fallback" } });
+  }
+}
+
+async function handleAiPractice(request: Request, env: Env): Promise<Response | null> {
+  const url = new URL(request.url);
+  if (!url.pathname.startsWith("/api/ai-practice/")) return null;
+
+  if (url.pathname === "/api/ai-practice/pronunciation/status" && request.method === "GET") {
+    return json({ browser_stt: true, recommended_lang: "ja-JP", server_scoring: true });
+  }
+
+  if (url.pathname === "/api/ai-practice/roleplay/scenarios" && request.method === "GET") {
+    return json(roleplayScenarios);
+  }
+
+  if (url.pathname === "/api/ai-practice/roleplay/session" && request.method === "POST") {
+    const payload = await request.json().catch(() => ({})) as RoleplayPayload;
+    return json({ session_id: crypto.randomUUID(), opening_message: buildRoleplayOpeningMessage(payload) });
+  }
+
+  if (url.pathname === "/api/ai-practice/pronunciation/evaluate" && request.method === "POST") {
+    const payload = await request.json().catch(() => ({})) as PronunciationEvaluatePayload;
+    return json(workerPronunciationFeedback(payload));
+  }
+
+  if (url.pathname === "/api/ai-practice/roleplay/chat/stream" && request.method === "POST") {
+    const payload = await request.json().catch(() => ({})) as RoleplayPayload;
+    return handleRoleplayStream(payload, env);
+  }
+
+  return json({ detail: "Không tìm thấy endpoint Phòng AI." }, 404);
+}
 async function handleAiChat(request: Request, env: Env): Promise<Response | null> {
   const url = new URL(request.url);
   if (url.pathname !== "/api/ai-chat" && url.pathname !== "/api/ai-chat/stream") return null;
@@ -322,6 +553,9 @@ async function handleAiChat(request: Request, env: Env): Promise<Response | null
 const worker = {
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
     const url = new URL(request.url);
+
+    const aiPracticeResponse = await handleAiPractice(request, env);
+    if (aiPracticeResponse) return aiPracticeResponse;
 
     const aiResponse = await handleAiChat(request, env);
     if (aiResponse) return aiResponse;

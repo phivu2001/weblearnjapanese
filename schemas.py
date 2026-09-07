@@ -75,3 +75,45 @@ class ChatRequest(BaseModel):
 class ChatResponse(BaseModel):
     reply: str
     source: str = "fallback"
+
+class PronunciationTokenFeedback(BaseModel):
+    target: str
+    spoken: str | None = None
+    matched: bool
+
+
+class PronunciationEvaluateRequest(BaseModel):
+    target: str
+    transcript: str
+    chunks: list[str] | None = None
+    variants: list[str] | None = None
+    chunk_variants: list[list[str]] | None = None
+
+
+class PronunciationEvaluateResponse(BaseModel):
+    score: int
+    normalized_target: str
+    normalized_transcript: str
+    tokens: list[PronunciationTokenFeedback]
+
+
+class RoleplayMessage(BaseModel):
+    role: str
+    content: str
+
+
+class RoleplaySessionRequest(BaseModel):
+    scenario: str
+    target_grammar: str
+    ai_role: str
+    level: str = "N5/N4"
+    script_preference: str = "kana_with_simple_kanji"
+
+
+class RoleplaySessionResponse(BaseModel):
+    session_id: str
+    opening_message: str
+
+
+class RoleplayChatRequest(RoleplaySessionRequest):
+    messages: list[RoleplayMessage]

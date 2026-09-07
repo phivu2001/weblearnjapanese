@@ -26,7 +26,7 @@ test("server-renders the Manabu learning dashboard", async () => {
   assert.match(html, /<title>Manabu — Học tiếng Nhật theo cụm<\/title>/i);
   assert.match(html, /MANABU/);
   assert.match(html, /Học theo cụm/);
-  assert.match(html, /50 BÀI · 9 CÁCH HỌC/);
+  assert.match(html, /50 BÀI · 10 CÁCH HỌC/);
   assert.match(html, /Chọn một bài để bắt đầu/);
   assert.match(html, /Từ để hỏi/);
   assert.match(html, /HỌC.*66.*CÂU HỎI/s);

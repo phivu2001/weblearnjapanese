@@ -80,6 +80,7 @@ type Passage = {
 };
 
 type ModeId =
+  | "core-chunks"
   | "cloze"
   | "scramble"
   | "dictation"
@@ -112,6 +113,29 @@ type VocabularyQuizItem = {
   japanese: string;
   kana?: string;
   vietnamese: string;
+};
+
+type CoreChunkSlot = {
+  label: string;
+  examples: string[];
+};
+
+type CoreChunkExample = {
+  japanese: string;
+  romaji: string;
+  vietnamese: string;
+};
+
+type CoreChunkItem = {
+  id: string;
+  lessonId: number;
+  japanese: string;
+  naturalMeaning: string;
+  functionLabel: string;
+  situation: string;
+  variants: string[];
+  slots: CoreChunkSlot[];
+  examples: CoreChunkExample[];
 };
 
 type GrammarPoint = {
@@ -192,6 +216,36 @@ type AiChatResponse = {
   reply: string;
   source: string;
 };
+
+type PronunciationTokenFeedback = {
+  target: string;
+  spoken: string | null;
+  matched: boolean;
+};
+
+type PronunciationEvaluateResponse = {
+  score: number;
+  normalized_target: string;
+  normalized_transcript: string;
+  tokens: PronunciationTokenFeedback[];
+};
+
+type RoleplayScenario = {
+  scenario: string;
+  ai_role: string;
+  target_grammar: string;
+  description: string;
+};
+
+type RoleplayConfig = {
+  scenario: string;
+  ai_role: string;
+  target_grammar: string;
+  level: string;
+  script_preference: string;
+};
+
+type AiPracticeTab = "pronunciation" | "roleplay";
 
 type ThemeMode = "light" | "dark";
 
@@ -301,6 +355,14 @@ type SpeechRecognitionLike = {
 
 type SpeechRecognitionConstructor = new () => SpeechRecognitionLike;
 
+function getSpeechRecognitionConstructor(): SpeechRecognitionConstructor | null {
+  if (typeof window === "undefined") return null;
+  const speechWindow = window as Window & {
+    SpeechRecognition?: SpeechRecognitionConstructor;
+    webkitSpeechRecognition?: SpeechRecognitionConstructor;
+  };
+  return speechWindow.SpeechRecognition ?? speechWindow.webkitSpeechRecognition ?? null;
+}
 const API_BASE =
   typeof process !== "undefined" && process.env.VITE_API_URL
     ? process.env.VITE_API_URL
@@ -341,7 +403,32 @@ const lessonFallback: Lesson[] = Array.from({ length: 50 }, (_, index) => ({
     "Khi, lúc và kết quả tự nhiên",
     "Cho và nhận sự giúp đỡ",
     "Điều kiện và nhượng bộ",
-  ][index] ?? "Nội dung Minna no Nihongo",
+    "Giải thích nguyên nhân",
+    "Khả năng và giác quan",
+    "Hành động đồng thời",
+    "Tự động từ và trạng thái",
+    "Chuẩn bị và hoàn tất",
+    "Ý định và kế hoạch",
+    "Lời khuyên và suy đoán",
+    "Mệnh lệnh và truyền đạt",
+    "Bị động",
+    "Danh từ hóa hành động",
+    "Mục đích và công dụng",
+    "Trạng thái kết quả",
+    "Điều kiện cần thiết",
+    "Nguyên nhân và hệ quả",
+    "Hỏi gián tiếp và thử làm",
+    "Cho và nhận lịch sự",
+    "Mục đích và nỗ lực",
+    "Vẻ ngoài và xu hướng",
+    "Giả định và nhượng bộ",
+    "Trường hợp và hoàn cảnh",
+    "Cấu trúc ところ và vừa mới",
+    "Truyền đạt thông tin",
+    "Thể sai khiến",
+    "Kính ngữ",
+    "Khiêm nhường ngữ",
+  ][index] ?? "Nội dung đang cập nhật",
 }));
 
 const authoredSentenceCounts: Record<number, number> = {
@@ -407,12 +494,12 @@ const modes: Array<{
   accent: string;
 }> = [
   {
-    id: "vocabulary",
+    id: "core-chunks",
     number: "A",
-    glyph: "単",
-    title: "Học từ vựng",
-    japanese: "単語",
-    description: "Nhìn từ hoặc cụm tiếng Nhật và chọn đúng nghĩa tiếng Việt.",
+    glyph: "塊",
+    title: "Học cụm cốt lõi",
+    japanese: "コアチャンク",
+    description: "Nắm các cụm câu dùng ngay: nghĩa tự nhiên, chức năng, chỗ thay thế và ví dụ.",
     accent: "mint",
   },
   {
@@ -423,6 +510,15 @@ const modes: Array<{
     japanese: "文法",
     description: "Học công thức, đọc ví dụ và chọn thành phần đúng cho câu.",
     accent: "coral",
+  },
+  {
+    id: "vocabulary",
+    number: "C",
+    glyph: "単",
+    title: "Từ vựng bổ trợ",
+    japanese: "単語",
+    description: "Ôn từ đơn và cụm danh từ hỗ trợ cho bài học sau khi đã nắm cụm cốt lõi.",
+    accent: "mint",
   },
   {
     id: "cloze",
@@ -2167,7 +2263,11 @@ function getRoadmapTaskAction(week: N4RoadmapWeek, task: string): RoadmapTaskAct
     return { label: `Mở đọc bài ${lessonId}`, lessonId, modeId: "reading" };
   }
 
-  if (normalizedTask.includes("ghép") || normalizedTask.includes("chunk")) {
+  if (normalizedTask.includes("chunk") || normalizedTask.includes("cụm")) {
+    return { label: `Mở cụm cốt lõi bài ${lessonId}`, lessonId, modeId: "core-chunks" };
+  }
+
+  if (normalizedTask.includes("ghép")) {
     return { label: `Mở ghép câu bài ${lessonId}`, lessonId, modeId: "scramble" };
   }
 
@@ -2184,12 +2284,14 @@ function Dashboard({
   onJlptPractice,
   onN5Conjugation,
   onN4Roadmap,
+  onAiPractice,
 }: {
   onSelect: (lesson: Lesson) => void;
   onQuestionWords: () => void;
   onJlptPractice: () => void;
   onN5Conjugation: () => void;
   onN4Roadmap: () => void;
+  onAiPractice: () => void;
 }) {
   const [lessons, setLessons] = useState<Lesson[]>(lessonFallback);
   const [query, setQuery] = useState("");
@@ -2227,7 +2329,7 @@ function Dashboard({
       <section className="hero" aria-labelledby="hero-title">
         <div className="heroCopy">
           <div className="eyebrow">
-            <span>50 BÀI · 9 CÁCH HỌC</span>
+            <span>50 BÀI · 10 CÁCH HỌC</span>
             <i />
             <span>MINNA NO NIHONGO</span>
           </div>
@@ -2347,14 +2449,28 @@ function Dashboard({
             HỌC {questionWordItems.length} CÂU HỎI <ArrowIcon />
           </button>
         </section>
+        <section className="specialLesson aiPracticeSpecialLesson" aria-labelledby="ai-practice-home-title">
+          <div className="specialLessonCopy">
+            <span className="sectionKicker">AI OUTPUT · NGOÀI 50 BÀI</span>
+            <h3 id="ai-practice-home-title">Phòng Luyện Tập AI</h3>
+            <p>
+              Luyện nói câu tiếng Nhật, nhận điểm phát âm theo từng chunk và chat nhập vai
+              để buộc bản thân dùng đúng mẫu ngữ pháp N5/N4.
+            </p>
+          </div>
+          <div className="specialQuestionMark aiPracticeMark" aria-hidden="true">話</div>
+          <button className="specialLessonButton" onClick={onAiPractice}>
+            VÀO PHÒNG AI <ArrowIcon />
+          </button>
+        </section>
         <section className="specialLesson jlptSpecialLesson" aria-labelledby="jlpt-practice-title">
           <div className="specialLessonCopy">
             <span className="sectionKicker">LUYỆN ĐỀ N5 · NGOÀI 50 BÀI</span>
             <h3 id="jlpt-practice-title">Luyện kỹ năng JLPT và đề thi thử</h3>
             <p>
-              Clone cấu trúc gồm {jlptPracticeStats.skillGroups} nhóm kỹ năng,
-              {jlptPracticeStats.skillTests} đề nhỏ và {jlptPracticeStats.mockTests} đề thi thử.
-              Dữ liệu mẫu là bộ câu hỏi gốc để bạn thay bằng nội dung hợp lệ khi có file.
+              Luyện theo từng nhóm kỹ năng JLPT N5 với {jlptPracticeStats.skillTests} đề nhỏ
+              và {jlptPracticeStats.mockTests} đề thi thử mô phỏng. Mỗi phần giúp bạn quen
+              dạng câu hỏi, tăng tốc độ làm bài và theo dõi điểm yếu trước ngày thi.
             </p>
           </div>
           <div className="specialQuestionMark jlptMark" aria-hidden="true">試</div>
@@ -2407,10 +2523,10 @@ function LessonMenu({
 }) {
   const [detail, setDetail] = useState(lesson);
   const coreModes = modes.filter((mode) =>
-    mode.id === "vocabulary" || mode.id === "grammar",
+    mode.id === "core-chunks" || mode.id === "grammar",
   );
   const practiceModes = modes.filter((mode) =>
-    mode.id !== "vocabulary" && mode.id !== "grammar",
+    mode.id !== "core-chunks" && mode.id !== "grammar",
   );
 
   const [sentences, setSentences] = useState<Sentence[]>([]);
@@ -2432,9 +2548,15 @@ function LessonMenu({
     () => buildVocabularyItems(sentences, lesson.id),
     [lesson.id, sentences],
   );
+  const coreChunkItems = useMemo(
+    () => buildCoreChunkItems(sentences, lesson.id),
+    [lesson.id, sentences],
+  );
   const dueSentences = sentences.filter(s => isDueForReview("sentence_" + s.id));
   const dueVocab = vocabularyItems.filter(v => isDueForReview("vocab_" + v.id));
-  const dueCount = dueSentences.length + dueVocab.length;
+  const dueCoreRecognition = coreChunkItems.filter(chunk => isDueForReview("chunk_rec_" + chunk.id));
+  const dueCoreProduction = coreChunkItems.filter(chunk => isDueForReview("chunk_prod_" + chunk.id));
+  const dueCount = dueSentences.length + dueVocab.length + dueCoreRecognition.length + dueCoreProduction.length;
   const kanjiSentenceCount = sentences.filter((sentence) =>
     containsKanji(sentence.full_japanese),
   ).length;
@@ -2443,6 +2565,7 @@ function LessonMenu({
   const kanjiWordCount = (kanjiVocabulary[lesson.id] ?? []).length;
   const sentenceCount = detail.sentence_count ?? authoredSentenceCounts[lesson.id] ?? sentences.length;
   const modeCounts: Partial<Record<ModeId, number>> = {
+    "core-chunks": coreChunkItems.length,
     vocabulary: vocabularyItems.length,
     grammar: grammarCount,
     cloze: sentenceCount,
@@ -2486,13 +2609,13 @@ function LessonMenu({
           <span className="sectionKicker">MINNA NO NIHONGO · {detail.title.toUpperCase()}</span>
           <h1>{detail.description}</h1>
           <p>
-            Chọn một cách luyện. Mỗi hoạt động giúp bạn nhìn, nghe và tái tạo
-            cùng một cấu trúc câu theo một góc khác.
+            Bắt đầu bằng cụm cốt lõi, sau đó luyện câu mẫu, ngữ pháp,
+            nghe nói và ôn tập để biến kiến thức thành phản xạ.
           </p>
         </div>
         <div className="lessonStats" style={{ display: 'flex', alignItems: 'center' }}>
           <div><strong>{detail.sentence_count ?? authoredSentenceCounts[lesson.id] ?? 0}</strong><span>CÂU MẪU</span></div>
-          <div><strong>9</strong><span>CHẾ ĐỘ</span></div>
+          <div><strong>{modes.length}</strong><span>CHẾ ĐỘ</span></div>
           {dueCount > 0 && (
             <button className="primaryButton" style={{ marginLeft: "auto", padding: "0 20px" }} onClick={() => onMode("review")}>
               Ôn tập ngay ({dueCount})
@@ -2503,8 +2626,8 @@ function LessonMenu({
 
       <section className="modeSection" aria-labelledby="mode-title">
         <div className="modeHeading">
-          <span className="sectionKicker">NỘI DUNG CỐT LÕI</span>
-          <h2 id="mode-title">Bạn muốn học phần nào?</h2>
+          <span className="sectionKicker">LỘ TRÌNH THEO CỤM</span>
+          <h2 id="mode-title">Bắt đầu từ cụm dùng được ngay</h2>
         </div>
         <div className="studyPathGrid">
           {coreModes.map((mode) => (
@@ -2524,8 +2647,8 @@ function LessonMenu({
           ))}
         </div>
         <div className="modeHeading activityHeading">
-          <span className="sectionKicker">LUYỆN TẬP BỔ TRỢ</span>
-          <h2>Chọn cách luyện tiếp theo</h2>
+          <span className="sectionKicker">LUYỆN TẬP VÀ BỔ TRỢ</span>
+          <h2>Biến cụm thành phản xạ</h2>
         </div>
         <div className="modeGrid">
           {practiceModes.map((mode) => (
@@ -2580,7 +2703,7 @@ function EmptyPractice({
       <p>
         {isKanji
           ? "Bài này chưa có dữ liệu Kanji phù hợp. Hãy chọn một bài đã có nội dung để luyện."
-          : "Hiện có bài luyện đầy đủ cho Bài 1–25. API đã sẵn sàng để bạn thêm dữ liệu cho bài này."}
+          : "Chế độ này chưa có đủ dữ liệu cho bài hiện tại. Bạn có thể chọn chế độ khác hoặc thêm dữ liệu hợp lệ rồi tải lại."}
       </p>
       <button className="secondaryButton" onClick={onBack}>Chọn chế độ khác</button>
     </div>
@@ -4841,6 +4964,335 @@ function KanjiWritingMode({
   );
 }
 
+function inferCoreChunkFunction(japanese: string, vietnamese: string) {
+  if (/ください/u.test(japanese)) return "Yêu cầu hoặc nhờ ai đó làm một việc cụ thể";
+  if (/てもいいです/u.test(japanese)) return "Xin phép hoặc nói điều được phép làm";
+  if (/てはいけません/u.test(japanese)) return "Nói điều không được phép làm";
+  if (/なければなりません|ないといけません/u.test(japanese)) return "Nói nghĩa vụ: phải làm điều gì";
+  if (/たい/u.test(japanese)) return "Nói mong muốn của người nói";
+  if (/ことができます|できます/u.test(japanese)) return "Nói khả năng có thể làm gì";
+  if (/と思います|と言いました/u.test(japanese)) return "Nêu suy nghĩ hoặc truyền đạt lời nói";
+  if (/です|じゃありません|ではありません/u.test(japanese)) return "Giới thiệu, định nghĩa hoặc xác nhận thông tin lịch sự";
+  if (/ます|ません|ました|ませんでした/u.test(japanese)) return "Nói hành động ở thể lịch sự";
+  if (/[はがをにへでともからまでより]/u.test(japanese)) return "Gắn vai trò ngữ pháp cho người, vật, nơi chốn hoặc thời gian";
+  if (vietnamese.includes("không")) return "Tạo ý phủ định trong câu giao tiếp";
+  return "Cụm ý nghĩa có thể dùng lại trong nhiều câu";
+}
+
+function inferCoreChunkSituation(sentence: Sentence) {
+  const vietnamese = sentence.full_vietnamese.toLocaleLowerCase("vi");
+  if (vietnamese.includes("xin") || vietnamese.includes("vui lòng")) return "Nhờ vả / xin phép";
+  if (vietnamese.includes("đi") || vietnamese.includes("đến") || vietnamese.includes("về")) return "Di chuyển / địa điểm";
+  if (vietnamese.includes("ăn") || vietnamese.includes("uống") || vietnamese.includes("mua")) return "Sinh hoạt hằng ngày";
+  if (vietnamese.includes("hôm") || vietnamese.includes("giờ") || vietnamese.includes("tuần")) return "Thời gian / lịch trình";
+  if (vietnamese.includes("tôi") || vietnamese.includes("bạn") || vietnamese.includes("anh") || vietnamese.includes("chị")) return "Hội thoại cá nhân";
+  return "Giao tiếp thường ngày";
+}
+
+function buildCoreChunkSlots(japanese: string): CoreChunkSlot[] {
+  const slots: CoreChunkSlot[] = [];
+
+  if (/は/u.test(japanese)) {
+    slots.push({ label: "Chủ đề trước は", examples: ["わたし", "田中さん", "この本"] });
+  }
+  if (/が/u.test(japanese)) {
+    slots.push({ label: "Chủ thể / điều được nhấn mạnh trước が", examples: ["雨", "時間", "日本語"] });
+  }
+  if (/を/u.test(japanese)) {
+    slots.push({ label: "Đối tượng hành động trước を", examples: ["水", "映画", "宿題"] });
+  }
+  if (/に/u.test(japanese)) {
+    slots.push({ label: "Thời điểm / nơi đến trước に", examples: ["7時", "学校", "友達"] });
+  }
+  if (/へ/u.test(japanese)) {
+    slots.push({ label: "Hướng đi trước へ", examples: ["会社", "日本", "駅"] });
+  }
+  if (/で/u.test(japanese)) {
+    slots.push({ label: "Nơi chốn / phương tiện trước で", examples: ["学校", "バス", "日本語"] });
+  }
+  if (/から|まで/u.test(japanese)) {
+    slots.push({ label: "Mốc bắt đầu / kết thúc", examples: ["9時から", "5時まで", "月曜日から"] });
+  }
+  if (/です/u.test(japanese)) {
+    slots.push({ label: "Danh từ / tính từ đứng trước です", examples: ["学生", "便利", "きれい"] });
+  }
+  if (/ます|ません|ました|ませんでした/u.test(japanese)) {
+    slots.push({ label: "Động từ thể ます", examples: ["行きます", "食べます", "勉強します"] });
+  }
+  if (/ください/u.test(japanese)) {
+    slots.push({ label: "Động từ て形 trước ください", examples: ["見て", "書いて", "待って"] });
+  }
+
+  return slots.slice(0, 3);
+}
+
+function scoreCoreChunk(chunk: Chunk) {
+  let score = chunk.is_grammar_key ? 20 : 0;
+  const japanese = chunk.japanese;
+  const vietnamese = chunk.vietnamese;
+
+  score += Math.min(Array.from(japanese).length, 10);
+  if (/[はがをにへでともからまでより]/u.test(japanese)) score += 6;
+  if (/です|ます|ません|ました|ください|たい|こと|ので|から|とき|なら|ば|たら|そう|よう|いただ|くださ|あります|います/u.test(japanese)) score += 8;
+  if (containsKanji(japanese)) score += 2;
+  if (vietnamese.trim().length < 2) score -= 8;
+  if (Array.from(normalizeJapanese(japanese)).length <= 1 && !chunk.is_grammar_key) score -= 8;
+
+  return score;
+}
+
+function buildCoreChunkItems(sentences: Sentence[], lessonId: number) {
+  type CoreChunkCandidate = CoreChunkItem & { score: number; firstIndex: number };
+  const byKey = new Map<string, CoreChunkCandidate>();
+
+  sentences.forEach((sentence, sentenceIndex) => {
+    const orderedChunks = [...sentence.chunks].sort((a, b) => a.order_index - b.order_index);
+    orderedChunks.forEach((chunk, chunkIndex) => {
+      const japanese = chunk.japanese.trim();
+      const naturalMeaning = chunk.vietnamese.trim();
+      const key = normalizeJapanese(japanese);
+      if (!key || !naturalMeaning) return;
+
+      const variants = Array.from(
+        new Set(
+          (chunk.kanji_variants ?? "")
+            .split(/[,，]/)
+            .map((variant) => variant.trim())
+            .filter(Boolean),
+        ),
+      );
+      const firstIndex = sentenceIndex * 100 + chunkIndex;
+      const existing = byKey.get(key);
+      const example: CoreChunkExample = {
+        japanese: sentence.full_japanese,
+        romaji: sentence.full_romaji,
+        vietnamese: sentence.full_vietnamese,
+      };
+
+      if (existing) {
+        existing.score += Math.max(2, Math.floor(scoreCoreChunk(chunk) / 3));
+        variants.forEach((variant) => {
+          if (!existing.variants.includes(variant)) existing.variants.push(variant);
+        });
+        if (
+          existing.examples.length < 3 &&
+          !existing.examples.some((item) => item.japanese === example.japanese)
+        ) {
+          existing.examples.push(example);
+        }
+        return;
+      }
+
+      byKey.set(key, {
+        id: `${lessonId}-${chunk.id}`,
+        lessonId,
+        japanese,
+        naturalMeaning,
+        functionLabel: inferCoreChunkFunction(japanese, naturalMeaning),
+        situation: inferCoreChunkSituation(sentence),
+        variants,
+        slots: buildCoreChunkSlots(japanese),
+        examples: [example],
+        score: scoreCoreChunk(chunk),
+        firstIndex,
+      });
+    });
+  });
+
+  const sorted = Array.from(byKey.values()).sort(
+    (a, b) => b.score - a.score || a.firstIndex - b.firstIndex,
+  );
+  const preferred = sorted.filter((item) => item.score >= 12 || item.examples.length > 1);
+  const source = preferred.length >= 8 ? preferred : sorted;
+
+  return source.slice(0, 15).map(({ score: _score, firstIndex: _firstIndex, ...item }) => item);
+}
+
+function CoreChunkMode({
+  item,
+  items,
+  onAdvance,
+}: {
+  item: CoreChunkItem;
+  items: CoreChunkItem[];
+  onAdvance: () => void;
+}) {
+  const shortcutAreaRef = useRef<HTMLDivElement>(null);
+  const [selectedMeaning, setSelectedMeaning] = useState<string | null>(null);
+  const [detailsOpen, setDetailsOpen] = useState(false);
+  const correct = selectedMeaning === item.naturalMeaning;
+  const done = selectedMeaning !== null;
+  const options = useMemo(() => {
+    const distractors = Array.from(
+      new Set(
+        items
+          .filter(
+            (candidate) =>
+              candidate.id !== item.id && candidate.naturalMeaning !== item.naturalMeaning,
+          )
+          .map((candidate) => candidate.naturalMeaning),
+      ),
+    )
+      .sort(() => Math.random() - 0.5)
+      .slice(0, 3);
+    return [item.naturalMeaning, ...distractors].sort(() => Math.random() - 0.5);
+  }, [item, items]);
+
+  const choose = useCallback(
+    (option: string) => {
+      if (done) return;
+      setSelectedMeaning(option);
+      window.requestAnimationFrame(() => shortcutAreaRef.current?.focus());
+    },
+    [done],
+  );
+
+  useEffect(() => {
+    setSelectedMeaning(null);
+    setDetailsOpen(false);
+  }, [item.id]);
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (
+        isTextEntryTarget(event.target) ||
+        event.shiftKey ||
+        event.altKey ||
+        event.ctrlKey ||
+        event.metaKey ||
+        event.isComposing ||
+        event.keyCode === 229
+      ) {
+        return;
+      }
+
+      if (/^[1-4]$/.test(event.key)) {
+        const option = options[Number(event.key) - 1];
+        if (option && !done) {
+          event.preventDefault();
+          choose(option);
+        }
+        return;
+      }
+
+      if (event.key === "Enter" && done && correct) {
+        event.preventDefault();
+        onAdvance();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown, true);
+    return () => window.removeEventListener("keydown", handleKeyDown, true);
+  }, [choose, correct, done, onAdvance, options]);
+
+  useAutoAdvanceOnCorrect(correct, onAdvance);
+
+  const feedback: Feedback =
+    selectedMeaning === null
+      ? null
+      : correct
+        ? {
+            kind: "success",
+            message: `${item.japanese} = ${item.naturalMeaning}`,
+          }
+        : {
+            kind: "error",
+            message: "Chưa đúng. Hãy xem chức năng của cụm rồi chọn lại ở lượt sau.",
+          };
+  const shouldShowDetails = detailsOpen || done;
+
+  return (
+    <div className="exerciseContent coreChunkContent" ref={shortcutAreaRef} tabIndex={-1}>
+      <div className="coreChunkPrompt">
+        <span className="promptLabel">CỤM CỐT LÕI · DÙNG ĐƯỢC NGAY</span>
+        <strong lang="ja">{item.japanese}</strong>
+        <p>{item.functionLabel}</p>
+        <div className="coreChunkMeta">
+          <span>{item.situation}</span>
+          <span>{item.examples.length} câu mẫu</span>
+        </div>
+        <div className="coreChunkActions">
+          <button className="secondaryButton" type="button" onClick={() => speakJapaneseText(item.japanese)}>
+            Đọc cụm <span aria-hidden="true">🔊</span>
+          </button>
+          <button className="secondaryButton" type="button" onClick={() => setDetailsOpen((current) => !current)}>
+            {detailsOpen ? "Ẩn cách dùng" : "Xem cách dùng"}
+          </button>
+        </div>
+      </div>
+
+      <div className="vocabularyOptions coreChunkOptions" role="group" aria-label="Chọn nghĩa tự nhiên của cụm">
+        {options.map((option, optionIndex) => {
+          const isSelected = selectedMeaning === option;
+          const stateClass = isSelected
+            ? option === item.naturalMeaning
+              ? "correct"
+              : "wrong"
+            : done && option === item.naturalMeaning
+              ? "correct"
+              : "";
+          return (
+            <button
+              key={`${option}-${optionIndex}`}
+              className={`vocabularyOption ${stateClass}`}
+              type="button"
+              onClick={() => choose(option)}
+              aria-pressed={isSelected}
+            >
+              <span>{optionIndex + 1}</span>
+              <strong>{option}</strong>
+            </button>
+          );
+        })}
+      </div>
+
+      <FeedbackBanner feedback={feedback} />
+
+      {shouldShowDetails && (
+        <div className="coreChunkStudyPanel">
+          <article>
+            <span className="promptLabel">CHỨC NĂNG</span>
+            <h3>{item.functionLabel}</h3>
+            <p>{item.naturalMeaning}</p>
+            {item.variants.length > 0 && (
+              <div className="coreChunkVariants">
+                <span>Viết được cả</span>
+                {item.variants.map((variant) => (
+                  <code key={variant} lang="ja">{variant}</code>
+                ))}
+              </div>
+            )}
+          </article>
+          <article>
+            <span className="promptLabel">CHỖ CÓ THỂ THAY</span>
+            {item.slots.length > 0 ? (
+              <ul className="coreChunkSlotList">
+                {item.slots.map((slot) => (
+                  <li key={slot.label}>
+                    <strong>{slot.label}</strong>
+                    <span>{slot.examples.join(" · ")}</span>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p>Cụm này nên học nguyên khối trước, sau đó thay từ theo câu mẫu.</p>
+            )}
+          </article>
+          <article className="coreChunkExamples">
+            <span className="promptLabel">CÂU MẪU TRONG BÀI</span>
+            {item.examples.map((example) => (
+              <div className="coreChunkExample" key={example.japanese}>
+                <strong lang="ja">{example.japanese}</strong>
+                <span>{example.romaji}</span>
+                <small>{example.vietnamese}</small>
+              </div>
+            ))}
+          </article>
+        </div>
+      )}
+    </div>
+  );
+}
 function buildVocabularyItems(sentences: Sentence[], lessonId?: number) {
   const resolvedLessonId = lessonId ?? sentences[0]?.lesson_id ?? undefined;
   const lessonItems = resolvedLessonId
@@ -6175,10 +6627,16 @@ function PracticeScreen({
     () => buildVocabularyItems(sentences, lesson.id),
     [lesson.id, sentences],
   );
+  const coreChunkItems = useMemo(
+    () => buildCoreChunkItems(sentences, lesson.id),
+    [lesson.id, sentences],
+  );
   const lessonGrammarPoints = grammarPoints[lesson.id] ?? [];
   const total =
     modeId === "reading"
       ? passages.length
+      : modeId === "core-chunks"
+        ? coreChunkItems.length
       : modeId === "audio-match"
         ? audioMatchChunks.length
       : modeId === "kanji-words"
@@ -6198,7 +6656,9 @@ function PracticeScreen({
   }, [lesson.id, modeId, total]);
   const displayedIndex = practiceOrder[index] ?? index;
   const next = () => {
-    if (modeId === "vocabulary" && vocabularyItems[displayedIndex]) {
+    if (modeId === "core-chunks" && coreChunkItems[displayedIndex]) {
+      updateSRSItem("chunk_rec_" + coreChunkItems[displayedIndex].id, 4);
+    } else if (modeId === "vocabulary" && vocabularyItems[displayedIndex]) {
       updateSRSItem("vocab_" + vocabularyItems[displayedIndex].id, 4);
     } else if ((modeId === "cloze" || modeId === "scramble" || modeId === "dictation" || modeId === "kanji") && activeSentences[displayedIndex]) {
       updateSRSItem("sentence_" + activeSentences[displayedIndex].id, 4);
@@ -6234,6 +6694,14 @@ function PracticeScreen({
           <EmptyPractice onBack={onBack} modeId={modeId} />
         ) : (
           <>
+            {modeId === "core-chunks" && (
+              <CoreChunkMode
+                key={`${lesson.id}-${coreChunkItems[displayedIndex].id}`}
+                item={coreChunkItems[displayedIndex]}
+                items={coreChunkItems}
+                onAdvance={next}
+              />
+            )}
             {modeId === "cloze" && (
               <ClozeMode
                 key={activeSentences[displayedIndex].id}
@@ -6320,9 +6788,10 @@ function PracticeScreen({
 
 type ReviewItem = {
   id: string;
-  type: "sentence" | "vocab";
+  type: "sentence" | "vocab" | "chunk";
   front: string;
   back: string;
+  frontLang?: "ja" | "vi";
 };
 
 function AiChatBox({ lesson }: { lesson: Lesson | null }) {
@@ -6547,6 +7016,626 @@ function AiChatBox({ lesson }: { lesson: Lesson | null }) {
   );
 }
 
+const pronunciationFallbackSentences: Sentence[] = [
+  {
+    id: -101,
+    lesson_id: null,
+    passage_id: null,
+    full_japanese: "わたしは 学生です。",
+    full_romaji: "Watashi wa gakusei desu.",
+    full_vietnamese: "Tôi là học sinh/sinh viên.",
+    audio_url: null,
+    kanji_variants: "私は学生です。,わたしはがくせいです。",
+    chunks: [
+      { id: -1001, order_index: 1, japanese: "わたしは", vietnamese: "tôi thì", is_grammar_key: false, kanji_variants: "私は" },
+      { id: -1002, order_index: 2, japanese: "学生です", vietnamese: "là học sinh/sinh viên", is_grammar_key: true, kanji_variants: "がくせいです" },
+    ],
+  },
+  {
+    id: -102,
+    lesson_id: null,
+    passage_id: null,
+    full_japanese: "すみません、もう一度 言ってください。",
+    full_romaji: "Sumimasen, mou ichido itte kudasai.",
+    full_vietnamese: "Xin lỗi, hãy nói lại một lần nữa.",
+    audio_url: null,
+    kanji_variants: "すみません、もう一度言ってください。",
+    chunks: [
+      { id: -1003, order_index: 1, japanese: "すみません", vietnamese: "xin lỗi", is_grammar_key: false, kanji_variants: null },
+      { id: -1004, order_index: 2, japanese: "もう一度", vietnamese: "một lần nữa", is_grammar_key: false, kanji_variants: null },
+      { id: -1005, order_index: 3, japanese: "言ってください", vietnamese: "hãy nói", is_grammar_key: true, kanji_variants: "いってください" },
+    ],
+  },
+];
+
+const defaultRoleplayScenarios: RoleplayScenario[] = [
+  {
+    scenario: "Ở nhà hàng",
+    ai_role: "Nhân viên phục vụ",
+    target_grammar: "〜てください",
+    description: "Gọi món, yêu cầu nước hoặc hỏi thực đơn.",
+  },
+  {
+    scenario: "Ở nhà ga",
+    ai_role: "Nhân viên nhà ga",
+    target_grammar: "〜へ行きたいです / 〜はどこですか",
+    description: "Hỏi đường, mua vé, hỏi sân ga.",
+  },
+  {
+    scenario: "Ở lớp học",
+    ai_role: "Giáo viên tiếng Nhật",
+    target_grammar: "〜てもいいですか / 〜てはいけません",
+    description: "Xin phép, hỏi quy định trong lớp.",
+  },
+  {
+    scenario: "Rủ bạn đi chơi",
+    ai_role: "Bạn người Nhật",
+    target_grammar: "〜ませんか / 〜ましょう",
+    description: "Mời đi ăn, xem phim, học chung.",
+  },
+];
+
+function getSentenceChunkTexts(sentence: Sentence) {
+  return [...sentence.chunks]
+    .sort((left, right) => left.order_index - right.order_index)
+    .map((chunk) => chunk.japanese)
+    .filter(Boolean);
+}
+
+function splitVariantList(value?: string | null) {
+  return value
+    ?.split(/[,，]/)
+    .map((variant) => variant.trim())
+    .filter(Boolean) ?? [];
+}
+
+function getSentenceVariantList(sentence: Sentence) {
+  return splitVariantList(sentence.kanji_variants);
+}
+
+function getSentenceChunkVariantLists(sentence: Sentence) {
+  return [...sentence.chunks]
+    .sort((left, right) => left.order_index - right.order_index)
+    .map((chunk) => splitVariantList(chunk.kanji_variants));
+}
+
+function getScoreLabel(score: number) {
+  if (score >= 88) return "Rất tốt";
+  if (score >= 70) return "Ổn rồi";
+  if (score >= 45) return "Cần luyện thêm";
+  return "Nói lại chậm hơn";
+}
+
+function PronunciationPracticePanel() {
+  const [lessons, setLessons] = useState<Lesson[]>(lessonFallback);
+  const [lessonId, setLessonId] = useState(14);
+  const [sentences, setSentences] = useState<Sentence[]>(pronunciationFallbackSentences);
+  const [index, setIndex] = useState(0);
+  const [transcript, setTranscript] = useState("");
+  const [result, setResult] = useState<PronunciationEvaluateResponse | null>(null);
+  const [listening, setListening] = useState(false);
+  const [checking, setChecking] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const recognitionRef = useRef<SpeechRecognitionLike | null>(null);
+
+  useEffect(() => {
+    requestJson<Lesson[]>("/lessons")
+      .then(setLessons)
+      .catch(() => setLessons(lessonFallback));
+  }, []);
+
+  useEffect(() => {
+    let alive = true;
+    setError(null);
+    setTranscript("");
+    setResult(null);
+    setIndex(0);
+    requestJson<Sentence[]>(`/lessons/${lessonId}/sentences`)
+      .then((data) => {
+        if (!alive) return;
+        setSentences(data.length ? data : pronunciationFallbackSentences);
+      })
+      .catch(() => {
+        if (!alive) return;
+        setSentences(pronunciationFallbackSentences);
+        setError("Chưa lấy được câu từ backend, đang dùng câu mẫu để luyện thử.");
+      });
+
+    return () => {
+      alive = false;
+      recognitionRef.current?.stop();
+    };
+  }, [lessonId]);
+
+  const practiceSentences = sentences.length ? sentences : pronunciationFallbackSentences;
+  const target = practiceSentences[Math.min(index, practiceSentences.length - 1)] ?? pronunciationFallbackSentences[0];
+  const chunkTexts = useMemo(() => getSentenceChunkTexts(target), [target]);
+  const sentenceVariants = useMemo(() => getSentenceVariantList(target), [target]);
+  const chunkVariantLists = useMemo(() => getSentenceChunkVariantLists(target), [target]);
+  const lessonOptions = lessons.filter(
+    (item) => (item.sentence_count ?? authoredSentenceCounts[item.id] ?? 0) > 0,
+  );
+
+  const toggleListening = () => {
+    const Recognition = getSpeechRecognitionConstructor();
+    if (!Recognition) {
+      setError("Trình duyệt này chưa hỗ trợ nhận diện giọng nói. Hãy thử Chrome hoặc nhập transcript bằng tay.");
+      return;
+    }
+
+    if (listening) {
+      recognitionRef.current?.stop();
+      setListening(false);
+      return;
+    }
+
+    const recognition = new Recognition();
+    recognition.lang = "ja-JP";
+    recognition.interimResults = false;
+    recognition.maxAlternatives = 1;
+    recognition.onresult = (event) => {
+      const spoken = event.results[event.results.length - 1]?.[0]?.transcript ?? "";
+      setTranscript(spoken.trim());
+      setResult(null);
+      setError(null);
+    };
+    recognition.onend = () => setListening(false);
+    recognition.onerror = () => {
+      setListening(false);
+      setError("Mic chưa nghe được rõ. Bạn kiểm tra quyền microphone rồi thử nói chậm hơn nhé.");
+    };
+    recognitionRef.current = recognition;
+    setListening(true);
+    try {
+      recognition.start();
+    } catch {
+      setListening(false);
+      setError("Không khởi động được microphone. Hãy dừng lần nghe cũ rồi thử lại.");
+    }
+  };
+
+  const checkPronunciation = async () => {
+    const spoken = transcript.trim();
+    if (!spoken) {
+      setError("Bạn hãy bấm mic và nói, hoặc nhập câu nghe được vào ô transcript trước.");
+      return;
+    }
+
+    setChecking(true);
+    setError(null);
+    try {
+      const scored = await evaluatePronunciation({
+        target: target.full_japanese,
+        transcript: spoken,
+        chunks: chunkTexts,
+        variants: sentenceVariants,
+        chunk_variants: chunkVariantLists,
+      });
+      setResult(scored);
+    } catch {
+      setResult(buildLocalPronunciationResult(target.full_japanese, spoken, chunkTexts, sentenceVariants, chunkVariantLists));
+      setError("Backend chấm điểm chưa phản hồi, mình đang dùng bộ chấm điểm dự phòng trên trình duyệt.");
+    } finally {
+      setChecking(false);
+    }
+  };
+
+  const nextSentence = () => {
+    setIndex((current) => (current + 1) % practiceSentences.length);
+    setTranscript("");
+    setResult(null);
+    setError(null);
+  };
+
+  return (
+    <section className="aiPracticeGrid" aria-label="Luyện phát âm tiếng Nhật">
+      <div className="aiPracticeCard aiPracticeMainCard">
+        <div className="aiPracticeCardHeader">
+          <span className="sectionKicker">Luyện phát âm</span>
+          <select
+            value={lessonId}
+            onChange={(event) => setLessonId(Number(event.target.value))}
+            aria-label="Chọn bài để luyện phát âm"
+          >
+            {lessonOptions.map((item) => (
+              <option key={item.id} value={item.id}>{item.title}: {item.description}</option>
+            ))}
+          </select>
+        </div>
+        <div className="pronunciationTarget">
+          <span>Câu mục tiêu</span>
+          <strong lang="ja">{target.full_japanese}</strong>
+          <p>{target.full_vietnamese}</p>
+          <button className="secondaryButton" type="button" onClick={() => speakJapaneseText(target.full_japanese)}>
+            Nghe mẫu 🔊
+          </button>
+        </div>
+        <div className="pronunciationChunkRow" aria-label="Các cụm trong câu">
+          {chunkTexts.map((chunk) => (
+            <span key={chunk} lang="ja">{chunk}</span>
+          ))}
+        </div>
+        <div className="pronunciationControls">
+          <button
+            className={`micHeroButton ${listening ? "listening" : ""}`}
+            type="button"
+            onClick={toggleListening}
+            aria-pressed={listening}
+          >
+            <span aria-hidden="true">🎙</span>
+            {listening ? "Đang nghe... bấm để dừng" : "Bấm mic rồi nói"}
+          </button>
+          <button className="checkButton" type="button" onClick={checkPronunciation} disabled={checking}>
+            {checking ? "Đang chấm..." : "Chấm phát âm"} <span>↵</span>
+          </button>
+          <button className="secondaryButton" type="button" onClick={nextSentence}>
+            Câu khác →
+          </button>
+        </div>
+        <label className="pronunciationTranscript">
+          <span>Transcript nhận được</span>
+          <textarea
+            value={transcript}
+            onChange={(event) => { setTranscript(event.target.value); setResult(null); }}
+            placeholder="Ví dụ: わたしは がくせいです"
+            rows={3}
+          />
+        </label>
+        {error && <div className="aiPracticeNotice">{error}</div>}
+      </div>
+
+      <aside className="aiPracticeCard pronunciationResultCard">
+        <span className="sectionKicker">Kết quả</span>
+        {result ? (
+          <>
+            <div className={`scoreRing ${result.score >= 88 ? "great" : result.score >= 70 ? "good" : result.score >= 45 ? "mid" : "low"}`}>
+              <strong>{result.score}%</strong>
+              <span>{getScoreLabel(result.score)}</span>
+            </div>
+            <div className="pronunciationTokenFeedback">
+              {result.tokens.map((token, tokenIndex) => (
+                <span
+                  key={`${token.target}-${tokenIndex}`}
+                  className={token.matched ? "matched" : "missed"}
+                  lang="ja"
+                >
+                  {token.target}
+                </span>
+              ))}
+            </div>
+            <p className="aiPracticeHint">Màu xanh là cụm máy nghe khớp; màu đỏ là cụm nên nói chậm và rõ hơn.</p>
+          </>
+        ) : (
+          <div className="emptyAiResult">
+            <strong>Chưa có điểm</strong>
+            <p>Bấm mic, nói câu tiếng Nhật, rồi chọn “Chấm phát âm”.</p>
+          </div>
+        )}
+      </aside>
+    </section>
+  );
+}
+
+function RoleplayPracticePanel() {
+  const [scenarios, setScenarios] = useState<RoleplayScenario[]>(defaultRoleplayScenarios);
+  const [config, setConfig] = useState<RoleplayConfig>({
+    scenario: defaultRoleplayScenarios[0].scenario,
+    ai_role: defaultRoleplayScenarios[0].ai_role,
+    target_grammar: defaultRoleplayScenarios[0].target_grammar,
+    level: "N5/N4",
+    script_preference: "kana_with_simple_kanji",
+  });
+  const [messages, setMessages] = useState<AiChatMessage[]>([]);
+  const [sessionId, setSessionId] = useState<string | null>(null);
+  const [input, setInput] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [listening, setListening] = useState(false);
+  const [notice, setNotice] = useState<string | null>(null);
+  const recognitionRef = useRef<SpeechRecognitionLike | null>(null);
+
+  useEffect(() => {
+    requestRoleplayScenarios()
+      .then((data) => {
+        if (data.length) setScenarios(data);
+      })
+      .catch(() => setScenarios(defaultRoleplayScenarios));
+  }, []);
+
+  useEffect(() => {
+    return () => recognitionRef.current?.stop();
+  }, []);
+
+  const updateConfig = (patch: Partial<RoleplayConfig>) => {
+    setConfig((current) => ({ ...current, ...patch }));
+    setSessionId(null);
+  };
+
+  const applyScenario = (scenario: RoleplayScenario) => {
+    setConfig((current) => ({
+      ...current,
+      scenario: scenario.scenario,
+      ai_role: scenario.ai_role,
+      target_grammar: scenario.target_grammar,
+    }));
+    setSessionId(null);
+    setMessages([]);
+    setNotice(null);
+  };
+
+  const startSession = async () => {
+    setLoading(true);
+    setNotice(null);
+    try {
+      const session = await requestRoleplaySession(config);
+      setSessionId(session.session_id);
+      setMessages([
+        {
+          id: `roleplay-open-${session.session_id}`,
+          role: "assistant",
+          content: session.opening_message,
+          source: "session",
+        },
+      ]);
+    } catch {
+      setSessionId(`local-${Date.now()}`);
+      setMessages([
+        {
+          id: `roleplay-open-local-${Date.now()}`,
+          role: "assistant",
+          content: `こんにちは。${config.scenario}の練習をしましょう。「${config.target_grammar}」を使って答えてください。`,
+          source: "local",
+        },
+      ]);
+      setNotice("Chưa mở được session backend, mình đang dùng lời mở đầu mẫu để bạn luyện tiếp.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const sendRoleplayMessage = useCallback(async () => {
+    const content = input.trim();
+    if (!content || loading) return;
+
+    const userMessage: AiChatMessage = {
+      id: `roleplay-user-${Date.now()}`,
+      role: "user",
+      content,
+    };
+    const history = [...messages, userMessage].slice(-18);
+    const assistantId = `roleplay-assistant-${Date.now()}`;
+    setMessages([
+      ...history,
+      {
+        id: assistantId,
+        role: "assistant",
+        content: "AI đang nhập vai...",
+        source: "gemini-roleplay-stream",
+      },
+    ]);
+    setInput("");
+    setLoading(true);
+    setNotice(null);
+
+    try {
+      const response = await streamRoleplayChat(
+        {
+          ...config,
+          messages: history.map((message) => ({ role: message.role, content: message.content })),
+        },
+        (_chunk, fullText) => {
+          setMessages((current) =>
+            current.map((message) =>
+              message.id === assistantId
+                ? { ...message, content: fullText || "AI đang nhập vai..." }
+                : message,
+            ),
+          );
+        },
+      );
+      setMessages((current) =>
+        current.map((message) =>
+          message.id === assistantId
+            ? {
+                ...message,
+                content: response.reply || "Mình chưa nhận được phản hồi từ AI role-play.",
+                source: response.source,
+              }
+            : message,
+        ),
+      );
+    } catch {
+      setMessages((current) =>
+        current.map((message) =>
+          message.id === assistantId
+            ? {
+                ...message,
+                content:
+                  "Sửa nhanh: Chưa kết nối được AI role-play lúc này.\nMẫu đúng: もう一度、ゆっくり言ってください。\nAI: すみません、もう一度お願いします。",
+                source: "error",
+              }
+            : message,
+        ),
+      );
+    } finally {
+      setLoading(false);
+    }
+  }, [config, input, loading, messages]);
+
+  const toggleVoiceInput = () => {
+    const Recognition = getSpeechRecognitionConstructor();
+    if (!Recognition) {
+      setNotice("Trình duyệt này chưa hỗ trợ mic nhận diện tiếng Nhật. Bạn có thể nhập bằng bàn phím.");
+      return;
+    }
+
+    if (listening) {
+      recognitionRef.current?.stop();
+      setListening(false);
+      return;
+    }
+
+    const recognition = new Recognition();
+    recognition.lang = "ja-JP";
+    recognition.interimResults = false;
+    recognition.maxAlternatives = 1;
+    recognition.onresult = (event) => {
+      const spoken = event.results[event.results.length - 1]?.[0]?.transcript ?? "";
+      setInput((current) => `${current}${current ? " " : ""}${spoken}`.trim());
+      setNotice(null);
+    };
+    recognition.onend = () => setListening(false);
+    recognition.onerror = () => {
+      setListening(false);
+      setNotice("Mic chưa nghe được rõ. Hãy cấp quyền microphone hoặc thử nói chậm hơn.");
+    };
+    recognitionRef.current = recognition;
+    setListening(true);
+    try {
+      recognition.start();
+    } catch {
+      setListening(false);
+      setNotice("Không khởi động được microphone. Bạn thử lại sau vài giây nhé.");
+    }
+  };
+
+  const handleInputKeyDown = (event: ReactKeyboardEvent<HTMLTextAreaElement>) => {
+    if (event.key === "Enter" && !event.shiftKey) {
+      event.preventDefault();
+      void sendRoleplayMessage();
+    }
+  };
+
+  return (
+    <section className="aiPracticeGrid roleplayGrid" aria-label="Chatbot thực chiến tiếng Nhật">
+      <aside className="aiPracticeCard roleplaySetupCard">
+        <span className="sectionKicker">Thiết lập hội thoại</span>
+        <div className="roleplayPresetList">
+          {scenarios.map((scenario) => (
+            <button
+              key={`${scenario.scenario}-${scenario.target_grammar}`}
+              type="button"
+              className={config.scenario === scenario.scenario ? "active" : ""}
+              onClick={() => applyScenario(scenario)}
+            >
+              <strong>{scenario.scenario}</strong>
+              <span>{scenario.description}</span>
+            </button>
+          ))}
+        </div>
+        <label className="aiConfigField">
+          <span>Tình huống</span>
+          <input value={config.scenario} onChange={(event) => updateConfig({ scenario: event.target.value })} />
+        </label>
+        <label className="aiConfigField">
+          <span>Vai của AI</span>
+          <input value={config.ai_role} onChange={(event) => updateConfig({ ai_role: event.target.value })} />
+        </label>
+        <label className="aiConfigField">
+          <span>Ngữ pháp bắt buộc</span>
+          <input value={config.target_grammar} onChange={(event) => updateConfig({ target_grammar: event.target.value })} />
+        </label>
+        <button className="primaryButton" type="button" onClick={startSession} disabled={loading}>
+          {sessionId ? "Khởi động lại vai" : "Bắt đầu role-play"} <ArrowIcon />
+        </button>
+        {notice && <div className="aiPracticeNotice">{notice}</div>}
+      </aside>
+
+      <div className="aiPracticeCard roleplayChatCard">
+        <div className="roleplayChatHeader">
+          <div>
+            <span className="sectionKicker">Chatbot thực chiến</span>
+            <h2>{config.scenario}</h2>
+          </div>
+          <span className="roleplayGrammarBadge">{config.target_grammar}</span>
+        </div>
+        <div className="roleplayMessages" aria-live="polite">
+          {messages.length === 0 ? (
+            <div className="emptyAiResult roleplayEmpty">
+              <strong>Chưa bắt đầu hội thoại</strong>
+              <p>Chọn tình huống rồi bấm “Bắt đầu role-play”. AI sẽ ép bạn dùng đúng mẫu ngữ pháp.</p>
+            </div>
+          ) : (
+            messages.map((message) => (
+              <div key={message.id} className={`roleplayMessage ${message.role}`}>
+                <p>{message.content}</p>
+                {message.role === "assistant" && (
+                  <button type="button" onClick={() => speakAiText(message.content)} aria-label="Đọc lời thoại AI">
+                    🔊
+                  </button>
+                )}
+              </div>
+            ))
+          )}
+        </div>
+        <div className="roleplayInputBar">
+          <button
+            className={listening ? "listening" : ""}
+            type="button"
+            onClick={toggleVoiceInput}
+            aria-label={listening ? "Dừng nghe tiếng Nhật" : "Nói câu trả lời tiếng Nhật"}
+          >
+            🎙
+          </button>
+          <textarea
+            value={input}
+            onChange={(event) => setInput(event.target.value)}
+            onKeyDown={handleInputKeyDown}
+            placeholder={`Nhập hoặc nói câu dùng ${config.target_grammar}...`}
+            rows={2}
+          />
+          <button type="button" onClick={() => void sendRoleplayMessage()} disabled={!input.trim() || loading}>
+            ➤
+          </button>
+        </div>
+        <p className="aiPracticeHint">Enter để gửi, Shift+Enter để xuống dòng. Mic dùng nhận diện tiếng Nhật ja-JP.</p>
+      </div>
+    </section>
+  );
+}
+
+function AiPracticeRoomScreen({ onBack }: { onBack: () => void }) {
+  const [tab, setTab] = useState<AiPracticeTab>("pronunciation");
+
+  return (
+    <main className="aiPracticePage">
+      <button className="textBack" onClick={onBack}>
+        <span aria-hidden="true">←</span> Trang chủ
+      </button>
+      <section className="aiPracticeHero" aria-labelledby="ai-practice-title">
+        <div>
+          <span className="sectionKicker">PHÒNG LUYỆN TẬP AI</span>
+          <h1 id="ai-practice-title">Luyện output: nói ra, sửa ngay.</h1>
+          <p>
+            Một phòng riêng để luyện phát âm và hội thoại thực chiến. Bạn nói tiếng Nhật,
+            app chấm độ khớp; AI nhập vai để kéo bạn dùng đúng mẫu ngữ pháp.
+          </p>
+        </div>
+        <div className="aiPracticeHeroMark" aria-hidden="true">話</div>
+      </section>
+      <div className="aiPracticeTabs" role="tablist" aria-label="Chọn kiểu luyện AI">
+        <button
+          type="button"
+          role="tab"
+          aria-selected={tab === "pronunciation"}
+          className={tab === "pronunciation" ? "active" : ""}
+          onClick={() => setTab("pronunciation")}
+        >
+          🎙 Luyện phát âm
+        </button>
+        <button
+          type="button"
+          role="tab"
+          aria-selected={tab === "roleplay"}
+          className={tab === "roleplay" ? "active" : ""}
+          onClick={() => setTab("roleplay")}
+        >
+          💬 Chatbot thực chiến
+        </button>
+      </div>
+      {tab === "pronunciation" ? <PronunciationPracticePanel /> : <RoleplayPracticePanel />}
+    </main>
+  );
+}
 function ReviewScreen({ lesson, onBack }: { lesson: Lesson; onBack: () => void }) {
   const [items, setItems] = useState<ReviewItem[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -6568,7 +7657,30 @@ function ReviewScreen({ lesson, onBack }: { lesson: Lesson; onBack: () => void }
         front: v.japanese,
         back: v.vietnamese
       }));
-      setItems([...dueSentences, ...dueVocab].sort(() => Math.random() - 0.5));
+      const coreChunkItems = buildCoreChunkItems(sentences, lesson.id);
+      const dueCoreChunks = coreChunkItems.flatMap(chunk => {
+        const reviewItems: ReviewItem[] = [];
+        if (isDueForReview("chunk_rec_" + chunk.id)) {
+          reviewItems.push({
+            id: "chunk_rec_" + chunk.id,
+            type: "chunk" as const,
+            front: chunk.japanese,
+            back: `${chunk.naturalMeaning} · ${chunk.functionLabel}`,
+            frontLang: "ja",
+          });
+        }
+        if (isDueForReview("chunk_prod_" + chunk.id)) {
+          reviewItems.push({
+            id: "chunk_prod_" + chunk.id,
+            type: "chunk" as const,
+            front: `${chunk.situation}: ${chunk.naturalMeaning}`,
+            back: `${chunk.japanese} · ${chunk.examples[0]?.vietnamese ?? chunk.functionLabel}`,
+            frontLang: "vi",
+          });
+        }
+        return reviewItems;
+      });
+      setItems([...dueCoreChunks, ...dueSentences, ...dueVocab].sort(() => Math.random() - 0.5));
       setLoading(false);
     });
   }, [lesson.id]);
@@ -6655,8 +7767,8 @@ function ReviewScreen({ lesson, onBack }: { lesson: Lesson; onBack: () => void }
           <div className="reviewFlipInner">
             <div className="reviewFlipFace reviewFlipFront">
               <div className="vocabularyPrompt">
-                <span className="promptLabel">ÔN TẬP {currentItem.type === "vocab" ? "TỪ VỰNG" : "CÂU"}</span>
-                <strong lang="ja">{currentItem.front}</strong>
+                <span className="promptLabel">ÔN TẬP {currentItem.type === "chunk" ? "CỤM CỐT LÕI" : currentItem.type === "vocab" ? "TỪ VỰNG" : "CÂU"}</span>
+                <strong lang={currentItem.frontLang ?? "ja"}>{currentItem.front}</strong>
               </div>
               <button
                 className="primaryButton reviewRevealButton"
@@ -6670,7 +7782,7 @@ function ReviewScreen({ lesson, onBack }: { lesson: Lesson; onBack: () => void }
             <div className="reviewFlipFace reviewFlipBack">
               <div className="vocabularyPrompt reviewBackPrompt">
                 <span className="promptLabel">ĐÁP ÁN</span>
-                <strong lang="ja">{currentItem.front}</strong>
+                <strong lang={currentItem.frontLang ?? "ja"}>{currentItem.front}</strong>
                 <p className="reviewAnswerText">{currentItem.back}</p>
               </div>
               <div className="reviewRatingActions">
@@ -6714,6 +7826,7 @@ export function LearningApp() {
   const [jlptPracticeOpen, setJlptPracticeOpen] = useState(false);
   const [n5ConjugationOpen, setN5ConjugationOpen] = useState(false);
   const [n4RoadmapOpen, setN4RoadmapOpen] = useState(false);
+  const [aiPracticeOpen, setAiPracticeOpen] = useState(false);
   const [theme, setTheme] = useState<ThemeMode>("light");
   const [themePreferenceReady, setThemePreferenceReady] = useState(false);
   const [showFurigana, setShowFurigana] = useState(true);
@@ -6778,6 +7891,7 @@ export function LearningApp() {
     setJlptPracticeOpen(false);
     setN5ConjugationOpen(false);
     setN4RoadmapOpen(false);
+    setAiPracticeOpen(false);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -6794,6 +7908,7 @@ export function LearningApp() {
     setJlptPracticeOpen(false);
     setN5ConjugationOpen(false);
     setN4RoadmapOpen(false);
+    setAiPracticeOpen(false);
     window.scrollTo(0, 0);
   };
 
@@ -6804,6 +7919,7 @@ export function LearningApp() {
     setJlptPracticeOpen(true);
     setN5ConjugationOpen(false);
     setN4RoadmapOpen(false);
+    setAiPracticeOpen(false);
     window.scrollTo(0, 0);
   };
 
@@ -6814,6 +7930,19 @@ export function LearningApp() {
     setJlptPracticeOpen(false);
     setN5ConjugationOpen(true);
     setN4RoadmapOpen(false);
+    setAiPracticeOpen(false);
+    window.scrollTo(0, 0);
+  };
+
+
+  const openAiPractice = () => {
+    setLesson(null);
+    setMode(null);
+    setQuestionWordsOpen(false);
+    setJlptPracticeOpen(false);
+    setN5ConjugationOpen(false);
+    setN4RoadmapOpen(false);
+    setAiPracticeOpen(true);
     window.scrollTo(0, 0);
   };
 
@@ -6831,18 +7960,20 @@ export function LearningApp() {
         onToggleFurigana={() => setShowFurigana((current) => !current)}
       />
       <AiChatBox lesson={lesson} />
-      {!lesson && !questionWordsOpen && !jlptPracticeOpen && !n5ConjugationOpen && !n4RoadmapOpen && (
+      {!lesson && !questionWordsOpen && !jlptPracticeOpen && !n5ConjugationOpen && !n4RoadmapOpen && !aiPracticeOpen && (
         <Dashboard
           onSelect={(selected) => { setLesson(selected); window.scrollTo(0, 0); }}
           onQuestionWords={() => { setQuestionWordsOpen(true); window.scrollTo(0, 0); }}
           onJlptPractice={openJlptPractice}
           onN5Conjugation={openN5Conjugation}
-          onN4Roadmap={() => { setN4RoadmapOpen(true); window.scrollTo(0, 0); }}
+          onN4Roadmap={() => { setN4RoadmapOpen(true); setAiPracticeOpen(false); window.scrollTo(0, 0); }}
+          onAiPractice={openAiPractice}
         />
       )}
       {questionWordsOpen && <QuestionWordsScreen onBack={goHome} />}
       {jlptPracticeOpen && <JlptPracticeScreen onBack={goHome} />}
       {n5ConjugationOpen && <N5ConjugationScreen onBack={goHome} />}
+      {aiPracticeOpen && <AiPracticeRoomScreen onBack={goHome} />}
       {n4RoadmapOpen && (
         <N4RoadmapScreen
           onBack={goHome}

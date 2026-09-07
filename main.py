@@ -4,6 +4,9 @@ from __future__ import annotations
 
 import json
 import os
+import re
+import unicodedata
+import uuid
 from contextlib import asynccontextmanager
 from pathlib import Path
 
@@ -23,6 +26,12 @@ from schemas import (
     LessonDetailResponse,
     LessonResponse,
     PassageResponse,
+    PronunciationEvaluateRequest,
+    PronunciationEvaluateResponse,
+    PronunciationTokenFeedback,
+    RoleplayChatRequest,
+    RoleplaySessionRequest,
+    RoleplaySessionResponse,
     SentenceResponse,
 )
 from seed import seed_database
@@ -268,12 +277,356 @@ def build_gemini_connection_error_reply(exc: httpx.HTTPError, api_key: str, mode
     )
 
 
+
+JAPANESE_SCORE_STRIP_RE = re.compile(r"[\s、。？！?!.・「」『』（）()\[\]【】…,.，;；:：~〜\-]+")
+
+
+def normalize_for_japanese_speech(value: str) -> str:
+    """Normalize Japanese learner/STT text for pronunciation scoring."""
+    normalized = unicodedata.normalize("NFKC", value or "").casefold()
+    return JAPANESE_SCORE_STRIP_RE.sub("", normalized).strip()
+
+
+def levenshtein_distance(left: str, right: str) -> int:
+    if left == right:
+        return 0
+    if not left:
+        return len(right)
+    if not right:
+        return len(left)
+
+    previous = list(range(len(right) + 1))
+    for left_index, left_char in enumerate(left, start=1):
+        current = [left_index]
+        for right_index, right_char in enumerate(right, start=1):
+            insert_cost = current[right_index - 1] + 1
+            delete_cost = previous[right_index] + 1
+            replace_cost = previous[right_index - 1] + (left_char != right_char)
+            current.append(min(insert_cost, delete_cost, replace_cost))
+        previous = current
+    return previous[-1]
+
+
+def japanese_similarity_score(
+    target: str,
+    transcript: str,
+    variants: list[str] | None = None,
+) -> int:
+    normalized_transcript = normalize_for_japanese_speech(transcript)
+    normalized_targets = [
+        normalize_for_japanese_speech(candidate)
+        for candidate in [target, *(variants or [])]
+        if normalize_for_japanese_speech(candidate)
+    ]
+    if not normalized_targets and not normalized_transcript:
+        return 100
+    if not normalized_targets or not normalized_transcript:
+        return 0
+
+    best = 0
+    for normalized_target in normalized_targets:
+        distance = levenshtein_distance(normalized_target, normalized_transcript)
+        score = (1 - distance / max(len(normalized_target), len(normalized_transcript))) * 100
+        best = max(best, round(score))
+    return max(0, min(100, best))
+
+
+def split_target_tokens(target: str, chunks: list[str] | None) -> list[str]:
+    if chunks:
+        tokens = [chunk.strip() for chunk in chunks if chunk.strip()]
+        if tokens:
+            return tokens
+    spaced = [token for token in target.split() if token.strip()]
+    if spaced:
+        return spaced
+    return [character for character in target if normalize_for_japanese_speech(character)]
+
+
+def build_pronunciation_token_feedback(
+    target: str,
+    transcript: str,
+    chunks: list[str] | None,
+    chunk_variants: list[list[str]] | None = None,
+) -> list[PronunciationTokenFeedback]:
+    transcript_key = normalize_for_japanese_speech(transcript)
+    cursor = 0
+    feedback: list[PronunciationTokenFeedback] = []
+
+    for token_index, token in enumerate(split_target_tokens(target, chunks)):
+        candidates = [token, *((chunk_variants or [])[token_index] if chunk_variants and token_index < len(chunk_variants) else [])]
+        token_keys = [
+            normalize_for_japanese_speech(candidate)
+            for candidate in candidates
+            if normalize_for_japanese_speech(candidate)
+        ]
+        if not token_keys:
+            continue
+
+        found_at = -1
+        matched_key = ""
+        for token_key in token_keys:
+            local_index = transcript_key.find(token_key, cursor)
+            if local_index < 0:
+                local_index = transcript_key.find(token_key)
+            if local_index >= 0:
+                found_at = local_index
+                matched_key = token_key
+                break
+
+        matched = found_at >= 0
+        if matched:
+            cursor = found_at + len(matched_key)
+        feedback.append(
+            PronunciationTokenFeedback(
+                target=token,
+                spoken=transcript if matched else None,
+                matched=matched,
+            )
+        )
+
+    return feedback
+
+
+def build_roleplay_system_instruction(payload: RoleplaySessionRequest) -> str:
+    scenario = payload.scenario.strip()[:180] or "Daily conversation"
+    target_grammar = payload.target_grammar.strip()[:120] or "N5/N4 grammar"
+    ai_role = payload.ai_role.strip()[:120] or "Japanese conversation partner"
+    level = payload.level.strip()[:40] or "N5/N4"
+    script_preference = payload.script_preference.strip()[:80] or "kana_with_simple_kanji"
+
+    return f"""
+You are Manabu AI, a Japanese output coach for Vietnamese learners.
+Role-play configuration:
+- Scenario: {scenario}
+- AI role: {ai_role}
+- Learner level: {level}
+- Target grammar the learner must practice: {target_grammar}
+- Script preference: {script_preference}
+
+Conversation rules:
+1. Stay inside the role-play scenario and behave as the AI role.
+2. Keep the Japanese role-play line short: 1-2 sentences only.
+3. Use beginner-friendly Japanese suitable for {level}. Prefer kana and simple kanji.
+4. Actively steer the learner so they have to use: {target_grammar}.
+5. If the learner's Japanese is wrong, unnatural, or does not use the target grammar, first give one concise correction in Vietnamese, then continue the role-play in Japanese.
+6. If the learner writes Vietnamese or asks for help, explain briefly in Vietnamese and provide one model Japanese sentence using {target_grammar}.
+7. Do not answer unrelated general questions. Gently bring the learner back to the scenario.
+
+Response format, always plain text:
+Sửa nhanh: <Vietnamese correction or "Không cần sửa.">
+Mẫu đúng: <one natural Japanese model answer using the target grammar>
+AI: <your in-character Japanese reply, 1-2 sentences>
+""".strip()
+
+
+def build_roleplay_gemini_contents(payload: RoleplayChatRequest) -> list[dict[str, object]]:
+    contents: list[dict[str, object]] = []
+    for message in payload.messages[-14:]:
+        content = message.content.strip()
+        if not content:
+            continue
+        contents.append(
+            {
+                "role": "model" if message.role == "assistant" else "user",
+                "parts": [{"text": content[:1400]}],
+            }
+        )
+
+    while contents and contents[0].get("role") == "model":
+        contents.pop(0)
+
+    if contents:
+        return contents
+
+    return [
+        {
+            "role": "user",
+            "parts": [
+                {
+                    "text": (
+                        "Start the role-play. Ask me a short Japanese question that nudges me "
+                        "to use the target grammar."
+                    )
+                }
+            ],
+        }
+    ]
+
+
+def build_roleplay_gemini_request_body(payload: RoleplayChatRequest) -> dict[str, object]:
+    return {
+        "systemInstruction": {
+            "parts": [{"text": build_roleplay_system_instruction(payload)}]
+        },
+        "contents": build_roleplay_gemini_contents(payload),
+        "generationConfig": {
+            "temperature": 0.55,
+            "maxOutputTokens": 850,
+        },
+    }
+
+
+
+def build_roleplay_opening_message(payload: RoleplaySessionRequest) -> str:
+    scenario_key = unicodedata.normalize("NFKC", payload.scenario).casefold()
+    grammar = payload.target_grammar.strip() or "今日の文法"
+    grammar_hint = f"『{grammar}』を使って、短く答えてください。"
+
+    if "nhà hàng" in scenario_key or "restaurant" in scenario_key or "レストラン" in scenario_key:
+        return f"いらっしゃいませ。ご注文は何ですか。{grammar_hint}"
+    if "nhà ga" in scenario_key or "station" in scenario_key or "駅" in scenario_key:
+        return f"こんにちは。どこへ行きたいですか。{grammar_hint}"
+    if "lớp" in scenario_key or "class" in scenario_key or "教室" in scenario_key:
+        return f"こんにちは。きょうは何をしたいですか。{grammar_hint}"
+    if "rủ" in scenario_key or "bạn" in scenario_key or "friend" in scenario_key or "友達" in scenario_key:
+        return f"こんにちは。週末、何をしましょうか。{grammar_hint}"
+
+    return f"こんにちは。ロールプレイを始めましょう。{grammar_hint}"
+
+def build_roleplay_fallback_reply(payload: RoleplaySessionRequest) -> str:
+    return (
+        "Sửa nhanh: Mình chưa kết nối được Gemini, nên đây là phiên luyện mẫu offline.\n"
+        f"Mẫu đúng: {build_roleplay_opening_message(payload)}\n"
+        "AI: もう一度、短い日本語で答えてください。"
+    )
+
+
+async def iter_roleplay_text_stream(payload: RoleplayChatRequest):
+    api_key = get_gemini_api_key()
+    if not api_key:
+        yield build_roleplay_fallback_reply(payload)
+        return
+
+    model = get_gemini_model()
+    url = build_gemini_url(model, "streamGenerateContent")
+
+    try:
+        async with httpx.AsyncClient(timeout=httpx.Timeout(60, connect=10)) as client:
+            async with client.stream(
+                "POST",
+                url,
+                params={"key": api_key, "alt": "sse"},
+                json=build_roleplay_gemini_request_body(payload),
+            ) as response:
+                if response.status_code >= 400:
+                    try:
+                        error = (await response.aread()).decode("utf-8", errors="replace")
+                    except httpx.HTTPError:
+                        error = ""
+                    yield (
+                        "Sửa nhanh: Chưa gọi được Gemini cho phòng role-play.\n"
+                        "Mẫu đúng: もう一度、短い日本語で言ってください。\n"
+                        f"AI: エラー {response.status_code} です。あとでまた練習しましょう。\n\n"
+                        f"Chi tiết kỹ thuật: {error[:360] or 'Không có nội dung lỗi.'}"
+                    )
+                    return
+
+                async for line in response.aiter_lines():
+                    if not line.startswith("data:"):
+                        continue
+                    raw = line.removeprefix("data:").strip()
+                    if not raw or raw == "[DONE]":
+                        continue
+                    try:
+                        data = json.loads(raw)
+                    except json.JSONDecodeError:
+                        continue
+                    text = extract_gemini_reply(data)
+                    if text:
+                        yield text
+    except httpx.HTTPError as exc:
+        yield build_gemini_connection_error_reply(exc, api_key, model)
+
 def get_lesson_or_404(lesson_id: int, db: Session) -> Lesson:
     lesson = db.get(Lesson, lesson_id)
     if lesson is None:
         raise HTTPException(status_code=404, detail="Không tìm thấy bài học.")
     return lesson
 
+
+
+@app.post(
+    "/api/ai-practice/pronunciation/evaluate",
+    response_model=PronunciationEvaluateResponse,
+    tags=["AI Practice"],
+)
+def evaluate_pronunciation(
+    payload: PronunciationEvaluateRequest,
+) -> PronunciationEvaluateResponse:
+    normalized_target = normalize_for_japanese_speech(payload.target)
+    normalized_transcript = normalize_for_japanese_speech(payload.transcript)
+    return PronunciationEvaluateResponse(
+        score=japanese_similarity_score(payload.target, payload.transcript, payload.variants),
+        normalized_target=normalized_target,
+        normalized_transcript=normalized_transcript,
+        tokens=build_pronunciation_token_feedback(
+            payload.target,
+            payload.transcript,
+            payload.chunks,
+            payload.chunk_variants,
+        ),
+    )
+
+
+@app.get("/api/ai-practice/pronunciation/status", tags=["AI Practice"])
+def pronunciation_status() -> dict[str, object]:
+    return {
+        "browser_stt": True,
+        "recommended_lang": "ja-JP",
+        "server_scoring": True,
+        "note": "MVP dùng Web Speech API trên trình duyệt và backend chỉ chấm điểm transcript.",
+    }
+
+
+@app.get("/api/ai-practice/roleplay/scenarios", tags=["AI Practice"])
+def list_roleplay_scenarios() -> list[dict[str, str]]:
+    return [
+        {
+            "scenario": "Ở nhà hàng",
+            "ai_role": "Nhân viên phục vụ",
+            "target_grammar": "〜てください",
+            "description": "Gọi món, yêu cầu nước hoặc hỏi thực đơn.",
+        },
+        {
+            "scenario": "Ở nhà ga",
+            "ai_role": "Nhân viên nhà ga",
+            "target_grammar": "〜へ行きたいです / 〜はどこですか",
+            "description": "Hỏi đường, mua vé, hỏi sân ga.",
+        },
+        {
+            "scenario": "Ở lớp học",
+            "ai_role": "Giáo viên tiếng Nhật",
+            "target_grammar": "〜てもいいですか / 〜てはいけません",
+            "description": "Xin phép, hỏi quy định trong lớp.",
+        },
+        {
+            "scenario": "Rủ bạn đi chơi",
+            "ai_role": "Bạn người Nhật",
+            "target_grammar": "〜ませんか / 〜ましょう",
+            "description": "Mời đi ăn, xem phim, học chung.",
+        },
+    ]
+
+
+@app.post(
+    "/api/ai-practice/roleplay/session",
+    response_model=RoleplaySessionResponse,
+    tags=["AI Practice"],
+)
+def create_roleplay_session(payload: RoleplaySessionRequest) -> RoleplaySessionResponse:
+    return RoleplaySessionResponse(
+        session_id=str(uuid.uuid4()),
+        opening_message=build_roleplay_opening_message(payload),
+    )
+
+
+@app.post("/api/ai-practice/roleplay/chat/stream", tags=["AI Practice"])
+async def roleplay_chat_stream(payload: RoleplayChatRequest) -> StreamingResponse:
+    return StreamingResponse(
+        iter_roleplay_text_stream(payload),
+        media_type="text/plain; charset=utf-8",
+        headers={"x-ai-source": "gemini-roleplay-stream"},
+    )
 
 @app.get("/api/health", response_model=HealthResponse, tags=["System"])
 def health_check() -> HealthResponse:
